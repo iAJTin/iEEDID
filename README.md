@@ -1,5 +1,5 @@
 ﻿<p align="center">
-  <img src="https://cdn.rawgit.com/iAJTin/iEEDID/master/nuget/iSMBIOS.png"  
+  <img src="https://cdn.rawgit.com/iAJTin/iEEDID/master/nuget/iEEDID.png"  
        height="32">
 </p>
 <p align="center">
