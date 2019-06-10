@@ -1,19 +1,23 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 16
-VisualStudioVersion = 16.0.28803.156
+# Visual Studio 15
+VisualStudioVersion = 15.0.28307.645
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{ED996611-FCEC-4B5A-9C30-DF6AC5C178C1}"
-EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "test", "test", "{407B179E-ED42-4D2F-A089-D0F3C0283079}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "iTin.Core", "iTin.Core\iTin.Core.csproj", "{A1FC8E7E-8A01-4456-BF5C-14C40981BEFA}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "lib", "lib", "{BF5D1870-73D7-41D9-AB74-3FFA03AC4549}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "iTin.Core.Hardware", "iTin.Core.Hardware\iTin.Core.Hardware.csproj", "{91FF7ED0-1230-4865-A589-28928623E537}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "iTin.Core", "iTin.Core", "{359241CA-F90E-4F3B-ADDD-21F51E118521}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "iTin.Core.Hardware.ConsoleApp", "iTin.Core.Hardware.ConsoleApp\iTin.Core.Hardware.ConsoleApp.csproj", "{914E05E4-3BAA-47C6-BB9F-D7F47B006237}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "iTin.Core.Interop", "lib\iTin.Core\iTin.Core.Interop\iTin.Core.Interop.csproj", "{F8F097DA-4171-4E3F-BF8F-59D37B2BE72F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "iTin.Core.Interop", "iTin.Core.Interop\iTin.Core.Interop.csproj", "{F8F097DA-4171-4E3F-BF8F-59D37B2BE72F}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "iTin.Core.Hardware", "iTin.Core.Hardware", "{0F0FBE56-1319-45D0-A7A0-F5C95EA30C59}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "iTin.Core.Hardware", "lib\iTin.Core.Hardware\iTin.Core.Hardware\iTin.Core.Hardware\iTin.Core.Hardware.csproj", "{91FF7ED0-1230-4865-A589-28928623E537}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "iEEDID.ConsoleApp", "test\iEEDID.ConsoleApp\iEEDID.ConsoleApp.csproj", "{914E05E4-3BAA-47C6-BB9F-D7F47B006237}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "iTin.Core", "lib\iTin.Core\iTin.Core\iTin.Core.csproj", "{A1FC8E7E-8A01-4456-BF5C-14C40981BEFA}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,10 +25,10 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{A1FC8E7E-8A01-4456-BF5C-14C40981BEFA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{A1FC8E7E-8A01-4456-BF5C-14C40981BEFA}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{A1FC8E7E-8A01-4456-BF5C-14C40981BEFA}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{A1FC8E7E-8A01-4456-BF5C-14C40981BEFA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F8F097DA-4171-4E3F-BF8F-59D37B2BE72F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F8F097DA-4171-4E3F-BF8F-59D37B2BE72F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F8F097DA-4171-4E3F-BF8F-59D37B2BE72F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F8F097DA-4171-4E3F-BF8F-59D37B2BE72F}.Release|Any CPU.Build.0 = Release|Any CPU
 		{91FF7ED0-1230-4865-A589-28928623E537}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{91FF7ED0-1230-4865-A589-28928623E537}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{91FF7ED0-1230-4865-A589-28928623E537}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -33,19 +37,21 @@ Global
 		{914E05E4-3BAA-47C6-BB9F-D7F47B006237}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{914E05E4-3BAA-47C6-BB9F-D7F47B006237}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{914E05E4-3BAA-47C6-BB9F-D7F47B006237}.Release|Any CPU.Build.0 = Release|Any CPU
-		{F8F097DA-4171-4E3F-BF8F-59D37B2BE72F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{F8F097DA-4171-4E3F-BF8F-59D37B2BE72F}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{F8F097DA-4171-4E3F-BF8F-59D37B2BE72F}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{F8F097DA-4171-4E3F-BF8F-59D37B2BE72F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A1FC8E7E-8A01-4456-BF5C-14C40981BEFA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A1FC8E7E-8A01-4456-BF5C-14C40981BEFA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A1FC8E7E-8A01-4456-BF5C-14C40981BEFA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A1FC8E7E-8A01-4456-BF5C-14C40981BEFA}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
-		{A1FC8E7E-8A01-4456-BF5C-14C40981BEFA} = {ED996611-FCEC-4B5A-9C30-DF6AC5C178C1}
-		{91FF7ED0-1230-4865-A589-28928623E537} = {ED996611-FCEC-4B5A-9C30-DF6AC5C178C1}
+		{359241CA-F90E-4F3B-ADDD-21F51E118521} = {BF5D1870-73D7-41D9-AB74-3FFA03AC4549}
+		{F8F097DA-4171-4E3F-BF8F-59D37B2BE72F} = {359241CA-F90E-4F3B-ADDD-21F51E118521}
+		{0F0FBE56-1319-45D0-A7A0-F5C95EA30C59} = {BF5D1870-73D7-41D9-AB74-3FFA03AC4549}
+		{91FF7ED0-1230-4865-A589-28928623E537} = {0F0FBE56-1319-45D0-A7A0-F5C95EA30C59}
 		{914E05E4-3BAA-47C6-BB9F-D7F47B006237} = {407B179E-ED42-4D2F-A089-D0F3C0283079}
-		{F8F097DA-4171-4E3F-BF8F-59D37B2BE72F} = {ED996611-FCEC-4B5A-9C30-DF6AC5C178C1}
+		{A1FC8E7E-8A01-4456-BF5C-14C40981BEFA} = {359241CA-F90E-4F3B-ADDD-21F51E118521}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {7E253257-825E-40F1-9BD8-3624F02E7544}
