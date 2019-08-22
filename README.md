@@ -11,7 +11,7 @@
 ***
 
 # What is iEEDID?
-**iEEDID** is a lightweight implementation that allows us to obtain the **EDID** information
+**iEEDID** is a lightweight implementation that allows us to obtain the **EDID** information.
 
 
 # Install via NuGet

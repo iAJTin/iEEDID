@@ -165,7 +165,10 @@ namespace iEEDID.ConsoleApp
             Console.WriteLine(@" Gets A Single Property Directly");
             Console.WriteLine(@" ——————————————————————————————————————————————————————————————");
 
-            object gamma = eedid.Blocks[KnownDataBlock.EDID].Sections[(int)KnownEdidSection.BasicDisplay].GetPropertyValue(EedidProperty.Edid.BasicDisplay.Gamma);
+            DataBlock edidBlock = eedid.Blocks[KnownDataBlock.EDID];
+            BaseDataSectionCollection edidSections = edidBlock.Sections;
+            DataSection basicDisplaySection = edidSections[(int)KnownEdidSection.BasicDisplay];
+            object gamma = basicDisplaySection.GetPropertyValue(EedidProperty.Edid.BasicDisplay.Gamma);
             if (gamma != null)
             {
                 Console.WriteLine($" > Gamma > {gamma}");
