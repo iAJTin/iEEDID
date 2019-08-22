@@ -24,9 +24,9 @@
       </a>
     </td>
     <td>
-      <a href="https://www.nuget.org/packages/iEEID/">
+      <a href="https://www.nuget.org/packages/iEEDID/">
         <img alt="NuGet Version" 
-             src="https://img.shields.io/nuget/v/iEEID.svg" /> 
+             src="https://img.shields.io/nuget/v/iEEDID.svg" /> 
       </a>
     </td>  
   </tr>
