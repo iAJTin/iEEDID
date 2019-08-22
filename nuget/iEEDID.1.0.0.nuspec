@@ -1,18 +1,18 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <package xmlns="http://schemas.microsoft.com/packaging/2011/08/nuspec.xsd">
     <metadata>
-        <id>iEEID</id>
+        <id>iEEDID</id>
         <version>1.0.0</version>
-        <title>iEEID</title>
+        <title>iEEDID</title>
         <authors>iAJTin</authors>
         <owners>iAJTin</owners>
         <license type="expression">MIT</license>
-        <projectUrl>https://github.com/iAJTin/iEEID</projectUrl>
+        <projectUrl>https://github.com/iAJTin/iEEDID</projectUrl>
         <iconUrl>https://raw.githubusercontent.com/iAJTin/iEEDID/master/nuget/iEEDID.png</iconUrl>
         <requireLicenseAcceptance>false</requireLicenseAcceptance>
-        <description>iEEID is a lightweight implementation that allows us to obtain EEDID information</description>
+        <description>iEEDID is a lightweight implementation that allows us to obtain EEDID information</description>
         <copyright>Copyright © 2019 iAJTin</copyright>
-        <tags>EDID E-EDID Monitor hardware iTin</tags>
+        <tags>EDID EEDID E-EDID Monitor hardware iTin</tags>
     </metadata>
     <files>
       <file src="..\src\lib\iTin.Core\iTin.Core\bin\Release\iTin.Core.dll" target="lib\net40\iTin.Core.dll" />
