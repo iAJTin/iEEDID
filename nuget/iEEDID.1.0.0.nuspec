@@ -12,7 +12,7 @@
         <requireLicenseAcceptance>false</requireLicenseAcceptance>
         <description>iEEDID is a lightweight implementation that allows us to obtain EEDID information</description>
         <copyright>Copyright © 2019 iAJTin</copyright>
-        <tags>EDID EEDID E-EDID Monitor hardware iTin</tags>
+        <tags>EDID EEDID E-EDID CEA DI LS VTB Monitor hardware iTin</tags>
     </metadata>
     <files>
       <file src="..\src\lib\iTin.Core\iTin.Core\bin\Release\iTin.Core.dll" target="lib\net40\iTin.Core.dll" />
