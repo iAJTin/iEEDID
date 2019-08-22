@@ -8,14 +8,16 @@
         <owners>iAJTin</owners>
         <licenseUrl>https://github.com/iAJTin/iEEID/blob/master/LICENSE</licenseUrl>
         <projectUrl>https://github.com/iAJTin/iEEID</projectUrl>
-        <iconUrl>https://raw.githubusercontent.com/iAJTin/iExportEngine/master/nuget/iTin.Export.png</iconUrl>
+        <iconUrl>https://raw.githubusercontent.com/iAJTin/iEEDID/master/nuget/iEEDID.png</iconUrl>
         <requireLicenseAcceptance>false</requireLicenseAcceptance>
         <description>iEEID is a lightweight implementation that allows us to obtain EEDID information</description>
         <copyright>Copyright © 2019 iAJTin</copyright>
         <tags>EDID E-EDID Monitor hardware iTin</tags>
     </metadata>
     <files>
-        <file src="..\src\iTin.Core\bin\Debug\iTin.Core.dll" target="lib\net40\iTin.Core.dll" />
-        <file src="..\src\iTin.Core.Hardware\bin\Debug\iTin.Core.Hardware.dll" target="lib\net40\iTin.Core.Hardware.dll" />
+      <file src="..\src\lib\iTin.Core\iTin.Core\bin\Release\iTin.Core.dll" target="lib\net40\iTin.Core.dll" />
+      <file src="..\src\lib\iTin.Core\iTin.Core.Interop\bin\Release\iTin.Core.Interop.dll" target="lib\net40\iTin.Core.Interop.dll" />
+      <file src="..\src\lib\iTin.Core.Hardware\iTin.Core.Hardware\bin\Release\iTin.Core.Hardware.dll" target="lib\net40\iTin.Core.Hardware.dll" />
+      <file src="..\src\lib\iTin.Core.Hardware\iTin.Core.Hardware.Specification\iTin.Core.Hardware.Specification.Eedid\bin\Release\iTin.Core.Hardware.Specification.Eedid.dll" target="lib\net40\iTin.Core.Hardware.Specification.Eedid.dll" />
     </files>
 </package>

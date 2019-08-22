@@ -58,17 +58,21 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\lib\iTin.Core.Hardware\iTin.Core.Hardware\iTin.Core.Hardware\iTin.Core.Hardware.csproj">
-      <Project>{91ff7ed0-1230-4865-a589-28928623e537}</Project>
-      <Name>iTin.Core.Hardware</Name>
-    </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
     <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
       <Visible>False</Visible>
       <ProductName>.NET Framework 3.5 SP1</ProductName>
       <Install>false</Install>
     </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\lib\iTin.Core.Hardware\iTin.Core.Hardware.Specification\iTin.Core.Hardware.Specification.Eedid\iTin.Core.Hardware.Specification.Eedid.csproj">
+      <Project>{24509a62-75e5-4dfc-82c3-821297274614}</Project>
+      <Name>iTin.Core.Hardware.Specification.Eedid</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\lib\iTin.Core.Hardware\iTin.Core.Hardware\iTin.Core.Hardware.csproj">
+      <Project>{712177ab-3598-4d8b-b8b8-888928dafa7d}</Project>
+      <Name>iTin.Core.Hardware</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
