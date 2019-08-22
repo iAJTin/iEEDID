@@ -6,7 +6,7 @@
         <title>iEEID</title>
         <authors>iAJTin</authors>
         <owners>iAJTin</owners>
-        <licenseUrl>https://github.com/iAJTin/iEEID/blob/master/LICENSE</licenseUrl>
+        <license type="expression">MIT</license>
         <projectUrl>https://github.com/iAJTin/iEEID</projectUrl>
         <iconUrl>https://raw.githubusercontent.com/iAJTin/iEEDID/master/nuget/iEEDID.png</iconUrl>
         <requireLicenseAcceptance>false</requireLicenseAcceptance>
