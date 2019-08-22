@@ -25,7 +25,7 @@ namespace iEEDID.ConsoleApp
                 Console.WriteLine($@" > {block}");
             }
 
-            foreach (DataBlock block in blocks)
+            foreach (DataBlock block in blocks) 
             {
                 Console.WriteLine();
                 Console.WriteLine(@" ——————————————————————————————————————————————————————————————");
