@@ -34,6 +34,12 @@
     <WarningLevel>4</WarningLevel>
     <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
+  <PropertyGroup>
+    <SignAssembly>true</SignAssembly>
+  </PropertyGroup>
+  <PropertyGroup>
+    <AssemblyOriginatorKeyFile>key.snk</AssemblyOriginatorKeyFile>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -150,6 +156,7 @@
     <None Include="%40Documents\Blocks\EDID\EDID.pps" />
     <None Include="%40Documents\Blocks\LS\EDID.LS-EXT.pdf" />
     <None Include="%40Documents\Blocks\VTB\EDID.VTB-EXT.pdf" />
+    <None Include="key.snk" />
   </ItemGroup>
   <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
