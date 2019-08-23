@@ -10,9 +10,6 @@ namespace iEEDID.ConsoleApp
     using iTin.Core.Hardware.Specification;
     using iTin.Core.Hardware.Specification.Eedid;
 
-    /// The Desktop Management Interface (DMI) or the desktop management interface, standard framework for management and
-    /// component tracking on a desktop, laptop or server.
-
     class Program
     {
         static void Main(string[] args)
