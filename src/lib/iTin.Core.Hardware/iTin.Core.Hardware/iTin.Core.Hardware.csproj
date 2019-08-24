@@ -44,7 +44,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ComponentModel\PropertiesTableBase.cs" />
+    <Compile Include="ComponentModel\BasePropertiesTable.cs" />
     <Compile Include="Extensions\EnumExtensions.cs" />
     <Compile Include="Interop\CPUID.cs" />
     <Compile Include="Interop\Firmware.cs" />
