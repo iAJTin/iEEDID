@@ -8,6 +8,8 @@ namespace iTin.Core.Hardware.Specification
 
     using Eedid;
 
+    using Interop.Edid;
+
     /// <summary>
     /// Implementation of the <strong>E-EDID</strong> (Extended Display Identification Data) specification.
     /// </summary> 
@@ -259,7 +261,12 @@ namespace iTin.Core.Hardware.Specification
             }
         }
         #endregion
-     
+
         #endregion
+
+        public static void EnumMonitorDevices()
+        {
+            SafeNativeMethods.EnumMonitorDevices();
+        }
     }
 }

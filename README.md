@@ -43,7 +43,7 @@
        DataBlockCollection blocks = edid.Blocks;
        foreach (KnownDataBlock block in blocks.ImplementedBlocks)
        {
-           Console.WriteLine($" > {block}");
+           Console.WriteLine($@" > {block}");
        }
 
 2. Gets a specific **EEDID** block.
@@ -70,14 +70,14 @@
 
                 var implSections = eedid.Blocks[block.Key].Sections.ImplementedSections;
                 Console.WriteLine();
-                Console.WriteLine(" > Implemented Sections");
+                Console.WriteLine(@" > Implemented Sections");
                 foreach (Enum section in implSections)
                 {
                     Console.WriteLine($@"   > {GetFriendlyName(section)}");
                 }
 
                 Console.WriteLine();
-                Console.WriteLine(" > Sections detail");
+                Console.WriteLine(@" > Sections detail");
                 BaseDataSectionCollection sections = block.Sections;
                 foreach (DataSection section in sections)
                 {
@@ -251,7 +251,7 @@
             object gamma = basicDisplaySection.GetPropertyValue(EedidProperty.Edid.BasicDisplay.Gamma);
             if (gamma != null)
             {
-                Console.WriteLine($" > Gamma > {gamma}");
+                Console.WriteLine($@" > Gamma > {gamma}");
             }
 
 # How can I send feedback!!!

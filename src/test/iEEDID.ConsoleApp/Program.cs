@@ -14,8 +14,10 @@ namespace iEEDID.ConsoleApp
     {
         static void Main(string[] args)
         {
+            EEDID.EnumMonitorDevices();
+
             Console.WriteLine(@" ——————————————————————————————————————————————————————————————");
-            Console.WriteLine(" Implemented Blocks");
+            Console.WriteLine(@" Implemented Blocks");
             Console.WriteLine(@" ——————————————————————————————————————————————————————————————");
 
             EEDID eedid = EEDID.Parse(MacBookPro2018.IntegratedLaptopPanelEdidTable);
@@ -25,7 +27,7 @@ namespace iEEDID.ConsoleApp
                 Console.WriteLine($@" > {block}");
             }
 
-            foreach (DataBlock block in blocks) 
+            foreach (DataBlock block in blocks)
             {
                 Console.WriteLine();
                 Console.WriteLine(@" ——————————————————————————————————————————————————————————————");
@@ -34,14 +36,14 @@ namespace iEEDID.ConsoleApp
 
                 var implSections = eedid.Blocks[block.Key].Sections.ImplementedSections;
                 Console.WriteLine();
-                Console.WriteLine(" > Implemented Sections");
+                Console.WriteLine(@" > Implemented Sections");
                 foreach (Enum section in implSections)
                 {
                     Console.WriteLine($@"   > {GetFriendlyName(section)}");
                 }
 
                 Console.WriteLine();
-                Console.WriteLine(" > Sections detail");
+                Console.WriteLine(@" > Sections detail");
                 BaseDataSectionCollection sections = block.Sections;
                 foreach (DataSection section in sections)
                 {
@@ -171,7 +173,7 @@ namespace iEEDID.ConsoleApp
             object gamma = basicDisplaySection.GetPropertyValue(EedidProperty.Edid.BasicDisplay.Gamma);
             if (gamma != null)
             {
-                Console.WriteLine($" > Gamma > {gamma}");
+                Console.WriteLine($@" > Gamma > {gamma}");
             }
 
             Console.ReadLine();

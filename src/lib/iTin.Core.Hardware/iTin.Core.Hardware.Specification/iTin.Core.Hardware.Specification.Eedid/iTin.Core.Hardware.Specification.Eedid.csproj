@@ -1,167 +1,19 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
-<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
-  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
   <PropertyGroup>
-    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
-    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{24509A62-75E5-4DFC-82C3-821297274614}</ProjectGuid>
-    <OutputType>Library</OutputType>
-    <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>iTin.Core.Hardware.Specification.Eedid</RootNamespace>
-    <AssemblyName>iTin.Core.Hardware.Specification.Eedid</AssemblyName>
-    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
-    <FileAlignment>512</FileAlignment>
-    <TargetFrameworkProfile />
-  </PropertyGroup>
-  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
-    <DebugSymbols>true</DebugSymbols>
-    <DebugType>full</DebugType>
-    <Optimize>false</Optimize>
-    <OutputPath>bin\Debug\</OutputPath>
-    <DefineConstants>DEBUG;TRACE</DefineConstants>
-    <ErrorReport>prompt</ErrorReport>
-    <WarningLevel>4</WarningLevel>
-    <AllowUnsafeBlocks>false</AllowUnsafeBlocks>
-    <DocumentationFile>bin\Debug\iTin.Core.Hardware.Specification.Eedid.xml</DocumentationFile>
-    <Prefer32Bit>false</Prefer32Bit>
-  </PropertyGroup>
-  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
-    <DebugType>pdbonly</DebugType>
-    <Optimize>true</Optimize>
-    <OutputPath>bin\Release\</OutputPath>
-    <DefineConstants>TRACE</DefineConstants>
-    <ErrorReport>prompt</ErrorReport>
-    <WarningLevel>4</WarningLevel>
-    <Prefer32Bit>false</Prefer32Bit>
-  </PropertyGroup>
-  <PropertyGroup>
+    <TargetFrameworks>net40;netstandard2.0;netcoreapp2.0;netcoreapp2.1</TargetFrameworks>
+    <Description>Implementation of the E-EDID (Extended Display Identification Data) specification</Description>
+    <Copyright>Copyright © 2019</Copyright>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
+    <Authors>iTin</Authors>
     <SignAssembly>true</SignAssembly>
-  </PropertyGroup>
-  <PropertyGroup>
     <AssemblyOriginatorKeyFile>key.snk</AssemblyOriginatorKeyFile>
+    <GenerateDocumentationFile>true</GenerateDocumentationFile>
   </PropertyGroup>
+
   <ItemGroup>
-    <Reference Include="System" />
-    <Reference Include="System.Core" />
-    <Reference Include="System.Drawing" />
-    <Reference Include="System.Management" />
-    <Reference Include="System.Xml" />
+    <ProjectReference Include="..\..\..\iTin.Core\iTin.Core\iTin.Core.csproj" />
+    <ProjectReference Include="..\..\iTin.Core.Hardware\iTin.Core.Hardware.csproj" />
   </ItemGroup>
-  <ItemGroup>
-    <Compile Include="EEDID.cs" />
-    <Compile Include="EEDID\ComponentModel\Collections\BaseDataSectionCollection.cs" />
-    <Compile Include="EEDID\ComponentModel\DataBlock.cs" />
-    <Compile Include="EEDID\ComponentModel\Collections\DataBlockCollection.cs" />
-    <Compile Include="EEDID\ComponentModel\DataSection.cs" />
-    <Compile Include="EEDID\ComponentModel\Enumerations\KnownModelYearStrategy.cs" />
-    <Compile Include="EEDID\ComponentModel\SectionProperties.cs" />
-    <Compile Include="EEDID\ComponentModel\SectionPropertiesTable.cs" />
-    <Compile Include="EEDID\ComponentModel\Sections\CeaDataSectionCollection.cs" />
-    <Compile Include="EEDID\ComponentModel\Sections\DiDataSectionCollection.cs" />
-    <Compile Include="EEDID\ComponentModel\Sections\EdidDataSectionCollection.cs" />
-    <Compile Include="EEDID\EedidProperty.cs" />
-    <Compile Include="EEDID\ComponentModel\Enumerations\KnownCeaSection.cs" />
-    <Compile Include="EEDID\ComponentModel\Enumerations\KnownDataBlock.cs" />
-    <Compile Include="EEDID\ComponentModel\Enumerations\KnownDiSection.cs" />
-    <Compile Include="EEDID\ComponentModel\Enumerations\KnownEdidSection.cs" />
-    <Compile Include="EEDID\ComponentModel\Enumerations\KnownLsSection.cs" />
-    <Compile Include="EEDID\ComponentModel\Enumerations\KnownVtbSection.cs" />
-    <Compile Include="EEDID\ComponentModel\Base\BaseDataBlock.cs" />
-    <Compile Include="EEDID\ComponentModel\Base\BaseDataSection.cs" />
-    <Compile Include="EEDID\Blocks\CEA\CeaBlock.cs" />
-    <Compile Include="EEDID\Blocks\CEA\CeaSectionsInformation.cs" />
-    <Compile Include="EEDID\Blocks\CEA\CeaPropertyEnum.cs" />
-    <Compile Include="EEDID\Blocks\CEA\Sections\ChecksumCeaSection.cs" />
-    <Compile Include="EEDID\Blocks\CEA\Sections\DataBlockCollectionCeaSection.cs" />
-    <Compile Include="EEDID\Blocks\CEA\Sections\DetailedTimmingsCeaSection.cs" />
-    <Compile Include="EEDID\Blocks\CEA\Sections\Helpers\CeaDataBlock.cs" />
-    <Compile Include="EEDID\Blocks\CEA\Sections\Helpers\KnownExtendedTag.cs" />
-    <Compile Include="EEDID\Blocks\CEA\Sections\Helpers\KnownShortDataBlockTag.cs" />
-    <Compile Include="EEDID\Blocks\CEA\Sections\InformationCeaSection.cs" />
-    <Compile Include="EEDID\Blocks\CEA\Sections\MonitorSupportCeaSection.cs" />
-    <Compile Include="EEDID\Blocks\CEA\Sections\ShortDescriptors\DataBlocks\AudioDataBlock.cs" />
-    <Compile Include="EEDID\Blocks\CEA\Sections\ShortDescriptors\DataBlocks\ColorimetryDataBlock.cs" />
-    <Compile Include="EEDID\Blocks\CEA\Sections\ShortDescriptors\DataBlocks\KnownAudioFormatCode.cs" />
-    <Compile Include="EEDID\Blocks\CEA\Sections\ShortDescriptors\DataBlocks\ReservedDataBlock.cs" />
-    <Compile Include="EEDID\Blocks\CEA\Sections\ShortDescriptors\DataBlocks\SpeakerDataBlock.cs" />
-    <Compile Include="EEDID\Blocks\CEA\Sections\ShortDescriptors\DataBlocks\VendorDataBlock.cs" />
-    <Compile Include="EEDID\Blocks\CEA\Sections\ShortDescriptors\DataBlocks\VideoCapabilityDataBlock.cs" />
-    <Compile Include="EEDID\Blocks\CEA\Sections\ShortDescriptors\DataBlocks\VideoDataBlock.cs" />
-    <Compile Include="EEDID\Blocks\CEA\Sections\ShortDescriptors\ShortAudioDescriptorCeaSection.cs" />
-    <Compile Include="EEDID\Blocks\CEA\Sections\ShortDescriptors\ShortExtendedTagDescriptorCeaSection.cs" />
-    <Compile Include="EEDID\Blocks\CEA\Sections\ShortDescriptors\ShortReservedDescriptorCeaSection.cs" />
-    <Compile Include="EEDID\Blocks\CEA\Sections\ShortDescriptors\ShortSpeakerDescriptorCeaSection.cs" />
-    <Compile Include="EEDID\Blocks\CEA\Sections\ShortDescriptors\ShortVendorDescriptorCeaSection.cs" />
-    <Compile Include="EEDID\Blocks\CEA\Sections\ShortDescriptors\ShortVideoDescriptorCeaSection.cs" />
-    <Compile Include="EEDID\Blocks\DI\DiBlock.cs" />
-    <Compile Include="EEDID\Blocks\DI\Sections\VersionDiSection.cs" />
-    <Compile Include="EEDID\Blocks\EDID\EdidBlock.cs" />
-    <Compile Include="EEDID\Blocks\EDID\EdidSections.cs" />
-    <Compile Include="EEDID\Blocks\EDID\EdidPropertyEnum.cs" />
-    <Compile Include="EEDID\Blocks\EDID\Sections\BasicDisplayEdidSection.cs" />
-    <Compile Include="EEDID\Blocks\EDID\Sections\CheckSumEdidSection.cs" />
-    <Compile Include="EEDID\Blocks\EDID\Sections\ColorCharacteristicInfo.cs" />
-    <Compile Include="EEDID\Blocks\EDID\Sections\ColorCharacteristicsEdidSection.cs" />
-    <Compile Include="EEDID\Blocks\EDID\Sections\DataBlocksEdidSection.cs" />
-    <Compile Include="EEDID\Blocks\EDID\Sections\EstablishedTimingsEdidSection.cs" />
-    <Compile Include="EEDID\Blocks\EDID\Sections\ExtensionBlocksEdidSection.cs" />
-    <Compile Include="EEDID\Blocks\EDID\Sections\HeaderEdidSection.cs" />
-    <Compile Include="EEDID\Blocks\EDID\Sections\StandardTimingsEdidSection.cs" />
-    <Compile Include="EEDID\Blocks\EDID\Sections\VendorEdidSection.cs" />
-    <Compile Include="EEDID\Blocks\EDID\Sections\VersionEdidSection.cs" />
-    <Compile Include="EEDID\Blocks\LS\LsBlock.cs" />
-    <Compile Include="EEDID\Blocks\LS\Sections\VersionLsSection.cs" />
-    <Compile Include="EEDID\Blocks\VTB\Sections\VersionVtbSection.cs" />
-    <Compile Include="EEDID\Blocks\VTB\VtbBlock.cs" />
-    <Compile Include="EEDID\Blocks\EDID\Sections\Descriptors\AlphanumericDataStringDescriptor.cs" />
-    <Compile Include="EEDID\Blocks\EDID\Sections\Descriptors\ColorManagementDataDescriptor.cs" />
-    <Compile Include="EEDID\Blocks\EDID\Sections\Descriptors\ColorPointDataDescriptor.cs" />
-    <Compile Include="EEDID\ComponentModel\Descriptors\DataBlockDescriptorFactory.cs" />
-    <Compile Include="EEDID\ComponentModel\Descriptors\DataBlockDescriptorData.cs" />
-    <Compile Include="EEDID\ComponentModel\MonitorResolutionInfo.cs" />
-    <Compile Include="EEDID\Blocks\EDID\Sections\Descriptors\CVT3ByteCodeDescriptor.cs" />
-    <Compile Include="EEDID\Blocks\EDID\Sections\Descriptors\Items\ColorManagementDataDescriptorItem.cs" />
-    <Compile Include="EEDID\Blocks\EDID\Sections\Descriptors\Items\ColorPointDataDescriptorItem.cs" />
-    <Compile Include="EEDID\Blocks\EDID\Sections\Descriptors\Items\Cvt3ByteCodeDescriptorItem.cs" />
-    <Compile Include="EEDID\Blocks\EDID\Sections\Descriptors\Items\StandardTimingIdentifierDescriptorItem.cs" />
-    <Compile Include="EEDID\Blocks\EDID\Sections\Descriptors\DetailedTimingModeDescriptor.cs" />
-    <Compile Include="EEDID\Blocks\EDID\Sections\Descriptors\DisplayProductNameDescriptor.cs" />
-    <Compile Include="EEDID\Blocks\EDID\Sections\Descriptors\DisplayProductSerialNumberDescriptor.cs" />
-    <Compile Include="EEDID\Blocks\EDID\Sections\Descriptors\DisplayRangeLimitsDescriptor.cs" />
-    <Compile Include="EEDID\Blocks\EDID\Sections\Descriptors\DummyDataDescriptor.cs" />
-    <Compile Include="EEDID\Blocks\EDID\Sections\Descriptors\EstablishedTimingsIIIDescriptor.cs" />
-    <Compile Include="EEDID\Blocks\EDID\Sections\Descriptors\ManufacturerSpecifiedDataDescriptor.cs" />
-    <Compile Include="EEDID\Blocks\EDID\Sections\Descriptors\StandardTimingIdentifierDescriptor.cs" />
-    <Compile Include="Properties\AssemblyInfo.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\..\..\iTin.Core\iTin.Core\iTin.Core.csproj">
-      <Project>{a1fc8e7e-8a01-4456-bf5c-14c40981befa}</Project>
-      <Name>iTin.Core</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\..\iTin.Core.Hardware\iTin.Core.Hardware.csproj">
-      <Project>{712177ab-3598-4d8b-b8b8-888928dafa7d}</Project>
-      <Name>iTin.Core.Hardware</Name>
-    </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="%40Documents\Blocks\CEA\AnnexM_v1.pdf" />
-    <None Include="%40Documents\Blocks\CEA\AnnexN_v1.pdf" />
-    <None Include="%40Documents\Blocks\CEA\EIA-CEA-861-E.pdf" />
-    <None Include="%40Documents\Blocks\CEA\HDMI.13A.pdf" />
-    <None Include="%40Documents\Blocks\DI\EDID.DI-EXT.pdf" />
-    <None Include="%40Documents\Blocks\EDID\E-EDID Standard Release A, Revision 2.pdf" />
-    <None Include="%40Documents\Blocks\EDID\EDID.1.0.pdf" />
-    <None Include="%40Documents\Blocks\EDID\EDID.1.4.pdf" />
-    <None Include="%40Documents\Blocks\EDID\EDID.pps" />
-    <None Include="%40Documents\Blocks\LS\EDID.LS-EXT.pdf" />
-    <None Include="%40Documents\Blocks\VTB\EDID.VTB-EXT.pdf" />
-    <None Include="key.snk" />
-  </ItemGroup>
-  <ItemGroup />
-  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
-  <PropertyGroup>
-    <PostBuildEvent>
-    </PostBuildEvent>
-  </PropertyGroup>
+
 </Project>
