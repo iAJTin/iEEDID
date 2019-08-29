@@ -26,7 +26,7 @@ namespace iTin.Core.Hardware.Interop.Edid
                         enumerator,                    // enumerator
                         IntPtr.Zero,         // HWND
                         DiGetClassFlags.DIGCF_PRESENT, // Flags
-                        IntPtr.Zero,      // device info, create a new one
+                        IntPtr.Zero,       // device info, create a new one
                         null,               // machine name, local machine
                         IntPtr.Zero);
 

@@ -14,8 +14,6 @@ namespace iEEDID.ConsoleAppCore
     {
         static void Main(string[] args)
         {
-            EEDID.EnumMonitorDevices();
-
             Console.WriteLine(@" ——————————————————————————————————————————————————————————————");
             Console.WriteLine(@" Implemented Blocks");
             Console.WriteLine(@" ——————————————————————————————————————————————————————————————");
