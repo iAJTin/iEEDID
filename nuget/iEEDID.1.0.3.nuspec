@@ -13,7 +13,7 @@
     <description>iEEDID is a lightweight implementation that allows us to obtain EEDID information</description>
     <copyright>Copyright © 2019 iAJTin</copyright>
     <tags>EDID EEDID E-EDID CEA DI LS VTB Monitor hardware iTin</tags>
-    <repository type="git" url="https://github.com/iAJTin/iEEDID" commit="1249d306ca1fd7fcad349f3de03a91d8fa9b45c6" />
+    <repository type="git" url="https://github.com/iAJTin/iEEDID" commit="6e94ccdba70d5e63032c97bd01e29f4fc3084baa" />
     <dependencies>
       <group targetFramework=".NETFramework4.0">
       </group>
