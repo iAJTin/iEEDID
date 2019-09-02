@@ -1,6 +1,32 @@
 ﻿# Changelog
 All notable changes to this project will be documented in this file.
 
+## [1.0.3] - 2019-09-02
+
+### Added
+
+- **iTin.Core.Interop**:
+  - Many structures, enumerations, win32 native methods have been added to project, for video cards, video modes, monitors, storage, etc ...
+
+- **iTin.Core.Hardware.Specification.Eedid**: 
+  - Two new properties have been added (to meet the specification),
+    1. WeekOfManufactureOrModelYearFlag
+    2. YearOfManufactureOrModelYear
+
+- Minor changes. 
+
+### Changed
+
+- **iTin.Core.Hardware**: 
+- Due to a problem with duplicate properties of the same type, the data type for storing the properties has been changed. (This change should not affect current behavior).
+
+### Fixed
+
+- **iTin.Core.Hardware.Specification.Eedid**: 
+  - Fixed an issue that did not allow you to correctly calculate the value of the property **ManufactureDate** of the section **Vendor**
+
+  - Fixed an issue that did not allow the property value **IdSerialNumber** of the **Vendor** section to be calculated correctly
+
 ## [1.0.2] - 2019-08-28
 
 ### Added
@@ -23,6 +49,7 @@ All notable changes to this project will be documented in this file.
 - Minor changes. 
 
 ### Changed
+
 - The solution has been migrated to **.NetStandard**.
 
   - The supported targets are:
@@ -41,6 +68,7 @@ All notable changes to this project will be documented in this file.
 ### Added
 - Create project and first commit
 
+[1.0.3]: https://github.com/iAJTin/iEEDID/releases/tag/v1.0.3
 [1.0.2]: https://github.com/iAJTin/iEEDID/releases/tag/v1.0.2
 [1.0.1]: https://github.com/iAJTin/iEEDID/releases/tag/v1.0.1
 [1.0.0]: https://github.com/iAJTin/iEEDID/releases/tag/v1.0.0

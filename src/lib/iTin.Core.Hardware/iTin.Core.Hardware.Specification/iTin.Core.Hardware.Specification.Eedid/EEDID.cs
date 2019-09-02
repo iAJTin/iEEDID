@@ -8,8 +8,6 @@ namespace iTin.Core.Hardware.Specification
 
     using Eedid;
 
-    using Interop.Edid;
-
     /// <summary>
     /// Implementation of the <strong>E-EDID</strong> (Extended Display Identification Data) specification.
     /// </summary> 
@@ -203,9 +201,22 @@ namespace iTin.Core.Hardware.Specification
             var extensionBlockCount = edidData[0x7e];
             var dataBlocks = new List<ReadOnlyCollection<byte>>();
 
-            for (int n = 0x01, i = 0x00; i < extensionBlockCount; i++, n++)
+            if (extensionBlockCount == 0)
             {
-                dataBlocks.Add(edidData.Extract((byte)(n * 0x80), 0x80));
+                for (int n = 0x01, i = 0x00; i < extensionBlockCount; i++, n++)
+                {
+                    dataBlocks.Add(edidData.Extract((byte) (n * 0x80), 0x80));
+                }
+            }
+            else
+            {
+                if (edidData.Count > 0x80)
+                {
+                    for (int n = 0x01, i = 0x00; i < extensionBlockCount; i++, n++)
+                    {
+                        dataBlocks.Add(edidData.Extract((byte)(n * 0x80), 0x80));
+                    }
+                }
             }
 
             return dataBlocks;
@@ -263,10 +274,5 @@ namespace iTin.Core.Hardware.Specification
         #endregion
 
         #endregion
-
-        public static void EnumMonitorDevices()
-        {
-            SafeNativeMethods.EnumMonitorDevices();
-        }
     }
 }

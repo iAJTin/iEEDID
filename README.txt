@@ -36,30 +36,28 @@ Examples
 
 3.  Prints all EEDID blocks properties.
 
-    EEDID eedid = EEDID.Parse(MacBookPro2018.IntegratedLaptopPanelEdidTable);
-    DataBlockCollection blocks = eedid.Blocks;
+    EEDID edid = EEDID.Parse(MacBookPro2018.IntegratedLaptopPanelEdidTable);
+    DataBlockCollection blocks = edid.Blocks;
     foreach (DataBlock block in blocks)
-    {
+    { 
         Console.WriteLine();
-        Console.WriteLine(@" ——————————————————————————————————————————————————————————————");
-        Console.WriteLine($@" {block.Key} Block");
-        Console.WriteLine(@" ——————————————————————————————————————————————————————————————");
+        Console.WriteLine($@"   > {block.Key} Block");
 
         var implSections = eedid.Blocks[block.Key].Sections.ImplementedSections;
         Console.WriteLine();
-        Console.WriteLine(" > Implemented Sections");
+        Console.WriteLine(@"     > Implemented Sections");
         foreach (Enum section in implSections)
         {
-            Console.WriteLine($@"   > {GetFriendlyName(section)}");
+            Console.WriteLine($@"       > {GetFriendlyName(section)}");
         }
 
         Console.WriteLine();
-        Console.WriteLine(" > Sections detail");
+        Console.WriteLine(@"     > Sections detail");
         BaseDataSectionCollection sections = block.Sections;
         foreach (DataSection section in sections)
         {
             Console.WriteLine();
-            Console.WriteLine($@"   > {GetFriendlyName(section.Key)} Section");
+            Console.WriteLine($@"       > {GetFriendlyName(section.Key)} Section");
 
             SectionPropertiesTable sectionProperties = section.Properties.Values;
             foreach (KeyValuePair<IPropertyKey, object> property in sectionProperties)
@@ -76,79 +74,79 @@ Examples
 
                 if (value == null)
                 {
-                    Console.WriteLine($@"     > {friendlyName} > NULL");
+                    Console.WriteLine($@"         > {friendlyName} > NULL");
                     continue;
                 }
 
                 if (value is string)
                 {
-                    Console.WriteLine($@"     > {friendlyName} > {value}{unit}");
+                    Console.WriteLine($@"         > {friendlyName} > {value}{unit}");
                 }
                 else if (value is bool)
                 {
-                    Console.WriteLine($@"     > {friendlyName} > {value}{unit}");
+                    Console.WriteLine($@"         > {friendlyName} > {value}{unit}");
                 }
                 else if (value is double)
                 {
-                    Console.WriteLine($@"     > {friendlyName} > {value}{unit}");
+                    Console.WriteLine($@"         > {friendlyName} > {value}{unit}");
                 }
                 else if (value is byte)
                 {
-                    Console.WriteLine($@"     > {friendlyName} > {value}{unit} [{value:X2}h]");
+                    Console.WriteLine($@"         > {friendlyName} > {value}{unit} [{value:X2}h]");
                 }
                 else if (value is short)
                 {
-                    Console.WriteLine($@"     > {friendlyName} > {value}{unit} [{value:X4}h]");
+                    Console.WriteLine($@"         > {friendlyName} > {value}{unit} [{value:X4}h]");
                 }
                 else if (value is ushort)
                 {
-                    Console.WriteLine($@"     > {friendlyName} > {value}{unit} [{value:X4}h]");
+                    Console.WriteLine($@"         > {friendlyName} > {value}{unit} [{value:X4}h]");
                 }
                 else if (value is int)
                 {
-                    Console.WriteLine($@"     > {friendlyName} > {value}{unit} [{value:X4}h]");
+                    Console.WriteLine($@"         > {friendlyName} > {value}{unit} [{value:X4}h]");
                 }
                 else if (value is uint)
                 {
-                    Console.WriteLine($@"     > {friendlyName} > {value}{unit} [{value:X4}h]");
+                    Console.WriteLine($@"         > {friendlyName} > {value}{unit} [{value:X4}h]");
                 }
                 else if (value is long)
                 {
-                    Console.WriteLine($@"     > {friendlyName} > {value}{unit} [{value:X8}h]");
+                    Console.WriteLine($@"         > {friendlyName} > {value}{unit} [{value:X8}h]");
                 }
                 else if (value is ulong)
                 {
-                    Console.WriteLine($@"     > {friendlyName} > {value}{unit} [{value:X8}h]");
+                    Console.WriteLine($@"         > {friendlyName} > {value}{unit} [{value:X8}h]");
                 }
                 else if (value is PointF)
                 {
-                    Console.WriteLine($@"     > {friendlyName}");
-                    Console.WriteLine($@"       > X > {((PointF)value).X}");
-                    Console.WriteLine($@"       > Y > {((PointF)value).Y}");
+                    Console.WriteLine($@"         > {friendlyName}");
+                    Console.WriteLine($@"           > X > {((PointF)value).X}");
+                    Console.WriteLine($@"           > Y > {((PointF)value).Y}");
                 }
                 else if (value.GetType() == typeof(ReadOnlyCollection<string>))
                 {
-                    Console.WriteLine($@"     > {friendlyName} > {string.Join(", ", (ReadOnlyCollection<string>)value)}");
+                    Console.WriteLine($@"         > {friendlyName} > {string.Join(", ", (ReadOnlyCollection<string>)value)}");
                 }
                 else if (value.GetType() == typeof(ReadOnlyCollection<byte>))
                 {
-                    Console.WriteLine($@"     > {friendlyName} > {string.Join(", ", (ReadOnlyCollection<byte>)value)}");
+                    Console.WriteLine($@"         > {friendlyName} > {string.Join(", ", (ReadOnlyCollection<byte>)value)}");
                 }
                 else if (value is StandardTimingIdentifierDescriptorItem)
                 {
-                    Console.WriteLine($@"     > {(StandardTimingIdentifierDescriptorItem)value}");
+                    Console.WriteLine($@"         > {(StandardTimingIdentifierDescriptorItem)value}");
                 }
                 else if (value.GetType() == typeof(ReadOnlyCollection<MonitorResolutionInfo>))
                 {
                     var resolutions = (ReadOnlyCollection<MonitorResolutionInfo>)value;
-                    foreach (MonitorResolutionInfo resolution in resolutions)
+	                foreach (MonitorResolutionInfo resolution in resolutions)
                     {
-                        Console.WriteLine($@"     > {resolution}");
+                        Console.WriteLine($@"         > {resolution}");
                     }
                 }
                 else if (value.GetType() == typeof(SectionPropertiesTable))
                 {
-                    Console.WriteLine($@"     > {friendlyName}");
+                    Console.WriteLine($@"         > {friendlyName}");
                     var dataBlockProperties = (SectionPropertiesTable)value;
                     foreach (KeyValuePair<IPropertyKey, object> dataBlockProperty in dataBlockProperties)
                     {
@@ -162,12 +160,12 @@ Examples
                                 ? string.Empty
                                 : dataBlockUnit.ToString();
 
-                        Console.WriteLine($@"       > {dataName} > {dataValue} {dataUnit}");
+                        Console.WriteLine($@"           > {dataName} > {dataValue} {dataUnit}");
                     }
                 }
                 else
                 {
-                    Console.WriteLine($@"     > {friendlyName} > {value}{unit}");
+                    Console.WriteLine($@"         > {friendlyName} > {value}{unit}");
                 }
             }
         }

@@ -37,7 +37,7 @@ namespace iTin.Core.Hardware.Specification.Eedid
         IdManufacturerName,
 
         [PropertyDescription("")]
-        [PropertyType(typeof(int))]
+        [PropertyType(typeof(string))]
         [PropertyName("Product Code")]
         IdProductCode,
 
@@ -48,11 +48,16 @@ namespace iTin.Core.Hardware.Specification.Eedid
 
         [PropertyDescription("")]
         [PropertyType(typeof(byte?))]
-        [PropertyName("Week Of Manufacture")]
-        WeekOfManufacture,
+        [PropertyName("Week Of Manufacture Or Model Year Flag")]
+        WeekOfManufactureOrModelYear,
 
         [PropertyDescription("")]
-        [PropertyType(typeof(byte))]
+        [PropertyType(typeof(byte?))]
+        [PropertyName("Year Of Manufacture Or Model Year")]
+        YearOfManufactureOrModelYear,
+
+        [PropertyDescription("")]
+        [PropertyType(typeof(string))]
         [PropertyName("Manufacturer Date")]
         ManufactureDate,
 

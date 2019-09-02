@@ -76,7 +76,7 @@ namespace iTin.Core.Hardware.Specification.Eedid
                 /// <para>Property: <see cref="EdidVendorProperty.IdProductCode"/></para>
                 /// <para>Unit: <see cref="PropertyUnit.None"/></para>
                 /// <para>— Value ——————————————————————</para>
-                /// <para>Type: <see cref="T:System.Int32" /></para>
+                /// <para>Type: <see cref="T:System.String" /></para>
                 /// </summary>
                 public static IPropertyKey IdProductCode => new PropertyKey(KnownEdidSection.Vendor, EdidVendorProperty.IdProductCode);
                 #endregion
@@ -89,22 +89,35 @@ namespace iTin.Core.Hardware.Specification.Eedid
                 /// <para>Property: <see cref="EdidVendorProperty.IdSerialNumber"/></para>
                 /// <para>Unit: <see cref="PropertyUnit.None"/></para>
                 /// <para>— Value ——————————————————————</para>
-                /// <para>Type: <see cref="T:System.Nullable{UInt32}" /></para>
+                /// <para>Type: uint?"</para>
                 /// </summary>
                 public static IPropertyKey IdSerialNumber => new PropertyKey(KnownEdidSection.Vendor, EdidVendorProperty.IdSerialNumber);
                 #endregion
 
-                #region [public] {static} (IPropertyKey) WeekOfManufacture: Gets a value representing the key to retrieve the property
+                #region [public] {static} (IPropertyKey) WeekOfManufactureOrModelYear: Gets a value representing the key to retrieve the property
                 /// <summary>
                 /// <para>Gets a value representing the key to retrieve the property.</para>
                 /// <para>— Key Composition —————————————————</para>
                 /// <para>Structure: <see cref="KnownEdidSection.Vendor"/></para>
-                /// <para>Property: <see cref="EdidVendorProperty.WeekOfManufacture"/></para>
+                /// <para>Property: <see cref="EdidVendorProperty.WeekOfManufactureOrModelYear"/></para>
                 /// <para>Unit: <see cref="PropertyUnit.None"/></para>
                 /// <para>— Value ——————————————————————</para>
                 /// <para>Type: <see cref="T:System.Nullable{Byte}" /></para>
                 /// </summary>
-                public static IPropertyKey WeekOfManufacture => new PropertyKey(KnownEdidSection.Vendor, EdidVendorProperty.WeekOfManufacture);
+                public static IPropertyKey WeekOfManufactureOrModelYear => new PropertyKey(KnownEdidSection.Vendor, EdidVendorProperty.WeekOfManufactureOrModelYear);
+                #endregion
+
+                #region [public] {static} (IPropertyKey) YearOfManufactureOrModelYear: Gets a value representing the key to retrieve the property
+                /// <summary>
+                /// <para>Gets a value representing the key to retrieve the property.</para>
+                /// <para>— Key Composition —————————————————</para>
+                /// <para>Structure: <see cref="KnownEdidSection.Vendor"/></para>
+                /// <para>Property: <see cref="EdidVendorProperty.YearOfManufactureOrModelYear"/></para>
+                /// <para>Unit: <see cref="PropertyUnit.None"/></para>
+                /// <para>— Value ——————————————————————</para>
+                /// <para>Type: <see cref="T:System.Nullable{Byte}" /></para>
+                /// </summary>
+                public static IPropertyKey YearOfManufactureOrModelYear => new PropertyKey(KnownEdidSection.Vendor, EdidVendorProperty.YearOfManufactureOrModelYear);
                 #endregion
 
                 #region [public] {static} (IPropertyKey) ManufactureDate: Gets a value representing the key to retrieve the property
@@ -115,7 +128,7 @@ namespace iTin.Core.Hardware.Specification.Eedid
                 /// <para>Property: <see cref="EdidVendorProperty.ManufactureDate"/></para>
                 /// <para>Unit: <see cref="PropertyUnit.None"/></para>
                 /// <para>— Value ——————————————————————</para>
-                /// <para>Type: <see cref="T:System.Byte" /></para>
+                /// <para>Type: <see cref="T:System.String" /></para>
                 /// </summary>
                 public static IPropertyKey ManufactureDate => new PropertyKey(KnownEdidSection.Vendor, EdidVendorProperty.ManufactureDate);
                 #endregion

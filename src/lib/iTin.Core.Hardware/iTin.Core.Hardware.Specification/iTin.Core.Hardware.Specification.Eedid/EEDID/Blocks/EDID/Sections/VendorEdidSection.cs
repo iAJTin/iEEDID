@@ -93,10 +93,10 @@ namespace iTin.Core.Hardware.Specification.Eedid
         /// Property value.
         /// </value>
         [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        private uint IdSerialNumber => (uint)RawData.GetWord(0x04);
+        private uint IdSerialNumber => (uint)RawData.GetDoubleWord(0x04);
         #endregion
 
-        #region [private] (byte) WeekOfManufacture: Gets a value representing the 'Week Of Manufacture' field.
+        #region [private] (byte) WeekOfManufactureOrModelYearFlag: Gets a value representing the 'Week Of Manufacture' field.
         /// <summary>
         /// Gets a value representing the <c>Week Of Manufacture</c> field.
         /// </summary>
@@ -104,18 +104,18 @@ namespace iTin.Core.Hardware.Specification.Eedid
         /// Property value.
         /// </value>
         [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        private byte WeekOfManufacture => RawData[0x08];
+        private byte WeekOfManufactureOrModelYearFlag => RawData[0x08];
         #endregion
 
-        #region [private] (byte) ManufactureDate: Gets a value representing the 'Manufacture Date' field
+        #region [private] (byte) YearOfManufactureOrModelYear: Gets a value representing the 'Year Of Manufacture' field.
         /// <summary>
-        /// Gets a value representing the <c>Manufacture Date</c> field.
+        /// Gets a value representing the <c>Year Of Manufacture</c> field.
         /// </summary>
         /// <value>
         /// Property value.
         /// </value>
         [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        private byte ManufactureDate => (byte) (1990 + RawData[0x09]);
+        private byte YearOfManufactureOrModelYear => RawData[0x09];
         #endregion
 
         #endregion
@@ -131,7 +131,7 @@ namespace iTin.Core.Hardware.Specification.Eedid
         protected override void PopulateProperties(SectionPropertiesTable properties)
         {
             properties.Add(EedidProperty.Edid.Vendor.IdManufacturerName, IdManufacturerName);
-            properties.Add(EedidProperty.Edid.Vendor.IdProductCode, IdProductCode);
+            properties.Add(EedidProperty.Edid.Vendor.IdProductCode, $"{IdProductCode:X4}");
 
             var idSerialNumber = IdSerialNumber;
             if (idSerialNumber != 0x0000)
@@ -139,20 +139,19 @@ namespace iTin.Core.Hardware.Specification.Eedid
                 properties.Add(EedidProperty.Edid.Vendor.IdSerialNumber, (int?)IdSerialNumber);
             }
 
-            var weekOfManufacture = WeekOfManufacture;
-            if (weekOfManufacture != 0x00)
-            {
-                if (weekOfManufacture != 0xff)
-                {
-                    if (weekOfManufacture >= 0x01 && weekOfManufacture <= 0x36)
-                    {
-                        properties.Add(EedidProperty.Edid.Vendor.WeekOfManufacture, WeekOfManufacture);
-                    }
-                }
-            }
+            properties.Add(EedidProperty.Edid.Vendor.WeekOfManufactureOrModelYear, WeekOfManufactureOrModelYearFlag);
+            properties.Add(EedidProperty.Edid.Vendor.YearOfManufactureOrModelYear, YearOfManufactureOrModelYear);
+            var modelYearStrategy = WeekOfManufactureOrModelYearFlag == 0xff || WeekOfManufactureOrModelYearFlag == 0x00 ? KnownModelYearStrategy.ModelYear : KnownModelYearStrategy.YearOfManufacture;
+            properties.Add(EedidProperty.Edid.Vendor.ModelYearStrategy, modelYearStrategy);
 
-            properties.Add(EedidProperty.Edid.Vendor.ManufactureDate, ManufactureDate);
-            properties.Add(EedidProperty.Edid.Vendor.ModelYearStrategy, weekOfManufacture == 0xff ? KnownModelYearStrategy.ModelYear : KnownModelYearStrategy.YearOfManufacture);
+            if (modelYearStrategy == KnownModelYearStrategy.ModelYear)
+            {
+                properties.Add(EedidProperty.Edid.Vendor.ManufactureDate, 1990 + YearOfManufactureOrModelYear);
+            }
+            else
+            {
+                properties.Add(EedidProperty.Edid.Vendor.ManufactureDate, $"{WeekOfManufactureOrModelYearFlag} / {1990 + YearOfManufactureOrModelYear}");
+            }
         }
         #endregion
 

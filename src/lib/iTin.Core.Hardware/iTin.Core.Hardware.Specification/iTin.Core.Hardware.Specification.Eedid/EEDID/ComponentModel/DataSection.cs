@@ -4,6 +4,7 @@ namespace iTin.Core.Hardware.Specification.Eedid
     using System;
     using System.Collections.Generic;
     using System.Diagnostics;
+    using System.Linq;
 
     /// <summary>
     /// Represents a data section
@@ -107,7 +108,30 @@ namespace iTin.Core.Hardware.Specification.Eedid
         /// <returns>
         /// Reference to the object that represents the value of the property. Always returns the first appearance of the property.
         /// </returns>
-        public object GetPropertyValue(IPropertyKey propertyKey) => _dataSection.Properties[propertyKey];
+        public object GetPropertyValue(IPropertyKey propertyKey)
+        {
+            Type propertyType = propertyKey.GetPropertyType();
+
+            object result = _dataSection.Properties[propertyKey];
+            if (!(result is List<KeyValuePair<IPropertyKey, object>> itemList))
+            {
+                return result;
+            }
+
+            bool hasItems = itemList.Any();
+            if (!hasItems)
+            {
+                return propertyType.GetDefaultValue();
+            }
+
+            bool onlyOneItem = itemList.Count == 1;
+            if (onlyOneItem)
+            {
+                return itemList.FirstOrDefault().Value;
+            }
+
+            return propertyType.GetDefaultValue();
+        }
         #endregion
 
         #region [public] (T) GetPropertyValue<T>(IPropertyKey): Returns the the strongly typed value of specified property
