@@ -6,7 +6,7 @@ namespace iTin.Core.Hardware.Specification.Eedid
     using Helpers.Enumerations;
 
     /// <summary>
-    /// Estructura <see cref="ColorimetryDataBlock"/> que contiene la lógica para decodificar los datos de un bloque del tipo <see cref="KnownExtendedTag.Colorimetry"/>.
+    /// Structure <see cref="ColorimetryDataBlock"/> that contains the logic to decode the data of a block of type <see cref="KnownExtendedTag.Colorimetry"/>.
     /// </summary> 
     internal struct ColorimetryDataBlock
     {

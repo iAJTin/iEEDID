@@ -19,9 +19,9 @@ namespace iTin.Core.Hardware.Specification.Eedid
     // | 03h          MSB Color a2              BYTE        Value 00h -> ffh                        |
     // •————————————————————————————————————————————————————————————————————————————————————————————•
 
-    /// <inheritdoc />
     /// <summary>
-    /// Specialization of the <see cref="T:iTin.Core.Hardware.Specification.Eedid.BaseDataSection" /> class that represents the information of a <see cref="F:iTin.Core.Hardware.Specification.Eedid.KnownEdidSection.DataBlocks" /> of type <see cref="F:iTin.Core.Hardware.Specification.Eedid.KnownEdidDataBlockDescriptor.ColorManagementData" />.
+    /// Specialization of the <see cref="BaseDataSection"/> class.<br/>
+    /// Represents the information of a <see cref="KnownEdidSection.DataBlocks"/> of type <see cref="EdidDataBlockDescriptor.ColorManagementData"/>.
     /// </summary>
     internal sealed class ColorManagementDataDescriptorItem : BaseDataSection
     {

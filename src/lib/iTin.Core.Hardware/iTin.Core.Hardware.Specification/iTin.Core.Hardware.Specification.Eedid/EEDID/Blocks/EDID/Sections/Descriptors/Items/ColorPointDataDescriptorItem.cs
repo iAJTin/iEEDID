@@ -50,9 +50,9 @@ namespace iTin.Core.Hardware.Specification.Eedid
     // |                                                               for example, DI-EXT             |
     // •———————————————————————————————————————————————————————————————————————————————————————————————•
 
-    /// <inheritdoc />
     /// <summary>
-    /// Specialization of the <see cref="T:iTin.Core.Hardware.Specification.Eedid.BaseDataSection" /> class that represents the information of a <see cref="F:iTin.Core.Hardware.Specification.Eedid.KnownEdidSection.DataBlocks" /> of type <see cref="F:iTin.Core.Hardware.Specification.Eedid.KnownEdidDataBlockDescriptor.ColorPointData" />.
+    /// Specialization of the <see cref="BaseDataSection"/> class.<br/>
+    /// Represents the information of a <see cref="KnownEdidSection.DataBlocks" /> of type <see cref="EdidDataBlockDescriptor.ColorPointData"/>.
     /// </summary>
     internal sealed class ColorPointDataDescriptorItem : BaseDataSection
     {
@@ -61,7 +61,7 @@ namespace iTin.Core.Hardware.Specification.Eedid
         #region [public] ColorPointDataDescriptorItem(ReadOnlyCollection<byte>): Initialize a new instance of the class with the data in this block untreated
         /// <inheritdoc />
         /// <summary>
-        /// Initialize a new instance of the <see cref="T:iTin.Core.Hardware.Specification.Eedid.ColorPointDataDescriptorItem" /> class with the data in this block untreated.
+        /// Initialize a new instance of the <see cref="ColorPointDataDescriptorItem"/> class with the data in this block untreated.
         /// </summary>
         /// <param name="blockData">Unprocessed data in this block</param>
         internal ColorPointDataDescriptorItem(ReadOnlyCollection<byte> blockData) : base(blockData)

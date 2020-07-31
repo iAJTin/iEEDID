@@ -73,9 +73,9 @@ namespace iTin.Core.Hardware.Specification.Eedid
     // | 07h -> 0bh   Future resolutions        5 BYTEs     Shall be set to '00h' each byte.         |
     // •—————————————————————————————————————————————————————————————————————————————————————————————•
 
-    /// <inheritdoc />
     /// <summary>
-    /// Specialization of the <see cref="T:iTin.Core.Hardware.Specification.Eedid.BaseDataSection" /> class that represents the <see cref="F:iTin.Core.Hardware.Specification.Eedid.KnownEdidSection.DataBlocks" /> section of type this block <see cref="EdidDataBlockDescriptor.EstablishedTimingsIII" />.
+    /// Specialization of the <see cref="BaseDataSection"/> class.<br/>
+    /// Represents the <see cref="KnownEdidSection.DataBlocks"/> section of type this block <see cref="EdidDataBlockDescriptor.EstablishedTimingsIII"/>.
     /// </summary> 
     internal sealed class EstablishedTimingsIIIDescriptor : BaseDataSection
     {
@@ -84,7 +84,7 @@ namespace iTin.Core.Hardware.Specification.Eedid
         #region [public] EstablishedTimingsIIIDescriptor(ReadOnlyCollection<byte>): Initialize a new instance of the class with the data of this block untreated
         /// <inheritdoc />
         /// <summary>
-        /// Initialize a new instance of the <see cref="T:iTin.Core.Hardware.Specification.Eedid.EstablishedTimingsIIIDescriptor" /> class with the data of this block untreated.
+        /// Initialize a new instance of the <see cref="EstablishedTimingsIIIDescriptor"/> class with the data of this block untreated.
         /// </summary>
         /// <param name="dataBlock">Unprocessed data in this block</param>
         public EstablishedTimingsIIIDescriptor(ReadOnlyCollection<byte> dataBlock) : base(dataBlock)

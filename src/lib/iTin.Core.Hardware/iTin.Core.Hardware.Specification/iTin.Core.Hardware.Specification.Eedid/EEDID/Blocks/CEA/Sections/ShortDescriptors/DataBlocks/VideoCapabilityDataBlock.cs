@@ -6,7 +6,7 @@ namespace iTin.Core.Hardware.Specification.Eedid
     using Helpers.Enumerations;
 
     /// <summary>
-    /// Estructura <see cref="VideoCapabilityDataBlock"/> que contiene la lógica para decodificar los datos de un bloque del tipo <see cref="KnownExtendedTag.VideoCapability"/>.
+    /// Structure <see cref="VideoCapabilityDataBlock"/> that contains the logic to decode the data of a block of type <see cref="KnownExtendedTag.VideoCapability"/>.
     /// </summary> 
     internal struct VideoCapabilityDataBlock
     {

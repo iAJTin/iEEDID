@@ -27,9 +27,9 @@ namespace iTin.Core.Hardware.Specification.Eedid
     // | 0eh          Standard Timing 8         WORD        Note:  See Timing(KnownStandardTiming)  |
     // •————————————————————————————————————————————————————————————————————————————————————————————•
 
-    /// <inheritdoc />
     /// <summary>
-    /// Specialization of the <see cref="T:iTin.Core.Hardware.Specification.Eedid.BaseDataSection"/> class that represents the <see cref="F:iTin.Core.Hardware.Specification.Eedid.KnownEdidSection.StandardTimings"/> section of this block <see cref="F:iTin.Core.Hardware.Specification.Eedid.KnownDataBlock.EDID"/>.
+    /// Specialization of the <see cref="BaseDataSection"/> class.<br/>
+    /// Represents the <see cref="KnownEdidSection.StandardTimings"/> section of this block <see cref="KnownDataBlock.EDID"/>.
     /// </summary> 
     internal sealed class StandardTimingsEdidSection : BaseDataSection
     {
@@ -95,7 +95,7 @@ namespace iTin.Core.Hardware.Specification.Eedid
         #region [public] StandardTimingsEdidSection(ReadOnlyCollection<byte>): Initialize a new instance of the class with the data in this section untreated
         /// <inheritdoc />
         /// <summary>
-        /// Initialize a new instance of the <see cref="T:iTin.Core.Hardware.Specification.Eedid.StandardTimingsEdidSection" /> class with the data in this section untreated.
+        /// Initialize a new instance of the <see cref="StandardTimingsEdidSection"/> class with the data in this section untreated.
         /// </summary>
         /// <param name="sectionData">Unprocessed data in this section</param>
         public StandardTimingsEdidSection(ReadOnlyCollection<byte> sectionData) : base(sectionData)

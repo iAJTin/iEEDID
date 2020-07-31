@@ -6,7 +6,7 @@ namespace iTin.Core.Hardware.Specification.Eedid
     using System.Diagnostics;
 
     /// <summary>
-    /// Representa al conjunto de <strong>secciones</strong> disponibles para la información <see cref="KnownDataBlock.CEA"/> de la especificación <see cref="EEDID"/>.
+    /// Represents the set of <b>sections</b> available for the <see cref="KnownDataBlock.CEA"/> information of the <see cref="EEDID"/> specification.
     /// </summary>
     internal sealed class CeaSectionsInformation
     {

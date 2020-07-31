@@ -41,7 +41,7 @@ namespace iTin.Core.Hardware.Specification.Eedid
         /// Gets a value that indicates if there are available sections.
         /// </summary>
         /// <value>
-        /// <strong>true</strong> if there are sections; otherwise, it is <strong>false</strong>.
+        /// <b>true</b> if there are sections; otherwise, it is <b>false</b>.
         /// </value>
         public bool HasSections => SectionTable.Count > 0;
         #endregion
@@ -74,7 +74,7 @@ namespace iTin.Core.Hardware.Specification.Eedid
         /// </summary>
         /// <value>
         /// Object <see cref="BaseDataSectionCollection" /> that contains the object collection <see cref="DataSection" /> for this <see cref="DataBlock" />.
-        /// If there is no <see cref="DataSection" /> object, <strong>null</strong> is returned.
+        /// If there is no <see cref="DataSection" /> object, <b>null</b> is returned.
         /// </value>
         [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public BaseDataSectionCollection Sections

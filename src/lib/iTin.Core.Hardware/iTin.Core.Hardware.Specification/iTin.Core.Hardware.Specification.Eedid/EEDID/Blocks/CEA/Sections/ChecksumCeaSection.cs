@@ -11,9 +11,9 @@ namespace iTin.Core.Hardware.Specification.Eedid
     // | 00h          CheckSum                  BYTE        Note: Please see, Status                            |
     // •————————————————————————————————————————————————————————————————————————————————————————————————————————•
 
-    /// <inheritdoc />
     /// <summary>
-    /// Especialización de la clase <see cref="T:iTin.Core.Hardware.Specification.Eedid.BaseDataSection" /> que representa la sección <see cref="F:iTin.Core.Hardware.Specification.Eedid.KnownCeaSection.CheckSum" /> de este bloque <see cref="F:iTin.Core.Hardware.Specification.Eedid.KnownDataBlock.CEA" />.
+    /// Specialization of the <see cref="BaseDataSection"/> class.<br/>
+    /// Represents the <see cref="KnownCeaSection.CheckSum"/> section of this block <see cref="KnownDataBlock.CEA"/>.
     /// </summary> 
     internal sealed class CheckSumCeaSection : BaseDataSection
     {

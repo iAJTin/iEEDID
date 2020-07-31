@@ -2,20 +2,18 @@
 namespace iTin.Core.Hardware.Specification.Eedid
 {
     using System;
-    using System.Collections;
     using System.Collections.Generic;
     using System.Collections.ObjectModel;
-    using System.Diagnostics.CodeAnalysis;
     using System.Linq;
 
     // CEA Section: Data Block Collection Information
     // •————————————————————————————————————————————————————————————————————————————————————————————————————————•
     // | Offset       Name                      Lenght      Description                                         |
     // •————————————————————————————————————————————————————————————————————————————————————————————————————————•
-  
-    /// <inheritdoc />
+
     /// <summary>
-    /// Especialización de la clase <see cref="T:iTin.Core.Hardware.Specification.Eedid.BaseDataSection" /> que representa la sección <see cref="F:iTin.Core.Hardware.Specification.Eedid.KnownCeaSection.DataBlockCollection" /> de este bloque <see cref="F:iTin.Core.Hardware.Specification.Eedid.KnownDataBlock.CEA" />.
+    /// Specialization of the <see cref="BaseDataSection"/> class.<br/>
+    /// Represents the <see cref="KnownCeaSection.DataBlockCollection"/> section of this block <see cref="KnownDataBlock.CEA"/>.
     /// </summary> 
     internal sealed class DataBlockCollectionCeaSection : BaseDataSection
     {

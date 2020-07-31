@@ -4,7 +4,7 @@ namespace iTin.Core.Hardware.Specification.Eedid
     using System.Collections.ObjectModel;
 
     /// <summary>
-    /// Estructura <see cref="ReservedDataBlock"/> que contiene la lógica para decodificar los datos de un bloque del tipo <see cref="ShortReservedDescriptorCeaSection"/>.
+    /// Structure <see cref="ReservedDataBlock"/> that contains the logic to decode the data of a block of type <see cref="ShortReservedDescriptorCeaSection"/>.
     /// </summary> 
     internal struct ReservedDataBlock
     {

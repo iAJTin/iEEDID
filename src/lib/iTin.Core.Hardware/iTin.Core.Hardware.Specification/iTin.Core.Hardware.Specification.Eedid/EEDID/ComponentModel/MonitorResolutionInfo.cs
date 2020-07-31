@@ -40,7 +40,7 @@ namespace iTin.Core.Hardware.Specification.Eedid
         /// <param name="horizontalResolution">Horizontal resolution in pixels</param>
         /// <param name="verticalResolution">Vertical resolution in pixels.</param>
         /// <param name="verticalRefresh">Vertical refresh rate in Hz</param>
-        /// <param name="reduceBlanking"><strong>true</strong> if flicker is reduced; <strong>false</strong> otherwise</param>
+        /// <param name="reduceBlanking"><b>true</b> if flicker is reduced; <b>false</b> otherwise</param>
         internal MonitorResolutionInfo(int horizontalResolution, int verticalResolution, byte verticalRefresh, bool reduceBlanking) : this(horizontalResolution, verticalResolution, verticalRefresh, false,reduceBlanking)
         {
         }
@@ -53,8 +53,8 @@ namespace iTin.Core.Hardware.Specification.Eedid
         /// <param name="horizontalResolution">Horizontal resolution in pixels</param>
         /// <param name="verticalResolution">Vertical resolution in pixels.</param>
         /// <param name="verticalRefresh">Vertical refresh rate in Hz</param>
-        /// <param name="interlaced"><strong>true</strong> if it is interlaced; <strong>false</strong> otherwise</param>
-        /// <param name="reduceBlanking"><strong>true</strong> if flicker is reduced; <strong>false</strong> otherwise</param>
+        /// <param name="interlaced"><b>true</b> if it is interlaced; <b>false</b> otherwise</param>
+        /// <param name="reduceBlanking"><b>true</b> if flicker is reduced; <b>false</b> otherwise</param>
         internal MonitorResolutionInfo(int horizontalResolution, int verticalResolution, byte verticalRefresh, bool interlaced, bool reduceBlanking)
         {
             Interlaced = interlaced;
@@ -132,7 +132,7 @@ namespace iTin.Core.Hardware.Specification.Eedid
         /// Gets a value indicating whether this resolution is interlaced.
         /// </summary>
         /// <value>
-        /// <strong>true</strong> if it is linked; <strong>false</strong> otherwise.
+        /// <b>true</b> if it is linked; <b>false</b> otherwise.
         /// </value>
         public bool Interlaced { get; }
         #endregion
@@ -142,7 +142,7 @@ namespace iTin.Core.Hardware.Specification.Eedid
         /// Gets a value that indicates whether this resolution reduces flicker.
         /// </summary>
         /// <value>
-        /// <strong>true</strong> if it reduces flicker; <strong>false</strong> otherwise.
+        /// <b>true</b> if it reduces flicker; <b>false</b> otherwise.
         /// </value>
         public bool ReduceBlanking { get; }
         #endregion

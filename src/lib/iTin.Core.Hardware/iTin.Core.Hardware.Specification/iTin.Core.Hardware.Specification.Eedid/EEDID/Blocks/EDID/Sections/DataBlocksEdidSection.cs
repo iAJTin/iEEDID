@@ -22,9 +22,9 @@ namespace iTin.Core.Hardware.Specification.Eedid
     // |                                                    Note: See Descriptor(KnownEdidDataBlockProperty) |
     // •—————————————————————————————————————————————————————————————————————————————————————————————————————•
 
-    /// <inheritdoc />
     /// <summary>
-    /// Specialization of the <see cref="T:iTin.Core.Hardware.Specification.Eedid.BaseDataSection" /> class that represents the <see cref="F:iTin.Core.Hardware.Specification.Eedid.KnownEdidSection.DataBlocks" /> section of this block <see cref="F:iTin.Core.Hardware.Specification.Eedid.KnownDataBlock.EDID" />.
+    /// Specialization of the <see cref="BaseDataSection"/> class.<br/>
+    /// Represents the <see cref="KnownEdidSection.DataBlocks"/> section of this block <see cref="KnownDataBlock.EDID"/>.
     /// </summary> 
     internal sealed class DataBlocksEdidSection : BaseDataSection
     {
@@ -33,7 +33,7 @@ namespace iTin.Core.Hardware.Specification.Eedid
         #region [public] DataBlocksEdidSection(ReadOnlyCollection<byte>): Initialize a new instance of the class with the data in this section untreated
         /// <inheritdoc />
         /// <summary>
-        /// Initialize a new instance of the <see cref="T:iTin.Core.Hardware.Specification.Eedid.DataBlocksEdidSection" /> class with the data in this section untreated.
+        /// Initialize a new instance of the <see cref="DataBlocksEdidSection"/> class with the data in this section untreated.
         /// </summary>
         /// <param name="sectionData">Unprocessed data in this section</param>
         public DataBlocksEdidSection(ReadOnlyCollection<byte> sectionData) : base(sectionData)

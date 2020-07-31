@@ -38,7 +38,7 @@ namespace iTin.Core.Hardware.Specification.Eedid
         /// Initializes a new instance of the class <see cref="DataBlockCollection" /> specifying the available blocks untreated and if they are read only.
         /// </summary>
         /// <param name="parent">Available blocks untreated.</param>
-        /// <param name="readOnly"><strong>true</strong> if the collection should be read-only; <strong>false</strong> otherwise.</param>
+        /// <param name="readOnly"><b>true</b> if the collection should be read-only; <b>false</b> otherwise.</param>
         internal DataBlockCollection(EEDID parent, bool readOnly)
         {
             _parent = parent;
@@ -88,7 +88,7 @@ namespace iTin.Core.Hardware.Specification.Eedid
         /// </summary>
         /// <param name="item">El item a buscar.</param>
         /// <returns>
-        /// 	<para>Índice de base cero de la primera aparición de item en la totalidad de <see cref="T:iTin.Core.Hardware.Specification.Eedid.DataBlockCollection" />, si se encuentra; en caso contrario, <strong>-1</strong>.</para>
+        /// 	<para>Índice de base cero de la primera aparición de item en la totalidad de <see cref="T:iTin.Core.Hardware.Specification.Eedid.DataBlockCollection" />, si se encuentra; en caso contrario, <b>-1</b>.</para>
         /// </returns>
         public int IndexOf(DataBlock item) => _blocks.IndexOf(item);
         #endregion
@@ -194,7 +194,7 @@ namespace iTin.Core.Hardware.Specification.Eedid
         /// </summary>
         /// <param name="item">Objeto que se va a buscar en la colección.</param>
         /// <returns>
-        /// 	<para><strong>true</strong> si el objeto <see cref="T:iTin.Core.Hardware.Specification.Eedid.DataBlock" /> se encuentra en la colección; en caso contrario, <strong>false</strong>.</para>
+        /// 	<para><b>true</b> si el objeto <see cref="T:iTin.Core.Hardware.Specification.Eedid.DataBlock" /> se encuentra en la colección; en caso contrario, <b>false</b>.</para>
         /// </returns>
         public bool Contains(DataBlock item) => _blocks.Contains(item);
         #endregion
@@ -243,7 +243,7 @@ namespace iTin.Core.Hardware.Specification.Eedid
         /// </summary>
         /// <value>
         /// 	<para>Tipo: <see cref="T:System.Boolean" /></para>
-        /// 	<para><strong>true</strong> si la colección es de sólo lectura; en caso contrario, es <strong>false</strong>.</para>
+        /// 	<para><b>true</b> si la colección es de sólo lectura; en caso contrario, es <b>false</b>.</para>
         /// </value>
         public bool IsReadOnly => _readOnly;
         #endregion
@@ -257,8 +257,8 @@ namespace iTin.Core.Hardware.Specification.Eedid
         /// <returns>
         /// 	<para>Tipo: <see cref="T:System.Boolean" /></para>
         /// 	<para>
-        ///       <strong>true</strong> si <c>item</c> se ha quitado correctamente de la colección; en caso contrario, es <strong>false</strong>.
-        ///       Este método también devuelve <strong>false</strong> si no se encontró item en la colección.
+        ///       <b>true</b> si <c>item</c> se ha quitado correctamente de la colección; en caso contrario, es <b>false</b>.
+        ///       Este método también devuelve <b>false</b> si no se encontró item en la colección.
         ///     </para>
         /// </returns>
         public bool Remove(DataBlock item)
@@ -312,7 +312,7 @@ namespace iTin.Core.Hardware.Specification.Eedid
         ///   <para>Objeto <see cref="DataBlock"/> especificado mediante su clave.</para>
         /// </value>
         /// <remarks>
-        /// Si el elemento no existe se devuelve <strong>null</strong>.
+        /// Si el elemento no existe se devuelve <b>null</b>.
         /// </remarks>
         /// <exception cref="InvalidEnumArgumentException"></exception>
         public DataBlock this[KnownDataBlock valueKey]
@@ -364,7 +364,7 @@ namespace iTin.Core.Hardware.Specification.Eedid
         /// </summary>
         /// <param name="valueKey">Uno de los valores de <see cref="KnownDataBlock"/> que representa la clave del objeto <see cref="DataBlock"/> a buscar.</param>
         /// <returns>
-        /// 	<para><strong>true</strong> si el objeto <see cref="DataBlock"/> con el <c>valueKey</c> se encuentra en la colección <see cref="DataBlockCollection"/>; de lo contrario, es <b>false</b>.</para>
+        /// 	<para><b>true</b> si el objeto <see cref="DataBlock"/> con el <c>valueKey</c> se encuentra en la colección <see cref="DataBlockCollection"/>; de lo contrario, es <b>false</b>.</para>
         /// </returns>
         /// <exception cref="InvalidEnumArgumentException"></exception>
         public bool Contains(KnownDataBlock valueKey)
@@ -385,7 +385,7 @@ namespace iTin.Core.Hardware.Specification.Eedid
         /// </summary>
         /// <param name="valueKey">Uno de los valores de <see cref="KnownDataBlock"/> que representa la clave del objeto <see cref="DataBlock"/> que se va a buscar en <see cref="DataBlockCollection"/>.</param>
         /// <returns>
-        /// 	<para>Índice de base cero de la primera aparición de item en la totalidad de <see cref="DataBlockCollection"/>, si se encuentra; en caso contrario, <strong>-1</strong>.</para>
+        /// 	<para>Índice de base cero de la primera aparición de item en la totalidad de <see cref="DataBlockCollection"/>, si se encuentra; en caso contrario, <b>-1</b>.</para>
         /// </returns>
         /// <exception cref="InvalidEnumArgumentException"></exception>
         public int IndexOf(KnownDataBlock valueKey)
@@ -443,7 +443,7 @@ namespace iTin.Core.Hardware.Specification.Eedid
         /// </summary>
         /// <param name="value">Clave a comprobar.</param>
         /// <returns>
-        /// <strong>true</strong> si el valor pertenece a la enumeración <see cref="KnownDataBlock"/>; de lo contrario, es <strong>false</strong>.
+        /// <b>true</b> si el valor pertenece a la enumeración <see cref="KnownDataBlock"/>; de lo contrario, es <b>false</b>.
         /// </returns>
         private static bool IsValidBlock(KnownDataBlock value) => SentinelHelper.IsEnumValid(value);
         #endregion

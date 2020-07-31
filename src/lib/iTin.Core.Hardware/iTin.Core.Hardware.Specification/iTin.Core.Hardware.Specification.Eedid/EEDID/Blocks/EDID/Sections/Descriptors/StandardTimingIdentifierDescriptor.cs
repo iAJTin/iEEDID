@@ -25,9 +25,9 @@ namespace iTin.Core.Hardware.Specification.Eedid
     // | 0ch          Line Feed                 BYTE        0ah, all other values are reserved     |
     // •———————————————————————————————————————————————————————————————————————————————————————————•
 
-    /// <inheritdoc />
     /// <summary>
-    /// Specialization of the <see cref="T:iTin.Core.Hardware.Specification.Eedid.BaseDataSection" /> class that represents the <see cref="F:iTin.Core.Hardware.Specification.Eedid.KnownEdidSection.DataBlocks" /> section of type this block <see cref="EdidDataBlockDescriptor.StandardTimingIdentifier" />.
+    /// Specialization of the <see cref="BaseDataSection"/> class.<br/>
+    /// Represents the <see cref="KnownEdidSection.DataBlocks"/> section of type this block <see cref="EdidDataBlockDescriptor.StandardTimingIdentifier"/>.
     /// </summary> 
     internal class StandardTimingIdentifierDescriptor : BaseDataSection
     {
@@ -83,7 +83,7 @@ namespace iTin.Core.Hardware.Specification.Eedid
         #region [public] StandardTimingIdentifierDescriptor(ReadOnlyCollection<byte>): Initialize a new instance of the class with the data of this block untreated
         /// <inheritdoc />
         /// <summary>
-        /// Initialize a new instance of the <see cref="T:iTin.Core.Hardware.Specification.Eedid.StandardTimingIdentifierDescriptor" /> class with the data of this block untreated.
+        /// Initialize a new instance of the <see cref="StandardTimingIdentifierDescriptor"/> class with the data of this block untreated.
         /// </summary>
         /// <param name="dataBlock">Unprocessed data in this block</param>
         public StandardTimingIdentifierDescriptor(ReadOnlyCollection<byte> dataBlock) : base(dataBlock)

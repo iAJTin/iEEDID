@@ -29,7 +29,7 @@ namespace iTin.Core.Hardware.Specification.Eedid
     // •———————————————————————————————————————————————————————————————————————————————————————————————————————————————————•
 
     /// <summary>
-    /// Represents an item of the <see cref="T:iTin.Core.Hardware.Specification.Eedid.StandardTimingIdentifierDescriptor" />.
+    /// Represents an item of the <see cref="StandardTimingIdentifierDescriptor"/>.
     /// </summary>
     public sealed class StandardTimingIdentifierDescriptorItem
     {
@@ -42,7 +42,7 @@ namespace iTin.Core.Hardware.Specification.Eedid
 
         #region [internal] StandardTimingIdentifierDescriptorItem(IList<byte>): Initialize a new instance of the class with the data in this section untreated
         /// <summary>
-        /// Initialize a new instance of the <see cref="T:iTin.Core.Hardware.Specification.Eedid.StandardTimingIdentifierDescriptorItem" /> class with the data in this section untreated.
+        /// Initialize a new instance of the <see cref="StandardTimingIdentifierDescriptorItem"/> class with the data in this section untreated.
         /// </summary>
         /// <param name="sectionData">Unprocessed data in this section</param>
         internal StandardTimingIdentifierDescriptorItem(IList<byte> sectionData)

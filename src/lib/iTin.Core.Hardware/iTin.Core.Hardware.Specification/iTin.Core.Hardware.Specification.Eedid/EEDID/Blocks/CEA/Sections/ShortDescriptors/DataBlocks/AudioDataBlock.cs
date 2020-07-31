@@ -8,7 +8,7 @@ namespace iTin.Core.Hardware.Specification.Eedid
     using Helpers.Enumerations;
 
     /// <summary>
-    /// Estructura <see cref="AudioDataBlock"/> que contiene la lógica para decodificar los datos de un bloque del tipo <see cref="ShortAudioDescriptorCeaSection"/>.
+    /// Structure <see cref="AudioDataBlock"/> that contains the logic to decode the data of a block of type <see cref="ShortAudioDescriptorCeaSection"/>.
     /// </summary> 
     internal struct AudioDataBlock 
     {

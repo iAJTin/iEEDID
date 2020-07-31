@@ -4,6 +4,23 @@ What is iEEDID?
 
 iEEDID is a lightweight implementation that allows us to obtain the the EEDID information.
 
+Library versions
+================
+
+Library versions for current iEEDID version (1.0.4)
+
+•———————————————————————————————————————————————————————————————————————————————————————————•
+| Library                                  Version      Description                         |
+•———————————————————————————————————————————————————————————————————————————————————————————•
+|iTin.Core                                 1.0.2		Common calls                        |
+•———————————————————————————————————————————————————————————————————————————————————————————•
+|iTin.Core.Interop                         1.0.0    	Interop calls                       |
+•———————————————————————————————————————————————————————————————————————————————————————————•
+|iTin.Core.Hardware                        1.0.1		Hardware Interop Calls              |
+•———————————————————————————————————————————————————————————————————————————————————————————•
+|iTin.Core.Hardware.Specification.Eedid    1.0.4		E-EDID Specification Implementation |
+•———————————————————————————————————————————————————————————————————————————————————————————•
+
 Install via NuGet
 =================
 

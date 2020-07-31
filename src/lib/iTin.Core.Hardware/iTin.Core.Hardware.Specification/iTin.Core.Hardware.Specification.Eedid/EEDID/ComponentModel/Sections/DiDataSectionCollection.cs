@@ -36,7 +36,7 @@ namespace iTin.Core.Hardware.Specification.Eedid
         /// Object <see cref="DataSection" /> specified by its key.
         /// </value>
         /// <remarks>
-        /// If the element does not exist, <strong>null</strong> is returned.
+        /// If the element does not exist, <b>null</b> is returned.
         /// </remarks>
         /// <exception cref="InvalidEnumArgumentException"></exception>
         public DataSection this[KnownDiSection valueKey]

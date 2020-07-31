@@ -60,9 +60,9 @@ namespace iTin.Core.Hardware.Specification.Eedid
     // |              Timing Data                           video Timing Data (00h -> ffh), If Byte 0ah = 02h or Byte 0ah = 04h.                             |
     // •—————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————•
 
-    /// <inheritdoc />
     /// <summary>
-    /// Specialization of the <see cref="T:iTin.Core.Hardware.Specification.Eedid.BaseDataSection" /> class that represents the <see cref="F:iTin.Core.Hardware.Specification.Eedid.KnownEdidSection.DataBlocks" /> section of type this block <see cref="EedidProperty.Edid.DataBlock.Definition.DisplayRangeLimits" />.
+    /// Specialization of the <see cref="BaseDataSection"/> class.<br/>
+    /// Represents the <see cref="KnownEdidSection.DataBlocks"/> section of type this block <see cref="EedidProperty.Edid.DataBlock.Definition.DisplayRangeLimits"/>.
     /// </summary> 
     internal sealed class DisplayRangeLimitsDescriptor : BaseDataSection
     {
@@ -71,7 +71,7 @@ namespace iTin.Core.Hardware.Specification.Eedid
         #region [public] DisplayRangeLimitsDescriptor(ReadOnlyCollection<byte>): Initialize a new instance of the class with the data of this block untreated
         /// <inheritdoc />
         /// <summary>
-        /// Initialize a new instance of the <see cref="T:iTin.Core.Hardware.Specification.Eedid.DisplayRangeLimitsDescriptor" /> class with the data of this block untreated.
+        /// Initialize a new instance of the <see cref="DisplayRangeLimitsDescriptor"/> class with the data of this block untreated.
         /// </summary>
         /// <param name="dataBlock">Unprocessed data in this block</param>
         public DisplayRangeLimitsDescriptor(ReadOnlyCollection<byte> dataBlock) : base(dataBlock)

@@ -3,9 +3,9 @@ namespace iTin.Core.Hardware.Specification.Eedid
 {
     using System.Collections.ObjectModel;
 
-    /// <inheritdoc />
     /// <summary>
-    /// Especialización de la clase <see cref="T:iTin.Core.Hardware.Specification.Eedid.BaseDataSection" /> que representa la sección Short Audio Descriptor del bloque Data Block Collection.
+    /// Specialization of the <see cref="BaseDataSection"/> class.<br/>
+    /// Represents the Short Audio Descriptor section of the Data Block Collection block.
     /// </summary> 
     internal sealed class ShortExtendedTagDescriptorCeaSection : BaseDataSection
     {
@@ -14,7 +14,7 @@ namespace iTin.Core.Hardware.Specification.Eedid
         #region [public] ShortExtendedTagDescriptorCeaSection(ReadOnlyCollection<byte>): Inicializa una nueva instancia de la clase.
         /// <inheritdoc />
         /// <summary>
-        /// Inicializa una nueva instancia de la clase <see cref="T:iTin.Core.Hardware.Specification.Eedid.ShortExtendedTagDescriptorCeaSection" />.
+        /// Inicializa una nueva instancia de la clase <see cref="ShortExtendedTagDescriptorCeaSection"/>.
         /// </summary>
         /// <param name="sectionData">Datos de esta sección.</param>
         public ShortExtendedTagDescriptorCeaSection(ReadOnlyCollection<byte> sectionData) : base(sectionData)

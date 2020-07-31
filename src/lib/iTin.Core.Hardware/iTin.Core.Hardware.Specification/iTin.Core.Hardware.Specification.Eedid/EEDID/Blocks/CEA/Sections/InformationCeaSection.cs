@@ -15,9 +15,9 @@ namespace iTin.Core.Hardware.Specification.Eedid
     // |                                                    Note: Please see, Implemented                       |
     // •————————————————————————————————————————————————————————————————————————————————————————————————————————•
 
-    /// <inheritdoc />
     /// <summary>
-    /// Especialización de la clase <see cref="T:iTin.Core.Hardware.Specification.Eedid.BaseDataSection" /> que representa la sección <see cref="F:iTin.Core.Hardware.Specification.Eedid.KnownCeaSection.Information" /> de este bloque <see cref="F:iTin.Core.Hardware.Specification.Eedid.KnownDataBlock.CEA" />.
+    /// Specialization of the <see cref="BaseDataSection"/> class.<br/>
+    /// Represents the <see cref="KnownCeaSection.Information"/> section of this block <see cref="KnownDataBlock.CEA"/>.
     /// </summary> 
     internal sealed class InformationCeaSection : BaseDataSection
     {

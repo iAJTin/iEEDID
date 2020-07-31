@@ -20,9 +20,9 @@ namespace iTin.Core.Hardware.Specification.Eedid
     // | 09h          Blue                      QWORD       Note: See Color(KnownColor)  |
     // •—————————————————————————————————————————————————————————————————————————————————•
 
-    /// <inheritdoc />
     /// <summary>
-    /// Specialization of the <see cref="T:iTin.Core.Hardware.Specification.Eedid.BaseDataSection" /> class that represents the <see cref="F:iTin.Core.Hardware.Specification.Eedid.KnownEdidSection.DataBlocks" /> section of type this block <see cref="EdidDataBlockDescriptor.ColorManagementData" />.
+    /// Specialization of the <see cref="BaseDataSection"/> class.<br/>
+    /// Represents the <see cref="KnownEdidSection.DataBlocks"/> section of type this block <see cref="EdidDataBlockDescriptor.ColorManagementData"/>.
     /// </summary> 
     internal sealed class ColorManagementDataDescriptor : BaseDataSection
     {
@@ -68,7 +68,7 @@ namespace iTin.Core.Hardware.Specification.Eedid
         #region [public] ColorManagementDataDescriptor(ReadOnlyCollection<byte>): Initialize a new instance of the class with the data of this block untreated
         /// <inheritdoc />
         /// <summary>
-        /// Initialize a new instance of the <see cref="T:iTin.Core.Hardware.Specification.Eedid.ColorManagementDataDescriptor" /> class with the data of this block untreated.
+        /// Initialize a new instance of the <see cref="ColorManagementDataDescriptor"/> class with the data of this block untreated.
         /// </summary>
         /// <param name="dataBlock">Unprocessed data in this block</param>
         public ColorManagementDataDescriptor(ReadOnlyCollection<byte> dataBlock) : base(dataBlock)

@@ -15,9 +15,9 @@ namespace iTin.Core.Hardware.Specification.Eedid
     // |                                                    Note: See Revision                                  |
     // •————————————————————————————————————————————————————————————————————————————————————————————————————————•
 
-    /// <inheritdoc />
     /// <summary>
-    /// Specialization of the <see cref="T:iTin.Core.Hardware.Specification.Eedid.BaseDataSection" /> class that represents the <see cref="F:iTin.Core.Hardware.Specification.Eedid.KnownEdidSection.Version" /> section of this block <see cref="F:iTin.Core.Hardware.Specification.Eedid.KnownDataBlock.EDID" />.
+    /// Specialization of the <see cref="BaseDataSection"/> class.<br/>
+    /// Represents the <see cref="KnownEdidSection.Version"/> section of this block <see cref="KnownDataBlock.EDID"/>.
     /// </summary> 
     internal sealed class VersionEdidSection : BaseDataSection
     {
@@ -26,7 +26,7 @@ namespace iTin.Core.Hardware.Specification.Eedid
         #region [public] VersionEdidSection(ReadOnlyCollection<byte>): Initialize a new instance of the class with the data in this section untreated
         /// <inheritdoc />
         /// <summary>
-        /// Initialize a new instance of the <see cref="T:iTin.Core.Hardware.Specification.Eedid.VersionEdidSection" /> class with the data in this section untreated.
+        /// Initialize a new instance of the <see cref="VersionEdidSection"/> class with the data in this section untreated.
         /// </summary>
         /// <param name="sectionData">Unprocessed data in this section</param>
         public VersionEdidSection(ReadOnlyCollection<byte> sectionData) : base(sectionData)

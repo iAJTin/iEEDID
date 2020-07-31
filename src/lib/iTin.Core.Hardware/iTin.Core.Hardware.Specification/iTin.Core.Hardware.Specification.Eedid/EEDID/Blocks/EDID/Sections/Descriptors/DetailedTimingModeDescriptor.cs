@@ -124,11 +124,10 @@ namespace iTin.Core.Hardware.Specification.Eedid
     // |                                                    1 _ _ 1  ------ Horizontal sync is positive (outside of V-sync) |
     // •————————————————————————————————————————————————————————————————————————————————————————————————————————————————————•
 
-    /// <inheritdoc />
     /// <summary>
-    /// Specialization of the <see cref="T:iTin.Core.Hardware.Specification.Eedid.BaseDataSection" /> class that represents the <see cref="F:iTin.Core.Hardware.Specification.Eedid.KnownEdidSection.DataBlocks" /> section of type this block <see cref="EdidDataBlockDescriptor.DetailedTimingMode" />.
+    /// Specialization of the <see cref="BaseDataSection"/> class.<br/>
+    /// Represents the <see cref="KnownEdidSection.DataBlocks"/> section of type this block <see cref="EdidDataBlockDescriptor.DetailedTimingMode"/>.
     /// </summary> 
-
     sealed class DetailedTimingModeDescriptor : BaseDataSection
     {
         #region private enumerations
@@ -176,7 +175,7 @@ namespace iTin.Core.Hardware.Specification.Eedid
         #region [public] DetailedTimingModeDescriptor(ReadOnlyCollection<byte>): Initialize a new instance of the class with the data of this block untreated
         /// <inheritdoc />
         /// <summary>
-        /// Initialize a new instance of the <see cref="T:iTin.Core.Hardware.Specification.Eedid.DetailedTimingModeDescriptor" /> class with the data of this block untreated.
+        /// Initialize a new instance of the <see cref="DetailedTimingModeDescriptor"/> class with the data of this block untreated.
         /// </summary>
         /// <param name="dataBlock">Unprocessed data in this block</param>
         public DetailedTimingModeDescriptor(ReadOnlyCollection<byte> dataBlock) : base(dataBlock)

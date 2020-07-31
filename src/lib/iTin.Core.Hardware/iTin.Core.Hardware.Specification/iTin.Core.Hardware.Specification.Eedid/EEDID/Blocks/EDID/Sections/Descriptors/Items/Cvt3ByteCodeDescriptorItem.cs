@@ -44,9 +44,9 @@ namespace iTin.Core.Hardware.Specification.Eedid
     // |                                                              supported                                             | 
     // •————————————————————————————————————————————————————————————————————————————————————————————————————————————————————•
 
-    /// <inheritdoc />
     /// <summary>
-    /// Specialization of the <see cref="T:iTin.Core.Hardware.Specification.Eedid.BaseDataSection" /> class that represents the information of a <see cref="F:iTin.Core.Hardware.Specification.Eedid.KnownEdidSection.DataBlocks" /> of type <see cref="F:iTin.Core.Hardware.Specification.Eedid.KnownEdidDataBlockDescriptor.Cvt3ByteCode" />.
+    /// Specialization of the <see cref="BaseDataSection"/> class.<br/>
+    /// Represents the information of a <see cref="KnownEdidSection.DataBlocks"/> of type <see cref="EdidDataBlockDescriptor.Cvt3ByteCode"/>.
     /// </summary>
     internal sealed class Cvt3ByteCodeDescriptorItem : BaseDataSection
     {
@@ -55,7 +55,7 @@ namespace iTin.Core.Hardware.Specification.Eedid
         #region [public] ColorManagementDataDescriptorItem(ReadOnlyCollection<byte>): Initialize a new instance of the class with the data in this block untreated
         /// <inheritdoc />
         /// <summary>
-        /// Initialize a new instance of the <see cref="T:iTin.Core.Hardware.Specification.Eedid.Cvt3ByteCodeDescriptorItem" /> class with the data in this block untreated.
+        /// Initialize a new instance of the <see cref="Cvt3ByteCodeDescriptorItem"/> class with the data in this block untreated.
         /// </summary>
         /// <param name="blockData">Unprocessed data in this block</param>
         public Cvt3ByteCodeDescriptorItem(ReadOnlyCollection<byte> blockData) : base(blockData)

@@ -25,9 +25,9 @@ namespace iTin.Core.Hardware.Specification.Eedid
     // |   · Checksum                                 |
     // •——————————————————————————————————————————————•
 
-    /// <inheritdoc />
     /// <summary>
-    /// Specialization of the class <see cref="T:iTin.Core.Hardware.Specification.Eedid.BaseDataBlock" /> representing the block <see cref="F:iTin.Core.Hardware.Specification.Eedid.KnownDataBlock.CEA" /> of the specification <see cref="T:iTin.Core.Hardware.Specification.EEDID" />.
+    /// Specialization of the <see cref="BaseDataBlock"/> class.<br/>
+    /// Representing the block <see cref="KnownDataBlock.CEA"/> of the specification <see cref="EEDID"/>.
     /// </summary> 
     internal class CeaBlock : BaseDataBlock
     {
@@ -36,11 +36,11 @@ namespace iTin.Core.Hardware.Specification.Eedid
         #region [public] CeaBlock(ReadOnlyCollection<byte>): Initialize a new instance of the class with the data in this section untreated
         /// <inheritdoc />
         /// <summary>
-        /// Initialize a new instance of the <see cref="T:iTin.Core.Hardware.Specification.Eedid.CeaBlock"/> class with the data in this section untreated.
+        /// Initialize a new instance of the <see cref="CeaBlock"/> class with the data in this section untreated.
         /// </summary>
         /// <param name="dataBlock">Raw data of this block.</param>
         /// <remarks>
-        /// Create a <see cref="F:iTin.Core.Hardware.Specification.Eedid.KnownDataBlock.CEA"/> block (block 0) which belongs to the <see cref="T:iTin.Core.Hardware.Specification.EEDID"/> specification.
+        /// Create a <see cref="KnownDataBlock.CEA"/> block (block 0) which belongs to the <see cref="EEDID"/> specification.
         /// </remarks>
         public CeaBlock(ReadOnlyCollection<byte> dataBlock) : base(dataBlock)
         {

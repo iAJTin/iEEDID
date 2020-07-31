@@ -3,9 +3,9 @@ namespace iTin.Core.Hardware.Specification.Eedid
 {
     using System.Collections.ObjectModel;
 
-    /// <inheritdoc />
     /// <summary>
-    /// Especialización de la clase <see cref="T:iTin.Core.Hardware.Specification.Eedid.BaseDataSection" /> que representa la sección Short Video Descriptor del bloque Data Block Collection.
+    /// Specialization of the <see cref="BaseDataSection"/> class.<br/>
+    /// Represents the Short Video Descriptor section of the Data Block Collection block.
     /// </summary> 
     internal sealed class ShortVideoDescriptorCeaSection : BaseDataSection
     {
@@ -14,7 +14,7 @@ namespace iTin.Core.Hardware.Specification.Eedid
         #region [public] ShortVideoDescriptorCeaSection(ReadOnlyCollection<byte>): Inicializa una nueva instancia de la clase.
         /// <inheritdoc />
         /// <summary>
-        /// Inicializa una nueva instancia de la clase <see cref="T:iTin.Core.Hardware.Specification.Eedid.ShortVideoDescriptorCeaSection" />.
+        /// Inicializa una nueva instancia de la clase <see cref="ShortVideoDescriptorCeaSection"/>.
         /// </summary>
         /// <param name="sectionData">Datos de esta sección.</param>
         public ShortVideoDescriptorCeaSection(ReadOnlyCollection<byte> sectionData) : base(sectionData)

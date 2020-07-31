@@ -12,7 +12,7 @@ namespace iTin.Core.Hardware.Specification.Eedid
        •————————————————• */
 
     /// <summary>
-    /// Estructura <see cref="CeaDataBlock"/> que contiene la información sin procesar de los bloques de tipo <b>AllcationDataBlock</b>.
+    /// A <see cref = "CeaDataBlock"/> structure that contains the raw information of the blocks of type <b>AllcationDataBlock</b>.
     /// </summary> 
     internal struct CeaDataBlock
     {

@@ -17,32 +17,32 @@ namespace iTin.Core.Hardware.Specification.Eedid
        •————————————————————————————————————————————————————————————————————————————• */
 
     /// <summary>
-    /// Tipo de extensión de un Data Block de la extensión CEA
+    /// Type of extension of a Data Block of the CEA extension.
     /// </summary>
     internal enum KnownExtendedTag
     {
         /// <summary>
-        /// 
+        /// Video Capability
         /// </summary>
         VideoCapability = 0x00,
 
         /// <summary>
-        /// 
+        /// Vendor Specific Video
         /// </summary>
         VendorSpecificVideo = 0x01,
 
         /// <summary>
-        /// 
+        /// Colorimetry
         /// </summary>
         Colorimetry = 0x05,
 
         /// <summary>
-        /// 
+        /// Miscellaneous Audio Fields
         /// </summary>
         MiscellaneousAudioFields = 0x10,
 
         /// <summary>
-        /// 
+        /// Vendor Specific Audio
         /// </summary>
         VendorSpecificAudio = 0x11,
     }

@@ -1,6 +1,32 @@
 ﻿# Changelog
 All notable changes to this project will be documented in this file.
 
+## [1.0.4] - 2020-07-31
+
+### Fixed
+
+- Fixed the bug reported by [@nk64](https://https://github.com/nk64), please see https://github.com/iAJTin/iEEDID/issues/1 for more information.
+
+### Changed
+
+- Minor changes.
+
+- Adds descriptive code help. I Tried to adds a help most descriptive for the properties keys. 
+ 
+  - The image below shows an example.
+
+    ![Help.png][helpimg] 
+
+- Library versions for this version
+  
+|Library|Version|Description|
+|:------|:------|:----------|
+|iTin.Core| **1.0.2** | Common calls |
+|iTin.Core.Interop| 1.0.0 | Interop calls |
+|iTin.Core.Hardware| **1.0.1** | Hardware Interop Calls |
+|iTin.Core.Hardware.Specification.Eedid|**1.0.4**| E-EDID Specification Implementation |
+
+
 ## [1.0.3] - 2019-09-02
 
 ### Added
@@ -68,7 +94,11 @@ All notable changes to this project will be documented in this file.
 ### Added
 - Create project and first commit
 
+[1.0.4]: https://github.com/iAJTin/iEEDID/releases/tag/v1.0.4
 [1.0.3]: https://github.com/iAJTin/iEEDID/releases/tag/v1.0.3
 [1.0.2]: https://github.com/iAJTin/iEEDID/releases/tag/v1.0.2
 [1.0.1]: https://github.com/iAJTin/iEEDID/releases/tag/v1.0.1
 [1.0.0]: https://github.com/iAJTin/iEEDID/releases/tag/v1.0.0
+
+[helpimg]: ./assets/helpimg.png "help"
+

@@ -32,9 +32,9 @@ namespace iTin.Core.Hardware.Specification.Eedid
     // | 09h          White-y High Order Bits     BYTE      White-y: Bits 9 → 2                                 |
     // •————————————————————————————————————————————————————————————————————————————————————————————————————————•
 
-    /// <inheritdoc />
     /// <summary>
-    /// Specialization of the <see cref="T:iTin.Core.Hardware.Specification.Eedid.BaseDataSection" /> class that represents the <see cref="F:iTin.Core.Hardware.Specification.Eedid.KnownEdidSection.ColorCharacteristics" /> section of this block <see cref="F:iTin.Core.Hardware.Specification.Eedid.KnownDataBlock.EDID" />.
+    /// Specialization of the <see cref="BaseDataSection"/> class.<br/>
+    /// Represents the <see cref="KnownEdidSection.ColorCharacteristics"/> section of this block <see cref="KnownDataBlock.EDID"/>.
     /// </summary>
     internal sealed class ColorCharacteristicDetail : BaseDataSection
     {
@@ -43,7 +43,7 @@ namespace iTin.Core.Hardware.Specification.Eedid
         #region [public] ColorCharacteristicDetail(ReadOnlyCollection<byte>, ColorManagementDataDescriptor.KnownColor): Initialize a new instance of the class with the data in this section untreated
         /// <inheritdoc />
         /// <summary>
-        /// Initialize a new instance of the <see cref="T:iTin.Core.Hardware.Specification.Eedid.ColorCharacteristicDetail" /> class with the data in this section untreated.
+        /// Initialize a new instance of the <see cref="ColorCharacteristicDetail"/> class with the data in this section untreated.
         /// </summary>
         /// <param name="color">Color to get</param>
         /// <param name="sectionData">Unprocessed data in this section</param>

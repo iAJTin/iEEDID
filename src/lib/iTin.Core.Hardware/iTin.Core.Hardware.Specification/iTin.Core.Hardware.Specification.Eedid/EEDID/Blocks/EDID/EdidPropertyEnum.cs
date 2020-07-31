@@ -42,7 +42,7 @@ namespace iTin.Core.Hardware.Specification.Eedid
         IdProductCode,
 
         [PropertyDescription("")]
-        [PropertyType(typeof(uint?))]
+        [PropertyType(typeof(int?))]
         [PropertyName("Serial Number")]
         IdSerialNumber,
 
@@ -122,32 +122,32 @@ namespace iTin.Core.Hardware.Specification.Eedid
         [PropertyName("Analog Composite Sync Signal Green Video Supported")]
         AnalogCompositeSyncSignalGreenVideoSupported,
 
-        [PropertyDescription("")]
+        [PropertyDescription("Analog Vertical Sync Supported")]
         [PropertyType(typeof(bool))]
         [PropertyName("Analog Vertical Sync Supported")]
         AnalogVerticalSyncSupported,
 
-        [PropertyDescription("")]
+        [PropertyDescription("Digital Color Bit Depth")]
         [PropertyType(typeof(string))]
         [PropertyName("Digital Color Bit Depth")]
         DigitalColorBitDepth,
 
-        [PropertyDescription("")]
+        [PropertyDescription("Digital Video Interface")]
         [PropertyType(typeof(string))]
         [PropertyName("Video Interface")]
         DigitalVideoInterface,
 
-        [PropertyDescription("")]
+        [PropertyDescription("Horizontal Screen Size")]
         [PropertyType(typeof(byte))]
         [PropertyName("Horizontal Screen Size")]
         HorizontalScreenSize,
 
-        [PropertyDescription("")]
+        [PropertyDescription("Vertical screen size")]
         [PropertyType(typeof(byte))]
         [PropertyName("Vertical Screen Size")]
         VerticalScreenSize,
 
-        [PropertyDescription("")]
+        [PropertyDescription("The display transfer characteristic")]
         [PropertyType(typeof(double?))]
         [PropertyName("Gamma")]
         Gamma,
@@ -387,7 +387,7 @@ namespace iTin.Core.Hardware.Specification.Eedid
     internal enum EdidDataBlockDescriptor
     {
         /// <summary>
-        /// Descriptor <strong>Detailed Timing</strong>, for more information see <see cref ="DetailedTimingModeDescriptor"/>.
+        /// Descriptor <b>Detailed Timing</b>, for more information see <see cref ="DetailedTimingModeDescriptor"/>.
         /// </summary>
         [PropertyType(typeof(DetailedTimingModeDescriptor))]
         [PropertyName("Detailed Timing Mode")]
@@ -395,7 +395,7 @@ namespace iTin.Core.Hardware.Specification.Eedid
         DetailedTimingMode = -1,
 
         /// <summary>
-        /// Descriptor <strong>Display Product Serial Number</strong>, for more information see <see cref ="DisplayProductSerialNumberDescriptor"/>.
+        /// Descriptor <b>Display Product Serial Number</b>, for more information see <see cref ="DisplayProductSerialNumberDescriptor"/>.
         /// </summary>
         [PropertyType(typeof(DisplayProductSerialNumberDescriptor))]
         [PropertyName("Display Product Serial Number")]
@@ -403,7 +403,7 @@ namespace iTin.Core.Hardware.Specification.Eedid
         DisplayProductSerialNumber = 0xff,
 
         /// <summary>
-        /// Descriptor <strong>AlphaNumeric Data String</strong>, for more information see <see cref ="AlphaNumericDataStringDescriptor"/>.
+        /// Descriptor <b>AlphaNumeric Data String</b>, for more information see <see cref ="AlphaNumericDataStringDescriptor"/>.
         /// </summary>
         [PropertyType(typeof(AlphaNumericDataStringDescriptor))]
         [PropertyName("AlphaNumeric Data String")]
@@ -411,7 +411,7 @@ namespace iTin.Core.Hardware.Specification.Eedid
         AlphaNumericDataString = 0xfe,
 
         /// <summary>
-        /// Descriptor <strong>Display Range Limits</strong>, for more information see <see cref ="DisplayRangeLimitsDescriptor"/>.
+        /// Descriptor <b>Display Range Limits</b>, for more information see <see cref ="DisplayRangeLimitsDescriptor"/>.
         /// </summary>
         [PropertyType(typeof(DisplayRangeLimitsDescriptor))]
         [PropertyName("Display Range Limits")]
@@ -419,7 +419,7 @@ namespace iTin.Core.Hardware.Specification.Eedid
         DisplayRangeLimits = 0xfd,
 
         /// <summary>
-        /// Descriptor <strong>Display Product Name</strong>, for more information see <see cref ="DisplayProductNameDescriptor"/>.
+        /// Descriptor <b>Display Product Name</b>, for more information see <see cref ="DisplayProductNameDescriptor"/>.
         /// </summary>
         [PropertyType(typeof(DisplayProductNameDescriptor))]
         [PropertyName("Display Product Name")]
@@ -427,7 +427,7 @@ namespace iTin.Core.Hardware.Specification.Eedid
         DisplayProductName = 0xfc,
 
         /// <summary>
-        /// Descriptor <strong>Color Point Data</strong>, for more information see <see cref ="ColorPointDataDescriptor"/>.
+        /// Descriptor <b>Color Point Data</b>, for more information see <see cref ="ColorPointDataDescriptor"/>.
         /// </summary>
         [PropertyType(typeof(ColorPointDataDescriptor))]
         [PropertyName("Color Point Data")]
@@ -435,7 +435,7 @@ namespace iTin.Core.Hardware.Specification.Eedid
         ColorPointData = 0xfb,
 
         /// <summary>
-        /// Descriptor <strong>Standard Timing Identifier</strong>, for more information see <see cref ="StandardTimingIdentifier"/>.
+        /// Descriptor <b>Standard Timing Identifier</b>, for more information see <see cref ="StandardTimingIdentifier"/>.
         /// </summary>
         [PropertyType(typeof(StandardTimingIdentifierDescriptor))]
         [PropertyName("Standard Timing Identifier")]
@@ -443,7 +443,7 @@ namespace iTin.Core.Hardware.Specification.Eedid
         StandardTimingIdentifier = 0xfa,
 
         /// <summary>
-        /// Descriptor <strong>Color Management Data</strong>, for more information see <see cref ="ColorManagementDataDescriptor"/>.
+        /// Descriptor <b>Color Management Data</b>, for more information see <see cref ="ColorManagementDataDescriptor"/>.
         /// </summary>
         [PropertyType(typeof(ColorManagementDataDescriptor))]
         [PropertyName("Color Management Data")]
@@ -451,7 +451,7 @@ namespace iTin.Core.Hardware.Specification.Eedid
         ColorManagementData = 0xf9,
 
         /// <summary>
-        /// Descriptor <strong>CVT 3 Bytes Timing Codes</strong>, for more information see <see cref ="Cvt3ByteCodeDescriptor"/>.
+        /// Descriptor <b>CVT 3 Bytes Timing Codes</b>, for more information see <see cref ="Cvt3ByteCodeDescriptor"/>.
         /// </summary>
         [PropertyType(typeof(Cvt3ByteCodeDescriptor))]
         [PropertyName("CVT 3 Byte Code")]
@@ -459,7 +459,7 @@ namespace iTin.Core.Hardware.Specification.Eedid
         Cvt3ByteCode = 0xf8,
 
         /// <summary>
-        /// Descriptor <strong>Established Timings III</strong>, for more information see <see cref ="EstablishedTimingsIIIDescriptor"/>.
+        /// Descriptor <b>Established Timings III</b>, for more information see <see cref ="EstablishedTimingsIIIDescriptor"/>.
         /// </summary>
         [PropertyType(typeof(EstablishedTimingsIIIDescriptor))]
         [PropertyName("Established Timings III")]
@@ -467,7 +467,7 @@ namespace iTin.Core.Hardware.Specification.Eedid
         EstablishedTimingsIII = 0xf7,
 
         /// <summary>
-        /// Descriptor <strong>Dummy Data Descriptor</strong>, for more information see <see cref ="DummyDataDescriptor"/>.
+        /// Descriptor <b>Dummy Data Descriptor</b>, for more information see <see cref ="DummyDataDescriptor"/>.
         /// </summary>
         [PropertyType(typeof(DummyDataDescriptor))]
         [PropertyName("Dummy Data")]
@@ -475,14 +475,14 @@ namespace iTin.Core.Hardware.Specification.Eedid
         DummyData = 0x10,
 
         /// <summary>
-        /// Descriptor <strong>Reserved</strong>, for more information see
+        /// Descriptor <b>Reserved</b>, for more information see
         /// </summary>
         [PropertyName("Reserved")]
         [PropertyDescription("Descriptor de tipo 'Reserved'")]
         Reserved = -2,
 
         /// <summary>
-        /// Descriptor <strong>Manufacturer Specified Data</strong>, for more information see <see cref ="ManufacturerSpecifiedDataDescriptor"/>.
+        /// Descriptor <b>Manufacturer Specified Data</b>, for more information see <see cref ="ManufacturerSpecifiedDataDescriptor"/>.
         /// </summary>
         [PropertyType(typeof(ManufacturerSpecifiedDataDescriptor))]
         [PropertyName("Manufacturer Specified Data")]

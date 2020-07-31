@@ -21,7 +21,7 @@ namespace iTin.Core.Hardware.Specification.Eedid
        •—————————————————————————————————————————————• */
 
     /// <summary>
-    /// Códigos de formatos de audio disponibles para el tipo <see cref="AudioDataBlock"/>.
+    /// Audio format codes available for type <see cref="AudioDataBlock"/>.
     /// </summary>
     internal enum KnownAudioFormatCode
     {

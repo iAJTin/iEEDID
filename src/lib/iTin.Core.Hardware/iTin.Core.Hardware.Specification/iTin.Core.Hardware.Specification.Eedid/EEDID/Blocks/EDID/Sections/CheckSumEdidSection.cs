@@ -11,9 +11,9 @@ namespace iTin.Core.Hardware.Specification.Eedid
     // | 00h          CheckSum                  BYTE        Note: Ver Status                                    |
     // •————————————————————————————————————————————————————————————————————————————————————————————————————————•
 
-    /// <inheritdoc />
     /// <summary>
-    /// Specialization of the <see cref="T:iTin.Core.Hardware.Specification.Eedid.BaseDataSection" /> class that represents the <see cref="F:iTin.Core.Hardware.Specification.Eedid.KnownEdidSection.CheckSum" /> section of this block <see cref="F:iTin.Core.Hardware.Specification.Eedid.KnownDataBlock.EDID" />.
+    /// Specialization of the <see cref="BaseDataSection"/> class.<br/>
+    /// Represents the <see cref="KnownEdidSection.CheckSum"/> section of this block <see cref="KnownDataBlock.EDID"/>.
     /// </summary> 
     internal sealed class CheckSumEdidSection : BaseDataSection
     {
@@ -22,7 +22,7 @@ namespace iTin.Core.Hardware.Specification.Eedid
         #region [public] CheckSumEdidSection(ReadOnlyCollection<byte>): Initialize a new instance of the class with the data in this section untreated
         /// <inheritdoc />
         /// <summary>
-        /// Initialize a new instance of the <see cref="T:iTin.Core.Hardware.Specification.Eedid.CheckSumEdidSection" /> class with the data in this section untreated.
+        /// Initialize a new instance of the <see cref="CheckSumEdidSection"/> class with the data in this section untreated.
         /// </summary>
         /// <param name="sectionData">Unprocessed data in this section</param>
         public CheckSumEdidSection(ReadOnlyCollection<byte> sectionData) : base(sectionData)

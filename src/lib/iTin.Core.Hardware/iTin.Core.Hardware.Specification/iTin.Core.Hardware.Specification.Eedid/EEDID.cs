@@ -9,7 +9,7 @@ namespace iTin.Core.Hardware.Specification
     using Eedid;
 
     /// <summary>
-    /// Implementation of the <strong>E-EDID</strong> (Extended Display Identification Data) specification.
+    /// Implementation of the <b>E-EDID</b> (Extended Display Identification Data) specification.
     /// </summary> 
     public sealed class EEDID
     {
@@ -32,7 +32,7 @@ namespace iTin.Core.Hardware.Specification
         /// </summary>
         /// <param name="rawData">Data</param>
         /// <remarks>
-        /// Returns the <strong>E-EDID</strong> information available.
+        /// Returns the <b>E-EDID</b> information available.
         /// </remarks>
         private EEDID(IEnumerable<byte> rawData)
         {
@@ -50,7 +50,7 @@ namespace iTin.Core.Hardware.Specification
         ///// </summary>
         ///// <param name="monitor">Propiedad que representa la clave de registro del monitor.</param>
         ///// <remarks>
-        ///// Obtiene la información <strong>E-EDID</strong> disponible.
+        ///// Obtiene la información <b>E-EDID</b> disponible.
         ///// </remarks>
         //public EEDID(Monitor monitor) : this(((TypedMonitorDeviceInfo)monitor.GetTypedDeviceData()).GetNativeDeviceData())
         //{
@@ -63,7 +63,7 @@ namespace iTin.Core.Hardware.Specification
         ///// </summary>
         ///// <param name="monitorNativeData">Propiedad que representa la clave de registro del monitor.</param>
         ///// <remarks>
-        ///// Obtiene la información <strong>E-EDID</strong> disponible.
+        ///// Obtiene la información <b>E-EDID</b> disponible.
         ///// </remarks>
         //internal EEDID(MonitorDeviceInfo monitorNativeData) : this(NativeDeviceManagement.GetEdidRawDataFromMonitor(monitorNativeData))
         //{                
@@ -95,7 +95,7 @@ namespace iTin.Core.Hardware.Specification
         /// </summary>
         /// <value>
         /// Object <see cref="DataBlockCollection" /> that contains the object collection <see cref="DataBlock" /> for this <see cref="EEDID" />.
-        /// If there is no object <see cref="DataBlock" />, <strong>null</strong> is returned.
+        /// If there is no object <see cref="DataBlock" />, <b>null</b> is returned.
         /// </value>
         public DataBlockCollection Blocks
         {
@@ -119,7 +119,7 @@ namespace iTin.Core.Hardware.Specification
         /// Gets a value that indicates if there are available blocks.
         /// </summary>
         /// <value>
-        /// <strong>true</strong> if there are blocks; otherwise, it is <strong>false</strong>.
+        /// <b>true</b> if there are blocks; otherwise, it is <b>false</b>.
         /// </value>
         public bool HasBlocks
         {

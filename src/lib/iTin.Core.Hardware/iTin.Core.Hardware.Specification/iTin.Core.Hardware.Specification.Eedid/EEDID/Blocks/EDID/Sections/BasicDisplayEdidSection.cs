@@ -139,9 +139,9 @@ namespace iTin.Core.Hardware.Specification.Eedid
     // |                                                                 Note: See IsContinuousFrequency                             |
     // •—————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————•
 
-    /// <inheritdoc />
     /// <summary>
-    /// Specialization of the <see cref="T:iTin.Core.Hardware.Specification.Eedid.BaseDataSection" /> class that represents the <see cref="F:iTin.Core.Hardware.Specification.Eedid.KnownEdidSection.BasicDisplay" /> section of this block <see cref="F:iTin.Core.Hardware.Specification.Eedid.KnownDataBlock.EDID" />.
+    /// Specialization of the <see cref="BaseDataSection"/> class.<br/>
+    /// Represents the <see cref="KnownEdidSection.BasicDisplay"/> section of this block <see cref="KnownDataBlock.EDID"/>.
     /// </summary> 
     internal sealed class BasicDisplayEdidSection : BaseDataSection
     {
@@ -150,7 +150,7 @@ namespace iTin.Core.Hardware.Specification.Eedid
         #region [public] BasicDisplayEdidSection(ReadOnlyCollection<byte>): Initialize a new instance of the class with the data in this section untreated
         /// <inheritdoc />
         /// <summary>
-        /// Initialize a new instance of the <see cref="T:iTin.Core.Hardware.Specification.Eedid.BasicDisplayEdidSection" /> class with the data in this section untreated.
+        /// Initialize a new instance of the <see cref="BasicDisplayEdidSection"/> class with the data in this section untreated.
         /// </summary>
         /// <param name="sectionData">Unprocessed data in this section</param>
         public BasicDisplayEdidSection(ReadOnlyCollection<byte> sectionData) : base(sectionData)

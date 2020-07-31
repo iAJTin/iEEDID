@@ -18,9 +18,9 @@ namespace iTin.Core.Hardware.Specification.Eedid
     // |              Point 2                                                                          |
     // •———————————————————————————————————————————————————————————————————————————————————————————————•
 
-    /// <inheritdoc />
     /// <summary>
-    /// Specialization of the <see cref="T:iTin.Core.Hardware.Specification.Eedid.BaseDataSection" /> class that represents the <see cref="F:iTin.Core.Hardware.Specification.Eedid.KnownEdidSection.DataBlocks" /> section of type this block <see cref="EdidDataBlockDescriptor.ColorPointData" />.
+    /// Specialization of the <see cref="BaseDataSection"/> class.<br/>
+    /// Represents the <see cref="KnownEdidSection.DataBlocks"/> section of type this block <see cref="EdidDataBlockDescriptor.ColorPointData" />.
     /// </summary> 
     internal sealed class ColorPointDataDescriptor : BaseDataSection
     {
@@ -56,7 +56,7 @@ namespace iTin.Core.Hardware.Specification.Eedid
         #region [public] ColorPointDataDescriptor(ReadOnlyCollection<byte>): Initialize a new instance of the class with the data of this block untreated
         /// <inheritdoc />
         /// <summary>
-        /// Initialize a new instance of the <see cref="T:iTin.Core.Hardware.Specification.Eedid.ColorPointDataDescriptor" /> class with the data of this block untreated.
+        /// Initialize a new instance of the <see cref="ColorPointDataDescriptor"/> class with the data of this block untreated.
         /// </summary>
         /// <param name="dataBlock">Unprocessed data in this block</param>
         public ColorPointDataDescriptor(ReadOnlyCollection<byte> dataBlock) : base(dataBlock)

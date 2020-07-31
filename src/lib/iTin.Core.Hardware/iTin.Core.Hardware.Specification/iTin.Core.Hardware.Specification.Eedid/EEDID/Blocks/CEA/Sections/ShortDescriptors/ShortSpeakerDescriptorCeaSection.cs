@@ -26,9 +26,9 @@ namespace iTin.Core.Hardware.Specification.Eedid
          •————• •—————• •————• •—————• •————•                       
     */
 
-    /// <inheritdoc />
     /// <summary>
-    /// Especialización de la clase <see cref="T:iTin.Core.Hardware.Specification.Eedid.BaseDataSection" /> que representa la sección Short Speaker Descriptor del bloque Data Block Collection.
+    /// Specialization of the <see cref="BaseDataSection"/> class.<br/>
+    /// Represents the Short Speaker Descriptor section of the Data Block Collection block.
     /// </summary> 
     internal sealed class ShortSpeakerDescriptorCeaSection : BaseDataSection
     {
@@ -37,7 +37,7 @@ namespace iTin.Core.Hardware.Specification.Eedid
         #region [public] ShortSpeakerDescriptorCeaSection(ReadOnlyCollection<byte>): Inicializa una nueva instancia de la clase.
         /// <inheritdoc />
         /// <summary>
-        /// Inicializa una nueva instancia de la clase <see cref="T:iTin.Core.Hardware.Specification.Eedid.ShortSpeakerDescriptorCeaSection" />.
+        /// Inicializa una nueva instancia de la clase <see cref="ShortSpeakerDescriptorCeaSection"/>.
         /// </summary>
         /// <param name="sectionData">Datos de esta sección.</param>
         public ShortSpeakerDescriptorCeaSection(ReadOnlyCollection<byte> sectionData) : base(sectionData)

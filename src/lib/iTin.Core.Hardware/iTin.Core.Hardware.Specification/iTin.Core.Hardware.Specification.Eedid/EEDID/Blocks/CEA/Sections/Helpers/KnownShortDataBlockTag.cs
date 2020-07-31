@@ -2,12 +2,12 @@
 namespace iTin.Core.Hardware.Specification.Eedid
 {
     /// <summary>
-    /// Tipo de bloques de la extensión CEA
+    /// CEA Extension Block Type.
     /// </summary>
     internal enum KnownShortDataBlockTag
     {
         /// <summary>
-        /// 
+        /// Reserved
         /// </summary>
         Reserved = 0x00,
 
