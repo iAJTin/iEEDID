@@ -259,4 +259,9 @@
 
 If you have found **iEEDID** useful at work or in a personal project, I would love to hear about it. If you have decided not to use **iEEDID**, please send me and email stating why this is so. I will use this feedback to improve **iEEDID** in future releases.
 
-My email address is fdo.garcia.vega@gmail.com
+My email address is 
+
+![email.png][email] 
+
+
+[email]: ./assets/email.png "email"
