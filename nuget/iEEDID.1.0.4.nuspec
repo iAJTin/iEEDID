@@ -8,6 +8,7 @@
     <owners>iAJTin</owners>
     <license type="expression">MIT</license>
     <projectUrl>https://github.com/iAJTin/iEEDID</projectUrl>
+    <icon>.\iEEDID.png</icon>
     <iconUrl>https://raw.githubusercontent.com/iAJTin/iEEDID/master/nuget/iEEDID.png</iconUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <description>iEEDID is a lightweight implementation that allows us to obtain EEDID information</description>
@@ -27,6 +28,7 @@
   </metadata>
   <files>
     <file src="..\README.txt" target="." />
+    <file src=".\iEEDID.png" target="." />
     <file src="..\src\lib\iTin.Core.Hardware\iTin.Core.Hardware.Specification\iTin.Core.Hardware.Specification.Eedid\bin\Release\**" target="lib" exclude="**\*.deps.json;**\*.pdb;" />
   </files>
 </package>
