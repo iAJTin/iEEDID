@@ -1,6 +1,5 @@
 ﻿<p align="center">
-  <img src="https://github.com/iAJTin/iEEDID/blob/master/nuget/iEEDID.png"  
-       height="32">
+  <img src="https://github.com/iAJTin/iEEDID/blob/master/nuget/iEEDID.png" height="32">
 </p>
 <p align="center">
   <a href="https://github.com/iAJTin/iEEDID">
