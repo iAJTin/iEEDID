@@ -6,9 +6,10 @@ namespace iEEDID.ConsoleAppCore
     using System.Collections.ObjectModel;
     using System.Drawing;
 
-    using iTin.Core.Hardware;
-    using iTin.Core.Hardware.Specification;
-    using iTin.Core.Hardware.Specification.Eedid;
+    using iTin.Core.Hardware.Common;
+
+    using iTin.Hardware.Specification;
+    using iTin.Hardware.Specification.Eedid;
 
     class Program
     {
@@ -28,9 +29,9 @@ namespace iEEDID.ConsoleAppCore
                 Console.WriteLine();
                 Console.WriteLine($@"   > {block.Key} Block");
 
-                var implSections = eedid.Blocks[block.Key].Sections.ImplementedSections;
                 Console.WriteLine();
                 Console.WriteLine(@"     > Implemented Sections");
+                ReadOnlyCollection<Enum> implSections = eedid.Blocks[block.Key].Sections.ImplementedSections;
                 foreach (Enum section in implSections)
                 {
                     Console.WriteLine($@"       > {GetFriendlyName(section)}");
@@ -44,18 +45,17 @@ namespace iEEDID.ConsoleAppCore
                     Console.WriteLine();
                     Console.WriteLine($@"       > {GetFriendlyName(section.Key)} Section");
 
-                    SectionPropertiesTable sectionProperties = section.Properties.Values;
-                    foreach (KeyValuePair<IPropertyKey, object> property in sectionProperties)
+                    IEnumerable<IPropertyKey> properties = section.ImplementedProperties;
+                    foreach (IPropertyKey property in properties)
                     {
-                        object value = property.Value;
+                        string friendlyName = GetFriendlyName(property);
 
-                        IPropertyKey key = (PropertyKey)property.Key;
-                        string friendlyName = GetFriendlyName(key);
-                        PropertyUnit valueUnit = key.PropertyUnit;
-                        string unit =
-                            valueUnit == PropertyUnit.None
-                                ? string.Empty
-                                : valueUnit.ToString();
+                        QueryPropertyResult queryResult = section.GetProperty(property);
+                        PropertyItem propertyItem = queryResult.Value;
+                        object value = propertyItem.Value;
+
+                        PropertyUnit valueUnit = property.PropertyUnit;
+                        string unit = valueUnit == PropertyUnit.None ? string.Empty : valueUnit.ToString();
 
                         if (value == null)
                         {
@@ -133,18 +133,14 @@ namespace iEEDID.ConsoleAppCore
                         {
                             Console.WriteLine($@"         > {friendlyName}");
                             var dataBlockProperties = (SectionPropertiesTable)value;
-                            foreach (KeyValuePair<IPropertyKey, object> dataBlockProperty in dataBlockProperties)
+                            foreach (PropertyItem dataBlockProperty in dataBlockProperties)
                             {
                                 object dataValue = dataBlockProperty.Value;
 
                                 IPropertyKey dataBlockKey = (PropertyKey)dataBlockProperty.Key;
                                 string dataName = GetFriendlyName(dataBlockKey);
                                 PropertyUnit dataBlockUnit = dataBlockKey.PropertyUnit;
-                                string dataUnit =
-                                    dataBlockUnit == PropertyUnit.None
-                                        ? string.Empty
-                                        : dataBlockUnit.ToString();
-
+                                string dataUnit = dataBlockUnit == PropertyUnit.None ? string.Empty : dataBlockUnit.ToString();
                                 Console.WriteLine($@"           > {dataName} > {dataValue} {dataUnit}");
                             }
                         }
@@ -162,10 +158,10 @@ namespace iEEDID.ConsoleAppCore
             DataBlock edidBlock = eedid.Blocks[KnownDataBlock.EDID];
             BaseDataSectionCollection edidSections = edidBlock.Sections;
             DataSection basicDisplaySection = edidSections[(int)KnownEdidSection.BasicDisplay];
-            object gamma = basicDisplaySection.GetPropertyValue(EedidProperty.Edid.BasicDisplay.Gamma);
-            if (gamma != null)
+            QueryPropertyResult gammaResult = basicDisplaySection.GetProperty(EedidProperty.Edid.BasicDisplay.Gamma);
+            if (gammaResult.Success)
             {
-                Console.WriteLine($@"   > Gamma > {gamma}");
+                Console.WriteLine($@"   > Gamma > {gammaResult.Value.Value}");
             }
 
             Console.ReadLine();

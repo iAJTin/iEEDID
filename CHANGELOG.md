@@ -1,6 +1,27 @@
 ﻿# Changelog
 All notable changes to this project will be documented in this file.
 
+## [1.0.5] - 2020-10-07
+
+### Changed
+
+- Library versions for this version
+  
+|Library|Version|Description|
+|:------|:------|:----------|
+|iTin.Core| **2.0.0.0** | Base library containing various extensions, helpers, common constants |
+|iTin.Core.Hardware.Common| **1.0.0.0** | Common Hardware Infrastructure |
+|iTin.Core.Hardware.Specification.Eedid|**1.0.0.5**| Implementation of the E-EDID (Extended Display Identification Data) specification |
+|iTin.Logging| **1.0.0.0** | Logging library |
+
+### Removed
+
+- Remove unnecessary libraries (for now).
+
+- The **Properties** property in data sections, now use **GetProperty(IPropertyKey)** methods with **ImplementedProperties**.
+    
+     - Please see sample project for see how to use.
+
 ## [1.0.4] - 2020-07-31
 
 ### Fixed
@@ -94,6 +115,7 @@ All notable changes to this project will be documented in this file.
 ### Added
 - Create project and first commit
 
+[1.0.5]: https://github.com/iAJTin/iEEDID/releases/tag/v1.0.5
 [1.0.4]: https://github.com/iAJTin/iEEDID/releases/tag/v1.0.4
 [1.0.3]: https://github.com/iAJTin/iEEDID/releases/tag/v1.0.3
 [1.0.2]: https://github.com/iAJTin/iEEDID/releases/tag/v1.0.2

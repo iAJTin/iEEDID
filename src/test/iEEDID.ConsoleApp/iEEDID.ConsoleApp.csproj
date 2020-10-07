@@ -8,9 +8,10 @@
     <OutputType>Exe</OutputType>
     <RootNamespace>iEEDID.ConsoleApp</RootNamespace>
     <AssemblyName>iEEDID.ConsoleApp</AssemblyName>
-    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <Deterministic>true</Deterministic>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -21,6 +22,7 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -30,6 +32,7 @@
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
@@ -41,13 +44,20 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\lib\iTin.Core.Hardware\iTin.Core.Hardware.Specification\iTin.Core.Hardware.Specification.Eedid\iTin.Core.Hardware.Specification.Eedid.csproj">
-      <Project>{3d10ad36-833a-443c-aded-90b1a8745185}</Project>
-      <Name>iTin.Core.Hardware.Specification.Eedid</Name>
+    <None Include="app.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\lib\net\iTin.Core\iTin.Core.Hardware\iTin.Core.Hardware.Common\iTin.Core.Hardware.Common.csproj">
+      <Project>{e12cd758-17de-4410-a30e-3a4964bf1f6d}</Project>
+      <Name>iTin.Core.Hardware.Common</Name>
     </ProjectReference>
-    <ProjectReference Include="..\..\lib\iTin.Core.Hardware\iTin.Core.Hardware\iTin.Core.Hardware.csproj">
-      <Project>{465b6e32-c67f-41e4-bceb-8a66a4cf5be9}</Project>
-      <Name>iTin.Core.Hardware</Name>
+    <ProjectReference Include="..\..\lib\net\iTin.Core\iTin.Core\iTin.Core.csproj">
+      <Project>{d4f4f5c3-77cf-41ce-9de3-da109fc3b06b}</Project>
+      <Name>iTin.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\lib\net\iTin.Hardware\iTin.Hardware.Specification\iTin.Hardware.Specification.Eedid\iTin.Hardware.Specification.Eedid.csproj">
+      <Project>{721664b2-81f4-4a58-a1fa-ff44d33b7a6d}</Project>
+      <Name>iTin.Hardware.Specification.Eedid</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

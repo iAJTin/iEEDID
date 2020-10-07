@@ -6,172 +6,162 @@ namespace iEEDID.ConsoleApp
     using System.Collections.ObjectModel;
     using System.Drawing;
 
-    using iTin.Core.Hardware;
-    using iTin.Core.Hardware.Specification;
-    using iTin.Core.Hardware.Specification.Eedid;
+    using iTin.Core.Hardware.Common;
+
+    using iTin.Hardware.Specification;
+    using iTin.Hardware.Specification.Eedid;
 
     class Program
     {
         static void Main(string[] args)
         {
-            Console.WriteLine(@" ——————————————————————————————————————————————————————————————");
-            Console.WriteLine(@" Implemented Blocks");
-            Console.WriteLine(@" ——————————————————————————————————————————————————————————————");
+            Console.WriteLine(@" > Implemented Blocks");
 
             EEDID eedid = EEDID.Parse(MacBookPro2018.IntegratedLaptopPanelEdidTable);
             DataBlockCollection blocks = eedid.Blocks;
             foreach (KnownDataBlock block in blocks.ImplementedBlocks)
             {
-                Console.WriteLine($@" > {block}");
+                Console.WriteLine($@"   > {block}");
             }
 
             foreach (DataBlock block in blocks)
             {
                 Console.WriteLine();
-                Console.WriteLine(@" ——————————————————————————————————————————————————————————————");
-                Console.WriteLine($@" {block.Key} Block");
-                Console.WriteLine(@" ——————————————————————————————————————————————————————————————");
-
+                Console.WriteLine($@"   > {block.Key} Block");
+                
                 var implSections = eedid.Blocks[block.Key].Sections.ImplementedSections;
                 Console.WriteLine();
-                Console.WriteLine(@" > Implemented Sections");
+                Console.WriteLine(@"     > Implemented Sections");
                 foreach (Enum section in implSections)
                 {
-                    Console.WriteLine($@"   > {GetFriendlyName(section)}");
+                    Console.WriteLine($@"       > {GetFriendlyName(section)}");
                 }
 
                 Console.WriteLine();
-                Console.WriteLine(@" > Sections detail");
+                Console.WriteLine(@"     > Sections detail");
                 BaseDataSectionCollection sections = block.Sections;
                 foreach (DataSection section in sections)
                 {
                     Console.WriteLine();
-                    Console.WriteLine($@"   > {GetFriendlyName(section.Key)} Section");
+                    Console.WriteLine($@"       > {GetFriendlyName(section.Key)} Section");
 
-                    SectionPropertiesTable sectionProperties = section.Properties.Values;
-                    foreach (KeyValuePair<IPropertyKey, object> property in sectionProperties)
+                    IEnumerable<IPropertyKey> properties = section.ImplementedProperties;
+                    foreach (IPropertyKey property in properties)
                     {
-                        object value = property.Value;
+                        string friendlyName = GetFriendlyName(property);
 
-                        IPropertyKey key = (PropertyKey)property.Key;
-                        string friendlyName = GetFriendlyName(key);
-                        PropertyUnit valueUnit = key.PropertyUnit;
-                        string unit =
-                            valueUnit == PropertyUnit.None
-                                ? string.Empty
-                                : valueUnit.ToString();
+                        QueryPropertyResult queryResult = section.GetProperty(property);
+                        PropertyItem propertyItem = queryResult.Value;
+                        object value = propertyItem.Value;
+
+                        PropertyUnit valueUnit = property.PropertyUnit;
+                        string unit = valueUnit == PropertyUnit.None ? string.Empty : valueUnit.ToString();
 
                         if (value == null)
                         {
-                            Console.WriteLine($@"     > {friendlyName} > NULL");
+                            Console.WriteLine($@"         > {friendlyName} > NULL");
                             continue;
                         }
 
                         if (value is string)
                         {
-                            Console.WriteLine($@"     > {friendlyName} > {value}{unit}");
+                            Console.WriteLine($@"         > {friendlyName} > {value}{unit}");
                         }
                         else if (value is bool)
                         {
-                            Console.WriteLine($@"     > {friendlyName} > {value}{unit}");
+                            Console.WriteLine($@"         > {friendlyName} > {value}{unit}");
                         }
                         else if (value is double)
                         {
-                            Console.WriteLine($@"     > {friendlyName} > {value}{unit}");
+                            Console.WriteLine($@"         > {friendlyName} > {value}{unit}");
                         }
                         else if (value is byte)
                         {
-                            Console.WriteLine($@"     > {friendlyName} > {value}{unit} [{value:X2}h]");
+                            Console.WriteLine($@"         > {friendlyName} > {value}{unit} [{value:X2}h]");
                         }
                         else if (value is short)
                         {
-                            Console.WriteLine($@"     > {friendlyName} > {value}{unit} [{value:X4}h]");
+                            Console.WriteLine($@"         > {friendlyName} > {value}{unit} [{value:X4}h]");
                         }
                         else if (value is ushort)
                         {
-                            Console.WriteLine($@"     > {friendlyName} > {value}{unit} [{value:X4}h]");
+                            Console.WriteLine($@"         > {friendlyName} > {value}{unit} [{value:X4}h]");
                         }
                         else if (value is int)
                         {
-                            Console.WriteLine($@"     > {friendlyName} > {value}{unit} [{value:X4}h]");
+                            Console.WriteLine($@"         > {friendlyName} > {value}{unit} [{value:X4}h]");
                         }
                         else if (value is uint)
                         {
-                            Console.WriteLine($@"     > {friendlyName} > {value}{unit} [{value:X4}h]");
+                            Console.WriteLine($@"         > {friendlyName} > {value}{unit} [{value:X4}h]");
                         }
                         else if (value is long)
                         {
-                            Console.WriteLine($@"     > {friendlyName} > {value}{unit} [{value:X8}h]");
+                            Console.WriteLine($@"         > {friendlyName} > {value}{unit} [{value:X8}h]");
                         }
                         else if (value is ulong)
                         {
-                            Console.WriteLine($@"     > {friendlyName} > {value}{unit} [{value:X8}h]");
+                            Console.WriteLine($@"         > {friendlyName} > {value}{unit} [{value:X8}h]");
                         }
                         else if (value is PointF)
                         {
-                            Console.WriteLine($@"     > {friendlyName}");
-                            Console.WriteLine($@"       > X > {((PointF)value).X}");
-                            Console.WriteLine($@"       > Y > {((PointF)value).Y}");
+                            Console.WriteLine($@"         > {friendlyName}");
+                            Console.WriteLine($@"           > X > {((PointF)value).X}");
+                            Console.WriteLine($@"           > Y > {((PointF)value).Y}");
                         }
                         else if (value.GetType() == typeof(ReadOnlyCollection<string>))
                         {
-                            Console.WriteLine($@"     > {friendlyName} > {string.Join(", ", (ReadOnlyCollection<string>)value)}");
+                            Console.WriteLine($@"         > {friendlyName} > {string.Join(", ", (ReadOnlyCollection<string>)value)}");
                         }
                         else if (value.GetType() == typeof(ReadOnlyCollection<byte>))
                         {
-                            Console.WriteLine($@"     > {friendlyName} > {string.Join(", ", (ReadOnlyCollection<byte>)value)}");
+                            Console.WriteLine($@"         > {friendlyName} > {string.Join(", ", (ReadOnlyCollection<byte>)value)}");
                         }
                         else if (value is StandardTimingIdentifierDescriptorItem)
                         {
-                            Console.WriteLine($@"     > {(StandardTimingIdentifierDescriptorItem)value}");
+                            Console.WriteLine($@"         > {(StandardTimingIdentifierDescriptorItem)value}");
                         }
                         else if (value.GetType() == typeof(ReadOnlyCollection<MonitorResolutionInfo>))
                         {
                             var resolutions = (ReadOnlyCollection<MonitorResolutionInfo>)value;
                             foreach (MonitorResolutionInfo resolution in resolutions)
                             {
-                                Console.WriteLine($@"     > {resolution}");
+                                Console.WriteLine($@"         > {resolution}");
                             }
                         }
                         else if (value.GetType() == typeof(SectionPropertiesTable))
                         {
-                            Console.WriteLine($@"     > {friendlyName}");
+                            Console.WriteLine($@"         > {friendlyName}");
                             var dataBlockProperties = (SectionPropertiesTable)value;
-                            foreach (KeyValuePair<IPropertyKey, object> dataBlockProperty in dataBlockProperties)
+                            foreach (PropertyItem dataBlockProperty in dataBlockProperties)
                             {
                                 object dataValue = dataBlockProperty.Value;
 
                                 IPropertyKey dataBlockKey = (PropertyKey)dataBlockProperty.Key;
                                 string dataName = GetFriendlyName(dataBlockKey);
                                 PropertyUnit dataBlockUnit = dataBlockKey.PropertyUnit;
-                                string dataUnit =
-                                    dataBlockUnit == PropertyUnit.None
-                                        ? string.Empty
-                                        : dataBlockUnit.ToString();
-
-                                Console.WriteLine($@"       > {dataName} > {dataValue} {dataUnit}");
+                                string dataUnit = dataBlockUnit == PropertyUnit.None ? string.Empty : dataBlockUnit.ToString();
+                                Console.WriteLine($@"           > {dataName} > {dataValue} {dataUnit}");
                             }
                         }
                         else
                         {
-                            Console.WriteLine($@"     > {friendlyName} > {value}{unit}");
+                            Console.WriteLine($@"         > {friendlyName} > {value}{unit}");
                         }
                     }
                 }
             }
 
             Console.WriteLine();
-            Console.WriteLine(@" ——————————————————————————————————————————————————————————————");
-            Console.WriteLine(@" Gets A Single Property Directly");
-            Console.WriteLine(@" ——————————————————————————————————————————————————————————————");
+            Console.WriteLine(@" > Gets A Single Property Directly");
 
             DataBlock edidBlock = eedid.Blocks[KnownDataBlock.EDID];
             BaseDataSectionCollection edidSections = edidBlock.Sections;
             DataSection basicDisplaySection = edidSections[(int)KnownEdidSection.BasicDisplay];
-            object gamma = basicDisplaySection.GetPropertyValue(EedidProperty.Edid.BasicDisplay.Gamma);
-            if (gamma != null)
+            QueryPropertyResult gammaResult = basicDisplaySection.GetProperty(EedidProperty.Edid.BasicDisplay.Gamma);
+            if (gammaResult.Success)
             {
-                Console.WriteLine($@" > Gamma > {gamma}");
+                Console.WriteLine($@"   > Gamma > {gammaResult.Value.Value}");
             }
 
             Console.ReadLine();

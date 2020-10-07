@@ -7,22 +7,27 @@ iEEDID is a lightweight implementation that allows us to obtain the the EEDID in
 Library versions
 ================
 
-Library versions for current iEEDID version (1.0.4)
+Library versions for current iEEDID version (1.0.5)
 
-•———————————————————————————————————————————————————————————————————————————————————————————•
-| Library                                  Version      Description                         |
-•———————————————————————————————————————————————————————————————————————————————————————————•
-|iTin.Core                                 1.0.2		Common calls                        |
-•———————————————————————————————————————————————————————————————————————————————————————————•
-|iTin.Core.Interop                         1.0.0    	Interop calls                       |
-•———————————————————————————————————————————————————————————————————————————————————————————•
-|iTin.Core.Hardware                        1.0.1		Hardware Interop Calls              |
-•———————————————————————————————————————————————————————————————————————————————————————————•
-|iTin.Core.Hardware.Specification.Eedid    1.0.4		E-EDID Specification Implementation |
-•———————————————————————————————————————————————————————————————————————————————————————————•
+•——————————————————————————————————————————————————————————————————————————————————————————————•
+| Library                                  Version      Description                            |
+•——————————————————————————————————————————————————————————————————————————————————————————————•
+|iTin.Core                                 2.0.0.0		Base library containing various        |
+|                                                       extensions, helpers, common constants  |
+•——————————————————————————————————————————————————————————————————————————————————————————————•
+|iTin.Core.Hardware.Common                 1.0.0.0    	Common Hardware Infrastructure         |
+•——————————————————————————————————————————————————————————————————————————————————————————————•
+|iTin.Core.Hardware.Specification.Eedid    1.0.0.5		Implementation of the E-EDID           |
+|                                                       (Extended Display Identification Data) |
+|                                                       specification                          |
+•——————————————————————————————————————————————————————————————————————————————————————————————•
+|iTin.Logging                              1.0.0.0 		Logging library                        |
+•——————————————————————————————————————————————————————————————————————————————————————————————•
 
 Install via NuGet
 =================
+
+PM> Install-Package iEEDID
 
 For more information, please see https://www.nuget.org/packages/iEEDID/
 
@@ -37,18 +42,18 @@ Examples
     EEDID edid = EEDID.Parse(MacBookPro2018.IntegratedLaptopPanelEdidTable);
     DataBlockCollection blocks = edid.Blocks;
     foreach (KnownDataBlock block in blocks.ImplementedBlocks)
-    { 
-		Console.WriteLine($@" \> {block}"); 
+    {
+        Console.WriteLine($@" > {block}");
     }
 
 2.  Gets a specific EEDID block.
 
     EEDID edid = EEDID.Parse(MacBookPro2018.IntegratedLaptopPanelEdidTable);
     DataBlockCollection blocks = edid.Blocks;
-	DataBlock edid = blocks[KnownDataBlock.EDID];
-	if (edid != null)
-	{
-		/// block exist!!!
+    DataBlock edid = blocks[KnownDataBlock.EDID];
+    if (edid != null)
+    {
+        /// block exist!!!
     }
 
 3.  Prints all EEDID blocks properties.
@@ -60,9 +65,9 @@ Examples
         Console.WriteLine();
         Console.WriteLine($@"   > {block.Key} Block");
 
-        var implSections = eedid.Blocks[block.Key].Sections.ImplementedSections;
         Console.WriteLine();
         Console.WriteLine(@"     > Implemented Sections");
+        ReadOnlyCollection<Enum> implSections = eedid.Blocks[block.Key].Sections.ImplementedSections;
         foreach (Enum section in implSections)
         {
             Console.WriteLine($@"       > {GetFriendlyName(section)}");
@@ -76,18 +81,17 @@ Examples
             Console.WriteLine();
             Console.WriteLine($@"       > {GetFriendlyName(section.Key)} Section");
 
-            SectionPropertiesTable sectionProperties = section.Properties.Values;
-            foreach (KeyValuePair<IPropertyKey, object> property in sectionProperties)
+            IEnumerable<IPropertyKey> properties = section.ImplementedProperties;
+            foreach (IPropertyKey property in properties)
             {
-                object value = property.Value;
+                string friendlyName = GetFriendlyName(property);
 
-                IPropertyKey key = (PropertyKey)property.Key;
-                string friendlyName = GetFriendlyName(key);
-                PropertyUnit valueUnit = key.PropertyUnit;
-                string unit =
-                    valueUnit == PropertyUnit.None
-                        ? string.Empty
-                        : valueUnit.ToString();
+                QueryPropertyResult queryResult = section.GetProperty(property);
+                PropertyItem propertyItem = queryResult.Value;
+                object value = propertyItem.Value;
+
+                PropertyUnit valueUnit = property.PropertyUnit;
+                string unit = valueUnit == PropertyUnit.None ? string.Empty : valueUnit.ToString();
 
                 if (value == null)
                 {
@@ -165,18 +169,14 @@ Examples
                 {
                     Console.WriteLine($@"         > {friendlyName}");
                     var dataBlockProperties = (SectionPropertiesTable)value;
-                    foreach (KeyValuePair<IPropertyKey, object> dataBlockProperty in dataBlockProperties)
+                    foreach (PropertyItem dataBlockProperty in dataBlockProperties)
                     {
                         object dataValue = dataBlockProperty.Value;
 
                         IPropertyKey dataBlockKey = (PropertyKey)dataBlockProperty.Key;
                         string dataName = GetFriendlyName(dataBlockKey);
                         PropertyUnit dataBlockUnit = dataBlockKey.PropertyUnit;
-                        string dataUnit =
-                            dataBlockUnit == PropertyUnit.None
-                                ? string.Empty
-                                : dataBlockUnit.ToString();
-
+                        string dataUnit = dataBlockUnit == PropertyUnit.None ? string.Empty : dataBlockUnit.ToString();
                         Console.WriteLine($@"           > {dataName} > {dataValue} {dataUnit}");
                     }
                 }
@@ -235,12 +235,11 @@ Examples
 
 4.  Gets a single property directly.
 
-	EEDID edid = EEDID.Parse(MacBookPro2018.IntegratedLaptopPanelEdidTable);
-	DataBlock edidBlock = eedid.Blocks[KnownDataBlock.EDID];
-	BaseDataSectionCollection edidSections = edidBlock.Sections;
-	DataSection basicDisplaySection = edidSections[(int)KnownEdidSection.BasicDisplay];
-	object gamma = basicDisplaySection.GetPropertyValue(EedidProperty.Edid.BasicDisplay.Gamma);
-	if (gamma != null)
-	{
-		Console.WriteLine($@" > Gamma > {gamma}");
-	}
+    DataBlock edidBlock = eedid.Blocks[KnownDataBlock.EDID];
+    BaseDataSectionCollection edidSections = edidBlock.Sections;
+    DataSection basicDisplaySection = edidSections[(int)KnownEdidSection.BasicDisplay];
+    QueryPropertyResult gammaResult = basicDisplaySection.GetProperty(EedidProperty.Edid.BasicDisplay.Gamma);
+    if (gammaResult.Success)
+    {
+        Console.WriteLine($@"   > Gamma > {gammaResult.Value.Value}");
+    }
