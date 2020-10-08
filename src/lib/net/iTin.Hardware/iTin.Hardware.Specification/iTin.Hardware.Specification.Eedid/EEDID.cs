@@ -46,6 +46,32 @@ namespace iTin.Hardware.Specification
         }
         #endregion
 
+        //#region [public] EEDID(Monitor): Inicializa una nueva instancia de la clase E-EDID especificando la clave de registro del monitor.
+        ///// <summary>
+        ///// Inicializa una nueva instancia de la clase <see cref="EEDID"/> especificando la clave de registro del monitor.
+        ///// </summary>
+        ///// <param name="monitor">Propiedad que representa la clave de registro del monitor.</param>
+        ///// <remarks>
+        ///// Obtiene la información <b>E-EDID</b> disponible.
+        ///// </remarks>
+        //public EEDID(Monitor monitor) : this(((TypedMonitorDeviceInfo)monitor.GetTypedDeviceData()).GetNativeDeviceData())
+        //{
+        //}
+        //#endregion
+
+        //#region [public] EEDID(MonitorDeviceInfo): Inicializa una nueva instancia de la clase E-EDID especificando la clave de registro del monitor.
+        ///// <summary>
+        ///// Inicializa una nueva instancia de la clase <see cref="EEDID"/> especificando la clave de registro del monitor.
+        ///// </summary>
+        ///// <param name="monitorNativeData">Propiedad que representa la clave de registro del monitor.</param>
+        ///// <remarks>
+        ///// Obtiene la información <b>E-EDID</b> disponible.
+        ///// </remarks>
+        //internal EEDID(MonitorDeviceInfo monitorNativeData) : this(NativeDeviceManagement.GetEdidRawDataFromMonitor(monitorNativeData))
+        //{                
+        //}
+        //#endregion
+
         #endregion
 
         #region public static methods
