@@ -2,7 +2,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2011/08/nuspec.xsd">
   <metadata>
     <id>iEEDID</id>
-    <version>1.0.5</version>
+    <version>1.0.6</version>
     <title>iEEDID</title>
     <authors>iAJTin</authors>
     <owners>iAJTin</owners>
@@ -20,15 +20,11 @@
       </group>
       <group targetFramework=".NETStandard2.0">
       </group>
-      <group targetFramework=".NETCoreApp2.0">
-      </group>
-      <group targetFramework=".NETCoreApp2.1">
-      </group>
     </dependencies>
   </metadata>
   <files>
-    <file src="..\README.txt" target="." />
     <file src=".\iEEDID.png" target="." />
+    <file src="..\README.txt" target="." />
     <file src="..\src\lib\net\iTin.Hardware\iTin.Hardware.Specification\iTin.Hardware.Specification.Eedid\bin\Release\**" target="lib" exclude="**\*.deps.json;**\*.pdb;" />
   </files>
 </package>

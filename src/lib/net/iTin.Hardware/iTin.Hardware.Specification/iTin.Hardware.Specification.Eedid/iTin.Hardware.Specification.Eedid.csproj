@@ -1,14 +1,18 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFrameworks>net461;netstandard2.0;netcoreapp2.0;netcoreapp2.1</TargetFrameworks>
-    <Description>Implementation of the E-EDID (Extended Display Identification Data) specification</Description>
-    <Copyright>Copyright © 2019</Copyright>
-    <Authors>iTin</Authors>
+    <TargetFrameworks>net461;netstandard2.0</TargetFrameworks>
     <SignAssembly>true</SignAssembly>
     <AssemblyOriginatorKeyFile>key.snk</AssemblyOriginatorKeyFile>
     <GenerateDocumentationFile>true</GenerateDocumentationFile>
-    <Version>1.0.0.5</Version>
+    <AssemblyName>iTin.Hardware.Specification.Eedid</AssemblyName>
+    <PackageId>iTin.Hardware.Specification.Eedid</PackageId>
+    <Version>1.0.0.6</Version>
+    <Authors>iTin</Authors>
+    <Company>iTin</Company>
+    <Product>iTin.Hardware.Specification.Eedid</Product>
+    <Description>Implementation of the E-EDID (Extended Display Identification Data) specification</Description>
+    <Copyright>Copyright © 2020</Copyright>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
     <PackageIcon>icon.png</PackageIcon>
   </PropertyGroup>

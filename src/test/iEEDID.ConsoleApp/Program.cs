@@ -48,13 +48,11 @@ namespace iEEDID.ConsoleApp
                     IEnumerable<IPropertyKey> properties = section.ImplementedProperties;
                     foreach (IPropertyKey property in properties)
                     {
-                        string friendlyName = GetFriendlyName(property);
-
                         QueryPropertyResult queryResult = section.GetProperty(property);
                         PropertyItem propertyItem = queryResult.Value;
                         object value = propertyItem.Value;
-
                         PropertyUnit valueUnit = property.PropertyUnit;
+                        string friendlyName = property.GetPropertyName();
                         string unit = valueUnit == PropertyUnit.None ? string.Empty : valueUnit.ToString();
 
                         if (value == null)
@@ -138,7 +136,7 @@ namespace iEEDID.ConsoleApp
                                 object dataValue = dataBlockProperty.Value;
 
                                 IPropertyKey dataBlockKey = (PropertyKey)dataBlockProperty.Key;
-                                string dataName = GetFriendlyName(dataBlockKey);
+                                string dataName = dataBlockKey.GetPropertyName();
                                 PropertyUnit dataBlockUnit = dataBlockKey.PropertyUnit;
                                 string dataUnit = dataBlockUnit == PropertyUnit.None ? string.Empty : dataBlockUnit.ToString();
                                 Console.WriteLine($@"           > {dataName} > {dataValue} {dataUnit}");
@@ -176,17 +174,6 @@ namespace iEEDID.ConsoleApp
                 : friendlyName;
         }
 
-        private static string GetFriendlyName(IPropertyKey value)
-        {
-            string friendlyName = value.GetPropertyName();
-
-            return string.IsNullOrEmpty(friendlyName)
-                ? value.PropertyId.ToString()
-                : friendlyName;
-        }
-
-
-        // nested classes
         private class MacBookPro2018
         {
             public static readonly byte[] IntegratedLaptopPanelEdidTable =

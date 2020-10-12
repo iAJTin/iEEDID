@@ -119,12 +119,19 @@ namespace iTin.Core.Hardware.Common
 
         #region [public] (string) GetPropertyName: Returns the property name
         /// <summary>
-        /// Returns the property name.
+        /// Returns the property name. If is null or empty then returns this property name.
         /// </summary>
         /// <returns>
         /// Property name.
         /// </returns>
-        public string GetPropertyName() => PropertyId.GetPropertyName();
+        public string GetPropertyName()
+        {
+            string name = PropertyId.GetPropertyName();
+
+            return string.IsNullOrEmpty(name)
+                ? PropertyId.ToString()
+                : name;
+        }
         #endregion
 
         #region [public] (Type) GetPropertyType: Returns the property type   
