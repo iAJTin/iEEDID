@@ -5,46 +5,78 @@ What is iEEDID?
 iEEDID is a lightweight implementation that allows us to obtain the the EEDID information.
 
 
-Changes in this version (v1.0.6)
+Changes in this version (v1.0.7)
 ================================
 
-Changed
--------
+· Added
+  -----
 
-library versions
-•—————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————•
-| Library                                  Version      Description                                                                       |
-•—————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————•
-|iTin.Core                                 2.0.0.1      Base library containing various extensions, helpers, common constants             |
-•—————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————•
-|iTin.Core.Hardware.Common                 1.0.0.1    	Common Hardware Infrastructure                                                    |
-•—————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————•
-|iTin.Core.Hardware.Specification.Eedid    1.0.0.6		Implementation of the E-EDID (Extended Display Identification Data) specification |
-•—————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————•
-|iTin.Logging                              1.0.0.0 		Logging library                                                                   |
-•—————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————•
+    - Library documentation.
 
-Removed
--------
+· Changed
+  -------
 
-- Removed netcoreapp target. Current supported targets, net461 and netstandard20
+    - Update result classes for support more scenaries.
+
+    - Library versions for this version
+
+    •—————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————•
+    | Library                                  Version      Description                                                                       |
+    •—————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————•
+    |iTin.Core                                 2.0.0.1      Base library containing various extensions, helpers, common constants             |
+    •—————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————•
+    |iTin.Core.Hardware.Common                 1.0.0.1    	Common Hardware Infrastructure                                                    |
+    •—————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————•
+    |iTin.Core.Hardware.Specification.Eedid    1.0.0.6		Implementation of the E-EDID (Extended Display Identification Data) specification |
+    •—————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————•
+    |iTin.Logging                              1.0.0.0 		Logging library                                                                   |
+    •—————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————•
+
+v1.0.6
+======
+
+· Changed
+  -------
+
+    - Library versions for this version
+
+    •—————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————•
+    | Library                                  Version      Description                                                                       |
+    •—————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————•
+    |iTin.Core                                 2.0.0.1      Base library containing various extensions, helpers, common constants             |
+    •—————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————•
+    |iTin.Core.Hardware.Common                 1.0.0.1    	Common Hardware Infrastructure                                                    |
+    •—————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————•
+    |iTin.Core.Hardware.Specification.Eedid    1.0.0.6		Implementation of the E-EDID (Extended Display Identification Data) specification |
+    •—————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————•
+    |iTin.Logging                              1.0.0.0 		Logging library                                                                   |
+    •—————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————•
+
+· Removed
+  -------
+
+    - Removed netcoreapp target. Current supported targets, net461 and netstandard20
 
 
 v1.0.5
 ======
 
-library versions
-•—————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————•
-| Library                                  Version      Description                                                                       |
-•—————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————•
-|iTin.Core                                 2.0.0.0      Base library containing various extensions, helpers, common constants             |
-•—————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————•
-|iTin.Core.Hardware.Common                 1.0.0.0    	Common Hardware Infrastructure                                                    |
-•—————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————•
-|iTin.Core.Hardware.Specification.Eedid    1.0.0.5		Implementation of the E-EDID (Extended Display Identification Data) specification |
-•—————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————•
-|iTin.Logging                              1.0.0.0 		Logging library                                                                   |
-•—————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————•
+· Changed
+  -------
+
+    - Library versions for this version
+
+    •—————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————•
+    | Library                                  Version      Description                                                                       |
+    •—————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————•
+    |iTin.Core                                 2.0.0.0      Base library containing various extensions, helpers, common constants             |
+    •—————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————•
+    |iTin.Core.Hardware.Common                 1.0.0.0    	Common Hardware Infrastructure                                                    |
+    •—————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————•
+    |iTin.Core.Hardware.Specification.Eedid    1.0.0.5		Implementation of the E-EDID (Extended Display Identification Data) specification |
+    •—————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————•
+    |iTin.Logging                              1.0.0.0 		Logging library                                                                   |
+    •—————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————•
 
 
 Install via NuGet
@@ -266,3 +298,8 @@ Examples
     {
         Console.WriteLine($@"   > Gamma > {gammaResult.Value.Value}");
     }
+
+Documentation
+==============
+
+ - For full code documentation, please see next link https://github.com/iAJTin/iEEDID/blob/master/documentation/iTin.Hardware.Specification.Eedid.md.
