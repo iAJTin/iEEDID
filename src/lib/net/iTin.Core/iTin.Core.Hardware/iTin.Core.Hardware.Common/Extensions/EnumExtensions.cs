@@ -66,12 +66,7 @@ namespace iTin.Core.Hardware.Common
             }
 
             DescriptionAttribute attr = Attribute.GetCustomAttribute(field, typeof(PropertyDescriptionAttribute)) as PropertyDescriptionAttribute;
-            if (attr != null)
-            {
-                return attr.Description;
-            }
-
-            return null;
+            return attr?.Description;
         }
 
         /// <summary>
@@ -98,12 +93,7 @@ namespace iTin.Core.Hardware.Common
             }
 
             PropertyNameAttribute attr = Attribute.GetCustomAttribute(field, typeof(PropertyNameAttribute)) as PropertyNameAttribute;
-            if (attr != null)
-            {
-                return attr.Name;
-            }
-
-            return null;
+            return attr?.Name;
         }
 
         /// <summary>

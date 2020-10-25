@@ -123,7 +123,10 @@ namespace iTin.Hardware.Specification.Eedid
         /// <para>
         /// </para>
         /// </returns>
-        public QueryPropertyResult GetProperty(IPropertyKey propertyKey) => _dataSection.GetProperty(propertyKey);
+        public QueryPropertyResult GetProperty(IPropertyKey propertyKey)
+            => _dataSection.Properties.ContainsKey(propertyKey)
+                ? _dataSection.GetProperty(propertyKey)
+                : QueryPropertyResult.CreateErroResult($"Property {propertyKey} not found");
         #endregion
 
         #endregion

@@ -174,6 +174,7 @@ namespace iEEDID.ConsoleAppCore
                 : friendlyName;
         }
 
+
         private class MacBookPro2018
         {
             public static readonly byte[] IntegratedLaptopPanelEdidTable =
