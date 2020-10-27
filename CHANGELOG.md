@@ -9,7 +9,7 @@ All notable changes to this project will be documented in this file.
 
 ### Added
 
- - Added support for **MacOS**
+ - Added support for **MacOS** (Tested on macOS Catalina Version 10.15.7)
 
  - Added support for **CEA** blocks
  
