@@ -5,8 +5,11 @@ namespace iTin.Hardware.Specification
     using System.Collections.ObjectModel;
     using System.Diagnostics;
     using System.Linq;
+    using System.Runtime.InteropServices;
 
     using iTin.Core;
+    using iTin.Core.Hardware.MacOS.Device.Desktop;
+    using iTin.Core.Hardware.Windows.Device.Desktop.Monitor;
 
     using Eedid;
 
@@ -74,6 +77,20 @@ namespace iTin.Hardware.Specification
 
         #endregion
 
+        #region public static readonly properties
+
+        #region [public] {static} (EEDID[]) Instance: Returns a new instance containing all available EEDID structures for this machine
+        /// <summary>
+        /// Returns a new instance containing all available <see cref="EEDID"/> structures for this machine.
+        /// </summary>
+        /// <returns>
+        /// A <see cref="EEDID"/> array that contains <b>Extended Display Identification Data</b> information for this machine.
+        /// </returns>
+        public static EEDID[] Instance => PlatformResolverStrategy();
+        #endregion
+
+        #endregion
+
         #region public static methods
 
         #region [public] {static} (EEDID) Parse(byte[]): Parses 'EEDID' raw data
@@ -82,7 +99,7 @@ namespace iTin.Hardware.Specification
         /// </summary>
         /// <param name="data">Raw data to parse</param>
         /// <returns>
-        /// A <see cref="EEDID"/> reference that contains <c>Extended Display Identification Data</c> information.
+        /// A <see cref="EEDID"/> reference that contains <b>Extended Display Identification Data</b> information.
         /// </returns>
         public static EEDID Parse(byte[] data) => new EEDID(data);
         #endregion
@@ -204,7 +221,7 @@ namespace iTin.Hardware.Specification
             {
                 for (int n = 0x01, i = 0x00; i < extensionBlockCount; i++, n++)
                 {
-                    dataBlocks.Add(edidData.Extract((byte) (n * 0x80), (byte)0x80));
+                    dataBlocks.Add(edidData.Extract((byte)(n * 0x80), (byte)0x80));
                 }
             }
             else
@@ -219,6 +236,46 @@ namespace iTin.Hardware.Specification
             }
 
             return dataBlocks;
+        }
+        #endregion
+
+        #region [private] {static} (EEDID[]) PlatformResolverStrategy(): Returns a new instance containing all available EEDID structures for this machine
+        /// <summary>
+        /// Returns a new instance containing all available <see cref="EEDID"/> structures for this machine.
+        /// </summary>
+        /// <returns>
+        /// A <see cref="EEDID"/> array that contains <b>Extended Display Identification Data</b> information for this machine.
+        /// </returns>
+        private static EEDID[] PlatformResolverStrategy()
+        {
+            List<EEDID> result = new List<EEDID>();
+            List<byte[]> rawEdidCollection = new List<byte[]>();
+
+            if (RuntimeInformation.IsOSPlatform(OSPlatform.Linux))
+            {
+                // Nothing to do
+            }
+
+            if (RuntimeInformation.IsOSPlatform(OSPlatform.OSX))
+            {
+                rawEdidCollection = Monitor.GetEdidDataCollection().ToList();
+            }
+
+            if (RuntimeInformation.IsOSPlatform(OSPlatform.Windows))
+            {
+                IEnumerable<MonitorDeviceInfo> deviceMonitors = SafeMonitorNativeMethods.EnumerateMonitorDevices();
+                foreach (var device in deviceMonitors)
+                {
+                    rawEdidCollection.Add(device.Edid);
+                }
+            }
+
+            foreach (var rawEdidItem in rawEdidCollection)
+            {
+                result.Add(new EEDID((byte[])rawEdidItem.Clone()));
+            }
+
+            return (EEDID[])result.ToArray().Clone();
         }
         #endregion
 

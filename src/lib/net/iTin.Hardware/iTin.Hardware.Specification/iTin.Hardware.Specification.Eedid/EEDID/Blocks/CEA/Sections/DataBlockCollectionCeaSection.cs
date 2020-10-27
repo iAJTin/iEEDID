@@ -44,42 +44,49 @@ namespace iTin.Hardware.Specification.Eedid
             var shortDataBlocks = GetDataBlockCollection(RawData);
             foreach (var shortDataBlock in shortDataBlocks)
             {
-                //var key = shortDataBlock.Tag.ToString();
-                //var exist = shortDataBlock.Tag != KnownShortDataBlockTag.ExtendedTag && properties.ContainsKey(key);
+                var key = shortDataBlock.Tag.ToString();
+                var exist = shortDataBlock.Tag != KnownShortDataBlockTag.ExtendedTag; // && properties.ContainsKey(key);
 
-                //if (!exist)
-                //{
-                //    switch (shortDataBlock.Tag)
-                //    {
-                //        case KnownShortDataBlockTag.Audio:
-                //            properties.Add(key, new ShortAudioDescriptorCeaSection(shortDataBlock.RawData).Properties);
-                //            break;
+                if (exist)
+                {
+                    switch (shortDataBlock.Tag)
+                    {
+                        case KnownShortDataBlockTag.Audio:
+                            var a = new ShortAudioDescriptorCeaSection(shortDataBlock.RawData).Properties;
+                            //properties.Add(EedidProperty.Cea. key, new ShortAudioDescriptorCeaSection(shortDataBlock.RawData).Properties);
+                            break;
 
-                //        case KnownShortDataBlockTag.Video:
-                //            properties.Add(key, new ShortVideoDescriptorCeaSection(shortDataBlock.RawData).Properties);
-                //            break;
+                        case KnownShortDataBlockTag.Video:
+                            var b = new ShortVideoDescriptorCeaSection(shortDataBlock.RawData).Properties;
+                            //          properties.Add(key, new ShortVideoDescriptorCeaSection(shortDataBlock.RawData).Properties);
+                            break;
 
-                //        case KnownShortDataBlockTag.Vendor:
-                //            properties.Add(key, new ShortVendorDescriptorCeaSection(shortDataBlock.RawData).Properties);
-                //            break;
+                        case KnownShortDataBlockTag.Vendor:
+                            var c = new ShortVendorDescriptorCeaSection(shortDataBlock.RawData).Properties;
+                            //            properties.Add(key, new ShortVendorDescriptorCeaSection(shortDataBlock.RawData).Properties);
+                            break;
 
-                //        case KnownShortDataBlockTag.Speaker:
-                //            properties.Add(key, new ShortSpeakerDescriptorCeaSection(shortDataBlock.RawData).Properties);
-                //            break;
+                        case KnownShortDataBlockTag.Speaker:
+                            var d = new ShortSpeakerDescriptorCeaSection(shortDataBlock.RawData).Properties;
+                            //            properties.Add(key, new ShortSpeakerDescriptorCeaSection(shortDataBlock.RawData).Properties);
+                            break;
 
-                //        case KnownShortDataBlockTag.VESA:
-                //            properties.Add(key, new ShortSpeakerDescriptorCeaSection(shortDataBlock.RawData).Properties);
-                //            break;
+                        case KnownShortDataBlockTag.VESA:
+                            var e = new ShortSpeakerDescriptorCeaSection(shortDataBlock.RawData).Properties;
+                            //            properties.Add(key, new ShortSpeakerDescriptorCeaSection(shortDataBlock.RawData).Properties);
+                            break;
 
-                //        case KnownShortDataBlockTag.ExtendedTag:
-                //            properties.Add(key, new ShortExtendedTagDescriptorCeaSection(shortDataBlock.RawData).Properties);
-                //            break;
+                        case KnownShortDataBlockTag.ExtendedTag:
+                            var f = new ShortExtendedTagDescriptorCeaSection(shortDataBlock.RawData).Properties;
+                            //            properties.Add(key, new ShortExtendedTagDescriptorCeaSection(shortDataBlock.RawData).Properties);
+                            break;
 
-                //        default:
-                //            properties.Add(key, new ShortReservedDescriptorCeaSection(shortDataBlock.RawData).Properties);
-                //            break;
-                //    }
-                //}
+                        default:
+                            var g = new ShortReservedDescriptorCeaSection(shortDataBlock.RawData).Properties;
+                            //            properties.Add(key, new ShortReservedDescriptorCeaSection(shortDataBlock.RawData).Properties);
+                            break;
+                    }
+                }
             }
             #endregion
         }

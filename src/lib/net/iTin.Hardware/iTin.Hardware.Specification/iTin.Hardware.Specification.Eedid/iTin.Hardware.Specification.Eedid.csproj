@@ -22,8 +22,13 @@
   </ItemGroup>
 
   <ItemGroup>
+    <PackageReference Include="System.Runtime.InteropServices.RuntimeInformation" Version="4.3.0" />
+  </ItemGroup>
+
+  <ItemGroup>
     <ProjectReference Include="..\..\..\iTin.Core\iTin.Core.Hardware\iTin.Core.Hardware.Common\iTin.Core.Hardware.Common.csproj" />
     <ProjectReference Include="..\..\..\iTin.Core\iTin.Core\iTin.Core.csproj" />
+    <ProjectReference Include="..\..\iTin.Hardware.Abstractions\iTin.Hardware.Abstractions\iTin.Hardware.Abstractions.csproj" />
   </ItemGroup>
 
 </Project>

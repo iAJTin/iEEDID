@@ -1,0 +1,28 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFrameworks>net461;netstandard2.0</TargetFrameworks>
+    <SignAssembly>true</SignAssembly>
+    <AssemblyOriginatorKeyFile>key.snk</AssemblyOriginatorKeyFile>
+    <GenerateDocumentationFile>true</GenerateDocumentationFile>
+    <AssemblyName>iTin.Hardware.Abstractions</AssemblyName>
+    <PackageId>iTin.Hardware.Abstractions</PackageId>
+    <Version>1.0.0.0</Version>
+    <Authors>iTin</Authors>
+    <Company>iTin</Company>
+    <Product>iTin.Hardware.Abstractions</Product>
+    <Description>Generic Common Hardware Abstractions</Description>
+    <Copyright>Copyright © 2020</Copyright>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="System.Runtime.InteropServices.RuntimeInformation" Version="4.3.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\iTin.Core\iTin.Core.Hardware\iTin.Core.Hardware.MacOS\iTin.Core.Hardware.MacOS.Device.Desktop\iTin.Core.Hardware.MacOS.Device.Desktop.csproj" />
+    <ProjectReference Include="..\..\..\iTin.Core\iTin.Core.Hardware\iTin.Core.Hardware.Windows\iTin.Core.Hardware.Windows.Device.Desktop\iTin.Core.Hardware.Windows.Device.Desktop.csproj" />
+  </ItemGroup>
+  
+</Project>
