@@ -13,7 +13,7 @@ All notable changes to this project will be documented in this file.
 
  - Added support for **CEA** blocks
  
- - Added **EEDID.Instance** static property for gets all available **EEDID** structures for this machine
+ - Added **EEDID.Instance** static property for gets all available **EEDID** structures for current system
 
  - Library documentation
  
