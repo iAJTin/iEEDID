@@ -9,9 +9,9 @@ All notable changes to this project will be documented in this file.
 
 ### Added
 
- - Support for **MacOS**
+ - Added support for **MacOS**
 
- - Support for **CEA** blocks
+ - Added support for **CEA** blocks
  
  - Added **EEDID.Instance** static property for gets all available **EEDID** structures for this machine
 

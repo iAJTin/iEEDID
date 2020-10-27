@@ -16,9 +16,9 @@ Changes in this version (v1.0.7)
 · Added
   -----
 
-    - Support for MacOS
+    - Added support for MacOS
     
-    - Support for CEA blocks
+    - Added support for CEA blocks
     
     - Added EEDID.Instance static property for gets all available EEDID structures for this machine
 
