@@ -48,7 +48,7 @@ All notable changes to this project will be documented in this file.
 |:------|:------|:----------|
 |iTin.Core| **2.0.0.1** | Base library containing various extensions, helpers, common constants |
 |iTin.Core.Hardware.Common| **1.0.0.1** | Common Hardware Infrastructure |
-|iTin.Core.Hardware.Specification.Eedid|**1.0.0.6**| Implementation of the E-EDID (Extended Display Identification Data) specification |
+|iTin.Hardware.Specification.Eedid|**1.0.0.6**| Implementation of the E-EDID (Extended Display Identification Data) specification |
 |iTin.Logging| 1.0.0.0 | Logging library |
 
 ### Removed
