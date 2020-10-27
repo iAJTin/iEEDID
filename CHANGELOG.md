@@ -9,7 +9,13 @@ All notable changes to this project will be documented in this file.
 
 ### Added
 
- - Library documentation.
+ - Support for **MacOS**
+
+ - Support for **CEA** blocks
+ 
+ - Added **EEDID.Instance** static property for gets all available **EEDID** structures for this machine
+
+ - Library documentation
  
  - ```tools``` folder in solution root. Contains a script for update help md files.
 
@@ -19,12 +25,18 @@ All notable changes to this project will be documented in this file.
  
  - Library versions for this version
   
-|Library|Version|Description|
+| Library | Version | Description |
 |:------|:------|:----------|
-|iTin.Core| **2.0.0.2** | Base library containing various extensions, helpers, common constants |
-|iTin.Core.Hardware.Common| 1.0.0.1 | Common Hardware Infrastructure |
-|iTin.Core.Hardware.Specification.Eedid| 1.0.0.6 | Implementation of the E-EDID (Extended Display Identification Data) specification |
-|iTin.Logging| 1.0.0.0 | Logging library |
+| iTin.Core| **2.0.0.2** | Base library containing various extensions, helpers, common constants |
+| iTin.Core.Interop.Shared | **1.0.0.1** | Generic Shared Interop Definitions |
+| iTin.Core.Interop.Windows | **1.0.0.0** | Generic Win32 Interop Definitions, Data Structures, Constants... |
+| iTin.Core.Hardware.Common | **1.0.0.1** | Common Hardware Infrastructure |
+| iTin.Core.Hardware.Linux | **1.0.0.0** | Linux Hardware Infrastructure |
+| iTin.Core.Hardware.MacOS | **1.0.0.0** | MacOS Hardware Infrastructure |
+| iTin.Core.Hardware.Windows | **1.0.0.0** | Windows Hardware Infrastructure |
+| iTin.Hardware.Abstractions | **1.0.0.0** | Generic Common Hardware Abstractions |
+| iTin.Hardware.Specification.Eedid | **1.0.0.7** | Implementation of the E-EDID (Extended Display Identification Data) specification |
+| iTin.Logging| 1.0.0.0 | Logging library |
 
 ## [1.0.6] - 2020-10-12
 
