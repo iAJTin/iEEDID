@@ -17,7 +17,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\..\iTin.Core.Interop\iTin.Core.Interop.Windows\iTin.Core.Interop.Windows\iTin.Core.Interop.Windows.csproj" />
+    <ProjectReference Include="..\..\..\iTin.Core.Interop\iTin.Core.Interop.Windows\iTin.Core.Interop.Windows\iTin.Core.Interop.Windows.Devices.csproj" />
   </ItemGroup>
 
 </Project>

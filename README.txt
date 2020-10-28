@@ -36,21 +36,21 @@ Changes in this version (v1.0.7)
     •—————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————•
     | Library                               Version     Description                                                                           |
     •—————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————•
-    | iTin.Core                             2.0.0.2     Base library containing various extensions, helpers, common constants                 |
+    | iTin.Core                             2.0.0.3     Base library containing various extensions, helpers, common constants                 |
     •—————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————•
     | iTin.Core.Interop.Shared              1.0.0.1     Generic Shared Interop Definitions                                                    |
     •—————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————•
-    | iTin.Core.Interop.Windows             1.0.0.1     Generic Win32 Interop Definitions, Data Structures, Constants...                      |
+    | iTin.Core.Interop.Windows.Devices     1.0.0.0     Generic Win32 Interop Definitions, Data Structures, Constants...                      |
     •—————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————•
-    | iTin.Core.Hardware.Common             1.0.0.1     Common Hardware Infrastructure                                                        |
+    | iTin.Core.Hardware.Common             1.0.0.2     Common Hardware Infrastructure                                                        |
     •—————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————•
-    | iTin.Core.Hardware.Linux              1.0.0.0     Linux Hardware Infrastructure                                                         |
+    | iTin.Core.Hardware.Linux.Desktop      1.0.0.0     Linux Hardware Infrastructure                                                         |
     •—————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————•
-    | iTin.Core.Hardware.MacOS              1.0.0.0     MacOS Hardware Infrastructure                                                         |
+    | iTin.Core.Hardware.MacOS.Desktop      1.0.0.0     MacOS Hardware Infrastructure                                                         |
     •—————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————•
-    | iTin.Core.Hardware.Windows            1.0.0.0     Windows Hardware Infrastructure                                                       |
+    | iTin.Core.Hardware.Windows.Desktop    1.0.0.0     Windows Hardware Infrastructure                                                       |
     •—————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————•
-    | iTin.Hardware.Abstractions            1.0.0.0     Generic Common Hardware Abstractions                                                  |
+    | iTin.Hardware.Abstractions.Devices    1.0.0.0     Generic Common Hardware Abstractions                                                  |
     •—————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————•
     | iTin.Hardware.Specification.Eedid     1.0.0.7     Implementation of the E-EDID (Extended Display Identification Data) specification     |
     •—————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————•

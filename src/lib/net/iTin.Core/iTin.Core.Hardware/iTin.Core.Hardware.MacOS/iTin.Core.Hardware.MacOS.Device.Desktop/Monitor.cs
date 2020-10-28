@@ -24,7 +24,8 @@ namespace iTin.Core.Hardware.MacOS.Device.Desktop
             var startInfo = new ProcessStartInfo()
             {
                 FileName = MacProgram.IoReg.ToString(),
-                Arguments = "-lw0 -r -c \"IODisplayConnect\" -n \"display0\" -d 2 | grep IODisplayEDID",
+                /*Arguments = "-lw0 -r -c \"IODisplayConnect\" -n \"display0\" -d 2 | grep IODisplayEDID",*/
+                Arguments = "-lw0 -r -c \"AppleSMBIOS\"",
                 UseShellExecute = false,
                 CreateNoWindow = false,
                 RedirectStandardOutput = true,
