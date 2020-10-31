@@ -19,11 +19,11 @@ namespace iTin.Hardware.Specification.Eedid
     {
         #region constructor/s
 
-        #region [public] DataBlockCollectionCeaSection(ReadOnlyCollection<byte>): Inicializa una nueva instancia de la clase con los datos de esta sección sin tratar.
+        #region [public] DataBlockCollectionCeaSection(ReadOnlyCollection<byte>): Initializes a new instance of the class with the data from this raw section
         /// <summary>
-        /// Inicializa una nueva instancia de la clase <see cref="DataBlockCollectionCeaSection"/> con los datos de esta sección sin tratar.
+        /// Initializes a new instance of the <see cref="DataBlockCollectionCeaSection"/> class with the data from this raw section.
         /// </summary>
-        /// <param name="sectionData">Datos de esta sección sin tratar.</param>
+        /// <param name="sectionData">Data from this section untreated.</param>
         public DataBlockCollectionCeaSection(ReadOnlyCollection<byte> sectionData) : base(sectionData)
         {
         }
@@ -34,7 +34,6 @@ namespace iTin.Hardware.Specification.Eedid
         #region protected override methods
 
         #region [protected] {override} (void) PopulateProperties(SectionPropertiesTable): Populates the property collection for this section
-        /// <inheritdoc />
         /// <summary>
         /// Populates the property collection for this section.
         /// </summary>
@@ -49,61 +48,62 @@ namespace iTin.Hardware.Specification.Eedid
 
                 if (exist)
                 {
+                    var propertiesToAdd = new SectionPropertiesTable();
                     switch (shortDataBlock.Tag)
                     {
                         case KnownShortDataBlockTag.Audio:
-                            var a = new ShortAudioDescriptorCeaSection(shortDataBlock.RawData).Properties;
-                            //properties.Add(EedidProperty.Cea. key, new ShortAudioDescriptorCeaSection(shortDataBlock.RawData).Properties);
+                            propertiesToAdd = new ShortAudioDescriptorCeaSection(shortDataBlock.RawData).Properties;
                             break;
 
                         case KnownShortDataBlockTag.Video:
-                            var b = new ShortVideoDescriptorCeaSection(shortDataBlock.RawData).Properties;
-                            //          properties.Add(key, new ShortVideoDescriptorCeaSection(shortDataBlock.RawData).Properties);
+                            propertiesToAdd = new ShortVideoDescriptorCeaSection(shortDataBlock.RawData).Properties;
                             break;
 
                         case KnownShortDataBlockTag.Vendor:
-                            var c = new ShortVendorDescriptorCeaSection(shortDataBlock.RawData).Properties;
-                            //            properties.Add(key, new ShortVendorDescriptorCeaSection(shortDataBlock.RawData).Properties);
+                            propertiesToAdd = new ShortVendorDescriptorCeaSection(shortDataBlock.RawData).Properties;
                             break;
 
                         case KnownShortDataBlockTag.Speaker:
-                            var d = new ShortSpeakerDescriptorCeaSection(shortDataBlock.RawData).Properties;
-                            //            properties.Add(key, new ShortSpeakerDescriptorCeaSection(shortDataBlock.RawData).Properties);
+                            propertiesToAdd = new ShortSpeakerDescriptorCeaSection(shortDataBlock.RawData).Properties;
                             break;
 
                         case KnownShortDataBlockTag.VESA:
-                            var e = new ShortSpeakerDescriptorCeaSection(shortDataBlock.RawData).Properties;
-                            //            properties.Add(key, new ShortSpeakerDescriptorCeaSection(shortDataBlock.RawData).Properties);
+                            propertiesToAdd = new ShortSpeakerDescriptorCeaSection(shortDataBlock.RawData).Properties;
                             break;
 
                         case KnownShortDataBlockTag.ExtendedTag:
-                            var f = new ShortExtendedTagDescriptorCeaSection(shortDataBlock.RawData).Properties;
-                            //            properties.Add(key, new ShortExtendedTagDescriptorCeaSection(shortDataBlock.RawData).Properties);
+                            propertiesToAdd = new ShortExtendedTagDescriptorCeaSection(shortDataBlock.RawData).Properties;
                             break;
 
                         default:
-                            var g = new ShortReservedDescriptorCeaSection(shortDataBlock.RawData).Properties;
-                            //            properties.Add(key, new ShortReservedDescriptorCeaSection(shortDataBlock.RawData).Properties);
+                            propertiesToAdd = new ShortReservedDescriptorCeaSection(shortDataBlock.RawData).Properties;
                             break;
+                    }
+
+                    foreach (var property in propertiesToAdd)
+                    {
+                        properties.Add(property);
                     }
                 }
             }
-            #endregion
         }
+        #endregion
+
         #endregion
 
         #region private static methods
 
-        #region [private] {static} (IEnumerable<CeaDataBlock>) GetDataBlockCollection(ReadOnlyCollection<byte>): Obtiene una colección de estructuras Short Data Block Collection sin procesar de una estructura de tipo Data Block Collection.
+        #region [private] {static} (IEnumerable<CeaDataBlock>) GetDataBlockCollection(ReadOnlyCollection<byte>): Gets a collection of raw Short Data Block Collection structures from a structure of type Data Block Collection
         /// <summary>
-        /// Obtiene una colección de estructuras Short Data Block Collection sin procesar de una estructura de tipo Data Block Collection.
+        /// Gets a collection of raw Short Data Block Collection structures from a structure of type Data Block Collection.
         /// </summary>
-        /// <param name="dataBlocks">Array que contiene la estructura Data Block Collection de este bloque CEA sin procesar.</param>
-        /// <returns>Colección de estructuras Short Data Blocks disponibles en la estructura sin procesar.</returns>
+        /// <param name="dataBlocks">Array containing the Data Block Collection structure of this raw CEA block.</param>
+        /// <returns>
+        /// Collection of Short Data Blocks structures available in the raw structure.
+        /// </returns>
         private static IEnumerable<CeaDataBlock> GetDataBlockCollection(ReadOnlyCollection<byte> dataBlocks)
         {
             var dataBlocksArray = dataBlocks.ToArray();
-
             var dataBlocksCollection = new List<CeaDataBlock>();
             for (int i = 0; i < dataBlocks.Count; i += 1 + (dataBlocks[i] & 0x1f))
             {

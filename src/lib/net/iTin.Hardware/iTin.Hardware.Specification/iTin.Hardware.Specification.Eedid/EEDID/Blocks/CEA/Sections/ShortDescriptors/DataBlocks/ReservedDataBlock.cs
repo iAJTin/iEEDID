@@ -10,11 +10,11 @@ namespace iTin.Hardware.Specification.Eedid
     {
         #region constructor/s
 
-        #region [public] ReservedDataBlock(ReadOnlyCollection<byte>): Inicializa una nueva instancia de la estructura.
+        #region [public] ReservedDataBlock(ReadOnlyCollection<byte>): Initializes a new instance of the class
         /// <summary>
-        /// Inicializa una nueva instancia de la estructura <see cref="ReservedDataBlock"/> especificando los datos de este bloque reservado.
+        /// Initializes a new instance of the <see cref="ReservedDataBlock"/> structure specifying the data for this reserved block.
         /// </summary>
-        /// <param name="reservedDataBlock">Datos de este bloque reservado.</param>
+        /// <param name="reservedDataBlock">Data of this reserved block.</param>
         public ReservedDataBlock(ReadOnlyCollection<byte> reservedDataBlock)
         {
             RawData = reservedDataBlock;
@@ -25,11 +25,13 @@ namespace iTin.Hardware.Specification.Eedid
 
         #region public readonly properties
 
-        #region [public] (ReadOnlyCollection<byte>) RawData: Obtiene un valor que representa los datos de este bloque reservado.
+        #region [public] (ReadOnlyCollection<byte>) RawData: Gets a value that represents the data in this reserved block
         /// <summary>
-        /// Obtiene un valor que representa los datos de este bloque reservado.
+        /// Gets a value that represents the data in this reserved block.
         /// </summary>
-        /// <value>Datos de este bloque reservado.</value>
+        /// <value>
+        /// Data of this reserved block.
+        /// </value>
         public ReadOnlyCollection<byte> RawData { get; }
         #endregion
 

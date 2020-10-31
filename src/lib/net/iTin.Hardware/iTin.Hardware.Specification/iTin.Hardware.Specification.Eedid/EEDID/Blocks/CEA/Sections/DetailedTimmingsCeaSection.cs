@@ -19,11 +19,11 @@ namespace iTin.Hardware.Specification.Eedid
     {
         #region constructor/s
 
-        #region [public] DetailedTimingsCeaSection(ReadOnlyCollection<byte>): Inicializa una nueva instancia de la clase con los datos de esta sección sin tratar.
+        #region [public] DetailedTimingsCeaSection(ReadOnlyCollection<byte>): Initializes a new instance of the class with the data from this raw section
         /// <summary>
-        /// Inicializa una nueva instancia de la clase <see cref="DetailedTimingsCeaSection"/> con los datos de esta sección sin tratar.
+        /// Initializes a new instance of the <see cref="DetailedTimingsCeaSection"/> class with the data from this raw section.
         /// </summary>
-        /// <param name="sectionData">Datos de esta sección sin tratar.</param>
+        /// <param name="sectionData">Data from this section untreated.</param>
         public DetailedTimingsCeaSection(ReadOnlyCollection<byte> sectionData) : base(sectionData)
         {
         }
@@ -49,12 +49,14 @@ namespace iTin.Hardware.Specification.Eedid
 
         #region private static methods
 
-        #region [private] {static} (ReadOnlyCollection<DetailedTimingDescriptor>) GetTimings(ReadOnlyCollection<byte>): 
+        #region [private] {static} (ReadOnlyCollection<DetailedTimingDescriptor>) GetTimings(ReadOnlyCollection<byte>): Gets the timings
         /// <summary>
         /// Gets the timings.
         /// </summary>
         /// <param name="rawData">The raw data.</param>
-        /// <returns></returns>
+        /// <returns>
+        /// Timings collection
+        /// </returns>
         private static ReadOnlyCollection<DetailedTimingModeDescriptor> GetTimings(ReadOnlyCollection<byte> rawData)
         {
             IEnumerable<ReadOnlyCollection<byte>> dataTimmingCollection = ToDataTimmingCollection(rawData);
@@ -71,16 +73,17 @@ namespace iTin.Hardware.Specification.Eedid
         }
         #endregion
 
-        #region [private] {static} (IEnumerable<ReadOnlyCollection<byte>>) ToDataTimmingCollection(ReadOnlyCollection<byte>): Obtiene la colección de Data Timmings Descriptors disponibles en este bloque CEA.
+        #region [private] {static} (IEnumerable<ReadOnlyCollection<byte>>) ToDataTimmingCollection(ReadOnlyCollection<byte>): Gets the collection of Data Timmings Descriptors available in this CEA block
         /// <summary>
-        /// Obtiene la colección de Data Timmings Descriptors disponibles en este bloque CEA.
+        /// Gets the collection of Data Timmings Descriptors available in this CEA block.
         /// </summary>
-        /// <param name="dataTimmings">Array con los datos Data Timmings Descriptors.</param>
-        /// <returns></returns>
+        /// <param name="dataTimmings">Array with Data Timmings Descriptors data.</param>
+        /// <returns>
+        /// Collection of Data Timmings Descriptors.
+        /// </returns>
         private static IEnumerable<ReadOnlyCollection<byte>> ToDataTimmingCollection(ReadOnlyCollection<byte> dataTimmings)
         {
             var dataTimmingsArray = dataTimmings.ToArray();
-
             var dataTimmingCollection = new List<ReadOnlyCollection<byte>>();
             for (int i = 0; i < dataTimmings.Count; i += 0x12)
             {

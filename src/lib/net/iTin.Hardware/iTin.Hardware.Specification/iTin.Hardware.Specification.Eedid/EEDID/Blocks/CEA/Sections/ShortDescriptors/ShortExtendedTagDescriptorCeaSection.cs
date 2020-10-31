@@ -11,12 +11,11 @@ namespace iTin.Hardware.Specification.Eedid
     {
         #region constructor/s
 
-        #region [public] ShortExtendedTagDescriptorCeaSection(ReadOnlyCollection<byte>): Inicializa una nueva instancia de la clase.
-        /// <inheritdoc />
+        #region [public] ShortExtendedTagDescriptorCeaSection(ReadOnlyCollection<byte>): Initialize a new instance of the class
         /// <summary>
-        /// Inicializa una nueva instancia de la clase <see cref="ShortExtendedTagDescriptorCeaSection"/>.
+        /// Initialize a new instance of the <see cref="ShortExtendedTagDescriptorCeaSection"/> class with the data in this section untreated.
         /// </summary>
-        /// <param name="sectionData">Datos de esta sección.</param>
+        /// <param name="sectionData">Raw data of this section.</param>
         public ShortExtendedTagDescriptorCeaSection(ReadOnlyCollection<byte> sectionData) : base(sectionData)
         {
         }
@@ -34,36 +33,36 @@ namespace iTin.Hardware.Specification.Eedid
         /// <param name="properties">Collection of properties of this section.</param>
         protected override void PopulateProperties(SectionPropertiesTable properties)
         {
-            //KnownExtendedTag extendedTag = (KnownExtendedTag)RawData[0x01];
-            //switch (extendedTag)
-            //{
-            //    case KnownExtendedTag.Colorimetry:
-            //        ColorimetryDataBlock colorimetryDataBlock = new ColorimetryDataBlock(RawData);
-            //        properties.Add("Adobe RGB", colorimetryDataBlock.AdobeRGB ? "Supported" : "Not Supported");
-            //        properties.Add("Adobe YCC601", colorimetryDataBlock.AdobeYCC601 ? "Supported" : "Not Supported");
-            //        properties.Add("sYCC601", colorimetryDataBlock.SYCC601 ? "Supported" : "Not Supported");
-            //        properties.Add("xvYCC709", colorimetryDataBlock.XVYCC709 ? "Supported" : "Not Supported");
-            //        properties.Add("xvYCC601", colorimetryDataBlock.XVYCC601 ? "Supported" : "Not Supported");
-            //        break;
+            KnownExtendedTag extendedTag = (KnownExtendedTag)RawData[0x01];
+            switch (extendedTag)
+            {
+                case KnownExtendedTag.Colorimetry:
+                    ColorimetryDataBlock colorimetryDataBlock = new ColorimetryDataBlock(RawData);
+                    properties.Add(EedidProperty.Cea.DataBlock.Extended.Colorimetry.AdobeRGB, colorimetryDataBlock.AdobeRGB);
+                    properties.Add(EedidProperty.Cea.DataBlock.Extended.Colorimetry.AdobeYCC601, colorimetryDataBlock.AdobeYCC601);
+                    properties.Add(EedidProperty.Cea.DataBlock.Extended.Colorimetry.sYCC601, colorimetryDataBlock.SYCC601);
+                    properties.Add(EedidProperty.Cea.DataBlock.Extended.Colorimetry.xvYCC709, colorimetryDataBlock.XVYCC709);
+                    properties.Add(EedidProperty.Cea.DataBlock.Extended.Colorimetry.xvYCC601, colorimetryDataBlock.XVYCC601);
+                    break;
 
-            //    case KnownExtendedTag.MiscellaneousAudioFields:
-            //        break;
+                case KnownExtendedTag.MiscellaneousAudioFields:
+                    break;
 
-            //    case KnownExtendedTag.VendorSpecificAudio:
-            //        break;
+                case KnownExtendedTag.VendorSpecificAudio:
+                    break;
 
-            //    case KnownExtendedTag.VendorSpecificVideo:
-            //        break;
+                case KnownExtendedTag.VendorSpecificVideo:
+                    break;
 
-            //    case KnownExtendedTag.VideoCapability:
-            //        VideoCapabilityDataBlock videoCapabilityDataBlock = new VideoCapabilityDataBlock(RawData);
-            //        properties.Add("CE Overscan/Underscan", GetCEOverUnderscan(videoCapabilityDataBlock.CEOverscan));
-            //        properties.Add("IT Overscan/Underscan", GetITOverUnderscan(videoCapabilityDataBlock.ITOverscan));
-            //        properties.Add("PT Overscan/Underscan", GetPTOverUnderscan(videoCapabilityDataBlock.PTOverscan));
-            //        properties.Add("Quantization Range RGB", videoCapabilityDataBlock.QuantizationRangeRGB ? "Selectable" : "No Data");
-            //        properties.Add("Quantization Range YCC", videoCapabilityDataBlock.QuantizationRangeYCC ? "Selectable" : "No Data");
-            //        break;
-            //}
+                case KnownExtendedTag.VideoCapability:
+                    VideoCapabilityDataBlock videoCapabilityDataBlock = new VideoCapabilityDataBlock(RawData);
+                    properties.Add(EedidProperty.Cea.DataBlock.Extended.VideoCapability.CEOverscan, GetCEOverUnderscan(videoCapabilityDataBlock.CEOverscan));
+                    properties.Add(EedidProperty.Cea.DataBlock.Extended.VideoCapability.ITOverscan, GetITOverUnderscan(videoCapabilityDataBlock.ITOverscan));
+                    properties.Add(EedidProperty.Cea.DataBlock.Extended.VideoCapability.PTOverscan, GetPTOverUnderscan(videoCapabilityDataBlock.PTOverscan));
+                    properties.Add(EedidProperty.Cea.DataBlock.Extended.VideoCapability.QuantizationRangeRGB, videoCapabilityDataBlock.QuantizationRangeRGB ? "Selectable" : "No Data");
+                    properties.Add(EedidProperty.Cea.DataBlock.Extended.VideoCapability.QuantizationRangeYCC, videoCapabilityDataBlock.QuantizationRangeYCC ? "Selectable" : "No Data");
+                    break;
+            }
         }
         #endregion
 

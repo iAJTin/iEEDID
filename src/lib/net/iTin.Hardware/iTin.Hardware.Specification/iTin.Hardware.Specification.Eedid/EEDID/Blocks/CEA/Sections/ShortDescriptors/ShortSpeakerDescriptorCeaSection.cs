@@ -4,7 +4,7 @@ namespace iTin.Hardware.Specification.Eedid
     using System.Collections.ObjectModel;
 
     /*  
-        •—————•                 •—————•        •—————•          Dónde:
+        •—————•                 •—————•        •—————•          Where:
         | FLH |                 | FCH |        | FRH |                 · FL: Front Left
         •—————•                 •—————•        •—————•                 · FC: Front Center
                                                                        · FR: Front Center
@@ -58,17 +58,17 @@ namespace iTin.Hardware.Specification.Eedid
         protected override void PopulateProperties(SectionPropertiesTable properties)
         {
             SpeakerDataBlock speakerAllocationDataBlock = new SpeakerDataBlock(RawData);
-            //properties.Add("Front Left/Right High", speakerAllocationDataBlock.FrontLeftRightHigh ? "Present" : "Not Present");
-            //properties.Add("Front Left/Right Wide", speakerAllocationDataBlock.FrontLeftRightWide ? "Present" : "Not Present");
-            //properties.Add("Rear Left/Right Center", speakerAllocationDataBlock.RearLeftRearCenter ? "Present" : "Not Present");
-            //properties.Add("Front Left/Right Center", speakerAllocationDataBlock.FrontLeftRightCenter ? "Present" : "Not Present");
-            //properties.Add("Rear Center", speakerAllocationDataBlock.RearCenter ? "Present" : "Not Present");
-            //properties.Add("Rear Left/Right", speakerAllocationDataBlock.RearLeftRight ? "Present" : "Not Present");
-            //properties.Add("Front Center", speakerAllocationDataBlock.FrontCenter ? "Present" : "Not Present");
-            //properties.Add("LFE Channel", speakerAllocationDataBlock.LFEChannel ? "Present" : "Not Present");
-            //properties.Add("Front Left/Right", speakerAllocationDataBlock.FrontLeftRight ? "Present" : "Not Present");
-            //properties.Add("Top Center", speakerAllocationDataBlock.TopCenter ? "Present" : "Not Present");
-            //properties.Add("Front Center High", speakerAllocationDataBlock.FrontCenterHigh ? "Present" : "Not Present");
+            properties.Add(EedidProperty.Cea.DataBlock.Speaker.FrontLeftRightHigh, speakerAllocationDataBlock.FrontLeftRightHigh);
+            properties.Add(EedidProperty.Cea.DataBlock.Speaker.FrontLeftRightWide, speakerAllocationDataBlock.FrontLeftRightWide);
+            properties.Add(EedidProperty.Cea.DataBlock.Speaker.RearLeftRightCenter, speakerAllocationDataBlock.RearLeftRearCenter);
+            properties.Add(EedidProperty.Cea.DataBlock.Speaker.FrontLeftRightCenter, speakerAllocationDataBlock.FrontLeftRightCenter);
+            properties.Add(EedidProperty.Cea.DataBlock.Speaker.RearCenter, speakerAllocationDataBlock.RearCenter);
+            properties.Add(EedidProperty.Cea.DataBlock.Speaker.RearLeftRight, speakerAllocationDataBlock.RearLeftRight);
+            properties.Add(EedidProperty.Cea.DataBlock.Speaker.FrontCenter, speakerAllocationDataBlock.FrontCenter);
+            properties.Add(EedidProperty.Cea.DataBlock.Speaker.LFEChannel, speakerAllocationDataBlock.LFEChannel);
+            properties.Add(EedidProperty.Cea.DataBlock.Speaker.FrontLeftRight, speakerAllocationDataBlock.FrontLeftRight);
+            properties.Add(EedidProperty.Cea.DataBlock.Speaker.TopCenter, speakerAllocationDataBlock.TopCenter);
+            properties.Add(EedidProperty.Cea.DataBlock.Speaker.FrontCenterHigh, speakerAllocationDataBlock.FrontCenterHigh);
         }
         #endregion
 

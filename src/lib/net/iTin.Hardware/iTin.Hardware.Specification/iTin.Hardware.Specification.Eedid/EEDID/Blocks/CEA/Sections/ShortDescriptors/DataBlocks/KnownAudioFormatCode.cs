@@ -26,7 +26,7 @@ namespace iTin.Hardware.Specification.Eedid
     internal enum KnownAudioFormatCode
     {
         /// <summary>
-        /// Analizar cabecera del stream de audio para deteminar el formato.
+        /// Analyze header of audio stream to determine format.
         /// </summary>
         StreamHeader = 0x00,
 
@@ -91,12 +91,12 @@ namespace iTin.Hardware.Specification.Eedid
         MLP = 0x0c,
 
         /// <summary>
-        /// Para más información ver ISO/IEC 14496-3 2005, Information Technology – Coding of audio-visual objects subpart 10.
+        /// For more information see ISO / IEC 14496-3 2005, Information Technology - Coding of audio-visual objects subpart 10.
         /// </summary>
         DST = 0x0d,
 
         /// <summary>
-        /// Para más información ver Microsoft WMA Pro Decoder Specification: An Overview of Windows Media Audio Professional decoder.
+        /// For more information see Microsoft WMA Pro Decoder Specification: An Overview of Windows Media Audio Professional decoder.
         /// </summary>
         WMAPro = 0x0e,
 

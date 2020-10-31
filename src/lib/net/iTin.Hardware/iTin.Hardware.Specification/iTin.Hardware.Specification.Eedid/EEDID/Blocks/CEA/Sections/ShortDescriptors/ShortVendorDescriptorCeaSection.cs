@@ -11,12 +11,11 @@ namespace iTin.Hardware.Specification.Eedid
     {
         #region constructor/s
 
-        #region [public] ShortVendorDescriptorCeaSection(ReadOnlyCollection<byte>): Inicializa una nueva instancia de la clase.
-        /// <inheritdoc />
+        #region [public] ShortVendorDescriptorCeaSection(ReadOnlyCollection<byte>): Initialize a new instance of the class
         /// <summary>
-        /// Inicializa una nueva instancia de la clase <see cref="ShortVendorDescriptorCeaSection"/>.
+        /// Initialize a new instance of the <see cref="ShortVendorDescriptorCeaSection"/> class with the data in this section untreated.
         /// </summary>
-        /// <param name="sectionData">Datos de esta sección.</param>
+        /// <param name="sectionData">Raw data of this section.</param>
         public ShortVendorDescriptorCeaSection(ReadOnlyCollection<byte> sectionData) : base(sectionData)
         {
         }
@@ -35,11 +34,11 @@ namespace iTin.Hardware.Specification.Eedid
         protected override void PopulateProperties(SectionPropertiesTable properties)
         {
             VendorDataBlock vendorAllocationDataBlock = new VendorDataBlock(RawData);
-            //properties.Add("IEEE Registration Identifier", vendorAllocationDataBlock.IEEERegistrationIdentifier);
-            ////properties.Add("Consumer Electronics Control (CEC) physical address", vendorAllocationDataBlock.PhysicalAddress);
-            ////properties.Add("Flags", vendorAllocationDataBlock.Flags);
-            ////properties.Add("Maximum TMDS clock", vendorAllocationDataBlock.MaxClock);
-            //properties.Add("Vendor Specific Payload", vendorAllocationDataBlock.PayLoad);
+            properties.Add(EedidProperty.Cea.DataBlock.Vendor.IEEERegistrationIdentifier, vendorAllocationDataBlock.IEEERegistrationIdentifier);
+            properties.Add(EedidProperty.Cea.DataBlock.Vendor.PhysicalAddress, vendorAllocationDataBlock.PhysicalAddress);
+            properties.Add(EedidProperty.Cea.DataBlock.Vendor.Flags, vendorAllocationDataBlock.Flags);
+            properties.Add(EedidProperty.Cea.DataBlock.Vendor.MaxClock, vendorAllocationDataBlock.MaxClock);
+            properties.Add(EedidProperty.Cea.DataBlock.Vendor.VendorPayload, vendorAllocationDataBlock.PayLoad);
         }
         #endregion
 

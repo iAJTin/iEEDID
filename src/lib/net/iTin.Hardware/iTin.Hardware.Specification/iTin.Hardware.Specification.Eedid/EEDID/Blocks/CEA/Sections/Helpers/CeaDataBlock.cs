@@ -18,11 +18,11 @@ namespace iTin.Hardware.Specification.Eedid
     {
         #region constructor/s
 
-        #region [public] CeaDataBlock(ReadOnlyCollection<byte>): Inicializa una nueva instancia de la estructura.
+        #region [public] CeaDataBlock(ReadOnlyCollection<byte>): Initializes a new instance of the structure
         /// <summary>
-        /// Inicializa una nueva instancia de la estructura <see cref="CeaDataBlock"/>.
+        /// Initializes a new instance of the <see cref="CeaDataBlock"/> structure.
         /// </summary>
-        /// <param name="dataBlock">Datos de este bloque.</param>
+        /// <param name="dataBlock">Data from this block.</param>
         public CeaDataBlock(ReadOnlyCollection<byte> dataBlock)
         {
             _dataBlock = dataBlock;
@@ -40,12 +40,12 @@ namespace iTin.Hardware.Specification.Eedid
 
         #region public properties
 
-        #region [public] (ReadOnlyCollection<byte>) RawData: Obtiene un array con la información de este bloque sin procesar.
+        #region [public] (ReadOnlyCollection<byte>) RawData: Gets an array with the information of this raw block
         /// <summary>
-        /// Obtiene un array con la información de este bloque sin procesar.
+        /// Gets an array with the information of this raw block.
         /// </summary>
         /// <value>
-        /// Array con la información del bloque sin procesar.
+        /// Array with the raw block information.
         /// </value>
         public ReadOnlyCollection<byte> RawData
         {
@@ -62,12 +62,12 @@ namespace iTin.Hardware.Specification.Eedid
         }
         #endregion
 
-        #region [public] (ShortDataBlockTag) Tag: Obtiene un valor que representa el tipo de bloque.
+        #region [public] (ShortDataBlockTag) Tag: Gets a value that represents the type of block
         /// <summary>
-        /// Obtiene un valor que representa el tipo de bloque.
+        /// Gets a value that represents the type of block.
         /// </summary>
         /// <value>
-        /// 	<para>Uno de los valores de la enumeración <see cref="KnownShortDataBlockTag"/> que representa el tipo de bloque.</para>
+        /// One of the <see cref="KnownShortDataBlockTag"/> enumeration values that represents the block type.
         /// </value>
         public KnownShortDataBlockTag Tag { get; }
         #endregion

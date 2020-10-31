@@ -29,11 +29,11 @@ namespace iTin.Hardware.Specification.Eedid
     {
         #region constructor/s
 
-        #region [public] MonitorSupportCeaSection(ReadOnlyCollection<byte>): Inicializa una nueva instancia de la clase con los datos de esta sección sin tratar.
+        #region [public] MonitorSupportCeaSection(ReadOnlyCollection<byte>): Initializes a new instance of the class with the data from this raw section
         /// <summary>
-        /// Inicializa una nueva instancia de la clase <see cref="MonitorSupportCeaSection"/> con los datos de esta sección sin tratar.
+        /// Initializes a new instance of the <see cref="MonitorSupportCeaSection"/> class with the data from this raw section.
         /// </summary>
-        /// <param name="sectionData">Datos de esta sección sin tratar.</param>
+        /// <param name="sectionData">Data from this section untreated.</param>
         public MonitorSupportCeaSection(ReadOnlyCollection<byte> sectionData) : base(sectionData)
         {
         }
@@ -43,23 +43,23 @@ namespace iTin.Hardware.Specification.Eedid
 
         #region private properties
 
-        #region [private] (byte) MonitorSupport: Obtiene un valor que representa al campo 'Monitor Support'.
+        #region [private] (byte) MonitorSupport: Gets a value representing the 'Monitor Support' field
         /// <summary>
-        /// Obtiene un valor que representa al campo '<c>Monitor Support</c>'.
+        /// Gets a value representing the <b>Monitor Support</b> field.
         /// </summary>
         /// <value>
-        ///   <para>Valor de la propiedad.</para>
+        /// Property value.
         /// </value>
         [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         private byte MonitorSupport => RawData[0x00];
         #endregion
 
-        #region [private] (bool) IsDvtUnderscan: Obtiene un valor que representa la característica 'DVT Underscan' del campo 'Monitor Support'.
+        #region [private] (bool) IsDvtUnderscan: Gets a value representing the 'DVT Underscan' characteristic of 'Monitor Support' field
         /// <summary>
-        /// Obtiene un valor que representa la característica '<c>DVT Underscan</c>' del campo '<c>Monitor Support</c>'.
+        /// Gets a value representing the <b>DVT Underscan</b> characteristic of <b>Monitor Support</b> field.
         /// </summary>
         /// <value>
-        ///   <para>Valor de la propiedad.</para>
+        /// Property value.
         /// </value>
         [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         private bool IsDvtUnderscan
@@ -74,12 +74,12 @@ namespace iTin.Hardware.Specification.Eedid
         }
         #endregion
 
-        #region [private] (bool) BasicAudioSupported: Obtiene un valor que representa la característica 'Basic Audio Supported' del campo 'Monitor Support'.
+        #region [private] (bool) BasicAudioSupported: Gets a value representing the 'Basic Audio Supported' characteristic of 'Monitor Support' field
         /// <summary>
-        /// Obtiene un valor que representa la característica '<c>Basic Audio Supported</c>' del campo '<c>Monitor Support</c>'.
+        /// Gets a value representing the <b>Basic Audio Supported</b> characteristic of <b>Monitor Support</b> field.
         /// </summary>
         /// <value>
-        ///   <para>Valor de la propiedad.</para>
+        /// Property value.
         /// </value>
         [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         private bool BasicAudioSupported
@@ -94,12 +94,12 @@ namespace iTin.Hardware.Specification.Eedid
         }
         #endregion
 
-        #region [private] (bool) YCbCr444Supported: Obtiene un valor que representa la característica 'YCbCr 4:4:4' del campo 'Monitor Support'.
+        #region [private] (bool) YCbCr444Supported: Gets a value representing the 'YCbCr 4:4:4' characteristic of 'Monitor Support' field
         /// <summary>
-        /// Obtiene un valor que representa la característica '<c>YCbCr 4:4:4</c>' del campo '<c>Monitor Support</c>'.
+        /// Gets a value representing the <b>YCbCr 4:4:4</b> characteristic of <b>Monitor Support</b> field.
         /// </summary>
         /// <value>
-        ///   <para>Valor de la propiedad.</para>
+        /// Property value.
         /// </value>
         [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         private bool YCbCr444Supported
@@ -114,12 +114,12 @@ namespace iTin.Hardware.Specification.Eedid
         }
         #endregion
 
-        #region [private] (bool) YCbCr422Supported: Obtiene un valor que representa la característica 'YCbCr 4:2:2' del campo 'Monitor Support'.
+        #region [private] (bool) YCbCr422Supported: Gets a value representing the 'YCbCr 4:2:2' characteristic of 'Monitor Support' field
         /// <summary>
-        /// Obtiene un valor que representa la característica '<c>YCbCr 4:2:2</c>' del campo '<c>Monitor Support</c>'.
+        /// Gets a value representing the <b>YCbCr 4:2:2</b> characteristic of <b>Monitor Support</b> field.
         /// </summary>
         /// <value>
-        ///   <para>Valor de la propiedad.</para>
+        /// Property value.
         /// </value>
         [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         private bool YCbCr422Supported

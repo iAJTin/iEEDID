@@ -18,11 +18,11 @@ namespace iTin.Hardware.Specification.Eedid
 
         #region constructor/s
 
-        #region [public] VideoDataBlock(ReadOnlyCollection<byte>): Inicializa una nueva instancia de la estructura.
+        #region [public] VideoDataBlock(ReadOnlyCollection<byte>): Initializes a new instance of the structure
         /// <summary>
-        /// Inicializa una nueva instancia de la estructura <see cref="VideoDataBlock"/> especificando los datos de este bloque de video.
+        /// Initializes a new instance of the <see cref="VideoDataBlock"/> structure specifying the data of this video block.
         /// </summary>
-        /// <param name="videoDataBlock">Datos de este bloque de video.</param>
+        /// <param name="videoDataBlock">Data of this video block.</param>
         public VideoDataBlock(ReadOnlyCollection<byte> videoDataBlock)
         {
             _videoDataBlock = videoDataBlock;
@@ -33,11 +33,13 @@ namespace iTin.Hardware.Specification.Eedid
 
         #region public methods
 
-        #region [public] (string[]) GetSupportTimmings(): Obtiene la lista de resoluciones/timmings soportados.
+        #region [public] (string[]) GetSupportTimmings(): Gets the list of supported resolutions/timings
         /// <summary>
-        /// Obtiene la lista de resoluciones/timmings soportados.
+        /// Gets the list of supported resolutions/timings..
         /// </summary>
-        /// <returns>Lista de resoluciones/timmings soportados.</returns>
+        /// <returns>
+        /// List of supported resolutions/timings.
+        /// </returns>
         public string[] GetSupportTimmings()
         {
             var values = new List<string>();
@@ -55,7 +57,6 @@ namespace iTin.Hardware.Specification.Eedid
 
         #region private static methods
 
-        #region [private] {static} (string) TableModes(byte): Obtiene un valor que representa la resolución/timming standard de la tabla de resoluciones para el valor especificado.
         private static string TableModes(byte code)
         {
             var items = new[]
@@ -133,7 +134,6 @@ namespace iTin.Hardware.Specification.Eedid
 
             return "Unknown";
         }
-        #endregion
 
         #endregion
     }

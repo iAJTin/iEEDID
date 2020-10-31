@@ -11,12 +11,11 @@ namespace iTin.Hardware.Specification.Eedid
     {
         #region constructor/s
 
-        #region [public] ShortReservedDescriptorCeaSection(ReadOnlyCollection<byte>): Inicializa una nueva instancia de la clase.
-        /// <inheritdoc />
+        #region [public] ShortReservedDescriptorCeaSection(ReadOnlyCollection<byte>): Initialize a new instance of the class
         /// <summary>
-        /// Inicializa una nueva instancia de la clase <see cref="ShortReservedDescriptorCeaSection"/>.
+        /// Initialize a new instance of the <see cref="ShortReservedDescriptorCeaSection"/> class with the data in this section untreated.
         /// </summary>
-        /// <param name="sectionData">Datos de esta sección.</param>
+        /// <param name="sectionData">Raw data of this section.</param>
         public ShortReservedDescriptorCeaSection(ReadOnlyCollection<byte> sectionData) : base(sectionData)
         {
         }
@@ -35,7 +34,7 @@ namespace iTin.Hardware.Specification.Eedid
         protected override void PopulateProperties(SectionPropertiesTable properties)
         {
             ReservedDataBlock reservedAllocationDataBlock = new ReservedDataBlock(RawData);
-            //properties.Add("Data", reservedAllocationDataBlock.RawData);
+            properties.Add(EedidProperty.Cea.DataBlock.Reserved.Data, reservedAllocationDataBlock.RawData);
         }
         #endregion
 

@@ -13,12 +13,11 @@ namespace iTin.Hardware.Specification.Eedid
     {
         #region constructor/s
 
-        #region [public] ShortAudioDescriptorCeaSection(ReadOnlyCollection<byte>): Inicializa una nueva instancia de la clase.
-        /// <inheritdoc />
+        #region [public] ShortAudioDescriptorCeaSection(ReadOnlyCollection<byte>): Initialize a new instance of the class
         /// <summary>
-        /// Inicializa una nueva instancia de la clase <see cref="ShortAudioDescriptorCeaSection"/>.
+        /// Initialize a new instance of the <see cref="ShortAudioDescriptorCeaSection"/> class with the data in this section untreated.
         /// </summary>
-        /// <param name="sectionData">Datos de esta sección.</param>
+        /// <param name="sectionData">Raw data of this section.</param>
         public ShortAudioDescriptorCeaSection(ReadOnlyCollection<byte> sectionData) : base(sectionData)
         {
         }
@@ -51,7 +50,7 @@ namespace iTin.Hardware.Specification.Eedid
 
         #region private static methods
 
-        #region [private] {static} (IEnumerable<AudioAllocationDataBlock>) GetAudioAllocationDataBlocks(ReadOnlyCollection<byte>): Obtener la colección de estructuras de audio de este bloque.
+        #region [private] {static} (IEnumerable<AudioAllocationDataBlock>) GetAudioAllocationDataBlocks(ReadOnlyCollection<byte>): Get the collection of audio structures from this block
         private static IEnumerable<AudioDataBlock> GetAudioAllocationDataBlocks(ReadOnlyCollection<byte> audioDataBlock)
         {
             var audioDataBlockArray = new byte[audioDataBlock.Count];

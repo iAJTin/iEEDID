@@ -13,11 +13,11 @@ namespace iTin.Hardware.Specification.Eedid
     {
         #region constructor/s
 
-        #region [public] SpeakerDataBlock(ReadOnlyCollection<byte>): Inicializa una nueva instancia de la estructura.
+        #region [public] SpeakerDataBlock(ReadOnlyCollection<byte>): Initializes a new instance of the structure
         /// <summary>
-        /// Inicializa una nueva instancia de la estructura <see cref="SpeakerDataBlock"/> especificando los datos de este bloque de configuración de altavoces.
+        /// Initializes a new instance of the <see cref="SpeakerDataBlock"/> structure specifying the data for this speaker setup block.
         /// </summary>
-        /// <param name="speakerDataBlock">Datos de este bloque de configuración de altavoces.</param>
+        /// <param name="speakerDataBlock">Data for this speaker configuration block.</param>
         public SpeakerDataBlock(ReadOnlyCollection<byte> speakerDataBlock)
         {
             FrontLeftRightWide = speakerDataBlock[0x00].CheckBit(Bits.Bit07);
@@ -44,8 +44,7 @@ namespace iTin.Hardware.Specification.Eedid
         /// Obtiene un valor que indica si estan presentes los altavoces trasero izquierdo/central.
         /// </summary>
         /// <value>
-        ///   <para>Tipo: <see cref="T:System.Boolean"/></para>
-        ///   <para>Es <b>true</b> si estan presentes; en caso contrario, es <b>false</b>.</para>
+        /// Es <b>true</b> si estan presentes; en caso contrario, es <b>false</b>.
         /// </value>
         public bool RearLeftRearCenter { get; }
         #endregion

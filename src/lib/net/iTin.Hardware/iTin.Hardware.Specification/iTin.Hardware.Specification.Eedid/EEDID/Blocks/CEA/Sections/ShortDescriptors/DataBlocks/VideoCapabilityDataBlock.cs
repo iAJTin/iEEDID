@@ -13,11 +13,11 @@ namespace iTin.Hardware.Specification.Eedid
     {
         #region constructor/s
 
-        #region [public] VideoCapabilityDataBlock(ReadOnlyCollection<byte>): Inicializa una nueva instancia de la estructura.
+        #region [public] VideoCapabilityDataBlock(ReadOnlyCollection<byte>): Initializes a new instance of the structure
         /// <summary>
-        /// Inicializa una nueva instancia de la estructura <see cref="VideoCapabilityDataBlock"/> especificando los datos de este bloque de video.
+        /// Initializes a new instance of the <see cref="VideoCapabilityDataBlock"/> structure specifying the data of this video block.
         /// </summary>
-        /// <param name="videoCapabilityDataBlock">Datos de este bloque de video.</param>
+        /// <param name="videoCapabilityDataBlock">Data of this video block.</param>
         public VideoCapabilityDataBlock(ReadOnlyCollection<byte> videoCapabilityDataBlock)
         {
             CEOverscan = videoCapabilityDataBlock[0x02] & 0x03;
@@ -57,8 +57,7 @@ namespace iTin.Hardware.Specification.Eedid
         /// Obtiene un valor que indica si cumple con el estandard IEC 61966-2-1/Amendment 1.
         /// </summary>
         /// <value>
-        ///   <para>Tipo: <see cref="T:System.Boolean"/></para>
-        ///   <para>Es <b>true</b> si cumple con el estandard IEC 61966-2-1/Amendment 1; en caso contrario, es <b>false</b>.</para>
+        /// Es <b>true</b> si cumple con el estandard IEC 61966-2-1/Amendment 1; en caso contrario, es <b>false</b>.
         /// </value>
         public int PTOverscan { get; }
         #endregion

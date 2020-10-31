@@ -23,11 +23,11 @@ namespace iTin.Hardware.Specification.Eedid
     {
         #region constructor/s
 
-        #region [public] InformationCeaSection(ReadOnlyCollection<byte>): Inicializa una nueva instancia de la clase con los datos de esta sección sin tratar.
+        #region [public] InformationCeaSection(ReadOnlyCollection<byte>): Initializes a new instance of the class with the data from this raw section
         /// <summary>
-        /// Inicializa una nueva instancia de la clase <see cref="InformationCeaSection"/> con los datos de esta sección sin tratar.
+        /// Initializes a new instance of the <see cref="InformationCeaSection"/> class with the data from this raw section.
         /// </summary>
-        /// <param name="sectionData">Datos de esta sección sin tratar.</param>
+        /// <param name="sectionData">Data from this section untreated.</param>
         public InformationCeaSection(ReadOnlyCollection<byte> sectionData) : base(sectionData)
         {
         }
@@ -37,26 +37,24 @@ namespace iTin.Hardware.Specification.Eedid
 
         #region private properties
 
-        #region [private] (byte) Revision: Obtiene un valor que representa al campo 'Revision'.
+        #region [private] (byte) Revision: Gets a value representing the 'Revision' field
         /// <summary>
-        /// Obtiene un valor que representa al campo '<c>Revision</c>'.
+        /// Gets a value representing the <b>Revision</b> field.
         /// </summary>
         /// <value>
-        ///   <para>Tipo: <see cref="T:System.Byte"/></para>
-        ///   <para>Valor de la propiedad.</para>
+        /// Property value.
         /// </value>
         [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         private byte Revision => RawData[0x00];
 
         #endregion
 
-        #region [private] (string) Implemented: Obtiene un valor que representa al campo 'Implemented'.
+        #region [private] (string) Implemented: Gets a value representing the 'Implemented' field
         /// <summary>
-        /// Obtiene un valor que representa al campo '<c>Implemented</c>'.
+        /// Gets a value representing the <b>Implemented</b> field.
         /// </summary>
         /// <value>
-        ///   <para>Tipo: <see cref="T:System.String"/></para>
-        ///   <para>Valor de la propiedad.</para>
+        /// Property value.
         /// </value>
         [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         private string Implemented

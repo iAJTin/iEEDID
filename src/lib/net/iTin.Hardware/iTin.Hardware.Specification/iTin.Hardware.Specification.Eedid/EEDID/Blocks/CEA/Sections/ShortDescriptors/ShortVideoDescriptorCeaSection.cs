@@ -11,12 +11,11 @@ namespace iTin.Hardware.Specification.Eedid
     {
         #region constructor/s
 
-        #region [public] ShortVideoDescriptorCeaSection(ReadOnlyCollection<byte>): Inicializa una nueva instancia de la clase.
-        /// <inheritdoc />
+        #region [public] ShortVideoDescriptorCeaSection(ReadOnlyCollection<byte>): Initialize a new instance of the class
         /// <summary>
-        /// Inicializa una nueva instancia de la clase <see cref="ShortVideoDescriptorCeaSection"/>.
+        /// Initialize a new instance of the <see cref="ShortVideoDescriptorCeaSection"/> class with the data in this section untreated.
         /// </summary>
-        /// <param name="sectionData">Datos de esta sección.</param>
+        /// <param name="sectionData">Raw data of this section.</param>
         public ShortVideoDescriptorCeaSection(ReadOnlyCollection<byte> sectionData) : base(sectionData)
         {
         }
@@ -27,7 +26,6 @@ namespace iTin.Hardware.Specification.Eedid
         #region protected override methods
 
         #region [protected] {override} (void) PopulateProperties(SectionPropertiesTable): Populates the property collection for this section
-        /// <inheritdoc />
         /// <summary>
         /// Populates the property collection for this section.
         /// </summary>
@@ -35,7 +33,7 @@ namespace iTin.Hardware.Specification.Eedid
         protected override void PopulateProperties(SectionPropertiesTable properties)
         {
             VideoDataBlock videoAllocationDataBlock = new VideoDataBlock(RawData);
-            //properties.Add("Supported Timings", videoAllocationDataBlock.GetSupportTimmings());
+            properties.Add(EedidProperty.Cea.DataBlock.Video.SupportedTimings, new ReadOnlyCollection<string>(videoAllocationDataBlock.GetSupportTimmings()));
         }
         #endregion
 

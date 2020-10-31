@@ -21,11 +21,11 @@ namespace iTin.Hardware.Specification.Eedid
 
         #region constructor/s
 
-        #region [public] ColorimetryDataBlock(ReadOnlyCollection<byte>): Inicializa una nueva instancia de la estructura.
+        #region [public] ColorimetryDataBlock(ReadOnlyCollection<byte>): Initializes a new instance of the structure
         /// <summary>
-        /// Inicializa una nueva instancia de la estructura <see cref="ColorimetryDataBlock"/> especificando los datos de este bloque de audio.
+        /// Initializes a new instance of the <see cref="ColorimetryDataBlock"/> structure specifying the data of this audio block.
         /// </summary>
-        /// <param name="colorimetryDataBlock">Datos de este bloque de audio.</param>
+        /// <param name="colorimetryDataBlock">Data of this audio block.</param>
         public ColorimetryDataBlock(ReadOnlyCollection<byte> colorimetryDataBlock)
         {                
             XVYCC601 = colorimetryDataBlock[0x02].CheckBit(Bits.Bit00);
@@ -45,92 +45,92 @@ namespace iTin.Hardware.Specification.Eedid
 
         #region public properties
 
-        #region [public] (bool) AdobeRGB: Obtiene un valor que indica si cumple con el estandard IEC 61966-2-5.
+        #region [public] (bool) AdobeRGB: Gets a value that indicates whether it conforms to the IEC 61966-2-5 standard
         /// <summary>
-        /// Obtiene un valor que indica si cumple con el estandard IEC 61966-2-5.
+        /// Gets a value that indicates whether it conforms to the IEC 61966-2-5 standard.
         /// </summary>
         /// <value>
-        /// Es <b>true</b> si cumple con el estandard IEC 61966-2-5; en caso contrario, es <b>false</b>.
+        /// <b>true</b> if it conforms to the IEC 61966-2-5 standard; otherwise <b>false</b>.
         /// </value>
         public bool AdobeRGB { get; }
         #endregion
 
-        #region [public] (bool) AdobeYCC601: Obtiene un valor que indica si cumple con el estandard IEC 61966-2-5 Annex A.
+        #region [public] (bool) AdobeYCC601: Gets a value that indicates whether it complies with the IEC 61966-2-5 Annex A standard
         /// <summary>
-        /// Obtiene un valor que indica si cumple con el estandard IEC 61966-2-5 Annex A.
+        /// Gets a value that indicates whether it complies with the IEC 61966-2-5 Annex A standard.
         /// </summary>
         /// <value>
-        /// <b>true</b> si cumple con el estandard IEC 61966-2-5 Annex A; en caso contrario, es <b>false</b>.
+        /// <b>true</b> if it complies with the IEC 61966-2-5 Annex A standard; otherwise <b>false</b>.
         /// </value>
         public bool AdobeYCC601 { get; }
         #endregion
 
-        #region [public] (bool) SYCC601: Obtiene un valor que indica si cumple con el estandard IEC 61966-2-1/Amendment 1.
+        #region [public] (bool) SYCC601: Gets a value that indicates whether it complies with the IEC 61966-2-1/Amendment 1 standard
         /// <summary>
-        /// Obtiene un valor que indica si cumple con el estandard IEC 61966-2-1/Amendment 1.
+        /// Gets a value that indicates whether it complies with the IEC 61966-2-1/Amendment 1 standard.
         /// </summary>
         /// <value>
-        /// Es <b>true</b> si cumple con el estandard IEC 61966-2-1/Amendment 1; en caso contrario, es <b>false</b>.
+        /// <b>true</b> if it complies with the IEC 61966-2-1/Amendment 1 standard; otherwise <b>false</b>.
         /// </value>
         public bool SYCC601 { get; }
         #endregion
 
-        #region [public] (bool) XVYCC709: Obtiene un valor que indica si cumple con el estandard IEC 61966-2-4 (High Definition Colorimetry).
+        #region [public] (bool) XVYCC709: Gets a value that indicates whether it conforms to the IEC 61966-2-4 (High Definition Colorimetry) standard
         /// <summary>
-        /// Obtiene un valor que indica si cumple con el estandard IEC 61966-2-4 (High Definition Colorimetry).
+        /// Gets a value that indicates whether it conforms to the IEC 61966-2-4 (High Definition Colorimetry) standard.
         /// </summary>
         /// <value>
-        /// Es <b>true</b> si cumple con el estandard IEC 61966-2-4 (High Definition Colorimetry), es <b>false</b>.
+        /// <b>true</b> if it complies with the IEC 61966-2-4 (High Definition Colorimetry) standard; otherwise <b>false</b>.
         /// </value>
         public bool XVYCC709 { get; }
         #endregion
 
-        #region [public] (bool) XVYCC601: Obtiene un valor que indica si cumple con el estandard IEC 61966-2-4 (Standard Definition Colorimetry).
+        #region [public] (bool) XVYCC601: Gets a value that indicates whether it conforms to the IEC 61966-2-4 (Standard Definition Colorimetry) standard
         /// <summary>
-        /// Obtiene un valor que indica si cumple con el estandard IEC 61966-2-4 (Standard Definition Colorimetry).
+        /// Gets a value that indicates whether it conforms to the IEC 61966-2-4 (Standard Definition Colorimetry) standard.
         /// </summary>
         /// <value>
-        /// Es <b>true</b> si cumple con el estandard IEC 61966-2-4 (Standard Definition Colorimetry); en caso contrario, es <b>false</b>.
+        /// <b>true</b> if it complies with the IEC 61966-2-4 (Standard Definition Colorimetry) standard; otherwise <b>false</b>.
         /// </value>
         public bool XVYCC601 { get; }
         #endregion
 
-        #region [public] (bool) MD0: Obtiene un valor que indica si cumple con future metadata.
+        #region [public] (bool) MD0: Gets a value that indicates whether it conforms to future metadata
         /// <summary>
-        /// Obtiene un valor que indica si cumple con future metadata.
+        /// Gets a value that indicates whether it conforms to future metadata.
         /// </summary>
         /// <value>
-        /// Es <b>true</b> si cumple con future metadata.; en caso contrario, es <b>false</b>.
+        /// <b>true</b> if it conforms to future metadata; otherwise <b>false</b>.
         /// </value>
         public bool MD0 => _md0;
         #endregion
 
-        #region [public] (bool) MD1: Obtiene un valor que indica si cumple con future metadata.
+        #region [public] (bool) MD1: Gets a value that indicates whether it conforms to future metadata
         /// <summary>
-        /// Obtiene un valor que indica si cumple con future metadata.
+        /// Gets a value that indicates whether it conforms to future metadata.
         /// </summary>
         /// <value>
-        /// Es <b>true</b> si cumple con future metadata.; en caso contrario, es <b>false</b>.
+        /// <b>true</b> if it conforms to future metadata; otherwise <b>false</b>.
         /// </value>
         public bool MD1 => _md1;
         #endregion
 
-        #region [public] (bool) MD2: Obtiene un valor que indica si cumple con future metadata.
+        #region [public] (bool) MD2: Gets a value that indicates whether it conforms to future metadata
         /// <summary>
-        /// Obtiene un valor que indica si cumple con future metadata.
+        /// Gets a value that indicates whether it conforms to future metadata.
         /// </summary>
         /// <value>
-        /// Es <b>true</b> si cumple con future metadata.; en caso contrario, es <b>false</b>.
+        /// <b>true</b> if it conforms to future metadata; otherwise <b>false</b>.
         /// </value>
         public bool MD2 => _md2;
         #endregion
 
-        #region [public] (bool) MD3: Obtiene un valor que indica si cumple con future metadata.
+        #region [public] (bool) MD3: Gets a value that indicates whether it conforms to future metadata
         /// <summary>
-        /// Obtiene un valor que indica si cumple con future metadata.
+        /// Gets a value that indicates whether it conforms to future metadata.
         /// </summary>
         /// <value>
-        /// Es <b>true</b> si cumple con future metadata.; en caso contrario, es <b>false</b>.
+        /// <b>true</b> if it conforms to future metadata; otherwise <b>false</b>.
         /// </value>
         public bool MD3 => _md3;
         #endregion

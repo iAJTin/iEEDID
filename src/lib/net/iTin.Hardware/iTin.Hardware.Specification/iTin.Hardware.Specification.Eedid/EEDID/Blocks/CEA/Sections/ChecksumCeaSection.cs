@@ -19,12 +19,11 @@ namespace iTin.Hardware.Specification.Eedid
     {
         #region constructor/s
 
-        #region [public] CheckSumCeaSection(ReadOnlyCollection<byte>): Inicializa una nueva instancia de la clase con los datos de esta sección sin tratar.
-        /// <inheritdoc />
+        #region [public] CheckSumCeaSection(ReadOnlyCollection<byte>): Initializes a new instance of the class with the data from this raw section
         /// <summary>
-        /// Inicializa una nueva instancia de la clase <see cref="T:iTin.Hardware.Specification.Eedid.CheckSumCeaSection" /> con los datos de esta sección sin tratar.
+        /// Initializes a new instance of the <see cref="CheckSumCeaSection"/> class with the data from this raw section.
         /// </summary>
-        /// <param name="sectionData">Datos de esta sección sin tratar.</param>
+        /// <param name="sectionData">Data from this section untreated.</param>
         public CheckSumCeaSection(ReadOnlyCollection<byte> sectionData) : base(sectionData)
         {
         }
@@ -34,13 +33,12 @@ namespace iTin.Hardware.Specification.Eedid
 
         #region private readonly properties
 
-        #region [private] (bool) Status: Obtiene un valor que representa al campo 'Status'.
+        #region [private] (bool) Status: Gets a value that represents the 'Status' field.
         /// <summary>
-        /// Obtiene un valor que representa al campo '<c>Status</c>'.
+        /// Gets a value that represents the <b>Status</b> field.
         /// </summary>
         /// <value>
-        ///   <para>Tipo: <see cref="T:System.Boolean"/></para>
-        ///   <para>Valor de la propiedad.</para>
+        /// Property value.
         /// </value>
         [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         private bool Status
@@ -65,7 +63,6 @@ namespace iTin.Hardware.Specification.Eedid
         #region protected override methods
 
         #region [protected] {override} (void) PopulateProperties(SectionPropertiesTable): Populates the property collection for this section
-        /// <inheritdoc />
         /// <summary>
         /// Populates the property collection for this section.
         /// </summary>

@@ -4,6 +4,7 @@ namespace iEEDID.ConsoleAppCore
     using System;
     using System.Collections.Generic;
     using System.Collections.ObjectModel;
+    using System.ComponentModel.DataAnnotations;
     using System.Drawing;
 
     using iTin.Core.Hardware.Common;
@@ -15,37 +16,44 @@ namespace iEEDID.ConsoleAppCore
     {
         static void Main(string[] args)
         {
-            Console.WriteLine(@" > Implemented Blocks");
+            Console.WriteLine();
+            Console.WriteLine(@" Implemented Blocks");
+            Console.WriteLine(@" ══════════════════");
 
-            EEDID[] eedid0 = EEDID.Instance;
-            EEDID eedid = eedid0[0];
-            EEDID eedid1 = EEDID.Parse(MacBookPro2018.IntegratedLaptopPanelEdidTable2);
+            //EEDID[] eedid0 = EEDID.Instance;
+            //EEDID eedid = eedid0[0];
+            EEDID eedid = EEDID.Parse(MacBookPro2018.IntegratedLaptopPanelEdidTable2);
             DataBlockCollection blocks = eedid.Blocks;
             foreach (KnownDataBlock block in blocks.ImplementedBlocks)
             {
-                Console.WriteLine($@"   > {block}");
+                Console.WriteLine($@" │ {block}");
             }
 
             foreach (DataBlock block in blocks)
             {
                 Console.WriteLine();
-                Console.WriteLine($@"   > {block.Key} Block");
+                Console.WriteLine($@" {block.Key} Block");
+                Console.WriteLine(@" ═════════════════");
 
                 var implSections = eedid.Blocks[block.Key].Sections.ImplementedSections;
                 Console.WriteLine();
-                Console.WriteLine(@"     > Implemented Sections");
+                Console.WriteLine(@" Implemented Sections");
+                Console.WriteLine(@" ┌───────────────────");
                 foreach (Enum section in implSections)
                 {
-                    Console.WriteLine($@"       > {GetFriendlyName(section)}");
+                    Console.WriteLine($@" │ {GetFriendlyName(section)}");
                 }
 
                 Console.WriteLine();
-                Console.WriteLine(@"     > Sections detail");
+                Console.WriteLine(@" Sections");
+                Console.WriteLine(@" ┌───────");
                 BaseDataSectionCollection sections = block.Sections;
                 foreach (DataSection section in sections)
                 {
-                    Console.WriteLine();
-                    Console.WriteLine($@"       > {GetFriendlyName(section.Key)} Section");
+                    var literal = $"{GetFriendlyName(section.Key) } Section";
+                    Console.WriteLine(@" │");
+                    Console.WriteLine($@" ├ {GetFriendlyName(section.Key)} Section");
+                    Console.WriteLine($" │ ┌{new string('─', literal.Length - 1)}");
 
                     IEnumerable<IPropertyKey> properties = section.ImplementedProperties;
                     foreach (IPropertyKey property in properties)
@@ -59,79 +67,86 @@ namespace iEEDID.ConsoleAppCore
 
                         if (value == null)
                         {
-                            Console.WriteLine($@"         > {friendlyName} > NULL");
+                            Console.WriteLine($@" │ │ {friendlyName}: NULL");
                             continue;
                         }
 
                         if (value is string)
                         {
-                            Console.WriteLine($@"         > {friendlyName} > {value}{unit}");
+                            Console.WriteLine($@" │ │ {friendlyName}: {value}{unit}");
                         }
                         else if (value is bool)
                         {
-                            Console.WriteLine($@"         > {friendlyName} > {value}{unit}");
+                            Console.WriteLine($@" │ │ {friendlyName}: {value}{unit}");
                         }
                         else if (value is double)
                         {
-                            Console.WriteLine($@"         > {friendlyName} > {value}{unit}");
+                            Console.WriteLine($@" │ │ {friendlyName}: {value}{unit}");
                         }
                         else if (value is byte)
                         {
-                            Console.WriteLine($@"         > {friendlyName} > {value}{unit} [{value:X2}h]");
+                            Console.WriteLine($@" │ │ {friendlyName}: {value}{unit} [{value:X2}h]");
                         }
                         else if (value is short)
                         {
-                            Console.WriteLine($@"         > {friendlyName} > {value}{unit} [{value:X4}h]");
+                            Console.WriteLine($@" │ │ {friendlyName}: {value}{unit} [{value:X4}h]");
                         }
                         else if (value is ushort)
                         {
-                            Console.WriteLine($@"         > {friendlyName} > {value}{unit} [{value:X4}h]");
+                            Console.WriteLine($@" │ │ {friendlyName}: {value}{unit} [{value:X4}h]");
                         }
                         else if (value is int)
                         {
-                            Console.WriteLine($@"         > {friendlyName} > {value}{unit} [{value:X4}h]");
+                            Console.WriteLine($@" │ │ {friendlyName}: {value}{unit} [{value:X4}h]");
                         }
                         else if (value is uint)
                         {
-                            Console.WriteLine($@"         > {friendlyName} > {value}{unit} [{value:X4}h]");
+                            Console.WriteLine($@" │ │ {friendlyName}: {value}{unit} [{value:X4}h]");
                         }
                         else if (value is long)
                         {
-                            Console.WriteLine($@"         > {friendlyName} > {value}{unit} [{value:X8}h]");
+                            Console.WriteLine($@" │ │ {friendlyName}: {value}{unit} [{value:X8}h]");
                         }
                         else if (value is ulong)
                         {
-                            Console.WriteLine($@"         > {friendlyName} > {value}{unit} [{value:X8}h]");
+                            Console.WriteLine($@" │ │ {friendlyName}: {value}{unit} [{value:X8}h]");
                         }
                         else if (value is PointF)
                         {
-                            Console.WriteLine($@"         > {friendlyName}");
-                            Console.WriteLine($@"           > X > {((PointF)value).X}");
-                            Console.WriteLine($@"           > Y > {((PointF)value).Y}");
-                        }
-                        else if (value.GetType() == typeof(ReadOnlyCollection<string>))
-                        {
-                            Console.WriteLine($@"         > {friendlyName} > {string.Join(", ", (ReadOnlyCollection<string>)value)}");
+                            var pointLiteral = $"{ friendlyName }";
+                            Console.WriteLine($@" │ │ {pointLiteral}");
+                            Console.WriteLine($@" │ │ ┌{new string('─', pointLiteral.Length - 1)}");
+                            Console.WriteLine($@" │ │ │ X: {((PointF)value).X}");
+                            Console.WriteLine($@" │ │ │ Y: {((PointF)value).Y}");
+                            Console.WriteLine($@" │ │");
                         }
                         else if (value.GetType() == typeof(ReadOnlyCollection<byte>))
                         {
-                            Console.WriteLine($@"         > {friendlyName} > {string.Join(", ", (ReadOnlyCollection<byte>)value)}");
+                            Console.WriteLine($@" │ │ {friendlyName}: {string.Join(", ", (ReadOnlyCollection<byte>)value)}");
                         }
                         else if (value is StandardTimingIdentifierDescriptorItem)
                         {
-                            Console.WriteLine($@"         > {(StandardTimingIdentifierDescriptorItem)value}");
+                            Console.WriteLine($@" │ │ {(StandardTimingIdentifierDescriptorItem)value}");
                         }
                         else if (value.GetType() == typeof(ReadOnlyCollection<MonitorResolutionInfo>))
                         {
-                            var resolutions = (ReadOnlyCollection<MonitorResolutionInfo>)value;
-                            foreach (MonitorResolutionInfo resolution in resolutions)
+                            var items = (ReadOnlyCollection<MonitorResolutionInfo>)value;
+                            foreach (MonitorResolutionInfo item in items)
                             {
-                                Console.WriteLine($@"         > {resolution}");
+                                Console.WriteLine($@" │ │ {item}");
+                            }
+                        }
+                        else if (value.GetType() == typeof(ReadOnlyCollection<string>))
+                        {
+                            var items = (ReadOnlyCollection<string>)value;
+                            foreach (string item in items)
+                            {
+                                Console.WriteLine($@" │ │ {item}");
                             }
                         }
                         else if (value.GetType() == typeof(SectionPropertiesTable))
                         {
-                            Console.WriteLine($@"         > {friendlyName}");
+                            Console.WriteLine($@" │ │ {friendlyName}");
                             var dataBlockProperties = (SectionPropertiesTable)value;
                             foreach (PropertyItem dataBlockProperty in dataBlockProperties)
                             {
@@ -146,10 +161,12 @@ namespace iEEDID.ConsoleAppCore
                         }
                         else
                         {
-                            Console.WriteLine($@"         > {friendlyName} > {value}{unit}");
+                            Console.WriteLine($@" │ │ {friendlyName} > {value}{unit}");
                         }
                     }
                 }
+
+                Console.WriteLine();
             }
 
             Console.WriteLine();

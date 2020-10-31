@@ -15,11 +15,11 @@ namespace iTin.Hardware.Specification.Eedid
     {
         #region constructor/s
 
-        #region [public] AudioDataBlock(ReadOnlyCollection<byte>): Inicializa una nueva instancia de la estructura.
+        #region [public] AudioDataBlock(ReadOnlyCollection<byte>): Initializes a new instance of the structure
         /// <summary>
-        /// Inicializa una nueva instancia de la estructura <see cref="AudioDataBlock"/> especificando los datos de este bloque de audio.
+        /// Initializes a new instance of the <see cref="AudioDataBlock"/> structure specifying the data of this audio block.
         /// </summary>
-        /// <param name="audioDataBlock">Datos de este bloque de audio.</param>
+        /// <param name="audioDataBlock">Data of this audio block.</param>
         public AudioDataBlock(ReadOnlyCollection<byte> audioDataBlock)
         {
             var formatCode = (KnownAudioFormatCode)(audioDataBlock[0x00] >> 3 & 0x0f);
@@ -45,11 +45,13 @@ namespace iTin.Hardware.Specification.Eedid
 
         #region public properties
 
-        #region [public] (NameObjectCollection) Properties: Obtiene un valor que representa la colección de propiedades disponibles para este bloque.
+        #region [public] (NameObjectCollection) Properties: Gets a value that represents the collection of properties available to this block
         /// <summary>
-        ///Obtiene un valor que representa la colección de propiedades disponibles para este bloque.
+        /// Gets a value that represents the collection of properties available to this block.
         /// </summary>
-        /// <value>Colección de propiedades disponibles para este bloque.</value>
+        /// <value>
+        /// Collection of properties available for this block.
+        /// </value>
         public NameObjectCollection Properties { get; }
         #endregion
 
@@ -57,7 +59,6 @@ namespace iTin.Hardware.Specification.Eedid
 
         #region private static methods
 
-        #region [private] {static} (string) AudioFormat(byte): Obtiene el formato de audio.
         private static string AudioFormat(byte code)
         {
             var items = new[]
@@ -82,9 +83,7 @@ namespace iTin.Hardware.Specification.Eedid
 
             return items[code];
         }
-        #endregion
 
-        #region [private] {static} (ReadOnlyCollection<string>) BitDepth(): Obtiene la resolución de un formato de audio sin compresión.
         private static ReadOnlyCollection<string> BitDepth(byte code)
         {
             var value = new[]
@@ -106,9 +105,7 @@ namespace iTin.Hardware.Specification.Eedid
 
             return items.AsReadOnly();
         }
-        #endregion 
 
-        #region [private] {static} (ReadOnlyCollection<string>) SamplingFrequencies(byte): Obtiene las frecuencias de muestreo.
         private static ReadOnlyCollection<string> SamplingFrequencies(byte code)
         {
             var value = new[]
@@ -134,7 +131,6 @@ namespace iTin.Hardware.Specification.Eedid
 
             return items.AsReadOnly();
         }
-        #endregion
 
         #endregion
     }
