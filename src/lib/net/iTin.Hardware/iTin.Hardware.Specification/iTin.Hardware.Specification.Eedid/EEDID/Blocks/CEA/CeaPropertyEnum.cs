@@ -13,11 +13,13 @@ namespace iTin.Hardware.Specification.Eedid
     /// </summary>
     internal enum CeaInformationProperty
     {
-        [PropertyDescription("")]
+        [PropertyName("Revision")]
+        [PropertyDescription("Revision")]
         [PropertyType(typeof(byte))]
         Revision,
 
-        [PropertyDescription("")]
+        [PropertyName("Implemented")]
+        [PropertyDescription("Implemented")]
         [PropertyType(typeof(string))]
         Implemented,
     }
@@ -29,18 +31,22 @@ namespace iTin.Hardware.Specification.Eedid
     /// </summary>
     internal enum CeaMonitorSupportProperty
     {
+        [PropertyName("Is Dvt Underscan")]
         [PropertyDescription("")]
         [PropertyType(typeof(bool))]
         IsDvtUnderscan,
 
+        [PropertyName("Basic Audio Supported")]
         [PropertyDescription("")]
         [PropertyType(typeof(bool))]
         BasicAudioSupported,
 
+        [PropertyName("YCbCr4:4:4 Supported")]
         [PropertyDescription("")]
         [PropertyType(typeof(bool))]
         YCbCr444Supported,
 
+        [PropertyName("YCbCr4:2:2 Supported")]
         [PropertyDescription("")]
         [PropertyType(typeof(bool))]
         YCbCr422Supported,
@@ -53,7 +59,8 @@ namespace iTin.Hardware.Specification.Eedid
     /// </summary>
     internal enum CeaCheckSumProperty
     {
-        [PropertyDescription("")]
+        [PropertyName("Status")]
+        [PropertyDescription("Status")]
         [PropertyType(typeof(bool))]
         Ok,
     }
@@ -65,7 +72,8 @@ namespace iTin.Hardware.Specification.Eedid
     /// </summary>
     internal enum CeaDetailedTimingModeProperty
     {
-        [PropertyDescription("")]
+        [PropertyName("Timings")]
+        [PropertyDescription("Timings")]
         [PropertyType(typeof(ReadOnlyCollection<DetailedTimingModeDescriptor>))]
         Timings,
     }
@@ -78,22 +86,27 @@ namespace iTin.Hardware.Specification.Eedid
     /// </summary>
     internal enum CeaExtendedColorimetryDataBlockProperty
     {
+        [PropertyName("Adobe RGB")]
         [PropertyDescription("Adobe RGB")]
         [PropertyType(typeof(bool))]
         AdobeRGB,
 
+        [PropertyName("Adobe YCC601")]
         [PropertyDescription("Adobe YCC601")]
         [PropertyType(typeof(bool))]
         AdobeYCC601,
 
+        [PropertyName("sYCC601")]
         [PropertyDescription("sYCC601")]
         [PropertyType(typeof(bool))]
         sYCC601,
 
+        [PropertyName("xvYCC709")]
         [PropertyDescription("xvYCC709")]
         [PropertyType(typeof(bool))]
         xvYCC709,
 
+        [PropertyName("xvYCC601")]
         [PropertyDescription("xvYCC601")]
         [PropertyType(typeof(bool))]
         xvYCC601
@@ -133,22 +146,27 @@ namespace iTin.Hardware.Specification.Eedid
     /// </summary>
     internal enum CeaExtendedVideoCapabilityDataBlockProperty
     {
+        [PropertyName("CE Overscan/Underscan")]
         [PropertyDescription("CE Overscan/Underscan")]
         [PropertyType(typeof(string))]
         CEOverscan,
 
+        [PropertyName("IT Overscan/Underscan")]
         [PropertyDescription("IT Overscan/Underscan")]
         [PropertyType(typeof(string))]
         ITOverscan,
 
+        [PropertyName("PT Overscan/Underscan")]
         [PropertyDescription("PT Overscan/Underscan")]
         [PropertyType(typeof(string))]
         PTOverscan,
 
+        [PropertyName("Quantization Range RGB")]
         [PropertyDescription("Quantization Range RGB")]
         [PropertyType(typeof(string))]
         QuantizationRangeRGB,
 
+        [PropertyName("Quantization Range YCC")]
         [PropertyDescription("Quantization Range YCC")]
         [PropertyType(typeof(string))]
         QuantizationRangeYCC
@@ -161,6 +179,7 @@ namespace iTin.Hardware.Specification.Eedid
     /// </summary>
     internal enum CeaReservedDataBlockProperty
     {
+        [PropertyName("Data")]
         [PropertyDescription("Raw data")]
         [PropertyType(typeof(ReadOnlyCollection<byte>))]
         Data,
@@ -173,47 +192,58 @@ namespace iTin.Hardware.Specification.Eedid
     /// </summary>
     internal enum CeaSpeakerDataBlockProperty
     {
-        [PropertyDescription("")]
+        [PropertyName("Front Left/Right High")]
+        [PropertyDescription("Front Left/Right High")]
         [PropertyType(typeof(bool))]
         FrontLeftRightHigh,
 
-        [PropertyDescription("")]
+        [PropertyName("Front Left/Right Wide")]
+        [PropertyDescription("Front Left/Right Wide")]
         [PropertyType(typeof(bool))]
         FrontLeftRightWide,
-        
-        [PropertyDescription("")]
+
+        [PropertyName("Rear Left/Right Center")]
+        [PropertyDescription("Rear Left/Right Center")]
         [PropertyType(typeof(bool))]
         RearLeftRightCenter,
-        
-        [PropertyDescription("")]
+
+        [PropertyName("Front Left/Right Center")]
+        [PropertyDescription("Front Left/Right Center")]
         [PropertyType(typeof(bool))]
         FrontLeftRightCenter,
 
-        [PropertyDescription("")]
+        [PropertyName("Rear Center")]
+        [PropertyDescription("Rear Center")]
         [PropertyType(typeof(bool))]
         RearCenter,
 
-        [PropertyDescription("")]
+        [PropertyName("Rear Left/Right")]
+        [PropertyDescription("Rear Left/Right")]
         [PropertyType(typeof(bool))]
         RearLeftRight,
 
-        [PropertyDescription("")]
+        [PropertyName("Front Center")]
+        [PropertyDescription("Front Center")]
         [PropertyType(typeof(bool))]
         FrontCenter,
 
-        [PropertyDescription("")]
+        [PropertyName("LFE Channel")]
+        [PropertyDescription("LFE Channel")]
         [PropertyType(typeof(bool))]
         LFEChannel,
 
-        [PropertyDescription("")]
+        [PropertyName("Front Left/Right")]
+        [PropertyDescription("Front Left/Right")]
         [PropertyType(typeof(bool))]
         FrontLeftRight,
 
-        [PropertyDescription("")]
+        [PropertyName("Top Center")]
+        [PropertyDescription("Top Center")]
         [PropertyType(typeof(bool))]
         TopCenter,
 
-        [PropertyDescription("")]
+        [PropertyName("Front Center High")]
+        [PropertyDescription("Front Center High")]
         [PropertyType(typeof(bool))]
         FrontCenterHigh,
     }
@@ -225,7 +255,8 @@ namespace iTin.Hardware.Specification.Eedid
     /// </summary>
     internal enum CeaVideoDataBlockProperty
     {
-        [PropertyDescription("")]
+        [PropertyName("Supported Timings")]
+        [PropertyDescription("Supported Timings")]
         [PropertyType(typeof(ReadOnlyCollection<string>))]
         SupportedTimings,
     }
@@ -237,22 +268,27 @@ namespace iTin.Hardware.Specification.Eedid
     /// </summary>
     internal enum CeaVendorDataBlockProperty
     {
+        [PropertyName("IEEE Registration Identifier")]
         [PropertyDescription("IEEE Registration Identifier")]
         [PropertyType(typeof(int))]
         IEEERegistrationIdentifier,
 
+        [PropertyName("Physical Address")]
         [PropertyDescription("Consumer Electronics Control (CEC) physical address")]
         [PropertyType(typeof(int))]
         PhysicalAddress,
 
+        [PropertyName("Flags")]
         [PropertyDescription("Flags")]
         [PropertyType(typeof(ReadOnlyCollection<string>))]
         Flags,
 
+        [PropertyName("Maximum TMDS clock")]
         [PropertyDescription("Maximum TMDS clock")]
         [PropertyType(typeof(int))]
         MaxClock,
 
+        [PropertyName("Vendor Specific Payload")]
         [PropertyDescription("Vendor Specific Payload")]
         [PropertyType(typeof(ReadOnlyCollection<byte>))]
         VendorPayload,
