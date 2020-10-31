@@ -5,7 +5,7 @@ namespace iTin.Hardware.Specification.Eedid
 
     using iTin.Core.Hardware.Common;
 
-    #region EEDID -> CEA -> Sections
+    #region EEDID -> CEA
 
     #region [internal] (enum) CeaInformationProperty: Definition of properties for a section of type 'Information'
     /// <summary>
@@ -78,7 +78,6 @@ namespace iTin.Hardware.Specification.Eedid
         Timings,
     }
     #endregion
-
 
     #region [internal] (enum) CeaExtendedColorimetryDataBlockProperty: Definition of properties for a section of type 'DataBlockCollection'
     /// <summary>
@@ -294,6 +293,10 @@ namespace iTin.Hardware.Specification.Eedid
         VendorPayload,
     }
     #endregion
+
+    #endregion
+
+    #region EEDID -> CEA -> Section
 
     #endregion
 }

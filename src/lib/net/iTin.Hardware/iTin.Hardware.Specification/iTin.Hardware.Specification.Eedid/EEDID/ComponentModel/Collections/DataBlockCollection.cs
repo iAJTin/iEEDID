@@ -13,7 +13,7 @@ namespace iTin.Hardware.Specification.Eedid
 
     /// <inheritdoc />
     /// <summary>
-    /// Represents a collection of <see cref="T:iTin.Hardware.Specification.Eedid.DataBlock" /> objects from the <see cref="T:iTin.Hardware.Specification.EEDID" /> specification.
+    /// Represents a collection of <see cref="DataBlock"/> objects from the <see cref="EEDID"/> specification.
     /// </summary>
     public sealed class DataBlockCollection : IList<DataBlock>
     {

@@ -8,7 +8,7 @@ namespace iTin.Hardware.Specification.Eedid
 
     /// <inheritdoc />
     /// <summary>
-    /// Specialization of the class <see cref="T:iTin.Hardware.Specification.Eedid.BaseDataSectionCollection" /> representing a collection of objects <see cref="T:iTin.Hardware.Specification.Eedid.DataSection" /> for a <see cref="T:iTin.Hardware.Specification.Eedid.DataBlock" /> of type <see cref="F:iTin.Hardware.Specification.Eedid.KnownDataBlock.CEA" />.
+    /// Specialization of the class <see cref="BaseDataSectionCollection"/> representing a collection of objects <see cref="DataSection"/> for a <see cref="DataBlock"/> of type <see cref="KnownDataBlock.CEA"/>.
     /// </summary>
     internal sealed class CeaDataSectionCollection : BaseDataSectionCollection
     {

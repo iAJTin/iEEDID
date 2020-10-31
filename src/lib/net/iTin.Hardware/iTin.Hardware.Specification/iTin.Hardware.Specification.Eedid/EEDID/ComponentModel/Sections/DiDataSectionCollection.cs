@@ -6,9 +6,8 @@ namespace iTin.Hardware.Specification.Eedid
 
     using iTin.Core.Helpers;
 
-    /// <inheritdoc />
     /// <summary>
-    /// Specialization of the class <see cref="T:iTin.Hardware.Specification.Eedid.BaseDataSectionCollection"/> representing a collection of objects <see cref="T:iTin.Hardware.Specification.Eedid.DataSection"/> for a <see cref="T:iTin.Hardware.Specification.Eedid.DataBlock"/> of type <see cref="F:iTin.Hardware.Specification.Eedid.KnownDataBlock.DI" />.
+    /// Specialization of the class <see cref="BaseDataSectionCollection"/> representing a collection of objects <see cref="DataSection"/> for a <see cref="DataBlock"/> of type <see cref="KnownDataBlock.DI"/>.
     /// </summary>
     internal sealed class DiDataSectionCollection : BaseDataSectionCollection
     {

@@ -2,17 +2,17 @@
 namespace iTin.Hardware.Specification.Eedid
 {
     /// <summary>
-    /// Representa una colección de propiedades de un objeto que implemente la clase <see cref="BaseDataSectionCollection"/>.
+    /// Represents a collection of properties of an object that implements the <see cref="BaseDataSectionCollection"/> class.
     /// </summary>
     public class SectionProperties
     {
         #region constructor/s
 
-        #region [internal] SectionProperties(Hashtable): Inicializa una nueva instancia de la clase.
+        #region [internal] SectionProperties(Hashtable): Initializes a new instance of the class
         /// <summary>
-        /// Inicializa una nueva instancia de la clase <see cref="SectionProperties"/>.
+        /// Initializes a new instance of the <see cref="SectionProperties"/> class.
         /// </summary>
-        /// <param name="items">Colección de items.</param>
+        /// <param name="items">Collection of items.</param>
         internal SectionProperties(SectionPropertiesTable items)
         {
             Values = items;
@@ -23,11 +23,13 @@ namespace iTin.Hardware.Specification.Eedid
 
         #region public properties
 
-        #region [public] (SectionPropertiesTable) Values: Obtiene los items disponibles.
+        #region [public] (SectionPropertiesTable) Values: Gets the available items
         /// <summary>
-        /// Obtiene los items disponibles.
+        /// Gets the available items
         /// </summary>
-        /// <value>Items disponibles.</value>
+        /// <value>
+        /// Items available.
+        /// </value>
         public SectionPropertiesTable Values { get; }
 
         #endregion
@@ -36,16 +38,13 @@ namespace iTin.Hardware.Specification.Eedid
 
         #region public override methods
 
-        #region [public] {override} (String) ToString: Devuelve una cadena que representa al objeto actual.
+        #region [public] {override} (String) ToString: Returns a string representing the current object.
         /// <summary>
-        /// Devuelve una cadena que representa al objeto <see cref="SectionProperties"/> actual.
+        /// Returns a string representing the current <see cref="SectionProperties"/> object.
         /// </summary>
         /// <returns>
-        ///   <para>Cadena que representa al objeto <see cref="SectionProperties"/> actual.</para>
+        /// A <see cref="string"/> representing the current <see cref="SectionProperties"/> object.
         /// </returns>
-        /// <remarks>
-        /// El método <see cref="SectionProperties.ToString()"/> devuelve una cadena que incluye el número de items disponibles.
-        /// </remarks>   
         public override string ToString() => $"Count = {Values.Count}";
         #endregion
 
