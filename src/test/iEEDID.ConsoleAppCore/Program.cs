@@ -4,7 +4,6 @@ namespace iEEDID.ConsoleAppCore
     using System;
     using System.Collections.Generic;
     using System.Collections.ObjectModel;
-    using System.ComponentModel.DataAnnotations;
     using System.Drawing;
 
     using iTin.Core.Hardware.Common;
@@ -16,182 +15,151 @@ namespace iEEDID.ConsoleAppCore
     {
         static void Main(string[] args)
         {
-            Console.WriteLine();
-            Console.WriteLine(@" Implemented Blocks");
-            Console.WriteLine(@" ══════════════════");
-
-            //EEDID[] eedid0 = EEDID.Instance;
-            //EEDID eedid = eedid0[0];
-            EEDID eedid = EEDID.Parse(MacBookPro2018.IntegratedLaptopPanelEdidTable2);
-            DataBlockCollection blocks = eedid.Blocks;
-            foreach (KnownDataBlock block in blocks.ImplementedBlocks)
-            {
-                Console.WriteLine($@" │ {block}");
-            }
-
-            foreach (DataBlock block in blocks)
+            EEDID[] instances = EEDID.Instance;
+            foreach(var eedid in instances)
             {
                 Console.WriteLine();
-                Console.WriteLine($@" {block.Key} Block");
-                Console.WriteLine(@" ═════════════════");
+                Console.WriteLine(@" Implemented Blocks");
+                Console.WriteLine(@" ══════════════════");
 
-                var implSections = eedid.Blocks[block.Key].Sections.ImplementedSections;
-                Console.WriteLine();
-                Console.WriteLine(@" Implemented Sections");
-                Console.WriteLine(@" ┌───────────────────");
-                foreach (Enum section in implSections)
+                DataBlockCollection blocks = eedid.Blocks;
+                foreach (KnownDataBlock block in blocks.ImplementedBlocks)
                 {
-                    Console.WriteLine($@" │ {GetFriendlyName(section)}");
+                    Console.WriteLine($@" │ {block}");
                 }
 
-                Console.WriteLine();
-                Console.WriteLine(@" Sections");
-                Console.WriteLine(@" ┌───────");
-                BaseDataSectionCollection sections = block.Sections;
-                foreach (DataSection section in sections)
+                foreach (DataBlock block in blocks)
                 {
-                    var literal = $"{GetFriendlyName(section.Key) } Section";
-                    Console.WriteLine(@" │");
-                    Console.WriteLine($@" ├ {GetFriendlyName(section.Key)} Section");
-                    Console.WriteLine($" │ ┌{new string('─', literal.Length - 1)}");
+                    Console.WriteLine();
+                    var blockLiteral = $@"{block.Key} Block";
+                    Console.WriteLine($@" {blockLiteral}");
+                    Console.WriteLine($@" {new string('═', blockLiteral.Length)}");
 
-                    IEnumerable<IPropertyKey> properties = section.ImplementedProperties;
-                    foreach (IPropertyKey property in properties)
+                    var implSections = eedid.Blocks[block.Key].Sections.ImplementedSections;
+                    Console.WriteLine();
+                    Console.WriteLine(@" Implemented Sections");
+                    Console.WriteLine(@" ┌───────────────────");
+                    foreach (Enum section in implSections)
                     {
-                        QueryPropertyResult queryResult = section.GetProperty(property);
-                        PropertyItem propertyItem = queryResult.Value;
-                        object value = propertyItem.Value;
-                        PropertyUnit valueUnit = property.PropertyUnit;
-                        string friendlyName = property.GetPropertyName();
-                        string unit = valueUnit == PropertyUnit.None ? string.Empty : valueUnit.ToString();
+                        Console.WriteLine($@" │ {GetFriendlyName(section)}");
+                    }
 
-                        if (value == null)
-                        {
-                            Console.WriteLine($@" │ │ {friendlyName}: NULL");
-                            continue;
-                        }
+                    Console.WriteLine();
+                    Console.WriteLine(@" Sections");
+                    Console.WriteLine(@" ┌───────");
+                    BaseDataSectionCollection sections = block.Sections;
+                    foreach (DataSection section in sections)
+                    {
+                        var literal = $"{GetFriendlyName(section.Key) } Section";
+                        Console.WriteLine(@" │");
+                        Console.WriteLine($@" ├ {GetFriendlyName(section.Key)} Section");
+                        Console.WriteLine($" │ ┌{new string('─', literal.Length - 1)}");
 
-                        if (value is string)
+                        IEnumerable<IPropertyKey> properties = section.ImplementedProperties;
+                        foreach (IPropertyKey property in properties)
                         {
-                            Console.WriteLine($@" │ │ {friendlyName}: {value}{unit}");
-                        }
-                        else if (value is bool)
-                        {
-                            Console.WriteLine($@" │ │ {friendlyName}: {value}{unit}");
-                        }
-                        else if (value is double)
-                        {
-                            Console.WriteLine($@" │ │ {friendlyName}: {value}{unit}");
-                        }
-                        else if (value is byte)
-                        {
-                            Console.WriteLine($@" │ │ {friendlyName}: {value}{unit} [{value:X2}h]");
-                        }
-                        else if (value is short)
-                        {
-                            Console.WriteLine($@" │ │ {friendlyName}: {value}{unit} [{value:X4}h]");
-                        }
-                        else if (value is ushort)
-                        {
-                            Console.WriteLine($@" │ │ {friendlyName}: {value}{unit} [{value:X4}h]");
-                        }
-                        else if (value is int)
-                        {
-                            Console.WriteLine($@" │ │ {friendlyName}: {value}{unit} [{value:X4}h]");
-                        }
-                        else if (value is uint)
-                        {
-                            Console.WriteLine($@" │ │ {friendlyName}: {value}{unit} [{value:X4}h]");
-                        }
-                        else if (value is long)
-                        {
-                            Console.WriteLine($@" │ │ {friendlyName}: {value}{unit} [{value:X8}h]");
-                        }
-                        else if (value is ulong)
-                        {
-                            Console.WriteLine($@" │ │ {friendlyName}: {value}{unit} [{value:X8}h]");
-                        }
-                        else if (value is PointF)
-                        {
-                            var pointLiteral = $"{ friendlyName }";
-                            Console.WriteLine($@" │ │ {pointLiteral}");
-                            Console.WriteLine($@" │ │ ┌{new string('─', pointLiteral.Length - 1)}");
-                            Console.WriteLine($@" │ │ │ X: {((PointF)value).X}");
-                            Console.WriteLine($@" │ │ │ Y: {((PointF)value).Y}");
-                            Console.WriteLine($@" │ │");
-                        }
-                        else if (value.GetType() == typeof(ReadOnlyCollection<byte>))
-                        {
-                            Console.WriteLine($@" │ │ {friendlyName}: {string.Join(", ", (ReadOnlyCollection<byte>)value)}");
-                        }
-                        else if (value is StandardTimingIdentifierDescriptorItem)
-                        {
-                            Console.WriteLine($@" │ │ {(StandardTimingIdentifierDescriptorItem)value}");
-                        }
-                        else if (value.GetType() == typeof(ReadOnlyCollection<MonitorResolutionInfo>))
-                        {
-                            var items = (ReadOnlyCollection<MonitorResolutionInfo>)value;
-                            foreach (MonitorResolutionInfo item in items)
+                            QueryPropertyResult queryResult = section.GetProperty(property);
+                            PropertyItem propertyItem = queryResult.Value;
+                            object value = propertyItem.Value;
+                            PropertyUnit valueUnit = property.PropertyUnit;
+                            string friendlyName = property.GetPropertyName();
+                            string unit = valueUnit == PropertyUnit.None ? string.Empty : valueUnit.ToString();
+
+                            if (value == null)
                             {
-                                Console.WriteLine($@" │ │ {item}");
+                                Console.WriteLine($@" │ │ {friendlyName}: NULL");
+                                continue;
                             }
-                        }
-                        //else if (value.GetType() == typeof(ReadOnlyCollection<DetailedTimingModeDescriptor>))
-                        //{
-                        //    var items = (ReadOnlyCollection<DetailedTimingModeDescriptor>)value;
-                        //    foreach (MonitorResolutionInfo item in items)
-                        //    {
-                        //        Console.WriteLine($@" │ │ {item}");
-                        //    }
-                        //}
-                        else if (value.GetType() == typeof(ReadOnlyCollection<string>))
-                        {
-                            Console.WriteLine($@" │ │ {friendlyName}");
-                            Console.WriteLine($@" │ │ ┌{new string('─', friendlyName.Length - 1)}");
-                            var items = (ReadOnlyCollection<string>)value;
-                            foreach (string item in items)
+
+                            if (value is string)
                             {
-                                Console.WriteLine($@" │ │ │ {item}");
+                                Console.WriteLine($@" │ │ {friendlyName}: {value}{unit}");
                             }
-                        }
-                        else if (value.GetType() == typeof(SectionPropertiesTable))
-                        {
-                            Console.WriteLine($@" │ │ {friendlyName}");
-                            Console.WriteLine($@" │ │ ┌{new string('─', friendlyName.Length - 1)}");
-                            var dataBlockProperties = (SectionPropertiesTable)value;
-                            foreach (PropertyItem dataBlockProperty in dataBlockProperties)
+                            else if (value is bool)
                             {
-                                IPropertyKey dataBlockPropertyKey = (PropertyKey)dataBlockProperty.Key;
-                                string dataBlockPropertyName = dataBlockPropertyKey.GetPropertyName();
-
-                                PropertyUnit dataBlockPropertyUnit = dataBlockPropertyKey.PropertyUnit;
-                                string dataUnit = dataBlockPropertyKey.PropertyUnit == PropertyUnit.None ? string.Empty : dataBlockPropertyUnit.ToString();
-
-                                object dataBlockPropertyValue = dataBlockProperty.Value;
-                                if (dataBlockPropertyValue.GetType() == typeof(ReadOnlyCollection<string>))
+                                Console.WriteLine($@" │ │ {friendlyName}: {value}{unit}");
+                            }
+                            else if (value is double)
+                            {
+                                Console.WriteLine($@" │ │ {friendlyName}: {value}{unit}");
+                            }
+                            else if (value is byte)
+                            {
+                                Console.WriteLine($@" │ │ {friendlyName}: {value}{unit} [{value:X2}h]");
+                            }
+                            else if (value is short)
+                            {
+                                Console.WriteLine($@" │ │ {friendlyName}: {value}{unit} [{value:X4}h]");
+                            }
+                            else if (value is ushort)
+                            {
+                                Console.WriteLine($@" │ │ {friendlyName}: {value}{unit} [{value:X4}h]");
+                            }
+                            else if (value is int)
+                            {
+                                Console.WriteLine($@" │ │ {friendlyName}: {value}{unit} [{value:X4}h]");
+                            }
+                            else if (value is uint)
+                            {
+                                Console.WriteLine($@" │ │ {friendlyName}: {value}{unit} [{value:X4}h]");
+                            }
+                            else if (value is long)
+                            {
+                                Console.WriteLine($@" │ │ {friendlyName}: {value}{unit} [{value:X8}h]");
+                            }
+                            else if (value is ulong)
+                            {
+                                Console.WriteLine($@" │ │ {friendlyName}: {value}{unit} [{value:X8}h]");
+                            }
+                            else if (value is PointF)
+                            {
+                                var pointLiteral = $"{ friendlyName }";
+                                Console.WriteLine($@" │ │ {pointLiteral}");
+                                Console.WriteLine($@" │ │ ┌{new string('─', pointLiteral.Length - 1)}");
+                                Console.WriteLine($@" │ │ │ X: {((PointF)value).X}");
+                                Console.WriteLine($@" │ │ │ Y: {((PointF)value).Y}");
+                                Console.WriteLine($@" │ │");
+                            }
+                            else if (value.GetType() == typeof(ReadOnlyCollection<byte>))
+                            {
+                                Console.WriteLine($@" │ │ {friendlyName}: {string.Join(", ", (ReadOnlyCollection<byte>)value)}");
+                            }
+                            else if (value is StandardTimingIdentifierDescriptorItem)
+                            {
+                                Console.WriteLine($@" │ │ {(StandardTimingIdentifierDescriptorItem)value}");
+                            }
+                            else if (value.GetType() == typeof(ReadOnlyCollection<MonitorResolutionInfo>))
+                            {
+                                var items = (ReadOnlyCollection<MonitorResolutionInfo>)value;
+                                foreach (MonitorResolutionInfo item in items)
                                 {
-                                    var items = (ReadOnlyCollection<string>)dataBlockPropertyValue;
-                                    foreach (string item in items)
-                                    {
-                                        Console.WriteLine($@" │ │ │ {item}");
-                                    }
-                                }
-                                else
-                                {
-                                    Console.WriteLine($@" │ │ │ {dataBlockPropertyName}: {dataBlockPropertyValue} {dataUnit}");
+                                    Console.WriteLine($@" │ │ {item}");
                                 }
                             }
-
-                            Console.WriteLine($@" │ │");
-                        }
-                        else if (value.GetType() == typeof(List<SectionPropertiesTable>))
-                        {
-                            Console.WriteLine($@" │ │ {friendlyName}");
-                            Console.WriteLine($@" │ │ ┌{new string('─', friendlyName.Length - 1)}");
-                            var sectionPropertiesCollection = (List<SectionPropertiesTable>)value;
-                            foreach (SectionPropertiesTable sectionProperty in sectionPropertiesCollection)
+                            //else if (value.GetType() == typeof(ReadOnlyCollection<DetailedTimingModeDescriptor>))
+                            //{
+                            //    var items = (ReadOnlyCollection<DetailedTimingModeDescriptor>)value;
+                            //    foreach (MonitorResolutionInfo item in items)
+                            //    {
+                            //        Console.WriteLine($@" │ │ {item}");
+                            //    }
+                            //}
+                            else if (value.GetType() == typeof(ReadOnlyCollection<string>))
                             {
-                                foreach (PropertyItem dataBlockProperty in sectionProperty)
+                                Console.WriteLine($@" │ │ {friendlyName}");
+                                Console.WriteLine($@" │ │ ┌{new string('─', friendlyName.Length - 1)}");
+                                var items = (ReadOnlyCollection<string>)value;
+                                foreach (string item in items)
+                                {
+                                    Console.WriteLine($@" │ │ │ {item}");
+                                }
+                            }
+                            else if (value.GetType() == typeof(SectionPropertiesTable))
+                            {
+                                Console.WriteLine($@" │ │ {friendlyName}");
+                                Console.WriteLine($@" │ │ ┌{new string('─', friendlyName.Length - 1)}");
+                                var dataBlockProperties = (SectionPropertiesTable)value;
+                                foreach (PropertyItem dataBlockProperty in dataBlockProperties)
                                 {
                                     IPropertyKey dataBlockPropertyKey = (PropertyKey)dataBlockProperty.Key;
                                     string dataBlockPropertyName = dataBlockPropertyKey.GetPropertyName();
@@ -202,12 +170,10 @@ namespace iEEDID.ConsoleAppCore
                                     object dataBlockPropertyValue = dataBlockProperty.Value;
                                     if (dataBlockPropertyValue.GetType() == typeof(ReadOnlyCollection<string>))
                                     {
-                                        Console.WriteLine($@" │ │ │ {dataBlockPropertyName}");
-                                        Console.WriteLine($@" │ │ │ ┌{new string('─', dataBlockPropertyName.Length - 1)}");
                                         var items = (ReadOnlyCollection<string>)dataBlockPropertyValue;
                                         foreach (string item in items)
                                         {
-                                            Console.WriteLine($@" │ │ │ │ {item}");
+                                            Console.WriteLine($@" │ │ │ {item}");
                                         }
                                     }
                                     else
@@ -216,24 +182,60 @@ namespace iEEDID.ConsoleAppCore
                                     }
                                 }
 
+                                Console.WriteLine($@" │ │");
                             }
+                            else if (value.GetType() == typeof(List<SectionPropertiesTable>))
+                            {
+                                Console.WriteLine($@" │ │ {friendlyName}");
+                                Console.WriteLine($@" │ │ ┌{new string('─', friendlyName.Length - 1)}");
+                                var sectionPropertiesCollection = (List<SectionPropertiesTable>)value;
+                                foreach (SectionPropertiesTable sectionProperty in sectionPropertiesCollection)
+                                {
+                                    foreach (PropertyItem dataBlockProperty in sectionProperty)
+                                    {
+                                        IPropertyKey dataBlockPropertyKey = (PropertyKey)dataBlockProperty.Key;
+                                        string dataBlockPropertyName = dataBlockPropertyKey.GetPropertyName();
 
-                            Console.WriteLine($@" │ │");
-                        }
-                        else
-                        {
-                            Console.WriteLine($@" │ │ {friendlyName} > {value}{unit}");
+                                        PropertyUnit dataBlockPropertyUnit = dataBlockPropertyKey.PropertyUnit;
+                                        string dataUnit = dataBlockPropertyKey.PropertyUnit == PropertyUnit.None ? string.Empty : dataBlockPropertyUnit.ToString();
+
+                                        object dataBlockPropertyValue = dataBlockProperty.Value;
+                                        if (dataBlockPropertyValue.GetType() == typeof(ReadOnlyCollection<string>))
+                                        {
+                                            Console.WriteLine($@" │ │ │ {dataBlockPropertyName}");
+                                            Console.WriteLine($@" │ │ │ ┌{new string('─', dataBlockPropertyName.Length - 1)}");
+                                            var items = (ReadOnlyCollection<string>)dataBlockPropertyValue;
+                                            foreach (string item in items)
+                                            {
+                                                Console.WriteLine($@" │ │ │ │ {item}");
+                                            }
+                                        }
+                                        else
+                                        {
+                                            Console.WriteLine($@" │ │ │ {dataBlockPropertyName}: {dataBlockPropertyValue} {dataUnit}");
+                                        }
+                                    }
+
+                                }
+
+                                Console.WriteLine($@" │ │");
+                            }
+                            else
+                            {
+                                Console.WriteLine($@" │ │ {friendlyName} > {value}{unit}");
+                            }
                         }
                     }
+
+                    Console.WriteLine();
                 }
 
-                Console.WriteLine();
             }
 
             Console.WriteLine();
             Console.WriteLine(@" > Gets A Single Property Directly");
-
-            DataBlock edidBlock = eedid.Blocks[KnownDataBlock.EDID];
+            EEDID parsed = EEDID.Parse(MacBookPro2018.IntegratedLaptopPanelEdidTable2);
+            DataBlock edidBlock = parsed.Blocks[KnownDataBlock.EDID];
             BaseDataSectionCollection edidSections = edidBlock.Sections;
             DataSection basicDisplaySection = edidSections[(int)KnownEdidSection.BasicDisplay];
             QueryPropertyResult gammaResult = basicDisplaySection.GetProperty(EedidProperty.Edid.BasicDisplay.Gamma);

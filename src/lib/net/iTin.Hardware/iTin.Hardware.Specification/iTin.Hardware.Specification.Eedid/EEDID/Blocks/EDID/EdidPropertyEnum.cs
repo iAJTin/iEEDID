@@ -605,74 +605,74 @@ namespace iTin.Hardware.Specification.Eedid
         [PropertyName("Horizontal Resolution")]
         HorizontalResolution,
 
-        [PropertyDescription("")]
-        [PropertyType(typeof(int))]
+        [PropertyDescription("Horizontal Blanking")]
         [PropertyName("Horizontal Blanking")]
+        [PropertyType(typeof(int))]
         HorizontalBlanking,
 
-        [PropertyDescription("")]
-        [PropertyType(typeof(int))]
+        [PropertyDescription("Vertical Lines")]
         [PropertyName("Vertical Lines")]
+        [PropertyType(typeof(int))]
         VerticalLines,
 
-        [PropertyDescription("")]
-        [PropertyType(typeof(int))]
+        [PropertyDescription("Vertical Blanking")]
         [PropertyName("Vertical Blanking")]
+        [PropertyType(typeof(int))]
         VerticalBlanking,
 
-        [PropertyDescription("")]
-        [PropertyType(typeof(int))]
+        [PropertyDescription("Horizontal Front Porch")]
         [PropertyName("Horizontal Front Porch")]
+        [PropertyType(typeof(int))]
         HorizontalFrontPorch,
 
-        [PropertyDescription("")]
-        [PropertyType(typeof(int))]
+        [PropertyDescription("Horizontal Sync Pulse Width")]
         [PropertyName("Horizontal Sync Pulse Width")]
+        [PropertyType(typeof(int))]
         HorizontalSyncPulseWidth,
 
         [PropertyDescription("")]
-        [PropertyType(typeof(int))]
         [PropertyName("Vertical Front Porch")]
+        [PropertyType(typeof(int))]
         VerticalFrontPorch,
 
-        [PropertyDescription("")]
-        [PropertyType(typeof(int))]
+        [PropertyDescription("Vertical Sync Pulse Width")]
         [PropertyName("Vertical Sync Pulse Width")]
+        [PropertyType(typeof(int))]
         VerticalSyncPulseWidth,
 
-        [PropertyDescription("")]
-        [PropertyType(typeof(int))]
+        [PropertyDescription("Horizontal Image Size")]
         [PropertyName("Horizontal Image Size")]
+        [PropertyType(typeof(int))]
         HorizontalImageSize,
 
-        [PropertyDescription("")]
-        [PropertyType(typeof(int))]
+        [PropertyDescription("Vertical Image Size")]
         [PropertyName("Vertical Image Size")]
+        [PropertyType(typeof(int))]
         VerticalImageSize,
 
-        [PropertyDescription("")]
-        [PropertyType(typeof(byte))]
+        [PropertyDescription("Horizontal Border")]
         [PropertyName("Horizontal Border")]
+        [PropertyType(typeof(byte))]
         HorizontalBorder,
 
-        [PropertyDescription("")]
-        [PropertyType(typeof(byte))]
+        [PropertyDescription("Vertical Border")]
         [PropertyName("Vertical Border")]
+        [PropertyType(typeof(byte))]
         VerticalBorder,
 
-        [PropertyDescription("")]
-        [PropertyType(typeof(bool))]
+        [PropertyDescription("Interlaced")]
         [PropertyName("Interlaced")]
+        [PropertyType(typeof(bool))]
         Interlaced,
 
-        [PropertyDescription("")]
-        [PropertyType(typeof(string))]
+        [PropertyDescription("Stereo Viewing Support")]
         [PropertyName("Stereo Viewing Support")]
+        [PropertyType(typeof(string))]
         StereoViewingSupport,
 
-        [PropertyDescription("")]
-        [PropertyType(typeof(string))]
+        [PropertyDescription("Sync Signal Type")]
         [PropertyName("Sync Signal Type")]
+        [PropertyType(typeof(string))]
         SyncSignalType
     }
     #endregion

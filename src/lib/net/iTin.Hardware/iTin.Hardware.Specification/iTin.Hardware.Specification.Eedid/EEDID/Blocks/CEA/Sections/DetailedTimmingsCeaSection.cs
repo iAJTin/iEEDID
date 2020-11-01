@@ -44,6 +44,76 @@ namespace iTin.Hardware.Specification.Eedid
             var timings = GetTimings(RawData);
             foreach (var timing in timings)
             {
+                var timingProperties = timing.Properties;
+                foreach(var timingProperty in timingProperties)
+                {
+                    var key = timingProperty.Key;
+                    if (key.Equals(EedidProperty.Edid.DataBlock.Definition.DetailedTimingMode.PixelClock))
+                    {
+                        timingProperty.Key = EedidProperty.Cea.DetailedTiming.Descriptor.PixelClock;
+                    }
+                    else if (key.Equals(EedidProperty.Edid.DataBlock.Definition.DetailedTimingMode.HorizontalResolution))
+                    {
+                        timingProperty.Key = EedidProperty.Cea.DetailedTiming.Descriptor.HorizontalResolution;
+                    }
+                    else if (key.Equals(EedidProperty.Edid.DataBlock.Definition.DetailedTimingMode.HorizontalBlanking))
+                    {
+                        timingProperty.Key = EedidProperty.Cea.DetailedTiming.Descriptor.HorizontalBlanking;
+                    }
+                    else if (key.Equals(EedidProperty.Edid.DataBlock.Definition.DetailedTimingMode.VerticalLines))
+                    {
+                        timingProperty.Key = EedidProperty.Cea.DetailedTiming.Descriptor.VerticalLines;
+                    }
+                    else if (key.Equals(EedidProperty.Edid.DataBlock.Definition.DetailedTimingMode.VerticalBlanking))
+                    {
+                        timingProperty.Key = EedidProperty.Cea.DetailedTiming.Descriptor.VerticalBlanking;
+                    }
+                    else if (key.Equals(EedidProperty.Edid.DataBlock.Definition.DetailedTimingMode.HorizontalFrontPorch))
+                    {
+                        timingProperty.Key = EedidProperty.Cea.DetailedTiming.Descriptor.HorizontalFrontPorch;
+                    }
+                    else if (key.Equals(EedidProperty.Edid.DataBlock.Definition.DetailedTimingMode.HorizontalSyncPulseWidth))
+                    {
+                        timingProperty.Key = EedidProperty.Cea.DetailedTiming.Descriptor.HorizontalSyncPulseWidth;
+                    }
+                    else if (key.Equals(EedidProperty.Edid.DataBlock.Definition.DetailedTimingMode.VerticalFrontPorch))
+                    {
+                        timingProperty.Key = EedidProperty.Cea.DetailedTiming.Descriptor.VerticalFrontPorch;
+                    }
+                    else if (key.Equals(EedidProperty.Edid.DataBlock.Definition.DetailedTimingMode.VerticalSyncPulseWidth))
+                    {
+                        timingProperty.Key = EedidProperty.Cea.DetailedTiming.Descriptor.VerticalSyncPulseWidth;
+                    }
+                    else if (key.Equals(EedidProperty.Edid.DataBlock.Definition.DetailedTimingMode.HorizontalImageSize))
+                    {
+                        timingProperty.Key = EedidProperty.Cea.DetailedTiming.Descriptor.HorizontalImageSize;
+                    }
+                    else if (key.Equals(EedidProperty.Edid.DataBlock.Definition.DetailedTimingMode.VerticalImageSize))
+                    {
+                        timingProperty.Key = EedidProperty.Cea.DetailedTiming.Descriptor.VerticalImageSize;
+                    }
+                    else if (key.Equals(EedidProperty.Edid.DataBlock.Definition.DetailedTimingMode.HorizontalBorder))
+                    {
+                        timingProperty.Key = EedidProperty.Cea.DetailedTiming.Descriptor.HorizontalBorder;
+                    }
+                    else if (key.Equals(EedidProperty.Edid.DataBlock.Definition.DetailedTimingMode.VerticalBorder))
+                    {
+                        timingProperty.Key = EedidProperty.Cea.DetailedTiming.Descriptor.VerticalBorder;
+                    }
+                    else if (key.Equals(EedidProperty.Edid.DataBlock.Definition.DetailedTimingMode.IsInterlaced))
+                    {
+                        timingProperty.Key = EedidProperty.Cea.DetailedTiming.Descriptor.IsInterlaced;
+                    }
+                    else if (key.Equals(EedidProperty.Edid.DataBlock.Definition.DetailedTimingMode.StereoViewingSupport))
+                    {
+                        timingProperty.Key = EedidProperty.Cea.DetailedTiming.Descriptor.StereoViewingSupport;
+                    }
+                    else if (key.Equals(EedidProperty.Edid.DataBlock.Definition.DetailedTimingMode.SyncSignalType))
+                    {
+                        timingProperty.Key = EedidProperty.Cea.DetailedTiming.Descriptor.SyncSignalType;
+                    }
+                }
+
                 sectionProperties.Add(timing.Properties);
             }
 

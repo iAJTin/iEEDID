@@ -3386,7 +3386,7 @@ namespace iTin.Hardware.Specification.Eedid
                 ///  <para><b>Key Composition</b></para>
                 ///  <list type="bullet">
                 ///   <item><description>Structure: <see cref="KnownCeaSection.Information"/></description></item>
-                ///   <item><description>Property: <see cref="CeaInformationProperty.Revision"/></description></item>
+                ///   <item><description>Property: <see cref="CeaInformation.Revision"/></description></item>
                 ///   <item><description>Unit: <see cref="PropertyUnit.None"/></description></item>
                 ///  </list>
                 /// </para>
@@ -3399,7 +3399,7 @@ namespace iTin.Hardware.Specification.Eedid
                 ///  <para>1.4</para>
                 /// </para>
                 /// </summary>
-                public static IPropertyKey Revision => new PropertyKey(KnownCeaSection.Information, CeaInformationProperty.Revision);
+                public static IPropertyKey Revision => new PropertyKey(KnownCeaSection.Information, CeaInformation.Revision);
                 #endregion
 
                 #region [public] {static} (IPropertyKey) Implemented: Gets a value representing the key to retrieve the property value
@@ -3410,7 +3410,7 @@ namespace iTin.Hardware.Specification.Eedid
                 ///  <para><b>Key Composition</b></para>
                 ///  <list type="bullet">
                 ///   <item><description>Structure: <see cref="KnownCeaSection.Information"/></description></item>
-                ///   <item><description>Property: <see cref="CeaInformationProperty.Implemented"/></description></item>
+                ///   <item><description>Property: <see cref="CeaInformation.Implemented"/></description></item>
                 ///   <item><description>Unit: <see cref="PropertyUnit.None"/></description></item>
                 ///  </list>
                 /// </para>
@@ -3423,7 +3423,7 @@ namespace iTin.Hardware.Specification.Eedid
                 ///  <para>1.4</para>
                 /// </para>
                 /// </summary>
-                public static IPropertyKey Implemented => new PropertyKey(KnownCeaSection.Information, CeaInformationProperty.Implemented);
+                public static IPropertyKey Implemented => new PropertyKey(KnownCeaSection.Information, CeaInformation.Implemented);
                 #endregion
             }
             #endregion
@@ -3442,7 +3442,7 @@ namespace iTin.Hardware.Specification.Eedid
                 ///  <para><b>Key Composition</b></para>
                 ///  <list type="bullet">
                 ///   <item><description>Structure: <see cref="KnownCeaSection.MonitorSupport"/></description></item>
-                ///   <item><description>Property: <see cref="CeaMonitorSupportProperty.IsDvtUnderscan"/></description></item>
+                ///   <item><description>Property: <see cref="CeaMonitorSupport.IsDvtUnderscan"/></description></item>
                 ///   <item><description>Unit: <see cref="PropertyUnit.None"/></description></item>
                 ///  </list>
                 /// </para>
@@ -3455,7 +3455,7 @@ namespace iTin.Hardware.Specification.Eedid
                 ///  <para>1.4</para>
                 /// </para>
                 /// </summary>
-                public static IPropertyKey IsDvtUnderscan => new PropertyKey(KnownCeaSection.MonitorSupport, CeaMonitorSupportProperty.IsDvtUnderscan);
+                public static IPropertyKey IsDvtUnderscan => new PropertyKey(KnownCeaSection.MonitorSupport, CeaMonitorSupport.IsDvtUnderscan);
                 #endregion
 
                 #region [public] {static} (IPropertyKey) BasicAudioSupported: Gets a value representing the key to retrieve the property value
@@ -3466,7 +3466,7 @@ namespace iTin.Hardware.Specification.Eedid
                 ///  <para><b>Key Composition</b></para>
                 ///  <list type="bullet">
                 ///   <item><description>Structure: <see cref="KnownCeaSection.MonitorSupport"/></description></item>
-                ///   <item><description>Property: <see cref="CeaMonitorSupportProperty.BasicAudioSupported"/></description></item>
+                ///   <item><description>Property: <see cref="CeaMonitorSupport.BasicAudioSupported"/></description></item>
                 ///   <item><description>Unit: <see cref="PropertyUnit.None"/></description></item>
                 ///  </list>
                 /// </para>
@@ -3479,7 +3479,7 @@ namespace iTin.Hardware.Specification.Eedid
                 ///  <para>1.4</para>
                 /// </para>
                 /// </summary>
-                public static IPropertyKey BasicAudioSupported => new PropertyKey(KnownCeaSection.MonitorSupport, CeaMonitorSupportProperty.BasicAudioSupported);
+                public static IPropertyKey BasicAudioSupported => new PropertyKey(KnownCeaSection.MonitorSupport, CeaMonitorSupport.BasicAudioSupported);
                 #endregion
 
                 #region [public] {static} (IPropertyKey) YCbCr444Supported: Gets a value representing the key to retrieve the property value
@@ -3490,7 +3490,7 @@ namespace iTin.Hardware.Specification.Eedid
                 ///  <para><b>Key Composition</b></para>
                 ///  <list type="bullet">
                 ///   <item><description>Structure: <see cref="KnownCeaSection.MonitorSupport"/></description></item>
-                ///   <item><description>Property: <see cref="CeaMonitorSupportProperty.YCbCr444Supported"/></description></item>
+                ///   <item><description>Property: <see cref="CeaMonitorSupport.YCbCr444Supported"/></description></item>
                 ///   <item><description>Unit: <see cref="PropertyUnit.None"/></description></item>
                 ///  </list>
                 /// </para>
@@ -3503,7 +3503,7 @@ namespace iTin.Hardware.Specification.Eedid
                 ///  <para>1.4</para>
                 /// </para>
                 /// </summary>
-                public static IPropertyKey YCbCr444Supported => new PropertyKey(KnownCeaSection.MonitorSupport, CeaMonitorSupportProperty.YCbCr444Supported);
+                public static IPropertyKey YCbCr444Supported => new PropertyKey(KnownCeaSection.MonitorSupport, CeaMonitorSupport.YCbCr444Supported);
                 #endregion
 
                 #region [public] {static} (IPropertyKey) YCbCr422Supported: Gets a value representing the key to retrieve the property value
@@ -3514,7 +3514,7 @@ namespace iTin.Hardware.Specification.Eedid
                 ///  <para><b>Key Composition</b></para>
                 ///  <list type="bullet">
                 ///   <item><description>Structure: <see cref="KnownCeaSection.MonitorSupport"/></description></item>
-                ///   <item><description>Property: <see cref="CeaMonitorSupportProperty.YCbCr422Supported"/></description></item>
+                ///   <item><description>Property: <see cref="CeaMonitorSupport.YCbCr422Supported"/></description></item>
                 ///   <item><description>Unit: <see cref="PropertyUnit.None"/></description></item>
                 ///  </list>
                 /// </para>
@@ -3527,7 +3527,7 @@ namespace iTin.Hardware.Specification.Eedid
                 ///  <para>1.4</para>
                 /// </para>
                 /// </summary>
-                public static IPropertyKey YCbCr422Supported => new PropertyKey(KnownCeaSection.MonitorSupport, CeaMonitorSupportProperty.YCbCr422Supported);
+                public static IPropertyKey YCbCr422Supported => new PropertyKey(KnownCeaSection.MonitorSupport, CeaMonitorSupport.YCbCr422Supported);
                 #endregion  
             }
             #endregion
@@ -3546,20 +3546,456 @@ namespace iTin.Hardware.Specification.Eedid
                 ///  <para><b>Key Composition</b></para>
                 ///  <list type="bullet">
                 ///   <item><description>Structure: <see cref="KnownCeaSection.DetailedTiming"/></description></item>
-                ///   <item><description>Property: <see cref="CeaDetailedTimingModeProperty.Timings"/></description></item>
+                ///   <item><description>Property: <see cref="CeaDetailedTiming.Timings"/></description></item>
                 ///   <item><description>Unit: <see cref="PropertyUnit.None"/></description></item>
                 ///  </list>
                 /// </para>
                 /// <para>
                 ///  <para><b>Return Value</b></para>
-                ///  <para>Type: <see cref="ReadOnlyCollection{T}"/> where <b>T</b> is <see cref="DetailedTimingModeDescriptor"/>.</para>
+                ///  <para>Type: <see cref="List{T}"/> where <b>T</b> is <see cref="SectionPropertiesTable"/>.</para>
                 /// </para>
                 /// <para>
                 ///  <para><b>Remarks</b></para>
                 ///  <para>1.4</para>
                 /// </para>
                 /// </summary>
-                public static IPropertyKey Timings => new PropertyKey(KnownCeaSection.DetailedTiming, CeaDetailedTimingModeProperty.Timings);
+                public static IPropertyKey Timings => new PropertyKey(KnownCeaSection.DetailedTiming, CeaDetailedTiming.Timings);
+                #endregion
+
+
+                #region nested classes
+
+                #region [public] {static} (class) Descriptor: Definition of keys in the 'Descriptor' section of a 'DetailedTiming' Section
+                /// <summary>
+                /// Definition of keys in the <b>Descriptor</b> section of a <b>DetailedTiming</b> Section.
+                /// </summary>
+                public static class Descriptor
+                {
+                    #region [public] {static} (IPropertyKey) PixelClock: Gets a value representing the key to retrieve the property value
+                    /// <summary>
+                    /// <para>Gets a value representing the key to retrieve the property value.</para>
+                    /// <para>
+                    /// Pixel clock value.<br/>
+                    /// This value is measured in <see cref="PropertyUnit.KHz"/>.
+                    /// </para>
+                    /// <para>
+                    ///  <para><b>Key Composition</b></para>
+                    ///  <list type="bullet">
+                    ///   <item><description>Structure: <see cref="KnownCeaSection.DetailedTiming"/></description></item>
+                    ///   <item><description>Property: <see cref="CeaDetailedTimingDescriptor.PixelClock"/></description></item>
+                    ///   <item><description>Unit: <see cref="PropertyUnit.KHz"/></description></item>
+                    ///  </list>
+                    /// </para>
+                    /// <para>
+                    ///  <para><b>Return Value</b></para>
+                    /// <para>Type: <see cref="int"/>.</para>
+                    /// </para>
+                    /// <para>
+                    ///  <para><b>Remarks</b></para>
+                    ///  <para>1.4</para>
+                    /// </para>
+                    /// </summary>
+                    public static IPropertyKey PixelClock => new PropertyKey(KnownCeaSection.DetailedTiming, CeaDetailedTimingDescriptor.PixelClock, PropertyUnit.KHz);
+                    #endregion
+
+                    #region [public] {static} (IPropertyKey) HorizontalResolution: Gets a value representing the key to retrieve the property value
+                    /// <summary>
+                    /// <para>Gets a value representing the key to retrieve the property value.</para>
+                    /// <para>
+                    /// Horizontal resolution.<br/>
+                    /// This value is measured in <see cref="PropertyUnit.Pixels"/>.
+                    /// </para>
+                    /// <para>
+                    ///  <para><b>Key Composition</b></para>
+                    ///  <list type="bullet">
+                    ///   <item><description>Structure: <see cref="KnownCeaSection.DetailedTiming"/></description></item>
+                    ///   <item><description>Property: <see cref="CeaDetailedTimingDescriptor.HorizontalResolution"/></description></item>
+                    ///   <item><description>Unit: <see cref="PropertyUnit.Pixels"/></description></item>
+                    ///  </list>
+                    /// </para>
+                    /// <para>
+                    ///  <para><b>Return Value</b></para>
+                    /// <para>Type: <see cref="int"/>.</para>
+                    /// </para>
+                    /// <para>
+                    ///  <para><b>Remarks</b></para>
+                    ///  <para>1.4</para>
+                    /// </para>
+                    /// </summary>
+                    public static IPropertyKey HorizontalResolution => new PropertyKey(KnownCeaSection.DetailedTiming, CeaDetailedTimingDescriptor.HorizontalResolution, PropertyUnit.Pixels);
+                    #endregion
+
+                    #region [public] {static} (IPropertyKey) HorizontalBlanking: Gets a value representing the key to retrieve the property value
+                    /// <summary>
+                    /// <para>Gets a value representing the key to retrieve the property value.</para>
+                    /// <para>
+                    /// Horizontal blanking value.<br/>
+                    /// This value is measured in <see cref="PropertyUnit.Pixels"/>.
+                    /// </para>
+                    /// <para>
+                    ///  <para><b>Key Composition</b></para>
+                    ///  <list type="bullet">
+                    ///   <item><description>Structure: <see cref="KnownCeaSection.DetailedTiming"/></description></item>
+                    ///   <item><description>Property: <see cref="CeaDetailedTimingDescriptor.HorizontalBlanking"/></description></item>
+                    ///   <item><description>Unit: <see cref="PropertyUnit.Pixels"/></description></item>
+                    ///  </list>
+                    /// </para>
+                    /// <para>
+                    ///  <para><b>Return Value</b></para>
+                    /// <para>Type: <see cref="int"/>.</para>
+                    /// </para>
+                    /// <para>
+                    ///  <para><b>Remarks</b></para>
+                    ///  <para>1.4</para>
+                    /// </para>
+                    /// </summary>
+                    public static IPropertyKey HorizontalBlanking => new PropertyKey(KnownCeaSection.DetailedTiming, CeaDetailedTimingDescriptor.HorizontalBlanking, PropertyUnit.Pixels);
+                    #endregion
+
+                    #region [public] {static} (IPropertyKey) VerticalLines: Gets a value representing the key to retrieve the property value
+                    /// <summary>
+                    /// <para>Gets a value representing the key to retrieve the property value.</para>
+                    /// <para>
+                    /// Vertical lines value.<br/>
+                    /// This value is measured in <see cref="PropertyUnit.Lines"/>.
+                    /// </para>
+                    /// <para>
+                    ///  <para><b>Key Composition</b></para>
+                    ///  <list type="bullet">
+                    ///   <item><description>Structure: <see cref="KnownCeaSection.DetailedTiming"/></description></item>
+                    ///   <item><description>Property: <see cref="CeaDetailedTimingDescriptor.VerticalLines"/></description></item>
+                    ///   <item><description>Unit: <see cref="PropertyUnit.Lines"/></description></item>
+                    ///  </list>
+                    /// </para>
+                    /// <para>
+                    ///  <para><b>Return Value</b></para>
+                    /// <para>Type: <see cref="int"/>.</para>
+                    /// </para>
+                    /// <para>
+                    ///  <para><b>Remarks</b></para>
+                    ///  <para>1.4</para>
+                    /// </para>
+                    /// </summary>
+                    public static IPropertyKey VerticalLines => new PropertyKey(KnownCeaSection.DetailedTiming, CeaDetailedTimingDescriptor.VerticalLines, PropertyUnit.Lines);
+                    #endregion
+
+                    #region [public] {static} (IPropertyKey) VerticalBlanking: Gets a value representing the key to retrieve the property value
+                    /// <summary>
+                    /// <para>Gets a value representing the key to retrieve the property value.</para>
+                    /// <para>
+                    /// Vertical blanking.<br/>
+                    /// This value is measured in <see cref="PropertyUnit.Lines"/>.
+                    /// </para>
+                    /// <para>
+                    ///  <para><b>Key Composition</b></para>
+                    ///  <list type="bullet">
+                    ///   <item><description>Structure: <see cref="KnownCeaSection.DetailedTiming"/></description></item>
+                    ///   <item><description>Property: <see cref="CeaDetailedTimingDescriptor.VerticalBlanking"/></description></item>
+                    ///   <item><description>Unit: <see cref="PropertyUnit.Lines"/></description></item>
+                    ///  </list>
+                    /// </para>
+                    /// <para>
+                    ///  <para><b>Return Value</b></para>
+                    /// <para>Type: <see cref="int"/>.</para>
+                    /// </para>
+                    /// <para>
+                    ///  <para><b>Remarks</b></para>
+                    ///  <para>1.4</para>
+                    /// </para>
+                    /// </summary>
+                    public static IPropertyKey VerticalBlanking => new PropertyKey(KnownCeaSection.DetailedTiming, CeaDetailedTimingDescriptor.VerticalBlanking, PropertyUnit.Lines);
+                    #endregion
+
+                    #region [public] {static} (IPropertyKey) HorizontalFrontPorch: Gets a value representing the key to retrieve the property value
+                    /// <summary>
+                    /// <para>Gets a value representing the key to retrieve the property value.</para>
+                    /// <para>
+                    /// Horizontal front porch.<br/>
+                    /// This value is measured in <see cref="PropertyUnit.Pixels"/>.
+                    /// </para>
+                    /// <para>
+                    ///  <para><b>Key Composition</b></para>
+                    ///  <list type="bullet">
+                    ///   <item><description>Structure: <see cref="KnownCeaSection.DetailedTiming"/></description></item>
+                    ///   <item><description>Property: <see cref="CeaDetailedTimingDescriptor.HorizontalFrontPorch"/></description></item>
+                    ///   <item><description>Unit: <see cref="PropertyUnit.Pixels"/></description></item>
+                    ///  </list>
+                    /// </para>
+                    /// <para>
+                    ///  <para><b>Return Value</b></para>
+                    /// <para>Type: <see cref="int"/>.</para>
+                    /// </para>
+                    /// <para>
+                    ///  <para><b>Remarks</b></para>
+                    ///  <para>1.4</para>
+                    /// </para>
+                    /// </summary>
+                    public static IPropertyKey HorizontalFrontPorch => new PropertyKey(KnownCeaSection.DetailedTiming, CeaDetailedTimingDescriptor.HorizontalFrontPorch, PropertyUnit.Pixels);
+                    #endregion
+
+                    #region [public] {static} (IPropertyKey) HorizontalSyncPulseWidth: Gets a value representing the key to retrieve the property value
+                    /// <summary>
+                    /// <para>Gets a value representing the key to retrieve the property value.</para>
+                    /// <para>
+                    /// Horizontal sync pulse width.<br/>
+                    /// This value is measured in <see cref="PropertyUnit.Pixels"/>.
+                    /// </para>
+                    /// <para>
+                    ///  <para><b>Key Composition</b></para>
+                    ///  <list type="bullet">
+                    ///   <item><description>Structure: <see cref="KnownCeaSection.DetailedTiming"/></description></item>
+                    ///   <item><description>Property: <see cref="CeaDetailedTimingDescriptor.HorizontalSyncPulseWidth"/></description></item>
+                    ///   <item><description>Unit: <see cref="PropertyUnit.Pixels"/></description></item>
+                    ///  </list>
+                    /// </para>
+                    /// <para>
+                    ///  <para><b>Return Value</b></para>
+                    /// <para>Type: <see cref="int"/>.</para>
+                    /// </para>
+                    /// <para>
+                    ///  <para><b>Remarks</b></para>
+                    ///  <para>1.4</para>
+                    /// </para>
+                    /// </summary>
+                    public static IPropertyKey HorizontalSyncPulseWidth => new PropertyKey(KnownCeaSection.DetailedTiming, CeaDetailedTimingDescriptor.HorizontalSyncPulseWidth, PropertyUnit.Pixels);
+                    #endregion
+
+                    #region [public] {static} (IPropertyKey) VerticalFrontPorch: Gets a value representing the key to retrieve the property value
+                    /// <summary>
+                    /// <para>Gets a value representing the key to retrieve the property value.</para>
+                    /// <para>
+                    /// Vertical front porch.<br/>
+                    /// This value is measured in <see cref="PropertyUnit.Lines"/>.
+                    /// </para>
+                    /// <para>
+                    ///  <para><b>Key Composition</b></para>
+                    ///  <list type="bullet">
+                    ///   <item><description>Structure: <see cref="KnownCeaSection.DetailedTiming"/></description></item>
+                    ///   <item><description>Property: <see cref="CeaDetailedTimingDescriptor.VerticalFrontPorch"/></description></item>
+                    ///   <item><description>Unit: <see cref="PropertyUnit.Lines"/></description></item>
+                    ///  </list>
+                    /// </para>
+                    /// <para>
+                    ///  <para><b>Return Value</b></para>
+                    /// <para>Type: <see cref="int"/>.</para>
+                    /// </para>
+                    /// <para>
+                    ///  <para><b>Remarks</b></para>
+                    ///  <para>1.4</para>
+                    /// </para>
+                    /// </summary>
+                    public static IPropertyKey VerticalFrontPorch => new PropertyKey(KnownCeaSection.DetailedTiming, CeaDetailedTimingDescriptor.VerticalFrontPorch, PropertyUnit.Lines);
+                    #endregion
+
+                    #region [public] {static} (IPropertyKey) VerticalSyncPulseWidth: Gets a value representing the key to retrieve the property value
+                    /// <summary>
+                    /// <para>Gets a value representing the key to retrieve the property value.</para>
+                    /// <para>
+                    /// Vertical sync pulse width value.<br/>
+                    /// This value is measured in <see cref="PropertyUnit.Lines"/>.
+                    /// </para>
+                    /// <para>
+                    ///  <para><b>Key Composition</b></para>
+                    ///  <list type="bullet">
+                    ///   <item><description>Structure: <see cref="KnownCeaSection.DetailedTiming"/></description></item>
+                    ///   <item><description>Property: <see cref="CeaDetailedTimingDescriptor.VerticalSyncPulseWidth"/></description></item>
+                    ///   <item><description>Unit: <see cref="PropertyUnit.Lines"/></description></item>
+                    ///  </list>
+                    /// </para>
+                    /// <para>
+                    ///  <para><b>Return Value</b></para>
+                    /// <para>Type: <see cref="int"/>.</para>
+                    /// </para>
+                    /// <para>
+                    ///  <para><b>Remarks</b></para>
+                    ///  <para>1.4</para>
+                    /// </para>
+                    /// </summary>
+                    public static IPropertyKey VerticalSyncPulseWidth => new PropertyKey(KnownCeaSection.DetailedTiming, CeaDetailedTimingDescriptor.VerticalSyncPulseWidth, PropertyUnit.Lines);
+                    #endregion
+
+                    #region [public] {static} (IPropertyKey) HorizontalImageSize: Gets a value representing the key to retrieve the property value
+                    /// <summary>
+                    /// <para>Gets a value representing the key to retrieve the property value.</para>
+                    /// <para>
+                    /// Horizontal image size value.<br/>
+                    /// This value is measured in <see cref="PropertyUnit.mm"/>.
+                    /// </para>
+                    /// <para>
+                    ///  <para><b>Key Composition</b></para>
+                    ///  <list type="bullet">
+                    ///   <item><description>Structure: <see cref="KnownCeaSection.DetailedTiming"/></description></item>
+                    ///   <item><description>Property: <see cref="CeaDetailedTimingDescriptor.HorizontalImageSize"/></description></item>
+                    ///   <item><description>Unit: <see cref="PropertyUnit.mm"/></description></item>
+                    ///  </list>
+                    /// </para>
+                    /// <para>
+                    ///  <para><b>Return Value</b></para>
+                    /// <para>Type: <see cref="int"/>.</para>
+                    /// </para>
+                    /// <para>
+                    ///  <para><b>Remarks</b></para>
+                    ///  <para>1.4</para>
+                    /// </para>
+                    /// </summary>
+                    public static IPropertyKey HorizontalImageSize => new PropertyKey(KnownCeaSection.DetailedTiming, CeaDetailedTimingDescriptor.HorizontalImageSize, PropertyUnit.mm);
+                    #endregion
+
+                    #region [public] {static} (IPropertyKey) VerticalImageSize: Gets a value representing the key to retrieve the property value
+                    /// <summary>
+                    /// <para>Gets a value representing the key to retrieve the property value.</para>
+                    /// <para>
+                    /// Vertical image size value.<br/>
+                    /// This value is measured in <see cref="PropertyUnit.mm"/>.
+                    /// </para>
+                    /// <para>
+                    ///  <para><b>Key Composition</b></para>
+                    ///  <list type="bullet">
+                    ///   <item><description>Structure: <see cref="KnownCeaSection.DetailedTiming"/></description></item>
+                    ///   <item><description>Property: <see cref="CeaDetailedTimingDescriptor.VerticalImageSize"/></description></item>
+                    ///   <item><description>Unit: <see cref="PropertyUnit.mm"/></description></item>
+                    ///  </list>
+                    /// </para>
+                    /// <para>
+                    ///  <para><b>Return Value</b></para>
+                    /// <para>Type: <see cref="int"/>.</para>
+                    /// </para>
+                    /// <para>
+                    ///  <para><b>Remarks</b></para>
+                    ///  <para>1.4</para>
+                    /// </para>
+                    /// </summary>
+                    public static IPropertyKey VerticalImageSize => new PropertyKey(KnownCeaSection.DetailedTiming, CeaDetailedTimingDescriptor.VerticalImageSize, PropertyUnit.mm);
+                    #endregion
+
+                    #region [public] {static} (IPropertyKey) HorizontalBorder: Gets a value representing the key to retrieve the property value
+                    /// <summary>
+                    /// <para>Gets a value representing the key to retrieve the property value.</para>
+                    /// <para>
+                    /// Horizontal border value.<br/>
+                    /// This value is measured in <see cref="PropertyUnit.Pixels"/>.
+                    /// </para>
+                    /// <para>
+                    ///  <para><b>Key Composition</b></para>
+                    ///  <list type="bullet">
+                    ///   <item><description>Structure: <see cref="KnownCeaSection.DetailedTiming"/></description></item>
+                    ///   <item><description>Property: <see cref="CeaDetailedTimingDescriptor.HorizontalBorder"/></description></item>
+                    ///   <item><description>Unit: <see cref="PropertyUnit.Pixels"/></description></item>
+                    ///  </list>
+                    /// </para>
+                    /// <para>
+                    ///  <para><b>Return Value</b></para>
+                    /// <para>Type: <see cref="byte"/>.</para>
+                    /// </para>
+                    /// <para>
+                    ///  <para><b>Remarks</b></para>
+                    ///  <para>1.4</para>
+                    /// </para>
+                    /// </summary>
+                    public static IPropertyKey HorizontalBorder => new PropertyKey(KnownCeaSection.DetailedTiming, CeaDetailedTimingDescriptor.HorizontalBorder, PropertyUnit.Pixels);
+                    #endregion
+
+                    #region [public] {static} (IPropertyKey) VerticalBorder: Gets a value representing the key to retrieve the property value
+                    /// <summary>
+                    /// <para>Gets a value representing the key to retrieve the property value.</para>
+                    /// <para>
+                    /// Vertical border value.<br/>
+                    /// This value is measured in <see cref="PropertyUnit.Pixels"/>.
+                    /// </para>
+                    /// <para>
+                    ///  <para><b>Key Composition</b></para>
+                    ///  <list type="bullet">
+                    ///   <item><description>Structure: <see cref="KnownCeaSection.DetailedTiming"/></description></item>
+                    ///   <item><description>Property: <see cref="CeaDetailedTimingDescriptor.VerticalBorder"/></description></item>
+                    ///   <item><description>Unit: <see cref="PropertyUnit.Pixels"/></description></item>
+                    ///  </list>
+                    /// </para>
+                    /// <para>
+                    ///  <para><b>Return Value</b></para>
+                    /// <para>Type: <see cref="byte"/>.</para>
+                    /// </para>
+                    /// <para>
+                    ///  <para><b>Remarks</b></para>
+                    ///  <para>1.4</para>
+                    /// </para>
+                    /// </summary>
+                    public static IPropertyKey VerticalBorder => new PropertyKey(KnownCeaSection.DetailedTiming, CeaDetailedTimingDescriptor.VerticalBorder, PropertyUnit.Pixels);
+                    #endregion
+
+                    #region [public] {static} (IPropertyKey) IsInterlaced: Gets a value representing the key to retrieve the property value
+                    /// <summary>
+                    /// <para>Gets a value representing the key to retrieve the property value.</para>
+                    /// <para>Indicates if is interlaced.</para>
+                    /// <para>
+                    ///  <para><b>Key Composition</b></para>
+                    ///  <list type="bullet">
+                    ///   <item><description>Structure: <see cref="KnownCeaSection.DetailedTiming"/></description></item>
+                    ///   <item><description>Property: <see cref="CeaDetailedTimingDescriptor.Interlaced"/></description></item>
+                    ///   <item><description>Unit: <see cref="PropertyUnit.None"/></description></item>
+                    ///  </list>
+                    /// </para>
+                    /// <para>
+                    ///  <para><b>Return Value</b></para>
+                    /// <para>Type: <see cref="bool"/>.</para>
+                    /// </para>
+                    /// <para>
+                    ///  <para><b>Remarks</b></para>
+                    ///  <para>1.4</para>
+                    /// </para>
+                    /// </summary>
+                    public static IPropertyKey IsInterlaced => new PropertyKey(KnownCeaSection.DetailedTiming, CeaDetailedTimingDescriptor.Interlaced);
+                    #endregion
+
+                    #region [public] {static} (IPropertyKey) StereoViewingSupport: Gets a value representing the key to retrieve the property value
+                    /// <summary>
+                    /// <para>Gets a value representing the key to retrieve the property value.</para>
+                    /// <para>Stereo viewing support value.</para>
+                    /// <para>
+                    ///  <para><b>Key Composition</b></para>
+                    ///  <list type="bullet">
+                    ///   <item><description>Structure: <see cref="KnownCeaSection.DetailedTiming"/></description></item>
+                    ///   <item><description>Property: <see cref="CeaDetailedTimingDescriptor.StereoViewingSupport"/></description></item>
+                    ///   <item><description>Unit: <see cref="PropertyUnit.None"/></description></item>
+                    ///  </list>
+                    /// </para>
+                    /// <para>
+                    ///  <para><b>Return Value</b></para>
+                    /// <para>Type: <see cref="string"/>.</para>
+                    /// </para>
+                    /// <para>
+                    ///  <para><b>Remarks</b></para>
+                    ///  <para>1.4</para>
+                    /// </para>
+                    /// </summary>
+                    public static IPropertyKey StereoViewingSupport => new PropertyKey(KnownCeaSection.DetailedTiming, CeaDetailedTimingDescriptor.StereoViewingSupport);
+                    #endregion
+
+                    #region [public] {static} (IPropertyKey) SyncSignalType: Gets a value representing the key to retrieve the property value
+                    /// <summary>
+                    /// <para>Gets a value representing the key to retrieve the property value.</para>
+                    /// <para>Sync signal type.</para>
+                    /// <para>
+                    ///  <para><b>Key Composition</b></para>
+                    ///  <list type="bullet">
+                    ///   <item><description>Structure: <see cref="KnownCeaSection.DetailedTiming"/></description></item>
+                    ///   <item><description>Property: <see cref="CeaDetailedTimingDescriptor.SyncSignalType"/></description></item>
+                    ///   <item><description>Unit: <see cref="PropertyUnit.None"/></description></item>
+                    ///  </list>
+                    /// </para>
+                    /// <para>
+                    ///  <para><b>Return Value</b></para>
+                    /// <para>Type: <see cref="string"/>.</para>
+                    /// </para>
+                    /// <para>
+                    ///  <para><b>Remarks</b></para>
+                    ///  <para>1.4</para>
+                    /// </para>
+                    /// </summary>
+                    public static IPropertyKey SyncSignalType => new PropertyKey(KnownCeaSection.DetailedTiming, CeaDetailedTimingDescriptor.SyncSignalType);
+                    #endregion
+                }
+                #endregion
+
                 #endregion
             }
             #endregion
@@ -3759,8 +4195,6 @@ namespace iTin.Hardware.Specification.Eedid
                 /// </summary>
                 public static class Audio
                 {
-                    #region public readonly properties
-
                     #region [public] {static} (IPropertyKey) Descriptor: Gets a value representing the key to retrieve the property value
                     /// <summary>
                     /// <para>Gets a value representing the key to retrieve the property value.</para>
@@ -3769,7 +4203,7 @@ namespace iTin.Hardware.Specification.Eedid
                     ///  <para><b>Key Composition</b></para>
                     ///  <list type="bullet">
                     ///   <item><description>Structure: <see cref="KnownCeaSection.DataBlockCollection"/></description></item>
-                    ///   <item><description>Property: <see cref="CeaAudioDataBlockProperty.Descriptor"/></description></item>
+                    ///   <item><description>Property: <see cref="CeaAudioDataBlock.Descriptor"/></description></item>
                     ///   <item><description>Unit: <see cref="PropertyUnit.None"/></description></item>
                     ///  </list>
                     /// </para>
@@ -3782,7 +4216,7 @@ namespace iTin.Hardware.Specification.Eedid
                     ///  <para>1.4</para>
                     /// </para>
                     /// </summary>
-                    public static IPropertyKey Descriptor => new PropertyKey(KnownCeaSection.DataBlockCollection, CeaAudioDataBlockProperty.Descriptor);
+                    public static IPropertyKey Descriptor => new PropertyKey(KnownCeaSection.DataBlockCollection, CeaAudioDataBlock.Descriptor);
                     #endregion
 
                     #region [public] {static} (IPropertyKey) BitDepth: Gets a value representing the key to retrieve the property value
@@ -3793,7 +4227,7 @@ namespace iTin.Hardware.Specification.Eedid
                     ///  <para><b>Key Composition</b></para>
                     ///  <list type="bullet">
                     ///   <item><description>Structure: <see cref="KnownCeaSection.DataBlockCollection"/></description></item>
-                    ///   <item><description>Property: <see cref="CeaAudioDataBlockProperty.BitDepth"/></description></item>
+                    ///   <item><description>Property: <see cref="CeaAudioDataBlock.BitDepth"/></description></item>
                     ///   <item><description>Unit: <see cref="PropertyUnit.None"/></description></item>
                     ///  </list>
                     /// </para>
@@ -3806,7 +4240,7 @@ namespace iTin.Hardware.Specification.Eedid
                     ///  <para>1.4</para>
                     /// </para>
                     /// </summary>
-                    public static IPropertyKey BitDepth => new PropertyKey(KnownCeaSection.DataBlockCollection, CeaAudioDataBlockProperty.BitDepth);
+                    public static IPropertyKey BitDepth => new PropertyKey(KnownCeaSection.DataBlockCollection, CeaAudioDataBlock.BitDepth);
                     #endregion
 
                     #region [public] {static} (IPropertyKey) Channels: Gets a value representing the key to retrieve the property value
@@ -3817,7 +4251,7 @@ namespace iTin.Hardware.Specification.Eedid
                     ///  <para><b>Key Composition</b></para>
                     ///  <list type="bullet">
                     ///   <item><description>Structure: <see cref="KnownCeaSection.DataBlockCollection"/></description></item>
-                    ///   <item><description>Property: <see cref="CeaAudioDataBlockProperty.Channels"/></description></item>
+                    ///   <item><description>Property: <see cref="CeaAudioDataBlock.Channels"/></description></item>
                     ///   <item><description>Unit: <see cref="PropertyUnit.None"/></description></item>
                     ///  </list>
                     /// </para>
@@ -3830,7 +4264,7 @@ namespace iTin.Hardware.Specification.Eedid
                     ///  <para>1.4</para>
                     /// </para>
                     /// </summary>
-                    public static IPropertyKey Channels => new PropertyKey(KnownCeaSection.DataBlockCollection, CeaAudioDataBlockProperty.Channels);
+                    public static IPropertyKey Channels => new PropertyKey(KnownCeaSection.DataBlockCollection, CeaAudioDataBlock.Channels);
                     #endregion
 
                     #region [public] {static} (IPropertyKey) Format: Gets a value representing the key to retrieve the property value
@@ -3841,7 +4275,7 @@ namespace iTin.Hardware.Specification.Eedid
                     ///  <para><b>Key Composition</b></para>
                     ///  <list type="bullet">
                     ///   <item><description>Structure: <see cref="KnownCeaSection.DataBlockCollection"/></description></item>
-                    ///   <item><description>Property: <see cref="CeaAudioDataBlockProperty.Format"/></description></item>
+                    ///   <item><description>Property: <see cref="CeaAudioDataBlock.Format"/></description></item>
                     ///   <item><description>Unit: <see cref="PropertyUnit.None"/></description></item>
                     ///  </list>
                     /// </para>
@@ -3854,7 +4288,7 @@ namespace iTin.Hardware.Specification.Eedid
                     ///  <para>1.4</para>
                     /// </para>
                     /// </summary>
-                    public static IPropertyKey Format => new PropertyKey(KnownCeaSection.DataBlockCollection, CeaAudioDataBlockProperty.Format);
+                    public static IPropertyKey Format => new PropertyKey(KnownCeaSection.DataBlockCollection, CeaAudioDataBlock.Format);
                     #endregion
 
                     #region [public] {static} (IPropertyKey) MaxBitrate: Gets a value representing the key to retrieve the property value
@@ -3865,7 +4299,7 @@ namespace iTin.Hardware.Specification.Eedid
                     ///  <para><b>Key Composition</b></para>
                     ///  <list type="bullet">
                     ///   <item><description>Structure: <see cref="KnownCeaSection.DataBlockCollection"/></description></item>
-                    ///   <item><description>Property: <see cref="CeaAudioDataBlockProperty.Format"/></description></item>
+                    ///   <item><description>Property: <see cref="CeaAudioDataBlock.Format"/></description></item>
                     ///   <item><description>Unit: <see cref="PropertyUnit.None"/></description></item>
                     ///  </list>
                     /// </para>
@@ -3878,7 +4312,7 @@ namespace iTin.Hardware.Specification.Eedid
                     ///  <para>1.4</para>
                     /// </para>
                     /// </summary>
-                    public static IPropertyKey MaxBitrate => new PropertyKey(KnownCeaSection.DataBlockCollection, CeaAudioDataBlockProperty.MaxBitrate);
+                    public static IPropertyKey MaxBitrate => new PropertyKey(KnownCeaSection.DataBlockCollection, CeaAudioDataBlock.MaxBitrate);
                     #endregion
 
                     #region [public] {static} (IPropertyKey) SamplingFrequencies: Gets a value representing the key to retrieve the property value
@@ -3889,7 +4323,7 @@ namespace iTin.Hardware.Specification.Eedid
                     ///  <para><b>Key Composition</b></para>
                     ///  <list type="bullet">
                     ///   <item><description>Structure: <see cref="KnownCeaSection.DataBlockCollection"/></description></item>
-                    ///   <item><description>Property: <see cref="CeaAudioDataBlockProperty.SamplingFrequencies"/></description></item>
+                    ///   <item><description>Property: <see cref="CeaAudioDataBlock.SamplingFrequencies"/></description></item>
                     ///   <item><description>Unit: <see cref="PropertyUnit.None"/></description></item>
                     ///  </list>
                     /// </para>
@@ -3902,9 +4336,7 @@ namespace iTin.Hardware.Specification.Eedid
                     ///  <para>1.4</para>
                     /// </para>
                     /// </summary>
-                    public static IPropertyKey SamplingFrequencies => new PropertyKey(KnownCeaSection.DataBlockCollection, CeaAudioDataBlockProperty.SamplingFrequencies);
-                    #endregion
-
+                    public static IPropertyKey SamplingFrequencies => new PropertyKey(KnownCeaSection.DataBlockCollection, CeaAudioDataBlock.SamplingFrequencies);
                     #endregion
                 }
                 #endregion
@@ -3923,8 +4355,6 @@ namespace iTin.Hardware.Specification.Eedid
                     /// </summary>
                     public static class Colorimetry
                     {
-                        #region public readonly properties
-
                         #region [public] {static} (IPropertyKey) AdobeRGB: Gets a value representing the key to retrieve the property value
                         /// <summary>
                         /// <para>Gets a value representing the key to retrieve the property value.</para>
@@ -3933,7 +4363,7 @@ namespace iTin.Hardware.Specification.Eedid
                         ///  <para><b>Key Composition</b></para>
                         ///  <list type="bullet">
                         ///   <item><description>Structure: <see cref="KnownCeaSection.DataBlockCollection"/></description></item>
-                        ///   <item><description>Property: <see cref="CeaExtendedColorimetryDataBlockProperty.AdobeRGB"/></description></item>
+                        ///   <item><description>Property: <see cref="CeaExtendedColorimetryDataBlock.AdobeRGB"/></description></item>
                         ///   <item><description>Unit: <see cref="PropertyUnit.None"/></description></item>
                         ///  </list>
                         /// </para>
@@ -3946,7 +4376,7 @@ namespace iTin.Hardware.Specification.Eedid
                         ///  <para>1.4</para>
                         /// </para>
                         /// </summary>
-                        public static IPropertyKey AdobeRGB => new PropertyKey(KnownCeaSection.DataBlockCollection, CeaExtendedColorimetryDataBlockProperty.AdobeRGB);
+                        public static IPropertyKey AdobeRGB => new PropertyKey(KnownCeaSection.DataBlockCollection, CeaExtendedColorimetryDataBlock.AdobeRGB);
                         #endregion
 
                         #region [public] {static} (IPropertyKey) AdobeYCC601: Gets a value representing the key to retrieve the property value
@@ -3957,7 +4387,7 @@ namespace iTin.Hardware.Specification.Eedid
                         ///  <para><b>Key Composition</b></para>
                         ///  <list type="bullet">
                         ///   <item><description>Structure: <see cref="KnownCeaSection.DataBlockCollection"/></description></item>
-                        ///   <item><description>Property: <see cref="CeaExtendedColorimetryDataBlockProperty.AdobeYCC601"/></description></item>
+                        ///   <item><description>Property: <see cref="CeaExtendedColorimetryDataBlock.AdobeYCC601"/></description></item>
                         ///   <item><description>Unit: <see cref="PropertyUnit.None"/></description></item>
                         ///  </list>
                         /// </para>
@@ -3970,7 +4400,7 @@ namespace iTin.Hardware.Specification.Eedid
                         ///  <para>1.4</para>
                         /// </para>
                         /// </summary>
-                        public static IPropertyKey AdobeYCC601 => new PropertyKey(KnownCeaSection.DataBlockCollection, CeaExtendedColorimetryDataBlockProperty.AdobeYCC601);
+                        public static IPropertyKey AdobeYCC601 => new PropertyKey(KnownCeaSection.DataBlockCollection, CeaExtendedColorimetryDataBlock.AdobeYCC601);
                         #endregion
 
                         #region [public] {static} (IPropertyKey) sYCC601: Gets a value representing the key to retrieve the property value
@@ -3981,7 +4411,7 @@ namespace iTin.Hardware.Specification.Eedid
                         ///  <para><b>Key Composition</b></para>
                         ///  <list type="bullet">
                         ///   <item><description>Structure: <see cref="KnownCeaSection.DataBlockCollection"/></description></item>
-                        ///   <item><description>Property: <see cref="CeaExtendedColorimetryDataBlockProperty.sYCC601"/></description></item>
+                        ///   <item><description>Property: <see cref="CeaExtendedColorimetryDataBlock.sYCC601"/></description></item>
                         ///   <item><description>Unit: <see cref="PropertyUnit.None"/></description></item>
                         ///  </list>
                         /// </para>
@@ -3994,7 +4424,7 @@ namespace iTin.Hardware.Specification.Eedid
                         ///  <para>1.4</para>
                         /// </para>
                         /// </summary>
-                        public static IPropertyKey sYCC601 => new PropertyKey(KnownCeaSection.DataBlockCollection, CeaExtendedColorimetryDataBlockProperty.sYCC601);
+                        public static IPropertyKey sYCC601 => new PropertyKey(KnownCeaSection.DataBlockCollection, CeaExtendedColorimetryDataBlock.sYCC601);
                         #endregion
 
                         #region [public] {static} (IPropertyKey) xvYCC709: Gets a value representing the key to retrieve the property value
@@ -4005,7 +4435,7 @@ namespace iTin.Hardware.Specification.Eedid
                         ///  <para><b>Key Composition</b></para>
                         ///  <list type="bullet">
                         ///   <item><description>Structure: <see cref="KnownCeaSection.DataBlockCollection"/></description></item>
-                        ///   <item><description>Property: <see cref="CeaExtendedColorimetryDataBlockProperty.xvYCC709"/></description></item>
+                        ///   <item><description>Property: <see cref="CeaExtendedColorimetryDataBlock.xvYCC709"/></description></item>
                         ///   <item><description>Unit: <see cref="PropertyUnit.None"/></description></item>
                         ///  </list>
                         /// </para>
@@ -4018,7 +4448,7 @@ namespace iTin.Hardware.Specification.Eedid
                         ///  <para>1.4</para>
                         /// </para>
                         /// </summary>
-                        public static IPropertyKey xvYCC709 => new PropertyKey(KnownCeaSection.DataBlockCollection, CeaExtendedColorimetryDataBlockProperty.xvYCC709);
+                        public static IPropertyKey xvYCC709 => new PropertyKey(KnownCeaSection.DataBlockCollection, CeaExtendedColorimetryDataBlock.xvYCC709);
                         #endregion
 
                         #region [public] {static} (IPropertyKey) xvYCC601: Gets a value representing the key to retrieve the property value
@@ -4029,7 +4459,7 @@ namespace iTin.Hardware.Specification.Eedid
                         ///  <para><b>Key Composition</b></para>
                         ///  <list type="bullet">
                         ///   <item><description>Structure: <see cref="KnownCeaSection.DataBlockCollection"/></description></item>
-                        ///   <item><description>Property: <see cref="CeaExtendedColorimetryDataBlockProperty.xvYCC601"/></description></item>
+                        ///   <item><description>Property: <see cref="CeaExtendedColorimetryDataBlock.xvYCC601"/></description></item>
                         ///   <item><description>Unit: <see cref="PropertyUnit.None"/></description></item>
                         ///  </list>
                         /// </para>
@@ -4042,9 +4472,7 @@ namespace iTin.Hardware.Specification.Eedid
                         ///  <para>1.4</para>
                         /// </para>
                         /// </summary>
-                        public static IPropertyKey xvYCC601 => new PropertyKey(KnownCeaSection.DataBlockCollection, CeaExtendedColorimetryDataBlockProperty.xvYCC601);
-                        #endregion
-
+                        public static IPropertyKey xvYCC601 => new PropertyKey(KnownCeaSection.DataBlockCollection, CeaExtendedColorimetryDataBlock.xvYCC601);
                         #endregion
                     }
                     #endregion
@@ -4082,8 +4510,6 @@ namespace iTin.Hardware.Specification.Eedid
                     /// </summary>
                     public static class VideoCapability
                     {
-                        #region public readonly properties
-
                         #region [public] {static} (IPropertyKey) CEOverscan: Gets a value representing the key to retrieve the property value
                         /// <summary>
                         /// <para>Gets a value representing the key to retrieve the property value.</para>
@@ -4092,7 +4518,7 @@ namespace iTin.Hardware.Specification.Eedid
                         ///  <para><b>Key Composition</b></para>
                         ///  <list type="bullet">
                         ///   <item><description>Structure: <see cref="KnownCeaSection.DataBlockCollection"/></description></item>
-                        ///   <item><description>Property: <see cref="CeaExtendedVideoCapabilityDataBlockProperty.CEOverscan"/></description></item>
+                        ///   <item><description>Property: <see cref="CeaExtendedVideoCapabilityDataBlock.CEOverscan"/></description></item>
                         ///   <item><description>Unit: <see cref="PropertyUnit.None"/></description></item>
                         ///  </list>
                         /// </para>
@@ -4105,7 +4531,7 @@ namespace iTin.Hardware.Specification.Eedid
                         ///  <para>1.4</para>
                         /// </para>
                         /// </summary>
-                        public static IPropertyKey CEOverscan => new PropertyKey(KnownCeaSection.DataBlockCollection, CeaExtendedVideoCapabilityDataBlockProperty.CEOverscan);
+                        public static IPropertyKey CEOverscan => new PropertyKey(KnownCeaSection.DataBlockCollection, CeaExtendedVideoCapabilityDataBlock.CEOverscan);
                         #endregion
 
                         #region [public] {static} (IPropertyKey) ITOverscan: Gets a value representing the key to retrieve the property value
@@ -4116,7 +4542,7 @@ namespace iTin.Hardware.Specification.Eedid
                         ///  <para><b>Key Composition</b></para>
                         ///  <list type="bullet">
                         ///   <item><description>Structure: <see cref="KnownCeaSection.DataBlockCollection"/></description></item>
-                        ///   <item><description>Property: <see cref="CeaExtendedVideoCapabilityDataBlockProperty.ITOverscan"/></description></item>
+                        ///   <item><description>Property: <see cref="CeaExtendedVideoCapabilityDataBlock.ITOverscan"/></description></item>
                         ///   <item><description>Unit: <see cref="PropertyUnit.None"/></description></item>
                         ///  </list>
                         /// </para>
@@ -4129,7 +4555,7 @@ namespace iTin.Hardware.Specification.Eedid
                         ///  <para>1.4</para>
                         /// </para>
                         /// </summary>
-                        public static IPropertyKey ITOverscan => new PropertyKey(KnownCeaSection.DataBlockCollection, CeaExtendedVideoCapabilityDataBlockProperty.ITOverscan);
+                        public static IPropertyKey ITOverscan => new PropertyKey(KnownCeaSection.DataBlockCollection, CeaExtendedVideoCapabilityDataBlock.ITOverscan);
                         #endregion
 
                         #region [public] {static} (IPropertyKey) PTOverscan: Gets a value representing the key to retrieve the property value
@@ -4140,7 +4566,7 @@ namespace iTin.Hardware.Specification.Eedid
                         ///  <para><b>Key Composition</b></para>
                         ///  <list type="bullet">
                         ///   <item><description>Structure: <see cref="KnownCeaSection.DataBlockCollection"/></description></item>
-                        ///   <item><description>Property: <see cref="CeaExtendedVideoCapabilityDataBlockProperty.PTOverscan"/></description></item>
+                        ///   <item><description>Property: <see cref="CeaExtendedVideoCapabilityDataBlock.PTOverscan"/></description></item>
                         ///   <item><description>Unit: <see cref="PropertyUnit.None"/></description></item>
                         ///  </list>
                         /// </para>
@@ -4153,7 +4579,7 @@ namespace iTin.Hardware.Specification.Eedid
                         ///  <para>1.4</para>
                         /// </para>
                         /// </summary>
-                        public static IPropertyKey PTOverscan => new PropertyKey(KnownCeaSection.DataBlockCollection, CeaExtendedVideoCapabilityDataBlockProperty.PTOverscan);
+                        public static IPropertyKey PTOverscan => new PropertyKey(KnownCeaSection.DataBlockCollection, CeaExtendedVideoCapabilityDataBlock.PTOverscan);
                         #endregion
 
                         #region [public] {static} (IPropertyKey) QuantizationRangeRGB: Gets a value representing the key to retrieve the property value
@@ -4164,7 +4590,7 @@ namespace iTin.Hardware.Specification.Eedid
                         ///  <para><b>Key Composition</b></para>
                         ///  <list type="bullet">
                         ///   <item><description>Structure: <see cref="KnownCeaSection.DataBlockCollection"/></description></item>
-                        ///   <item><description>Property: <see cref="CeaExtendedVideoCapabilityDataBlockProperty.QuantizationRangeRGB"/></description></item>
+                        ///   <item><description>Property: <see cref="CeaExtendedVideoCapabilityDataBlock.QuantizationRangeRGB"/></description></item>
                         ///   <item><description>Unit: <see cref="PropertyUnit.None"/></description></item>
                         ///  </list>
                         /// </para>
@@ -4177,7 +4603,7 @@ namespace iTin.Hardware.Specification.Eedid
                         ///  <para>1.4</para>
                         /// </para>
                         /// </summary>
-                        public static IPropertyKey QuantizationRangeRGB => new PropertyKey(KnownCeaSection.DataBlockCollection, CeaExtendedVideoCapabilityDataBlockProperty.QuantizationRangeRGB);
+                        public static IPropertyKey QuantizationRangeRGB => new PropertyKey(KnownCeaSection.DataBlockCollection, CeaExtendedVideoCapabilityDataBlock.QuantizationRangeRGB);
                         #endregion
 
                         #region [public] {static} (IPropertyKey) QuantizationRangeYCC: Gets a value representing the key to retrieve the property value
@@ -4188,7 +4614,7 @@ namespace iTin.Hardware.Specification.Eedid
                         ///  <para><b>Key Composition</b></para>
                         ///  <list type="bullet">
                         ///   <item><description>Structure: <see cref="KnownCeaSection.DataBlockCollection"/></description></item>
-                        ///   <item><description>Property: <see cref="CeaExtendedVideoCapabilityDataBlockProperty.QuantizationRangeYCC"/></description></item>
+                        ///   <item><description>Property: <see cref="CeaExtendedVideoCapabilityDataBlock.QuantizationRangeYCC"/></description></item>
                         ///   <item><description>Unit: <see cref="PropertyUnit.None"/></description></item>
                         ///  </list>
                         /// </para>
@@ -4201,9 +4627,7 @@ namespace iTin.Hardware.Specification.Eedid
                         ///  <para>1.4</para>
                         /// </para>
                         /// </summary>
-                        public static IPropertyKey QuantizationRangeYCC => new PropertyKey(KnownCeaSection.DataBlockCollection, CeaExtendedVideoCapabilityDataBlockProperty.QuantizationRangeYCC);
-                        #endregion
-
+                        public static IPropertyKey QuantizationRangeYCC => new PropertyKey(KnownCeaSection.DataBlockCollection, CeaExtendedVideoCapabilityDataBlock.QuantizationRangeYCC);
                         #endregion
                     }
                     #endregion
@@ -4218,8 +4642,6 @@ namespace iTin.Hardware.Specification.Eedid
                 /// </summary>
                 public static class Reserved
                 {
-                    #region public readonly properties
-
                     #region [public] {static} (IPropertyKey) Data: Gets a value representing the key to retrieve the property value
                     /// <summary>
                     /// <para>Gets a value representing the key to retrieve the property value.</para>
@@ -4228,7 +4650,7 @@ namespace iTin.Hardware.Specification.Eedid
                     ///  <para><b>Key Composition</b></para>
                     ///  <list type="bullet">
                     ///   <item><description>Structure: <see cref="KnownCeaSection.DataBlockCollection"/></description></item>
-                    ///   <item><description>Property: <see cref="CeaReservedDataBlockProperty.Data"/></description></item>
+                    ///   <item><description>Property: <see cref="CeaReservedDataBlock.Data"/></description></item>
                     ///   <item><description>Unit: <see cref="PropertyUnit.None"/></description></item>
                     ///  </list>
                     /// </para>
@@ -4241,9 +4663,7 @@ namespace iTin.Hardware.Specification.Eedid
                     ///  <para>1.4</para>
                     /// </para>
                     /// </summary>
-                    public static IPropertyKey Data => new PropertyKey(KnownCeaSection.DataBlockCollection, CeaReservedDataBlockProperty.Data);
-                    #endregion
-
+                    public static IPropertyKey Data => new PropertyKey(KnownCeaSection.DataBlockCollection, CeaReservedDataBlock.Data);
                     #endregion
                 }
                 #endregion
@@ -4254,8 +4674,6 @@ namespace iTin.Hardware.Specification.Eedid
                 /// </summary>
                 public static class Speaker
                 {
-                    #region public readonly properties
-
                     #region [public] {static} (IPropertyKey) FrontLeftRightHigh: Gets a value representing the key to retrieve the property value
                     /// <summary>
                     /// <para>Gets a value representing the key to retrieve the property value.</para>
@@ -4264,7 +4682,7 @@ namespace iTin.Hardware.Specification.Eedid
                     ///  <para><b>Key Composition</b></para>
                     ///  <list type="bullet">
                     ///   <item><description>Structure: <see cref="KnownCeaSection.DataBlockCollection"/></description></item>
-                    ///   <item><description>Property: <see cref="CeaSpeakerDataBlockProperty.FrontLeftRightHigh"/></description></item>
+                    ///   <item><description>Property: <see cref="CeaSpeakerDataBlock.FrontLeftRightHigh"/></description></item>
                     ///   <item><description>Unit: <see cref="PropertyUnit.None"/></description></item>
                     ///  </list>
                     /// </para>
@@ -4277,7 +4695,7 @@ namespace iTin.Hardware.Specification.Eedid
                     ///  <para>1.4</para>
                     /// </para>
                     /// </summary>
-                    public static IPropertyKey FrontLeftRightHigh => new PropertyKey(KnownCeaSection.DataBlockCollection, CeaSpeakerDataBlockProperty.FrontLeftRightHigh);
+                    public static IPropertyKey FrontLeftRightHigh => new PropertyKey(KnownCeaSection.DataBlockCollection, CeaSpeakerDataBlock.FrontLeftRightHigh);
                     #endregion
 
                     #region [public] {static} (IPropertyKey) FrontLeftRightWide: Gets a value representing the key to retrieve the property value
@@ -4288,7 +4706,7 @@ namespace iTin.Hardware.Specification.Eedid
                     ///  <para><b>Key Composition</b></para>
                     ///  <list type="bullet">
                     ///   <item><description>Structure: <see cref="KnownCeaSection.DataBlockCollection"/></description></item>
-                    ///   <item><description>Property: <see cref="CeaSpeakerDataBlockProperty.FrontLeftRightWide"/></description></item>
+                    ///   <item><description>Property: <see cref="CeaSpeakerDataBlock.FrontLeftRightWide"/></description></item>
                     ///   <item><description>Unit: <see cref="PropertyUnit.None"/></description></item>
                     ///  </list>
                     /// </para>
@@ -4301,7 +4719,7 @@ namespace iTin.Hardware.Specification.Eedid
                     ///  <para>1.4</para>
                     /// </para>
                     /// </summary>
-                    public static IPropertyKey FrontLeftRightWide => new PropertyKey(KnownCeaSection.DataBlockCollection, CeaSpeakerDataBlockProperty.FrontLeftRightWide);
+                    public static IPropertyKey FrontLeftRightWide => new PropertyKey(KnownCeaSection.DataBlockCollection, CeaSpeakerDataBlock.FrontLeftRightWide);
                     #endregion
 
                     #region [public] {static} (IPropertyKey) RearLeftRightCenter: Gets a value representing the key to retrieve the property value
@@ -4312,7 +4730,7 @@ namespace iTin.Hardware.Specification.Eedid
                     ///  <para><b>Key Composition</b></para>
                     ///  <list type="bullet">
                     ///   <item><description>Structure: <see cref="KnownCeaSection.DataBlockCollection"/></description></item>
-                    ///   <item><description>Property: <see cref="CeaSpeakerDataBlockProperty.RearLeftRightCenter"/></description></item>
+                    ///   <item><description>Property: <see cref="CeaSpeakerDataBlock.RearLeftRightCenter"/></description></item>
                     ///   <item><description>Unit: <see cref="PropertyUnit.None"/></description></item>
                     ///  </list>
                     /// </para>
@@ -4325,7 +4743,7 @@ namespace iTin.Hardware.Specification.Eedid
                     ///  <para>1.4</para>
                     /// </para>
                     /// </summary>
-                    public static IPropertyKey RearLeftRightCenter => new PropertyKey(KnownCeaSection.DataBlockCollection, CeaSpeakerDataBlockProperty.RearLeftRightCenter);
+                    public static IPropertyKey RearLeftRightCenter => new PropertyKey(KnownCeaSection.DataBlockCollection, CeaSpeakerDataBlock.RearLeftRightCenter);
                     #endregion
 
                     #region [public] {static} (IPropertyKey) FrontLeftRightCenter: Gets a value representing the key to retrieve the property value
@@ -4336,7 +4754,7 @@ namespace iTin.Hardware.Specification.Eedid
                     ///  <para><b>Key Composition</b></para>
                     ///  <list type="bullet">
                     ///   <item><description>Structure: <see cref="KnownCeaSection.DataBlockCollection"/></description></item>
-                    ///   <item><description>Property: <see cref="CeaSpeakerDataBlockProperty.FrontLeftRightCenter"/></description></item>
+                    ///   <item><description>Property: <see cref="CeaSpeakerDataBlock.FrontLeftRightCenter"/></description></item>
                     ///   <item><description>Unit: <see cref="PropertyUnit.None"/></description></item>
                     ///  </list>
                     /// </para>
@@ -4349,7 +4767,7 @@ namespace iTin.Hardware.Specification.Eedid
                     ///  <para>1.4</para>
                     /// </para>
                     /// </summary>
-                    public static IPropertyKey FrontLeftRightCenter => new PropertyKey(KnownCeaSection.DataBlockCollection, CeaSpeakerDataBlockProperty.FrontLeftRightCenter);
+                    public static IPropertyKey FrontLeftRightCenter => new PropertyKey(KnownCeaSection.DataBlockCollection, CeaSpeakerDataBlock.FrontLeftRightCenter);
                     #endregion
 
                     #region [public] {static} (IPropertyKey) RearCenter: Gets a value representing the key to retrieve the property value
@@ -4360,7 +4778,7 @@ namespace iTin.Hardware.Specification.Eedid
                     ///  <para><b>Key Composition</b></para>
                     ///  <list type="bullet">
                     ///   <item><description>Structure: <see cref="KnownCeaSection.DataBlockCollection"/></description></item>
-                    ///   <item><description>Property: <see cref="CeaSpeakerDataBlockProperty.RearCenter"/></description></item>
+                    ///   <item><description>Property: <see cref="CeaSpeakerDataBlock.RearCenter"/></description></item>
                     ///   <item><description>Unit: <see cref="PropertyUnit.None"/></description></item>
                     ///  </list>
                     /// </para>
@@ -4373,7 +4791,7 @@ namespace iTin.Hardware.Specification.Eedid
                     ///  <para>1.4</para>
                     /// </para>
                     /// </summary>
-                    public static IPropertyKey RearCenter => new PropertyKey(KnownCeaSection.DataBlockCollection, CeaSpeakerDataBlockProperty.RearCenter);
+                    public static IPropertyKey RearCenter => new PropertyKey(KnownCeaSection.DataBlockCollection, CeaSpeakerDataBlock.RearCenter);
                     #endregion
 
                     #region [public] {static} (IPropertyKey) RearLeftRight: Gets a value representing the key to retrieve the property value
@@ -4384,7 +4802,7 @@ namespace iTin.Hardware.Specification.Eedid
                     ///  <para><b>Key Composition</b></para>
                     ///  <list type="bullet">
                     ///   <item><description>Structure: <see cref="KnownCeaSection.DataBlockCollection"/></description></item>
-                    ///   <item><description>Property: <see cref="CeaSpeakerDataBlockProperty.RearLeftRight"/></description></item>
+                    ///   <item><description>Property: <see cref="CeaSpeakerDataBlock.RearLeftRight"/></description></item>
                     ///   <item><description>Unit: <see cref="PropertyUnit.None"/></description></item>
                     ///  </list>
                     /// </para>
@@ -4397,7 +4815,7 @@ namespace iTin.Hardware.Specification.Eedid
                     ///  <para>1.4</para>
                     /// </para>
                     /// </summary>
-                    public static IPropertyKey RearLeftRight => new PropertyKey(KnownCeaSection.DataBlockCollection, CeaSpeakerDataBlockProperty.RearLeftRight);
+                    public static IPropertyKey RearLeftRight => new PropertyKey(KnownCeaSection.DataBlockCollection, CeaSpeakerDataBlock.RearLeftRight);
                     #endregion
 
                     #region [public] {static} (IPropertyKey) FrontCenter: Gets a value representing the key to retrieve the property value
@@ -4408,7 +4826,7 @@ namespace iTin.Hardware.Specification.Eedid
                     ///  <para><b>Key Composition</b></para>
                     ///  <list type="bullet">
                     ///   <item><description>Structure: <see cref="KnownCeaSection.DataBlockCollection"/></description></item>
-                    ///   <item><description>Property: <see cref="CeaSpeakerDataBlockProperty.FrontCenter"/></description></item>
+                    ///   <item><description>Property: <see cref="CeaSpeakerDataBlock.FrontCenter"/></description></item>
                     ///   <item><description>Unit: <see cref="PropertyUnit.None"/></description></item>
                     ///  </list>
                     /// </para>
@@ -4421,7 +4839,7 @@ namespace iTin.Hardware.Specification.Eedid
                     ///  <para>1.4</para>
                     /// </para>
                     /// </summary>
-                    public static IPropertyKey FrontCenter => new PropertyKey(KnownCeaSection.DataBlockCollection, CeaSpeakerDataBlockProperty.FrontCenter);
+                    public static IPropertyKey FrontCenter => new PropertyKey(KnownCeaSection.DataBlockCollection, CeaSpeakerDataBlock.FrontCenter);
                     #endregion
 
                     #region [public] {static} (IPropertyKey) LFEChannel: Gets a value representing the key to retrieve the property value
@@ -4432,7 +4850,7 @@ namespace iTin.Hardware.Specification.Eedid
                     ///  <para><b>Key Composition</b></para>
                     ///  <list type="bullet">
                     ///   <item><description>Structure: <see cref="KnownCeaSection.DataBlockCollection"/></description></item>
-                    ///   <item><description>Property: <see cref="CeaSpeakerDataBlockProperty.LFEChannel"/></description></item>
+                    ///   <item><description>Property: <see cref="CeaSpeakerDataBlock.LFEChannel"/></description></item>
                     ///   <item><description>Unit: <see cref="PropertyUnit.None"/></description></item>
                     ///  </list>
                     /// </para>
@@ -4445,7 +4863,7 @@ namespace iTin.Hardware.Specification.Eedid
                     ///  <para>1.4</para>
                     /// </para>
                     /// </summary>
-                    public static IPropertyKey LFEChannel => new PropertyKey(KnownCeaSection.DataBlockCollection, CeaSpeakerDataBlockProperty.LFEChannel);
+                    public static IPropertyKey LFEChannel => new PropertyKey(KnownCeaSection.DataBlockCollection, CeaSpeakerDataBlock.LFEChannel);
                     #endregion
 
                     #region [public] {static} (IPropertyKey) FrontLeftRight: Gets a value representing the key to retrieve the property value
@@ -4456,7 +4874,7 @@ namespace iTin.Hardware.Specification.Eedid
                     ///  <para><b>Key Composition</b></para>
                     ///  <list type="bullet">
                     ///   <item><description>Structure: <see cref="KnownCeaSection.DataBlockCollection"/></description></item>
-                    ///   <item><description>Property: <see cref="CeaSpeakerDataBlockProperty.FrontLeftRight"/></description></item>
+                    ///   <item><description>Property: <see cref="CeaSpeakerDataBlock.FrontLeftRight"/></description></item>
                     ///   <item><description>Unit: <see cref="PropertyUnit.None"/></description></item>
                     ///  </list>
                     /// </para>
@@ -4469,7 +4887,7 @@ namespace iTin.Hardware.Specification.Eedid
                     ///  <para>1.4</para>
                     /// </para>
                     /// </summary>
-                    public static IPropertyKey FrontLeftRight => new PropertyKey(KnownCeaSection.DataBlockCollection, CeaSpeakerDataBlockProperty.FrontLeftRight);
+                    public static IPropertyKey FrontLeftRight => new PropertyKey(KnownCeaSection.DataBlockCollection, CeaSpeakerDataBlock.FrontLeftRight);
                     #endregion
 
                     #region [public] {static} (IPropertyKey) TopCenter: Gets a value representing the key to retrieve the property value
@@ -4480,7 +4898,7 @@ namespace iTin.Hardware.Specification.Eedid
                     ///  <para><b>Key Composition</b></para>
                     ///  <list type="bullet">
                     ///   <item><description>Structure: <see cref="KnownCeaSection.DataBlockCollection"/></description></item>
-                    ///   <item><description>Property: <see cref="CeaSpeakerDataBlockProperty.TopCenter"/></description></item>
+                    ///   <item><description>Property: <see cref="CeaSpeakerDataBlock.TopCenter"/></description></item>
                     ///   <item><description>Unit: <see cref="PropertyUnit.None"/></description></item>
                     ///  </list>
                     /// </para>
@@ -4493,7 +4911,7 @@ namespace iTin.Hardware.Specification.Eedid
                     ///  <para>1.4</para>
                     /// </para>
                     /// </summary>
-                    public static IPropertyKey TopCenter => new PropertyKey(KnownCeaSection.DataBlockCollection, CeaSpeakerDataBlockProperty.TopCenter);
+                    public static IPropertyKey TopCenter => new PropertyKey(KnownCeaSection.DataBlockCollection, CeaSpeakerDataBlock.TopCenter);
                     #endregion
 
                     #region [public] {static} (IPropertyKey) FrontCenterHigh: Gets a value representing the key to retrieve the property value
@@ -4504,7 +4922,7 @@ namespace iTin.Hardware.Specification.Eedid
                     ///  <para><b>Key Composition</b></para>
                     ///  <list type="bullet">
                     ///   <item><description>Structure: <see cref="KnownCeaSection.DataBlockCollection"/></description></item>
-                    ///   <item><description>Property: <see cref="CeaSpeakerDataBlockProperty.FrontCenterHigh"/></description></item>
+                    ///   <item><description>Property: <see cref="CeaSpeakerDataBlock.FrontCenterHigh"/></description></item>
                     ///   <item><description>Unit: <see cref="PropertyUnit.None"/></description></item>
                     ///  </list>
                     /// </para>
@@ -4517,9 +4935,7 @@ namespace iTin.Hardware.Specification.Eedid
                     ///  <para>1.4</para>
                     /// </para>
                     /// </summary>
-                    public static IPropertyKey FrontCenterHigh => new PropertyKey(KnownCeaSection.DataBlockCollection, CeaSpeakerDataBlockProperty.FrontCenterHigh);
-                    #endregion
-
+                    public static IPropertyKey FrontCenterHigh => new PropertyKey(KnownCeaSection.DataBlockCollection, CeaSpeakerDataBlock.FrontCenterHigh);
                     #endregion
                 }
                 #endregion
@@ -4530,8 +4946,6 @@ namespace iTin.Hardware.Specification.Eedid
                 /// </summary>
                 public static class Vendor
                 {
-                    #region public readonly properties
-
                     #region [public] {static} (IPropertyKey) IEEERegistrationIdentifier: Gets a value representing the key to retrieve the property value
                     /// <summary>
                     /// <para>Gets a value representing the key to retrieve the property value.</para>
@@ -4540,7 +4954,7 @@ namespace iTin.Hardware.Specification.Eedid
                     ///  <para><b>Key Composition</b></para>
                     ///  <list type="bullet">
                     ///   <item><description>Structure: <see cref="KnownCeaSection.DataBlockCollection"/></description></item>
-                    ///   <item><description>Property: <see cref="CeaVendorDataBlockProperty.IEEERegistrationIdentifier"/></description></item>
+                    ///   <item><description>Property: <see cref="CeaVendorDataBlock.IEEERegistrationIdentifier"/></description></item>
                     ///   <item><description>Unit: <see cref="PropertyUnit.None"/></description></item>
                     ///  </list>
                     /// </para>
@@ -4553,7 +4967,7 @@ namespace iTin.Hardware.Specification.Eedid
                     ///  <para>1.4</para>
                     /// </para>
                     /// </summary>
-                    public static IPropertyKey IEEERegistrationIdentifier => new PropertyKey(KnownCeaSection.DataBlockCollection, CeaVendorDataBlockProperty.IEEERegistrationIdentifier);
+                    public static IPropertyKey IEEERegistrationIdentifier => new PropertyKey(KnownCeaSection.DataBlockCollection, CeaVendorDataBlock.IEEERegistrationIdentifier);
                     #endregion
 
                     #region [public] {static} (IPropertyKey) PhysicalAddress: Gets a value representing the key to retrieve the property value
@@ -4564,7 +4978,7 @@ namespace iTin.Hardware.Specification.Eedid
                     ///  <para><b>Key Composition</b></para>
                     ///  <list type="bullet">
                     ///   <item><description>Structure: <see cref="KnownCeaSection.DataBlockCollection"/></description></item>
-                    ///   <item><description>Property: <see cref="CeaVendorDataBlockProperty.PhysicalAddress"/></description></item>
+                    ///   <item><description>Property: <see cref="CeaVendorDataBlock.PhysicalAddress"/></description></item>
                     ///   <item><description>Unit: <see cref="PropertyUnit.None"/></description></item>
                     ///  </list>
                     /// </para>
@@ -4577,7 +4991,7 @@ namespace iTin.Hardware.Specification.Eedid
                     ///  <para>1.4</para>
                     /// </para>
                     /// </summary>
-                    public static IPropertyKey PhysicalAddress => new PropertyKey(KnownCeaSection.DataBlockCollection, CeaVendorDataBlockProperty.PhysicalAddress);
+                    public static IPropertyKey PhysicalAddress => new PropertyKey(KnownCeaSection.DataBlockCollection, CeaVendorDataBlock.PhysicalAddress);
                     #endregion
 
                     #region [public] {static} (IPropertyKey) Flags: Gets a value representing the key to retrieve the property value
@@ -4588,7 +5002,7 @@ namespace iTin.Hardware.Specification.Eedid
                     ///  <para><b>Key Composition</b></para>
                     ///  <list type="bullet">
                     ///   <item><description>Structure: <see cref="KnownCeaSection.DataBlockCollection"/></description></item>
-                    ///   <item><description>Property: <see cref="CeaVendorDataBlockProperty.Flags"/></description></item>
+                    ///   <item><description>Property: <see cref="CeaVendorDataBlock.Flags"/></description></item>
                     ///   <item><description>Unit: <see cref="PropertyUnit.None"/></description></item>
                     ///  </list>
                     /// </para>
@@ -4601,7 +5015,7 @@ namespace iTin.Hardware.Specification.Eedid
                     ///  <para>1.4</para>
                     /// </para>
                     /// </summary>
-                    public static IPropertyKey Flags => new PropertyKey(KnownCeaSection.DataBlockCollection, CeaVendorDataBlockProperty.Flags);
+                    public static IPropertyKey Flags => new PropertyKey(KnownCeaSection.DataBlockCollection, CeaVendorDataBlock.Flags);
                     #endregion
 
                     #region [public] {static} (IPropertyKey) MaxClock: Gets a value representing the key to retrieve the property value
@@ -4612,7 +5026,7 @@ namespace iTin.Hardware.Specification.Eedid
                     ///  <para><b>Key Composition</b></para>
                     ///  <list type="bullet">
                     ///   <item><description>Structure: <see cref="KnownCeaSection.DataBlockCollection"/></description></item>
-                    ///   <item><description>Property: <see cref="CeaVendorDataBlockProperty.MaxClock"/></description></item>
+                    ///   <item><description>Property: <see cref="CeaVendorDataBlock.MaxClock"/></description></item>
                     ///   <item><description>Unit: <see cref="PropertyUnit.None"/></description></item>
                     ///  </list>
                     /// </para>
@@ -4625,7 +5039,7 @@ namespace iTin.Hardware.Specification.Eedid
                     ///  <para>1.4</para>
                     /// </para>
                     /// </summary>
-                    public static IPropertyKey MaxClock => new PropertyKey(KnownCeaSection.DataBlockCollection, CeaVendorDataBlockProperty.MaxClock);
+                    public static IPropertyKey MaxClock => new PropertyKey(KnownCeaSection.DataBlockCollection, CeaVendorDataBlock.MaxClock);
                     #endregion
 
                     #region [public] {static} (IPropertyKey) VendorPayload: Gets a value representing the key to retrieve the property value
@@ -4636,7 +5050,7 @@ namespace iTin.Hardware.Specification.Eedid
                     ///  <para><b>Key Composition</b></para>
                     ///  <list type="bullet">
                     ///   <item><description>Structure: <see cref="KnownCeaSection.DataBlockCollection"/></description></item>
-                    ///   <item><description>Property: <see cref="CeaVendorDataBlockProperty.VendorPayload"/></description></item>
+                    ///   <item><description>Property: <see cref="CeaVendorDataBlock.VendorPayload"/></description></item>
                     ///   <item><description>Unit: <see cref="PropertyUnit.None"/></description></item>
                     ///  </list>
                     /// </para>
@@ -4649,9 +5063,7 @@ namespace iTin.Hardware.Specification.Eedid
                     ///  <para>1.4</para>
                     /// </para>
                     /// </summary>
-                    public static IPropertyKey VendorPayload => new PropertyKey(KnownCeaSection.DataBlockCollection, CeaVendorDataBlockProperty.VendorPayload);
-                    #endregion
-
+                    public static IPropertyKey VendorPayload => new PropertyKey(KnownCeaSection.DataBlockCollection, CeaVendorDataBlock.VendorPayload);
                     #endregion
                 }
                 #endregion
@@ -4662,8 +5074,6 @@ namespace iTin.Hardware.Specification.Eedid
                 /// </summary>
                 public static class Video
                 {
-                    #region public readonly properties
-
                     #region [public] {static} (IPropertyKey) SupportedTimings: Gets a value representing the key to retrieve the property value
                     /// <summary>
                     /// <para>Gets a value representing the key to retrieve the property value.</para>
@@ -4672,7 +5082,7 @@ namespace iTin.Hardware.Specification.Eedid
                     ///  <para><b>Key Composition</b></para>
                     ///  <list type="bullet">
                     ///   <item><description>Structure: <see cref="KnownCeaSection.DataBlockCollection"/></description></item>
-                    ///   <item><description>Property: <see cref="CeaVideoDataBlockProperty.SupportedTimings"/></description></item>
+                    ///   <item><description>Property: <see cref="CeaVideoDataBlock.SupportedTimings"/></description></item>
                     ///   <item><description>Unit: <see cref="PropertyUnit.None"/></description></item>
                     ///  </list>
                     /// </para>
@@ -4685,9 +5095,7 @@ namespace iTin.Hardware.Specification.Eedid
                     ///  <para>1.4</para>
                     /// </para>
                     /// </summary>
-                    public static IPropertyKey SupportedTimings => new PropertyKey(KnownCeaSection.DataBlockCollection, CeaVideoDataBlockProperty.SupportedTimings);
-                    #endregion
-
+                    public static IPropertyKey SupportedTimings => new PropertyKey(KnownCeaSection.DataBlockCollection, CeaVideoDataBlock.SupportedTimings);
                     #endregion
                 }
                 #endregion
@@ -4710,7 +5118,7 @@ namespace iTin.Hardware.Specification.Eedid
                 ///  <para><b>Key Composition</b></para>
                 ///  <list type="bullet">
                 ///   <item><description>Structure: <see cref="KnownCeaSection.CheckSum"/></description></item>
-                ///   <item><description>Property: <see cref="CeaCheckSumProperty.Ok"/></description></item>
+                ///   <item><description>Property: <see cref="CeaCheckSum.Ok"/></description></item>
                 ///   <item><description>Unit: <see cref="PropertyUnit.None"/></description></item>
                 ///  </list>
                 /// </para>
@@ -4723,7 +5131,7 @@ namespace iTin.Hardware.Specification.Eedid
                 ///  <para>1.4</para>
                 /// </para>
                 /// </summary>
-                public static IPropertyKey Ok => new PropertyKey(KnownCeaSection.CheckSum, CeaCheckSumProperty.Ok);
+                public static IPropertyKey Ok => new PropertyKey(KnownCeaSection.CheckSum, CeaCheckSum.Ok);
                 #endregion
             }
             #endregion
