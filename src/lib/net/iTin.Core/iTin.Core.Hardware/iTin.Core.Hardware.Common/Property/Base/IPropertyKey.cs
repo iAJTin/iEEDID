@@ -4,7 +4,7 @@ namespace iTin.Core.Hardware.Common
     using System;
 
     /// <summary>
-    /// Defines a value that contains the detailed information of a writer.
+    /// Defines a generic property
     /// </summary>
     public interface IPropertyKey
     {

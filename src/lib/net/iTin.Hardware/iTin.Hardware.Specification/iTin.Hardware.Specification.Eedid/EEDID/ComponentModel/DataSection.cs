@@ -44,12 +44,12 @@ namespace iTin.Hardware.Specification.Eedid
 
         #region public properties
 
-        #region [public] (ReadOnlyCollection<IPropertyKey>) ImplementedProperties: Returns a list of implemented properties for this leaf
+        #region [public] (ReadOnlyCollection<IPropertyKey>) ImplementedProperties: Returns a list of implemented properties for this section
         /// <summary>
-        /// Returns a list of implemented properties for this leaf.
+        /// Returns a list of implemented properties for this section.
         /// </summary>
         /// <value>
-        /// A list of implemented properties for this leaf.
+        /// A list of implemented properties for this section.
         /// </value>
         public ReadOnlyCollection<IPropertyKey> ImplementedProperties => Properties.Values.Keys.ToList().AsReadOnly();
         #endregion
