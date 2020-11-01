@@ -303,24 +303,22 @@ namespace iTin.Hardware.Specification.Eedid
 
         #region public properties
 
-        #region [public] (DataBlock) this[KnownDataBlock]: Obtiene el elemento con la clave especificada.
+        #region [public] (DataBlock) this[KnownDataBlock]: Gets the element with the specified key
         /// <summary>
-        /// Obtiene el elemento con la clave especificada.
+        /// Gets the element with the specified key.
         /// </summary>
         /// <value>
-        ///   <para>Tipo: <see cref="DataBlock"/></para>
-        ///   <para>Objeto <see cref="DataBlock"/> especificado mediante su clave.</para>
+        /// A <see cref="DataBlock"/> element.
         /// </value>
         /// <remarks>
-        /// Si el elemento no existe se devuelve <b>null</b>.
+        /// If the element does not exist, <b>null</b> is returned.
         /// </remarks>
-        /// <exception cref="InvalidEnumArgumentException"></exception>
+        /// <exception cref="InvalidEnumArgumentException">Specified block not exist</exception>
         public DataBlock this[KnownDataBlock valueKey]
         {
             get
             {
                 var knownBlockValid = IsValidBlock(valueKey);
-
                 if (!knownBlockValid)
                 {
                     throw new InvalidEnumArgumentException("valueKey", (int) valueKey, typeof (KnownDataBlock));
@@ -336,11 +334,13 @@ namespace iTin.Hardware.Specification.Eedid
         }
         #endregion
 
-        #region [public] (ReadOnlyCollection<KnownDataBlock>) ImplementedBlocks: Obtiene una lista con los bloques implementados.
+        #region [public] (ReadOnlyCollection<KnownDataBlock>) ImplementedBlocks: Gets a list of the implemented blocks
         /// <summary>
-        /// Obtiene una lista con los bloques implementados.
+        /// Gets a list of the implemented blocks.
         /// </summary>
-        /// <value>Lista de bloques implementados.</value>
+        /// <value>
+        /// List of implemented blocks.
+        /// </value>
         public ReadOnlyCollection<KnownDataBlock> ImplementedBlocks => _keys.ToList().AsReadOnly();
         #endregion
 
@@ -358,15 +358,15 @@ namespace iTin.Hardware.Specification.Eedid
 
         #region public methods
 
-        #region [public] (bool) Contains(KnownDataBlock): Determina si el elemento con la clave especificada se encuentra en la colección DataBlockCollection.
+        #region [public] (bool) Contains(KnownDataBlock): Determines whether the element with the specified key is in the DataBlockCollection collection
         /// <summary>
-        /// Determina si el elemento con la clave especificada se encuentra en la colección <see cref="DataBlockCollection"/>.
+        /// Determines whether the element with the specified key is in the <see cref="DataBlockCollection"/> collection.
         /// </summary>
-        /// <param name="valueKey">Uno de los valores de <see cref="KnownDataBlock"/> que representa la clave del objeto <see cref="DataBlock"/> a buscar.</param>
+        /// <param name="valueKey">One of the <see cref="KnownDataBlock"/> values that represents the key of the <see cref="DataBlock"/> object to find.</param>
         /// <returns>
-        /// 	<para><b>true</b> si el objeto <see cref="DataBlock"/> con el <c>valueKey</c> se encuentra en la colección <see cref="DataBlockCollection"/>; de lo contrario, es <b>false</b>.</para>
+        /// <b>true</b> if the object <see cref="DataBlock"/> with the <c>valueKey</c> is in the collection <see cref="DataBlockCollection"/>; otherwise it is <b> false </b>.
         /// </returns>
-        /// <exception cref="InvalidEnumArgumentException"></exception>
+        /// <exception cref="InvalidEnumArgumentException">Specified block is not valid.</exception>
         public bool Contains(KnownDataBlock valueKey)
         {
             var knownBlockValid = IsValidBlock(valueKey);
@@ -379,15 +379,15 @@ namespace iTin.Hardware.Specification.Eedid
         }
         #endregion
 
-        #region [public] (int) IndexOf(KnownDataBlock): Devuelve el índice del objeto con la clave especificada en la colección.
+        #region [public] (int) IndexOf(KnownDataBlock): Returns the index of the object with the specified key in the collection
         /// <summary>
-        /// Devuelve el índice del objeto con la clave especificada en la colección.
+        /// Returns the index of the object with the specified key in the collection.
         /// </summary>
         /// <param name="valueKey">Uno de los valores de <see cref="KnownDataBlock"/> que representa la clave del objeto <see cref="DataBlock"/> que se va a buscar en <see cref="DataBlockCollection"/>.</param>
         /// <returns>
-        /// 	<para>Índice de base cero de la primera aparición de item en la totalidad de <see cref="DataBlockCollection"/>, si se encuentra; en caso contrario, <b>-1</b>.</para>
+        /// Zero-based index of the first occurrence of item in the entire <see cref="DataBlockCollection"/>, if found; otherwise <b>-1</b>.
         /// </returns>
-        /// <exception cref="InvalidEnumArgumentException"></exception>
+        /// <exception cref="InvalidEnumArgumentException">Specified block is not valid.</exception>
         public int IndexOf(KnownDataBlock valueKey)
         {
             var knownBlockValid = IsValidBlock(valueKey);
@@ -420,15 +420,15 @@ namespace iTin.Hardware.Specification.Eedid
 
         #region public override methods
 
-        #region [public] {override} (String) ToString(): Devuelve una cadena que representa al objeto actual.
+        #region [public] {override} (String) ToString(): Returns a string representing the current object
         /// <summary>
         /// Devuelve una cadena que representa al objeto <see cref="DataBlockCollection"/> actual.
         /// </summary>
         /// <returns>
-        ///   <para>Cadena que representa al objeto <see cref="DataBlockCollection"/> actual.</para>
+        /// String representing the current <see cref="DataBlockCollection"/> object.
         /// </returns>
         /// <remarks>
-        /// El método <see cref="DataBlockCollection.ToString()"/> devuelve una cadena que incluye el número de bloques disponibles.
+        /// The <see cref="DataBlockCollection.ToString()"/> method returns a string that includes the number of available blocks.
         /// </remarks>   
         public override string ToString() => $"Count = {Count}";
         #endregion
@@ -437,13 +437,13 @@ namespace iTin.Hardware.Specification.Eedid
 
         #region private static methods
 
-        #region [private] {static} (bool) IsValidBlock(KnownDataBlock): Determina si la clave especificada es una clave válida de la enumeración 'KnownDataBlock'.
+        #region [private] {static} (bool) IsValidBlock(KnownDataBlock): Determines if the specified key is a valid key from the 'KnownDataBlock' enumeration
         /// <summary>
-        /// Determina si la clave especificada es una clave válida de la enumeración <see cref="KnownDataBlock"/>.
+        /// Determines if the specified key is a valid key from the <see cref="KnownDataBlock"/> enumeration.
         /// </summary>
-        /// <param name="value">Clave a comprobar.</param>
+        /// <param name="value">Key to check.</param>
         /// <returns>
-        /// <b>true</b> si el valor pertenece a la enumeración <see cref="KnownDataBlock"/>; de lo contrario, es <b>false</b>.
+        /// <b>true</b> if the value belongs to the enumeration <see cref="KnownDataBlock"/>; otherwise it is <b>false</b>.
         /// </returns>
         private static bool IsValidBlock(KnownDataBlock value) => SentinelHelper.IsEnumValid(value);
         #endregion
@@ -452,9 +452,9 @@ namespace iTin.Hardware.Specification.Eedid
 
         #region private methods
 
-        #region [private] (void) SetParentToItemBlockCollection(): Establece el padre al que pertenece cada elemento con este DataBlockCollection.
+        #region [private] (void) SetParentToItemBlockCollection(): Set the parent to which each item belongs with this 'DataBlockCollection'
         /// <summary>
-        /// Establece el padre al que pertenece cada elemento <see cref="DataBlock"/> con este <see cref="DataBlockCollection"/>.
+        /// Set the parent to which each element belongs <see cref="DataBlock"/> with this <see cref="DataBlockCollection"/>.
         /// </summary>
         private void SetParentToItemBlockCollection()
         {
