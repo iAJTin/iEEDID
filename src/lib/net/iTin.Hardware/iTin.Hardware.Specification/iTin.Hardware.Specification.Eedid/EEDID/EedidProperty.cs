@@ -3572,6 +3572,187 @@ namespace iTin.Hardware.Specification.Eedid
             {
                 #region nested classes
 
+                #region [public] {static} (class) Tags: Definition of Tags keys in the 'DataBlockCollection' section
+                /// <summary>
+                /// Definition of <b>Tags</b> keys in the <b>DataBlockCollection</b> section.
+                /// </summary>
+                public static class Tags
+                {
+                    #region public readonly properties
+
+                    #region [public] {static} (IPropertyKey) Audio: Gets a value representing the key to retrieve the property value
+                    /// <summary>
+                    /// <para>Gets a value representing the key to retrieve the property value.</para>
+                    /// <para>CEA Short Audio Data Block (SADB).</para>
+                    /// <para>
+                    ///  <para><b>Key Composition</b></para>
+                    ///  <list type="bullet">
+                    ///   <item><description>Structure: <see cref="KnownCeaSection.DataBlockCollection"/></description></item>
+                    ///   <item><description>Property: <see cref="CeaDataBlockTags.Audio"/></description></item>
+                    ///   <item><description>Unit: <see cref="PropertyUnit.None"/></description></item>
+                    ///  </list>
+                    /// </para>
+                    /// <para>
+                    ///  <para><b>Return Value</b></para>
+                    ///  <para>Type: <see cref="SectionPropertiesTable"/>.</para>
+                    /// </para>
+                    /// <para>
+                    ///  <para><b>Remarks</b></para>
+                    ///  <para>1.4</para>
+                    /// </para>
+                    /// </summary>
+                    public static IPropertyKey Audio => new PropertyKey(KnownCeaSection.DataBlockCollection, CeaDataBlockTags.Audio);
+                    #endregion
+
+                    #region [public] {static} (IPropertyKey) Extended: Gets a value representing the key to retrieve the property value
+                    /// <summary>
+                    /// <para>Gets a value representing the key to retrieve the property value.</para>
+                    /// <para>Data Block Extended Tag.</para>
+                    /// <para>
+                    ///  <para><b>Key Composition</b></para>
+                    ///  <list type="bullet">
+                    ///   <item><description>Structure: <see cref="KnownCeaSection.DataBlockCollection"/></description></item>
+                    ///   <item><description>Property: <see cref="CeaDataBlockTags.Extended"/></description></item>
+                    ///   <item><description>Unit: <see cref="PropertyUnit.None"/></description></item>
+                    ///  </list>
+                    /// </para>
+                    /// <para>
+                    ///  <para><b>Return Value</b></para>
+                    ///  <para>Type: <see cref="SectionPropertiesTable"/>.</para>
+                    /// </para>
+                    /// <para>
+                    ///  <para><b>Remarks</b></para>
+                    ///  <para>1.4</para>
+                    /// </para>
+                    /// </summary>
+                    public static IPropertyKey Extended => new PropertyKey(KnownCeaSection.DataBlockCollection, CeaDataBlockTags.Extended);
+                    #endregion
+
+                    #region [public] {static} (IPropertyKey) Reserved: Gets a value representing the key to retrieve the property value
+                    /// <summary>
+                    /// <para>Gets a value representing the key to retrieve the property value.</para>
+                    /// <para>Data Block Reserved Tag.</para>
+                    /// <para>
+                    ///  <para><b>Key Composition</b></para>
+                    ///  <list type="bullet">
+                    ///   <item><description>Structure: <see cref="KnownCeaSection.DataBlockCollection"/></description></item>
+                    ///   <item><description>Property: <see cref="CeaDataBlockTags.Reserved"/></description></item>
+                    ///   <item><description>Unit: <see cref="PropertyUnit.None"/></description></item>
+                    ///  </list>
+                    /// </para>
+                    /// <para>
+                    ///  <para><b>Return Value</b></para>
+                    ///  <para>Type: <see cref="SectionPropertiesTable"/>.</para>
+                    /// </para>
+                    /// <para>
+                    ///  <para><b>Remarks</b></para>
+                    ///  <para>1.4</para>
+                    /// </para>
+                    /// </summary>
+                    public static IPropertyKey Reserved => new PropertyKey(KnownCeaSection.DataBlockCollection, CeaDataBlockTags.Reserved);
+                    #endregion
+
+                    #region [public] {static} (IPropertyKey) Speaker: Gets a value representing the key to retrieve the property value
+                    /// <summary>
+                    /// <para>Gets a value representing the key to retrieve the property value.</para>
+                    /// <para>CEA Short Speaker Data Block (SKDB).</para>
+                    /// <para>
+                    ///  <para><b>Key Composition</b></para>
+                    ///  <list type="bullet">
+                    ///   <item><description>Structure: <see cref="KnownCeaSection.DataBlockCollection"/></description></item>
+                    ///   <item><description>Property: <see cref="CeaDataBlockTags.Speaker"/></description></item>
+                    ///   <item><description>Unit: <see cref="PropertyUnit.None"/></description></item>
+                    ///  </list>
+                    /// </para>
+                    /// <para>
+                    ///  <para><b>Return Value</b></para>
+                    ///  <para>Type: <see cref="SectionPropertiesTable"/>.</para>
+                    /// </para>
+                    /// <para>
+                    ///  <para><b>Remarks</b></para>
+                    ///  <para>1.4</para>
+                    /// </para>
+                    /// </summary>
+                    public static IPropertyKey Speaker => new PropertyKey(KnownCeaSection.DataBlockCollection, CeaDataBlockTags.Speaker);
+                    #endregion
+
+                    #region [public] {static} (IPropertyKey) Vendor: Gets a value representing the key to retrieve the property value
+                    /// <summary>
+                    /// <para>Gets a value representing the key to retrieve the property value.</para>
+                    /// <para>CEA Short Vendor Data Block (SRDB).</para>
+                    /// <para>
+                    ///  <para><b>Key Composition</b></para>
+                    ///  <list type="bullet">
+                    ///   <item><description>Structure: <see cref="KnownCeaSection.DataBlockCollection"/></description></item>
+                    ///   <item><description>Property: <see cref="CeaDataBlockTags.Vendor"/></description></item>
+                    ///   <item><description>Unit: <see cref="PropertyUnit.None"/></description></item>
+                    ///  </list>
+                    /// </para>
+                    /// <para>
+                    ///  <para><b>Return Value</b></para>
+                    ///  <para>Type: <see cref="SectionPropertiesTable"/>.</para>
+                    /// </para>
+                    /// <para>
+                    ///  <para><b>Remarks</b></para>
+                    ///  <para>1.4</para>
+                    /// </para>
+                    /// </summary>
+                    public static IPropertyKey Vendor => new PropertyKey(KnownCeaSection.DataBlockCollection, CeaDataBlockTags.Vendor);
+                    #endregion
+
+                    #region [public] {static} (IPropertyKey) VESA: Gets a value representing the key to retrieve the property value
+                    /// <summary>
+                    /// <para>Gets a value representing the key to retrieve the property value.</para>
+                    /// <para>Data Block VESA Tag.</para>
+                    /// <para>
+                    ///  <para><b>Key Composition</b></para>
+                    ///  <list type="bullet">
+                    ///   <item><description>Structure: <see cref="KnownCeaSection.DataBlockCollection"/></description></item>
+                    ///   <item><description>Property: <see cref="CeaDataBlockTags.VESA"/></description></item>
+                    ///   <item><description>Unit: <see cref="PropertyUnit.None"/></description></item>
+                    ///  </list>
+                    /// </para>
+                    /// <para>
+                    ///  <para><b>Return Value</b></para>
+                    ///  <para>Type: <see cref="SectionPropertiesTable"/>.</para>
+                    /// </para>
+                    /// <para>
+                    ///  <para><b>Remarks</b></para>
+                    ///  <para>1.4</para>
+                    /// </para>
+                    /// </summary>
+                    public static IPropertyKey VESA => new PropertyKey(KnownCeaSection.DataBlockCollection, CeaDataBlockTags.VESA);
+                    #endregion
+
+                    #region [public] {static} (IPropertyKey) Video: Gets a value representing the key to retrieve the property value
+                    /// <summary>
+                    /// <para>Gets a value representing the key to retrieve the property value.</para>
+                    /// <para>CEA Short Video Data Block (SVDB).</para>
+                    /// <para>
+                    ///  <para><b>Key Composition</b></para>
+                    ///  <list type="bullet">
+                    ///   <item><description>Structure: <see cref="KnownCeaSection.DataBlockCollection"/></description></item>
+                    ///   <item><description>Property: <see cref="CeaDataBlockTags.Video"/></description></item>
+                    ///   <item><description>Unit: <see cref="PropertyUnit.None"/></description></item>
+                    ///  </list>
+                    /// </para>
+                    /// <para>
+                    ///  <para><b>Return Value</b></para>
+                    ///  <para>Type: <see cref="SectionPropertiesTable"/>.</para>
+                    /// </para>
+                    /// <para>
+                    ///  <para><b>Remarks</b></para>
+                    ///  <para>1.4</para>
+                    /// </para>
+                    /// </summary>
+                    public static IPropertyKey Video => new PropertyKey(KnownCeaSection.DataBlockCollection, CeaDataBlockTags.Video);
+                    #endregion
+
+                    #endregion
+                }
+                #endregion
+
+
                 #region [public] {static} (class) Audio: Definition of keys in the 'Audio' section
                 /// <summary>
                 /// Definition of keys in the <b>Audio</b> section.
@@ -3580,15 +3761,39 @@ namespace iTin.Hardware.Specification.Eedid
                 {
                     #region public readonly properties
 
-                    #region [public] {static} (IPropertyKey) SupportedTimings: Gets a value representing the key to retrieve the property value
+                    #region [public] {static} (IPropertyKey) Descriptor: Gets a value representing the key to retrieve the property value
                     /// <summary>
                     /// <para>Gets a value representing the key to retrieve the property value.</para>
-                    /// <para>Supported timings.</para>
+                    /// <para>Audio Descriptor Index</para>
                     /// <para>
                     ///  <para><b>Key Composition</b></para>
                     ///  <list type="bullet">
                     ///   <item><description>Structure: <see cref="KnownCeaSection.DataBlockCollection"/></description></item>
-                    ///   <item><description>Property: <see cref="CeaVideoDataBlockProperty.SupportedTimings"/></description></item>
+                    ///   <item><description>Property: <see cref="CeaAudioDataBlockProperty.Descriptor"/></description></item>
+                    ///   <item><description>Unit: <see cref="PropertyUnit.None"/></description></item>
+                    ///  </list>
+                    /// </para>
+                    /// <para>
+                    ///  <para><b>Return Value</b></para>
+                    ///  <para>Type: <see cref="byte"/>.</para>
+                    /// </para>
+                    /// <para>
+                    ///  <para><b>Remarks</b></para>
+                    ///  <para>1.4</para>
+                    /// </para>
+                    /// </summary>
+                    public static IPropertyKey Descriptor => new PropertyKey(KnownCeaSection.DataBlockCollection, CeaAudioDataBlockProperty.Descriptor);
+                    #endregion
+
+                    #region [public] {static} (IPropertyKey) BitDepth: Gets a value representing the key to retrieve the property value
+                    /// <summary>
+                    /// <para>Gets a value representing the key to retrieve the property value.</para>
+                    /// <para>Audio Bit Depth</para>
+                    /// <para>
+                    ///  <para><b>Key Composition</b></para>
+                    ///  <list type="bullet">
+                    ///   <item><description>Structure: <see cref="KnownCeaSection.DataBlockCollection"/></description></item>
+                    ///   <item><description>Property: <see cref="CeaAudioDataBlockProperty.BitDepth"/></description></item>
                     ///   <item><description>Unit: <see cref="PropertyUnit.None"/></description></item>
                     ///  </list>
                     /// </para>
@@ -3601,7 +3806,103 @@ namespace iTin.Hardware.Specification.Eedid
                     ///  <para>1.4</para>
                     /// </para>
                     /// </summary>
-                    public static IPropertyKey SupportedTimings => new PropertyKey(KnownCeaSection.DataBlockCollection, CeaVideoDataBlockProperty.SupportedTimings);
+                    public static IPropertyKey BitDepth => new PropertyKey(KnownCeaSection.DataBlockCollection, CeaAudioDataBlockProperty.BitDepth);
+                    #endregion
+
+                    #region [public] {static} (IPropertyKey) Channels: Gets a value representing the key to retrieve the property value
+                    /// <summary>
+                    /// <para>Gets a value representing the key to retrieve the property value.</para>
+                    /// <para>Audio Channels</para>
+                    /// <para>
+                    ///  <para><b>Key Composition</b></para>
+                    ///  <list type="bullet">
+                    ///   <item><description>Structure: <see cref="KnownCeaSection.DataBlockCollection"/></description></item>
+                    ///   <item><description>Property: <see cref="CeaAudioDataBlockProperty.Channels"/></description></item>
+                    ///   <item><description>Unit: <see cref="PropertyUnit.None"/></description></item>
+                    ///  </list>
+                    /// </para>
+                    /// <para>
+                    ///  <para><b>Return Value</b></para>
+                    ///  <para>Type: <see cref="ushort"/>.</para>
+                    /// </para>
+                    /// <para>
+                    ///  <para><b>Remarks</b></para>
+                    ///  <para>1.4</para>
+                    /// </para>
+                    /// </summary>
+                    public static IPropertyKey Channels => new PropertyKey(KnownCeaSection.DataBlockCollection, CeaAudioDataBlockProperty.Channels);
+                    #endregion
+
+                    #region [public] {static} (IPropertyKey) Format: Gets a value representing the key to retrieve the property value
+                    /// <summary>
+                    /// <para>Gets a value representing the key to retrieve the property value.</para>
+                    /// <para>Audio Format</para>
+                    /// <para>
+                    ///  <para><b>Key Composition</b></para>
+                    ///  <list type="bullet">
+                    ///   <item><description>Structure: <see cref="KnownCeaSection.DataBlockCollection"/></description></item>
+                    ///   <item><description>Property: <see cref="CeaAudioDataBlockProperty.Format"/></description></item>
+                    ///   <item><description>Unit: <see cref="PropertyUnit.None"/></description></item>
+                    ///  </list>
+                    /// </para>
+                    /// <para>
+                    ///  <para><b>Return Value</b></para>
+                    ///  <para>Type: <see cref="string"/>.</para>
+                    /// </para>
+                    /// <para>
+                    ///  <para><b>Remarks</b></para>
+                    ///  <para>1.4</para>
+                    /// </para>
+                    /// </summary>
+                    public static IPropertyKey Format => new PropertyKey(KnownCeaSection.DataBlockCollection, CeaAudioDataBlockProperty.Format);
+                    #endregion
+
+                    #region [public] {static} (IPropertyKey) MaxBitrate: Gets a value representing the key to retrieve the property value
+                    /// <summary>
+                    /// <para>Gets a value representing the key to retrieve the property value.</para>
+                    /// <para>Audio Max Bitrate</para>
+                    /// <para>
+                    ///  <para><b>Key Composition</b></para>
+                    ///  <list type="bullet">
+                    ///   <item><description>Structure: <see cref="KnownCeaSection.DataBlockCollection"/></description></item>
+                    ///   <item><description>Property: <see cref="CeaAudioDataBlockProperty.Format"/></description></item>
+                    ///   <item><description>Unit: <see cref="PropertyUnit.None"/></description></item>
+                    ///  </list>
+                    /// </para>
+                    /// <para>
+                    ///  <para><b>Return Value</b></para>
+                    ///  <para>Type: <see cref="int"/>.</para>
+                    /// </para>
+                    /// <para>
+                    ///  <para><b>Remarks</b></para>
+                    ///  <para>1.4</para>
+                    /// </para>
+                    /// </summary>
+                    public static IPropertyKey MaxBitrate => new PropertyKey(KnownCeaSection.DataBlockCollection, CeaAudioDataBlockProperty.MaxBitrate);
+                    #endregion
+
+                    #region [public] {static} (IPropertyKey) SamplingFrequencies: Gets a value representing the key to retrieve the property value
+                    /// <summary>
+                    /// <para>Gets a value representing the key to retrieve the property value.</para>
+                    /// <para>Audio Sampling Frequencies</para>
+                    /// <para>
+                    ///  <para><b>Key Composition</b></para>
+                    ///  <list type="bullet">
+                    ///   <item><description>Structure: <see cref="KnownCeaSection.DataBlockCollection"/></description></item>
+                    ///   <item><description>Property: <see cref="CeaAudioDataBlockProperty.SamplingFrequencies"/></description></item>
+                    ///   <item><description>Unit: <see cref="PropertyUnit.None"/></description></item>
+                    ///  </list>
+                    /// </para>
+                    /// <para>
+                    ///  <para><b>Return Value</b></para>
+                    ///  <para>Type: <see cref="ReadOnlyCollection{T}"/> where <b>T</b> is <see cref="string"/>.</para>
+                    /// </para>
+                    /// <para>
+                    ///  <para><b>Remarks</b></para>
+                    ///  <para>1.4</para>
+                    /// </para>
+                    /// </summary>
+                    public static IPropertyKey SamplingFrequencies => new PropertyKey(KnownCeaSection.DataBlockCollection, CeaAudioDataBlockProperty.SamplingFrequencies);
                     #endregion
 
                     #endregion

@@ -79,6 +79,88 @@ namespace iTin.Hardware.Specification.Eedid
     }
     #endregion
 
+
+    #region [internal] (enum) CeaDataBlockTags: Definition of sections for a section of type 'DataBlockCollection'
+    /// <summary>
+    /// Definition of properties for a section of type <see cref="KnownCeaSection.DataBlockCollection"/>.
+    /// </summary>
+    internal enum CeaDataBlockTags
+    {
+        [PropertyName("Audio")]
+        [PropertyDescription("Audio DataBlock Tag")]
+        [PropertyType(typeof(SectionPropertiesTable))]
+        Audio,
+
+        [PropertyName("Extended")]
+        [PropertyDescription("Extended DataBlock Tag")]
+        [PropertyType(typeof(SectionPropertiesTable))]
+        Extended,
+
+        [PropertyName("Reserved")]
+        [PropertyDescription("Reserved DataBlock Tag")]
+        [PropertyType(typeof(SectionPropertiesTable))]
+        Reserved,
+
+        [PropertyName("Speaker")]
+        [PropertyDescription("Speaker DataBlock Tag")]
+        [PropertyType(typeof(SectionPropertiesTable))]
+        Speaker,
+
+        [PropertyName("Video")]
+        [PropertyDescription("Video DataBlock Tag")]
+        [PropertyType(typeof(SectionPropertiesTable))]
+        Video,
+
+        [PropertyName("Vendor")]
+        [PropertyDescription("Vendor DataBlock Tag")]
+        [PropertyType(typeof(SectionPropertiesTable))]
+        Vendor,
+
+        [PropertyName("VESA")]
+        [PropertyDescription("VESA DataBlock Tag")]
+        [PropertyType(typeof(SectionPropertiesTable))]
+        VESA,
+    }
+    #endregion
+
+    #region [internal] (enum) CeaAudioDataBlockProperty: Definition of properties for 'Audio' datablock section of 'DataBlockCollection' section
+    /// <summary>
+    /// Definition of properties for <b>Audio</b> datablock section of <see cref="KnownCeaSection.DataBlockCollection"/> section.
+    /// </summary>
+    internal enum CeaAudioDataBlockProperty
+    {
+        [PropertyName("Audio Descriptor")]
+        [PropertyDescription("Audio Descriptor Index")]
+        [PropertyType(typeof(byte))]
+        Descriptor,
+
+        [PropertyName("Audio Bit Depth")]
+        [PropertyDescription("Audio Bit Depth")]
+        [PropertyType(typeof(ReadOnlyCollection<string>))]
+        BitDepth,
+
+        [PropertyName("Audio Channels")]
+        [PropertyDescription("Audio Channels")]
+        [PropertyType(typeof(ushort))]
+        Channels,
+
+        [PropertyName("Audio Format")]
+        [PropertyDescription("Audio Format")]
+        [PropertyType(typeof(string))]
+        Format,
+
+        [PropertyName("Audio Max Bitrate")]
+        [PropertyDescription("Audio Max Bitrate")]
+        [PropertyType(typeof(int))]
+        MaxBitrate,
+
+        [PropertyName("Audio Sampling Frequencies")]
+        [PropertyDescription("Audio Sampling Frequencies")]
+        [PropertyType(typeof(ReadOnlyCollection<string>))]
+        SamplingFrequencies
+    }
+    #endregion
+
     #region [internal] (enum) CeaExtendedColorimetryDataBlockProperty: Definition of properties for a section of type 'DataBlockCollection'
     /// <summary>
     /// Definition of properties for a section of type <see cref="KnownCeaSection.DataBlockCollection"/>.
@@ -172,9 +254,9 @@ namespace iTin.Hardware.Specification.Eedid
     }
     #endregion
 
-    #region [internal] (enum) CeaReservedDataBlockProperty: Definition of properties for a section of type 'DataBlockCollection'
+    #region [internal] (enum) CeaReservedDataBlockProperty: Definition of properties for 'Reserved' datablock section of 'DataBlockCollection' section
     /// <summary>
-    /// Definition of properties for a section of type <see cref="KnownCeaSection.DataBlockCollection"/>.
+    /// Definition of properties for <b>Reserved</b> datablock section of <see cref="KnownCeaSection.DataBlockCollection"/> section.
     /// </summary>
     internal enum CeaReservedDataBlockProperty
     {
@@ -185,9 +267,9 @@ namespace iTin.Hardware.Specification.Eedid
     }
     #endregion
 
-    #region [internal] (enum) CeaSpeakerDataBlockProperty: Definition of properties for a section of type 'DataBlockCollection'
+    #region [internal] (enum) CeaSpeakerDataBlockProperty: Definition of properties for 'Speaker' datablock section of 'DataBlockCollection' section
     /// <summary>
-    /// Definition of properties for a section of type <see cref="KnownCeaSection.DataBlockCollection"/>.
+    /// Definition of properties for <b>Speaker</b> datablock section of <see cref="KnownCeaSection.DataBlockCollection"/> section.
     /// </summary>
     internal enum CeaSpeakerDataBlockProperty
     {
@@ -248,22 +330,9 @@ namespace iTin.Hardware.Specification.Eedid
     }
     #endregion
 
-    #region [internal] (enum) CeaVideoDataBlockProperty: Definition of properties for a section of type 'DataBlockCollection'
+    #region [internal] (enum) CeaVendorDataBlockProperty: Definition of properties for 'Vendor' datablock section of 'DataBlockCollection' section
     /// <summary>
-    /// Definition of properties for a section of type <see cref="KnownCeaSection.DataBlockCollection"/>.
-    /// </summary>
-    internal enum CeaVideoDataBlockProperty
-    {
-        [PropertyName("Supported Timings")]
-        [PropertyDescription("Supported Timings")]
-        [PropertyType(typeof(ReadOnlyCollection<string>))]
-        SupportedTimings,
-    }
-    #endregion
-
-    #region [internal] (enum) CeaVendorDataBlockProperty: Definition of properties for a section of type 'DataBlockCollection'
-    /// <summary>
-    /// Definition of properties for a section of type <see cref="KnownCeaSection.DataBlockCollection"/>.
+    /// Definition of properties for <b>Vendor</b> datablock section of <see cref="KnownCeaSection.DataBlockCollection"/> section.
     /// </summary>
     internal enum CeaVendorDataBlockProperty
     {
@@ -294,9 +363,18 @@ namespace iTin.Hardware.Specification.Eedid
     }
     #endregion
 
+    #region [internal] (enum) CeaVideoDataBlockProperty: Definition of properties for 'Video' datablock section of 'DataBlockCollection' section
+    /// <summary>
+    /// Definition of properties for <b>Video</b> datablock section of <see cref="KnownCeaSection.DataBlockCollection"/> section.
+    /// </summary>
+    internal enum CeaVideoDataBlockProperty
+    {
+        [PropertyName("Supported Timings")]
+        [PropertyDescription("Supported Timings")]
+        [PropertyType(typeof(ReadOnlyCollection<string>))]
+        SupportedTimings,
+    }
     #endregion
-
-    #region EEDID -> CEA -> Section
 
     #endregion
 }

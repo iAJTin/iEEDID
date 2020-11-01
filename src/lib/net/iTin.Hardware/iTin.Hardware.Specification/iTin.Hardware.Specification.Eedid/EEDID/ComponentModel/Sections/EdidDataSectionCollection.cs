@@ -7,7 +7,8 @@ namespace iTin.Hardware.Specification.Eedid
     using iTin.Core.Helpers;
 
     /// <summary>
-    /// Specialization of the class <see cref="BaseDataSectionCollection"/> representing a collection of objects <see cref="DataSection"/> for a <see cref="DataBlock"/> of type <see cref="KnownDataBlock.EDID"/>.
+    /// Specialization of the class <see cref="BaseDataSectionCollection"/>.<br/>
+    /// Representing a collection of objects <see cref="DataSection"/> for a <see cref="DataBlock"/> of type <see cref="KnownDataBlock.EDID"/>.
     /// </summary>
     sealed class EdidDataSectionCollection : BaseDataSectionCollection
     {

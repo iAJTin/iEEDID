@@ -5,7 +5,6 @@ namespace iTin.Hardware.Specification.Eedid
     using System.Collections.ObjectModel;
 
     using iTin.Core;
-    using iTin.Core.Collections;
     using iTin.Core.Helpers.Enumerations;
 
     /// <summary>
@@ -23,36 +22,76 @@ namespace iTin.Hardware.Specification.Eedid
         public AudioDataBlock(ReadOnlyCollection<byte> audioDataBlock)
         {
             var formatCode = (KnownAudioFormatCode)(audioDataBlock[0x00] >> 3 & 0x0f);
-            Properties = new NameObjectCollection
-            {
-                {"Format", AudioFormat((byte)formatCode) },
-                {"Channels", 1 + (byte) (audioDataBlock[0x00] & 0x07) },
-                {"Sampling Frequencies", SamplingFrequencies((byte) (audioDataBlock[0x01] & 0x7f)) }
-            };
+
+            Format = AudioFormat((byte)formatCode);
+            Channels = (ushort)(1 + (byte)(audioDataBlock[0x00] & 0x07));
+            SamplingFrequencies = SamplingFrequenciesValue((byte)(audioDataBlock[0x01] & 0x7f));
 
             if (formatCode == KnownAudioFormatCode.PCM)
             {
-                Properties.Add("Bit Depth", BitDepth((byte)(audioDataBlock[0x02] & 0x07)));
+                MaxBitrate = -1;
+                BitDepth = BitDepthValue((byte)(audioDataBlock[0x02] & 0x07));
             }
             else
             {
-                Properties.Add("Max Bitrate", $"{audioDataBlock[0x02] << 3} Khz");
+                BitDepth = new string[] { };
+                MaxBitrate = audioDataBlock[0x02] << 3;
             }
         }
         #endregion
 
         #endregion
 
-        #region public properties
+        #region public readonly properties
 
-        #region [public] (NameObjectCollection) Properties: Gets a value that represents the collection of properties available to this block
+        #region [public] (string[]) BitDepth: Gets the audio bit depth
         /// <summary>
-        /// Gets a value that represents the collection of properties available to this block.
+        /// Gets the audio bit depth.
         /// </summary>
         /// <value>
-        /// Collection of properties available for this block.
+        /// String array containing the audio bit depth.
         /// </value>
-        public NameObjectCollection Properties { get; }
+        public string[] BitDepth { get; }
+        #endregion
+
+        #region [public] (ushort) Channels: Gets the audio channels
+        /// <summary>
+        /// Gets the audio channels.
+        /// </summary>
+        /// <value>
+        /// A <see cref="ushort"/> containing the audio channels.
+        /// </value>
+        public ushort Channels { get; }
+        #endregion
+
+        #region [public] (ushort) Channels: Gets the audio format
+        /// <summary>
+        /// Gets the audio format.
+        /// </summary>
+        /// <value>
+        /// A <see cref="string"/> containing the audio format.
+        /// </value>
+        public string Format { get; }
+        #endregion
+
+        #region [public] (int) MaxBitrate: Gets the audio MaxBitrate
+        /// <summary>
+        /// Gets the audio MaxBitrate. If not exist then returns <b>-1</b>.
+        /// </summary>
+        /// <value>
+        /// A <see cref="int"/> containing the audio format.
+        /// </value>
+        public int MaxBitrate { get; }
+        #endregion
+
+        #region [public] (string[]) SamplingFrequencies: Gets the audio sampling frequencies
+        /// <summary>
+        /// Gets the audio sampling frequencies. If not exist then returns an empty array.
+        /// </summary>
+        /// <value>
+        /// Array string containing the audio sampling frequencies.
+        /// </value>
+        public string[] SamplingFrequencies { get; }
         #endregion
 
         #endregion
@@ -84,7 +123,7 @@ namespace iTin.Hardware.Specification.Eedid
             return items[code];
         }
 
-        private static ReadOnlyCollection<string> BitDepth(byte code)
+        private static string[] BitDepthValue(byte code)
         {
             var value = new[]
             {
@@ -103,10 +142,10 @@ namespace iTin.Hardware.Specification.Eedid
                 }
             }
 
-            return items.AsReadOnly();
+            return (string[])items.ToArray().Clone();
         }
 
-        private static ReadOnlyCollection<string> SamplingFrequencies(byte code)
+        private static string[] SamplingFrequenciesValue(byte code)
         {
             var value = new[]
             {
@@ -129,7 +168,7 @@ namespace iTin.Hardware.Specification.Eedid
                 }
             }
 
-            return items.AsReadOnly();
+            return (string[])items.ToArray().Clone();
         }
 
         #endregion

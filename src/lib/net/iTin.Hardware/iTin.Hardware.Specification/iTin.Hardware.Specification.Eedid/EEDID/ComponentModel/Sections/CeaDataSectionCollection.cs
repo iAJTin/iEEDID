@@ -6,9 +6,9 @@ namespace iTin.Hardware.Specification.Eedid
 
     using iTin.Core.Helpers;
 
-    /// <inheritdoc />
     /// <summary>
-    /// Specialization of the class <see cref="BaseDataSectionCollection"/> representing a collection of objects <see cref="DataSection"/> for a <see cref="DataBlock"/> of type <see cref="KnownDataBlock.CEA"/>.
+    /// Specialization of the class <see cref="BaseDataSectionCollection"/>.<br/>
+    /// Representing a collection of objects <see cref="DataSection"/> for a <see cref="DataBlock"/> of type <see cref="KnownDataBlock.CEA"/>.
     /// </summary>
     internal sealed class CeaDataSectionCollection : BaseDataSectionCollection
     {
@@ -64,7 +64,7 @@ namespace iTin.Hardware.Specification.Eedid
 
         #region public methods
 
-        #region [public] (bool) Contains(KnownEdidSection): Determines whether the element with the specified key is in the collection 'CeaDataSectionCollection'
+        #region [public] (bool) Contains(KnownCeaSection): Determines whether the element with the specified key is in the collection 'CeaDataSectionCollection'
         /// <summary>
         /// Determines whether the element with the specified key is in the <see cref="CeaDataSectionCollection"/> collection.
         /// </summary>

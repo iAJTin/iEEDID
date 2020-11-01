@@ -4,6 +4,7 @@ namespace iTin.Hardware.Specification.Eedid
     using System;
     using System.Collections.Generic;
     using System.Collections.ObjectModel;
+    using System.Linq;
 
     /// <summary>
     /// Specialization of the <see cref="BaseDataSection"/> class.<br/>
@@ -36,13 +37,34 @@ namespace iTin.Hardware.Specification.Eedid
         protected override void PopulateProperties(SectionPropertiesTable properties)
         {
             var audioAllocationDataBlock = GetAudioAllocationDataBlocks(RawData);
-
+            
             var i = 0;
+            var audioDescriptors = new List<SectionPropertiesTable>();
             foreach (var allocationDataBlock in audioAllocationDataBlock)
             {
-                //properties.Add("Descriptor " + i, allocationDataBlock.Properties);
+                var descriptor = new SectionPropertiesTable                
+                {
+                    {EedidProperty.Cea.DataBlock.Audio.Descriptor, (byte)i},
+                    {EedidProperty.Cea.DataBlock.Audio.BitDepth, allocationDataBlock.BitDepth.ToList().AsReadOnly()},
+                    {EedidProperty.Cea.DataBlock.Audio.Channels, allocationDataBlock.Channels},
+                    {EedidProperty.Cea.DataBlock.Audio.Format, allocationDataBlock.Format},
+                };
+
+                if (allocationDataBlock.MaxBitrate != -1)
+                {
+                    descriptor.Add(EedidProperty.Cea.DataBlock.Audio.MaxBitrate, allocationDataBlock.MaxBitrate);
+                }
+
+                if (allocationDataBlock.SamplingFrequencies.Length > 0)
+                {
+                    descriptor.Add(EedidProperty.Cea.DataBlock.Audio.SamplingFrequencies, allocationDataBlock.SamplingFrequencies.ToList().AsReadOnly());
+                }
+
+                audioDescriptors.Add(descriptor);
                 i++;
             }
+
+            properties.Add(EedidProperty.Cea.DataBlock.Tags.Audio, audioDescriptors);
         }
         #endregion
 

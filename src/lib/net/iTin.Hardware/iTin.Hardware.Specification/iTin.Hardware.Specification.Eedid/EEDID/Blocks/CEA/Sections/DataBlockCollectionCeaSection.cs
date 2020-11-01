@@ -52,31 +52,36 @@ namespace iTin.Hardware.Specification.Eedid
                     switch (shortDataBlock.Tag)
                     {
                         case KnownShortDataBlockTag.Audio:
-                            propertiesToAdd = new ShortAudioDescriptorCeaSection(shortDataBlock.RawData).Properties;
+                            var descriptor = new ShortAudioDescriptorCeaSection(shortDataBlock.RawData);
+                            var hasProperties = descriptor.Properties.Any();
+                            if (hasProperties)
+                            {
+                                propertiesToAdd.Add(EedidProperty.Cea.DataBlock.Tags.Audio, descriptor.Properties.FirstOrDefault().Value);
+                            }
                             break;
 
                         case KnownShortDataBlockTag.Video:
-                            propertiesToAdd = new ShortVideoDescriptorCeaSection(shortDataBlock.RawData).Properties;
+                            propertiesToAdd.Add(EedidProperty.Cea.DataBlock.Tags.Video, new ShortVideoDescriptorCeaSection(shortDataBlock.RawData).Properties);
                             break;
 
                         case KnownShortDataBlockTag.Vendor:
-                            propertiesToAdd = new ShortVendorDescriptorCeaSection(shortDataBlock.RawData).Properties;
+                            propertiesToAdd.Add(EedidProperty.Cea.DataBlock.Tags.Vendor, new ShortVendorDescriptorCeaSection(shortDataBlock.RawData).Properties);
                             break;
 
                         case KnownShortDataBlockTag.Speaker:
-                            propertiesToAdd = new ShortSpeakerDescriptorCeaSection(shortDataBlock.RawData).Properties;
+                            propertiesToAdd.Add(EedidProperty.Cea.DataBlock.Tags.Speaker, new ShortSpeakerDescriptorCeaSection(shortDataBlock.RawData).Properties);
                             break;
 
                         case KnownShortDataBlockTag.VESA:
-                            propertiesToAdd = new ShortSpeakerDescriptorCeaSection(shortDataBlock.RawData).Properties;
+                            propertiesToAdd.Add(EedidProperty.Cea.DataBlock.Tags.VESA, new ShortSpeakerDescriptorCeaSection(shortDataBlock.RawData).Properties);
                             break;
 
                         case KnownShortDataBlockTag.ExtendedTag:
-                            propertiesToAdd = new ShortExtendedTagDescriptorCeaSection(shortDataBlock.RawData).Properties;
+                            propertiesToAdd.Add(EedidProperty.Cea.DataBlock.Tags.Extended, new ShortExtendedTagDescriptorCeaSection(shortDataBlock.RawData).Properties);
                             break;
 
                         default:
-                            propertiesToAdd = new ShortReservedDescriptorCeaSection(shortDataBlock.RawData).Properties;
+                            propertiesToAdd.Add(EedidProperty.Cea.DataBlock.Tags.Reserved, new ShortReservedDescriptorCeaSection(shortDataBlock.RawData).Properties);
                             break;
                     }
 

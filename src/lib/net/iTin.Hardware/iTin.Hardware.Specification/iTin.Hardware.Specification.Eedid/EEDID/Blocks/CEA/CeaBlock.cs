@@ -51,7 +51,6 @@ namespace iTin.Hardware.Specification.Eedid
         #region protected override methods
 
         #region [protected] {override} (void) InitDataSectionTable(Dictionary<Enum, ReadOnlyCollection<byte>>): Initialize dictionary with the available data for the sections of this block
-        /// <inheritdoc />
         /// <summary>
         /// Initialize dictionary with the available data for the sections of this block.
         /// </summary>

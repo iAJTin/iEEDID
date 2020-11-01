@@ -136,29 +136,91 @@ namespace iEEDID.ConsoleAppCore
                                 Console.WriteLine($@" │ │ {item}");
                             }
                         }
+                        //else if (value.GetType() == typeof(ReadOnlyCollection<DetailedTimingModeDescriptor>))
+                        //{
+                        //    var items = (ReadOnlyCollection<DetailedTimingModeDescriptor>)value;
+                        //    foreach (MonitorResolutionInfo item in items)
+                        //    {
+                        //        Console.WriteLine($@" │ │ {item}");
+                        //    }
+                        //}
                         else if (value.GetType() == typeof(ReadOnlyCollection<string>))
                         {
+                            Console.WriteLine($@" │ │ {friendlyName}");
+                            Console.WriteLine($@" │ │ ┌{new string('─', friendlyName.Length - 1)}");
                             var items = (ReadOnlyCollection<string>)value;
                             foreach (string item in items)
                             {
-                                Console.WriteLine($@" │ │ {item}");
+                                Console.WriteLine($@" │ │ │ {item}");
                             }
                         }
                         else if (value.GetType() == typeof(SectionPropertiesTable))
                         {
                             Console.WriteLine($@" │ │ {friendlyName}");
+                            Console.WriteLine($@" │ │ ┌{new string('─', friendlyName.Length - 1)}");
                             var dataBlockProperties = (SectionPropertiesTable)value;
                             foreach (PropertyItem dataBlockProperty in dataBlockProperties)
                             {
-                         /*       object dataValue = dataBlockProperty.Value;
+                                IPropertyKey dataBlockPropertyKey = (PropertyKey)dataBlockProperty.Key;
+                                string dataBlockPropertyName = dataBlockPropertyKey.GetPropertyName();
 
-                                IPropertyKey dataBlockKey = (PropertyKey)dataBlockProperty.Key;
-                                string dataName = dataBlockKey.GetPropertyName();
-                                PropertyUnit dataBlockUnit = dataBlockKey.PropertyUnit;
-                                string dataUnit = dataBlockUnit == PropertyUnit.None ? string.Empty : dataBlockUnit.ToString();
-                                Console.WriteLine($@"           > {dataName} > {dataValue} {dataUnit}");
-                           */ }
+                                PropertyUnit dataBlockPropertyUnit = dataBlockPropertyKey.PropertyUnit;
+                                string dataUnit = dataBlockPropertyKey.PropertyUnit == PropertyUnit.None ? string.Empty : dataBlockPropertyUnit.ToString();
+
+                                object dataBlockPropertyValue = dataBlockProperty.Value;
+                                if (dataBlockPropertyValue.GetType() == typeof(ReadOnlyCollection<string>))
+                                {
+                                    var items = (ReadOnlyCollection<string>)dataBlockPropertyValue;
+                                    foreach (string item in items)
+                                    {
+                                        Console.WriteLine($@" │ │ │ {item}");
+                                    }
+                                }
+                                else
+                                {
+                                    Console.WriteLine($@" │ │ │ {dataBlockPropertyName}: {dataBlockPropertyValue} {dataUnit}");
+                                }
+                            }
+
+                            Console.WriteLine($@" │ │");
                         }
+                        else if (value.GetType() == typeof(List<SectionPropertiesTable>))
+                        {
+                            Console.WriteLine($@" │ │ {friendlyName}");
+                            Console.WriteLine($@" │ │ ┌{new string('─', friendlyName.Length - 1)}");
+                            var sectionPropertiesCollection = (List<SectionPropertiesTable>)value;
+                            foreach (SectionPropertiesTable sectionProperty in sectionPropertiesCollection)
+                            {
+                                foreach (PropertyItem dataBlockProperty in sectionProperty)
+                                {
+                                    IPropertyKey dataBlockPropertyKey = (PropertyKey)dataBlockProperty.Key;
+                                    string dataBlockPropertyName = dataBlockPropertyKey.GetPropertyName();
+
+                                    PropertyUnit dataBlockPropertyUnit = dataBlockPropertyKey.PropertyUnit;
+                                    string dataUnit = dataBlockPropertyKey.PropertyUnit == PropertyUnit.None ? string.Empty : dataBlockPropertyUnit.ToString();
+
+                                    object dataBlockPropertyValue = dataBlockProperty.Value;
+                                    if (dataBlockPropertyValue.GetType() == typeof(ReadOnlyCollection<string>))
+                                    {
+                                        Console.WriteLine($@" │ │ │ {dataBlockPropertyName}");
+                                        Console.WriteLine($@" │ │ │ ┌{new string('─', dataBlockPropertyName.Length - 1)}");
+                                        var items = (ReadOnlyCollection<string>)dataBlockPropertyValue;
+                                        foreach (string item in items)
+                                        {
+                                            Console.WriteLine($@" │ │ │ │ {item}");
+                                        }
+                                    }
+                                    else
+                                    {
+                                        Console.WriteLine($@" │ │ │ {dataBlockPropertyName}: {dataBlockPropertyValue} {dataUnit}");
+                                    }
+                                }
+
+                            }
+
+                            Console.WriteLine($@" │ │");
+                        }
+
                         else
                         {
                             Console.WriteLine($@" │ │ {friendlyName} > {value}{unit}");

@@ -6,20 +6,20 @@ namespace iTin.Hardware.Specification.Eedid
     using System.Collections.ObjectModel;
 
     /// <summary>
-    /// Especialización de la clase <see cref="BaseDataBlock"/> que representa al bloque <see cref="KnownDataBlock.VTB"/> de la especificación <see cref="EEDID"/>.
+    /// Specialization of the <see cref="BaseDataBlock"/> class.<br/>
+    /// Representing the block <see cref="KnownDataBlock.VTB"/> of the specification <see cref="EEDID"/>.
     /// </summary> 
     internal class VtbBlock : BaseDataBlock
     {
         #region constructor/s
 
-        #region [public] VtbBlock(ReadOnlyCollection<byte>): Inicializa una nueva instancia de la clase con los datos de este bloque sin tratar.
-        /// <inheritdoc />
+        #region [public] VtbBlock(ReadOnlyCollection<byte>): Initialize a new instance of the class with the data in this section untreated
         /// <summary>
-        /// Inicializa una nueva instancia de la clase <see cref="T:iTin.Hardware.Specification.Eedid.VtbBlock" /> con los datos de este bloque sin tratar.
+        /// Initialize a new instance of the <see cref="VtbBlock"/> class with the data in this section untreated.
         /// </summary>
-        /// <param name="dataBlock">Datos de este bloque sin tratar.</param>
+        /// <param name="dataBlock">Raw data of this block.</param>
         /// <remarks>
-        /// Crear bloque <see cref="F:iTin.Hardware.Specification.Eedid.KnownDataBlock.VTB" /> que pertenece a la especificación <see cref="T:iTin.Hardware.Specification.EEDID" />.
+        /// Create a <see cref="KnownDataBlock.VTB"/> block (block 0) which belongs to the <see cref="EEDID"/> specification.
         /// </remarks>
         public VtbBlock(ReadOnlyCollection<byte> dataBlock) : base(dataBlock)
         {
@@ -30,12 +30,12 @@ namespace iTin.Hardware.Specification.Eedid
 
         #region protected override methods
 
-        #region [protected] {override} (void) InitSectionTable(Dictionary<Enum, BaseDataSection>): Inicializar diccionario con las secciones disponibles para este bloque.
+        #region [protected] {override} (void) InitSectionTable(Dictionary<Enum, BaseDataSection>): Initialize dictionary with the sections available for this block
         /// <inheritdoc />
         /// <summary>
-        /// Inicializar diccionario con las secciones disponibles para este bloque.
+        /// Initialize dictionary with the sections available for this block.
         /// </summary>
-        /// <param name="sectionDictionary">Diccionario que contiene las secciones disponibles para este bloque.</param>
+        /// <param name="sectionDictionary">Dictionary containing the sections available for this block</param>
         protected override void InitSectionTable(Dictionary<Enum, BaseDataSection> sectionDictionary)
         {
             sectionDictionary.Add(KnownDiSection.Revision, new VersionVtbSection(RawData));
