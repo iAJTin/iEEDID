@@ -41,7 +41,14 @@ namespace iTin.Hardware.Specification.Eedid
         /// <param name="properties">Collection of properties of this section.</param>
         protected override void PopulateProperties(SectionPropertiesTable properties)
         {
-            properties.Add(EedidProperty.Cea.DetailedTiming.Timings, GetTimings(RawData));
+            var sectionProperties = new List<SectionPropertiesTable>();
+            var timings = GetTimings(RawData);
+            foreach (var timing in timings)
+            {
+                sectionProperties.Add(timing.Properties);
+            }
+
+            properties.Add(EedidProperty.Cea.DetailedTiming.Timings, sectionProperties);
         }
         #endregion
 

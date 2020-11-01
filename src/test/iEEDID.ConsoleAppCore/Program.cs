@@ -220,7 +220,6 @@ namespace iEEDID.ConsoleAppCore
 
                             Console.WriteLine($@" │ │");
                         }
-
                         else
                         {
                             Console.WriteLine($@" │ │ {friendlyName} > {value}{unit}");
