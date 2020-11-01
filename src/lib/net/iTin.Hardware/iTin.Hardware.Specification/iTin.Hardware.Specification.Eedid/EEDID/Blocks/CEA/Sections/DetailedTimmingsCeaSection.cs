@@ -34,7 +34,6 @@ namespace iTin.Hardware.Specification.Eedid
         #region protected override methods
 
         #region [protected] {override} (void) PopulateProperties(SectionPropertiesTable): Populates the property collection for this section
-        /// <inheritdoc />
         /// <summary>
         /// Populates the property collection for this section.
         /// </summary>
@@ -104,12 +103,14 @@ namespace iTin.Hardware.Specification.Eedid
         }
         #endregion
 
-        #region [private] {static} (bool) IsValidDataTimming(ReadOnlyCollection<byte>): Obtiene un valor que indica si el Data Timming Descriptor especificado es válido.
+        #region [private] {static} (bool) IsValidDataTimming(ReadOnlyCollection<byte>): Gets a value that indicates whether the specified Data Timming Descriptor is valid
         /// <summary>
-        /// Obtiene un valor que indica si el Data Timming Descriptor especificado es válido.
+        /// Gets a value that indicates whether the specified Data Timming Descriptor is valid.
         /// </summary>
         /// <param name="dataTimming">Data Timming Descriptor.</param>
-        /// <returns></returns>
+        /// <returns>
+        /// <b>true</b> if the specified Data Timming Descriptor is valid; otherwise <b>false</b>.
+        /// </returns>
         private static bool IsValidDataTimming(ReadOnlyCollection<byte> dataTimming) => !((dataTimming[0x00] == 0x00) & (dataTimming[0x01] == 0x00));
         #endregion
 

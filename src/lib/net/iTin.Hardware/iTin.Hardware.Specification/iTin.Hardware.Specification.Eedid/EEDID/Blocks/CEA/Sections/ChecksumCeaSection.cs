@@ -33,7 +33,7 @@ namespace iTin.Hardware.Specification.Eedid
 
         #region private readonly properties
 
-        #region [private] (bool) Status: Gets a value that represents the 'Status' field.
+        #region [private] (bool) Status: Gets a value that represents the 'Status' field
         /// <summary>
         /// Gets a value that represents the <b>Status</b> field.
         /// </summary>
