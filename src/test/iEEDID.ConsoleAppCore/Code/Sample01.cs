@@ -14,7 +14,7 @@ namespace iEEDID.Code
     {
         public static void Generate(ILogger logger)
         {
-            var parser = new Parser { Logger = logger };
+            var parser = new RawParser { Logger = logger };
 
             EEDID[] instances = EEDID.Instance;
             foreach (var instance in instances)

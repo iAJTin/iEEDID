@@ -14,9 +14,10 @@ namespace iEEDID.ComponentModel
     using iTin.Hardware.Specification.Eedid;
 
     /// <summary>
+    /// Specialization of the <see cref="IParser"/> interface.<br/>
     /// Defines a custom parser for <see cref="EEDID"/> instances.
-    /// </summary>
-    internal class Parser
+    /// </summary> 
+    internal class TechParser : IParser
     {
         /// <summary>
         /// Gets or sets the logger to use

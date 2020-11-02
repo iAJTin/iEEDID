@@ -16,7 +16,7 @@ namespace iEEDID.Code
         {
             EEDID instance = EEDID.Parse(MacBookPro2018.IntegratedLaptopPanelEdidTable);
 
-            var parser = new Parser { Logger = logger };
+            var parser = new RawParser { Logger = logger };
             parser.Parse(instance);
         }
 
