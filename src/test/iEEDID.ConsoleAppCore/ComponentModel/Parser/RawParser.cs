@@ -1,5 +1,5 @@
 ﻿
-namespace iEEDID.ComponentModel
+namespace iEEDID.ComponentModel.Parser
 {
     using System;
     using System.Collections.Generic;
@@ -15,9 +15,9 @@ namespace iEEDID.ComponentModel
 
     /// <summary>
     /// Specialization of the <see cref="IParser"/> interface.<br/>
-    /// Defines a custom parser for <see cref="EEDID"/> instances.
+    /// Defines a custom parser for <see cref="EEDID"/> raw instances.
     /// </summary> 
-    internal class TechParser : IParser
+    internal class RawParser : IParser
     {
         /// <summary>
         /// Gets or sets the logger to use

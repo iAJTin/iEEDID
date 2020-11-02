@@ -5,7 +5,7 @@ namespace iEEDID.Code
 
     using iTin.Hardware.Specification;
 
-    using ComponentModel;
+    using iEEDID.ComponentModel.Parser;
 
     /// <summary>
     /// Parse EEDID Information From Current System.

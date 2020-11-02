@@ -1,5 +1,5 @@
 ﻿
-namespace iEEDID.ComponentModel
+namespace iEEDID.ComponentModel.Parser
 {
     using iTin.Logging.ComponentModel;
 

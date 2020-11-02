@@ -10,13 +10,13 @@ namespace iEEDID.Code
     /// <summary>
     /// Parse EEDID Information From Byte Array Data.
     /// </summary>
-    internal class Sample02
+    internal class Sample04
     {
         public static void Generate(ILogger logger)
         {
             EEDID instance = EEDID.Parse(MacBookPro2018.IntegratedLaptopPanelEdidTable);
 
-            var parser = new RawParser { Logger = logger };
+            var parser = new TechParser { Logger = logger };
             parser.Parse(instance);
         }
 
