@@ -157,35 +157,28 @@ namespace iTin.Hardware.Specification.Eedid
         private static ReadOnlyCollection<byte> GetDetailedTimingData(ReadOnlyCollection<byte> ceaData)
         {
             byte d = ceaData[0x02];
-            int nativeFormats = ceaData[0x03] & 0x0f;
 
             if (d == 0)
             {
                 return null;
             }
 
+            int begin = d;
             var ceaDataArray = ceaData.ToArray();
-
-            //int begin = d;
-            //bool ok = true;
-            //while (ok)
-            //{
-            //    if ((ceaDataArray[begin] == 0x00) && (ceaDataArray[begin+1]== 0x00))                    
-            //        ok = false;
-            //    else
-            //        begin += 0x12;
-            //}
-
-            byte[] detailedTimingData;
-            if (ceaData[0x01] == 0x01)
+            List<byte> detailedTimingData = new List<byte>();
+            while (true)
             {
-                detailedTimingData = new byte[0x12 * 3];
-                Array.Copy(ceaDataArray, d, detailedTimingData, 0x00, 0x12 * 3);
-            }
-            else
-            {
-                detailedTimingData = new byte[0x12 * nativeFormats];
-                Array.Copy(ceaDataArray, d, detailedTimingData, 0x00, 0x12 * nativeFormats);                  
+                if ((ceaDataArray[begin] == 0x00) && (ceaDataArray[begin + 1] == 0x00))
+                {
+                    break;
+                }
+                else
+                {
+                    byte[] data = new byte[0x12];
+                    Array.Copy(ceaDataArray, begin, data, 0x00, 0x12);
+                    detailedTimingData.AddRange(data);
+                    begin += 0x12;
+                }
             }
 
             return new ReadOnlyCollection<byte>(detailedTimingData);
