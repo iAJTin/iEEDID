@@ -97,6 +97,20 @@ namespace iTin.Hardware.Specification.Eedid
 
         #endregion
 
+        #region public methods
+
+        #region [protected] (ReadOnlyCollection<byte>) GetRawData(): Returns current raw data block data
+        /// <summary>
+        /// Returns current raw data block data.
+        /// </summary>
+        /// <returns>
+        /// Raw data block data.
+        /// </returns>
+        public ReadOnlyCollection<byte> GetRawData() => RawData;
+        #endregion
+
+        #endregion
+
         #region protected virtual methods
 
         #region [protected] {virtual} (void) InitDataSectionTable(Dictionary<Enum, ReadOnlyCollection<byte>>): Initialize dictionary with raw data available for sections of the current block

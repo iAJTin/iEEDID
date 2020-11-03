@@ -367,10 +367,15 @@ namespace iTin.Hardware.Specification.Eedid
     /// </summary>
     internal enum EdidCheckSumProperty
     {
-        [PropertyDescription("")]
+        [PropertyDescription("Status")]
         [PropertyType(typeof(bool))]
         [PropertyName("Ok")]
         Ok,
+
+        [PropertyDescription("Checksum datablock value")]
+        [PropertyType(typeof(bool))]
+        [PropertyName("Value")]
+        Value,
     }
     #endregion
 
@@ -382,11 +387,11 @@ namespace iTin.Hardware.Specification.Eedid
 
     #region Descriptors
 
-    #region [internal] (enum) EdidDataBlockDescriptor: Definition of types of possible descriptors for a 'DataBlock' block
+    #region [public] (enum) EdidDataBlockDescriptor: Definition of types of possible descriptors for a 'DataBlock' block
     /// <summary>
     /// Definition of types of possible descriptors for a <see cref="KnownEdidSection.DataBlocks"/> block.
     /// </summary>
-    internal enum EdidDataBlockDescriptor
+    public enum EdidDataBlockDescriptor
     {
         /// <summary>
         /// Descriptor <b>Detailed Timing</b>, for more information see <see cref ="DetailedTimingModeDescriptor"/>.

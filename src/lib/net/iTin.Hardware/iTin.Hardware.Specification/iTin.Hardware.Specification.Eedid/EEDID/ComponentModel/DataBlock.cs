@@ -3,6 +3,7 @@ namespace iTin.Hardware.Specification.Eedid
 {
     using System;
     using System.Collections.Generic;
+    using System.Collections.ObjectModel;
     using System.Diagnostics;
 
     /// <summary>
@@ -28,7 +29,10 @@ namespace iTin.Hardware.Specification.Eedid
         internal DataBlock(KeyValuePair<KnownDataBlock, BaseDataBlock> blockDictionaryEntry)
         {
             Key = blockDictionaryEntry.Key;
-            SectionTable = blockDictionaryEntry.Value.SectionTable;
+
+            var targetBlock = blockDictionaryEntry.Value;
+            RawData = targetBlock.GetRawData();
+            SectionTable = targetBlock.SectionTable;
         }
         #endregion
 
@@ -66,6 +70,16 @@ namespace iTin.Hardware.Specification.Eedid
         /// </value>
         [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public DataBlockCollection Parent => _parent;
+        #endregion
+
+        #region [public] (ReadOnlyCollection<byte>) RawData: Gets current raw data block data
+        /// <summary>
+        /// Gets current raw data block data.
+        /// </summary>
+        /// <returns>
+        /// Raw data block data.
+        /// </returns>
+        public ReadOnlyCollection<byte> RawData { get; }
         #endregion
 
         #region [public] (BaseDataSectionCollection) Sections: Gets the collection of sections available for this DataBlock
