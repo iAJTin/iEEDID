@@ -11,7 +11,7 @@ All notable changes to this project will be documented in this file.
 
  - Added support for **MacOS** (Tested on macOS Catalina Version 10.15.7)
 
- - Added support for **CEA** blocks (In progres...)
+ - Added support for **CEA** blocks (In progress...)
  
  - Added **EEDID.Instance** static property for gets all available **EEDID** structures for current system
 
