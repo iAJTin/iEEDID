@@ -159,6 +159,20 @@ namespace iTin.Hardware.Specification
 
         #endregion
 
+        #region public methods
+
+        #region [public] (ReadOnlyCollection<byte>) GetRawData(): Returns the raw data for current EEDID instance
+        /// <summary>
+        /// Returns the raw data for current <see cref="EEDID"/> instance.
+        /// </summary>
+        /// <returns>
+        /// The raw data for current <see cref="EEDID"/> instance.
+        /// </returns>
+        public ReadOnlyCollection<byte> GetRawData() => new ReadOnlyCollection<byte>(Blocks.SelectMany(b => b.RawData).ToList());
+        #endregion
+
+        #endregion
+
         #region public override methods
 
         #region [public] {override} (String) ToString: Returns a string that represents the current object

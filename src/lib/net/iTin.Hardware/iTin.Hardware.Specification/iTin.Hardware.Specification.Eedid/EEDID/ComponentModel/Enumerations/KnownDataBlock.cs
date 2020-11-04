@@ -19,7 +19,7 @@ namespace iTin.Hardware.Specification.Eedid
         /// Implements CEA-EXT: Data Block Collection (CEA 861/A/B Extension)
         /// </summary>
         [PropertyName("CEA")]
-        [PropertyDescription("CEA-EXT: Data Block Collection (CEA 861/A/B Extension)")]
+        [PropertyDescription("CTA-861 Extension Block")]
         CEA,
 
         /// <summary>

@@ -5,6 +5,7 @@ namespace iTin.Hardware.Specification.Eedid
     using System.Collections.Generic;
     using System.Collections.ObjectModel;
     using System.Diagnostics;
+    using System.Linq;
 
     /// <summary>
     /// Represents a data block
@@ -31,7 +32,7 @@ namespace iTin.Hardware.Specification.Eedid
             Key = blockDictionaryEntry.Key;
 
             var targetBlock = blockDictionaryEntry.Value;
-            RawData = targetBlock.GetRawData();
+            RawData = new ReadOnlyCollection<byte>(targetBlock.GetRawData().ToList().Take(128).ToList());
             SectionTable = targetBlock.SectionTable;
         }
         #endregion
