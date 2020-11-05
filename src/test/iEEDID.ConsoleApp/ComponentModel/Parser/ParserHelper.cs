@@ -82,7 +82,7 @@ namespace iEEDID.ComponentModel.Parser
             var checksumSection = block.Sections[(int)KnownCeaSection.CheckSum];
             var status = checksumSection.GetProperty(EedidProperty.Cea.CheckSum.Ok);
             var value = checksumSection.GetProperty(EedidProperty.Cea.CheckSum.Value);
-            logger.Info($@" Checksum: {value.Value.Value:x2} ({((bool)status.Value.Value ? "Valid" : "Invalid")})");
+            logger.Info($@" Checksum: 0x{value.Value.Value:x2} ({((bool)status.Value.Value ? "Valid" : "Invalid")})");
             #endregion
 
             #region End Block
@@ -408,7 +408,7 @@ namespace iEEDID.ComponentModel.Parser
                         var alphanumericData = dataBlocksSection.GetProperty(dataBlockProperty);
                         var alphanumericDataProperties = (SectionPropertiesTable)alphanumericData.Value.Value;
                         var alphanumericDataValue = (List<PropertyItem>)alphanumericDataProperties[EedidProperty.Edid.DataBlock.Definition.AlphanumericDataString.Data];
-                        logger.Info($@"     Alphanumeric Data String: {alphanumericDataValue.FirstOrDefault().Value.ToString().Trim()}");
+                        logger.Info($@"     Alphanumeric Data String: '{alphanumericDataValue.FirstOrDefault().Value.ToString().Trim()}'");
                         break;
 
                     case EdidDataBlockDescriptor.ColorManagementData:
@@ -445,21 +445,21 @@ namespace iEEDID.ComponentModel.Parser
                         var displayProductName = dataBlocksSection.GetProperty(dataBlockProperty);
                         var displayProductNameProperties = (SectionPropertiesTable)displayProductName.Value.Value;
                         var displayProductNameValue = (List<PropertyItem>)displayProductNameProperties[EedidProperty.Edid.DataBlock.Definition.DisplayProductName.Data];
-                        logger.Info($@"     Display Product Name: {displayProductNameValue.FirstOrDefault().Value.ToString().Trim()}");
+                        logger.Info($@"     Display Product Name: '{displayProductNameValue.FirstOrDefault().Value.ToString().Trim()}'");
                         break;
 
                     case EdidDataBlockDescriptor.DisplayProductSerialNumber:
                         var productSerialNumber = dataBlocksSection.GetProperty(dataBlockProperty);
                         var productSerialNumberProperties = (SectionPropertiesTable)productSerialNumber.Value.Value;
                         var productSerialNumberValue = (List<PropertyItem>)productSerialNumberProperties[EedidProperty.Edid.DataBlock.Definition.DisplayProductSerialNumber.Data];
-                        logger.Info($@"     Display Product Serial Number: {productSerialNumberValue.FirstOrDefault().Value.ToString().Trim()}");
+                        logger.Info($@"     Display Product Serial Number: '{productSerialNumberValue.FirstOrDefault().Value.ToString().Trim()}'");
                         break;
 
                     case EdidDataBlockDescriptor.DummyData:
                         var dummyData = dataBlocksSection.GetProperty(dataBlockProperty);
                         var dummyDataProperties = (SectionPropertiesTable)dummyData.Value.Value;
                         var dummyValue = (List<PropertyItem>)dummyDataProperties[EedidProperty.Edid.DataBlock.Definition.DummyData.OriginalData];
-                        logger.Info($@"     Dummy Data: {dummyValue.FirstOrDefault().Value.ToString().Trim()}");
+                        logger.Info($@"     Dummy Data: '{dummyValue.FirstOrDefault().Value.ToString().Trim()}'");
                         break;
 
                     case EdidDataBlockDescriptor.EstablishedTimingsIII:
@@ -507,7 +507,7 @@ namespace iEEDID.ComponentModel.Parser
             var checksumSection = block.Sections[(int)KnownEdidSection.CheckSum];
             var status = checksumSection.GetProperty(EedidProperty.Edid.CheckSum.Ok);
             var value = checksumSection.GetProperty(EedidProperty.Edid.CheckSum.Value);
-            logger.Info($@" Checksum: {value.Value.Value:x2} ({((bool)status.Value.Value ? "Valid" : "Invalid")})");
+            logger.Info($@" Checksum: 0x{value.Value.Value:x2} ({((bool)status.Value.Value ? "Valid" : "Invalid")})");
             #endregion
 
             #region End Block
