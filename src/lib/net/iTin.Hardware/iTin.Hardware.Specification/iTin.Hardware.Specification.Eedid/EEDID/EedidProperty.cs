@@ -3385,7 +3385,6 @@ namespace iTin.Hardware.Specification.Eedid
                 /// </summary>
                 public static IPropertyKey Value => new PropertyKey(KnownEdidSection.CheckSum, EdidCheckSumProperty.Value);
                 #endregion
-
             }
             #endregion
         }
@@ -5158,6 +5157,31 @@ namespace iTin.Hardware.Specification.Eedid
                 /// </summary>
                 public static IPropertyKey Ok => new PropertyKey(KnownCeaSection.CheckSum, CeaCheckSum.Ok);
                 #endregion
+
+                #region [public] {static} (IPropertyKey) Value: Gets a value representing the key to retrieve the property value
+                /// <summary>
+                /// <para>Gets a value representing the key to retrieve the property value.</para>
+                /// <para>Contains checksum byte block value.</para>
+                /// <para>
+                ///  <para><b>Key Composition</b></para>
+                ///  <list type="bullet">
+                ///   <item><description>Structure: <see cref="KnownCeaSection.CheckSum"/></description></item>
+                ///   <item><description>Property: <see cref="CeaCheckSum.Value"/></description></item>
+                ///   <item><description>Unit: <see cref="PropertyUnit.None"/></description></item>
+                ///  </list>
+                /// </para>
+                /// <para>
+                ///  <para><b>Return Value</b></para>
+                ///  <para>Type: <see cref="byte"/>.</para>
+                /// </para>
+                /// <para>
+                ///  <para><b>Remarks</b></para>
+                ///  <para>1.4</para>
+                /// </para>
+                /// </summary>
+                public static IPropertyKey Value => new PropertyKey(KnownCeaSection.CheckSum, CeaCheckSum.Value);
+                #endregion
+
             }
             #endregion
         }

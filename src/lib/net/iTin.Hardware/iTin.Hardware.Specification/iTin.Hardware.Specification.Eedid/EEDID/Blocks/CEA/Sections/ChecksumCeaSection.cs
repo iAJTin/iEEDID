@@ -3,6 +3,7 @@ namespace iTin.Hardware.Specification.Eedid
 {
     using System.Collections.ObjectModel;
     using System.Diagnostics;
+    using System.Linq;
 
     // CEA Section: CheckSum
     // •————————————————————————————————————————————————————————————————————————————————————————————————————————•
@@ -69,6 +70,7 @@ namespace iTin.Hardware.Specification.Eedid
         /// <param name="properties">Collection of properties of this section.</param>
         protected override void PopulateProperties(SectionPropertiesTable properties)
         {
+            properties.Add(EedidProperty.Cea.CheckSum.Value, RawData.LastOrDefault());
             properties.Add(EedidProperty.Cea.CheckSum.Ok, Status);
         }
         #endregion

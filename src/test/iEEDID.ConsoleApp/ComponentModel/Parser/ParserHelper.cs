@@ -77,6 +77,19 @@ namespace iEEDID.ComponentModel.Parser
             var revisionInformation = informationSection.GetProperty(EedidProperty.Cea.Information.Revision);
             logger.Info($@"   Revision: {revisionInformation.Value.Value}");
             #endregion
+
+            #region CheckSum Section
+            var checksumSection = block.Sections[(int)KnownCeaSection.CheckSum];
+            var status = checksumSection.GetProperty(EedidProperty.Cea.CheckSum.Ok);
+            var value = checksumSection.GetProperty(EedidProperty.Cea.CheckSum.Value);
+            logger.Info($@" Checksum: {value.Value.Value:x2} ({((bool)status.Value.Value ? "Valid" : "Invalid")})");
+            #endregion
+
+            #region End Block
+            logger.Info("");
+            logger.Info(new string('─', 15));
+            logger.Info("");
+            #endregion
         }
 
         private static void PrintsEdidBlock(ILogger logger, DataBlock block)
@@ -316,54 +329,69 @@ namespace iEEDID.ComponentModel.Parser
             var timing6 = standardTimingsSection.GetProperty(EedidProperty.Edid.StandardTimings.Timing6);
             var timing7 = standardTimingsSection.GetProperty(EedidProperty.Edid.StandardTimings.Timing7);
             var timing8 = standardTimingsSection.GetProperty(EedidProperty.Edid.StandardTimings.Timing8);
-            var hasTimings = timing1.Success == true && timing2.Success == true && timing3.Success == true && timing4.Success == true && 
+            var hasValidTimings = 
+                timing1.Success == true && timing2.Success == true && timing3.Success == true && timing4.Success == true && 
                 timing5.Success == true && timing6.Success == true && timing7.Success == true && timing8.Success == true;
-            if (!hasTimings)
+            if (!hasValidTimings)
             {
                 logger.Info($@"   Standard Timings: none");
             }
             else
             {
-                var hasTimingsValues = timing1.Value.Value != null && timing2.Value.Value != null && timing3.Value.Value != null && timing4.Value.Value != null &&
-                    timing5.Value.Value != null && timing6.Value.Value != null && timing7.Value.Value != null && timing8.Value.Value != null;
-                if (!hasTimingsValues)
+                var timings = new Collection<StandardTimingIdentifierDescriptorItem>();
+                if(timing1.Value.Value != null)
+                {
+                    timings.Add((StandardTimingIdentifierDescriptorItem)timing1.Value.Value);
+                }
+
+                if (timing2.Value.Value != null)
+                {
+                    timings.Add((StandardTimingIdentifierDescriptorItem)timing2.Value.Value);
+                }
+
+                if (timing3.Value.Value != null)
+                {
+                    timings.Add((StandardTimingIdentifierDescriptorItem)timing3.Value.Value);
+                }
+
+                if (timing4.Value.Value != null)
+                {
+                    timings.Add((StandardTimingIdentifierDescriptorItem)timing4.Value.Value);
+                }
+
+                if (timing5.Value.Value != null)
+                {
+                    timings.Add((StandardTimingIdentifierDescriptorItem)timing5.Value.Value);
+                }
+
+                if (timing6.Value.Value != null)
+                {
+                    timings.Add((StandardTimingIdentifierDescriptorItem)timing6.Value.Value);
+                }
+
+                if (timing7.Value.Value != null)
+                {
+                    timings.Add((StandardTimingIdentifierDescriptorItem)timing7.Value.Value);
+                }
+
+                if (timing8.Value.Value != null)
+                {
+                    timings.Add((StandardTimingIdentifierDescriptorItem)timing8.Value.Value);
+                }
+
+                var hasTimingValues = timings.Any();
+                if (!hasTimingValues)
                 {
                     logger.Info($@"   Standard Timings: none");
                 }
                 else
                 {
                     logger.Info($@"   Standard Timings:");
-                    var item1 = (StandardTimingIdentifierDescriptorItem)timing1.Value.Value;
-                    var resolution1 = $@"{item1.HorizontalPixels}x{item1.VerticalPixels}";
-                    logger.Info($@"     {resolution1,9}{'\t'}{item1.RefreshRate} Hz{'\t'}{item1.AspectRatio}");
-
-                    var item2 = (StandardTimingIdentifierDescriptorItem)timing2.Value.Value;
-                    var resolution2 = $@"{item2.HorizontalPixels}x{item2.VerticalPixels}";
-                    logger.Info($@"     {resolution2,9}{'\t'}{item2.RefreshRate} Hz{'\t'}{item2.AspectRatio}");
-
-                    var item3 = (StandardTimingIdentifierDescriptorItem)timing3.Value.Value;
-                    var resolution3 = $@"{item3.HorizontalPixels}x{item3.VerticalPixels}";
-                    logger.Info($@"     {resolution3,9}{'\t'}{item3.RefreshRate} Hz{'\t'}{item3.AspectRatio}");
-
-                    var item4 = (StandardTimingIdentifierDescriptorItem)timing4.Value.Value;
-                    var resolution4 = $@"{item4.HorizontalPixels}x{item4.VerticalPixels}";
-                    logger.Info($@"     {resolution4,9}{'\t'}{item4.RefreshRate} Hz{'\t'}{item4.AspectRatio}");
-
-                    var item5 = (StandardTimingIdentifierDescriptorItem)timing5.Value.Value;
-                    var resolution5 = $@"{item5.HorizontalPixels}x{item5.VerticalPixels}";
-                    logger.Info($@"     {resolution5,9}{'\t'}{item5.RefreshRate} Hz{'\t'}{item5.AspectRatio}");
-
-                    var item6 = (StandardTimingIdentifierDescriptorItem)timing6.Value.Value;
-                    var resolution6 = $@"{item6.HorizontalPixels}x{item6.VerticalPixels}";
-                    logger.Info($@"     {resolution6,9}{'\t'}{item6.RefreshRate} Hz{'\t'}{item6.AspectRatio}");
-
-                    var item7 = (StandardTimingIdentifierDescriptorItem)timing7.Value.Value;
-                    var resolution7 = $@"{item7.HorizontalPixels}x{item7.VerticalPixels}";
-                    logger.Info($@"     {resolution7,9}{'\t'}{item7.RefreshRate} Hz{'\t'}{item7.AspectRatio}");
-
-                    var item8 = (StandardTimingIdentifierDescriptorItem)timing8.Value.Value;
-                    var resolution8 = $@"{item8.HorizontalPixels}x{item8.VerticalPixels}";
-                    logger.Info($@"     {resolution8,9}{'\t'}{item8.RefreshRate} Hz{'\t'}{item8.AspectRatio}");
+                    foreach (var timing in timings)
+                    {
+                        var resolution1 = $@"{timing.HorizontalPixels}x{timing.VerticalPixels}";
+                        logger.Info($@"     {resolution1,9}{'\t'}{timing.RefreshRate} Hz{'\t'}{timing.AspectRatio}");
+                    }
                 }
             }
             #endregion
@@ -393,8 +421,24 @@ namespace iEEDID.ComponentModel.Parser
                         break;
 
                     case EdidDataBlockDescriptor.DetailedTimingMode:
-                        var dtd = dataBlocksSection.GetProperty(dataBlockProperty);
-                        //var dtdProperties = (SectionPropertiesTable)dtd.Value.Value;
+                        var detailedTimingMode = dataBlocksSection.GetProperty(dataBlockProperty);
+                        var detailedTimingModeProperties = (SectionPropertiesTable)detailedTimingMode.Value.Value;
+                        var horResolutionValue = (List<PropertyItem>)detailedTimingModeProperties[EedidProperty.Edid.DataBlock.Definition.DetailedTimingMode.HorizontalResolution];
+                        var vertResolutionValue = (List<PropertyItem>)detailedTimingModeProperties[EedidProperty.Edid.DataBlock.Definition.DetailedTimingMode.VerticalLines];
+                        var vertImageSizeValue = (List<PropertyItem>)detailedTimingModeProperties[EedidProperty.Edid.DataBlock.Definition.DetailedTimingMode.VerticalImageSize];
+                        var horImageSizeValue = (List<PropertyItem>)detailedTimingModeProperties[EedidProperty.Edid.DataBlock.Definition.DetailedTimingMode.HorizontalImageSize];
+                        //var horImageSizeValue = (List<PropertyItem>)detailedTimingModeProperties[EedidProperty.Edid.DataBlock.Definition.DetailedTimingMode];
+                        var pixelClockValue = (List<PropertyItem>)detailedTimingModeProperties[EedidProperty.Edid.DataBlock.Definition.DetailedTimingMode.PixelClock];
+                        
+                        var horizontalFrontPorchValue = (List<PropertyItem>)detailedTimingModeProperties[EedidProperty.Edid.DataBlock.Definition.DetailedTimingMode.HorizontalFrontPorch];
+                        var horizontalSyncPulseValue = (List<PropertyItem>)detailedTimingModeProperties[EedidProperty.Edid.DataBlock.Definition.DetailedTimingMode.HorizontalSyncPulseWidth];
+                        var verticalFrontPorchValue = (List<PropertyItem>)detailedTimingModeProperties[EedidProperty.Edid.DataBlock.Definition.DetailedTimingMode.VerticalFrontPorch];
+                        var verticalSyncPulseValue = (List<PropertyItem>)detailedTimingModeProperties[EedidProperty.Edid.DataBlock.Definition.DetailedTimingMode.VerticalSyncPulseWidth];
+
+                        var resolution = $@"{horResolutionValue.FirstOrDefault().Value}x{vertResolutionValue.FirstOrDefault().Value}";
+                        logger.Info($@"     DTD: {resolution,9}  60.020 Hz  5:4  63.981 kHz {(((int)pixelClockValue.FirstOrDefault().Value) / 1000):N0} MHz ({horImageSizeValue.FirstOrDefault().Value} mm x {vertImageSizeValue.FirstOrDefault().Value} mm)");
+                        logger.Info($@"               Hfront {horizontalFrontPorchValue.FirstOrDefault().Value} Hsync {horizontalSyncPulseValue.FirstOrDefault().Value} Hback ");
+                        logger.Info($@"               Vfront {verticalFrontPorchValue.FirstOrDefault().Value} Vsync {verticalSyncPulseValue.FirstOrDefault().Value} Vback");
                         break;
 
                     case EdidDataBlockDescriptor.DisplayProductName:
@@ -406,11 +450,9 @@ namespace iEEDID.ComponentModel.Parser
 
                     case EdidDataBlockDescriptor.DisplayProductSerialNumber:
                         var productSerialNumber = dataBlocksSection.GetProperty(dataBlockProperty);
-                        logger.Info($@"     Display Product Serial Number: {productSerialNumber.Value.Value}");
-                        break;
-
-                    case EdidDataBlockDescriptor.DisplayRangeLimits:
-                        var drl = dataBlocksSection.GetProperty(dataBlockProperty);
+                        var productSerialNumberProperties = (SectionPropertiesTable)productSerialNumber.Value.Value;
+                        var productSerialNumberValue = (List<PropertyItem>)productSerialNumberProperties[EedidProperty.Edid.DataBlock.Definition.DisplayProductSerialNumber.Data];
+                        logger.Info($@"     Display Product Serial Number: {productSerialNumberValue.FirstOrDefault().Value.ToString().Trim()}");
                         break;
 
                     case EdidDataBlockDescriptor.DummyData:
@@ -436,6 +478,22 @@ namespace iEEDID.ComponentModel.Parser
                     case EdidDataBlockDescriptor.StandardTimingIdentifier:
                         break;
                 }
+            }
+            #endregion
+
+            #region Display Range Limits
+            var hasDisplayRangeLimitsBlock = dataBlocksSection.ImplementedProperties.Contains(EedidProperty.Edid.DataBlock.Descriptor.DisplayRangeLimits);
+            if (hasDisplayRangeLimitsBlock)
+            {
+                var displayRangeLimitsBlock = dataBlocksSection.GetProperty(EedidProperty.Edid.DataBlock.Descriptor.DisplayRangeLimits);
+                var displayRangeLimitsBlockProperties = (SectionPropertiesTable)displayRangeLimitsBlock.Value.Value;
+                var minVertRateValue = (List<PropertyItem>)displayRangeLimitsBlockProperties[EedidProperty.Edid.DataBlock.Definition.DisplayRangeLimits.MinimumVerticalRate];
+                var maxVertRateValue = (List<PropertyItem>)displayRangeLimitsBlockProperties[EedidProperty.Edid.DataBlock.Definition.DisplayRangeLimits.MaximumVerticalRate];
+                var minHortRateValue = (List<PropertyItem>)displayRangeLimitsBlockProperties[EedidProperty.Edid.DataBlock.Definition.DisplayRangeLimits.MinimumHorizontalRate];
+                var maxHortRateValue = (List<PropertyItem>)displayRangeLimitsBlockProperties[EedidProperty.Edid.DataBlock.Definition.DisplayRangeLimits.MaximumHorizontalRate];
+                var maxClockValue = (List<PropertyItem>)displayRangeLimitsBlockProperties[EedidProperty.Edid.DataBlock.Definition.DisplayRangeLimits.MaximumPixelClock];
+                logger.Info($@"   Display Range Limits:");
+                logger.Info($@"     Monitor ranges (GTF): {minVertRateValue.FirstOrDefault().Value}-{maxVertRateValue.FirstOrDefault().Value} Hz V, {minHortRateValue.FirstOrDefault().Value}-{maxHortRateValue.FirstOrDefault().Value} kHz H, max dotclock {maxClockValue.FirstOrDefault().Value} MHz");
             }
             #endregion
 

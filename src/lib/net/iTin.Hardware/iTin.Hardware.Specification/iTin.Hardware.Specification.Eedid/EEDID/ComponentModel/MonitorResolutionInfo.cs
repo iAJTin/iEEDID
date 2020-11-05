@@ -135,10 +135,14 @@ namespace iTin.Hardware.Specification.Eedid
                         return "4:3";
                     case (double)1.6:
                         return "16:10";
-                    case (double)5 /4:
+                    case (double)5 / 4:
                         return "5:4";
-                    case (double)16/9:
+                    case (double)9 / 5:
+                        return "9:5";
+                    case (double)16 / 9:
                         return "16:9";
+                    case (double)192 / 145:
+                        return "192:145";
                     default:
                         return "1:1";
                 }

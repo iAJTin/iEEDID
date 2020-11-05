@@ -64,6 +64,11 @@ namespace iTin.Hardware.Specification.Eedid
         [PropertyDescription("Status")]
         [PropertyType(typeof(bool))]
         Ok,
+
+        [PropertyDescription("Checksum datablock value")]
+        [PropertyType(typeof(bool))]
+        [PropertyName("Value")]
+        Value,
     }
     #endregion
 

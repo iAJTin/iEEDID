@@ -28,15 +28,15 @@ namespace iEEDID
             //logger.Info("  · Raw Parse EEDID Information From Byte Array Data");
             //Sample02.Generate(logger);
 
-            logger.Info("");
-            logger.Info("> Start EEDID Sample 3");
-            logger.Info("  · Tech Parse EEDID Information From Current System");
-            Sample03.Generate(logger);
-
             //logger.Info("");
-            //logger.Info("> Start EEDID Sample 4");
-            //logger.Info("  · Tech Parse EEDID Information From Byte Array Data");
-            //Sample04.Generate(logger);
+            //logger.Info("> Start EEDID Sample 3");
+            //logger.Info("  · Tech Parse EEDID Information From Current System");
+            //Sample03.Generate(logger);
+
+            logger.Info("");
+            logger.Info("> Start EEDID Sample 4");
+            logger.Info("  · Tech Parse EEDID Information From Byte Array Data");
+            Sample04.Generate(logger);
 
             logger.Info("");
             logger.Debug(">End Logging<");
