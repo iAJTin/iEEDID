@@ -44,15 +44,7 @@ namespace iTin.Hardware.Specification.Eedid
         /// <param name="properties">Collection of properties of this section.</param>
         protected override void PopulateProperties(SectionPropertiesTable properties)
         {
-            byte[] data = RawData.ToArray();
-            properties.Add(EedidProperty.Edid.DataBlock.Definition.ManufacturerSpecifiedData.Data, Encoding.ASCII.GetString(data, 0x00, data.Length));
-
-            //byte[] rawData = RawData.ToArray();
-            //string originalString = Encoding.ASCII.GetString(rawData, 0x00, rawData.Length);
-            //string printableString = new string(originalString.Where(c => !char.IsControl(c)).ToArray());
-
-            //properties.Add(EedidProperty.Edid.DataBlock.Definition.ManufacturerSpecifiedData.OriginalData, originalString);
-            //properties.Add(EedidProperty.Edid.DataBlock.Definition.ManufacturerSpecifiedData.PrintableData, printableString);
+            properties.Add(EedidProperty.Edid.DataBlock.Definition.ManufacturerSpecifiedData.Data, RawData);
         }
         #endregion
 

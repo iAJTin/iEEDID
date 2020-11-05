@@ -2792,7 +2792,7 @@ namespace iTin.Hardware.Specification.Eedid
 
                     #region [public] {static} (class) ManufacturerSpecifiedData: Definition of keys in the 'DataBlock' of 'ManufacturerSpecifiedData' type
                     /// <summary>
-                    /// Definition of keys in the <b>DataBlock</b> of <see cref="EdidDataBlockDescriptor.ManufacturerSpecifiedData"/> type.
+                    /// Definition of keys in the <b>DataBlock</b> of <see cref="EdidDataBlockDescriptor.ManufacturerSpecifiedData00"/> type.
                     /// </summary>
                     public static class ManufacturerSpecifiedData
                     {
@@ -2803,7 +2803,7 @@ namespace iTin.Hardware.Specification.Eedid
                         /// <para>
                         ///  <para><b>Key Composition</b></para>
                         ///  <list type="bullet">
-                        ///   <item><description>Structure: <see cref="EdidDataBlockDescriptor.ManufacturerSpecifiedData"/></description></item>
+                        ///   <item><description>Structure: <see cref="EdidDataBlockDescriptor.ManufacturerSpecifiedData00"/></description></item>
                         ///   <item><description>Property: <see cref="ManufacturerSpecifiedDataDescriptorProperty.Data"/></description></item>
                         ///   <item><description>Unit: <see cref="PropertyUnit.None"/></description></item>
                         ///  </list>
@@ -2817,7 +2817,7 @@ namespace iTin.Hardware.Specification.Eedid
                         ///  <para>1.4</para>
                         /// </para>
                         /// </summary>
-                        public static IPropertyKey Data => new PropertyKey(EdidDataBlockDescriptor.ManufacturerSpecifiedData, ManufacturerSpecifiedDataDescriptorProperty.Data);
+                        public static IPropertyKey Data => new PropertyKey(EdidDataBlockDescriptor.ManufacturerSpecifiedData00, ManufacturerSpecifiedDataDescriptorProperty.Data);
                         #endregion
                     }
                     #endregion
@@ -3222,7 +3222,7 @@ namespace iTin.Hardware.Specification.Eedid
                     public static IPropertyKey EstablishedTimingsIII => new PropertyKey(KnownEdidSection.DataBlocks, EdidDataBlockDescriptor.EstablishedTimingsIII);
                     #endregion
 
-                    #region [public] {static} (IPropertyKey) ManufacturerSpecifiedData: Gets a value representing the key to retrieve the property value
+                    #region [public] {static} (IPropertyKey) ManufacturerSpecifiedData00: Gets a value representing the key to retrieve the property value
                     /// <summary>
                     /// <para>Gets a value representing the key to retrieve the property value.</para>
                     /// <para>Represents the manufacturer specified data datablock descriptor.</para>
@@ -3230,7 +3230,7 @@ namespace iTin.Hardware.Specification.Eedid
                     ///  <para><b>Key Composition</b></para>
                     ///  <list type="bullet">
                     ///   <item><description>Structure: <see cref="KnownEdidSection.DataBlocks"/></description></item>
-                    ///   <item><description>Property: <see cref="EdidDataBlockDescriptor.ManufacturerSpecifiedData"/></description></item>
+                    ///   <item><description>Property: <see cref="EdidDataBlockDescriptor.ManufacturerSpecifiedData00"/></description></item>
                     ///   <item><description>Unit: <see cref="PropertyUnit.None"/></description></item>
                     ///  </list>
                     /// </para>
@@ -3243,7 +3243,7 @@ namespace iTin.Hardware.Specification.Eedid
                     ///  <para>1.4</para>
                     /// </para>
                     /// </summary>
-                    public static IPropertyKey ManufacturerSpecifiedData => new PropertyKey(KnownEdidSection.DataBlocks, EdidDataBlockDescriptor.ManufacturerSpecifiedData);
+                    public static IPropertyKey ManufacturerSpecifiedData00 => new PropertyKey(KnownEdidSection.DataBlocks, EdidDataBlockDescriptor.ManufacturerSpecifiedData00);
                     #endregion
 
                     #region [public] {static} (IPropertyKey) StandardTimingIdentifier: Gets a value representing the key to retrieve the property value

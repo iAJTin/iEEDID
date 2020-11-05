@@ -462,7 +462,7 @@ namespace iTin.Hardware.Specification.Eedid
         /// </summary>
         [PropertyType(typeof(Cvt3ByteCodeDescriptor))]
         [PropertyName("CVT 3 Byte Code")]
-        [PropertyDescription("Descriptor de tipo 'CVT 3 Bytes Timing Codes'")]
+        [PropertyDescription("CVT 3 Bytes Timing Codes")]
         Cvt3ByteCode = 0xf8,
 
         /// <summary>
@@ -470,7 +470,7 @@ namespace iTin.Hardware.Specification.Eedid
         /// </summary>
         [PropertyType(typeof(EstablishedTimingsIIIDescriptor))]
         [PropertyName("Established Timings III")]
-        [PropertyDescription("Descriptor de tipo 'Established Timings III'")]
+        [PropertyDescription("Established Timings III")]
         EstablishedTimingsIII = 0xf7,
 
         /// <summary>
@@ -478,23 +478,143 @@ namespace iTin.Hardware.Specification.Eedid
         /// </summary>
         [PropertyType(typeof(DummyDataDescriptor))]
         [PropertyName("Dummy Data")]
-        [PropertyDescription("Descriptor de tipo 'Dummy Data Descriptor'")]
+        [PropertyDescription("Dummy Data Descriptor")]
         DummyData = 0x10,
-
-        /// <summary>
-        /// Descriptor <b>Reserved</b>, for more information see
-        /// </summary>
-        [PropertyName("Reserved")]
-        [PropertyDescription("Descriptor de tipo 'Reserved'")]
-        Reserved = -2,
 
         /// <summary>
         /// Descriptor <b>Manufacturer Specified Data</b>, for more information see <see cref ="ManufacturerSpecifiedDataDescriptor"/>.
         /// </summary>
         [PropertyType(typeof(ManufacturerSpecifiedDataDescriptor))]
         [PropertyName("Manufacturer Specified Data")]
-        [PropertyDescription("Descriptor de tipo 'Manufacturer Specified Data'")]
-        ManufacturerSpecifiedData = 0x00,
+        [PropertyDescription("Manufacturer Specified Data")]
+        ManufacturerSpecifiedData15 = 0x0f,
+
+        /// <summary>
+        /// Descriptor <b>Manufacturer Specified Data</b>, for more information see <see cref ="ManufacturerSpecifiedDataDescriptor"/>.
+        /// </summary>
+        [PropertyType(typeof(ManufacturerSpecifiedDataDescriptor))]
+        [PropertyName("Manufacturer Specified Data")]
+        [PropertyDescription("Manufacturer Specified Data")]
+        ManufacturerSpecifiedData14 = 0x0e,
+
+        /// <summary>
+        /// Descriptor <b>Manufacturer Specified Data</b>, for more information see <see cref ="ManufacturerSpecifiedDataDescriptor"/>.
+        /// </summary>
+        [PropertyType(typeof(ManufacturerSpecifiedDataDescriptor))]
+        [PropertyName("Manufacturer Specified Data")]
+        [PropertyDescription("Manufacturer Specified Data")]
+        ManufacturerSpecifiedData13 = 0x0d,
+
+        /// <summary>
+        /// Descriptor <b>Manufacturer Specified Data</b>, for more information see <see cref ="ManufacturerSpecifiedDataDescriptor"/>.
+        /// </summary>
+        [PropertyType(typeof(ManufacturerSpecifiedDataDescriptor))]
+        [PropertyName("Manufacturer Specified Data")]
+        [PropertyDescription("Manufacturer Specified Data")]
+        ManufacturerSpecifiedData12 = 0x0c,
+
+        /// <summary>
+        /// Descriptor <b>Manufacturer Specified Data</b>, for more information see <see cref ="ManufacturerSpecifiedDataDescriptor"/>.
+        /// </summary>
+        [PropertyType(typeof(ManufacturerSpecifiedDataDescriptor))]
+        [PropertyName("Manufacturer Specified Data")]
+        [PropertyDescription("Manufacturer Specified Data")]
+        ManufacturerSpecifiedData11 = 0x0b,
+
+        /// <summary>
+        /// Descriptor <b>Manufacturer Specified Data</b>, for more information see <see cref ="ManufacturerSpecifiedDataDescriptor"/>.
+        /// </summary>
+        [PropertyType(typeof(ManufacturerSpecifiedDataDescriptor))]
+        [PropertyName("Manufacturer Specified Data")]
+        [PropertyDescription("Manufacturer Specified Data")]
+        ManufacturerSpecifiedData10 = 0x0a,
+
+        /// <summary>
+        /// Descriptor <b>Manufacturer Specified Data</b>, for more information see <see cref ="ManufacturerSpecifiedDataDescriptor"/>.
+        /// </summary>
+        [PropertyType(typeof(ManufacturerSpecifiedDataDescriptor))]
+        [PropertyName("Manufacturer Specified Data")]
+        [PropertyDescription("Manufacturer Specified Data")]
+        ManufacturerSpecifiedData09 = 0x09,
+
+        /// <summary>
+        /// Descriptor <b>Manufacturer Specified Data</b>, for more information see <see cref ="ManufacturerSpecifiedDataDescriptor"/>.
+        /// </summary>
+        [PropertyType(typeof(ManufacturerSpecifiedDataDescriptor))]
+        [PropertyName("Manufacturer Specified Data")]
+        [PropertyDescription("Manufacturer Specified Data")]
+        ManufacturerSpecifiedData08 = 0x08,
+
+        /// <summary>
+        /// Descriptor <b>Manufacturer Specified Data</b>, for more information see <see cref ="ManufacturerSpecifiedDataDescriptor"/>.
+        /// </summary>
+        [PropertyType(typeof(ManufacturerSpecifiedDataDescriptor))]
+        [PropertyName("Manufacturer Specified Data")]
+        [PropertyDescription("Manufacturer Specified Data")]
+        ManufacturerSpecifiedData07 = 0x07,
+
+        /// <summary>
+        /// Descriptor <b>Manufacturer Specified Data</b>, for more information see <see cref ="ManufacturerSpecifiedDataDescriptor"/>.
+        /// </summary>
+        [PropertyType(typeof(ManufacturerSpecifiedDataDescriptor))]
+        [PropertyName("Manufacturer Specified Data")]
+        [PropertyDescription("Manufacturer Specified Data")]
+        ManufacturerSpecifiedData06 = 0x06,
+
+        /// <summary>
+        /// Descriptor <b>Manufacturer Specified Data</b>, for more information see <see cref ="ManufacturerSpecifiedDataDescriptor"/>.
+        /// </summary>
+        [PropertyType(typeof(ManufacturerSpecifiedDataDescriptor))]
+        [PropertyName("Manufacturer Specified Data")]
+        [PropertyDescription("Manufacturer Specified Data")]
+        ManufacturerSpecifiedData05 = 0x05,
+
+        /// <summary>
+        /// Descriptor <b>Manufacturer Specified Data</b>, for more information see <see cref ="ManufacturerSpecifiedDataDescriptor"/>.
+        /// </summary>
+        [PropertyType(typeof(ManufacturerSpecifiedDataDescriptor))]
+        [PropertyName("Manufacturer Specified Data")]
+        [PropertyDescription("Manufacturer Specified Data")]
+        ManufacturerSpecifiedData04 = 0x04,
+
+        /// <summary>
+        /// Descriptor <b>Manufacturer Specified Data</b>, for more information see <see cref ="ManufacturerSpecifiedDataDescriptor"/>.
+        /// </summary>
+        [PropertyType(typeof(ManufacturerSpecifiedDataDescriptor))]
+        [PropertyName("Manufacturer Specified Data")]
+        [PropertyDescription("Manufacturer Specified Data")]
+        ManufacturerSpecifiedData03 = 0x03,
+
+        /// <summary>
+        /// Descriptor <b>Manufacturer Specified Data</b>, for more information see <see cref ="ManufacturerSpecifiedDataDescriptor"/>.
+        /// </summary>
+        [PropertyType(typeof(ManufacturerSpecifiedDataDescriptor))]
+        [PropertyName("Manufacturer Specified Data")]
+        [PropertyDescription("Manufacturer Specified Data")]
+        ManufacturerSpecifiedData02 = 0x02,
+
+        /// <summary>
+        /// Descriptor <b>Manufacturer Specified Data</b>, for more information see <see cref ="ManufacturerSpecifiedDataDescriptor"/>.
+        /// </summary>
+        [PropertyType(typeof(ManufacturerSpecifiedDataDescriptor))]
+        [PropertyName("Manufacturer Specified Data")]
+        [PropertyDescription("Manufacturer Specified Data")]
+        ManufacturerSpecifiedData01 = 0x01,
+
+        /// <summary>
+        /// Descriptor <b>Manufacturer Specified Data</b>, for more information see <see cref ="ManufacturerSpecifiedDataDescriptor"/>.
+        /// </summary>
+        [PropertyType(typeof(ManufacturerSpecifiedDataDescriptor))]
+        [PropertyName("Manufacturer Specified Data")]
+        [PropertyDescription("Manufacturer Specified Data")]
+        ManufacturerSpecifiedData00 = 0x00,
+
+        /// <summary>
+        /// Descriptor <b>Reserved</b>, for more information see
+        /// </summary>
+        [PropertyName("Reserved")]
+        [PropertyDescription("Reserved")]
+        Reserved = -2,
     }
     #endregion
 

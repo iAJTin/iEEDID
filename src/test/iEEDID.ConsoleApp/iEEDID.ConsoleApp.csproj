@@ -40,6 +40,16 @@
     <Reference Include="System.Drawing" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Code\Sample01.cs" />
+    <Compile Include="Code\Sample02.cs" />
+    <Compile Include="Code\Sample03.cs" />
+    <Compile Include="Code\Sample04.cs" />
+    <Compile Include="ComponentModel\Constants.cs" />
+    <Compile Include="ComponentModel\Parser\IParser.cs" />
+    <Compile Include="ComponentModel\Parser\ParserHelper.cs" />
+    <Compile Include="ComponentModel\Parser\RawParser.cs" />
+    <Compile Include="ComponentModel\Parser\TechParser.cs" />
+    <Compile Include="Extensions\EnumExtensions.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -58,6 +68,10 @@
     <ProjectReference Include="..\..\lib\net\iTin.Hardware\iTin.Hardware.Specification\iTin.Hardware.Specification.Eedid\iTin.Hardware.Specification.Eedid.csproj">
       <Project>{721664b2-81f4-4a58-a1fa-ff44d33b7a6d}</Project>
       <Name>iTin.Hardware.Specification.Eedid</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\lib\net\iTin.Logging\iTin.Logging\iTin.Logging.csproj">
+      <Project>{64b2e2ae-6b3d-40f4-90ed-9ad997293990}</Project>
+      <Name>iTin.Logging</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

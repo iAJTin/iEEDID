@@ -32,7 +32,7 @@ namespace iEEDID.ComponentModel.Parser
                 var piece = instanceRawData.Skip(offset);
                 var line = piece.Take(16);
 
-                logger.Info($@" │ {string.Join(' ', line)}");
+                logger.Info($@" │ {string.Join(" ", line)}");
 
                 offset += 16;
                 if (totalBytes <= 128)
@@ -97,7 +97,7 @@ namespace iEEDID.ComponentModel.Parser
             var vendorSection = block.Sections[(int)KnownEdidSection.Vendor];
             logger.Info($@"   Vendor & Product Identification:");
             var manufacturer = vendorSection.GetProperty(EedidProperty.Edid.Vendor.IdManufacturerName);
-            if (manufacturer.Success)
+            if(manufacturer.Success)
             {
                 logger.Info($@"     Manufacturer: {manufacturer.Value.Value}");
             }
@@ -167,7 +167,7 @@ namespace iEEDID.ComponentModel.Parser
                         syncBuilder.Append(" SyncOnGreen");
                     }
                 }
-
+                    
                 logger.Info($@"     Sync: {syncBuilder}");
             }
 
@@ -218,7 +218,7 @@ namespace iEEDID.ComponentModel.Parser
                 {
                     logger.Info($@"     DPMS levels : Standby Suspend Off");
                 }
-                else if (!standbyModeValue)
+                else if(!standbyModeValue)
                 {
                     logger.Info($@"     DPMS levels : Standby Off");
                 }
@@ -316,7 +316,7 @@ namespace iEEDID.ComponentModel.Parser
             var timing6 = standardTimingsSection.GetProperty(EedidProperty.Edid.StandardTimings.Timing6);
             var timing7 = standardTimingsSection.GetProperty(EedidProperty.Edid.StandardTimings.Timing7);
             var timing8 = standardTimingsSection.GetProperty(EedidProperty.Edid.StandardTimings.Timing8);
-            var hasTimings = timing1.Success == true && timing2.Success == true && timing3.Success == true && timing4.Success == true &&
+            var hasTimings = timing1.Success == true && timing2.Success == true && timing3.Success == true && timing4.Success == true && 
                 timing5.Success == true && timing6.Success == true && timing7.Success == true && timing8.Success == true;
             if (!hasTimings)
             {
@@ -401,7 +401,7 @@ namespace iEEDID.ComponentModel.Parser
                         var displayProductName = dataBlocksSection.GetProperty(dataBlockProperty);
                         var displayProductNameProperties = (SectionPropertiesTable)displayProductName.Value.Value;
                         var displayProductNameValue = (List<PropertyItem>)displayProductNameProperties[EedidProperty.Edid.DataBlock.Definition.DisplayProductName.Data];
-                        logger.Info($@"     Display Product Name: {displayProductNameValue.FirstOrDefault().Value.ToString().Trim('\n')}");
+                        logger.Info($@"     Display Product Name: {displayProductNameValue.FirstOrDefault().Value.ToString().Trim()}");
                         break;
 
                     case EdidDataBlockDescriptor.DisplayProductSerialNumber:
@@ -410,13 +410,14 @@ namespace iEEDID.ComponentModel.Parser
                         break;
 
                     case EdidDataBlockDescriptor.DisplayRangeLimits:
+                        var drl = dataBlocksSection.GetProperty(dataBlockProperty);
                         break;
 
                     case EdidDataBlockDescriptor.DummyData:
                         var dummyData = dataBlocksSection.GetProperty(dataBlockProperty);
                         var dummyDataProperties = (SectionPropertiesTable)dummyData.Value.Value;
                         var dummyValue = (List<PropertyItem>)dummyDataProperties[EedidProperty.Edid.DataBlock.Definition.DummyData.OriginalData];
-                        logger.Info($@"     Dummy Data: {dummyValue.FirstOrDefault().Value.ToString().Trim('\n')}");
+                        logger.Info($@"     Dummy Data: {dummyValue.FirstOrDefault().Value.ToString().Trim()}");
                         break;
 
                     case EdidDataBlockDescriptor.EstablishedTimingsIII:

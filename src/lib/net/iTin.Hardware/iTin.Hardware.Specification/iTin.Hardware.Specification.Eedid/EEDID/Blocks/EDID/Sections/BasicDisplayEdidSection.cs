@@ -591,10 +591,10 @@ namespace iTin.Hardware.Specification.Eedid
         {
             var items = new List<string>
             {
-                "0.700 : 0.300 : 1.000 V p-p",
-                "0.714 : 0.286 : 1.000 V p-p",
-                "1.000 : 0.400 : 1.400 V p-p",
-                "0.700 : 0.000 : 0.700 V p-p"
+                "0.7/0.3 V",
+                "0.714/0.286 V",
+                "1/0.4 : 1.4 V",
+                "0.7/0.0 : 0.7 V"
             };
 
             return items[code];
@@ -693,7 +693,7 @@ namespace iTin.Hardware.Specification.Eedid
                 "RGB 4:4:4",
                 "RGB 4:4:4 & YCrCb 4:4:4",
                 "RGB 4:4:4 & YCrCb 4:2:2",
-                "RGB 4:4:4 &  YCrCb 4:4:4 & YCrCb 4:2:2"
+                "RGB 4:4:4 & YCrCb 4:4:4 & YCrCb 4:2:2"
             };
 
             return items[code];

@@ -117,6 +117,35 @@ namespace iTin.Hardware.Specification.Eedid
 
         #region public properties
 
+        #region [public] (string) ApectRatio: Gets a value that represents the the aspect ratio
+        /// <summary>
+        /// Gets a value that represents the aspect ratio.
+        /// </summary>
+        /// <value>
+        /// Value representing the the aspect ratio.
+        /// </value>
+        public string ApectRatio
+        {
+            get
+            {
+                double aspectRatio = Size.Width / (double)Size.Height;
+                switch (aspectRatio)
+                {
+                    case (double)4/3:
+                        return "4:3";
+                    case (double)1.6:
+                        return "16:10";
+                    case (double)5 /4:
+                        return "5:4";
+                    case (double)16/9:
+                        return "16:9";
+                    default:
+                        return "1:1";
+                }
+            }
+        }
+        #endregion
+
         #region [public] (byte) Frequency: Gets a value that represents the frequency with which the video driver updates the monitor image
         /// <summary>
         /// Gets a value that represents the frequency with which the video driver updates the monitor image.
@@ -203,10 +232,10 @@ namespace iTin.Hardware.Specification.Eedid
 
         #region [public] {override} (string) ToString(): Returns a string that represents the current class
         /// <summary>
-        /// Returns a <see cref="T:System.String" /> that represents the current class.
+        /// Returns a <see cref="string"/> that represents the current class.
         /// </summary>
         /// <returns>
-        /// A <see cref="T:System.String" /> that represents the <see cref="MonitorResolutionInfo" /> current class.
+        /// A <see cref="string" /> that represents the <see cref="MonitorResolutionInfo" /> current class.
         /// </returns>
         public override string ToString() => ReduceBlanking ? $"{Size.Width} x {Size.Height}, {Frequency} Hz, Reduce Blanking" : $"{Size.Width} x {Size.Height}, {Frequency} Hz";
         #endregion
