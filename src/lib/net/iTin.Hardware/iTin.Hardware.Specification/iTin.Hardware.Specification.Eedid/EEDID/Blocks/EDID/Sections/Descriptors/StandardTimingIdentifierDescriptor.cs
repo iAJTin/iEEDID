@@ -83,7 +83,6 @@ namespace iTin.Hardware.Specification.Eedid
         #region constructor/s
 
         #region [public] StandardTimingIdentifierDescriptor(ReadOnlyCollection<byte>): Initialize a new instance of the class with the data of this block untreated
-        /// <inheritdoc />
         /// <summary>
         /// Initialize a new instance of the <see cref="StandardTimingIdentifierDescriptor"/> class with the data of this block untreated.
         /// </summary>
@@ -126,7 +125,6 @@ namespace iTin.Hardware.Specification.Eedid
         #region protected override methods
 
         #region [protected] {override} (void) PopulateProperties(SectionPropertiesTable): Populates the property collection for this section
-        /// <inheritdoc />
         /// <summary>
         /// Populates the property collection for this section.
         /// </summary>

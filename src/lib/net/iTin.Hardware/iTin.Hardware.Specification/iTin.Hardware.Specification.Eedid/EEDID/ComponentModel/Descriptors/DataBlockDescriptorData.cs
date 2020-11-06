@@ -137,6 +137,8 @@ namespace iTin.Hardware.Specification.Eedid
                 ReadOnlyCollection<byte> result = _blockData;
                 EdidDataBlockDescriptor tag = DescriptorType;
 
+                return result;
+
                 if (tag == EdidDataBlockDescriptor.DetailedTimingMode || tag == EdidDataBlockDescriptor.DisplayRangeLimits)
                 {
                     return result;

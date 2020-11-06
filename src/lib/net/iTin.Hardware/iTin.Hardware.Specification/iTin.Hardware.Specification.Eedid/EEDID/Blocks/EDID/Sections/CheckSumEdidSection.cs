@@ -21,7 +21,6 @@ namespace iTin.Hardware.Specification.Eedid
         #region constructor/s
 
         #region [public] CheckSumEdidSection(ReadOnlyCollection<byte>): Initialize a new instance of the class with the data in this section untreated
-        /// <inheritdoc />
         /// <summary>
         /// Initialize a new instance of the <see cref="CheckSumEdidSection"/> class with the data in this section untreated.
         /// </summary>
@@ -64,7 +63,6 @@ namespace iTin.Hardware.Specification.Eedid
         #region protected override methods
 
         #region [protected] {override} (void) PopulateProperties(SectionPropertiesTable): Populates the property collection for this section
-        /// <inheritdoc />
         /// <summary>
         /// Populates the property collection for this section.
         /// </summary>

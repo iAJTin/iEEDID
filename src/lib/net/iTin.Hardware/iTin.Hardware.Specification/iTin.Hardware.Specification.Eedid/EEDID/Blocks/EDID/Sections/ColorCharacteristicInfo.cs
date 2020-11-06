@@ -42,7 +42,6 @@ namespace iTin.Hardware.Specification.Eedid
         #region constructor/s
 
         #region [public] ColorCharacteristicDetail(ReadOnlyCollection<byte>, ColorManagementDataDescriptor.KnownColor): Initialize a new instance of the class with the data in this section untreated
-        /// <inheritdoc />
         /// <summary>
         /// Initialize a new instance of the <see cref="ColorCharacteristicDetail"/> class with the data in this section untreated.
         /// </summary>

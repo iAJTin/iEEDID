@@ -60,16 +60,16 @@ namespace iTin.Hardware.Specification.Eedid
 
         #endregion
 
-        #region protected properties
+        #region internal properties
 
-        #region [protected] (ReadOnlyCollection<byte>) RawData: Gets a value that represents the data to be processed.
+        #region [internal] (ReadOnlyCollection<byte>) RawData: Gets a value that represents the data to be processed.
         /// <summary>
         /// Gets a value that represents the data to be processed
         /// </summary>
         /// <value>
         /// Data to process.
         /// </value>
-        protected ReadOnlyCollection<byte> RawData { get; }
+        internal ReadOnlyCollection<byte> RawData { get; }
         #endregion
 
         #endregion

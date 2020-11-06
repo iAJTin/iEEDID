@@ -102,6 +102,28 @@ namespace iTin.Hardware.Specification.Eedid
         }
         #endregion
 
+
+        #region [public] (ReadOnlyCollection<byte>) RawData: Gets a value that represents the data to be processed.
+        /// <summary>
+        /// Gets a value that represents the data to be processed
+        /// </summary>
+        /// <value>
+        /// Data to process.
+        /// </value>
+        public ReadOnlyCollection<byte> RawData
+        {
+            get
+            {
+                if (Key.Equals(KnownEdidSection.CheckSum))
+                {
+                    return new ReadOnlyCollection<byte>(new byte[] { _dataSection.RawData.Take(128).LastOrDefault() });
+                }
+
+                return _dataSection.RawData;
+            }
+        }
+        #endregion
+
         #endregion
 
         #region public methods

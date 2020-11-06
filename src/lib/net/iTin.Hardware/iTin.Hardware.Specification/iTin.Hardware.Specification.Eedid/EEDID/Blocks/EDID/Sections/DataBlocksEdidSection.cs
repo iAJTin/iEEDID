@@ -34,7 +34,6 @@ namespace iTin.Hardware.Specification.Eedid
         #region constructor/s
 
         #region [public] DataBlocksEdidSection(ReadOnlyCollection<byte>): Initialize a new instance of the class with the data in this section untreated
-        /// <inheritdoc />
         /// <summary>
         /// Initialize a new instance of the <see cref="DataBlocksEdidSection"/> class with the data in this section untreated.
         /// </summary>
@@ -49,13 +48,13 @@ namespace iTin.Hardware.Specification.Eedid
         #region protected override methods
 
         #region [protected] {override} (void) PopulateProperties(SectionPropertiesTable): Populates the property collection for this section
-        /// <inheritdoc />
         /// <summary>
         /// Populates the property collection for this section.
         /// </summary>
         /// <param name="properties">Collection of properties of this section.</param>
         protected override void PopulateProperties(SectionPropertiesTable properties)
         {
+            int i = 1;
             IEnumerable<DataBlockDescriptorData> descriptors = DataBlockDescriptorsData();
             foreach (var descriptor in descriptors)
             {
@@ -63,6 +62,27 @@ namespace iTin.Hardware.Specification.Eedid
                 IPropertyKey descriptorKey = descriptor.GetDescriptorKeyFromType(tag);
                 BaseDataSection dataBlockDescription = DataBlockDescriptorFactory.GetDataBlockDescription(descriptor);
                 properties.Add(descriptorKey, dataBlockDescription.Properties);
+
+                switch (i)
+                {
+                    case 1:
+                        properties.Add(EedidProperty.Edid.DataBlock.Descriptor1, descriptor.RawData);
+                        break;
+
+                    case 2:
+                        properties.Add(EedidProperty.Edid.DataBlock.Descriptor2, descriptor.RawData);
+                        break;
+
+                    case 3:
+                        properties.Add(EedidProperty.Edid.DataBlock.Descriptor3, descriptor.RawData);
+                        break;
+
+                    case 4:
+                        properties.Add(EedidProperty.Edid.DataBlock.Descriptor4, descriptor.RawData);
+                        break;
+                }
+
+                i += 1;
             }
         }
         #endregion

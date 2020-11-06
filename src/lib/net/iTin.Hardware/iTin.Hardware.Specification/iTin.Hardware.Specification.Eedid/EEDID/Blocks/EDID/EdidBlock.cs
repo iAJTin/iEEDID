@@ -44,7 +44,6 @@ namespace iTin.Hardware.Specification.Eedid
         #region constructor/s
 
         #region [public] EdidBlock(ReadOnlyCollection<byte>): Initialize a new instance of the class with the data in this section untreated
-        /// <inheritdoc />
         /// <summary>
         /// Initialize a new instance of the <see cref="EdidBlock"/> class with the data in this section untreated.
         /// </summary>
@@ -62,7 +61,6 @@ namespace iTin.Hardware.Specification.Eedid
         #region protected override methods
 
         #region [protected] {override} (void) InitDataSectionTable(Dictionary<Enum, ReadOnlyCollection<byte>>): Initialize dictionary with the available data for the sections of this block
-        /// <inheritdoc />
         /// <summary>
         /// Initialize dictionary with the available data for the sections of this block.
         /// </summary>
@@ -83,7 +81,6 @@ namespace iTin.Hardware.Specification.Eedid
         #endregion
 
         #region [protected] {override} (void) InitSectionTable(Dictionary<Enum, BaseEEDIDSection>): Initialize dictionary with the sections available for this block
-        /// <inheritdoc />
         /// <summary>
         /// Initialize dictionary with the sections available for this block.
         /// </summary>
