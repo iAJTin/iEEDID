@@ -16,13 +16,13 @@ namespace iTin.Core
     /// </summary> 
     public static class EnumerableExtensions
     {
-        #region [public] {static} (IEnumerable<string>) AsHexadecimal<T>(This IEnumerable<byte>): 
+        #region [public] {static} (IEnumerable<string>) AsHexadecimal(This IEnumerable<byte>): 
         /// <summary>
         /// Creates a 
         /// </summary>
         /// <typeparam name="T">Type of enumeeration.</typeparam>
         /// <returns>
-        /// An new <see cref="IEnumerable{string}" /> typed from <see cref="IEnumerable"/>.
+        /// An new <see cref="IEnumerable{T}" /> where <b>T</b> is a <see cref="string"/> typed from <see cref="IEnumerable"/>.
         /// </returns>
         public static IEnumerable<string> AsHexadecimal(this IEnumerable<byte> value) => new ReadOnlyCollection<string>(value.Select(item => $"{item:x2}").ToList());
         #endregion
@@ -421,11 +421,11 @@ namespace iTin.Core
 
         #region [public] {static} (ObservableCollection<T>) ToObservableCollection<T>(This IEnumerable<T>): Creates a new observable collection from an IEnumerable
         /// <summary>
-        /// Creates a new observable collection from an <see cref="IEnumerable"/>.
+        /// Creates a new observable collection from an <see cref="T:System.Collections.IEnumerable"/>.
         /// </summary>
-        /// <typeparam name="T">Type of enumeration.</typeparam>
+        /// <typeparam name="T">Type of enumeeration.</typeparam>
         /// <returns>
-        /// An new <see cref="ObservableCollection{T}"/> typed from <see cref="IEnumerable"/>.
+        /// An new <see cref="T:System.Collections.ObjectModel.ObservableCollection" /> typed from <see cref="T:System.Collections.IEnumerable" />.
         /// </returns>
         public static ObservableCollection<T> ToObservableCollection<T>(this IEnumerable<T> source)
         {

@@ -9,7 +9,14 @@ All notable changes to this project will be documented in this file.
 
 ### Added
 
- - Added support for **MacOS** (Tested on macOS Catalina Version 10.15.7)
+ - Added support for **MacOS** (In progress...)
+ 
+    Tested on:
+
+    | macOS | Version |
+    |:------|:------|
+    | Big Sur | 11.0.1 |
+    | Catalina | 10.15.7 |
 
  - Added support for **CEA** blocks (In progress...)
  
@@ -20,23 +27,27 @@ All notable changes to this project will be documented in this file.
  - ```tools``` folder in solution root. Contains a script for update help md files.
 
 ### Changed
-  
+ 
+ - Changed **```IResultGeneric```** interface. Changed **```Value```** property name by **```Result```** (for code clarify).
+ 
+       This change may have implications in your final code, it is resolved by changing Value to Result
+ 
  - Update result classes for support more scenaries.
  
  - Library versions for this version
   
-| Library | Version | Description |
-|:------|:------|:----------|
-| iTin.Core| **2.0.0.3** | Base library containing various extensions, helpers, common constants |
-| iTin.Core.Hardware.Common | **1.0.0.2** | Common Hardware Infrastructure |
-| iTin.Core.Hardware.Linux.Device.Desktop | **1.0.0.0** | Linux Hardware Infrastructure |
-| iTin.Core.Hardware.MacOS.Device.Desktop | **1.0.0.0** | MacOS Hardware Infrastructure |
-| iTin.Core.Hardware.Windows.Device.Desktop | **1.0.0.0** | Windows Hardware Infrastructure |
-| iTin.Core.Interop.Shared | **1.0.0.1** | Generic Shared Interop Definitions |
-| iTin.Core.Interop.Windows.Devices | **1.0.0.0** | Generic Win32 Interop Definitions, Data Structures, Constants... |
-| iTin.Hardware.Abstractions.Devices | **1.0.0.0** | Generic Common Hardware Abstractions |
-| iTin.Hardware.Specification.Eedid | **1.0.0.7** | Implementation of the E-EDID (Extended Display Identification Data) specification |
-| iTin.Logging| 1.0.0.0 | Logging library |
+    | Library | Version | Description |
+    |:------|:------|:----------|
+    | iTin.Core| **2.0.0.3** | Base library containing various extensions, helpers, common constants |
+    | iTin.Core.Hardware.Common | **1.0.0.2** | Common Hardware Infrastructure |
+    | iTin.Core.Hardware.Linux.Device.Desktop | **1.0.0.0** | Linux Hardware Infrastructure |
+    | iTin.Core.Hardware.MacOS.Device.Desktop | **1.0.0.0** | MacOS Hardware Infrastructure |
+    | iTin.Core.Hardware.Windows.Device.Desktop | **1.0.0.0** | Windows Hardware Infrastructure |
+    | iTin.Core.Interop.Shared | **1.0.0.1** | Generic Shared Interop Definitions |
+    | iTin.Core.Interop.Windows.Devices | **1.0.0.0** | Generic Win32 Interop Definitions, Data Structures, Constants... |
+    | iTin.Hardware.Abstractions.Devices | **1.0.0.0** | Generic Common Hardware Abstractions |
+    | iTin.Hardware.Specification.Eedid | **1.0.0.7** | Implementation of the E-EDID (Extended Display Identification Data) specification |
+    | iTin.Logging| 1.0.0.0 | Logging library |
 
 ## [1.0.6] - 2020-10-12
 
@@ -44,12 +55,12 @@ All notable changes to this project will be documented in this file.
 
 - Library versions for this version
   
-|Library|Version|Description|
-|:------|:------|:----------|
-|iTin.Core| **2.0.0.1** | Base library containing various extensions, helpers, common constants |
-|iTin.Core.Hardware.Common| **1.0.0.1** | Common Hardware Infrastructure |
-|iTin.Hardware.Specification.Eedid|**1.0.0.6**| Implementation of the E-EDID (Extended Display Identification Data) specification |
-|iTin.Logging| 1.0.0.0 | Logging library |
+    |Library|Version|Description|
+    |:------|:------|:----------|
+    |iTin.Core| **2.0.0.1** | Base library containing various extensions, helpers, common constants |
+    |iTin.Core.Hardware.Common| **1.0.0.1** | Common Hardware Infrastructure |
+    |iTin.Hardware.Specification.Eedid|**1.0.0.6**| Implementation of the E-EDID (Extended Display Identification Data) specification |
+    |iTin.Logging| 1.0.0.0 | Logging library |
 
 ### Removed
 
@@ -61,12 +72,12 @@ All notable changes to this project will be documented in this file.
 
 - Library versions for this version
   
-|Library|Version|Description|
-|:------|:------|:----------|
-|iTin.Core| **2.0.0.0** | Base library containing various extensions, helpers, common constants |
-|iTin.Core.Hardware.Common| **1.0.0.0** | Common Hardware Infrastructure |
-|iTin.Core.Hardware.Specification.Eedid|**1.0.0.5**| Implementation of the E-EDID (Extended Display Identification Data) specification |
-|iTin.Logging| **1.0.0.0** | Logging library |
+    |Library|Version|Description|
+    |:------|:------|:----------|
+    |iTin.Core| **2.0.0.0** | Base library containing various extensions, helpers, common constants |
+    |iTin.Core.Hardware.Common| **1.0.0.0** | Common Hardware Infrastructure |
+    |iTin.Core.Hardware.Specification.Eedid|**1.0.0.5**| Implementation of the E-EDID (Extended Display Identification Data) specification |
+    |iTin.Logging| **1.0.0.0** | Logging library |
 
 ### Removed
 
@@ -94,13 +105,12 @@ All notable changes to this project will be documented in this file.
 
 - Library versions for this version
   
-|Library|Version|Description|
-|:------|:------|:----------|
-|iTin.Core| **1.0.2** | Common calls |
-|iTin.Core.Interop| 1.0.0 | Interop calls |
-|iTin.Core.Hardware| **1.0.1** | Hardware Interop Calls |
-|iTin.Core.Hardware.Specification.Eedid|**1.0.4**| E-EDID Specification Implementation |
-
+    |Library|Version|Description|
+    |:------|:------|:----------|
+    |iTin.Core| **1.0.2** | Common calls |
+    |iTin.Core.Interop| 1.0.0 | Interop calls |
+    |iTin.Core.Hardware| **1.0.1** | Hardware Interop Calls |
+    |iTin.Core.Hardware.Specification.Eedid|**1.0.4**| E-EDID Specification Implementation |
 
 ## [1.0.3] - 2019-09-02
 
