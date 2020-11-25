@@ -76,14 +76,14 @@ namespace iEEDID.ComponentModel.Parser
             #region Information Section
             var informationSection = block.Sections[(int)KnownCeaSection.Information];
             var revisionInformation = informationSection.GetProperty(EedidProperty.Cea.Information.Revision);
-            logger.Info($@" │ Revision: {revisionInformation.Value.Value}");
+            logger.Info($@" │ Revision: {revisionInformation.Result.Value}");
             #endregion
 
             #region CheckSum Section
             var checksumSection = block.Sections[(int)KnownCeaSection.CheckSum];
             var status = checksumSection.GetProperty(EedidProperty.Cea.CheckSum.Ok);
             var value = checksumSection.GetProperty(EedidProperty.Cea.CheckSum.Value);
-            logger.Info($@" │ Checksum: 0x{value.Value.Value:x2} ({((bool)status.Value.Value ? "Valid" : "Invalid")})");
+            logger.Info($@" │ Checksum: 0x{value.Result.Value:x2} ({((bool)status.Result.Value ? "Valid" : "Invalid")})");
             #endregion
 
             #region End Block
@@ -104,7 +104,7 @@ namespace iEEDID.ComponentModel.Parser
             QueryPropertyResult serialNumberResult = vendorSection.GetProperty(EedidProperty.Edid.Vendor.IdSerialNumber);
             if (serialNumberResult.Success)
             {
-                logger.Info($@" │ Serial number:{'\t'}{serialNumberResult.Value.Value}");
+                logger.Info($@" │ Serial number:{'\t'}{serialNumberResult.Result.Value}");
             }
             else
             {
@@ -127,10 +127,10 @@ namespace iEEDID.ComponentModel.Parser
             logger.Info($@" │ Standard:{'\t'}{'\t'}{string.Join(" ", standardTimingsSection.RawData.AsHexadecimal())}");
 
             DataSection dataBlocksSection = dataBlock.Sections[(int)KnownEdidSection.DataBlocks];
-            logger.Info($@" │ Descriptor 1:{'\t'}{string.Join(" ", ((ReadOnlyCollection<byte>)dataBlocksSection.GetProperty(EedidProperty.Edid.DataBlock.Descriptor1).Value.Value).AsHexadecimal())}");
-            logger.Info($@" │ Descriptor 2:{'\t'}{string.Join(" ", ((ReadOnlyCollection<byte>)dataBlocksSection.GetProperty(EedidProperty.Edid.DataBlock.Descriptor2).Value.Value).AsHexadecimal())}");
-            logger.Info($@" │ Descriptor 3:{'\t'}{string.Join(" ", ((ReadOnlyCollection<byte>)dataBlocksSection.GetProperty(EedidProperty.Edid.DataBlock.Descriptor3).Value.Value).AsHexadecimal())}");
-            logger.Info($@" │ Descriptor 4:{'\t'}{string.Join(" ", ((ReadOnlyCollection<byte>)dataBlocksSection.GetProperty(EedidProperty.Edid.DataBlock.Descriptor4).Value.Value).AsHexadecimal())}");
+            logger.Info($@" │ Descriptor 1:{'\t'}{string.Join(" ", ((ReadOnlyCollection<byte>)dataBlocksSection.GetProperty(EedidProperty.Edid.DataBlock.Descriptor1).Result.Value).AsHexadecimal())}");
+            logger.Info($@" │ Descriptor 2:{'\t'}{string.Join(" ", ((ReadOnlyCollection<byte>)dataBlocksSection.GetProperty(EedidProperty.Edid.DataBlock.Descriptor2).Result.Value).AsHexadecimal())}");
+            logger.Info($@" │ Descriptor 3:{'\t'}{string.Join(" ", ((ReadOnlyCollection<byte>)dataBlocksSection.GetProperty(EedidProperty.Edid.DataBlock.Descriptor3).Result.Value).AsHexadecimal())}");
+            logger.Info($@" │ Descriptor 4:{'\t'}{string.Join(" ", ((ReadOnlyCollection<byte>)dataBlocksSection.GetProperty(EedidProperty.Edid.DataBlock.Descriptor4).Result.Value).AsHexadecimal())}");
 
             DataSection extensionSection = dataBlock.Sections[(int)KnownEdidSection.ExtensionBlocks];
             logger.Info($@" │ Extensions:{'\t'}{'\t'}{string.Join(" ", extensionSection.RawData.AsHexadecimal())}");
@@ -153,7 +153,7 @@ namespace iEEDID.ComponentModel.Parser
             var versionSection = block.Sections[(int)KnownEdidSection.Version];
             var version = versionSection.GetProperty(EedidProperty.Edid.Version.Number);
             var revision = versionSection.GetProperty(EedidProperty.Edid.Version.Revision);
-            logger.Info($@" │ EDID Structure Version & Revision: {version.Value.Value}.{revision.Value.Value}");
+            logger.Info($@" │ EDID Structure Version & Revision: {version.Result.Value}.{revision.Result.Value}");
             #endregion
 
             #region Vendor Section
@@ -162,25 +162,25 @@ namespace iEEDID.ComponentModel.Parser
             var manufacturer = vendorSection.GetProperty(EedidProperty.Edid.Vendor.IdManufacturerName);
             if(manufacturer.Success)
             {
-                logger.Info($@" │   Manufacturer: {manufacturer.Value.Value}");
+                logger.Info($@" │   Manufacturer: {manufacturer.Result.Value}");
             }
 
             var model = vendorSection.GetProperty(EedidProperty.Edid.Vendor.IdProductCode);
             if (model.Success)
             {
-                logger.Info($@" │   Model: {model.Value.Value}");
+                logger.Info($@" │   Model: {model.Result.Value}");
             }
 
             var serialNumber = vendorSection.GetProperty(EedidProperty.Edid.Vendor.IdSerialNumber);
             if (serialNumber.Success)
             {
-                logger.Info($@" │   Serial Number: {serialNumber.Value.Value}");
+                logger.Info($@" │   Serial Number: {serialNumber.Result.Value}");
             }
 
             var manufactureDate = vendorSection.GetProperty(EedidProperty.Edid.Vendor.ManufactureDate);
             if (model.Success)
             {
-                logger.Info($@" │   Made in: {manufactureDate.Value.Value}");
+                logger.Info($@" │   Made in: {manufactureDate.Result.Value}");
             }
             #endregion
 
@@ -192,8 +192,8 @@ namespace iEEDID.ComponentModel.Parser
             var videoInputDefinition = basicDisplaySection.GetProperty(EedidProperty.Edid.BasicDisplay.VideoInputDefinition);
             if (videoInputDefinition.Success)
             {
-                isDigital = videoInputDefinition.Value.Value.ToString().Equals("Digital", System.StringComparison.OrdinalIgnoreCase);
-                logger.Info($@" │   {videoInputDefinition.Value.Value} display");
+                isDigital = videoInputDefinition.Result.Value.ToString().Equals("Digital", System.StringComparison.OrdinalIgnoreCase);
+                logger.Info($@" │   {videoInputDefinition.Result.Value} display");
             }
 
             if (!isDigital)
@@ -201,20 +201,20 @@ namespace iEEDID.ComponentModel.Parser
                 var signalLevel = basicDisplaySection.GetProperty(EedidProperty.Edid.BasicDisplay.Analog.SignalLevelStandard);
                 if (signalLevel.Success)
                 {
-                    logger.Info($@" │   Input voltage level: {signalLevel.Value.Value}");
+                    logger.Info($@" │   Input voltage level: {signalLevel.Result.Value}");
                 }
 
                 var syncBuilder = new StringBuilder();
                 var separateSync = basicDisplaySection.GetProperty(EedidProperty.Edid.BasicDisplay.Analog.Syncrhonization.SeparateSyncSupported);
                 if (separateSync.Success)
                 {
-                    syncBuilder.Append($"{((bool)separateSync.Value.Value ? "Separate" : "Non separate")}");
+                    syncBuilder.Append($"{((bool)separateSync.Result.Value ? "Separate" : "Non separate")}");
                 }
 
                 var compositeSync = basicDisplaySection.GetProperty(EedidProperty.Edid.BasicDisplay.Analog.Syncrhonization.CompositeSyncSignalHorizontalSupported);
                 if (compositeSync.Success)
                 {
-                    var compositeSyncValue = (bool)compositeSync.Value.Value;
+                    var compositeSyncValue = (bool)compositeSync.Result.Value;
                     if (compositeSyncValue)
                     {
                         syncBuilder.Append(" Composite");
@@ -224,7 +224,7 @@ namespace iEEDID.ComponentModel.Parser
                 var syncOnGreen = basicDisplaySection.GetProperty(EedidProperty.Edid.BasicDisplay.Analog.Syncrhonization.CompositeSyncSignalGreenVideoSupported);
                 if (syncOnGreen.Success)
                 {
-                    var syncOnGreenValue = (bool)syncOnGreen.Value.Value;
+                    var syncOnGreenValue = (bool)syncOnGreen.Result.Value;
                     if (syncOnGreenValue)
                     {
                         syncBuilder.Append(" SyncOnGreen");
@@ -240,34 +240,34 @@ namespace iEEDID.ComponentModel.Parser
             var verticalScreenSize = basicDisplaySection.GetProperty(EedidProperty.Edid.BasicDisplay.VerticalScreenSize);
             if (horizontalScreenSize.Success && verticalScreenSize.Success)
             {
-                logger.Info($@" │   Maximum image size: {horizontalScreenSize.Value.Value} {horizontalScreenSizeUnits} x {verticalScreenSize.Value.Value} {verticalScreenSizeUnits}");
+                logger.Info($@" │   Maximum image size: {horizontalScreenSize.Result.Value} {horizontalScreenSizeUnits} x {verticalScreenSize.Result.Value} {verticalScreenSizeUnits}");
             }
 
             var gamma = basicDisplaySection.GetProperty(EedidProperty.Edid.BasicDisplay.Gamma);
             if (gamma.Success)
             {
-                logger.Info($@" │   Gamma: {gamma.Value.Value:n2}");
+                logger.Info($@" │   Gamma: {gamma.Result.Value:n2}");
             }
 
             var lowPowerValue = false;
             var lowPower = basicDisplaySection.GetProperty(EedidProperty.Edid.BasicDisplay.Features.DisplayPowerManagement.ActiveOffSupported);
             if (lowPower.Success)
             {
-                lowPowerValue = (bool)lowPower.Value.Value;
+                lowPowerValue = (bool)lowPower.Result.Value;
             }
 
             var standbyModeValue = false;
             var standbyMode = basicDisplaySection.GetProperty(EedidProperty.Edid.BasicDisplay.Features.DisplayPowerManagement.StandbyModeSupported);
             if (standbyMode.Success)
             {
-                standbyModeValue = (bool)standbyMode.Value.Value;
+                standbyModeValue = (bool)standbyMode.Result.Value;
             }
 
             var suspendModeValue = false;
             var suspendMode = basicDisplaySection.GetProperty(EedidProperty.Edid.BasicDisplay.Features.DisplayPowerManagement.SuspendModeSupported);
             if (suspendMode.Success)
             {
-                suspendModeValue = (bool)suspendMode.Value.Value;
+                suspendModeValue = (bool)suspendMode.Result.Value;
             }
 
             var dpmsLevelsIsOff = lowPowerValue == false && standbyModeValue == false && suspendModeValue == false;
@@ -290,13 +290,13 @@ namespace iEEDID.ComponentModel.Parser
             var displayColorType = basicDisplaySection.GetProperty(EedidProperty.Edid.BasicDisplay.Analog.DisplayColorType);
             if (displayColorType.Success)
             {
-                logger.Info($@" │   {displayColorType.Value.Value}");
+                logger.Info($@" │   {displayColorType.Result.Value}");
             }
 
             var isSrgbDefaultColorSpace = basicDisplaySection.GetProperty(EedidProperty.Edid.BasicDisplay.Features.Other.IsSrgbDefaultColorSpace);
             if (isSrgbDefaultColorSpace.Success)
             {
-                var isSrgbDefaultColorSpaceValue = (bool)isSrgbDefaultColorSpace.Value.Value;
+                var isSrgbDefaultColorSpaceValue = (bool)isSrgbDefaultColorSpace.Result.Value;
                 if (isSrgbDefaultColorSpaceValue)
                 {
                     logger.Info($@" │   Default (sRGB) color space is primary color space");
@@ -306,7 +306,7 @@ namespace iEEDID.ComponentModel.Parser
             var includePreferredTimingMode = basicDisplaySection.GetProperty(EedidProperty.Edid.BasicDisplay.Features.Other.IncludePreferredTimingMode);
             if (includePreferredTimingMode.Success)
             {
-                var includePreferredTimingModeValue = (bool)includePreferredTimingMode.Value.Value;
+                var includePreferredTimingModeValue = (bool)includePreferredTimingMode.Result.Value;
                 if (includePreferredTimingModeValue)
                 {
                     logger.Info($@" │   First detailed timing is the preferred timing");
@@ -321,25 +321,25 @@ namespace iEEDID.ComponentModel.Parser
             var red = colorSection.GetProperty(EedidProperty.Edid.ColorCharacteristics.Red);
             if (red.Success)
             {
-                logger.Info($@" │   Red  : {((PointF)red.Value.Value).X:n4} {((PointF)red.Value.Value).Y:n4}");
+                logger.Info($@" │   Red  : {((PointF)red.Result.Value).X:n4} {((PointF)red.Result.Value).Y:n4}");
             }
 
             var green = colorSection.GetProperty(EedidProperty.Edid.ColorCharacteristics.Green);
             if (green.Success)
             {
-                logger.Info($@" │   Green: {((PointF)green.Value.Value).X:n4} {((PointF)green.Value.Value).Y:n4}");
+                logger.Info($@" │   Green: {((PointF)green.Result.Value).X:n4} {((PointF)green.Result.Value).Y:n4}");
             }
 
             var blue = colorSection.GetProperty(EedidProperty.Edid.ColorCharacteristics.Blue);
             if (blue.Success)
             {
-                logger.Info($@" │   Blue : {((PointF)blue.Value.Value).X:n4} {((PointF)blue.Value.Value).Y:n4}");
+                logger.Info($@" │   Blue : {((PointF)blue.Result.Value).X:n4} {((PointF)blue.Result.Value).Y:n4}");
             }
 
             var white = colorSection.GetProperty(EedidProperty.Edid.ColorCharacteristics.White);
             if (blue.Success)
             {
-                logger.Info($@" │   White: {((PointF)white.Value.Value).X:n4} {((PointF)white.Value.Value).Y:n4}");
+                logger.Info($@" │   White: {((PointF)white.Result.Value).X:n4} {((PointF)white.Result.Value).Y:n4}");
             }
             #endregion
 
@@ -348,7 +348,7 @@ namespace iEEDID.ComponentModel.Parser
             var resolutions = establishedTimingsSection.GetProperty(EedidProperty.Edid.EstablishedTimings.Resolutions);
             if (resolutions.Success)
             {
-                var monitorReslutions = (ReadOnlyCollection<MonitorResolutionInfo>)resolutions.Value.Value;
+                var monitorReslutions = (ReadOnlyCollection<MonitorResolutionInfo>)resolutions.Result.Value;
                 if (monitorReslutions.Any())
                 {
                     logger.Info($@" │ Established Timings I & II:");
@@ -389,44 +389,44 @@ namespace iEEDID.ComponentModel.Parser
             else
             {
                 var timings = new Collection<StandardTimingIdentifierDescriptorItem>();
-                if(timing1.Value.Value != null)
+                if(timing1.Result.Value != null)
                 {
-                    timings.Add((StandardTimingIdentifierDescriptorItem)timing1.Value.Value);
+                    timings.Add((StandardTimingIdentifierDescriptorItem)timing1.Result.Value);
                 }
 
-                if (timing2.Value.Value != null)
+                if (timing2.Result.Value != null)
                 {
-                    timings.Add((StandardTimingIdentifierDescriptorItem)timing2.Value.Value);
+                    timings.Add((StandardTimingIdentifierDescriptorItem)timing2.Result.Value);
                 }
 
-                if (timing3.Value.Value != null)
+                if (timing3.Result.Value != null)
                 {
-                    timings.Add((StandardTimingIdentifierDescriptorItem)timing3.Value.Value);
+                    timings.Add((StandardTimingIdentifierDescriptorItem)timing3.Result.Value);
                 }
 
-                if (timing4.Value.Value != null)
+                if (timing4.Result.Value != null)
                 {
-                    timings.Add((StandardTimingIdentifierDescriptorItem)timing4.Value.Value);
+                    timings.Add((StandardTimingIdentifierDescriptorItem)timing4.Result.Value);
                 }
 
-                if (timing5.Value.Value != null)
+                if (timing5.Result.Value != null)
                 {
-                    timings.Add((StandardTimingIdentifierDescriptorItem)timing5.Value.Value);
+                    timings.Add((StandardTimingIdentifierDescriptorItem)timing5.Result.Value);
                 }
 
-                if (timing6.Value.Value != null)
+                if (timing6.Result.Value != null)
                 {
-                    timings.Add((StandardTimingIdentifierDescriptorItem)timing6.Value.Value);
+                    timings.Add((StandardTimingIdentifierDescriptorItem)timing6.Result.Value);
                 }
 
-                if (timing7.Value.Value != null)
+                if (timing7.Result.Value != null)
                 {
-                    timings.Add((StandardTimingIdentifierDescriptorItem)timing7.Value.Value);
+                    timings.Add((StandardTimingIdentifierDescriptorItem)timing7.Result.Value);
                 }
 
-                if (timing8.Value.Value != null)
+                if (timing8.Result.Value != null)
                 {
-                    timings.Add((StandardTimingIdentifierDescriptorItem)timing8.Value.Value);
+                    timings.Add((StandardTimingIdentifierDescriptorItem)timing8.Result.Value);
                 }
 
                 var hasTimingValues = timings.Any();
@@ -456,7 +456,7 @@ namespace iEEDID.ComponentModel.Parser
                 {
                     case EdidDataBlockDescriptor.AlphaNumericDataString:
                         var alphanumericData = dataBlocksSection.GetProperty(dataBlockProperty);
-                        var alphanumericDataProperties = (SectionPropertiesTable)alphanumericData.Value.Value;
+                        var alphanumericDataProperties = (SectionPropertiesTable)alphanumericData.Result.Value;
                         var alphanumericDataValue = (List<PropertyItem>)alphanumericDataProperties[EedidProperty.Edid.DataBlock.Definition.AlphanumericDataString.Data];
                         logger.Info($@" │   Alphanumeric Data String: '{alphanumericDataValue.FirstOrDefault().Value.ToString().Trim()}'");
                         break;
@@ -472,7 +472,7 @@ namespace iEEDID.ComponentModel.Parser
 
                     case EdidDataBlockDescriptor.DetailedTimingMode:
                         var detailedTimingMode = dataBlocksSection.GetProperty(dataBlockProperty);
-                        var detailedTimingModeProperties = (SectionPropertiesTable)detailedTimingMode.Value.Value;
+                        var detailedTimingModeProperties = (SectionPropertiesTable)detailedTimingMode.Result.Value;
                         var horResolutionValue = (List<PropertyItem>)detailedTimingModeProperties[EedidProperty.Edid.DataBlock.Definition.DetailedTimingMode.HorizontalResolution];
                         var vertResolutionValue = (List<PropertyItem>)detailedTimingModeProperties[EedidProperty.Edid.DataBlock.Definition.DetailedTimingMode.VerticalLines];
                         var vertImageSizeValue = (List<PropertyItem>)detailedTimingModeProperties[EedidProperty.Edid.DataBlock.Definition.DetailedTimingMode.VerticalImageSize];
@@ -493,21 +493,21 @@ namespace iEEDID.ComponentModel.Parser
 
                     case EdidDataBlockDescriptor.DisplayProductName:
                         var displayProductName = dataBlocksSection.GetProperty(dataBlockProperty);
-                        var displayProductNameProperties = (SectionPropertiesTable)displayProductName.Value.Value;
+                        var displayProductNameProperties = (SectionPropertiesTable)displayProductName.Result.Value;
                         var displayProductNameValue = (List<PropertyItem>)displayProductNameProperties[EedidProperty.Edid.DataBlock.Definition.DisplayProductName.Data];
                         logger.Info($@" │   Display Product Name: '{displayProductNameValue.FirstOrDefault().Value.ToString().Trim()}'");
                         break;
 
                     case EdidDataBlockDescriptor.DisplayProductSerialNumber:
                         var productSerialNumber = dataBlocksSection.GetProperty(dataBlockProperty);
-                        var productSerialNumberProperties = (SectionPropertiesTable)productSerialNumber.Value.Value;
+                        var productSerialNumberProperties = (SectionPropertiesTable)productSerialNumber.Result.Value;
                         var productSerialNumberValue = (List<PropertyItem>)productSerialNumberProperties[EedidProperty.Edid.DataBlock.Definition.DisplayProductSerialNumber.Data];
                         logger.Info($@" │   Display Product Serial Number: '{productSerialNumberValue.FirstOrDefault().Value.ToString().Trim()}'");
                         break;
 
                     case EdidDataBlockDescriptor.DummyData:
                         var dummyData = dataBlocksSection.GetProperty(dataBlockProperty);
-                        var dummyDataProperties = (SectionPropertiesTable)dummyData.Value.Value;
+                        var dummyDataProperties = (SectionPropertiesTable)dummyData.Result.Value;
                         var dummyValue = (List<PropertyItem>)dummyDataProperties[EedidProperty.Edid.DataBlock.Definition.DummyData.OriginalData];
                         logger.Info($@" │   Dummy Data: '{dummyValue.FirstOrDefault().Value.ToString().Trim()}'");
                         break;
@@ -517,7 +517,7 @@ namespace iEEDID.ComponentModel.Parser
 
                     case EdidDataBlockDescriptor.ManufacturerSpecifiedData00:
                         var manufacturerData = dataBlocksSection.GetProperty(dataBlockProperty);
-                        var manufacturerDataProperties = (SectionPropertiesTable)manufacturerData.Value.Value;
+                        var manufacturerDataProperties = (SectionPropertiesTable)manufacturerData.Result.Value;
                         var manufacturerDataValue = (List<PropertyItem>)manufacturerDataProperties[EedidProperty.Edid.DataBlock.Definition.ManufacturerSpecifiedData.Data];
                         logger.Info($@" │   Manufacturer-Specified Display Descriptor: {string.Join(" ", ((ReadOnlyCollection<byte>)manufacturerDataValue.FirstOrDefault().Value).AsEnumerable().AsHexadecimal())}");
                         break;
@@ -536,7 +536,7 @@ namespace iEEDID.ComponentModel.Parser
             if (hasDisplayRangeLimitsBlock)
             {
                 var displayRangeLimitsBlock = dataBlocksSection.GetProperty(EedidProperty.Edid.DataBlock.Descriptor.DisplayRangeLimits);
-                var displayRangeLimitsBlockProperties = (SectionPropertiesTable)displayRangeLimitsBlock.Value.Value;
+                var displayRangeLimitsBlockProperties = (SectionPropertiesTable)displayRangeLimitsBlock.Result.Value;
                 var minVertRateValue = (List<PropertyItem>)displayRangeLimitsBlockProperties[EedidProperty.Edid.DataBlock.Definition.DisplayRangeLimits.MinimumVerticalRate];
                 var maxVertRateValue = (List<PropertyItem>)displayRangeLimitsBlockProperties[EedidProperty.Edid.DataBlock.Definition.DisplayRangeLimits.MaximumVerticalRate];
                 var minHortRateValue = (List<PropertyItem>)displayRangeLimitsBlockProperties[EedidProperty.Edid.DataBlock.Definition.DisplayRangeLimits.MinimumHorizontalRate];
@@ -550,14 +550,14 @@ namespace iEEDID.ComponentModel.Parser
             #region Extension Blocks Section
             var extensionBlocksSection = block.Sections[(int)KnownEdidSection.ExtensionBlocks];
             var count = extensionBlocksSection.GetProperty(EedidProperty.Edid.ExtensionBlocks.Count);
-            logger.Info($@" │ Extension blocks: {count.Value.Value}");
+            logger.Info($@" │ Extension blocks: {count.Result.Value}");
             #endregion
 
             #region CheckSum Section
             var checksumSection = block.Sections[(int)KnownEdidSection.CheckSum];
             var status = checksumSection.GetProperty(EedidProperty.Edid.CheckSum.Ok);
             var value = checksumSection.GetProperty(EedidProperty.Edid.CheckSum.Value);
-            logger.Info($@" │ Checksum: 0x{value.Value.Value:x2} ({((bool)status.Value.Value ? "Valid" : "Invalid")})");
+            logger.Info($@" │ Checksum: 0x{value.Result.Value:x2} ({((bool)status.Result.Value ? "Valid" : "Invalid")})");
             #endregion
 
             #region End Block

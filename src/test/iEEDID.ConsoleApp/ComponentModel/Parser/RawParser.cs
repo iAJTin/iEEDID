@@ -80,7 +80,7 @@ namespace iEEDID.ComponentModel.Parser
                         string unit = valueUnit == PropertyUnit.None ? string.Empty : valueUnit.ToString();
 
                         QueryPropertyResult queryResult = section.GetProperty(property);
-                        PropertyItem propertyItem = queryResult.Value;
+                        PropertyItem propertyItem = queryResult.Result;
                         object value = propertyItem.Value;
                         if (value == null)
                         {
