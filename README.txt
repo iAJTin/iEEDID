@@ -16,7 +16,7 @@ Changes in this version (v1.0.7)
 · Added
   -----
 
-    - Added support for **MacOS** (In progress...)
+    - Added support for MacOS (In progress...)
  
       Tested on:
       •—————————————————————•
