@@ -54,7 +54,7 @@ Changes in this version (v1.0.7)
       | iTin.Core.Interop.Shared              1.0.0.1     Generic Shared Interop Definitions                                                    |
       •—————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————•
       | iTin.Core.Interop.Windows.Devices     1.0.0.0     Generic Win32 Interop Definitions, Data Structures, Constants...                      |
-      • —————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————•
+      • ————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————•
       | iTin.Core.Hardware.Common             1.0.0.2     Common Hardware Infrastructure                                                        |
       •—————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————•
       | iTin.Core.Hardware.Linux.Desktop      1.0.0.0     Linux Hardware Infrastructure                                                         |
@@ -83,9 +83,9 @@ v1.0.6
       •—————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————•
       | iTin.Core                             2.0.0.1     Base library containing various extensions, helpers, common constants                 |
       •—————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————•
-      | iTin.Core.Hardware.Common             1.0.0.1    	Common Hardware Infrastructure                                                        |
+      | iTin.Core.Hardware.Common             1.0.0.1     Common Hardware Infrastructure                                                        |
       •—————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————•
-      | iTin.Hardware.Specification.Eedid     1.0.0.6		Implementation of the E-EDID (Extended Display Identification Data) specification     |
+      | iTin.Hardware.Specification.Eedid     1.0.0.6     Implementation of the E-EDID (Extended Display Identification Data) specification     |
       •—————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————•
       | iTin.Logging                          1.0.0.0     Logging library                                                                       |
       •—————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————•
@@ -109,11 +109,11 @@ v1.0.5
       •—————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————•
       |iTin.Core                                 2.0.0.0      Base library containing various extensions, helpers, common constants             |
       •—————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————•
-      |iTin.Core.Hardware.Common                 1.0.0.0    	Common Hardware Infrastructure                                                    |
+      |iTin.Core.Hardware.Common                 1.0.0.0      Common Hardware Infrastructure                                                    |
       •—————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————•
-      |iTin.Core.Hardware.Specification.Eedid    1.0.0.5		Implementation of the E-EDID (Extended Display Identification Data) specification |
+      |iTin.Core.Hardware.Specification.Eedid    1.0.0.5      Implementation of the E-EDID (Extended Display Identification Data) specification |
       •—————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————•
-      |iTin.Logging                              1.0.0.0 		Logging library                                                                   |
+      |iTin.Logging                              1.0.0.0      Logging library                                                                   |
       •—————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————•
 
 
