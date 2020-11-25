@@ -44,7 +44,7 @@ All notable changes to this project will be documented in this file.
     | iTin.Core.Hardware.MacOS.Device.Desktop | **1.0.0.0** | MacOS Hardware Infrastructure |
     | iTin.Core.Hardware.Windows.Device.Desktop | **1.0.0.0** | Windows Hardware Infrastructure |
     | iTin.Core.Interop.Shared | **1.0.0.1** | Generic Shared Interop Definitions |
-    | iTin.Core.Interop.Windows.Devices | **1.0.0.0** | Generic Win32 Interop Definitions, Data Structures, Constants... |
+    | iTin.Core.Hardware.Windows.Device.Desktop | **1.0.0.0** | Generic Win32 Interop Definitions, Data Structures, Constants... |
     | iTin.Hardware.Abstractions.Devices | **1.0.0.0** | Generic Common Hardware Abstractions |
     | iTin.Hardware.Specification.Eedid | **1.0.0.7** | Implementation of the E-EDID (Extended Display Identification Data) specification |
     | iTin.Logging| 1.0.0.0 | Logging library |
