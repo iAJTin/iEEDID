@@ -149,7 +149,7 @@ namespace iTin.Hardware.Specification.Eedid
             }
             else
             {
-                properties.Add(EedidProperty.Edid.Vendor.ManufactureDate, $"{WeekOfManufactureOrModelYearFlag} / {1990 + YearOfManufactureOrModelYear}");
+                properties.Add(EedidProperty.Edid.Vendor.ManufactureDate, $"week {WeekOfManufactureOrModelYearFlag} of {1990 + YearOfManufactureOrModelYear}");
             }
         }
         #endregion

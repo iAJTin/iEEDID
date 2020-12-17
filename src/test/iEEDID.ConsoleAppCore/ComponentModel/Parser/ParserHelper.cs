@@ -169,6 +169,26 @@ namespace iEEDID.ComponentModel.Parser
 
                 logger.Info($@"     Sync: {syncBuilder}");
             }
+            else
+            {
+                var bitsPrimaryColorChannel = basicDisplaySection.GetProperty(EedidProperty.Edid.BasicDisplay.Digital.ColorBitDepth);
+                if (bitsPrimaryColorChannel.Success)
+                {
+                    logger.Info($@"     Bits per primary color channel: {bitsPrimaryColorChannel.Result.Value}");
+                }
+
+                var digitalVideoInterface = basicDisplaySection.GetProperty(EedidProperty.Edid.BasicDisplay.Digital.VideoInterface);
+                if (digitalVideoInterface.Success)
+                {
+                    logger.Info($@"     {digitalVideoInterface.Result.Value} interface");
+                }
+
+                var encodingFormat = basicDisplaySection.GetProperty(EedidProperty.Edid.BasicDisplay.Digital.ColorEncodingFormat);
+                if (encodingFormat.Success)
+                {
+                    logger.Info($@"     Supported color formats: {encodingFormat.Result.Value}");
+                }
+            }
 
             var horizontalScreenSizeUnits = EedidProperty.Edid.BasicDisplay.HorizontalScreenSize.PropertyUnit;
             var horizontalScreenSize = basicDisplaySection.GetProperty(EedidProperty.Edid.BasicDisplay.HorizontalScreenSize);
@@ -243,10 +263,9 @@ namespace iEEDID.ComponentModel.Parser
             if (includePreferredTimingMode.Success)
             {
                 var includePreferredTimingModeValue = (bool)includePreferredTimingMode.Result.Value;
-                if (includePreferredTimingModeValue)
-                {
-                    logger.Info($@"     First detailed timing is the preferred timing");
-                }
+                logger.Info(includePreferredTimingModeValue 
+                    ? "     First detailed timing includes the native pixel format and preferred refresh rate" 
+                    : "     First detailed timing is the preferred timing");
             }
             #endregion
 

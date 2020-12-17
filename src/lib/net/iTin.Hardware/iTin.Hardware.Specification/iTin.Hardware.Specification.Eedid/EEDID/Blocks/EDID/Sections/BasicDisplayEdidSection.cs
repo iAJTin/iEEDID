@@ -612,12 +612,12 @@ namespace iTin.Hardware.Specification.Eedid
             var items = new[]
             {
                 "Undefined",
-                "6 Bits per primary color",
-                "8 Bits per primary color",
-                "10 Bits per primary color",
-                "12  Bits per primary color",
-                "14  Bits per primary color",
-                "16  Bits per primary color",
+                "6",
+                "8",
+                "10",
+                "12",
+                "14",
+                "16",
                 "Reserved"
             };
 
@@ -642,7 +642,7 @@ namespace iTin.Hardware.Specification.Eedid
                 "HDMI-a",
                 "HDMI-b",
                 "MDDI",
-                "Display Port"
+                "DisplayPort"
             };
 
             if (code <= 0x05)
