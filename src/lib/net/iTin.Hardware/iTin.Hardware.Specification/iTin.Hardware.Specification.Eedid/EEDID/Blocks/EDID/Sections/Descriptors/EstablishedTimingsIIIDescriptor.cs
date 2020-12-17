@@ -715,222 +715,222 @@ namespace iTin.Hardware.Specification.Eedid
 
             if (Is640X350X85)
             {
-                items.Add(new MonitorResolutionInfo(640, 350, 85));
+                items.Add(new MonitorResolutionInfo(640, 350, 85, ""));
             }
 
             if (Is640X400X85)
             {
-                items.Add(new MonitorResolutionInfo(640, 400, 85));
+                items.Add(new MonitorResolutionInfo(640, 400, 85, ""));
             }
 
             if (Is640X480X85)
             {
-                items.Add(new MonitorResolutionInfo(640, 480, 85));
+                items.Add(new MonitorResolutionInfo(640, 480, 85, ""));
             }
 
             if (Is720X400X85)
             {
-                items.Add(new MonitorResolutionInfo(720, 400, 85));
+                items.Add(new MonitorResolutionInfo(720, 400, 85, ""));
             }
 
             if (Is800X600X85)
             {
-                items.Add(new MonitorResolutionInfo(800, 600, 85));
+                items.Add(new MonitorResolutionInfo(800, 600, 85, ""));
             }
 
             if (Is848X480X60)
             {
-                items.Add(new MonitorResolutionInfo(848, 480, 60));
+                items.Add(new MonitorResolutionInfo(848, 480, 60, ""));
             }
 
             if (Is1024X768X85)
             {
-                items.Add(new MonitorResolutionInfo(1024, 768, 85));
+                items.Add(new MonitorResolutionInfo(1024, 768, 85, ""));
             }
 
             if (Is1152X864X75)
             {
-                items.Add(new MonitorResolutionInfo(1152, 864, 75));
+                items.Add(new MonitorResolutionInfo(1152, 864, 75, ""));
             }
 
             if (Is1280X768X60)
             {
-                items.Add(new MonitorResolutionInfo(1280, 768, 60));
+                items.Add(new MonitorResolutionInfo(1280, 768, 60, ""));
             }
 
             if (Is1280X768X60Rb)
             {
-                items.Add(new MonitorResolutionInfo(1280, 768, 60, true));
+                items.Add(new MonitorResolutionInfo(1280, 768, 60, true, ""));
             }
 
             if (Is1280X768X75)
             {
-                items.Add(new MonitorResolutionInfo(1280, 768, 75));
+                items.Add(new MonitorResolutionInfo(1280, 768, 75, ""));
             }
 
             if (Is1280X768X85)
             {
-                items.Add(new MonitorResolutionInfo(1280, 768, 85));
+                items.Add(new MonitorResolutionInfo(1280, 768, 85, ""));
             }
 
             if (Is1280X960X60)
             {
-                items.Add(new MonitorResolutionInfo(1280, 960, 60));
+                items.Add(new MonitorResolutionInfo(1280, 960, 60, ""));
             }
 
             if (Is1280X960X85)
             {
-                items.Add(new MonitorResolutionInfo(1280, 960, 85));
+                items.Add(new MonitorResolutionInfo(1280, 960, 85, ""));
             }
 
             if (Is1280X1024X60)
             {
-                items.Add(new MonitorResolutionInfo(1280, 1024, 60));
+                items.Add(new MonitorResolutionInfo(1280, 1024, 60, ""));
             }
 
             if (Is1280X1024X85)
             {
-                items.Add(new MonitorResolutionInfo(1280, 1024, 85));
+                items.Add(new MonitorResolutionInfo(1280, 1024, 85, ""));
             }
 
             if (Is1360X768X60)
             {
-                items.Add(new MonitorResolutionInfo(1360, 768, 60));
+                items.Add(new MonitorResolutionInfo(1360, 768, 60, ""));
             }
 
             if (Is1400X1050X60)
             {
-                items.Add(new MonitorResolutionInfo(1400, 1050, 60));
+                items.Add(new MonitorResolutionInfo(1400, 1050, 60, ""));
             }
 
             if (Is1400X1050X60Rb)
             {
-                items.Add(new MonitorResolutionInfo(1400, 1050, 60, true));
+                items.Add(new MonitorResolutionInfo(1400, 1050, 60, true, ""));
             }
 
             if (Is1400X1050X75)
             {
-                items.Add(new MonitorResolutionInfo(1400, 1050, 75));
+                items.Add(new MonitorResolutionInfo(1400, 1050, 75, ""));
             }
 
             if (Is1400X1050X85)
             {
-                items.Add(new MonitorResolutionInfo(1400, 1050, 85));
+                items.Add(new MonitorResolutionInfo(1400, 1050, 85, ""));
             }
 
             if (Is1440X900X60)
             {
-                items.Add(new MonitorResolutionInfo(1440, 900, 60));
+                items.Add(new MonitorResolutionInfo(1440, 900, 60, ""));
             }
 
             if (Is1440X900X60Rb)
             {
-                items.Add(new MonitorResolutionInfo(1440, 900, 60, true));
+                items.Add(new MonitorResolutionInfo(1440, 900, 60, true, ""));
             }
 
             if (Is1440X900X75)
             {
-                items.Add(new MonitorResolutionInfo(1440, 900, 75));
+                items.Add(new MonitorResolutionInfo(1440, 900, 75, ""));
             }
 
             if (Is1440X900X85)
             {
-                items.Add(new MonitorResolutionInfo(1440, 900, 85));
+                items.Add(new MonitorResolutionInfo(1440, 900, 85, ""));
             }
 
             if (Is1600X1200X60)
             {
-                items.Add(new MonitorResolutionInfo(1600, 1200, 60));
+                items.Add(new MonitorResolutionInfo(1600, 1200, 60, ""));
             }
 
             if (Is1600X1200X65)
             {
-                items.Add(new MonitorResolutionInfo(1600, 1200, 65));
+                items.Add(new MonitorResolutionInfo(1600, 1200, 65, ""));
             }
 
             if (Is1600X1200X70)
             {
-                items.Add(new MonitorResolutionInfo(1600, 1200, 70));
+                items.Add(new MonitorResolutionInfo(1600, 1200, 70, ""));
             }
 
             if (Is1600X1200X75)
             {
-                items.Add(new MonitorResolutionInfo(1600, 1200, 75));
+                items.Add(new MonitorResolutionInfo(1600, 1200, 75, ""));
             }
 
             if (Is1600X1200X85)
             {
-                items.Add(new MonitorResolutionInfo(1600, 1200, 85));
+                items.Add(new MonitorResolutionInfo(1600, 1200, 85, ""));
             }
 
             if (Is1680X1050X60)
             {
-                items.Add(new MonitorResolutionInfo(1680, 1050, 60));
+                items.Add(new MonitorResolutionInfo(1680, 1050, 60, ""));
             }
 
             if (Is1680X1050X60Rb)
             {
-                items.Add(new MonitorResolutionInfo(1680, 1050, 60, true));
+                items.Add(new MonitorResolutionInfo(1680, 1050, 60, true, ""));
             }
 
             if (Is1680X1050X75)
             {
-                items.Add(new MonitorResolutionInfo(1680, 1050, 75));
+                items.Add(new MonitorResolutionInfo(1680, 1050, 75, ""));
             }
 
             if (Is1680X1050X85)
             {
-                items.Add(new MonitorResolutionInfo(1680, 1050, 85));
+                items.Add(new MonitorResolutionInfo(1680, 1050, 85, ""));
             }
 
             if (Is1792X1344X60)
             {
-                items.Add(new MonitorResolutionInfo(1792, 1344, 60));
+                items.Add(new MonitorResolutionInfo(1792, 1344, 60, ""));
             }
 
             if (Is1792X1344X75)
             {
-                items.Add(new MonitorResolutionInfo(1792, 1344, 75));
+                items.Add(new MonitorResolutionInfo(1792, 1344, 75, ""));
             }
 
             if (Is1856X1392X60)
             {
-                items.Add(new MonitorResolutionInfo(1856, 1392, 60));
+                items.Add(new MonitorResolutionInfo(1856, 1392, 60, ""));
             }
 
             if (Is1856X1392X75)
             {
-                items.Add(new MonitorResolutionInfo(1856, 1392, 75));
+                items.Add(new MonitorResolutionInfo(1856, 1392, 75, ""));
             }
 
             if (Is1920X1200X60)
             {
-                items.Add(new MonitorResolutionInfo(1920, 1200, 60));
+                items.Add(new MonitorResolutionInfo(1920, 1200, 60, ""));
             }
 
             if (Is1920X1200X60Rb)
             {
-                items.Add(new MonitorResolutionInfo(1920, 1200, 60, true));
+                items.Add(new MonitorResolutionInfo(1920, 1200, 60, true, ""));
             }
 
             if (Is1920X1200X75)
             {
-                items.Add(new MonitorResolutionInfo(1920, 1200, 75));
+                items.Add(new MonitorResolutionInfo(1920, 1200, 75, ""));
             }
 
             if (Is1920X1200X85)
             {
-                items.Add(new MonitorResolutionInfo(1920, 1200, 85));
+                items.Add(new MonitorResolutionInfo(1920, 1200, 85, ""));
             }
 
             if (Is1920X1440X60)
             {
-                items.Add(new MonitorResolutionInfo(1920, 1440, 60));
+                items.Add(new MonitorResolutionInfo(1920, 1440, 60, ""));
             }
 
             if (Is1920X1440X75)
             {
-                items.Add(new MonitorResolutionInfo(1920, 1440, 75));
+                items.Add(new MonitorResolutionInfo(1920, 1440, 75, ""));
             }
 
             return items.AsReadOnly();

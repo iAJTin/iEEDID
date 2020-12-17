@@ -324,87 +324,87 @@ namespace iTin.Hardware.Specification.Eedid
 
             if (Is640X480X60)
             {
-                items.Add(new MonitorResolutionInfo(640, 480, 60));
+                items.Add(new MonitorResolutionInfo(640, 480, 60, "IBM"));
             }
 
             if (Is640X480X67)
             {
-                items.Add(new MonitorResolutionInfo(640, 480, 67));
+                items.Add(new MonitorResolutionInfo(640, 480, 67, "Apple"));
             }
 
             if (Is640X480X72)
             {
-                items.Add(new MonitorResolutionInfo(640, 480, 72));
+                items.Add(new MonitorResolutionInfo(640, 480, 72, "VESA"));
             }
 
             if (Is640X480X75)
             {
-                items.Add(new MonitorResolutionInfo(640, 480, 75));
+                items.Add(new MonitorResolutionInfo(640, 480, 75, "VESA"));
             }
 
             if (Is720X400X70)
             {
-                items.Add(new MonitorResolutionInfo(720, 400, 70));
+                items.Add(new MonitorResolutionInfo(720, 400, 70, "IBM"));
             }
 
             if (Is720X400X88)
             {
-                items.Add(new MonitorResolutionInfo(720, 400, 88));
+                items.Add(new MonitorResolutionInfo(720, 400, 88, "IBM"));
             }
 
             if (Is800X600X56)
             {
-                items.Add(new MonitorResolutionInfo(800, 600, 56));
+                items.Add(new MonitorResolutionInfo(800, 600, 56, "VESA"));
             }
 
             if (Is800X600X60)
             {
-                items.Add(new MonitorResolutionInfo(800, 600, 60));
+                items.Add(new MonitorResolutionInfo(800, 600, 60, "VESA"));
             }
 
             if (Is800X600X72)
             {
-                items.Add(new MonitorResolutionInfo(800, 600, 72));
+                items.Add(new MonitorResolutionInfo(800, 600, 72, "VESA"));
             }
 
             if (Is800X600X75)
             {
-                items.Add(new MonitorResolutionInfo(800, 600, 75));
+                items.Add(new MonitorResolutionInfo(800, 600, 75, "VESA"));
             }
 
             if (Is832X624X75)
             {
-                items.Add(new MonitorResolutionInfo(832, 624, 75));
+                items.Add(new MonitorResolutionInfo(832, 624, 75, "Apple"));
             }
 
             if (Is1024X768X60)
             {
-                items.Add(new MonitorResolutionInfo(1024, 768, 60));
+                items.Add(new MonitorResolutionInfo(1024, 768, 60, "VESA"));
             }
 
             if (Is1024X768X70)
             {
-                items.Add(new MonitorResolutionInfo(1024, 768, 70));
+                items.Add(new MonitorResolutionInfo(1024, 768, 70, "VESA"));
             }
 
             if (Is1024X768X75)
             {
-                items.Add(new MonitorResolutionInfo(1024, 768, 75));
+                items.Add(new MonitorResolutionInfo(1024, 768, 75, "VESA"));
             }
 
             if (Is1024X768X87I)
             {
-                items.Add(new MonitorResolutionInfo(1024, 768, 87, true, false));
+                items.Add(new MonitorResolutionInfo(1024, 768, 87, true, false, "IBM Interlaced"));
             }
 
             if (Is1152X870X75)
             {
-                items.Add(new MonitorResolutionInfo(1152, 870, 75));
+                items.Add(new MonitorResolutionInfo(1152, 870, 75, "Apple"));
             }
 
             if (Is1280X1024X75)
             {
-                items.Add(new MonitorResolutionInfo(1280, 1024, 75));
+                items.Add(new MonitorResolutionInfo(1280, 1024, 75, "VESA"));
             }
 
             return items.AsReadOnly();

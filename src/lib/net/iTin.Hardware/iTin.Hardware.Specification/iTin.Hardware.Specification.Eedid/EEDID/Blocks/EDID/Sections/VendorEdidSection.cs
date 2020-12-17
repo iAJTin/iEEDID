@@ -130,7 +130,7 @@ namespace iTin.Hardware.Specification.Eedid
         protected override void PopulateProperties(SectionPropertiesTable properties)
         {
             properties.Add(EedidProperty.Edid.Vendor.IdManufacturerName, IdManufacturerName);
-            properties.Add(EedidProperty.Edid.Vendor.IdProductCode, $"{IdProductCode:X4}");
+            properties.Add(EedidProperty.Edid.Vendor.IdProductCode, IdProductCode);
 
             var idSerialNumber = IdSerialNumber;
             if (idSerialNumber != 0x0000)

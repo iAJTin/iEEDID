@@ -23,40 +23,44 @@ namespace iTin.Hardware.Specification.Eedid
         #region [internal] MonitorResolutionInfo(int, int, byte): Initialize a new instance of the class
         /// <inheritdoc />
         /// <summary>
-        /// Initialize a new instance of the <see cref="T:iTin.Hardware.Specification.Eedid.MonitorResolutionInfo" /> class.
+        /// Initialize a new instance of the <see cref="MonitorResolutionInfo" /> class.
         /// </summary>
         /// <param name="horizontalResolution">Horizontal resolution in pixels</param>
         /// <param name="verticalResolution">Vertical resolution in pixels.</param>
         /// <param name="verticalRefresh">Vertical refresh rate in Hz</param>
-        internal MonitorResolutionInfo(int horizontalResolution, int verticalResolution, byte verticalRefresh) : this(horizontalResolution, verticalResolution, verticalRefresh, false)
+        /// <param name="name">Name</param>
+        internal MonitorResolutionInfo(int horizontalResolution, int verticalResolution, byte verticalRefresh, string name) : this(horizontalResolution, verticalResolution, verticalRefresh, false, name)
         {
         }
         #endregion
 
         #region [internal] MonitorResolutionInfo(int, int, byte, bool): Initialize a new instance of the class
         /// <summary>
-        /// Initialize a new instance of the <see cref="T:iTin.Hardware.Specification.Eedid.MonitorResolutionInfo" /> class.
+        /// Initialize a new instance of the <see cref="MonitorResolutionInfo" /> class.
         /// </summary>
         /// <param name="horizontalResolution">Horizontal resolution in pixels</param>
         /// <param name="verticalResolution">Vertical resolution in pixels.</param>
         /// <param name="verticalRefresh">Vertical refresh rate in Hz</param>
         /// <param name="reduceBlanking"><b>true</b> if flicker is reduced; <b>false</b> otherwise</param>
-        internal MonitorResolutionInfo(int horizontalResolution, int verticalResolution, byte verticalRefresh, bool reduceBlanking) : this(horizontalResolution, verticalResolution, verticalRefresh, false,reduceBlanking)
+        /// <param name="name">Name</param>
+        internal MonitorResolutionInfo(int horizontalResolution, int verticalResolution, byte verticalRefresh, bool reduceBlanking, string name) : this(horizontalResolution, verticalResolution, verticalRefresh, false, reduceBlanking, name)
         {
         }
         #endregion
 
-        #region [internal] MonitorResolutionInfo(int, int, byte, bool, bool): Initialize a new instance of the class
+        #region [internal] MonitorResolutionInfo(int, int, byte, bool, bool, string): Initialize a new instance of the class
         /// <summary>
-        /// Initialize a new instance of the <see cref="T:iTin.Hardware.Specification.Eedid.MonitorResolutionInfo" /> class.
+        /// Initialize a new instance of the <see cref="MonitorResolutionInfo" /> class.
         /// </summary>
         /// <param name="horizontalResolution">Horizontal resolution in pixels</param>
         /// <param name="verticalResolution">Vertical resolution in pixels.</param>
         /// <param name="verticalRefresh">Vertical refresh rate in Hz</param>
         /// <param name="interlaced"><b>true</b> if it is interlaced; <b>false</b> otherwise</param>
         /// <param name="reduceBlanking"><b>true</b> if flicker is reduced; <b>false</b> otherwise</param>
-        internal MonitorResolutionInfo(int horizontalResolution, int verticalResolution, byte verticalRefresh, bool interlaced, bool reduceBlanking)
+        /// <param name="name">Name</param>
+        internal MonitorResolutionInfo(int horizontalResolution, int verticalResolution, byte verticalRefresh, bool interlaced, bool reduceBlanking, string name)
         {
+            Name = name;
             Interlaced = interlaced;
             ReduceBlanking = reduceBlanking;
             Frequency = verticalRefresh;
@@ -116,6 +120,16 @@ namespace iTin.Hardware.Specification.Eedid
         #endregion
 
         #region public properties
+
+        #region [public] (string) Name: Gets a value that represents the resolution name
+        /// <summary>
+        /// Gets a value that represents the resolution name.
+        /// </summary>
+        /// <value>
+        /// Value represents the resolution name.
+        /// </value>
+        public string Name { get; }
+        #endregion
 
         #region [public] (string) ApectRatio: Gets a value that represents the the aspect ratio
         /// <summary>

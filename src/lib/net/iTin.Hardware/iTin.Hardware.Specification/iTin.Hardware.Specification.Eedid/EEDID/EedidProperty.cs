@@ -130,7 +130,7 @@ namespace iTin.Hardware.Specification.Eedid
                 /// </para>
                 /// <para>
                 ///  <para><b>Return Value</b></para>
-                ///  <para>Type: <see cref="string"/>.</para>
+                ///  <para>Type: <see cref="int"/>.</para>
                 /// </para>
                 /// <para>
                 ///  <para><b>Remarks</b></para>

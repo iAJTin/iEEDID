@@ -132,7 +132,35 @@ namespace iEEDID.ComponentModel.Parser
                 logger.Info($@"     {videoInputDefinition.Result.Value} display");
             }
 
-            if (!isDigital)
+            if(isDigital)
+            {
+                var bitsPrimaryColorChannel = basicDisplaySection.GetProperty(EedidProperty.Edid.BasicDisplay.Digital.ColorBitDepth);
+                if (bitsPrimaryColorChannel.Success)
+                {
+                    var bitsPrimaryColorChannelValue = bitsPrimaryColorChannel.Result.Value.ToString();
+                    if (!bitsPrimaryColorChannelValue.Equals("Undefined", System.StringComparison.OrdinalIgnoreCase))
+                    {
+                        logger.Info($@"     Bits per primary color channel: {bitsPrimaryColorChannel.Result.Value}");
+                    }
+                }
+                 
+                var digitalVideoInterface = basicDisplaySection.GetProperty(EedidProperty.Edid.BasicDisplay.Digital.VideoInterface);
+                if (digitalVideoInterface.Success)
+                {
+                    var digitalVideoInterfaceValue = digitalVideoInterface.Result.Value.ToString();
+                    if (!digitalVideoInterfaceValue.Equals("Undefined", System.StringComparison.OrdinalIgnoreCase))
+                    {
+                        logger.Info($@"     {digitalVideoInterface.Result.Value} interface");
+                    }
+                }
+
+                var encodingFormat = basicDisplaySection.GetProperty(EedidProperty.Edid.BasicDisplay.Digital.ColorEncodingFormat);
+                if (encodingFormat.Success)
+                {
+                    logger.Info($@"     Supported color formats: {encodingFormat.Result.Value}");
+                }
+            }
+            else
             {
                 var signalLevel = basicDisplaySection.GetProperty(EedidProperty.Edid.BasicDisplay.Analog.SignalLevelStandard);
                 if (signalLevel.Success)
@@ -168,26 +196,6 @@ namespace iEEDID.ComponentModel.Parser
                 }
 
                 logger.Info($@"     Sync: {syncBuilder}");
-            }
-            else
-            {
-                var bitsPrimaryColorChannel = basicDisplaySection.GetProperty(EedidProperty.Edid.BasicDisplay.Digital.ColorBitDepth);
-                if (bitsPrimaryColorChannel.Success)
-                {
-                    logger.Info($@"     Bits per primary color channel: {bitsPrimaryColorChannel.Result.Value}");
-                }
-
-                var digitalVideoInterface = basicDisplaySection.GetProperty(EedidProperty.Edid.BasicDisplay.Digital.VideoInterface);
-                if (digitalVideoInterface.Success)
-                {
-                    logger.Info($@"     {digitalVideoInterface.Result.Value} interface");
-                }
-
-                var encodingFormat = basicDisplaySection.GetProperty(EedidProperty.Edid.BasicDisplay.Digital.ColorEncodingFormat);
-                if (encodingFormat.Success)
-                {
-                    logger.Info($@"     Supported color formats: {encodingFormat.Result.Value}");
-                }
             }
 
             var horizontalScreenSizeUnits = EedidProperty.Edid.BasicDisplay.HorizontalScreenSize.PropertyUnit;
@@ -226,14 +234,14 @@ namespace iEEDID.ComponentModel.Parser
                 suspendModeValue = (bool)suspendMode.Result.Value;
             }
 
-            var dpmsLevelsIsOff = lowPowerValue == false && standbyModeValue == false && suspendModeValue == false;
+            var dpmsLevelsIsOff = lowPowerValue == true && standbyModeValue == false && suspendModeValue == false;
             if (dpmsLevelsIsOff)
             {
                 logger.Info($@"     DPMS levels : Off");
             }
             else
             {
-                if (!suspendModeValue)
+                if (suspendModeValue)
                 {
                     logger.Info($@"     DPMS levels : Standby Suspend Off");
                 }
@@ -310,7 +318,7 @@ namespace iEEDID.ComponentModel.Parser
                     foreach (var monitorResolution in monitorReslutions)
                     {
                         var resolution = $@"{monitorResolution.Size.Width}x{monitorResolution.Size.Height}";
-                        logger.Info($@"     {resolution,9}{'\t'}{monitorResolution.Frequency} Hz{'\t'}{monitorResolution.ApectRatio}");
+                        logger.Info($@"     {monitorResolution.Name, 6}:{resolution, 10}{'\t'}{monitorResolution.Frequency} Hz{'\t'}{monitorResolution.ApectRatio}");
                     }
                 }
                 else
@@ -334,52 +342,66 @@ namespace iEEDID.ComponentModel.Parser
             var timing6 = standardTimingsSection.GetProperty(EedidProperty.Edid.StandardTimings.Timing6);
             var timing7 = standardTimingsSection.GetProperty(EedidProperty.Edid.StandardTimings.Timing7);
             var timing8 = standardTimingsSection.GetProperty(EedidProperty.Edid.StandardTimings.Timing8);
-            var hasTimings = timing1.Success == true && timing2.Success == true && timing3.Success == true && timing4.Success == true &&
-                timing5.Success == true && timing6.Success == true && timing7.Success == true && timing8.Success == true;
+            var hasTimings = timing1.Success && timing2.Success && timing3.Success && timing4.Success && timing5.Success && timing6.Success && timing7.Success && timing8.Success;
             if (!hasTimings)
             {
                 logger.Info($@"   Standard Timings: none");
             }
             else
             {
-                var hasTimingsValues = timing1.Result.Value != null && timing2.Result.Value != null && timing3.Result.Value != null && timing4.Result.Value != null &&
-                    timing5.Result.Value != null && timing6.Result.Value != null && timing7.Result.Value != null && timing8.Result.Value != null;
-                if (!hasTimingsValues)
+                logger.Info($@"   Standard Timings:");
+                var item1 = (StandardTimingIdentifierDescriptorItem) timing1.Result.Value;
+                if (item1 != null)
                 {
-                    logger.Info($@"   Standard Timings: none");
-                }
-                else
-                {
-                    logger.Info($@"   Standard Timings:");
-                    var item1 = (StandardTimingIdentifierDescriptorItem)timing1.Result.Value;
                     var resolution1 = $@"{item1.HorizontalPixels}x{item1.VerticalPixels}";
                     logger.Info($@"     {resolution1,9}{'\t'}{item1.RefreshRate} Hz{'\t'}{item1.AspectRatio}");
+                }
 
-                    var item2 = (StandardTimingIdentifierDescriptorItem)timing2.Result.Value;
+                var item2 = (StandardTimingIdentifierDescriptorItem) timing2.Result.Value;
+                if (item2 != null)
+                {
                     var resolution2 = $@"{item2.HorizontalPixels}x{item2.VerticalPixels}";
                     logger.Info($@"     {resolution2,9}{'\t'}{item2.RefreshRate} Hz{'\t'}{item2.AspectRatio}");
+                }
 
-                    var item3 = (StandardTimingIdentifierDescriptorItem)timing3.Result.Value;
+                var item3 = (StandardTimingIdentifierDescriptorItem) timing3.Result.Value;
+                if (item3 != null)
+                {
                     var resolution3 = $@"{item3.HorizontalPixels}x{item3.VerticalPixels}";
                     logger.Info($@"     {resolution3,9}{'\t'}{item3.RefreshRate} Hz{'\t'}{item3.AspectRatio}");
+                }
 
-                    var item4 = (StandardTimingIdentifierDescriptorItem)timing4.Result.Value;
+                var item4 = (StandardTimingIdentifierDescriptorItem) timing4.Result.Value;
+                if (item4 != null)
+                {
                     var resolution4 = $@"{item4.HorizontalPixels}x{item4.VerticalPixels}";
                     logger.Info($@"     {resolution4,9}{'\t'}{item4.RefreshRate} Hz{'\t'}{item4.AspectRatio}");
+                }
 
-                    var item5 = (StandardTimingIdentifierDescriptorItem)timing5.Result.Value;
+                var item5 = (StandardTimingIdentifierDescriptorItem) timing5.Result.Value;
+                if (item5 != null)
+                {
                     var resolution5 = $@"{item5.HorizontalPixels}x{item5.VerticalPixels}";
                     logger.Info($@"     {resolution5,9}{'\t'}{item5.RefreshRate} Hz{'\t'}{item5.AspectRatio}");
+                }
 
-                    var item6 = (StandardTimingIdentifierDescriptorItem)timing6.Result.Value;
+                var item6 = (StandardTimingIdentifierDescriptorItem) timing6.Result.Value;
+                if (item6 != null)
+                {
                     var resolution6 = $@"{item6.HorizontalPixels}x{item6.VerticalPixels}";
                     logger.Info($@"     {resolution6,9}{'\t'}{item6.RefreshRate} Hz{'\t'}{item6.AspectRatio}");
+                }
 
-                    var item7 = (StandardTimingIdentifierDescriptorItem)timing7.Result.Value;
+                var item7 = (StandardTimingIdentifierDescriptorItem) timing7.Result.Value;
+                if (item7 != null)
+                {
                     var resolution7 = $@"{item7.HorizontalPixels}x{item7.VerticalPixels}";
                     logger.Info($@"     {resolution7,9}{'\t'}{item7.RefreshRate} Hz{'\t'}{item7.AspectRatio}");
+                }
 
-                    var item8 = (StandardTimingIdentifierDescriptorItem)timing8.Result.Value;
+                var item8 = (StandardTimingIdentifierDescriptorItem) timing8.Result.Value;
+                if (item8 != null)
+                {
                     var resolution8 = $@"{item8.HorizontalPixels}x{item8.VerticalPixels}";
                     logger.Info($@"     {resolution8,9}{'\t'}{item8.RefreshRate} Hz{'\t'}{item8.AspectRatio}");
                 }
@@ -460,7 +482,14 @@ namespace iEEDID.ComponentModel.Parser
             #region Extension Blocks Section
             var extensionBlocksSection = block.Sections[(int)KnownEdidSection.ExtensionBlocks];
             var count = extensionBlocksSection.GetProperty(EedidProperty.Edid.ExtensionBlocks.Count);
-            logger.Info($@"   Extension blocks: {count.Result.Value}");
+            if (count.Success)
+            {
+                var countNumber = (byte) count.Result.Value;
+                if (countNumber > 0)
+                {
+                    logger.Info($@"   Extension blocks: {countNumber}");
+                }
+            }
             #endregion
 
             #region CheckSum Section

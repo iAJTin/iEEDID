@@ -592,7 +592,7 @@ namespace iTin.Hardware.Specification.Eedid
                 "0.7/0.3 V",
                 "0.714/0.286 V",
                 "1/0.4 : 1.4 V",
-                "0.7/0.0 : 0.7 V"
+                "0.7/0.7 V"
             };
 
             return items[code];
@@ -689,9 +689,9 @@ namespace iTin.Hardware.Specification.Eedid
             var items = new[]
             {
                 "RGB 4:4:4",
-                "RGB 4:4:4 & YCrCb 4:4:4",
-                "RGB 4:4:4 & YCrCb 4:2:2",
-                "RGB 4:4:4 & YCrCb 4:4:4 & YCrCb 4:2:2"
+                "RGB 4:4:4, YCrCb 4:4:4",
+                "RGB 4:4:4, YCrCb 4:2:2",
+                "RGB 4:4:4, YCrCb 4:4:4, YCrCb 4:2:2"
             };
 
             return items[code];

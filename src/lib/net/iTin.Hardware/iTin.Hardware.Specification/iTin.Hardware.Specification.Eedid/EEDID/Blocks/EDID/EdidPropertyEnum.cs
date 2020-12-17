@@ -39,7 +39,7 @@ namespace iTin.Hardware.Specification.Eedid
         IdManufacturerName,
 
         [PropertyDescription("")]
-        [PropertyType(typeof(string))]
+        [PropertyType(typeof(int))]
         [PropertyName("Product Code")]
         IdProductCode,
 
