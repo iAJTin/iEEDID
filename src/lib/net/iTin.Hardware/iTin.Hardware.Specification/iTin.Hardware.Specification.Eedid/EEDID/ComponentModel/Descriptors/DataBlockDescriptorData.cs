@@ -1,4 +1,6 @@
 ﻿
+using System.Collections.Generic;
+
 namespace iTin.Hardware.Specification.Eedid
 {
     using System;
@@ -12,7 +14,7 @@ namespace iTin.Hardware.Specification.Eedid
     /// <summary>
     /// Defines header data block descriptor.
     /// </summary>
-    internal struct DataBlockDescriptorData :  IEquatable<DataBlockDescriptorData>
+    public struct DataBlockDescriptorData :  IEquatable<DataBlockDescriptorData>
     {
         #region private readonly members
         [DebuggerBrowsable(DebuggerBrowsableState.Never)]
@@ -155,9 +157,36 @@ namespace iTin.Hardware.Specification.Eedid
         }
         #endregion
 
+        public IEnumerable<IPropertyKey> ImplementedProperties => Properties.Keys;
+
+        private SectionPropertiesTable Properties => DataBlockDescriptorFactory.GetDataBlockDescription(this).Properties;
+
         #endregion
 
         #region public methods
+
+        #region [public] (QueryPropertyResult) GetProperty(IPropertyKey): Returns the value of specified property. Always returns the first appearance of the property
+        /// <summary>
+        /// Returns the value of specified property. Always returns the first appearance of the property.
+        /// </summary>
+        /// <param name="propertyKey">Key to the property to obtain</param>
+        /// <returns>
+        /// <para>
+        /// A <see cref="QueryPropertyResult"/> reference that contains the result of the operation, to check if the operation is correct, the <b>Success</b>
+        /// property will be <b>true</b> and the <b>Value</b> property will contain the value; Otherwise, the the <b>Success</b> property
+        /// will be false and the <b>Errors</b> property will contain the errors associated with the operation, if they have been filled in.
+        /// </para>
+        /// <para>
+        /// The type of the <b>Value</b> property is <see cref="PropertyItem"/>. Contains the result of the operation.
+        /// </para>
+        /// <para>
+        /// </para>
+        /// </returns>
+        public QueryPropertyResult GetProperty(IPropertyKey propertyKey)
+            => !Properties.ContainsKey(propertyKey)
+                ? QueryPropertyResult.CreateErroResult("Can not found specified property key")
+                : QueryPropertyResult.CreateSuccessResult(((IEnumerable<PropertyItem>)Properties[propertyKey]).FirstOrDefault());
+        #endregion
 
         #region [public] (IPropertyKey) GetDescriptorKeyFromType(EdidDataBlockDescriptorTag): Returns a value that represents the unique key that identifies the specified descriptor
         /// <summary>

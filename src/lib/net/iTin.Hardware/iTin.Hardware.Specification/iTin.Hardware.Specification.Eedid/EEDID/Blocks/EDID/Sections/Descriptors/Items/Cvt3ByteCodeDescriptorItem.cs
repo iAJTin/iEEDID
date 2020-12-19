@@ -49,7 +49,7 @@ namespace iTin.Hardware.Specification.Eedid
     /// Specialization of the <see cref="BaseDataSection"/> class.<br/>
     /// Represents the information of a <see cref="KnownEdidSection.DataBlocks"/> of type <see cref="EdidDataBlockDescriptor.Cvt3ByteCode"/>.
     /// </summary>
-    internal sealed class Cvt3ByteCodeDescriptorItem : BaseDataSection
+    public sealed class Cvt3ByteCodeDescriptorItem : BaseDataSection
     {
         #region constructor/s
 

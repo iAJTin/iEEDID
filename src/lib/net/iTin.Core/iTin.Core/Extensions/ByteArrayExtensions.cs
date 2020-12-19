@@ -2,6 +2,7 @@
 namespace iTin.Core
 {
     using System.IO;
+    using System.Text;
 
     using Helpers;
     using Logging;
@@ -11,32 +12,7 @@ namespace iTin.Core
     /// </summary> 
     public static class ByteArrayExtensions
     {
-        #region [public] {static} (MemoryStream) ToMemoryStream(this byte[]): Returns a MemoryStream from this byte array.
-        /// <summary>
-        /// Returns a <see cref="T:System.IO.MemoryStream"/> from this byte array.
-        /// </summary>
-        /// <param name="data">Data to convert.</param>
-        /// <returns>
-        /// MemoryStream.
-        /// </returns>
-        public static MemoryStream ToMemoryStream(this byte[] data)
-        {
-            Logger.Instance.Debug("");
-            Logger.Instance.Debug(" Assembly: iTin.Core, Namespace: iTin.Core, Class: ByteArrayExtensions");
-            Logger.Instance.Debug(" Returns a {typeof(MemoryStream)} from this byte array");
-            Logger.Instance.Debug($" > Signature: ({typeof(MemoryStream)}) ToMemoryStream(this {typeof(byte[])})");
-
-            SentinelHelper.ArgumentNull(data, nameof(data));
-            Logger.Instance.Debug($"   > data: {data.Length} byte(s) [{data[0]} {data[1]} {data[2]} ...]");
-
-            MemoryStream result = new MemoryStream(data);
-            Logger.Instance.Debug($" > Output: {result.Length} byte(s)");
-
-            return result;
-        }
-        #endregion
-
-        #region [public] {static} (int) GetDoubleWord(this byte[], byte): Returns a double Word from this array of bytes starting in start.
+        #region [public] {static} (int) GetDoubleWord(this byte[], byte): Returns a double Word from this array of bytes starting in start
         /// <summary>
         /// Returns a <b>Double Word</b> from this array of bytes starting in <paramref name="start"/>.
         /// </summary>
@@ -65,7 +41,7 @@ namespace iTin.Core
         }
         #endregion
 
-        #region [public] {static} (long) GetQuadrupleWord(this byte[], byte): Returns a quadriple Word from this array of bytes starting in start.
+        #region [public] {static} (long) GetQuadrupleWord(this byte[], byte): Returns a quadriple Word from this array of bytes starting in start
         /// <summary>
         /// Returns a <b>Quadriple Word</b> from this array of bytes starting in <paramref name="start"/>.
         /// </summary>
@@ -94,7 +70,7 @@ namespace iTin.Core
         }
         #endregion
 
-        #region [public] {static} (int) GetWord(this byte[], byte): Returns a Word from this array of bytes starting in start.
+        #region [public] {static} (int) GetWord(this byte[], byte): Returns a Word from this array of bytes starting in start
         /// <summary>
         /// Returns a <b>Word</b> from this array of bytes starting in <paramref name="start"/>. ( { a, b, n, n + 1, ...}, n ) => (n + 1, n)
         /// </summary>
@@ -123,7 +99,7 @@ namespace iTin.Core
         }
         #endregion
 
-        #region [public] {static} (byte[]) Swap(this byte[]): Returns an array of bytes by exchanging bytes.
+        #region [public] {static} (byte[]) Swap(this byte[]): Returns an array of bytes by exchanging bytes
         /// <summary>
         /// Returns an array of bytes by exchanging bytes.
         /// </summary>
@@ -153,5 +129,66 @@ namespace iTin.Core
             return data;
         }
         #endregion
+
+        #region [public] {static} (MemoryStream) ToMemoryStream(this byte[]): Returns a MemoryStream from this byte array
+        /// <summary>
+        /// Returns a <see cref="T:System.IO.MemoryStream"/> from this byte array.
+        /// </summary>
+        /// <param name="data">Data to convert.</param>
+        /// <returns>
+        /// MemoryStream.
+        /// </returns>
+        public static MemoryStream ToMemoryStream(this byte[] data)
+        {
+            Logger.Instance.Debug("");
+            Logger.Instance.Debug(" Assembly: iTin.Core, Namespace: iTin.Core, Class: ByteArrayExtensions");
+            Logger.Instance.Debug(" Returns a {typeof(MemoryStream)} from this byte array");
+            Logger.Instance.Debug($" > Signature: ({typeof(MemoryStream)}) ToMemoryStream(this {typeof(byte[])})");
+
+            SentinelHelper.ArgumentNull(data, nameof(data));
+            Logger.Instance.Debug($"   > data: {data.Length} byte(s) [{data[0]} {data[1]} {data[2]} ...]");
+
+            MemoryStream result = new MemoryStream(data);
+            Logger.Instance.Debug($" > Output: {result.Length} byte(s)");
+
+            return result;
+        }
+        #endregion
+
+        #region [public] {static} (string) ToPrintableString(this byte[], Encoding = null): Returns a printable string from this byte array
+        /// <summary>
+        /// Returns a printable <see cref="string"/> from this byte array.
+        /// </summary>
+        /// <param name="data">Data to convert.</param>
+        /// <param name="encoding">Encoding to use.</param>
+        /// <returns>
+        /// A printable <see cref="string"/>.
+        /// </returns>
+        public static string ToPrintableString(this byte[] data, Encoding encoding = null )
+        {
+            var safeEncoding = encoding;
+            if (encoding == null)
+            {
+                safeEncoding = Encoding.Default;
+            }
+
+            var builder = new StringBuilder();
+            var encodedData = safeEncoding.GetString(data);
+            foreach (var value in encodedData)
+            {
+                if (char.IsLetterOrDigit(value) || char.IsSeparator(value) || char.IsPunctuation(value))
+                {
+                    builder.Append(value);
+                }
+                else
+                {
+                    builder.Append(".");
+                }
+            }
+
+            return builder.ToString();
+        }
+        #endregion
+
     }
 }

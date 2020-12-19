@@ -55,7 +55,7 @@ namespace iTin.Hardware.Specification.Eedid
     /// Specialization of the <see cref="BaseDataSection"/> class.<br/>
     /// Represents the information of a <see cref="KnownEdidSection.DataBlocks" /> of type <see cref="EdidDataBlockDescriptor.ColorPointData"/>.
     /// </summary>
-    internal sealed class ColorPointDataDescriptorItem : BaseDataSection
+    public sealed class ColorPointDataDescriptorItem : BaseDataSection
     {
         #region constructor/s
 

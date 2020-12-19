@@ -6,7 +6,6 @@ namespace iTin.Hardware.Specification.Eedid
     using System.Linq;
 
     using iTin.Core;
-    using iTin.Core.Hardware.Common;
 
     // EDID Section: 18 Byte Data Blocks Descriptors - 72 Bytes
     // •—————————————————————————————————————————————————————————————————————————————————————————————————————•
@@ -54,36 +53,11 @@ namespace iTin.Hardware.Specification.Eedid
         /// <param name="properties">Collection of properties of this section.</param>
         protected override void PopulateProperties(SectionPropertiesTable properties)
         {
-            int i = 1;
-            IEnumerable<DataBlockDescriptorData> descriptors = DataBlockDescriptorsData();
-            foreach (var descriptor in descriptors)
-            {
-                EdidDataBlockDescriptor tag = descriptor.DescriptorType;
-                IPropertyKey descriptorKey = descriptor.GetDescriptorKeyFromType(tag);
-                BaseDataSection dataBlockDescription = DataBlockDescriptorFactory.GetDataBlockDescription(descriptor);
-                properties.Add(descriptorKey, dataBlockDescription.Properties);
-
-                switch (i)
-                {
-                    case 1:
-                        properties.Add(EedidProperty.Edid.DataBlock.Descriptor1, descriptor.RawData);
-                        break;
-
-                    case 2:
-                        properties.Add(EedidProperty.Edid.DataBlock.Descriptor2, descriptor.RawData);
-                        break;
-
-                    case 3:
-                        properties.Add(EedidProperty.Edid.DataBlock.Descriptor3, descriptor.RawData);
-                        break;
-
-                    case 4:
-                        properties.Add(EedidProperty.Edid.DataBlock.Descriptor4, descriptor.RawData);
-                        break;
-                }
-
-                i += 1;
-            }
+            var descriptors = DataBlockDescriptorsData().ToList();
+            properties.Add(EedidProperty.Edid.DataBlock.Descriptor1, descriptors[0]);
+            properties.Add(EedidProperty.Edid.DataBlock.Descriptor2, descriptors[1]);
+            properties.Add(EedidProperty.Edid.DataBlock.Descriptor3, descriptors[2]);
+            properties.Add(EedidProperty.Edid.DataBlock.Descriptor4, descriptors[3]);
         }
         #endregion
 
@@ -91,7 +65,7 @@ namespace iTin.Hardware.Specification.Eedid
 
         #region private methods
 
-        #region [private] (IEnumerable<DataBlockDescriptorData>) DataBlockDescriptorKeys(): Returns an implemented datablock related data
+        #region [private] (IEnumerable<DataBlockDescriptorData>) DataBlockDescriptorsData(): Returns an implemented datablock related data
         /// <summary>
         /// Returns an implemented datablock related datat.
         /// </summary>

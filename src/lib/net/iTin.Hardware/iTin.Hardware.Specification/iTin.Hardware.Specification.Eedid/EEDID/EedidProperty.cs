@@ -2606,7 +2606,7 @@ namespace iTin.Hardware.Specification.Eedid
                         ///  <list type="bullet">
                         ///   <item><description>Structure: <see cref="EdidDataBlockDescriptor.DisplayRangeLimits"/></description></item>
                         ///   <item><description>Property: <see cref="DisplayRangeLimitsDescriptorProperty.MinimumHorizontalRate"/></description></item>
-                        ///   <item><description>Unit: <see cref="PropertyUnit.Hz"/></description></item>
+                        ///   <item><description>Unit: <see cref="PropertyUnit.KHz"/></description></item>
                         ///  </list>
                         /// </para>
                         /// <para>
@@ -2618,7 +2618,7 @@ namespace iTin.Hardware.Specification.Eedid
                         ///  <para>1.4</para>
                         /// </para>
                         /// </summary>
-                        public static IPropertyKey MinimumHorizontalRate => new PropertyKey(EdidDataBlockDescriptor.DisplayRangeLimits, DisplayRangeLimitsDescriptorProperty.MinimumHorizontalRate, PropertyUnit.Hz);
+                        public static IPropertyKey MinimumHorizontalRate => new PropertyKey(EdidDataBlockDescriptor.DisplayRangeLimits, DisplayRangeLimitsDescriptorProperty.MinimumHorizontalRate, PropertyUnit.KHz);
                         #endregion
 
                         #region [public] {static} (IPropertyKey) MaximumHorizontalRate: Gets a value representing the key to retrieve the property value
@@ -2633,7 +2633,7 @@ namespace iTin.Hardware.Specification.Eedid
                         ///  <list type="bullet">
                         ///   <item><description>Structure: <see cref="EdidDataBlockDescriptor.DisplayRangeLimits"/></description></item>
                         ///   <item><description>Property: <see cref="DisplayRangeLimitsDescriptorProperty.MaximumHorizontalRate"/></description></item>
-                        ///   <item><description>Unit: <see cref="PropertyUnit.Hz"/></description></item>
+                        ///   <item><description>Unit: <see cref="PropertyUnit.KHz"/></description></item>
                         ///  </list>
                         /// </para>
                         /// <para>
@@ -2645,7 +2645,7 @@ namespace iTin.Hardware.Specification.Eedid
                         ///  <para>1.4</para>
                         /// </para>
                         /// </summary>
-                        public static IPropertyKey MaximumHorizontalRate => new PropertyKey(EdidDataBlockDescriptor.DisplayRangeLimits, DisplayRangeLimitsDescriptorProperty.MaximumHorizontalRate, PropertyUnit.Hz);
+                        public static IPropertyKey MaximumHorizontalRate => new PropertyKey(EdidDataBlockDescriptor.DisplayRangeLimits, DisplayRangeLimitsDescriptorProperty.MaximumHorizontalRate, PropertyUnit.KHz);
                         #endregion
 
                         #region [public] {static} (IPropertyKey) MaximumPixelClock: Gets a value representing the key to retrieve the property value

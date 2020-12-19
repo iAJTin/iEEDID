@@ -23,7 +23,7 @@ namespace iTin.Core.Hardware.Common
         /// Gets a value that represents the unit in which the property is measured.
         /// </summary>
         /// <value>
-        /// Unidad en que se mide la propiedad.
+        /// Unit in which the property is measured.
         /// </value>
         PropertyUnit PropertyUnit { get; }
 
