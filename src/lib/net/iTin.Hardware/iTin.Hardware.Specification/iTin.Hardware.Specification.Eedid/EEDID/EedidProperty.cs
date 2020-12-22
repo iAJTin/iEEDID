@@ -5691,6 +5691,612 @@ namespace iTin.Hardware.Specification.Eedid
             /// </summary>
             public static class DisplayCapabilitiesAndFeatureSupportSet
             {
+                #region [public] {static} (IPropertyKey) LegacyModes: Gets a value representing the key to retrieve the property value
+                /// <summary>
+                /// <para>Gets a value representing the key to retrieve the property value.</para>
+                /// <para>Legacy Modes.</para>
+                /// <para>
+                ///  <para><b>Key Composition</b></para>
+                ///  <list type="bullet">
+                ///   <item><description>Structure: <see cref="KnownDiSection.DisplayCapabilitiesAndFeatureSupportSet"/></description></item>
+                ///   <item><description>Property: <see cref="DiDisplayCapabilitiesAndFeatureSupportSet.LegacyModes"/></description></item>
+                ///   <item><description>Unit: <see cref="PropertyUnit.None"/></description></item>
+                ///  </list>
+                /// </para>
+                /// <para>
+                ///  <para><b>Return Value</b></para>
+                ///  <para>Type: <see cref="string"/>.</para>
+                /// </para>
+                /// </summary>
+                public static IPropertyKey LegacyModes => new PropertyKey(KnownDiSection.DisplayCapabilitiesAndFeatureSupportSet, DiDisplayCapabilitiesAndFeatureSupportSet.LegacyModes);
+                #endregion
+
+                #region [public] {static} (IPropertyKey) StereoVideo: Gets a value representing the key to retrieve the property value
+                /// <summary>
+                /// <para>Gets a value representing the key to retrieve the property value.</para>
+                /// <para>Stereo Video.</para>
+                /// <para>
+                ///  <para><b>Key Composition</b></para>
+                ///  <list type="bullet">
+                ///   <item><description>Structure: <see cref="KnownDiSection.DisplayCapabilitiesAndFeatureSupportSet"/></description></item>
+                ///   <item><description>Property: <see cref="DiDisplayCapabilitiesAndFeatureSupportSet.StereoVideo"/></description></item>
+                ///   <item><description>Unit: <see cref="PropertyUnit.None"/></description></item>
+                ///  </list>
+                /// </para>
+                /// <para>
+                ///  <para><b>Return Value</b></para>
+                ///  <para>Type: <see cref="string"/>.</para>
+                /// </para>
+                /// </summary>
+                public static IPropertyKey StereoVideo => new PropertyKey(KnownDiSection.DisplayCapabilitiesAndFeatureSupportSet, DiDisplayCapabilitiesAndFeatureSupportSet.StereoVideo);
+                #endregion
+
+                #region [public] {static} (IPropertyKey) ScalerOnBoard: Gets a value representing the key to retrieve the property value
+                /// <summary>
+                /// <para>Gets a value representing the key to retrieve the property value.</para>
+                /// <para>Scaler On Board.</para>
+                /// <para>
+                ///  <para><b>Key Composition</b></para>
+                ///  <list type="bullet">
+                ///   <item><description>Structure: <see cref="KnownDiSection.DisplayCapabilitiesAndFeatureSupportSet"/></description></item>
+                ///   <item><description>Property: <see cref="DiDisplayCapabilitiesAndFeatureSupportSet.ScalerOnBoard"/></description></item>
+                ///   <item><description>Unit: <see cref="PropertyUnit.None"/></description></item>
+                ///  </list>
+                /// </para>
+                /// <para>
+                ///  <para><b>Return Value</b></para>
+                ///  <para>Type: <see cref="bool"/>.</para>
+                /// </para>
+                /// </summary>
+                public static IPropertyKey ScalerOnBoard => new PropertyKey(KnownDiSection.DisplayCapabilitiesAndFeatureSupportSet, DiDisplayCapabilitiesAndFeatureSupportSet.ScalerOnBoard);
+                #endregion
+
+                #region [public] {static} (IPropertyKey) ImageCentering: Gets a value representing the key to retrieve the property value
+                /// <summary>
+                /// <para>Gets a value representing the key to retrieve the property value.</para>
+                /// <para>Image Centering.</para>
+                /// <para>
+                ///  <para><b>Key Composition</b></para>
+                ///  <list type="bullet">
+                ///   <item><description>Structure: <see cref="KnownDiSection.DisplayCapabilitiesAndFeatureSupportSet"/></description></item>
+                ///   <item><description>Property: <see cref="DiDisplayCapabilitiesAndFeatureSupportSet.ImageCentering"/></description></item>
+                ///   <item><description>Unit: <see cref="PropertyUnit.None"/></description></item>
+                ///  </list>
+                /// </para>
+                /// <para>
+                ///  <para><b>Return Value</b></para>
+                ///  <para>Type: <see cref="bool"/>.</para>
+                /// </para>
+                /// </summary>
+                public static IPropertyKey ImageCentering => new PropertyKey(KnownDiSection.DisplayCapabilitiesAndFeatureSupportSet, DiDisplayCapabilitiesAndFeatureSupportSet.ImageCentering);
+                #endregion
+
+                #region [public] {static} (IPropertyKey) ConditionalUpdate: Gets a value representing the key to retrieve the property value
+                /// <summary>
+                /// <para>Gets a value representing the key to retrieve the property value.</para>
+                /// <para>Conditional Update.</para>
+                /// <para>
+                ///  <para><b>Key Composition</b></para>
+                ///  <list type="bullet">
+                ///   <item><description>Structure: <see cref="KnownDiSection.DisplayCapabilitiesAndFeatureSupportSet"/></description></item>
+                ///   <item><description>Property: <see cref="DiDisplayCapabilitiesAndFeatureSupportSet.ConditionalUpdate"/></description></item>
+                ///   <item><description>Unit: <see cref="PropertyUnit.None"/></description></item>
+                ///  </list>
+                /// </para>
+                /// <para>
+                ///  <para><b>Return Value</b></para>
+                ///  <para>Type: <see cref="bool"/>.</para>
+                /// </para>
+                /// </summary>
+                public static IPropertyKey ConditionalUpdate => new PropertyKey(KnownDiSection.DisplayCapabilitiesAndFeatureSupportSet, DiDisplayCapabilitiesAndFeatureSupportSet.ConditionalUpdate);
+                #endregion
+
+                #region [public] {static} (IPropertyKey) InterlacedVideo: Gets a value representing the key to retrieve the property value
+                /// <summary>
+                /// <para>Gets a value representing the key to retrieve the property value.</para>
+                /// <para>Interlaced Video.</para>
+                /// <para>
+                ///  <para><b>Key Composition</b></para>
+                ///  <list type="bullet">
+                ///   <item><description>Structure: <see cref="KnownDiSection.DisplayCapabilitiesAndFeatureSupportSet"/></description></item>
+                ///   <item><description>Property: <see cref="DiDisplayCapabilitiesAndFeatureSupportSet.InterlacedVideo"/></description></item>
+                ///   <item><description>Unit: <see cref="PropertyUnit.None"/></description></item>
+                ///  </list>
+                /// </para>
+                /// <para>
+                ///  <para><b>Return Value</b></para>
+                ///  <para>Type: <see cref="bool"/>.</para>
+                /// </para>
+                /// </summary>
+                public static IPropertyKey InterlacedVideo => new PropertyKey(KnownDiSection.DisplayCapabilitiesAndFeatureSupportSet, DiDisplayCapabilitiesAndFeatureSupportSet.InterlacedVideo);
+                #endregion
+
+                #region [public] {static} (IPropertyKey) FrameLock: Gets a value representing the key to retrieve the property value
+                /// <summary>
+                /// <para>Gets a value representing the key to retrieve the property value.</para>
+                /// <para>Frame Lock.</para>
+                /// <para>
+                ///  <para><b>Key Composition</b></para>
+                ///  <list type="bullet">
+                ///   <item><description>Structure: <see cref="KnownDiSection.DisplayCapabilitiesAndFeatureSupportSet"/></description></item>
+                ///   <item><description>Property: <see cref="DiDisplayCapabilitiesAndFeatureSupportSet.FrameLock"/></description></item>
+                ///   <item><description>Unit: <see cref="PropertyUnit.None"/></description></item>
+                ///  </list>
+                /// </para>
+                /// <para>
+                ///  <para><b>Return Value</b></para>
+                ///  <para>Type: <see cref="bool"/>.</para>
+                /// </para>
+                /// </summary>
+                public static IPropertyKey FrameLock => new PropertyKey(KnownDiSection.DisplayCapabilitiesAndFeatureSupportSet, DiDisplayCapabilitiesAndFeatureSupportSet.FrameLock);
+                #endregion
+
+                #region [public] {static} (IPropertyKey) FrameRateConversion: Gets a value representing the key to retrieve the property value
+                /// <summary>
+                /// <para>Gets a value representing the key to retrieve the property value.</para>
+                /// <para>Frame Rate Conversion.</para>
+                /// <para>
+                ///  <para><b>Key Composition</b></para>
+                ///  <list type="bullet">
+                ///   <item><description>Structure: <see cref="KnownDiSection.DisplayCapabilitiesAndFeatureSupportSet"/></description></item>
+                ///   <item><description>Property: <see cref="DiDisplayCapabilitiesAndFeatureSupportSet.FrameRateConversion"/></description></item>
+                ///   <item><description>Unit: <see cref="PropertyUnit.None"/></description></item>
+                ///  </list>
+                /// </para>
+                /// <para>
+                ///  <para><b>Return Value</b></para>
+                ///  <para>Type: <see cref="bool"/>.</para>
+                /// </para>
+                /// </summary>
+                public static IPropertyKey FrameRateConversion => new PropertyKey(KnownDiSection.DisplayCapabilitiesAndFeatureSupportSet, DiDisplayCapabilitiesAndFeatureSupportSet.FrameRateConversion);
+                #endregion
+
+                #region [public] {static} (IPropertyKey) VerticalFrequency: Gets a value representing the key to retrieve the property value
+                /// <summary>
+                /// <para>Gets a value representing the key to retrieve the property value.</para>
+                /// <para>Vertical Frequency.</para>
+                /// <para>The possible values are shown below:</para>
+                /// <para>
+                ///  <list type="bullet">
+                ///   <item><description>0000h  Not available.</description></item>
+                ///   <item><description>0001h - FFFEh  Frequency value.</description></item>
+                ///   <item><description>FFFFh  Reserved.</description></item>
+                ///  </list>
+                /// </para>
+                /// <para>
+                ///  <para><b>Key Composition</b></para>
+                ///  <list type="bullet">
+                ///   <item><description>Structure: <see cref="KnownDiSection.DisplayCapabilitiesAndFeatureSupportSet"/></description></item>
+                ///   <item><description>Property: <see cref="DiDisplayCapabilitiesAndFeatureSupportSet.VerticalFrequency"/></description></item>
+                ///   <item><description>Unit: <see cref="PropertyUnit.Hz"/></description></item>
+                ///  </list>
+                /// </para>
+                /// <para>
+                ///  <para><b>Return Value</b></para>
+                ///  <para>Type: <see cref="int"/>.</para>
+                /// </para>
+                /// </summary>
+                public static IPropertyKey VerticalFrequency => new PropertyKey(KnownDiSection.DisplayCapabilitiesAndFeatureSupportSet, DiDisplayCapabilitiesAndFeatureSupportSet.VerticalFrequency, PropertyUnit.Hz);
+                #endregion
+
+                #region [public] {static} (IPropertyKey) HorizontalFrequency: Gets a value representing the key to retrieve the property value
+                /// <summary>
+                /// <para>Gets a value representing the key to retrieve the property value.</para>
+                /// <para>Horizontal Frequency.</para>
+                /// <para>The possible values are shown below:</para>
+                /// <para>
+                ///  <list type="bullet">
+                ///   <item><description>0000h  Not available.</description></item>
+                ///   <item><description>0001h - FFFEh  Frequency value.</description></item>
+                ///   <item><description>FFFFh  Reserved.</description></item>
+                ///  </list>
+                /// </para>
+                /// <para>
+                ///  <para><b>Key Composition</b></para>
+                ///  <list type="bullet">
+                ///   <item><description>Structure: <see cref="KnownDiSection.DisplayCapabilitiesAndFeatureSupportSet"/></description></item>
+                ///   <item><description>Property: <see cref="DiDisplayCapabilitiesAndFeatureSupportSet.HorizontalFrequency"/></description></item>
+                ///   <item><description>Unit: <see cref="PropertyUnit.Hz"/></description></item>
+                ///  </list>
+                /// </para>
+                /// <para>
+                ///  <para><b>Return Value</b></para>
+                ///  <para>Type: <see cref="int"/>.</para>
+                /// </para>
+                /// </summary>
+                public static IPropertyKey HorizontalFrequency => new PropertyKey(KnownDiSection.DisplayCapabilitiesAndFeatureSupportSet, DiDisplayCapabilitiesAndFeatureSupportSet.HorizontalFrequency, PropertyUnit.Hz);
+                #endregion
+
+                #region [public] {static} (IPropertyKey) DisplayScanOrientationType: Gets a value representing the key to retrieve the property value
+                /// <summary>
+                /// <para>Gets a value representing the key to retrieve the property value.</para>
+                /// <para>Display/Scan Orientation Definition Type.</para>
+                /// <para>
+                ///  <para><b>Key Composition</b></para>
+                ///  <list type="bullet">
+                ///   <item><description>Structure: <see cref="KnownDiSection.DisplayCapabilitiesAndFeatureSupportSet"/></description></item>
+                ///   <item><description>Property: <see cref="DiDisplayCapabilitiesAndFeatureSupportSet.DisplayScanOrientationType"/></description></item>
+                ///   <item><description>Unit: <see cref="PropertyUnit.None"/></description></item>
+                ///  </list>
+                /// </para>
+                /// <para>
+                ///  <para><b>Return Value</b></para>
+                ///  <para>Type: <see cref="string"/>.</para>
+                /// </para>
+                /// </summary>
+                public static IPropertyKey DisplayScanOrientationType => new PropertyKey(KnownDiSection.DisplayCapabilitiesAndFeatureSupportSet, DiDisplayCapabilitiesAndFeatureSupportSet.DisplayScanOrientationType);
+                #endregion
+
+                #region [public] {static} (IPropertyKey) ScreenOrientation: Gets a value representing the key to retrieve the property value
+                /// <summary>
+                /// <para>Gets a value representing the key to retrieve the property value.</para>
+                /// <para>Screen Orientation.</para>
+                /// <para>
+                ///  <para><b>Key Composition</b></para>
+                ///  <list type="bullet">
+                ///   <item><description>Structure: <see cref="KnownDiSection.DisplayCapabilitiesAndFeatureSupportSet"/></description></item>
+                ///   <item><description>Property: <see cref="DiDisplayCapabilitiesAndFeatureSupportSet.ScreenOrientation"/></description></item>
+                ///   <item><description>Unit: <see cref="PropertyUnit.None"/></description></item>
+                ///  </list>
+                /// </para>
+                /// <para>
+                ///  <para><b>Return Value</b></para>
+                ///  <para>Type: <see cref="string"/>.</para>
+                /// </para>
+                /// </summary>
+                public static IPropertyKey ScreenOrientation => new PropertyKey(KnownDiSection.DisplayCapabilitiesAndFeatureSupportSet, DiDisplayCapabilitiesAndFeatureSupportSet.ScreenOrientation);
+                #endregion
+
+                #region [public] {static} (IPropertyKey) ZeroPixelLocation: Gets a value representing the key to retrieve the property value
+                /// <summary>
+                /// <para>Gets a value representing the key to retrieve the property value.</para>
+                /// <para>Zero Pixel Location.</para>
+                /// <para>
+                ///  <para><b>Key Composition</b></para>
+                ///  <list type="bullet">
+                ///   <item><description>Structure: <see cref="KnownDiSection.DisplayCapabilitiesAndFeatureSupportSet"/></description></item>
+                ///   <item><description>Property: <see cref="DiDisplayCapabilitiesAndFeatureSupportSet.ZeroPixelLocation"/></description></item>
+                ///   <item><description>Unit: <see cref="PropertyUnit.None"/></description></item>
+                ///  </list>
+                /// </para>
+                /// <para>
+                ///  <para><b>Return Value</b></para>
+                ///  <para>Type: <see cref="string"/>.</para>
+                /// </para>
+                /// </summary>
+                public static IPropertyKey ZeroPixelLocation => new PropertyKey(KnownDiSection.DisplayCapabilitiesAndFeatureSupportSet, DiDisplayCapabilitiesAndFeatureSupportSet.ZeroPixelLocation);
+                #endregion
+
+                #region [public] {static} (IPropertyKey) ScanDirection: Gets a value representing the key to retrieve the property value
+                /// <summary>
+                /// <para>Gets a value representing the key to retrieve the property value.</para>
+                /// <para>Scan Direction.</para>
+                /// <para>
+                ///  <para><b>Key Composition</b></para>
+                ///  <list type="bullet">
+                ///   <item><description>Structure: <see cref="KnownDiSection.DisplayCapabilitiesAndFeatureSupportSet"/></description></item>
+                ///   <item><description>Property: <see cref="DiDisplayCapabilitiesAndFeatureSupportSet.ScanDirection"/></description></item>
+                ///   <item><description>Unit: <see cref="PropertyUnit.None"/></description></item>
+                ///  </list>
+                /// </para>
+                /// <para>
+                ///  <para><b>Return Value</b></para>
+                ///  <para>Type: <see cref="string"/>.</para>
+                /// </para>
+                /// </summary>
+                public static IPropertyKey ScanDirection => new PropertyKey(KnownDiSection.DisplayCapabilitiesAndFeatureSupportSet, DiDisplayCapabilitiesAndFeatureSupportSet.ScanDirection);
+                #endregion
+
+                #region [public] {static} (IPropertyKey) StandaloneProjector: Gets a value representing the key to retrieve the property value
+                /// <summary>
+                /// <para>Gets a value representing the key to retrieve the property value.</para>
+                /// <para>Standalone Projector.</para>
+                /// <para>
+                ///  <para><b>Key Composition</b></para>
+                ///  <list type="bullet">
+                ///   <item><description>Structure: <see cref="KnownDiSection.DisplayCapabilitiesAndFeatureSupportSet"/></description></item>
+                ///   <item><description>Property: <see cref="DiDisplayCapabilitiesAndFeatureSupportSet.StandaloneProjector"/></description></item>
+                ///   <item><description>Unit: <see cref="PropertyUnit.None"/></description></item>
+                ///  </list>
+                /// </para>
+                /// <para>
+                ///  <para><b>Return Value</b></para>
+                ///  <para>Type: <see cref="bool"/>.</para>
+                /// </para>
+                /// </summary>
+                public static IPropertyKey StandaloneProjector => new PropertyKey(KnownDiSection.DisplayCapabilitiesAndFeatureSupportSet, DiDisplayCapabilitiesAndFeatureSupportSet.StandaloneProjector);
+                #endregion
+
+                #region [public] {static} (IPropertyKey) DefaultColorLuminanceDecoding: Gets a value representing the key to retrieve the property value
+                /// <summary>
+                /// <para>Gets a value representing the key to retrieve the property value.</para>
+                /// <para>Default Color/Luminance Decoding.</para>
+                /// <para>
+                ///  <para><b>Key Composition</b></para>
+                ///  <list type="bullet">
+                ///   <item><description>Structure: <see cref="KnownDiSection.DisplayCapabilitiesAndFeatureSupportSet"/></description></item>
+                ///   <item><description>Property: <see cref="DiDisplayCapabilitiesAndFeatureSupportSet.DefaultColorLuminanceDecoding"/></description></item>
+                ///   <item><description>Unit: <see cref="PropertyUnit.None"/></description></item>
+                ///  </list>
+                /// </para>
+                /// <para>
+                ///  <para><b>Return Value</b></para>
+                ///  <para>Type: <see cref="string"/>.</para>
+                /// </para>
+                /// </summary>
+                public static IPropertyKey DefaultColorLuminanceDecoding => new PropertyKey(KnownDiSection.DisplayCapabilitiesAndFeatureSupportSet, DiDisplayCapabilitiesAndFeatureSupportSet.DefaultColorLuminanceDecoding);
+                #endregion
+
+                #region [public] {static} (IPropertyKey) PreferredColorLuminanceDecoder: Gets a value representing the key to retrieve the property value
+                /// <summary>
+                /// <para>Gets a value representing the key to retrieve the property value.</para>
+                /// <para>Preferred Color/Luminance Decoding.</para>
+                /// <para>
+                ///  <para><b>Key Composition</b></para>
+                ///  <list type="bullet">
+                ///   <item><description>Structure: <see cref="KnownDiSection.DisplayCapabilitiesAndFeatureSupportSet"/></description></item>
+                ///   <item><description>Property: <see cref="DiDisplayCapabilitiesAndFeatureSupportSet.PreferredColorLuminanceDecoder"/></description></item>
+                ///   <item><description>Unit: <see cref="PropertyUnit.None"/></description></item>
+                ///  </list>
+                /// </para>
+                /// <para>
+                ///  <para><b>Return Value</b></para>
+                ///  <para>Type: <see cref="string"/>.</para>
+                /// </para>
+                /// </summary>
+                public static IPropertyKey PreferredColorLuminanceDecoder => new PropertyKey(KnownDiSection.DisplayCapabilitiesAndFeatureSupportSet, DiDisplayCapabilitiesAndFeatureSupportSet.PreferredColorLuminanceDecoder);
+                #endregion
+
+                #region [public] {static} (IPropertyKey) ColorLuminanceDecodingCapabilities: Gets a value representing the key to retrieve the property value
+                /// <summary>
+                /// <para>Gets a value representing the key to retrieve the property value.</para>
+                /// <para>Color/Luminance Decoding Capabilities.</para>
+                /// <para>
+                ///  <para><b>Key Composition</b></para>
+                ///  <list type="bullet">
+                ///   <item><description>Structure: <see cref="KnownDiSection.DisplayCapabilitiesAndFeatureSupportSet"/></description></item>
+                ///   <item><description>Property: <see cref="DiDisplayCapabilitiesAndFeatureSupportSet.ColorLuminanceDecodingCapabilities"/></description></item>
+                ///   <item><description>Unit: <see cref="PropertyUnit.None"/></description></item>
+                ///  </list>
+                /// </para>
+                /// <para>
+                ///  <para><b>Return Value</b></para>
+                ///  <para>Type: <see cref="string[]"/>.</para>
+                /// </para>
+                /// </summary>
+                public static IPropertyKey ColorLuminanceDecodingCapabilities => new PropertyKey(KnownDiSection.DisplayCapabilitiesAndFeatureSupportSet, DiDisplayCapabilitiesAndFeatureSupportSet.ColorLuminanceDecodingCapabilities);
+                #endregion
+
+                #region [public] {static} (IPropertyKey) Dithering: Gets a value representing the key to retrieve the property value
+                /// <summary>
+                /// <para>Gets a value representing the key to retrieve the property value.</para>
+                /// <para>Dithering.</para>
+                /// <para>
+                ///  <para><b>Key Composition</b></para>
+                ///  <list type="bullet">
+                ///   <item><description>Structure: <see cref="KnownDiSection.DisplayCapabilitiesAndFeatureSupportSet"/></description></item>
+                ///   <item><description>Property: <see cref="DiDisplayCapabilitiesAndFeatureSupportSet.Dithering"/></description></item>
+                ///   <item><description>Unit: <see cref="PropertyUnit.None"/></description></item>
+                ///  </list>
+                /// </para>
+                /// <para>
+                ///  <para><b>Return Value</b></para>
+                ///  <para>Type: <see cref="bool"/>.</para>
+                /// </para>
+                /// </summary>
+                public static IPropertyKey Dithering => new PropertyKey(KnownDiSection.DisplayCapabilitiesAndFeatureSupportSet, DiDisplayCapabilitiesAndFeatureSupportSet.Dithering);
+                #endregion
+
+                #region [public] {static} (IPropertyKey) SupportedColorBitDepthSubChannel0Blue: Gets a value representing the key to retrieve the property value
+                /// <summary>
+                /// <para>Gets a value representing the key to retrieve the property value.</para>
+                /// <para>Supported Color Bit-Depth of Sub-Channel 0 (Blue).</para>
+                /// <para>The possible values are shown below:</para>
+                /// <para>
+                ///  <list type="bullet">
+                ///   <item><description>00h  No Information.</description></item>
+                ///   <item><description>01h - 10h  Bits per color value.</description></item>
+                ///   <item><description>11h - FFh  Reserved.</description></item>
+                ///  </list>
+                /// </para>
+                /// <para>
+                ///  <para><b>Key Composition</b></para>
+                ///  <list type="bullet">
+                ///   <item><description>Structure: <see cref="KnownDiSection.DisplayCapabilitiesAndFeatureSupportSet"/></description></item>
+                ///   <item><description>Property: <see cref="DiDisplayCapabilitiesAndFeatureSupportSet.SupportedColorBitDepthSubChannel0Blue"/></description></item>
+                ///   <item><description>Unit: <see cref="PropertyUnit.Bits"/></description></item>
+                ///  </list>
+                /// </para>
+                /// <para>
+                ///  <para><b>Return Value</b></para>
+                ///  <para>Type: <see cref="byte"/>.</para>
+                /// </para>
+                /// </summary>
+                public static IPropertyKey SupportedColorBitDepthSubChannel0Blue => new PropertyKey(KnownDiSection.DisplayCapabilitiesAndFeatureSupportSet, DiDisplayCapabilitiesAndFeatureSupportSet.SupportedColorBitDepthSubChannel0Blue, PropertyUnit.Bits);
+                #endregion
+
+                #region [public] {static} (IPropertyKey) SupportedColorBitDepthSubChannel1Green: Gets a value representing the key to retrieve the property value
+                /// <summary>
+                /// <para>Gets a value representing the key to retrieve the property value.</para>
+                /// <para>Supported Color Bit-Depth of Sub-Channel 1 (Green).</para>
+                /// <para>The possible values are shown below:</para>
+                /// <para>
+                ///  <list type="bullet">
+                ///   <item><description>00h  No Information.</description></item>
+                ///   <item><description>01h - 10h  Bits per color value.</description></item>
+                ///   <item><description>11h - FFh  Reserved.</description></item>
+                ///  </list>
+                /// </para>
+                /// <para>
+                ///  <para><b>Key Composition</b></para>
+                ///  <list type="bullet">
+                ///   <item><description>Structure: <see cref="KnownDiSection.DisplayCapabilitiesAndFeatureSupportSet"/></description></item>
+                ///   <item><description>Property: <see cref="DiDisplayCapabilitiesAndFeatureSupportSet.SupportedColorBitDepthSubChannel1Green"/></description></item>
+                ///   <item><description>Unit: <see cref="PropertyUnit.Bits"/></description></item>
+                ///  </list>
+                /// </para>
+                /// <para>
+                ///  <para><b>Return Value</b></para>
+                ///  <para>Type: <see cref="byte"/>.</para>
+                /// </para>
+                /// </summary>
+                public static IPropertyKey SupportedColorBitDepthSubChannel1Green => new PropertyKey(KnownDiSection.DisplayCapabilitiesAndFeatureSupportSet, DiDisplayCapabilitiesAndFeatureSupportSet.SupportedColorBitDepthSubChannel1Green, PropertyUnit.Bits);
+                #endregion
+
+                #region [public] {static} (IPropertyKey) SupportedColorBitDepthSubChannel2Red: Gets a value representing the key to retrieve the property value
+                /// <summary>
+                /// <para>Gets a value representing the key to retrieve the property value.</para>
+                /// <para>Supported Color Bit-Depth of Sub-Channel 1 (Green).</para>
+                /// <para>The possible values are shown below:</para>
+                /// <para>
+                ///  <list type="bullet">
+                ///   <item><description>00h  No Information.</description></item>
+                ///   <item><description>01h - 10h  Bits per color value.</description></item>
+                ///   <item><description>11h - FFh  Reserved.</description></item>
+                ///  </list>
+                /// </para>
+                /// <para>
+                ///  <para><b>Key Composition</b></para>
+                ///  <list type="bullet">
+                ///   <item><description>Structure: <see cref="KnownDiSection.DisplayCapabilitiesAndFeatureSupportSet"/></description></item>
+                ///   <item><description>Property: <see cref="DiDisplayCapabilitiesAndFeatureSupportSet.SupportedColorBitDepthSubChannel2Red"/></description></item>
+                ///   <item><description>Unit: <see cref="PropertyUnit.Bits"/></description></item>
+                ///  </list>
+                /// </para>
+                /// <para>
+                ///  <para><b>Return Value</b></para>
+                ///  <para>Type: <see cref="byte"/>.</para>
+                /// </para>
+                /// </summary>
+                public static IPropertyKey SupportedColorBitDepthSubChannel2Red => new PropertyKey(KnownDiSection.DisplayCapabilitiesAndFeatureSupportSet, DiDisplayCapabilitiesAndFeatureSupportSet.SupportedColorBitDepthSubChannel2Red, PropertyUnit.Bits);
+                #endregion
+
+                #region [public] {static} (IPropertyKey) SupportedColorBitDepthSubChannel0CbPb: Gets a value representing the key to retrieve the property value
+                /// <summary>
+                /// <para>Gets a value representing the key to retrieve the property value.</para>
+                /// <para>Supported Color Bit-Depth of Sub-Channel 0 (Cb/Pb).</para>
+                /// <para>The possible values are shown below:</para>
+                /// <para>
+                ///  <list type="bullet">
+                ///   <item><description>00h  No Information.</description></item>
+                ///   <item><description>01h - 10h  Bits per color value.</description></item>
+                ///   <item><description>11h - FFh  Reserved.</description></item>
+                ///  </list>
+                /// </para>
+                /// <para>
+                ///  <para><b>Key Composition</b></para>
+                ///  <list type="bullet">
+                ///   <item><description>Structure: <see cref="KnownDiSection.DisplayCapabilitiesAndFeatureSupportSet"/></description></item>
+                ///   <item><description>Property: <see cref="DiDisplayCapabilitiesAndFeatureSupportSet.SupportedColorBitDepthSubChannel0CbPb"/></description></item>
+                ///   <item><description>Unit: <see cref="PropertyUnit.Bits"/></description></item>
+                ///  </list>
+                /// </para>
+                /// <para>
+                ///  <para><b>Return Value</b></para>
+                ///  <para>Type: <see cref="byte"/>.</para>
+                /// </para>
+                /// </summary>
+                public static IPropertyKey SupportedColorBitDepthSubChannel0CbPb => new PropertyKey(KnownDiSection.DisplayCapabilitiesAndFeatureSupportSet, DiDisplayCapabilitiesAndFeatureSupportSet.SupportedColorBitDepthSubChannel0CbPb, PropertyUnit.Bits);
+                #endregion
+
+                #region [public] {static} (IPropertyKey) SupportedColorBitDepthSubChannel1Y: Gets a value representing the key to retrieve the property value
+                /// <summary>
+                /// <para>Gets a value representing the key to retrieve the property value.</para>
+                /// <para>Supported Color Bit-Depth of Sub-Channel 1 (Y).</para>
+                /// <para>The possible values are shown below:</para>
+                /// <para>
+                ///  <list type="bullet">
+                ///   <item><description>00h  No Information.</description></item>
+                ///   <item><description>01h - 10h  Bits per color value.</description></item>
+                ///   <item><description>11h - FFh  Reserved.</description></item>
+                ///  </list>
+                /// </para>
+                /// <para>
+                ///  <para><b>Key Composition</b></para>
+                ///  <list type="bullet">
+                ///   <item><description>Structure: <see cref="KnownDiSection.DisplayCapabilitiesAndFeatureSupportSet"/></description></item>
+                ///   <item><description>Property: <see cref="DiDisplayCapabilitiesAndFeatureSupportSet.SupportedColorBitDepthSubChannel1Y"/></description></item>
+                ///   <item><description>Unit: <see cref="PropertyUnit.Bits"/></description></item>
+                ///  </list>
+                /// </para>
+                /// <para>
+                ///  <para><b>Return Value</b></para>
+                ///  <para>Type: <see cref="byte"/>.</para>
+                /// </para>
+                /// </summary>
+                public static IPropertyKey SupportedColorBitDepthSubChannel1Y => new PropertyKey(KnownDiSection.DisplayCapabilitiesAndFeatureSupportSet, DiDisplayCapabilitiesAndFeatureSupportSet.SupportedColorBitDepthSubChannel1Y, PropertyUnit.Bits);
+                #endregion
+
+                #region [public] {static} (IPropertyKey) SupportedColorBitDepthSubChannel2CrPr: Gets a value representing the key to retrieve the property value
+                /// <summary>
+                /// <para>Gets a value representing the key to retrieve the property value.</para>
+                /// <para>Supported Color Bit-Depth of Sub-Channel 2 (Cr/Pr).</para>
+                /// <para>The possible values are shown below:</para>
+                /// <para>
+                ///  <list type="bullet">
+                ///   <item><description>00h  No Information.</description></item>
+                ///   <item><description>01h - 10h  Bits per color value.</description></item>
+                ///   <item><description>11h - FFh  Reserved.</description></item>
+                ///  </list>
+                /// </para>
+                /// <para>
+                ///  <para><b>Key Composition</b></para>
+                ///  <list type="bullet">
+                ///   <item><description>Structure: <see cref="KnownDiSection.DisplayCapabilitiesAndFeatureSupportSet"/></description></item>
+                ///   <item><description>Property: <see cref="DiDisplayCapabilitiesAndFeatureSupportSet.SupportedColorBitDepthSubChannel2CrPr"/></description></item>
+                ///   <item><description>Unit: <see cref="PropertyUnit.Bits"/></description></item>
+                ///  </list>
+                /// </para>
+                /// <para>
+                ///  <para><b>Return Value</b></para>
+                ///  <para>Type: <see cref="byte"/>.</para>
+                /// </para>
+                /// </summary>
+                public static IPropertyKey SupportedColorBitDepthSubChannel2CrPr => new PropertyKey(KnownDiSection.DisplayCapabilitiesAndFeatureSupportSet, DiDisplayCapabilitiesAndFeatureSupportSet.SupportedColorBitDepthSubChannel2CrPr, PropertyUnit.Bits);
+                #endregion
+
+                #region [public] {static} (IPropertyKey) AspectRatioConversionModes: Gets a value representing the key to retrieve the property value
+                /// <summary>
+                /// <para>Gets a value representing the key to retrieve the property value.</para>
+                /// <para>Aspect Ratio Conversion Modes.</para>
+                /// <para>
+                ///  <para><b>Key Composition</b></para>
+                ///  <list type="bullet">
+                ///   <item><description>Structure: <see cref="KnownDiSection.DisplayCapabilitiesAndFeatureSupportSet"/></description></item>
+                ///   <item><description>Property: <see cref="DiDisplayCapabilitiesAndFeatureSupportSet.AspectRatioConversionModes"/></description></item>
+                ///   <item><description>Unit: <see cref="PropertyUnit.None"/></description></item>
+                ///  </list>
+                /// </para>
+                /// <para>
+                ///  <para><b>Return Value</b></para>
+                ///  <para>Type: <see cref="string"/>.</para>
+                /// </para>
+                /// </summary>
+                public static IPropertyKey AspectRatioConversionModes => new PropertyKey(KnownDiSection.DisplayCapabilitiesAndFeatureSupportSet, DiDisplayCapabilitiesAndFeatureSupportSet.AspectRatioConversionModes);
+                #endregion
+
+                #region [public] {static} (IPropertyKey) PacketizedDigitalVideoSupportInformation: Gets a value representing the key to retrieve the property value
+                /// <summary>
+                /// <para>Gets a value representing the key to retrieve the property value.</para>
+                /// <para>
+                /// Aspect Ratio Conversion Modes. All 16 Bytes are reserved (must be set to 00h).<br/>
+                /// These Bytes will be defined in a future revision to the DI-EXT Standard
+                /// </para>
+                /// <para>
+                ///  <para><b>Key Composition</b></para>
+                ///  <list type="bullet">
+                ///   <item><description>Structure: <see cref="KnownDiSection.DisplayCapabilitiesAndFeatureSupportSet"/></description></item>
+                ///   <item><description>Property: <see cref="DiDisplayCapabilitiesAndFeatureSupportSet.PacketizedDigitalVideoSupportInformation"/></description></item>
+                ///   <item><description>Unit: <see cref="PropertyUnit.None"/></description></item>
+                ///  </list>
+                /// </para>
+                /// <para>
+                ///  <para><b>Return Value</b></para>
+                ///  <para>Type: <see cref="ReadOnlyCollection{T}"/> where <b>T</b> is <see cref="byte"/>.</para>
+                /// </para>
+                /// </summary>
+                public static IPropertyKey PacketizedDigitalVideoSupportInformation => new PropertyKey(KnownDiSection.DisplayCapabilitiesAndFeatureSupportSet, DiDisplayCapabilitiesAndFeatureSupportSet.PacketizedDigitalVideoSupportInformation);
+                #endregion
             }
             #endregion
 
@@ -5700,6 +6306,28 @@ namespace iTin.Hardware.Specification.Eedid
             /// </summary>
             public static class UnusedBytes
             {
+                #region [public] {static} (IPropertyKey) Data: Gets a value representing the key to retrieve the property value
+                /// <summary>
+                /// <para>Gets a value representing the key to retrieve the property value.</para>
+                /// <para>
+                /// Aspect Ratio Conversion Modes. All 17 Bytes are reserved (must be set to 00h).<br/>
+                /// These Bytes will be defined in a future revision to the DI-EXT Standard.
+                /// </para>
+                /// <para>
+                ///  <para><b>Key Composition</b></para>
+                ///  <list type="bullet">
+                ///   <item><description>Structure: <see cref="KnownDiSection.UnusedBytes"/></description></item>
+                ///   <item><description>Property: <see cref="DiUnusedBytes.Data"/></description></item>
+                ///   <item><description>Unit: <see cref="PropertyUnit.None"/></description></item>
+                ///  </list>
+                /// </para>
+                /// <para>
+                ///  <para><b>Return Value</b></para>
+                ///  <para>Type: <see cref="ReadOnlyCollection{T}"/> where <b>T</b> is <see cref="byte"/>.</para>
+                /// </para>
+                /// </summary>
+                public static IPropertyKey Data => new PropertyKey(KnownDiSection.UnusedBytes, DiUnusedBytes.Data);
+                #endregion
             }
             #endregion
 
@@ -5709,6 +6337,28 @@ namespace iTin.Hardware.Specification.Eedid
             /// </summary>
             public static class AudioSupport
             {
+                #region [public] {static} (IPropertyKey) Data: Gets a value representing the key to retrieve the property value
+                /// <summary>
+                /// <para>Gets a value representing the key to retrieve the property value.</para>
+                /// <para>
+                /// Aspect Ratio Conversion Modes. All 9 Bytes are reserved (must be set to 00h).<br/>
+                /// These Bytes will be defined in a future revision to the DI-EXT Standard.
+                /// </para>
+                /// <para>
+                ///  <para><b>Key Composition</b></para>
+                ///  <list type="bullet">
+                ///   <item><description>Structure: <see cref="KnownDiSection.AudioSupport"/></description></item>
+                ///   <item><description>Property: <see cref="DiAudioSupport.Data"/></description></item>
+                ///   <item><description>Unit: <see cref="PropertyUnit.None"/></description></item>
+                ///  </list>
+                /// </para>
+                /// <para>
+                ///  <para><b>Return Value</b></para>
+                ///  <para>Type: <see cref="ReadOnlyCollection{T}"/> where <b>T</b> is <see cref="byte"/>.</para>
+                /// </para>
+                /// </summary>
+                public static IPropertyKey Data => new PropertyKey(KnownDiSection.AudioSupport, DiUnusedBytes.Data);
+                #endregion
             }
             #endregion
 
@@ -5718,6 +6368,45 @@ namespace iTin.Hardware.Specification.Eedid
             /// </summary>
             public static class DisplayTransferCharacteristic
             {
+                #region [public] {static} (IPropertyKey) Status: Gets a value representing the key to retrieve the property value
+                /// <summary>
+                /// <para>Gets a value representing the key to retrieve the property value.</para>
+                /// <para>Combined (White) or Separate (RGB) Sub-Channels.</para>
+                /// <para>
+                ///  <para><b>Key Composition</b></para>
+                ///  <list type="bullet">
+                ///   <item><description>Structure: <see cref="KnownDiSection.DisplayTransferCharacteristic"/></description></item>
+                ///   <item><description>Property: <see cref="DiDisplayTransferCharacteristic.Status"/></description></item>
+                ///   <item><description>Unit: <see cref="PropertyUnit.None"/></description></item>
+                ///  </list>
+                /// </para>
+                /// <para>
+                ///  <para><b>Return Value</b></para>
+                ///  <para>Type: <see cref="string"/>.</para>
+                /// </para>
+                /// </summary>
+                public static IPropertyKey Status => new PropertyKey(KnownDiSection.DisplayTransferCharacteristic, DiDisplayTransferCharacteristic.Status);
+                #endregion
+
+                #region [public] {static} (IPropertyKey) NumberLuminanceEntries: Gets a value representing the key to retrieve the property value
+                /// <summary>
+                /// <para>Gets a value representing the key to retrieve the property value.</para>
+                /// <para>Number of Luminance Entries.</para>
+                /// <para>
+                ///  <para><b>Key Composition</b></para>
+                ///  <list type="bullet">
+                ///   <item><description>Structure: <see cref="KnownDiSection.DisplayTransferCharacteristic"/></description></item>
+                ///   <item><description>Property: <see cref="DiDisplayTransferCharacteristic.NumberLuminanceEntries"/></description></item>
+                ///   <item><description>Unit: <see cref="PropertyUnit.None"/></description></item>
+                ///  </list>
+                /// </para>
+                /// <para>
+                ///  <para><b>Return Value</b></para>
+                ///  <para>Type: <see cref="byte"/>.</para>
+                /// </para>
+                /// </summary>
+                public static IPropertyKey NumberLuminanceEntries => new PropertyKey(KnownDiSection.DisplayTransferCharacteristic, DiDisplayTransferCharacteristic.NumberLuminanceEntries);
+                #endregion
             }
             #endregion
 

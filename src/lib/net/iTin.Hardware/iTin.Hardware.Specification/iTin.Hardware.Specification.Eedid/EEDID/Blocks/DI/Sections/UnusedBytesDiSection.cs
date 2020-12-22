@@ -2,24 +2,13 @@
 namespace iTin.Hardware.Specification.Eedid
 {
     using System.Collections.ObjectModel;
-    using System.Diagnostics;
 
     // DI Section: Unused Bytes
     // •——————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————•
-    // | Offset       Name                      Lenght      Description                                                                                   |
+    // | Offset       Name                  Lenght      Description                                                                                       |
     // •——————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————•
-    // | 00h          Sub-Pixel Layout          BYTE                                                                                                      |
-    // •——————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————•
-    // | 01h          Sub-Pixel Configuration   BYTE                                                                                                      |
-    // •——————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————•
-    // | 02h          Sub-Pixel Shape           BYTE                                                                                                      |
-    // •——————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————•
-    // | 03h          HPP                       BYTE                                                                                                      |
-    // •——————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————•
-    // | 04h          VPP                       BYTE                                                                                                      |
-    // •——————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————•
-    // | 05h          Major Display Device      BYTE                                                                                                      |
-    // |              Characteristics                                                                                                                     |
+    // | 00h          Unused Bytes          17 BYTE     All 17 Bytes are Reserved (Must be set to "00h"). These Bytes may be defined in a future revision |
+    // |                                                to the DI-EXT Standard.                                                                           |
     // •——————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————•
 
     /// <summary>
@@ -52,6 +41,7 @@ namespace iTin.Hardware.Specification.Eedid
         /// <param name="properties">Collection of properties of this section.</param>
         protected override void PopulateProperties(SectionPropertiesTable properties)
         {
+            properties.Add(EedidProperty.DI.UnusedBytes.Data, RawData);
         }
         #endregion
 

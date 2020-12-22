@@ -101,7 +101,6 @@ namespace iEEDID.ComponentModel.Parser
             #endregion
 
             #region Digital Interface Section
-            
             var digitalInterfaceSection = block.Sections[(int)KnownDiSection.DigitalInterface];
             if (digitalInterfaceSection != null)
             {
@@ -207,7 +206,6 @@ namespace iEEDID.ComponentModel.Parser
             #endregion
 
             #region Display Device Section
-
             var displayDeviceSection = block.Sections[(int)KnownDiSection.DisplayDevice];
             if (displayDeviceSection != null)
             {
@@ -276,58 +274,285 @@ namespace iEEDID.ComponentModel.Parser
                     logger.Info($@"   Monitor/display does{(ddcValue ? " " : " not ")}support DDC/CI");
                 }
             }
-
             #endregion
 
             #region Display Capabities & Feature Support Set Section
-
             var displayCapabitiesSection = block.Sections[(int)KnownDiSection.DisplayCapabilitiesAndFeatureSupportSet];
             if (displayCapabitiesSection != null)
             {
                 logger.Info($@" Display Capabities & Feature Support Set:");
 
-                //var supportedDigitalInterface = displayDeviceSection.GetProperty(EedidProperty.DI.DigitalInterface.SupportedDigitalInterface);
-                //if (supportedDigitalInterface.Success)
-                //{
-                //    logger.Info($@"   {EedidProperty.DI.DigitalInterface.SupportedDigitalInterface.GetPropertyName()}: {supportedDigitalInterface.Result.Value}");
-                //}
+                var legacyModes = displayCapabitiesSection.GetProperty(EedidProperty.DI.DisplayCapabilitiesAndFeatureSupportSet.LegacyModes);
+                if (legacyModes.Success)
+                {
+                    logger.Info($@"   {EedidProperty.DI.DisplayCapabilitiesAndFeatureSupportSet.LegacyModes.GetPropertyName()}: {legacyModes.Result.Value}");
+                }
 
+                var stereoVideo = displayCapabitiesSection.GetProperty(EedidProperty.DI.DisplayCapabilitiesAndFeatureSupportSet.StereoVideo);
+                if (stereoVideo.Success)
+                {
+                    logger.Info($@"   {EedidProperty.DI.DisplayCapabilitiesAndFeatureSupportSet.StereoVideo.GetPropertyName()}: {stereoVideo.Result.Value}");
+                }
+
+                var scalerOnBoard = displayCapabitiesSection.GetProperty(EedidProperty.DI.DisplayCapabilitiesAndFeatureSupportSet.ScalerOnBoard);
+                if (scalerOnBoard.Success)
+                {
+                    var scalerOnBoardValue = (bool) scalerOnBoard.Result.Value;
+                    logger.Info($@"   {EedidProperty.DI.DisplayCapabilitiesAndFeatureSupportSet.ScalerOnBoard.GetPropertyName()}: {(scalerOnBoardValue ? "Yes" : "No")}");
+                }
+
+                var imageCentering = displayCapabitiesSection.GetProperty(EedidProperty.DI.DisplayCapabilitiesAndFeatureSupportSet.ImageCentering);
+                if (imageCentering.Success)
+                {
+                    var imageCenteringValue = (bool) imageCentering.Result.Value;
+                    logger.Info($@"   {EedidProperty.DI.DisplayCapabilitiesAndFeatureSupportSet.ImageCentering.GetPropertyName()}: {(imageCenteringValue ? "Yes" : "No")}");
+                }
+
+                var conditionalUpdate = displayCapabitiesSection.GetProperty(EedidProperty.DI.DisplayCapabilitiesAndFeatureSupportSet.ConditionalUpdate);
+                if (conditionalUpdate.Success)
+                {
+                    var conditionalUpdateValue = (bool) conditionalUpdate.Result.Value;
+                    logger.Info($@"   {EedidProperty.DI.DisplayCapabilitiesAndFeatureSupportSet.ConditionalUpdate.GetPropertyName()}: {(conditionalUpdateValue ? "Yes" : "No")}");
+                }
+
+                var interlacedVideo = displayCapabitiesSection.GetProperty(EedidProperty.DI.DisplayCapabilitiesAndFeatureSupportSet.InterlacedVideo);
+                if (interlacedVideo.Success)
+                {
+                    var interlacedVideoValue = (bool) interlacedVideo.Result.Value;
+                    logger.Info($@"   {EedidProperty.DI.DisplayCapabilitiesAndFeatureSupportSet.InterlacedVideo.GetPropertyName()}: {(interlacedVideoValue ? "Yes" : "No")}");
+                }
+
+                var frameLock = displayCapabitiesSection.GetProperty(EedidProperty.DI.DisplayCapabilitiesAndFeatureSupportSet.FrameLock);
+                if (frameLock.Success)
+                {
+                    var frameLockValue = (bool) frameLock.Result.Value;
+                    logger.Info($@"   {EedidProperty.DI.DisplayCapabilitiesAndFeatureSupportSet.FrameLock.GetPropertyName()}: {(frameLockValue ? "Yes" : "No")}");
+                }
+
+                var frameRateConversion = displayCapabitiesSection.GetProperty(EedidProperty.DI.DisplayCapabilitiesAndFeatureSupportSet.FrameRateConversion);
+                if (frameRateConversion.Success)
+                {
+                    logger.Info($@"   {EedidProperty.DI.DisplayCapabilitiesAndFeatureSupportSet.FrameRateConversion.GetPropertyName()}: {frameRateConversion.Result.Value}");
+                }
+
+                var verticalFrequency = displayCapabitiesSection.GetProperty(EedidProperty.DI.DisplayCapabilitiesAndFeatureSupportSet.VerticalFrequency);
+                if (verticalFrequency.Success)
+                {
+                    var verticalFrequencyValue = (int) verticalFrequency.Result.Value;
+                    var verticalFrequencyText = verticalFrequencyValue switch
+                    {
+                        0x00 => "Not available",
+                        0xff => "Reserved",
+                        _ => $"{verticalFrequencyValue} {EedidProperty.DI.DisplayCapabilitiesAndFeatureSupportSet.VerticalFrequency.PropertyUnit}"
+                    };
+
+                    logger.Info($@"   {EedidProperty.DI.DisplayCapabilitiesAndFeatureSupportSet.VerticalFrequency.GetPropertyName()}: {verticalFrequencyText}");
+                }
+
+                var horizontalFrequency = displayCapabitiesSection.GetProperty(EedidProperty.DI.DisplayCapabilitiesAndFeatureSupportSet.HorizontalFrequency);
+                if (horizontalFrequency.Success)
+                {
+                    var horizontalFrequencyValue = (int) horizontalFrequency.Result.Value;
+                    var horizontalFrequencyText = horizontalFrequencyValue switch
+                    {
+                        0x00 => "Not available",
+                        0xff => "Reserved",
+                        _ => $"{horizontalFrequencyValue} {EedidProperty.DI.DisplayCapabilitiesAndFeatureSupportSet.HorizontalFrequency.PropertyUnit}"
+                    };
+
+                    logger.Info($@"   {EedidProperty.DI.DisplayCapabilitiesAndFeatureSupportSet.HorizontalFrequency.GetPropertyName()}: {horizontalFrequencyText}");
+                }
+
+                var displayScanOrientationType = displayCapabitiesSection.GetProperty(EedidProperty.DI.DisplayCapabilitiesAndFeatureSupportSet.DisplayScanOrientationType);
+                if (displayScanOrientationType.Success)
+                {
+                    logger.Info($@"   {EedidProperty.DI.DisplayCapabilitiesAndFeatureSupportSet.DisplayScanOrientationType.GetPropertyName()}: {displayScanOrientationType.Result.Value}");
+                }
+
+                var screenOrientation = displayCapabitiesSection.GetProperty(EedidProperty.DI.DisplayCapabilitiesAndFeatureSupportSet.ScreenOrientation);
+                if (screenOrientation.Success)
+                {
+                    logger.Info($@"   {EedidProperty.DI.DisplayCapabilitiesAndFeatureSupportSet.ScreenOrientation.GetPropertyName()}: {screenOrientation.Result.Value}");
+                }
+
+                var zeroPixelLocation = displayCapabitiesSection.GetProperty(EedidProperty.DI.DisplayCapabilitiesAndFeatureSupportSet.ZeroPixelLocation);
+                if (zeroPixelLocation.Success)
+                {
+                    logger.Info($@"   {EedidProperty.DI.DisplayCapabilitiesAndFeatureSupportSet.ZeroPixelLocation.GetPropertyName()}: {zeroPixelLocation.Result.Value}");
+                }
+
+                var scanDirection = displayCapabitiesSection.GetProperty(EedidProperty.DI.DisplayCapabilitiesAndFeatureSupportSet.ScanDirection);
+                if (scanDirection.Success)
+                {
+                    logger.Info($@"   {EedidProperty.DI.DisplayCapabilitiesAndFeatureSupportSet.ScanDirection.GetPropertyName()}: {scanDirection.Result.Value}");
+                }
+
+                var standaloneProjector = displayCapabitiesSection.GetProperty(EedidProperty.DI.DisplayCapabilitiesAndFeatureSupportSet.StandaloneProjector);
+                if (standaloneProjector.Success)
+                {
+                    var standaloneProjectorValue = (bool)standaloneProjector.Result.Value;
+                    logger.Info($@"   {EedidProperty.DI.DisplayCapabilitiesAndFeatureSupportSet.StandaloneProjector.GetPropertyName()}: {(standaloneProjectorValue ? "Yes" : "No")}");
+                }
+
+                var defaultColorLuminanceDecoding = displayCapabitiesSection.GetProperty(EedidProperty.DI.DisplayCapabilitiesAndFeatureSupportSet.DefaultColorLuminanceDecoding);
+                if (defaultColorLuminanceDecoding.Success)
+                {
+                    logger.Info($@"   {EedidProperty.DI.DisplayCapabilitiesAndFeatureSupportSet.DefaultColorLuminanceDecoding.GetPropertyName()}: {defaultColorLuminanceDecoding.Result.Value}");
+                }
+
+                var preferredColorLuminanceDecoder = displayCapabitiesSection.GetProperty(EedidProperty.DI.DisplayCapabilitiesAndFeatureSupportSet.PreferredColorLuminanceDecoder);
+                if (preferredColorLuminanceDecoder.Success)
+                {
+                    logger.Info($@"   {EedidProperty.DI.DisplayCapabilitiesAndFeatureSupportSet.PreferredColorLuminanceDecoder.GetPropertyName()}: {preferredColorLuminanceDecoder.Result.Value}");
+                }
+
+                var colorLuminanceDecodingCapabilities = displayCapabitiesSection.GetProperty(EedidProperty.DI.DisplayCapabilitiesAndFeatureSupportSet.ColorLuminanceDecodingCapabilities);
+                if (colorLuminanceDecodingCapabilities.Success)
+                {
+                    var colorLuminanceDecodingCapabilitiesValue = (string[]) colorLuminanceDecodingCapabilities.Result.Value;
+                    var hasElements = colorLuminanceDecodingCapabilitiesValue.Any();
+                    if (hasElements)
+                    {
+                        var onlyOne = colorLuminanceDecodingCapabilitiesValue.Length == 1;
+                        if (onlyOne)
+                        {
+                            logger.Info($@"   {EedidProperty.DI.DisplayCapabilitiesAndFeatureSupportSet.ColorLuminanceDecodingCapabilities.GetPropertyName()}: {colorLuminanceDecodingCapabilitiesValue.FirstOrDefault()}");
+                        }
+                        else
+                        {
+                            logger.Info($@"   {EedidProperty.DI.DisplayCapabilitiesAndFeatureSupportSet.ColorLuminanceDecodingCapabilities.GetPropertyName()}:");
+                            foreach (var entry in colorLuminanceDecodingCapabilitiesValue)
+                            {
+                                logger.Info($@"     {entry}");
+                            }
+                        }
+                    }
+                }
+
+                var dithering = displayCapabitiesSection.GetProperty(EedidProperty.DI.DisplayCapabilitiesAndFeatureSupportSet.Dithering);
+                if (dithering.Success)
+                {
+                    var ditheringValue = (bool) dithering.Result.Value;
+                    logger.Info($@"   {EedidProperty.DI.DisplayCapabilitiesAndFeatureSupportSet.Dithering.GetPropertyName()}: {(ditheringValue ? "Yes" : "No")}");
+                }
+
+                var supportedColorBitDepthSubChannel0Blue = displayCapabitiesSection.GetProperty(EedidProperty.DI.DisplayCapabilitiesAndFeatureSupportSet.SupportedColorBitDepthSubChannel0Blue);
+                if (supportedColorBitDepthSubChannel0Blue.Success)
+                {
+                    var supportedColorBitDepthSubChannel0BlueValue = (byte) supportedColorBitDepthSubChannel0Blue.Result.Value;
+                    var supportedColorBitDepthSubChannel0BlueText = supportedColorBitDepthSubChannel0BlueValue switch
+                    {
+                        0x00 => "No Information",
+                        var n when n >= 0x01 && n <= 0x10 => $"{supportedColorBitDepthSubChannel0BlueValue} {EedidProperty.DI.DisplayCapabilitiesAndFeatureSupportSet.SupportedColorBitDepthSubChannel0Blue.PropertyUnit} per color",
+                        _ => "Reserved"
+                    };
+
+                    logger.Info($@"   {EedidProperty.DI.DisplayCapabilitiesAndFeatureSupportSet.SupportedColorBitDepthSubChannel0Blue.GetPropertyName()}: {supportedColorBitDepthSubChannel0BlueText}");
+                }
+
+                var supportedColorBitDepthSubChannel1Green = displayCapabitiesSection.GetProperty(EedidProperty.DI.DisplayCapabilitiesAndFeatureSupportSet.SupportedColorBitDepthSubChannel1Green);
+                if (supportedColorBitDepthSubChannel1Green.Success)
+                {
+                    var supportedColorBitDepthSubChannel1GreenValue = (byte) supportedColorBitDepthSubChannel1Green.Result.Value;
+                    var supportedColorBitDepthSubChannel1GreenText = supportedColorBitDepthSubChannel1GreenValue switch
+                    {
+                        0x00 => "No Information",
+                        var n when n >= 0x01 && n <= 0x10 => $"{supportedColorBitDepthSubChannel1GreenValue} {EedidProperty.DI.DisplayCapabilitiesAndFeatureSupportSet.SupportedColorBitDepthSubChannel1Green.PropertyUnit} per color",
+                        _ => "Reserved"
+                    };
+
+                    logger.Info($@"   {EedidProperty.DI.DisplayCapabilitiesAndFeatureSupportSet.SupportedColorBitDepthSubChannel1Green.GetPropertyName()}: {supportedColorBitDepthSubChannel1GreenText}");
+                }
+
+                var supportedColorBitDepthSubChannel2Red = displayCapabitiesSection.GetProperty(EedidProperty.DI.DisplayCapabilitiesAndFeatureSupportSet.SupportedColorBitDepthSubChannel2Red);
+                if (supportedColorBitDepthSubChannel2Red.Success)
+                {
+                    var supportedColorBitDepthSubChannel2RedValue = (byte) supportedColorBitDepthSubChannel2Red.Result.Value;
+                    var supportedColorBitDepthSubChannel2RedText = supportedColorBitDepthSubChannel2RedValue switch
+                    {
+                        0x00 => "No Information",
+                        var n when n >= 0x01 && n <= 0x10 => $"{supportedColorBitDepthSubChannel2RedValue} {EedidProperty.DI.DisplayCapabilitiesAndFeatureSupportSet.SupportedColorBitDepthSubChannel2Red.PropertyUnit} per color",
+                        _ => "Reserved"
+                    };
+
+                    logger.Info($@"   {EedidProperty.DI.DisplayCapabilitiesAndFeatureSupportSet.SupportedColorBitDepthSubChannel2Red.GetPropertyName()}: {supportedColorBitDepthSubChannel2RedText}");
+                }
+
+                var supportedColorBitDepthSubChannel0CbPb = displayCapabitiesSection.GetProperty(EedidProperty.DI.DisplayCapabilitiesAndFeatureSupportSet.SupportedColorBitDepthSubChannel0CbPb);
+                if (supportedColorBitDepthSubChannel0CbPb.Success)
+                {
+                    var supportedColorBitDepthSubChannel0CbPbValue = (byte) supportedColorBitDepthSubChannel0CbPb.Result.Value;
+                    var supportedColorBitDepthSubChannel0CbPbText = supportedColorBitDepthSubChannel0CbPbValue switch
+                    {
+                        0x00 => "No Information",
+                        var n when n >= 0x01 && n <= 0x10 => $"{supportedColorBitDepthSubChannel0CbPbValue} {EedidProperty.DI.DisplayCapabilitiesAndFeatureSupportSet.SupportedColorBitDepthSubChannel0CbPb.PropertyUnit} per color",
+                        _ => "Reserved"
+                    };
+
+                    logger.Info($@"   {EedidProperty.DI.DisplayCapabilitiesAndFeatureSupportSet.SupportedColorBitDepthSubChannel0CbPb.GetPropertyName()}: {supportedColorBitDepthSubChannel0CbPbText}");
+                }
+
+                var supportedColorBitDepthSubChannel1Y = displayCapabitiesSection.GetProperty(EedidProperty.DI.DisplayCapabilitiesAndFeatureSupportSet.SupportedColorBitDepthSubChannel1Y);
+                if (supportedColorBitDepthSubChannel1Y.Success)
+                {
+                    var supportedColorBitDepthSubChannel1YValue = (byte)supportedColorBitDepthSubChannel0CbPb.Result.Value;
+                    string supportedColorBitDepthSubChannel1YText = supportedColorBitDepthSubChannel1YValue switch
+                    {
+                        0x00 => "No Information",
+                        var n when n >= 0x01 && n <= 0x10 => $"{supportedColorBitDepthSubChannel1YValue} {EedidProperty.DI.DisplayCapabilitiesAndFeatureSupportSet.SupportedColorBitDepthSubChannel1Y.PropertyUnit} per color",
+                        _ => "Reserved"
+                    };
+
+                    logger.Info($@"   {EedidProperty.DI.DisplayCapabilitiesAndFeatureSupportSet.SupportedColorBitDepthSubChannel1Y.GetPropertyName()}: {supportedColorBitDepthSubChannel1YText}");
+                }
+
+                var supportedColorBitDepthSubChannel2CrPr = displayCapabitiesSection.GetProperty(EedidProperty.DI.DisplayCapabilitiesAndFeatureSupportSet.SupportedColorBitDepthSubChannel2CrPr);
+                if (supportedColorBitDepthSubChannel2CrPr.Success)
+                {
+                    var supportedColorBitDepthSubChannel2CrPrValue = (byte)supportedColorBitDepthSubChannel2CrPr.Result.Value;
+                    string supportedColorBitDepthSubChannel2CrPrText = supportedColorBitDepthSubChannel2CrPrValue switch
+                    {
+                        0x00 => "No Information",
+                        var n when n >= 0x01 && n <= 0x10 => $"{supportedColorBitDepthSubChannel2CrPrValue} {EedidProperty.DI.DisplayCapabilitiesAndFeatureSupportSet.SupportedColorBitDepthSubChannel2CrPr.PropertyUnit} per color",
+                        _ => "Reserved"
+                    };
+
+                    logger.Info($@"   {EedidProperty.DI.DisplayCapabilitiesAndFeatureSupportSet.SupportedColorBitDepthSubChannel2CrPr.GetPropertyName()}: {supportedColorBitDepthSubChannel2CrPrText}");
+                }
+
+                var aspectRatioConversionModes = displayCapabitiesSection.GetProperty(EedidProperty.DI.DisplayCapabilitiesAndFeatureSupportSet.AspectRatioConversionModes);
+                if (aspectRatioConversionModes.Success)
+                {
+                    logger.Info($@"   {EedidProperty.DI.DisplayCapabilitiesAndFeatureSupportSet.AspectRatioConversionModes.GetPropertyName()}: {aspectRatioConversionModes.Result.Value}");
+                }
             }
-
             #endregion
 
-            #region Display Device Section
-
+            #region Display Transfer Characteristics
             var displayTransferCharacteristicSection = block.Sections[(int)KnownDiSection.DisplayTransferCharacteristic];
             if (displayTransferCharacteristicSection != null)
             {
                 logger.Info($@" Display Transfer Characteristics - Gamma:");
 
-                //var supportedDigitalInterface = displayDeviceSection.GetProperty(EedidProperty.DI.DigitalInterface.SupportedDigitalInterface);
-                //if (supportedDigitalInterface.Success)
-                //{
-                //    logger.Info($@"   {EedidProperty.DI.DigitalInterface.SupportedDigitalInterface.GetPropertyName()}: {supportedDigitalInterface.Result.Value}");
-                //}
-
+                var displayTransferCharacteristicStatus = displayTransferCharacteristicSection.GetProperty(EedidProperty.DI.DisplayTransferCharacteristic.Status);
+                if (displayTransferCharacteristicStatus.Success)
+                {
+                    logger.Info($@"   {displayTransferCharacteristicStatus.Result.Value}");
+                }
             }
-
             #endregion
 
             #region Miscellaneous Section
-
             var miscellaneousSection = block.Sections[(int)KnownDiSection.Miscellaneous];
             var status = miscellaneousSection.GetProperty(EedidProperty.DI.Miscellaneous.CheckSum.Ok);
             var value = miscellaneousSection.GetProperty(EedidProperty.DI.Miscellaneous.CheckSum.Value);
             logger.Info($@" Checksum: {value.Result.Value:x2} ({((bool)status.Result.Value ? "Valid" : "Invalid")})");
-
             #endregion
 
             #region End Block
-
             logger.Info("");
             logger.Info(new string('─', 15));
             logger.Info("");
-
             #endregion
         }
 
