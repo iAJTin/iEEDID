@@ -1094,6 +1094,14 @@ namespace iTin.Hardware.Specification.Eedid
         DPVL = 0x60,
 
         /// <summary>
+        /// DisplayID: VESA Display Identification Data (DisplayID)
+        /// </summary>
+        [PropertyType(typeof(CeaBlock))]
+        [PropertyDescription("DisplayID: VESA Display Identification Data (DisplayID)")]
+        [PropertyName("DisplayID")]
+        DisplayID = 0x70,
+
+        /// <summary>
         /// Extension Block Map
         /// </summary>
         [PropertyType(typeof(CeaBlock))]

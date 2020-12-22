@@ -1226,4 +1226,3 @@ namespace iEEDID.ComponentModel.Parser
         }
     }
 }
-

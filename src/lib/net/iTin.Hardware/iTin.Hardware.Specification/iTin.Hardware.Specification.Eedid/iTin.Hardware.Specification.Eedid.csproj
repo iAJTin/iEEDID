@@ -31,4 +31,8 @@
     <ProjectReference Include="..\..\iTin.Hardware.Abstractions\iTin.Hardware.Abstractions\iTin.Hardware.Abstractions.Devices.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="EEDID\Blocks\DisplayID\Sections\" />
+  </ItemGroup>
+
 </Project>

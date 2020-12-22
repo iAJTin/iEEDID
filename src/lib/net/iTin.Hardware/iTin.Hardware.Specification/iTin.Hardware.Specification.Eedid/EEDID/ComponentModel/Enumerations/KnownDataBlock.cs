@@ -41,6 +41,13 @@ namespace iTin.Hardware.Specification.Eedid
         /// </summary>
         [PropertyName("VTB")]
         [PropertyDescription("VTS-EXT: Vesa Video Timing Block Extension Data Standard")]
-        VTB
+        VTB,
+
+        /// <summary>
+        /// Implements DisplayID: VESA Display Identification Data (DisplayID)
+        /// </summary>
+        [PropertyName("DisplayID")]
+        [PropertyDescription("DisplayID: VESA Display Identification Data (DisplayID)")]
+        DisplayID,
     }
 }

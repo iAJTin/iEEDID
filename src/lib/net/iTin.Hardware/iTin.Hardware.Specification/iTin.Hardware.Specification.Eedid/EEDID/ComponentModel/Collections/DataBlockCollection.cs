@@ -321,7 +321,7 @@ namespace iTin.Hardware.Specification.Eedid
                 var knownBlockValid = IsValidBlock(valueKey);
                 if (!knownBlockValid)
                 {
-                    throw new InvalidEnumArgumentException("valueKey", (int) valueKey, typeof (KnownDataBlock));
+                    throw new InvalidEnumArgumentException(nameof(valueKey), (int) valueKey, typeof (KnownDataBlock));
                 }
 
                 var blockIndex = IndexOf(valueKey);

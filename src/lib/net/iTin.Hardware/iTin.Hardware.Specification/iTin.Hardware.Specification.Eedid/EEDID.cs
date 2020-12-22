@@ -301,6 +301,10 @@ namespace iTin.Hardware.Specification
                         blockDictionary.Add(KnownDataBlock.LS, new LsBlock(extensionDataBlock));
                         break;
 
+                    case EdidExtensionBlockTag.DisplayID:
+                        blockDictionary.Add(KnownDataBlock.DisplayID, new DisplayIDBlock(extensionDataBlock));
+                        break;
+
                     case EdidExtensionBlockTag.DPVL:
                         //blockDictionary.Add(KnownDataBlock.DPVL, new DpvlLBlock(extensionDataBlock));
                         break;
