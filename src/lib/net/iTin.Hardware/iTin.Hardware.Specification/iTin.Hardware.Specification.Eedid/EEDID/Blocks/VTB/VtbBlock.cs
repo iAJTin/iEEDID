@@ -38,7 +38,6 @@ namespace iTin.Hardware.Specification.Eedid
         /// <param name="sectionDictionary">Dictionary containing the sections available for this block</param>
         protected override void InitSectionTable(Dictionary<Enum, BaseDataSection> sectionDictionary)
         {
-            sectionDictionary.Add(KnownDiSection.Revision, new VersionVtbSection(RawData));
         }
         #endregion
 

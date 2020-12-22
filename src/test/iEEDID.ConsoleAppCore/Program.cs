@@ -38,7 +38,6 @@ namespace iEEDID
             logger.Info("  · Tech Parse EEDID Information From Byte Array Data");
             Sample04.Generate(logger);
 
-            logger.Info("");
             logger.Debug(">End Logging<");
 
             logger.Info("");

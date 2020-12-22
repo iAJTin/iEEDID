@@ -87,7 +87,6 @@ namespace iTin.Hardware.Specification.Eedid
         #endregion
 
         #region [protected] {override} (void) InitSectionTable(Dictionary<Enum, BaseDataSection>): Initialize dictionary with the sections available for this block
-        /// <inheritdoc />
         /// <summary>
         /// Initialize dictionary with the sections available for this block.
         /// </summary>

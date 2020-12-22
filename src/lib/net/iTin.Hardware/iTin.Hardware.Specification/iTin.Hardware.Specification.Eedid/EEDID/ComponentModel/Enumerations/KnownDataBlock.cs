@@ -23,10 +23,10 @@ namespace iTin.Hardware.Specification.Eedid
         CEA,
 
         /// <summary>
-        /// Implements DI-EXT: Display Information Extension
+        /// Implements DI-EXT: Display Information Extension Block
         /// </summary>
         [PropertyName("DI")]
-        [PropertyDescription("DI-EXT: Display Information Extension")]
+        [PropertyDescription("Display Information Extension Block")]
         DI,
 
         /// <summary>

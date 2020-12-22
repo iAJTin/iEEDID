@@ -15,7 +15,7 @@ namespace iTin.Hardware.Specification.Eedid
     {
         #region [public] {static} (class) Edid: Definition of keys in the 'EDID' block
         /// <summary>
-        /// Definition of keys in the <see cref="KnownDataBlock.EDID" /> block.
+        /// Definition of keys in the <see cref="KnownDataBlock.EDID"/> block.
         /// </summary>
         public static class Edid
         {
@@ -3392,7 +3392,7 @@ namespace iTin.Hardware.Specification.Eedid
 
         #region [public] {static} (class) Cea: Definition of keys in the 'CEA' block
         /// <summary>
-        /// Definition of keys in the <see cref="KnownDataBlock.CEA" /> block.
+        /// Definition of keys in the <see cref="KnownDataBlock.CEA"/> block.
         /// </summary>
         public static class Cea
         {
@@ -5182,6 +5182,596 @@ namespace iTin.Hardware.Specification.Eedid
                 public static IPropertyKey Value => new PropertyKey(KnownCeaSection.CheckSum, CeaCheckSum.Value);
                 #endregion
 
+            }
+            #endregion
+        }
+        #endregion
+
+        #region [public] {static} (class) DI: Definition of keys in the 'DI' block
+        /// <summary>
+        /// Definition of keys in the <see cref="KnownDataBlock.DI"/> block.
+        /// </summary>
+        public static class DI
+        {
+            #region [public] {static} (class) Information: Definition of keys in the 'Information' section
+            /// <summary>
+            /// Definition of keys in the <see cref="KnownDiSection.Information"/> section.
+            /// </summary>
+            public static class Information
+            {
+                #region [public] {static} (IPropertyKey) VersionNumber: Gets a value representing the key to retrieve the property value
+                /// <summary>
+                /// <para>Gets a value representing the key to retrieve the property value.</para>
+                /// <para>The Version Number for the <b>DI-EXT</b> Block Data Structure.</para>
+                /// <para>
+                ///  <para><b>Key Composition</b></para>
+                ///  <list type="bullet">
+                ///   <item><description>Structure: <see cref="KnownDiSection.Information"/></description></item>
+                ///   <item><description>Property: <see cref="DiInformation.VersionNumber"/></description></item>
+                ///   <item><description>Unit: <see cref="PropertyUnit.None"/></description></item>
+                ///  </list>
+                /// </para>
+                /// <para>
+                ///  <para><b>Return Value</b></para>
+                ///  <para>Type: <see cref="byte"/>.</para>
+                /// </para>
+                /// <para>
+                ///  <para><b>Remarks</b></para>
+                ///  <para>1.4</para>
+                /// </para>
+                /// </summary>
+                public static IPropertyKey VersionNumber => new PropertyKey(KnownDiSection.Information, DiInformation.VersionNumber);
+                #endregion
+            }
+            #endregion
+
+            #region [public] {static} (class) DigitalInterface: Definition of keys in the 'Digital Interface' section
+            /// <summary>
+            /// Definition of keys in the <see cref="KnownDiSection.DigitalInterface"/> section.
+            /// </summary>
+            public static class DigitalInterface
+            {
+                #region [public] {static} (IPropertyKey) SupportedDigitalInterface: Gets a value representing the key to retrieve the property value
+                /// <summary>
+                /// <para>Gets a value representing the key to retrieve the property value.</para>
+                /// <para>This section indicates if the display is compatible with a Digital Interface Standard/Specification.</para>
+                /// <para>
+                ///  <para><b>Key Composition</b></para>
+                ///  <list type="bullet">
+                ///   <item><description>Structure: <see cref="KnownDiSection.DigitalInterface"/></description></item>
+                ///   <item><description>Property: <see cref="DiDigitalInterface.SupportedDigitalInterface"/></description></item>
+                ///   <item><description>Unit: <see cref="PropertyUnit.None"/></description></item>
+                ///  </list>
+                /// </para>
+                /// <para>
+                ///  <para><b>Return Value</b></para>
+                ///  <para>Type: <see cref="string"/>.</para>
+                /// </para>
+                /// </summary>
+                public static IPropertyKey SupportedDigitalInterface => new PropertyKey(KnownDiSection.DigitalInterface, DiDigitalInterface.SupportedDigitalInterface);
+                #endregion
+
+                #region [public] {static} (IPropertyKey) DataEnableSignalUsageAvailable: Gets a value representing the key to retrieve the property value
+                /// <summary>
+                /// <para>Gets a value representing the key to retrieve the property value.</para>
+                /// <para>Data Enable Signal Usage Available.</para>
+                /// <para>
+                ///  <para><b>Key Composition</b></para>
+                ///  <list type="bullet">
+                ///   <item><description>Structure: <see cref="KnownDiSection.DigitalInterface"/></description></item>
+                ///   <item><description>Property: <see cref="DiDigitalInterface.DataEnableSignalUsageAvailable"/></description></item>
+                ///   <item><description>Unit: <see cref="PropertyUnit.None"/></description></item>
+                ///  </list>
+                /// </para>
+                /// <para>
+                ///  <para><b>Return Value</b></para>
+                ///  <para>Type: <see cref="bool"/>.</para>
+                /// </para>
+                /// </summary>
+                public static IPropertyKey DataEnableSignalUsageAvailable => new PropertyKey(KnownDiSection.DigitalInterface, DiDigitalInterface.DataEnableSignalUsageAvailable);
+                #endregion
+
+                #region [public] {static} (IPropertyKey) DataEnableSignalHighOrLow: Gets a value representing the key to retrieve the property value
+                /// <summary>
+                /// <para>Gets a value representing the key to retrieve the property value.</para>
+                /// <para>Data Enable Signal High or Low.</para>
+                /// <para>
+                ///  <para><b>Key Composition</b></para>
+                ///  <list type="bullet">
+                ///   <item><description>Structure: <see cref="KnownDiSection.DigitalInterface"/></description></item>
+                ///   <item><description>Property: <see cref="DiDigitalInterface.DataEnableSignalHighOrLow"/></description></item>
+                ///   <item><description>Unit: <see cref="PropertyUnit.None"/></description></item>
+                ///  </list>
+                /// </para>
+                /// <para>
+                ///  <para><b>Return Value</b></para>
+                ///  <para>Type: <see cref="string"/>.</para>
+                /// </para>
+                /// </summary>
+                public static IPropertyKey DataEnableSignalHighOrLow => new PropertyKey(KnownDiSection.DigitalInterface, DiDigitalInterface.DataEnableSignalHighOrLow);
+                #endregion
+
+                #region [public] {static} (IPropertyKey) EdgeOfShiftClock: Gets a value representing the key to retrieve the property value
+                /// <summary>
+                /// <para>Gets a value representing the key to retrieve the property value.</para>
+                /// <para>Edge of Shift Clock Usage.</para>
+                /// <para>
+                ///  <para><b>Key Composition</b></para>
+                ///  <list type="bullet">
+                ///   <item><description>Structure: <see cref="KnownDiSection.DigitalInterface"/></description></item>
+                ///   <item><description>Property: <see cref="DiDigitalInterface.EdgeOfShiftClock"/></description></item>
+                ///   <item><description>Unit: <see cref="PropertyUnit.None"/></description></item>
+                ///  </list>
+                /// </para>
+                /// <para>
+                ///  <para><b>Return Value</b></para>
+                ///  <para>Type: <see cref="string"/>.</para>
+                /// </para>
+                /// </summary>
+                public static IPropertyKey EdgeOfShiftClock => new PropertyKey(KnownDiSection.DigitalInterface, DiDigitalInterface.EdgeOfShiftClock);
+                #endregion
+
+                #region [public] {static} (IPropertyKey) HdcpSupport: Gets a value representing the key to retrieve the property value
+                /// <summary>
+                /// <para>Gets a value representing the key to retrieve the property value.</para>
+                /// <para>HDCP Support.</para>
+                /// <para>
+                ///  <para><b>Key Composition</b></para>
+                ///  <list type="bullet">
+                ///   <item><description>Structure: <see cref="KnownDiSection.DigitalInterface"/></description></item>
+                ///   <item><description>Property: <see cref="DiDigitalInterface.HdcpSupport"/></description></item>
+                ///   <item><description>Unit: <see cref="PropertyUnit.None"/></description></item>
+                ///  </list>
+                /// </para>
+                /// <para>
+                ///  <para><b>Return Value</b></para>
+                ///  <para>Type: <see cref="bool"/>.</para>
+                /// </para>
+                /// </summary>
+                public static IPropertyKey HdcpSupport => new PropertyKey(KnownDiSection.DigitalInterface, DiDigitalInterface.HdcpSupport);
+                #endregion
+
+                #region [public] {static} (IPropertyKey) DoubleClockingOfInputData: Gets a value representing the key to retrieve the property value
+                /// <summary>
+                /// <para>Gets a value representing the key to retrieve the property value.</para>
+                /// <para>Double Clocking Of Input Data.</para>
+                /// <para>
+                ///  <para><b>Key Composition</b></para>
+                ///  <list type="bullet">
+                ///   <item><description>Structure: <see cref="KnownDiSection.DigitalInterface"/></description></item>
+                ///   <item><description>Property: <see cref="DiDigitalInterface.DoubleClockingOfInputData"/></description></item>
+                ///   <item><description>Unit: <see cref="PropertyUnit.None"/></description></item>
+                ///  </list>
+                /// </para>
+                /// <para>
+                ///  <para><b>Return Value</b></para>
+                ///  <para>Type: <see cref="bool"/>.</para>
+                /// </para>
+                /// </summary>
+                public static IPropertyKey DoubleClockingOfInputData => new PropertyKey(KnownDiSection.DigitalInterface, DiDigitalInterface.DoubleClockingOfInputData);
+                #endregion
+
+                #region [public] {static} (IPropertyKey) SupportForPacketizedDigitalVideoSupport: Gets a value representing the key to retrieve the property value
+                /// <summary>
+                /// <para>Gets a value representing the key to retrieve the property value.</para>
+                /// <para>Support For Packetized Digital Video Support.</para>
+                /// <para>
+                ///  <para><b>Key Composition</b></para>
+                ///  <list type="bullet">
+                ///   <item><description>Structure: <see cref="KnownDiSection.DigitalInterface"/></description></item>
+                ///   <item><description>Property: <see cref="DiDigitalInterface.SupportForPacketizedDigitalVideoSupport"/></description></item>
+                ///   <item><description>Unit: <see cref="PropertyUnit.None"/></description></item>
+                ///  </list>
+                /// </para>
+                /// <para>
+                ///  <para><b>Return Value</b></para>
+                ///  <para>Type: <see cref="bool"/>.</para>
+                /// </para>
+                /// </summary>
+                public static IPropertyKey SupportForPacketizedDigitalVideoSupport => new PropertyKey(KnownDiSection.DigitalInterface, DiDigitalInterface.SupportForPacketizedDigitalVideoSupport);
+                #endregion
+
+                #region [public] {static} (IPropertyKey) DataFormats: Gets a value representing the key to retrieve the property value
+                /// <summary>
+                /// <para>Gets a value representing the key to retrieve the property value.</para>
+                /// <para>Data Formats.</para>
+                /// <para>
+                ///  <para><b>Key Composition</b></para>
+                ///  <list type="bullet">
+                ///   <item><description>Structure: <see cref="KnownDiSection.DigitalInterface"/></description></item>
+                ///   <item><description>Property: <see cref="DiDigitalInterface.DataFormats"/></description></item>
+                ///   <item><description>Unit: <see cref="PropertyUnit.None"/></description></item>
+                ///  </list>
+                /// </para>
+                /// <para>
+                ///  <para><b>Return Value</b></para>
+                ///  <para>Type: <see cref="string"/>.</para>
+                /// </para>
+                /// </summary>
+                public static IPropertyKey DataFormats => new PropertyKey(KnownDiSection.DigitalInterface, DiDigitalInterface.DataFormats);
+                #endregion
+
+                #region [public] {static} (IPropertyKey) MinimumPixelClockFrequencyPerLink: Gets a value representing the key to retrieve the property value
+                /// <summary>
+                /// <para>Gets a value representing the key to retrieve the property value.</para>
+                /// <para>Minimum Pixel Clock Frequency Per Link. It is expressed in <see cref="PropertyUnit.MHz"/>.</para>
+                /// <para>The possible values are shown below:</para>
+                /// <para>
+                ///  <list type="bullet">
+                ///   <item><description>00h  Display has an Analog Video Input.</description></item>
+                ///   <item><description>01h - FEh  Frequency value.</description></item>
+                ///   <item><description>FFh  Reserved.</description></item>
+                ///  </list>
+                /// </para>
+                /// <para>
+                ///  <para><b>Key Composition</b></para>
+                ///  <list type="bullet">
+                ///   <item><description>Structure: <see cref="KnownDiSection.DigitalInterface"/></description></item>
+                ///   <item><description>Property: <see cref="DiDigitalInterface.MinimumPixelClockFrequencyPerLink"/></description></item>
+                ///   <item><description>Unit: <see cref="PropertyUnit.MHz"/></description></item>
+                ///  </list>
+                /// </para>
+                /// <para>
+                ///  <para><b>Return Value</b></para>
+                ///  <para>Type: <see cref="byte"/>.</para>
+                /// </para>
+                /// </summary>
+                public static IPropertyKey MinimumPixelClockFrequencyPerLink => new PropertyKey(KnownDiSection.DigitalInterface, DiDigitalInterface.MinimumPixelClockFrequencyPerLink, PropertyUnit.MHz);
+                #endregion
+
+                #region [public] {static} (IPropertyKey) MaximumPixelClockFrequencyPerLink: Gets a value representing the key to retrieve the property value
+                /// <summary>
+                /// <para>Gets a value representing the key to retrieve the property value.</para>
+                /// <para>Maximum Pixel Clock Frequency Per Link. It is expressed in <see cref="PropertyUnit.MHz"/>.</para>
+                /// <para>The possible values are shown below:</para>
+                /// <para>
+                ///  <list type="bullet">
+                ///   <item><description>0000h  Display has an Analog Video Input.</description></item>
+                ///   <item><description>0001h - FFFEh  Frequency value.</description></item>
+                ///   <item><description>FFFFh  Reserved.</description></item>
+                ///  </list>
+                /// </para>
+                /// <para>
+                ///  <para><b>Key Composition</b></para>
+                ///  <list type="bullet">
+                ///   <item><description>Structure: <see cref="KnownDiSection.DigitalInterface"/></description></item>
+                ///   <item><description>Property: <see cref="DiDigitalInterface.MaximumPixelClockFrequencyPerLink"/></description></item>
+                ///   <item><description>Unit: <see cref="PropertyUnit.MHz"/></description></item>
+                ///  </list>
+                /// </para>
+                /// <para>
+                ///  <para><b>Return Value</b></para>
+                ///  <para>Type: <see cref="int"/>.</para>
+                /// </para>
+                /// </summary>
+                public static IPropertyKey MaximumPixelClockFrequencyPerLink => new PropertyKey(KnownDiSection.DigitalInterface, DiDigitalInterface.MaximumPixelClockFrequencyPerLink, PropertyUnit.MHz);
+                #endregion
+
+                #region [public] {static} (IPropertyKey) CrossoverFrequency: Gets a value representing the key to retrieve the property value
+                /// <summary>
+                /// <para>Gets a value representing the key to retrieve the property value.</para>
+                /// <para>Crossover Frequency. It is expressed in <see cref="PropertyUnit.MHz"/>.</para>
+                /// <para>The possible values are shown below:</para>
+                /// <para>
+                ///  <list type="bullet">
+                ///   <item><description>0000h  Indicates display has an Analog Video Input.</description></item>
+                ///   <item><description>0001h - FFFEh  Frequency value.</description></item>
+                ///   <item><description>FFFFh  Single Link.</description></item>
+                ///  </list>
+                /// </para>
+                /// <para>
+                ///  <para><b>Key Composition</b></para>
+                ///  <list type="bullet">
+                ///   <item><description>Structure: <see cref="KnownDiSection.DigitalInterface"/></description></item>
+                ///   <item><description>Property: <see cref="DiDigitalInterface.CrossoverFrequency"/></description></item>
+                ///   <item><description>Unit: <see cref="PropertyUnit.MHz"/></description></item>
+                ///  </list>
+                /// </para>
+                /// <para>
+                ///  <para><b>Return Value</b></para>
+                ///  <para>Type: <see cref="int"/>.</para>
+                /// </para>
+                /// </summary>
+                public static IPropertyKey CrossoverFrequency => new PropertyKey(KnownDiSection.DigitalInterface, DiDigitalInterface.CrossoverFrequency, PropertyUnit.MHz);
+                #endregion
+            }
+            #endregion
+
+            #region [public] {static} (class) DisplayDevice: Definition of keys in the 'Display Device' section
+            /// <summary>
+            /// Definition of keys in the <see cref="KnownDiSection.DisplayDevice"/> section.
+            /// </summary>
+            public static class DisplayDevice
+            {
+                #region [public] {static} (IPropertyKey) SubPixelLayout: Gets a value representing the key to retrieve the property value
+                /// <summary>
+                /// <para>Gets a value representing the key to retrieve the property value.</para>
+                /// <para>Sub-Pixel Layout.</para>
+                /// <para>
+                ///  <para><b>Key Composition</b></para>
+                ///  <list type="bullet">
+                ///   <item><description>Structure: <see cref="KnownDiSection.DisplayDevice"/></description></item>
+                ///   <item><description>Property: <see cref="DiDisplayDevice.SubPixelLayout"/></description></item>
+                ///   <item><description>Unit: <see cref="PropertyUnit.None"/></description></item>
+                ///  </list>
+                /// </para>
+                /// <para>
+                ///  <para><b>Return Value</b></para>
+                ///  <para>Type: <see cref="string"/>.</para>
+                /// </para>
+                /// </summary>
+                public static IPropertyKey SubPixelLayout => new PropertyKey(KnownDiSection.DisplayDevice, DiDisplayDevice.SubPixelLayout);
+                #endregion
+
+                #region [public] {static} (IPropertyKey) SubPixelConfiguration: Gets a value representing the key to retrieve the property value
+                /// <summary>
+                /// <para>Gets a value representing the key to retrieve the property value.</para>
+                /// <para>Sub-Pixel Configuration.</para>
+                /// <para>
+                ///  <para><b>Key Composition</b></para>
+                ///  <list type="bullet">
+                ///   <item><description>Structure: <see cref="KnownDiSection.DisplayDevice"/></description></item>
+                ///   <item><description>Property: <see cref="DiDisplayDevice.SubPixelConfiguration"/></description></item>
+                ///   <item><description>Unit: <see cref="PropertyUnit.None"/></description></item>
+                ///  </list>
+                /// </para>
+                /// <para>
+                ///  <para><b>Return Value</b></para>
+                ///  <para>Type: <see cref="string"/>.</para>
+                /// </para>
+                /// </summary>
+                public static IPropertyKey SubPixelConfiguration => new PropertyKey(KnownDiSection.DisplayDevice, DiDisplayDevice.SubPixelConfiguration);
+                #endregion
+
+                #region [public] {static} (IPropertyKey) SubPixelShape: Gets a value representing the key to retrieve the property value
+                /// <summary>
+                /// <para>Gets a value representing the key to retrieve the property value.</para>
+                /// <para>Sub-Pixel Shape.</para>
+                /// <para>
+                ///  <para><b>Key Composition</b></para>
+                ///  <list type="bullet">
+                ///   <item><description>Structure: <see cref="KnownDiSection.DisplayDevice"/></description></item>
+                ///   <item><description>Property: <see cref="DiDisplayDevice.SubPixelShape"/></description></item>
+                ///   <item><description>Unit: <see cref="PropertyUnit.None"/></description></item>
+                ///  </list>
+                /// </para>
+                /// <para>
+                ///  <para><b>Return Value</b></para>
+                ///  <para>Type: <see cref="string"/>.</para>
+                /// </para>
+                /// </summary>
+                public static IPropertyKey SubPixelShape => new PropertyKey(KnownDiSection.DisplayDevice, DiDisplayDevice.SubPixelShape);
+                #endregion
+
+                #region [public] {static} (IPropertyKey) HorizontalDotPixelPitch: Gets a value representing the key to retrieve the property value
+                /// <summary>
+                /// <para>Gets a value representing the key to retrieve the property value.</para>
+                /// <para>Horizontal Dot/Pixel Pitch.</para>
+                /// <para>
+                ///  <para><b>Key Composition</b></para>
+                ///  <list type="bullet">
+                ///   <item><description>Structure: <see cref="KnownDiSection.DisplayDevice"/></description></item>
+                ///   <item><description>Property: <see cref="DiDisplayDevice.HorizontalDotPixelPitch"/></description></item>
+                ///   <item><description>Unit: <see cref="PropertyUnit.mm"/></description></item>
+                ///  </list>
+                /// </para>
+                /// <para>
+                ///  <para><b>Return Value</b></para>
+                ///  <para>Type: <see cref="string"/>.</para>
+                /// </para>
+                /// </summary>
+                public static IPropertyKey HorizontalDotPixelPitch => new PropertyKey(KnownDiSection.DisplayDevice, DiDisplayDevice.HorizontalDotPixelPitch, PropertyUnit.mm);
+                #endregion
+
+                #region [public] {static} (IPropertyKey) VerticalDotPixelPitch: Gets a value representing the key to retrieve the property value
+                /// <summary>
+                /// <para>Gets a value representing the key to retrieve the property value.</para>
+                /// <para>Vertical Dot/Pixel Pitch.</para>
+                /// <para>
+                ///  <para><b>Key Composition</b></para>
+                ///  <list type="bullet">
+                ///   <item><description>Structure: <see cref="KnownDiSection.DisplayDevice"/></description></item>
+                ///   <item><description>Property: <see cref="DiDisplayDevice.VerticalDotPixelPitch"/></description></item>
+                ///   <item><description>Unit: <see cref="PropertyUnit.mm"/></description></item>
+                ///  </list>
+                /// </para>
+                /// <para>
+                ///  <para><b>Return Value</b></para>
+                ///  <para>Type: <see cref="string"/>.</para>
+                /// </para>
+                /// </summary>
+                public static IPropertyKey VerticalDotPixelPitch => new PropertyKey(KnownDiSection.DisplayDevice, DiDisplayDevice.VerticalDotPixelPitch, PropertyUnit.mm);
+                #endregion
+
+                #region [public] {static} (IPropertyKey) FixedPixelFormat: Gets a value representing the key to retrieve the property value
+                /// <summary>
+                /// <para>Gets a value representing the key to retrieve the property value.</para>
+                /// <para>Fixed Pixel Format.</para>
+                /// <para>
+                ///  <para><b>Key Composition</b></para>
+                ///  <list type="bullet">
+                ///   <item><description>Structure: <see cref="KnownDiSection.DisplayDevice"/></description></item>
+                ///   <item><description>Property: <see cref="DiDisplayDevice.FixedPixelFormat"/></description></item>
+                ///   <item><description>Unit: <see cref="PropertyUnit.None"/></description></item>
+                ///  </list>
+                /// </para>
+                /// <para>
+                ///  <para><b>Return Value</b></para>
+                ///  <para>Type: <see cref="bool"/>.</para>
+                /// </para>
+                /// </summary>
+                public static IPropertyKey FixedPixelFormat => new PropertyKey(KnownDiSection.DisplayDevice, DiDisplayDevice.FixedPixelFormat);
+                #endregion
+
+                #region [public] {static} (IPropertyKey) ViewDirection: Gets a value representing the key to retrieve the property value
+                /// <summary>
+                /// <para>Gets a value representing the key to retrieve the property value.</para>
+                /// <para>View Direction.</para>
+                /// <para>
+                ///  <para><b>Key Composition</b></para>
+                ///  <list type="bullet">
+                ///   <item><description>Structure: <see cref="KnownDiSection.DisplayDevice"/></description></item>
+                ///   <item><description>Property: <see cref="DiDisplayDevice.ViewDirection"/></description></item>
+                ///   <item><description>Unit: <see cref="PropertyUnit.None"/></description></item>
+                ///  </list>
+                /// </para>
+                /// <para>
+                ///  <para><b>Return Value</b></para>
+                ///  <para>Type: <see cref="string"/>.</para>
+                /// </para>
+                /// </summary>
+                public static IPropertyKey ViewDirection => new PropertyKey(KnownDiSection.DisplayDevice, DiDisplayDevice.ViewDirection);
+                #endregion
+
+                #region [public] {static} (IPropertyKey) DisplayBackground: Gets a value representing the key to retrieve the property value
+                /// <summary>
+                /// <para>Gets a value representing the key to retrieve the property value.</para>
+                /// <para>Display Background.</para>
+                /// <para>
+                ///  <para><b>Key Composition</b></para>
+                ///  <list type="bullet">
+                ///   <item><description>Structure: <see cref="KnownDiSection.DisplayDevice"/></description></item>
+                ///   <item><description>Property: <see cref="DiDisplayDevice.DisplayBackground"/></description></item>
+                ///   <item><description>Unit: <see cref="PropertyUnit.None"/></description></item>
+                ///  </list>
+                /// </para>
+                /// <para>
+                ///  <para><b>Return Value</b></para>
+                ///  <para>Type: <see cref="bool"/>.</para>
+                /// </para>
+                /// </summary>
+                public static IPropertyKey DisplayBackground => new PropertyKey(KnownDiSection.DisplayDevice, DiDisplayDevice.DisplayBackground);
+                #endregion
+
+                #region [public] {static} (IPropertyKey) PhysicalImplementation: Gets a value representing the key to retrieve the property value
+                /// <summary>
+                /// <para>Gets a value representing the key to retrieve the property value.</para>
+                /// <para>Physical Implementation.</para>
+                /// <para>
+                ///  <para><b>Key Composition</b></para>
+                ///  <list type="bullet">
+                ///   <item><description>Structure: <see cref="KnownDiSection.DisplayDevice"/></description></item>
+                ///   <item><description>Property: <see cref="DiDisplayDevice.PhysicalImplementation"/></description></item>
+                ///   <item><description>Unit: <see cref="PropertyUnit.None"/></description></item>
+                ///  </list>
+                /// </para>
+                /// <para>
+                ///  <para><b>Return Value</b></para>
+                ///  <para>Type: <see cref="string"/>.</para>
+                /// </para>
+                /// </summary>
+                public static IPropertyKey PhysicalImplementation => new PropertyKey(KnownDiSection.DisplayDevice, DiDisplayDevice.PhysicalImplementation);
+                #endregion
+
+                #region [public] {static} (IPropertyKey) DDC: Gets a value representing the key to retrieve the property value
+                /// <summary>
+                /// <para>Gets a value representing the key to retrieve the property value.</para>
+                /// <para>DDC/CI.</para>
+                /// <para>
+                ///  <para><b>Key Composition</b></para>
+                ///  <list type="bullet">
+                ///   <item><description>Structure: <see cref="KnownDiSection.DisplayDevice"/></description></item>
+                ///   <item><description>Property: <see cref="DiDisplayDevice.DDC"/></description></item>
+                ///   <item><description>Unit: <see cref="PropertyUnit.None"/></description></item>
+                ///  </list>
+                /// </para>
+                /// <para>
+                ///  <para><b>Return Value</b></para>
+                ///  <para>Type: <see cref="bool"/>.</para>
+                /// </para>
+                /// </summary>
+                public static IPropertyKey DDC => new PropertyKey(KnownDiSection.DisplayDevice, DiDisplayDevice.DDC);
+                #endregion
+            }
+            #endregion
+
+            #region [public] {static} (class) DisplayCapabilitiesAndFeatureSupportSet: Definition of keys in the 'Display Capabilities & Feature Support Set' section
+            /// <summary>
+            /// Definition of keys in the <see cref="KnownDiSection.DisplayCapabilitiesAndFeatureSupportSet"/> section.
+            /// </summary>
+            public static class DisplayCapabilitiesAndFeatureSupportSet
+            {
+            }
+            #endregion
+
+            #region [public] {static} (class) UnusedBytes: Definition of keys in the 'Unused Bytes' section
+            /// <summary>
+            /// Definition of keys in the <see cref="KnownDiSection.UnusedBytes"/> section.
+            /// </summary>
+            public static class UnusedBytes
+            {
+            }
+            #endregion
+
+            #region [public] {static} (class) AudioSupport: Definition of keys in the 'Audio Support' section
+            /// <summary>
+            /// Definition of keys in the <see cref="KnownDiSection.AudioSupport"/> section.
+            /// </summary>
+            public static class AudioSupport
+            {
+            }
+            #endregion
+
+            #region [public] {static} (class) DisplayTransferCharacteristic: Definition of keys in the 'Display Transfer Characteristic' section
+            /// <summary>
+            /// Definition of keys in the <see cref="KnownDiSection.DisplayTransferCharacteristic "/> section.
+            /// </summary>
+            public static class DisplayTransferCharacteristic
+            {
+            }
+            #endregion
+
+            #region [public] {static} (class) Miscellaneous: Definition of keys in the 'Miscellaneous Items' section
+            /// <summary>
+            /// Definition of keys in the <see cref="KnownDiSection.Miscellaneous"/> section.
+            /// </summary>
+            public static class Miscellaneous
+            {
+                /// <summary>
+                /// 
+                /// </summary>
+                public static class CheckSum
+                {
+                    #region [public] {static} (IPropertyKey) Ok: Gets a value representing the key to retrieve the property value
+                    /// <summary>
+                    /// <para>Gets a value representing the key to retrieve the property value.</para>
+                    /// <para>Indicates if is a valid <see cref="DI"/> structure.</para>
+                    /// <para>
+                    ///  <para><b>Key Composition</b></para>
+                    ///  <list type="bullet">
+                    ///   <item><description>Structure: <see cref="KnownDiSection.Miscellaneous"/></description></item>
+                    ///   <item><description>Property: <see cref="DiMiscellaneous.CheckSum.Value"/></description></item>
+                    ///   <item><description>Unit: <see cref="PropertyUnit.None"/></description></item>
+                    ///  </list>
+                    /// </para>
+                    /// <para>
+                    ///  <para><b>Return Value</b></para>
+                    ///  <para>Type: <see cref="bool"/>.</para>
+                    /// </para>
+                    /// </summary>
+                    public static IPropertyKey Ok => new PropertyKey(KnownCeaSection.CheckSum, CeaCheckSum.Ok);
+                    #endregion
+
+                    #region [public] {static} (IPropertyKey) Value: Gets a value representing the key to retrieve the property value
+                    /// <summary>
+                    /// <para>Gets a value representing the key to retrieve the property value.</para>
+                    /// <para>Contains checksum byte block value.</para>
+                    /// <para>
+                    ///  <para><b>Key Composition</b></para>
+                    ///  <list type="bullet">
+                    ///   <item><description>Structure: <see cref="KnownDiSection.Miscellaneous"/></description></item>
+                    ///   <item><description>Property: <see cref="DiMiscellaneous.CheckSum.Value"/></description></item>
+                    ///   <item><description>Unit: <see cref="PropertyUnit.None"/></description></item>
+                    ///  </list>
+                    /// </para>
+                    /// <para>
+                    ///  <para><b>Return Value</b></para>
+                    ///  <para>Type: <see cref="byte"/>.</para>
+                    /// </para>
+                    /// </summary>
+                    public static IPropertyKey Value => new PropertyKey(KnownDiSection.Miscellaneous, DiMiscellaneous.CheckSum.Value);
+                    #endregion
+                }
             }
             #endregion
         }

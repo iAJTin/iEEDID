@@ -6,8 +6,6 @@ namespace iTin.Hardware.Specification.Eedid
 
     using iTin.Core.Hardware.Common;
 
-    #region EEDID -> CEA
-
     #region [internal] (enum) CeaInformation: Definition of properties for a section of type 'Information'
     /// <summary>
     /// Definition of properties for a section of type <see cref="KnownCeaSection.Information"/>.
@@ -66,7 +64,7 @@ namespace iTin.Hardware.Specification.Eedid
         Ok,
 
         [PropertyDescription("Checksum datablock value")]
-        [PropertyType(typeof(bool))]
+        [PropertyType(typeof(byte))]
         [PropertyName("Value")]
         Value,
     }
@@ -467,7 +465,5 @@ namespace iTin.Hardware.Specification.Eedid
         [PropertyType(typeof(ReadOnlyCollection<string>))]
         SupportedTimings,
     }
-    #endregion
-
     #endregion
 }

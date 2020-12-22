@@ -17,10 +17,10 @@ namespace iEEDID.Code
             //EEDID instance = EEDID.Parse(AUOptronics.Digital.AUOF48C);
             //EEDID instance = EEDID.Parse(Asus.Digital.AUS32B1);
             //EEDID instance = EEDID.Parse(BenQ.Digital.BNQ4002);
-            EEDID instance = EEDID.Parse(ChiMeiOptoelectronics.Digital.CMO002C);
+            //EEDID instance = EEDID.Parse(ChiMeiOptoelectronics.Digital.CMO002C);
             //EEDID instance = EEDID.Parse(Denon.Digital.DON003D);
             //EEDID instance = EEDID.Parse(LGDisplay.Digital.LGD0000);
-            //EEDID instance = EEDID.Parse(Apple.Digital.APP9223);
+            EEDID instance = EEDID.Parse(Apple.Digital.APP9223);
             //EEDID instance = EEDID.Parse(Lenovo.Analog.LEN23CD);
             //EEDID instance = EEDID.Parse(Eizo.Digital.ENC1607);
             //EEDID instance = EEDID.Parse(HP.Analog.HWP3356);
@@ -579,6 +579,5 @@ namespace iEEDID.Code
                 };
             }
         }
-                 
     }
 }

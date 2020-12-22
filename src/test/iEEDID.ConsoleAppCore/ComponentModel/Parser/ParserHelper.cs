@@ -25,7 +25,7 @@ namespace iEEDID.ComponentModel.Parser
             logger.Info($@" ┌{new string('─', 48)}");
 
             var offset = 0;
-            var instanceRawData = data.AsHexadecimal();
+            var instanceRawData = data.AsHexadecimal().ToList();
             var totalBytes = instanceRawData.Count();
             for (int i = 0; i <= (totalBytes - 1) / 16; i++)
             {
@@ -50,25 +50,29 @@ namespace iEEDID.ComponentModel.Parser
             logger.Info($" {new string('─', 15)}");
         }
 
-        public static void PrintsBlock(ILogger logger, DataBlock block)
+        public static void PrintsBlock(ILogger logger, DataBlock block, int index)
         {
             switch (block.Key)
             {
                 case KnownDataBlock.EDID:
-                    PrintsEdidBlock(logger, block);
+                    PrintsEdidBlock(logger, block, index);
                     break;
 
                 case KnownDataBlock.CEA:
-                    PrintsCeaBlock(logger, block);
+                    PrintsCeaBlock(logger, block, index);
+                    break;
+
+                case KnownDataBlock.DI:
+                    PrintsDiBlock(logger, block, index);
                     break;
             }
         }
 
 
-        private static void PrintsCeaBlock(ILogger logger, DataBlock block)
+        private static void PrintsCeaBlock(ILogger logger, DataBlock block, int index)
         {
             #region Init Block
-            logger.Info($@" Block 1, {block.Key.GetPropertyDescription()}:");
+            logger.Info($@" Block {index}, {block.Key.GetPropertyDescription()}:");
             #endregion
 
             #region Information Section
@@ -76,13 +80,262 @@ namespace iEEDID.ComponentModel.Parser
             var revisionInformation = informationSection.GetProperty(EedidProperty.Cea.Information.Revision);
             logger.Info($@"   Revision: {revisionInformation.Result.Value}");
             #endregion
+
+            #region End Block
+            logger.Info("");
+            logger.Info(new string('─', 15));
+            logger.Info("");
+            #endregion
         }
 
-        private static void PrintsEdidBlock(ILogger logger, DataBlock block)
+        private static void PrintsDiBlock(ILogger logger, DataBlock block, int index)
+        {
+            #region Init Block
+            logger.Info($@" Block {index}, {block.Key.GetPropertyDescription()}:");
+            #endregion
+
+            #region Information Section
+            var informationSection = block.Sections[(int)KnownDiSection.Information];
+            var versionNumber = informationSection.GetProperty(EedidProperty.DI.Information.VersionNumber);
+            logger.Info($@"   Version: {versionNumber.Result.Value}");
+            #endregion
+
+            #region Digital Interface Section
+            
+            var digitalInterfaceSection = block.Sections[(int)KnownDiSection.DigitalInterface];
+            if (digitalInterfaceSection != null)
+            {
+                logger.Info($@" Digital Interface:");
+
+                var supportedDigitalInterface = digitalInterfaceSection.GetProperty(EedidProperty.DI.DigitalInterface.SupportedDigitalInterface);
+                if (supportedDigitalInterface.Success)
+                {
+                    logger.Info($@"   {EedidProperty.DI.DigitalInterface.SupportedDigitalInterface.GetPropertyName()}: {supportedDigitalInterface.Result.Value}");
+                }
+
+                var dataEnableSignalUsageAvailable = digitalInterfaceSection.GetProperty(EedidProperty.DI.DigitalInterface.DataEnableSignalUsageAvailable);
+                if (dataEnableSignalUsageAvailable.Success)
+                {
+                    var dataEnableSignalUsageAvailableValue = (bool)dataEnableSignalUsageAvailable.Result.Value;
+                    logger.Info($@"   Data Enable Signal Usage{(dataEnableSignalUsageAvailableValue ? " " : " Not ")}Available");
+
+                    if (dataEnableSignalUsageAvailableValue)
+                    {
+                        var dataEnableSignalHighOrLow = digitalInterfaceSection.GetProperty(EedidProperty.DI.DigitalInterface.DataEnableSignalHighOrLow);
+                        if (dataEnableSignalUsageAvailable.Success)
+                        {
+                            logger.Info($@"   {dataEnableSignalHighOrLow.Result.Value}");
+                        }
+                    }
+                }
+
+                var edgeOfShiftClock = digitalInterfaceSection.GetProperty(EedidProperty.DI.DigitalInterface.EdgeOfShiftClock);
+                if (edgeOfShiftClock.Success)
+                {
+                    logger.Info($@"   {EedidProperty.DI.DigitalInterface.EdgeOfShiftClock.GetPropertyName()}: {edgeOfShiftClock.Result.Value}");
+                }
+
+                var hdcpSupport = digitalInterfaceSection.GetProperty(EedidProperty.DI.DigitalInterface.HdcpSupport);
+                if (hdcpSupport.Success)
+                {
+                    var hdcpSupportValue = (bool)hdcpSupport.Result.Value;
+                    logger.Info($@"   HDCP is{(hdcpSupportValue ? " " : " not ")}support");
+                }
+
+                var doubleClockingOfInputData = digitalInterfaceSection.GetProperty(EedidProperty.DI.DigitalInterface.DoubleClockingOfInputData);
+                if (doubleClockingOfInputData.Success)
+                {
+                    var doubleClockingOfInputDataValue = (bool) doubleClockingOfInputData.Result.Value;
+                    logger.Info($@"   Digital Receivers{(doubleClockingOfInputDataValue ? " " : " do not ")}support Double Clocking of Input Data");
+                }
+
+                var supportForPacketizedDigitalVideoSupport = digitalInterfaceSection.GetProperty(EedidProperty.DI.DigitalInterface.SupportForPacketizedDigitalVideoSupport);
+                if (supportForPacketizedDigitalVideoSupport.Success)
+                {
+                    var supportForPacketizedDigitalVideoSupportValue = (bool) supportForPacketizedDigitalVideoSupport.Result.Value;
+                    logger.Info($@"   Packetized Digital Video is{(supportForPacketizedDigitalVideoSupportValue ? " " : " not ")}supported");
+                }
+
+                var dataFormats = digitalInterfaceSection.GetProperty(EedidProperty.DI.DigitalInterface.DataFormats);
+                if (dataFormats.Success)
+                {
+                    logger.Info($@"   {EedidProperty.DI.DigitalInterface.DataFormats.GetPropertyName()}: {dataFormats.Result.Value}");
+                }
+
+                var minimumPixelClockFrequencyPerLink = digitalInterfaceSection.GetProperty(EedidProperty.DI.DigitalInterface.MinimumPixelClockFrequencyPerLink);
+                if (minimumPixelClockFrequencyPerLink.Success)
+                {
+                    var minimumPixelClockFrequencyPerLinkValue = (byte)minimumPixelClockFrequencyPerLink.Result.Value;
+                    var minimumPixelClockFrequencyPerLinkText = minimumPixelClockFrequencyPerLinkValue switch
+                    {
+                        0x00 => "Display has an Analog Video Input",
+                        0xff => "Reserved",
+                        _ => $"{minimumPixelClockFrequencyPerLinkValue} {EedidProperty.DI.DigitalInterface.MinimumPixelClockFrequencyPerLink.PropertyUnit}"
+                    };
+
+                    logger.Info($@"   {EedidProperty.DI.DigitalInterface.MinimumPixelClockFrequencyPerLink.GetPropertyName()}: {minimumPixelClockFrequencyPerLinkText}");
+                }
+
+                var maximumPixelClockFrequencyPerLink = digitalInterfaceSection.GetProperty(EedidProperty.DI.DigitalInterface.MaximumPixelClockFrequencyPerLink);
+                if (maximumPixelClockFrequencyPerLink.Success)
+                {
+                    var maximumPixelClockFrequencyPerLinkValue = (int)maximumPixelClockFrequencyPerLink.Result.Value;
+                    var maximumPixelClockFrequencyPerLinkText = maximumPixelClockFrequencyPerLinkValue switch
+                    {
+                        0x0000 => "Display has an Analog Video Input",
+                        0xffff => "Reserved",
+                        _ => $"{maximumPixelClockFrequencyPerLinkValue} {EedidProperty.DI.DigitalInterface.MaximumPixelClockFrequencyPerLink.PropertyUnit}"
+                    };
+
+                    logger.Info($@"   {EedidProperty.DI.DigitalInterface.MaximumPixelClockFrequencyPerLink.GetPropertyName()}: {maximumPixelClockFrequencyPerLinkText}");
+                }
+
+                var crossoverFrequency = digitalInterfaceSection.GetProperty(EedidProperty.DI.DigitalInterface.CrossoverFrequency);
+                if (crossoverFrequency.Success)
+                {
+                    var crossoverFrequencyValue = (int)crossoverFrequency.Result.Value;
+                    var crossoverFrequencyText = crossoverFrequencyValue switch
+                    {
+                        0x0000 => "Display has an Analog Video Input",
+                        0xffff => "None - Single Link",
+                        _ => $"{crossoverFrequencyValue} {EedidProperty.DI.DigitalInterface.CrossoverFrequency.PropertyUnit}"
+                    };
+
+                    logger.Info($@"   {EedidProperty.DI.DigitalInterface.CrossoverFrequency.GetPropertyName()}: {crossoverFrequencyText}");
+                }
+            }
+            #endregion
+
+            #region Display Device Section
+
+            var displayDeviceSection = block.Sections[(int)KnownDiSection.DisplayDevice];
+            if (displayDeviceSection != null)
+            {
+                logger.Info($@" Display Device:");
+
+                var subPixelLayout = displayDeviceSection.GetProperty(EedidProperty.DI.DisplayDevice.SubPixelLayout);
+                if (subPixelLayout.Success)
+                {
+                    logger.Info($@"   {EedidProperty.DI.DisplayDevice.SubPixelLayout.GetPropertyName()}: {subPixelLayout.Result.Value}");
+                }
+
+                var subPixelConfiguration = displayDeviceSection.GetProperty(EedidProperty.DI.DisplayDevice.SubPixelConfiguration);
+                if (subPixelConfiguration.Success)
+                {
+                    logger.Info($@"   {EedidProperty.DI.DisplayDevice.SubPixelConfiguration.GetPropertyName()}: {subPixelConfiguration.Result.Value}");
+                }
+
+                var subPixelShape = displayDeviceSection.GetProperty(EedidProperty.DI.DisplayDevice.SubPixelShape);
+                if (subPixelShape.Success)
+                {
+                    logger.Info($@"   {EedidProperty.DI.DisplayDevice.SubPixelShape.GetPropertyName()}: {subPixelShape.Result.Value}");
+                }
+
+                var horizontalDotPixelPitch = displayDeviceSection.GetProperty(EedidProperty.DI.DisplayDevice.HorizontalDotPixelPitch);
+                if (horizontalDotPixelPitch.Success)
+                {
+                    logger.Info($@"   {EedidProperty.DI.DisplayDevice.HorizontalDotPixelPitch.GetPropertyName()}: {horizontalDotPixelPitch.Result.Value} {EedidProperty.DI.DisplayDevice.HorizontalDotPixelPitch.PropertyUnit}");
+                }
+
+                var verticalDotPixelPitch = displayDeviceSection.GetProperty(EedidProperty.DI.DisplayDevice.VerticalDotPixelPitch);
+                if (verticalDotPixelPitch.Success)
+                {
+                    logger.Info($@"   {EedidProperty.DI.DisplayDevice.VerticalDotPixelPitch.GetPropertyName()}: {verticalDotPixelPitch.Result.Value} {EedidProperty.DI.DisplayDevice.VerticalDotPixelPitch.PropertyUnit}");
+                }
+
+                var fixedPixelFormat = displayDeviceSection.GetProperty(EedidProperty.DI.DisplayDevice.FixedPixelFormat);
+                if (fixedPixelFormat.Success)
+                {
+                    var fixedPixelFormatValue = (bool) fixedPixelFormat.Result.Value;
+                    logger.Info($@"   Display Device{(fixedPixelFormatValue ? " has " : " does not have ")}a Fixed Pixel Format");
+                }
+
+                var viewDirection = displayDeviceSection.GetProperty(EedidProperty.DI.DisplayDevice.ViewDirection);
+                if (viewDirection.Success)
+                {
+                    logger.Info($@"   {EedidProperty.DI.DisplayDevice.ViewDirection.GetPropertyName()}: {viewDirection.Result.Value}");
+                }
+
+                var displayBackground = displayDeviceSection.GetProperty(EedidProperty.DI.DisplayDevice.DisplayBackground);
+                if (displayBackground.Success)
+                {
+                    var displayBackgroundValue = (bool) displayBackground.Result.Value;
+                    logger.Info($@"   Display Device uses{(displayBackgroundValue ? " " : " non-")}transparent background");
+                }
+
+                var physicalImplementation = displayDeviceSection.GetProperty(EedidProperty.DI.DisplayDevice.PhysicalImplementation);
+                if (physicalImplementation.Success)
+                {
+                    logger.Info($@"   {EedidProperty.DI.DisplayDevice.PhysicalImplementation.GetPropertyName()}: {physicalImplementation.Result.Value}");
+                }
+
+                var ddc = displayDeviceSection.GetProperty(EedidProperty.DI.DisplayDevice.DDC);
+                if (ddc.Success)
+                {
+                    var ddcValue = (bool) fixedPixelFormat.Result.Value;
+                    logger.Info($@"   Monitor/display does{(ddcValue ? " " : " not ")}support DDC/CI");
+                }
+            }
+
+            #endregion
+
+            #region Display Capabities & Feature Support Set Section
+
+            var displayCapabitiesSection = block.Sections[(int)KnownDiSection.DisplayCapabilitiesAndFeatureSupportSet];
+            if (displayCapabitiesSection != null)
+            {
+                logger.Info($@" Display Capabities & Feature Support Set:");
+
+                //var supportedDigitalInterface = displayDeviceSection.GetProperty(EedidProperty.DI.DigitalInterface.SupportedDigitalInterface);
+                //if (supportedDigitalInterface.Success)
+                //{
+                //    logger.Info($@"   {EedidProperty.DI.DigitalInterface.SupportedDigitalInterface.GetPropertyName()}: {supportedDigitalInterface.Result.Value}");
+                //}
+
+            }
+
+            #endregion
+
+            #region Display Device Section
+
+            var displayTransferCharacteristicSection = block.Sections[(int)KnownDiSection.DisplayTransferCharacteristic];
+            if (displayTransferCharacteristicSection != null)
+            {
+                logger.Info($@" Display Transfer Characteristics - Gamma:");
+
+                //var supportedDigitalInterface = displayDeviceSection.GetProperty(EedidProperty.DI.DigitalInterface.SupportedDigitalInterface);
+                //if (supportedDigitalInterface.Success)
+                //{
+                //    logger.Info($@"   {EedidProperty.DI.DigitalInterface.SupportedDigitalInterface.GetPropertyName()}: {supportedDigitalInterface.Result.Value}");
+                //}
+
+            }
+
+            #endregion
+
+            #region Miscellaneous Section
+
+            var miscellaneousSection = block.Sections[(int)KnownDiSection.Miscellaneous];
+            var status = miscellaneousSection.GetProperty(EedidProperty.DI.Miscellaneous.CheckSum.Ok);
+            var value = miscellaneousSection.GetProperty(EedidProperty.DI.Miscellaneous.CheckSum.Value);
+            logger.Info($@" Checksum: {value.Result.Value:x2} ({((bool)status.Result.Value ? "Valid" : "Invalid")})");
+
+            #endregion
+
+            #region End Block
+
+            logger.Info("");
+            logger.Info(new string('─', 15));
+            logger.Info("");
+
+            #endregion
+        }
+
+        private static void PrintsEdidBlock(ILogger logger, DataBlock block, int index)
         {
             #region Init Block
             logger.Info("");
-            logger.Info($@" Block 0, Base {block.Key}:");
+            logger.Info($@" Block {index}, Base {block.Key}:");
             #endregion
 
             #region Version Section
@@ -452,6 +705,7 @@ namespace iEEDID.ComponentModel.Parser
             logger.Info("");
             #endregion
         }
+
 
         private static void PrintsStandardTimming(StandardTimingIdentifierDescriptorItem data, ILogger logger)
         {

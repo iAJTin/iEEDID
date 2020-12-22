@@ -30,10 +30,12 @@ namespace iEEDID.ComponentModel.Parser
             ParserHelper.PrintsRawData(Logger, instance.GetRawData());
 
             // Prints blocks.
+            int index = 0;
             DataBlockCollection blocks = instance.Blocks;
             foreach (DataBlock block in blocks)
             {
-                ParserHelper.PrintsBlock(Logger, block);
+                ParserHelper.PrintsBlock(Logger, block, index);
+                index++;
             }
         }
     }
