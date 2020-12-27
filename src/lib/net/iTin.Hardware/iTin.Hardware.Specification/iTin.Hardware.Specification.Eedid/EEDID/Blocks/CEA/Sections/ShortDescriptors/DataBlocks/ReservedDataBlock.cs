@@ -1,10 +1,10 @@
 ﻿
-namespace iTin.Hardware.Specification.Eedid
+namespace iTin.Hardware.Specification.Eedid.Blocks.CEA.Sections.Descriptors.DataBlocks
 {
     using System.Collections.ObjectModel;
 
     /// <summary>
-    /// Structure <see cref="ReservedDataBlock"/> that contains the logic to decode the data of a block of type <see cref="ShortReservedDescriptorCeaSection"/>.
+    /// Structure <see cref="ReservedDataBlock"/> that contains the logic to decode the data of a block of type <see cref="ShortReservedDescriptorSection"/>.
     /// </summary> 
     internal struct ReservedDataBlock
     {

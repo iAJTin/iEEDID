@@ -1,12 +1,12 @@
 ﻿
-using iTin.Core;
-
-namespace iTin.Hardware.Specification.Eedid
+namespace iTin.Hardware.Specification.Eedid.Blocks.EDID.Sections.Descriptors
 {
     using System.Collections.Generic;
     using System.Collections.ObjectModel;
     using System.Diagnostics;
     using System.Linq;
+
+    using iTin.Core;
 
     // Data Block Descriptor: Standard Timings Identifier Descriptor Definition
     // •———————————————————————————————————————————————————————————————————————————————————————————•
@@ -29,7 +29,7 @@ namespace iTin.Hardware.Specification.Eedid
 
     /// <summary>
     /// Specialization of the <see cref="BaseDataSection"/> class.<br/>
-    /// Represents the <see cref="KnownEdidSection.DataBlocks"/> section of type this block <see cref="EdidDataBlockDescriptor.StandardTimingIdentifier"/>.
+    /// Represents the <see cref="EdidSection.DataBlocks"/> section of type this block <see cref="EedidProperty.Edid.DataBlock.Definition.StandardTimingIdentifier"/>.
     /// </summary> 
     internal class StandardTimingIdentifierDescriptor : BaseDataSection
     {

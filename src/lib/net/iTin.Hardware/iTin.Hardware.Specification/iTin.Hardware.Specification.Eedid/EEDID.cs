@@ -1,4 +1,6 @@
 ﻿
+using iTin.Hardware.Specification.Eedid.Blocks.EDID;
+
 namespace iTin.Hardware.Specification
 {
     using System.Collections.Generic;
@@ -11,7 +13,8 @@ namespace iTin.Hardware.Specification
     using iTin.Core.Hardware.MacOS.Device.Desktop;
     using iTin.Core.Hardware.Windows.Device.Desktop.Monitor;
 
-    using Eedid;
+    using iTin.Hardware.Specification.Eedid;
+    using iTin.Hardware.Specification.Eedid.Blocks;
 
     /// <summary>
     /// Implementation of the <b>E-EDID</b> (Extended Display Identification Data) specification.
@@ -283,37 +286,37 @@ namespace iTin.Hardware.Specification
             var extensionDataBlocks = GetExtensionDataBlocks(_rawData);
             foreach (var extensionDataBlock in extensionDataBlocks)
             {
-                switch ((EdidExtensionBlockTag)extensionDataBlock[0x00])                    
+                switch ((EdidProperty.EdidExtensionBlockTag)extensionDataBlock[0x00])                    
                 {
-                    case EdidExtensionBlockTag.CEA:
+                    case EdidProperty.EdidExtensionBlockTag.CEA:
                         blockDictionary.Add(KnownDataBlock.CEA, new CeaBlock(extensionDataBlock));
                         break;
 
-                    case EdidExtensionBlockTag.VTB:
+                    case EdidProperty.EdidExtensionBlockTag.VTB:
                         blockDictionary.Add(KnownDataBlock.VTB, new VtbBlock(extensionDataBlock));
                         break;
 
-                    case EdidExtensionBlockTag.DI:
+                    case EdidProperty.EdidExtensionBlockTag.DI:
                         blockDictionary.Add(KnownDataBlock.DI, new DiBlock(extensionDataBlock));
                         break;
 
-                    case EdidExtensionBlockTag.LS:
+                    case EdidProperty.EdidExtensionBlockTag.LS:
                         blockDictionary.Add(KnownDataBlock.LS, new LsBlock(extensionDataBlock));
                         break;
 
-                    case EdidExtensionBlockTag.DisplayID:
-                        blockDictionary.Add(KnownDataBlock.DisplayID, new DisplayIDBlock(extensionDataBlock));
+                    case EdidProperty.EdidExtensionBlockTag.DisplayID:
+                        blockDictionary.Add(KnownDataBlock.DisplayID, new DisplayIdBlock(extensionDataBlock));
                         break;
 
-                    case EdidExtensionBlockTag.DPVL:
+                    case EdidProperty.EdidExtensionBlockTag.DPVL:
                         //blockDictionary.Add(KnownDataBlock.DPVL, new DpvlLBlock(extensionDataBlock));
                         break;
 
-                    case EdidExtensionBlockTag.BlockMap:
+                    case EdidProperty.EdidExtensionBlockTag.BlockMap:
                         //blockDictionary.Add(KnownDataBlock.BlockMap, new BlockMapBlock(extensionDataBlock));
                         break;
 
-                    case EdidExtensionBlockTag.ByManufacturer:
+                    case EdidProperty.EdidExtensionBlockTag.ByManufacturer:
                         //blockDictionary.Add(KnownDataBlock.ByManufacturer, new ByManufacturerBlock(extensionDataBlock));
                         break;
                 }                        

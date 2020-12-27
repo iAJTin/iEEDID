@@ -11,7 +11,11 @@ namespace iEEDID.ComponentModel.Parser
     using iTin.Core.Hardware.Common;
 
     using iTin.Logging.ComponentModel;
+    
     using iTin.Hardware.Specification.Eedid;
+    using iTin.Hardware.Specification.Eedid.Blocks.CEA;
+    using iTin.Hardware.Specification.Eedid.Blocks.EDID;
+    using iTin.Hardware.Specification.Eedid.Blocks.EDID.Sections.Descriptors;
 
     /// <summary>
     /// static class containing methods for prints <b>EEDID</b> instances.
@@ -74,13 +78,13 @@ namespace iEEDID.ComponentModel.Parser
             #endregion
 
             #region Information Section
-            var informationSection = block.Sections[(int)KnownCeaSection.Information];
+            var informationSection = block.Sections[(int)CeaSection.Information];
             var revisionInformation = informationSection.GetProperty(EedidProperty.Cea.Information.Revision);
             logger.Info($@" │ Revision: {revisionInformation.Result.Value}");
             #endregion
 
             #region CheckSum Section
-            var checksumSection = block.Sections[(int)KnownCeaSection.CheckSum];
+            var checksumSection = block.Sections[(int)CeaSection.Checksum];
             var status = checksumSection.GetProperty(EedidProperty.Cea.CheckSum.Ok);
             var value = checksumSection.GetProperty(EedidProperty.Cea.CheckSum.Value);
             logger.Info($@" │ Checksum: 0x{value.Result.Value:x2} ({((bool)status.Result.Value ? "Valid" : "Invalid")})");
@@ -97,10 +101,10 @@ namespace iEEDID.ComponentModel.Parser
             logger.Info($@" Extracted contents:");
             logger.Info($@" ┌{new string('─', 48)}");
 
-            DataSection headerSection = dataBlock.Sections[(int)KnownEdidSection.Header];
+            DataSection headerSection = dataBlock.Sections[(int)EdidSection.Header];
             logger.Info($@" │ Header:{'\t'}{'\t'}{string.Join(" ", headerSection.RawData.AsHexadecimal())}");
 
-            DataSection vendorSection = dataBlock.Sections[(int)KnownEdidSection.Vendor];
+            DataSection vendorSection = dataBlock.Sections[(int)EdidSection.Vendor];
             QueryPropertyResult serialNumberResult = vendorSection.GetProperty(EedidProperty.Edid.Vendor.IdSerialNumber);
             if (serialNumberResult.Success)
             {
@@ -111,31 +115,31 @@ namespace iEEDID.ComponentModel.Parser
                 logger.Info($@" │ Serial number:{'\t'}...");
             }
 
-            DataSection versionSection = dataBlock.Sections[(int)KnownEdidSection.Version];
+            DataSection versionSection = dataBlock.Sections[(int)EdidSection.Version];
             logger.Info($@" │ Version:{'\t'}{'\t'}{string.Join(" ", versionSection.RawData.AsHexadecimal())}");
 
-            DataSection basicDisplaySection = dataBlock.Sections[(int)KnownEdidSection.BasicDisplay];
+            DataSection basicDisplaySection = dataBlock.Sections[(int)EdidSection.BasicDisplay];
             logger.Info($@" │ Basic params:{'\t'}{string.Join(" ", basicDisplaySection.RawData.AsHexadecimal())}");
 
-            DataSection colorCharacteristicsTimingsSection = dataBlock.Sections[(int)KnownEdidSection.ColorCharacteristics];
+            DataSection colorCharacteristicsTimingsSection = dataBlock.Sections[(int)EdidSection.ColorCharacteristics];
             logger.Info($@" │ Chroma info:{'\t'}{'\t'}{string.Join(" ", colorCharacteristicsTimingsSection.RawData.AsHexadecimal())}");
 
-            DataSection establishedTimingsSection = dataBlock.Sections[(int)KnownEdidSection.EstablishedTimings];
+            DataSection establishedTimingsSection = dataBlock.Sections[(int)EdidSection.EstablishedTimings];
             logger.Info($@" │ Established:{'\t'}{'\t'}{string.Join(" ", establishedTimingsSection.RawData.AsHexadecimal())}");
 
-            DataSection standardTimingsSection = dataBlock.Sections[(int)KnownEdidSection.StandardTimings];
+            DataSection standardTimingsSection = dataBlock.Sections[(int)EdidSection.StandardTimings];
             logger.Info($@" │ Standard:{'\t'}{'\t'}{string.Join(" ", standardTimingsSection.RawData.AsHexadecimal())}");
 
-            DataSection dataBlocksSection = dataBlock.Sections[(int)KnownEdidSection.DataBlocks];
+            DataSection dataBlocksSection = dataBlock.Sections[(int)EdidSection.DataBlocks];
             logger.Info($@" │ Descriptor 1:{'\t'}{string.Join(" ", ((ReadOnlyCollection<byte>)dataBlocksSection.GetProperty(EedidProperty.Edid.DataBlock.Descriptor1).Result.Value).AsHexadecimal())}");
             logger.Info($@" │ Descriptor 2:{'\t'}{string.Join(" ", ((ReadOnlyCollection<byte>)dataBlocksSection.GetProperty(EedidProperty.Edid.DataBlock.Descriptor2).Result.Value).AsHexadecimal())}");
             logger.Info($@" │ Descriptor 3:{'\t'}{string.Join(" ", ((ReadOnlyCollection<byte>)dataBlocksSection.GetProperty(EedidProperty.Edid.DataBlock.Descriptor3).Result.Value).AsHexadecimal())}");
             logger.Info($@" │ Descriptor 4:{'\t'}{string.Join(" ", ((ReadOnlyCollection<byte>)dataBlocksSection.GetProperty(EedidProperty.Edid.DataBlock.Descriptor4).Result.Value).AsHexadecimal())}");
 
-            DataSection extensionSection = dataBlock.Sections[(int)KnownEdidSection.ExtensionBlocks];
+            DataSection extensionSection = dataBlock.Sections[(int)EdidSection.ExtensionBlocks];
             logger.Info($@" │ Extensions:{'\t'}{'\t'}{string.Join(" ", extensionSection.RawData.AsHexadecimal())}");
 
-            DataSection checksumSection = dataBlock.Sections[(int)KnownEdidSection.CheckSum];
+            DataSection checksumSection = dataBlock.Sections[(int)EdidSection.Checksum];
             logger.Info($@" │ Checksum:{'\t'}{'\t'}{string.Join(" ", checksumSection.RawData.AsHexadecimal())}");
 
             logger.Info("");
@@ -150,14 +154,14 @@ namespace iEEDID.ComponentModel.Parser
             #endregion
 
             #region Version Section
-            var versionSection = block.Sections[(int)KnownEdidSection.Version];
+            var versionSection = block.Sections[(int)EdidSection.Version];
             var version = versionSection.GetProperty(EedidProperty.Edid.Version.Number);
             var revision = versionSection.GetProperty(EedidProperty.Edid.Version.Revision);
             logger.Info($@" │ EDID Structure Version & Revision: {version.Result.Value}.{revision.Result.Value}");
             #endregion
 
             #region Vendor Section
-            var vendorSection = block.Sections[(int)KnownEdidSection.Vendor];
+            var vendorSection = block.Sections[(int)EdidSection.Vendor];
             logger.Info($@" │ Vendor & Product Identification:");
             var manufacturer = vendorSection.GetProperty(EedidProperty.Edid.Vendor.IdManufacturerName);
             if(manufacturer.Success)
@@ -185,7 +189,7 @@ namespace iEEDID.ComponentModel.Parser
             #endregion
 
             #region Basic Display Section
-            var basicDisplaySection = block.Sections[(int)KnownEdidSection.BasicDisplay];
+            var basicDisplaySection = block.Sections[(int)EdidSection.BasicDisplay];
             logger.Info($@" │ Basic Display Parameters & Features:");
 
             bool isDigital = true;
@@ -315,7 +319,7 @@ namespace iEEDID.ComponentModel.Parser
             #endregion
 
             #region Color Characteristics Section
-            var colorSection = block.Sections[(int)KnownEdidSection.ColorCharacteristics];
+            var colorSection = block.Sections[(int)EdidSection.ColorCharacteristics];
             logger.Info($@" │ Color Characteristics:");
 
             var red = colorSection.GetProperty(EedidProperty.Edid.ColorCharacteristics.Red);
@@ -344,7 +348,7 @@ namespace iEEDID.ComponentModel.Parser
             #endregion
 
             #region Established Timings Section
-            var establishedTimingsSection = block.Sections[(int)KnownEdidSection.EstablishedTimings];
+            var establishedTimingsSection = block.Sections[(int)EdidSection.EstablishedTimings];
             var resolutions = establishedTimingsSection.GetProperty(EedidProperty.Edid.EstablishedTimings.Resolutions);
             if (resolutions.Success)
             {
@@ -370,7 +374,7 @@ namespace iEEDID.ComponentModel.Parser
             #endregion
 
             #region Standard Timings Section
-            var standardTimingsSection = block.Sections[(int)KnownEdidSection.StandardTimings];
+            var standardTimingsSection = block.Sections[(int)EdidSection.StandardTimings];
             var timing1 = standardTimingsSection.GetProperty(EedidProperty.Edid.StandardTimings.Timing1);
             var timing2 = standardTimingsSection.GetProperty(EedidProperty.Edid.StandardTimings.Timing2);
             var timing3 = standardTimingsSection.GetProperty(EedidProperty.Edid.StandardTimings.Timing3);
@@ -448,7 +452,7 @@ namespace iEEDID.ComponentModel.Parser
 
             #region Detailed Timing Descriptors
             logger.Info($@" │ Detailed Timing Descriptors:");
-            var dataBlocksSection = block.Sections[(int)KnownEdidSection.DataBlocks];
+            var dataBlocksSection = block.Sections[(int)EdidSection.DataBlocks];
             foreach (var dataBlockProperty in dataBlocksSection.ImplementedProperties)
             {
                 var dataBlockPropertyIdentifier = dataBlockProperty.PropertyId;
@@ -548,13 +552,13 @@ namespace iEEDID.ComponentModel.Parser
             #endregion
 
             #region Extension Blocks Section
-            var extensionBlocksSection = block.Sections[(int)KnownEdidSection.ExtensionBlocks];
+            var extensionBlocksSection = block.Sections[(int)EdidSection.ExtensionBlocks];
             var count = extensionBlocksSection.GetProperty(EedidProperty.Edid.ExtensionBlocks.Count);
             logger.Info($@" │ Extension blocks: {count.Result.Value}");
             #endregion
 
             #region CheckSum Section
-            var checksumSection = block.Sections[(int)KnownEdidSection.CheckSum];
+            var checksumSection = block.Sections[(int)EdidSection.Checksum];
             var status = checksumSection.GetProperty(EedidProperty.Edid.CheckSum.Ok);
             var value = checksumSection.GetProperty(EedidProperty.Edid.CheckSum.Value);
             logger.Info($@" │ Checksum: 0x{value.Result.Value:x2} ({((bool)status.Result.Value ? "Valid" : "Invalid")})");

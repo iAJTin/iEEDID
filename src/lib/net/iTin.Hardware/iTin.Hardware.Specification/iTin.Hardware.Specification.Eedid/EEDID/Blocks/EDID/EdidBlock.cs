@@ -1,5 +1,5 @@
 ﻿
-namespace iTin.Hardware.Specification.Eedid
+namespace iTin.Hardware.Specification.Eedid.Blocks
 {
     using System;
     using System.Collections.Generic;
@@ -7,6 +7,9 @@ namespace iTin.Hardware.Specification.Eedid
     using System.Linq;
 
     using iTin.Core;
+
+    using EDID;
+    using EDID.Sections;
 
     // •——————————————————————————————————————————•
     // | BLOCK 0 (EDID)                           |
@@ -67,16 +70,16 @@ namespace iTin.Hardware.Specification.Eedid
         /// <param name="dataSectionDictionary">Dictionary that contains the available data for the sections of this block</param>
         protected override void InitDataSectionTable(Dictionary<Enum, ReadOnlyCollection<byte>> dataSectionDictionary)
         {
-            dataSectionDictionary.Add(KnownEdidSection.Header, RawData.Extract((byte)0x00, (byte)0x08).ToList().AsReadOnly());
-            dataSectionDictionary.Add(KnownEdidSection.Vendor, RawData.Extract((byte)0x08, (byte)0x0a).ToList().AsReadOnly());
-            dataSectionDictionary.Add(KnownEdidSection.Version, RawData.Extract((byte)0x12, (byte)0x02).ToList().AsReadOnly());
-            dataSectionDictionary.Add(KnownEdidSection.BasicDisplay, RawData.Extract((byte)0x14, (byte)0x05).ToList().AsReadOnly());
-            dataSectionDictionary.Add(KnownEdidSection.ColorCharacteristics, RawData.Extract((byte)0x19, (byte)0x0a).ToList().AsReadOnly());
-            dataSectionDictionary.Add(KnownEdidSection.EstablishedTimings, RawData.Extract((byte)0x23, (byte)0x03).ToList().AsReadOnly());
-            dataSectionDictionary.Add(KnownEdidSection.StandardTimings, RawData.Extract((byte)0x26, (byte)0x10).ToList().AsReadOnly());
-            dataSectionDictionary.Add(KnownEdidSection.DataBlocks, RawData.Extract((byte)0x36, (byte)0x48).ToList().AsReadOnly());
-            dataSectionDictionary.Add(KnownEdidSection.ExtensionBlocks, RawData.Extract((byte)0x7e, (byte)0x01).ToList().AsReadOnly());
-            dataSectionDictionary.Add(KnownEdidSection.CheckSum, RawData);
+            dataSectionDictionary.Add(EdidSection.Header, RawData.Extract((byte)0x00, (byte)0x08).ToList().AsReadOnly());
+            dataSectionDictionary.Add(EdidSection.Vendor, RawData.Extract((byte)0x08, (byte)0x0a).ToList().AsReadOnly());
+            dataSectionDictionary.Add(EdidSection.Version, RawData.Extract((byte)0x12, (byte)0x02).ToList().AsReadOnly());
+            dataSectionDictionary.Add(EdidSection.BasicDisplay, RawData.Extract((byte)0x14, (byte)0x05).ToList().AsReadOnly());
+            dataSectionDictionary.Add(EdidSection.ColorCharacteristics, RawData.Extract((byte)0x19, (byte)0x0a).ToList().AsReadOnly());
+            dataSectionDictionary.Add(EdidSection.EstablishedTimings, RawData.Extract((byte)0x23, (byte)0x03).ToList().AsReadOnly());
+            dataSectionDictionary.Add(EdidSection.StandardTimings, RawData.Extract((byte)0x26, (byte)0x10).ToList().AsReadOnly());
+            dataSectionDictionary.Add(EdidSection.DataBlocks, RawData.Extract((byte)0x36, (byte)0x48).ToList().AsReadOnly());
+            dataSectionDictionary.Add(EdidSection.ExtensionBlocks, RawData.Extract((byte)0x7e, (byte)0x01).ToList().AsReadOnly());
+            dataSectionDictionary.Add(EdidSection.Checksum, RawData);
         }
         #endregion
 
@@ -87,54 +90,54 @@ namespace iTin.Hardware.Specification.Eedid
         /// <param name="sectionDictionary">Dictionary containing the sections available for this block</param>
         protected override void InitSectionTable(Dictionary<Enum, BaseDataSection> sectionDictionary)
         {
-            if (DataSectionTable.ContainsKey(KnownEdidSection.Header))
+            if (DataSectionTable.ContainsKey(EdidSection.Header))
             {
-                sectionDictionary.Add(KnownEdidSection.Header, new HeaderEdidSection(DataSectionTable[KnownEdidSection.Header]));
+                sectionDictionary.Add(EdidSection.Header, new HeaderSection(DataSectionTable[EdidSection.Header]));
             }
 
-            if (DataSectionTable.ContainsKey(KnownEdidSection.Vendor))
+            if (DataSectionTable.ContainsKey(EdidSection.Vendor))
             {
-                sectionDictionary.Add(KnownEdidSection.Vendor, new VendorEdidSection(DataSectionTable[KnownEdidSection.Vendor]));
+                sectionDictionary.Add(EdidSection.Vendor, new VendorSection(DataSectionTable[EdidSection.Vendor]));
             }
 
-            if (DataSectionTable.ContainsKey(KnownEdidSection.Version))
+            if (DataSectionTable.ContainsKey(EdidSection.Version))
             {
-                sectionDictionary.Add(KnownEdidSection.Version, new VersionEdidSection(DataSectionTable[KnownEdidSection.Version]));
+                sectionDictionary.Add(EdidSection.Version, new VersionSection(DataSectionTable[EdidSection.Version]));
             }
 
-            if (DataSectionTable.ContainsKey(KnownEdidSection.BasicDisplay))
+            if (DataSectionTable.ContainsKey(EdidSection.BasicDisplay))
             {
-                sectionDictionary.Add(KnownEdidSection.BasicDisplay, new BasicDisplayEdidSection(DataSectionTable[KnownEdidSection.BasicDisplay]));
+                sectionDictionary.Add(EdidSection.BasicDisplay, new BasicDisplaySection(DataSectionTable[EdidSection.BasicDisplay]));
             }
 
-            if (DataSectionTable.ContainsKey(KnownEdidSection.ColorCharacteristics))
+            if (DataSectionTable.ContainsKey(EdidSection.ColorCharacteristics))
             {
-                sectionDictionary.Add(KnownEdidSection.ColorCharacteristics, new ColorCharacteristicsEdidSection(DataSectionTable[KnownEdidSection.ColorCharacteristics]));
+                sectionDictionary.Add(EdidSection.ColorCharacteristics, new ColorCharacteristicsSection(DataSectionTable[EdidSection.ColorCharacteristics]));
             }
 
-            if (DataSectionTable.ContainsKey(KnownEdidSection.EstablishedTimings))
+            if (DataSectionTable.ContainsKey(EdidSection.EstablishedTimings))
             {
-                sectionDictionary.Add(KnownEdidSection.EstablishedTimings, new EstablishedTimingsEdidSection(DataSectionTable[KnownEdidSection.EstablishedTimings]));
+                sectionDictionary.Add(EdidSection.EstablishedTimings, new EstablishedTimingsSection(DataSectionTable[EdidSection.EstablishedTimings]));
             }
 
-            if (DataSectionTable.ContainsKey(KnownEdidSection.StandardTimings))
+            if (DataSectionTable.ContainsKey(EdidSection.StandardTimings))
             {
-                sectionDictionary.Add(KnownEdidSection.StandardTimings, new StandardTimingsEdidSection(DataSectionTable[KnownEdidSection.StandardTimings]));
+                sectionDictionary.Add(EdidSection.StandardTimings, new StandardTimingsSection(DataSectionTable[EdidSection.StandardTimings]));
             }
 
-            if (DataSectionTable.ContainsKey(KnownEdidSection.DataBlocks))
+            if (DataSectionTable.ContainsKey(EdidSection.DataBlocks))
             {
-                sectionDictionary.Add(KnownEdidSection.DataBlocks, new DataBlocksEdidSection(DataSectionTable[KnownEdidSection.DataBlocks]));
+                sectionDictionary.Add(EdidSection.DataBlocks, new DataBlocksSection(DataSectionTable[EdidSection.DataBlocks]));
             }
 
-            if (DataSectionTable.ContainsKey(KnownEdidSection.ExtensionBlocks))
+            if (DataSectionTable.ContainsKey(EdidSection.ExtensionBlocks))
             {
-                sectionDictionary.Add(KnownEdidSection.ExtensionBlocks, new ExtensionBlocksEdidSection(DataSectionTable[KnownEdidSection.ExtensionBlocks]));
+                sectionDictionary.Add(EdidSection.ExtensionBlocks, new ExtensionBlocksSection(DataSectionTable[EdidSection.ExtensionBlocks]));
             }
 
-            if (DataSectionTable.ContainsKey(KnownEdidSection.CheckSum))
+            if (DataSectionTable.ContainsKey(EdidSection.Checksum))
             {
-                sectionDictionary.Add(KnownEdidSection.CheckSum, new CheckSumEdidSection(DataSectionTable[KnownEdidSection.CheckSum]));
+                sectionDictionary.Add(EdidSection.Checksum, new ChecksumSection(DataSectionTable[EdidSection.Checksum]));
             }
         }
         #endregion

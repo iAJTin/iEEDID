@@ -1,4 +1,6 @@
 ﻿
+using iTin.Hardware.Specification.Eedid.Blocks.EDID.Sections.Descriptors;
+
 namespace iEEDID.ComponentModel.Parser
 {
     using System;

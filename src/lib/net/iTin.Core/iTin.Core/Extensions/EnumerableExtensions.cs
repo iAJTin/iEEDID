@@ -20,7 +20,6 @@ namespace iTin.Core
         /// <summary>
         /// Creates a 
         /// </summary>
-        /// <typeparam name="T">Type of enumeeration.</typeparam>
         /// <returns>
         /// An new <see cref="IEnumerable{T}" /> where <b>T</b> is a <see cref="string"/> typed from <see cref="IEnumerable"/>.
         /// </returns>

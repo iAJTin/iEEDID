@@ -9,6 +9,8 @@ namespace iTin.Hardware.Specification.Eedid
 
     using iTin.Core.Hardware.Common;
 
+    using Blocks.EDID;
+
     /// <summary>
     /// Represents a data section
     /// </summary>
@@ -110,18 +112,10 @@ namespace iTin.Hardware.Specification.Eedid
         /// <value>
         /// Data to process.
         /// </value>
-        public ReadOnlyCollection<byte> RawData
-        {
-            get
-            {
-                if (Key.Equals(KnownEdidSection.CheckSum))
-                {
-                    return new ReadOnlyCollection<byte>(new byte[] { _dataSection.RawData.Take(128).LastOrDefault() });
-                }
-
-                return _dataSection.RawData;
-            }
-        }
+        public ReadOnlyCollection<byte> RawData => 
+            Key.Equals(EdidSection.Checksum) 
+                ? new ReadOnlyCollection<byte>(new[] { _dataSection.RawData.Take(128).LastOrDefault() }) 
+                : _dataSection.RawData;
         #endregion
 
         #endregion

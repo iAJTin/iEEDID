@@ -1,5 +1,5 @@
 ﻿
-namespace iTin.Hardware.Specification.Eedid
+namespace iTin.Hardware.Specification.Eedid.Blocks.EDID.Sections.Descriptors
 {
     using System.Collections.Generic;
     using System.Diagnostics;

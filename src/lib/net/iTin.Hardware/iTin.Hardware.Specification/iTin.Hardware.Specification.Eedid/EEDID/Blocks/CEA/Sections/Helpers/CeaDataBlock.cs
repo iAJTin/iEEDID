@@ -1,5 +1,5 @@
 ﻿
-namespace iTin.Hardware.Specification.Eedid
+namespace iTin.Hardware.Specification.Eedid.Blocks.CEA.Sections
 {
     using System;
     using System.Collections.ObjectModel;
@@ -27,7 +27,7 @@ namespace iTin.Hardware.Specification.Eedid
         {
             _dataBlock = dataBlock;
             _lenght = _dataBlock[0x00] & 0x1f;
-            Tag = (KnownShortDataBlockTag)((_dataBlock[0x00] & 0xe0) >> 5);
+            Tag = (ShortDataBlockTag)((_dataBlock[0x00] & 0xe0) >> 5);
         }
         #endregion
            
@@ -67,9 +67,9 @@ namespace iTin.Hardware.Specification.Eedid
         /// Gets a value that represents the type of block.
         /// </summary>
         /// <value>
-        /// One of the <see cref="KnownShortDataBlockTag"/> enumeration values that represents the block type.
+        /// One of the <see cref="ShortDataBlockTag"/> enumeration values that represents the block type.
         /// </value>
-        public KnownShortDataBlockTag Tag { get; }
+        public ShortDataBlockTag Tag { get; }
         #endregion
 
         #endregion

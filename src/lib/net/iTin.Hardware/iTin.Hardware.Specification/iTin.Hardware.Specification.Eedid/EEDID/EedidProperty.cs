@@ -8,6 +8,12 @@ namespace iTin.Hardware.Specification.Eedid
 
     using iTin.Core.Hardware.Common;
 
+    using Blocks.CEA;
+    using Blocks.DI;
+    using Blocks.DisplayId;
+    using Blocks.EDID;
+    using Blocks.EDID.Sections.Descriptors;
+
     /// <summary>
     /// Definition of available keys for the <see cref="EEDID"/> specification of a monitor.
     /// </summary>
@@ -21,7 +27,7 @@ namespace iTin.Hardware.Specification.Eedid
         {
             #region [public] {static} (class) Header: Definition of keys in the 'Header' section
             /// <summary>
-            /// Definition of keys in the <see cref="KnownEdidSection.Header"/> section.
+            /// Definition of keys in the <see cref="EdidSection.Header"/> section.
             /// </summary>
             public static class Header
             {
@@ -35,8 +41,8 @@ namespace iTin.Hardware.Specification.Eedid
                 /// <para>
                 ///  <para><b>Key Composition</b></para>
                 ///  <list type="bullet">
-                ///   <item><description>Structure: <see cref="KnownEdidSection.Header"/></description></item>
-                ///   <item><description>Property: <see cref="EdidHeaderProperty.Signature"/></description></item>
+                ///   <item><description>Structure: <see cref="EdidSection.Header"/></description></item>
+                ///   <item><description>Property: <see cref="EdidProperty.Header.Signature"/></description></item>
                 ///   <item><description>Unit: <see cref="PropertyUnit.None"/></description></item>
                 ///  </list>
                 /// </para>
@@ -49,7 +55,7 @@ namespace iTin.Hardware.Specification.Eedid
                 ///  <para>1.4</para>
                 /// </para>
                 /// </summary>
-                public static IPropertyKey Signature => new PropertyKey(KnownEdidSection.Header, EdidHeaderProperty.Signature);
+                public static IPropertyKey Signature => new PropertyKey(EdidSection.Header, EdidProperty.Header.Signature);
                 #endregion
 
                 #region [public] {static} (IPropertyKey) IsValid: Gets a value representing the key to retrieve the property value
@@ -59,8 +65,8 @@ namespace iTin.Hardware.Specification.Eedid
                 /// <para>
                 ///  <para><b>Key Composition</b></para>
                 ///  <list type="bullet">
-                ///   <item><description>Structure: <see cref="KnownEdidSection.Header"/></description></item>
-                ///   <item><description>Property: <see cref="EdidHeaderProperty.IsValid"/></description></item>
+                ///   <item><description>Structure: <see cref="EdidSection.Header"/></description></item>
+                ///   <item><description>Property: <see cref="EdidProperty.Header.IsValid"/></description></item>
                 ///   <item><description>Unit: <see cref="PropertyUnit.None"/></description></item>
                 ///  </list>
                 /// </para>
@@ -73,14 +79,14 @@ namespace iTin.Hardware.Specification.Eedid
                 ///  <para>1.4</para>
                 /// </para>
                 /// </summary>
-                public static IPropertyKey IsValid => new PropertyKey(KnownEdidSection.Header, EdidHeaderProperty.IsValid);
+                public static IPropertyKey IsValid => new PropertyKey(EdidSection.Header, EdidProperty.Header.IsValid);
                 #endregion
             }
             #endregion
 
             #region [public] {static} (class) Vendor: Definition of keys in the 'Vendor and Product' section
             /// <summary>
-            /// Definition of keys in the <see cref="KnownEdidSection.Vendor"/> section.
+            /// Definition of keys in the <see cref="EdidSection.Vendor"/> section.
             /// </summary>
             public static class Vendor
             {
@@ -96,8 +102,8 @@ namespace iTin.Hardware.Specification.Eedid
                 /// <para>
                 ///  <para><b>Key Composition</b></para>
                 ///  <list type="bullet">
-                ///   <item><description>Structure: <see cref="KnownEdidSection.Vendor"/></description></item>
-                ///   <item><description>Property: <see cref="EdidVendorProperty.IdManufacturerName"/></description></item>
+                ///   <item><description>Structure: <see cref="EdidSection.Vendor"/></description></item>
+                ///   <item><description>Property: <see cref="EdidProperty.Vendor.IdManufacturerName"/></description></item>
                 ///   <item><description>Unit: <see cref="PropertyUnit.None"/></description></item>
                 ///  </list>
                 /// </para>
@@ -110,7 +116,7 @@ namespace iTin.Hardware.Specification.Eedid
                 ///  <para>1.4</para>
                 /// </para>
                 /// </summary>
-                public static IPropertyKey IdManufacturerName => new PropertyKey(KnownEdidSection.Vendor, EdidVendorProperty.IdManufacturerName);
+                public static IPropertyKey IdManufacturerName => new PropertyKey(EdidSection.Vendor, EdidProperty.Vendor.IdManufacturerName);
                 #endregion
 
                 #region [public] {static} (IPropertyKey) IdProductCode: Gets a value representing the key to retrieve the property value
@@ -123,8 +129,8 @@ namespace iTin.Hardware.Specification.Eedid
                 /// <para>
                 ///  <para><b>Key Composition</b></para>
                 ///  <list type="bullet">
-                ///   <item><description>Structure: <see cref="KnownEdidSection.Vendor"/></description></item>
-                ///   <item><description>Property: <see cref="EdidVendorProperty.IdProductCode"/></description></item>
+                ///   <item><description>Structure: <see cref="EdidSection.Vendor"/></description></item>
+                ///   <item><description>Property: <see cref="EdidProperty.Vendor.IdProductCode"/></description></item>
                 ///   <item><description>Unit: <see cref="PropertyUnit.None"/></description></item>
                 ///  </list>
                 /// </para>
@@ -137,7 +143,7 @@ namespace iTin.Hardware.Specification.Eedid
                 ///  <para>1.4</para>
                 /// </para>
                 /// </summary>
-                public static IPropertyKey IdProductCode => new PropertyKey(KnownEdidSection.Vendor, EdidVendorProperty.IdProductCode);
+                public static IPropertyKey IdProductCode => new PropertyKey(EdidSection.Vendor, EdidProperty.Vendor.IdProductCode);
                 #endregion
 
                 #region [public] {static} (IPropertyKey) IdSerialNumber: Gets a value representing the key to retrieve the property value
@@ -151,8 +157,8 @@ namespace iTin.Hardware.Specification.Eedid
                 /// <para>
                 ///  <para><b>Key Composition</b></para>
                 ///  <list type="bullet">
-                ///   <item><description>Structure: <see cref="KnownEdidSection.Vendor"/></description></item>
-                ///   <item><description>Property: <see cref="EdidVendorProperty.IdSerialNumber"/></description></item>
+                ///   <item><description>Structure: <see cref="EdidSection.Vendor"/></description></item>
+                ///   <item><description>Property: <see cref="EdidProperty.Vendor.IdSerialNumber"/></description></item>
                 ///   <item><description>Unit: <see cref="PropertyUnit.None"/></description></item>
                 ///  </list>
                 /// </para>
@@ -165,7 +171,7 @@ namespace iTin.Hardware.Specification.Eedid
                 ///  <para>1.4</para>
                 /// </para>
                 /// </summary>
-                public static IPropertyKey IdSerialNumber => new PropertyKey(KnownEdidSection.Vendor, EdidVendorProperty.IdSerialNumber);
+                public static IPropertyKey IdSerialNumber => new PropertyKey(EdidSection.Vendor, EdidProperty.Vendor.IdSerialNumber);
                 #endregion
 
                 #region [public] {static} (IPropertyKey) WeekOfManufactureOrModelYear: Gets a value representing the key to retrieve the property value
@@ -175,8 +181,8 @@ namespace iTin.Hardware.Specification.Eedid
                 /// <para>
                 ///  <para><b>Key Composition</b></para>
                 ///  <list type="bullet">
-                ///   <item><description>Structure: <see cref="KnownEdidSection.Vendor"/></description></item>
-                ///   <item><description>Property: <see cref="EdidVendorProperty.WeekOfManufactureOrModelYear"/></description></item>
+                ///   <item><description>Structure: <see cref="EdidSection.Vendor"/></description></item>
+                ///   <item><description>Property: <see cref="EdidProperty.Vendor.WeekOfManufactureOrModelYear"/></description></item>
                 ///   <item><description>Unit: <see cref="PropertyUnit.None"/></description></item>
                 ///  </list>
                 /// </para>
@@ -189,7 +195,7 @@ namespace iTin.Hardware.Specification.Eedid
                 ///  <para>1.4</para>
                 /// </para>
                 /// </summary>
-                public static IPropertyKey WeekOfManufactureOrModelYear => new PropertyKey(KnownEdidSection.Vendor, EdidVendorProperty.WeekOfManufactureOrModelYear);
+                public static IPropertyKey WeekOfManufactureOrModelYear => new PropertyKey(EdidSection.Vendor, EdidProperty.Vendor.WeekOfManufactureOrModelYear);
                 #endregion
 
                 #region [public] {static} (IPropertyKey) YearOfManufactureOrModelYear: Gets a value representing the key to retrieve the property value
@@ -199,8 +205,8 @@ namespace iTin.Hardware.Specification.Eedid
                 /// <para>
                 ///  <para><b>Key Composition</b></para>
                 ///  <list type="bullet">
-                ///   <item><description>Structure: <see cref="KnownEdidSection.Vendor"/></description></item>
-                ///   <item><description>Property: <see cref="EdidVendorProperty.YearOfManufactureOrModelYear"/></description></item>
+                ///   <item><description>Structure: <see cref="EdidSection.Vendor"/></description></item>
+                ///   <item><description>Property: <see cref="EdidProperty.Vendor.YearOfManufactureOrModelYear"/></description></item>
                 ///   <item><description>Unit: <see cref="PropertyUnit.None"/></description></item>
                 ///  </list>
                 /// </para>
@@ -213,7 +219,7 @@ namespace iTin.Hardware.Specification.Eedid
                 ///  <para>1.4</para>
                 /// </para>
                 /// </summary>
-                public static IPropertyKey YearOfManufactureOrModelYear => new PropertyKey(KnownEdidSection.Vendor, EdidVendorProperty.YearOfManufactureOrModelYear);
+                public static IPropertyKey YearOfManufactureOrModelYear => new PropertyKey(EdidSection.Vendor, EdidProperty.Vendor.YearOfManufactureOrModelYear);
                 #endregion
 
                 #region [public] {static} (IPropertyKey) ManufactureDate: Gets a value representing the key to retrieve the property value
@@ -226,8 +232,8 @@ namespace iTin.Hardware.Specification.Eedid
                 /// <para>
                 ///  <para><b>Key Composition</b></para>
                 ///  <list type="bullet">
-                ///   <item><description>Structure: <see cref="KnownEdidSection.Vendor"/></description></item>
-                ///   <item><description>Property: <see cref="EdidVendorProperty.ManufactureDate"/></description></item>
+                ///   <item><description>Structure: <see cref="EdidSection.Vendor"/></description></item>
+                ///   <item><description>Property: <see cref="EdidProperty.Vendor.ManufactureDate"/></description></item>
                 ///   <item><description>Unit: <see cref="PropertyUnit.None"/></description></item>
                 ///  </list>
                 /// </para>
@@ -240,7 +246,7 @@ namespace iTin.Hardware.Specification.Eedid
                 ///  <para>1.4</para>
                 /// </para>
                 /// </summary>
-                public static IPropertyKey ManufactureDate => new PropertyKey(KnownEdidSection.Vendor, EdidVendorProperty.ManufactureDate);
+                public static IPropertyKey ManufactureDate => new PropertyKey(EdidSection.Vendor, EdidProperty.Vendor.ManufactureDate);
                 #endregion
 
                 #region [public] {static} (IPropertyKey) ModelYearStrategy: Gets a value representing the key to retrieve the property
@@ -252,8 +258,8 @@ namespace iTin.Hardware.Specification.Eedid
                 /// <para>
                 ///  <para><b>Key Composition</b></para>
                 ///  <list type="bullet">
-                ///   <item><description>Structure: <see cref="KnownEdidSection.Vendor"/></description></item>
-                ///   <item><description>Property: <see cref="EdidVendorProperty.ModelYearStrategy"/></description></item>
+                ///   <item><description>Structure: <see cref="EdidSection.Vendor"/></description></item>
+                ///   <item><description>Property: <see cref="EdidProperty.Vendor.ModelYearStrategy"/></description></item>
                 ///   <item><description>Unit: <see cref="PropertyUnit.None"/></description></item>
                 ///  </list>
                 /// </para>
@@ -266,14 +272,14 @@ namespace iTin.Hardware.Specification.Eedid
                 ///  <para>1.4</para>
                 /// </para>
                 /// </summary>
-                public static IPropertyKey ModelYearStrategy => new PropertyKey(KnownEdidSection.Vendor, EdidVendorProperty.ModelYearStrategy);
+                public static IPropertyKey ModelYearStrategy => new PropertyKey(EdidSection.Vendor, EdidProperty.Vendor.ModelYearStrategy);
                 #endregion
             }
             #endregion
 
             #region [public] {static} (class) Version: Definition of keys in the 'Version and Revision' section
             /// <summary>
-            /// Definition of keys in the <see cref="KnownEdidSection.Version"/> section.
+            /// Definition of keys in the <see cref="EdidSection.Version"/> section.
             /// </summary>
             public static class Version
             {
@@ -284,8 +290,8 @@ namespace iTin.Hardware.Specification.Eedid
                 /// <para>
                 ///  <para><b>Key Composition</b></para>
                 ///  <list type="bullet">
-                ///   <item><description>Structure: <see cref="KnownEdidSection.Version"/></description></item>
-                ///   <item><description>Property: <see cref="EdidVersionProperty.Version"/></description></item>
+                ///   <item><description>Structure: <see cref="EdidSection.Version"/></description></item>
+                ///   <item><description>Property: <see cref="EdidProperty.Version.Number"/></description></item>
                 ///   <item><description>Unit: <see cref="PropertyUnit.None"/></description></item>
                 ///  </list>
                 /// </para>
@@ -298,7 +304,7 @@ namespace iTin.Hardware.Specification.Eedid
                 ///  <para>1.4</para>
                 /// </para>
                 /// </summary>
-                public static IPropertyKey Number => new PropertyKey(KnownEdidSection.Version, EdidVersionProperty.Version);
+                public static IPropertyKey Number => new PropertyKey(EdidSection.Version, EdidProperty.Version.Number);
                 #endregion
 
                 #region [public] {static} (IPropertyKey) Revision: Gets a value representing the key to retrieve the property value
@@ -308,8 +314,8 @@ namespace iTin.Hardware.Specification.Eedid
                 /// <para>
                 ///  <para><b>Key Composition</b></para>
                 ///  <list type="bullet">
-                ///   <item><description>Structure: <see cref="KnownEdidSection.Version"/></description></item>
-                ///   <item><description>Property: <see cref="EdidVersionProperty.Revision"/></description></item>
+                ///   <item><description>Structure: <see cref="EdidSection.Version"/></description></item>
+                ///   <item><description>Property: <see cref="EdidProperty.Version.Revision"/></description></item>
                 ///   <item><description>Unit: <see cref="PropertyUnit.None"/></description></item>
                 ///  </list>
                 /// </para>
@@ -322,14 +328,14 @@ namespace iTin.Hardware.Specification.Eedid
                 ///  <para>1.4</para>
                 /// </para>
                 /// </summary>
-                public static IPropertyKey Revision => new PropertyKey(KnownEdidSection.Version, EdidVersionProperty.Revision);
+                public static IPropertyKey Revision => new PropertyKey(EdidSection.Version, EdidProperty.Version.Revision);
                 #endregion
             }
             #endregion
 
             #region [public] {static} (class) BasicDisplay: Definition of keys in the 'Basic Display Parameters and Features' section
             /// <summary>
-            /// Definition of keys in the <see cref="KnownEdidSection.BasicDisplay"/> section.
+            /// Definition of keys in the <see cref="EdidSection.BasicDisplay"/> section.
             /// </summary>
             public static class BasicDisplay
             {
@@ -342,8 +348,8 @@ namespace iTin.Hardware.Specification.Eedid
                 /// <para>
                 ///  <para><b>Key Composition</b></para>
                 ///  <list type="bullet">
-                ///   <item><description>Structure: <see cref="KnownEdidSection.BasicDisplay"/></description></item>
-                ///   <item><description>Property: <see cref="EdidBasicDisplayProperty.VideoInputDefinition"/></description></item>
+                ///   <item><description>Structure: <see cref="EdidSection.BasicDisplay"/></description></item>
+                ///   <item><description>Property: <see cref="EdidProperty.BasicDisplay.VideoInputDefinition"/></description></item>
                 ///   <item><description>Unit: <see cref="PropertyUnit.None"/></description></item>
                 ///  </list>
                 /// </para>
@@ -356,7 +362,7 @@ namespace iTin.Hardware.Specification.Eedid
                 ///  <para>1.4</para>
                 /// </para>
                 /// </summary>
-                public static IPropertyKey VideoInputDefinition => new PropertyKey(KnownEdidSection.BasicDisplay, EdidBasicDisplayProperty.VideoInputDefinition);
+                public static IPropertyKey VideoInputDefinition => new PropertyKey(EdidSection.BasicDisplay, EdidProperty.BasicDisplay.VideoInputDefinition);
                 #endregion
 
                 #region [public] {static} (IPropertyKey) HorizontalScreenSize: Gets a value representing the key to retrieve the property value
@@ -369,8 +375,8 @@ namespace iTin.Hardware.Specification.Eedid
                 /// <para>
                 ///  <para><b>Key Composition</b></para>
                 ///  <list type="bullet">
-                ///   <item><description>Structure: <see cref="KnownEdidSection.BasicDisplay"/></description></item>
-                ///   <item><description>Property: <see cref="EdidBasicDisplayProperty.HorizontalScreenSize"/></description></item>
+                ///   <item><description>Structure: <see cref="EdidSection.BasicDisplay"/></description></item>
+                ///   <item><description>Property: <see cref="EdidProperty.BasicDisplay.HorizontalScreenSize"/></description></item>
                 ///   <item><description>Unit: <see cref="PropertyUnit.cm"/></description></item>
                 ///  </list>
                 /// </para>
@@ -383,7 +389,7 @@ namespace iTin.Hardware.Specification.Eedid
                 ///  <para>1.4</para>
                 /// </para>
                 /// </summary>
-                public static IPropertyKey HorizontalScreenSize => new PropertyKey(KnownEdidSection.BasicDisplay, EdidBasicDisplayProperty.HorizontalScreenSize, PropertyUnit.cm);
+                public static IPropertyKey HorizontalScreenSize => new PropertyKey(EdidSection.BasicDisplay, EdidProperty.BasicDisplay.HorizontalScreenSize, PropertyUnit.cm);
                 #endregion
 
                 #region [public] {static} (IPropertyKey) VerticalScreenSize: Gets a value representing the key to retrieve the property value
@@ -396,8 +402,8 @@ namespace iTin.Hardware.Specification.Eedid
                 /// <para>
                 ///  <para><b>Key Composition</b></para>
                 ///  <list type="bullet">
-                ///   <item><description>Structure: <see cref="KnownEdidSection.BasicDisplay"/></description></item>
-                ///   <item><description>Property: <see cref="EdidBasicDisplayProperty.VerticalScreenSize"/></description></item>
+                ///   <item><description>Structure: <see cref="EdidSection.BasicDisplay"/></description></item>
+                ///   <item><description>Property: <see cref="EdidProperty.BasicDisplay.VerticalScreenSize"/></description></item>
                 ///   <item><description>Unit: <see cref="PropertyUnit.cm"/></description></item>
                 ///  </list>
                 /// </para>
@@ -410,7 +416,7 @@ namespace iTin.Hardware.Specification.Eedid
                 ///  <para>1.4</para>
                 /// </para>
                 /// </summary>
-                public static IPropertyKey VerticalScreenSize => new PropertyKey(KnownEdidSection.BasicDisplay, EdidBasicDisplayProperty.VerticalScreenSize, PropertyUnit.cm);
+                public static IPropertyKey VerticalScreenSize => new PropertyKey(EdidSection.BasicDisplay, EdidProperty.BasicDisplay.VerticalScreenSize, PropertyUnit.cm);
                 #endregion
 
                 #region [public] {static} (IPropertyKey) Gamma: Gets a value representing the key to retrieve the property value
@@ -423,8 +429,8 @@ namespace iTin.Hardware.Specification.Eedid
                 /// <para>
                 ///  <para><b>Key Composition</b></para>
                 ///  <list type="bullet">
-                ///   <item><description>Structure: <see cref="KnownEdidSection.BasicDisplay"/></description></item>
-                ///   <item><description>Property: <see cref="EdidBasicDisplayProperty.Gamma"/></description></item>
+                ///   <item><description>Structure: <see cref="EdidSection.BasicDisplay"/></description></item>
+                ///   <item><description>Property: <see cref="EdidProperty.BasicDisplay.Gamma"/></description></item>
                 ///   <item><description>Unit: <see cref="PropertyUnit.None"/></description></item>
                 ///  </list>
                 /// </para>
@@ -437,7 +443,7 @@ namespace iTin.Hardware.Specification.Eedid
                 ///  <para>1.4</para>
                 /// </para>
                 /// </summary>
-                public static IPropertyKey Gamma => new PropertyKey(KnownEdidSection.BasicDisplay, EdidBasicDisplayProperty.Gamma);
+                public static IPropertyKey Gamma => new PropertyKey(EdidSection.BasicDisplay, EdidProperty.BasicDisplay.Gamma);
                 #endregion
 
                 #endregion
@@ -460,8 +466,8 @@ namespace iTin.Hardware.Specification.Eedid
                     /// <para>
                     ///  <para><b>Key Composition</b></para>
                     ///  <list type="bullet">
-                    ///   <item><description>Structure: <see cref="KnownEdidSection.BasicDisplay"/></description></item>
-                    ///   <item><description>Property: <see cref="EdidBasicDisplayProperty.AnalogSignalLevelStandard"/></description></item>
+                    ///   <item><description>Structure: <see cref="EdidSection.BasicDisplay"/></description></item>
+                    ///   <item><description>Property: <see cref="EdidProperty.BasicDisplay.AnalogSignalLevelStandard"/></description></item>
                     ///   <item><description>Unit: <see cref="PropertyUnit.None"/></description></item>
                     ///  </list>
                     /// </para>
@@ -474,7 +480,7 @@ namespace iTin.Hardware.Specification.Eedid
                     ///  <para>1.4</para>
                     /// </para>
                     /// </summary>
-                    public static IPropertyKey SignalLevelStandard => new PropertyKey(KnownEdidSection.BasicDisplay, EdidBasicDisplayProperty.AnalogSignalLevelStandard);
+                    public static IPropertyKey SignalLevelStandard => new PropertyKey(EdidSection.BasicDisplay, EdidProperty.BasicDisplay.AnalogSignalLevelStandard);
                     #endregion
 
                     #region [public] {static} (IPropertyKey) VideoSetup: Gets a value representing the key to retrieve the property value
@@ -484,8 +490,8 @@ namespace iTin.Hardware.Specification.Eedid
                     /// <para>
                     ///  <para><b>Key Composition</b></para>
                     ///  <list type="bullet">
-                    ///   <item><description>Structure: <see cref="KnownEdidSection.BasicDisplay"/></description></item>
-                    ///   <item><description>Property: <see cref="EdidBasicDisplayProperty.AnalogVideoSetup"/></description></item>
+                    ///   <item><description>Structure: <see cref="EdidSection.BasicDisplay"/></description></item>
+                    ///   <item><description>Property: <see cref="EdidProperty.BasicDisplay.AnalogVideoSetup"/></description></item>
                     ///   <item><description>Unit: <see cref="PropertyUnit.None"/></description></item>
                     ///  </list>
                     /// </para>
@@ -498,7 +504,7 @@ namespace iTin.Hardware.Specification.Eedid
                     ///  <para>1.4</para>
                     /// </para>
                     /// </summary>
-                    public static IPropertyKey VideoSetup => new PropertyKey(KnownEdidSection.BasicDisplay, EdidBasicDisplayProperty.AnalogVideoSetup);
+                    public static IPropertyKey VideoSetup => new PropertyKey(EdidSection.BasicDisplay, EdidProperty.BasicDisplay.AnalogVideoSetup);
                     #endregion
 
                     #region [public] {static} (IPropertyKey) VerticalSyncSupported: Gets a value representing the key to retrieve the property value
@@ -508,8 +514,8 @@ namespace iTin.Hardware.Specification.Eedid
                     /// <para>
                     ///  <para><b>Key Composition</b></para>
                     ///  <list type="bullet">
-                    ///   <item><description>Structure: <see cref="KnownEdidSection.BasicDisplay"/></description></item>
-                    ///   <item><description>Property: <see cref="EdidBasicDisplayProperty.AnalogVerticalSyncSupported"/></description></item>
+                    ///   <item><description>Structure: <see cref="EdidSection.BasicDisplay"/></description></item>
+                    ///   <item><description>Property: <see cref="EdidProperty.BasicDisplay.AnalogVerticalSyncSupported"/></description></item>
                     ///   <item><description>Unit: <see cref="PropertyUnit.None"/></description></item>
                     ///  </list>
                     /// </para>
@@ -522,7 +528,7 @@ namespace iTin.Hardware.Specification.Eedid
                     ///  <para>1.4</para>
                     /// </para>
                     /// </summary>
-                    public static IPropertyKey VerticalSyncSupported => new PropertyKey(KnownEdidSection.BasicDisplay, EdidBasicDisplayProperty.AnalogVerticalSyncSupported);
+                    public static IPropertyKey VerticalSyncSupported => new PropertyKey(EdidSection.BasicDisplay, EdidProperty.BasicDisplay.AnalogVerticalSyncSupported);
                     #endregion
 
                     #region [public] {static} (IPropertyKey) DisplayColorType: Gets a value representing the key to retrieve the property value
@@ -532,8 +538,8 @@ namespace iTin.Hardware.Specification.Eedid
                     /// <para>
                     ///  <para><b>Key Composition</b></para>
                     ///  <list type="bullet">
-                    ///   <item><description>Structure: <see cref="KnownEdidSection.BasicDisplay"/></description></item>
-                    ///   <item><description>Property: <see cref="EdidBasicDisplayProperty.AnalogDisplayColorType"/></description></item>
+                    ///   <item><description>Structure: <see cref="EdidSection.BasicDisplay"/></description></item>
+                    ///   <item><description>Property: <see cref="EdidProperty.BasicDisplay.AnalogDisplayColorType"/></description></item>
                     ///   <item><description>Unit: <see cref="PropertyUnit.None"/></description></item>
                     ///  </list>
                     /// </para>
@@ -546,7 +552,7 @@ namespace iTin.Hardware.Specification.Eedid
                     ///  <para>1.4</para>
                     /// </para>
                     /// </summary>
-                    public static IPropertyKey DisplayColorType => new PropertyKey(KnownEdidSection.BasicDisplay, EdidBasicDisplayProperty.AnalogDisplayColorType);
+                    public static IPropertyKey DisplayColorType => new PropertyKey(EdidSection.BasicDisplay, EdidProperty.BasicDisplay.AnalogDisplayColorType);
                     #endregion
 
                     #endregion
@@ -567,8 +573,8 @@ namespace iTin.Hardware.Specification.Eedid
                         /// <para>
                         ///  <para><b>Key Composition</b></para>
                         ///  <list type="bullet">
-                        ///   <item><description>Structure: <see cref="KnownEdidSection.BasicDisplay"/></description></item>
-                        ///   <item><description>Property: <see cref="EdidBasicDisplayProperty.AnalogSeparateSyncSupported"/></description></item>
+                        ///   <item><description>Structure: <see cref="EdidSection.BasicDisplay"/></description></item>
+                        ///   <item><description>Property: <see cref="EdidProperty.BasicDisplay.AnalogSeparateSyncSupported"/></description></item>
                         ///   <item><description>Unit: <see cref="PropertyUnit.None"/></description></item>
                         ///  </list>
                         /// </para>
@@ -581,7 +587,7 @@ namespace iTin.Hardware.Specification.Eedid
                         ///  <para>1.4</para>
                         /// </para>
                         /// </summary>
-                        public static IPropertyKey SeparateSyncSupported => new PropertyKey(KnownEdidSection.BasicDisplay, EdidBasicDisplayProperty.AnalogSeparateSyncSupported);
+                        public static IPropertyKey SeparateSyncSupported => new PropertyKey(EdidSection.BasicDisplay, EdidProperty.BasicDisplay.AnalogSeparateSyncSupported);
                         #endregion
 
                         #region [public] {static} (IPropertyKey) CompositeSyncSignalHorizontalSupported: Gets a value representing the key to retrieve the property value
@@ -591,8 +597,8 @@ namespace iTin.Hardware.Specification.Eedid
                         /// <para>
                         ///  <para><b>Key Composition</b></para>
                         ///  <list type="bullet">
-                        ///   <item><description>Structure: <see cref="KnownEdidSection.BasicDisplay"/></description></item>
-                        ///   <item><description>Property: <see cref="EdidBasicDisplayProperty.AnalogCompositeSyncSignalHorizontalSupported"/></description></item>
+                        ///   <item><description>Structure: <see cref="EdidSection.BasicDisplay"/></description></item>
+                        ///   <item><description>Property: <see cref="EdidProperty.BasicDisplay.AnalogCompositeSyncSignalHorizontalSupported"/></description></item>
                         ///   <item><description>Unit: <see cref="PropertyUnit.None"/></description></item>
                         ///  </list>
                         /// </para>
@@ -605,7 +611,7 @@ namespace iTin.Hardware.Specification.Eedid
                         ///  <para>1.4</para>
                         /// </para>
                         /// </summary>
-                        public static IPropertyKey CompositeSyncSignalHorizontalSupported => new PropertyKey(KnownEdidSection.BasicDisplay, EdidBasicDisplayProperty.AnalogCompositeSyncSignalHorizontalSupported);
+                        public static IPropertyKey CompositeSyncSignalHorizontalSupported => new PropertyKey(EdidSection.BasicDisplay, EdidProperty.BasicDisplay.AnalogCompositeSyncSignalHorizontalSupported);
                         #endregion
 
                         #region [public] {static} (IPropertyKey) CompositeSyncSignalGreenVideoSupported: Gets a value representing the key to retrieve the property value
@@ -615,8 +621,8 @@ namespace iTin.Hardware.Specification.Eedid
                         /// <para>
                         ///  <para><b>Key Composition</b></para>
                         ///  <list type="bullet">
-                        ///   <item><description>Structure: <see cref="KnownEdidSection.BasicDisplay"/></description></item>
-                        ///   <item><description>Property: <see cref="EdidBasicDisplayProperty.AnalogCompositeSyncSignalGreenVideoSupported"/></description></item>
+                        ///   <item><description>Structure: <see cref="EdidSection.BasicDisplay"/></description></item>
+                        ///   <item><description>Property: <see cref="EdidProperty.BasicDisplay.AnalogCompositeSyncSignalGreenVideoSupported"/></description></item>
                         ///   <item><description>Unit: <see cref="PropertyUnit.None"/></description></item>
                         ///  </list>
                         /// </para>
@@ -629,7 +635,7 @@ namespace iTin.Hardware.Specification.Eedid
                         ///  <para>1.4</para>
                         /// </para>
                         /// </summary>
-                        public static IPropertyKey CompositeSyncSignalGreenVideoSupported => new PropertyKey(KnownEdidSection.BasicDisplay, EdidBasicDisplayProperty.AnalogCompositeSyncSignalGreenVideoSupported);
+                        public static IPropertyKey CompositeSyncSignalGreenVideoSupported => new PropertyKey(EdidSection.BasicDisplay, EdidProperty.BasicDisplay.AnalogCompositeSyncSignalGreenVideoSupported);
                         #endregion
                     }
                     #endregion
@@ -651,8 +657,8 @@ namespace iTin.Hardware.Specification.Eedid
                     /// <para>
                     ///  <para><b>Key Composition</b></para>
                     ///  <list type="bullet">
-                    ///   <item><description>Structure: <see cref="KnownEdidSection.BasicDisplay"/></description></item>
-                    ///   <item><description>Property: <see cref="EdidBasicDisplayProperty.DigitalColorBitDepth"/></description></item>
+                    ///   <item><description>Structure: <see cref="EdidSection.BasicDisplay"/></description></item>
+                    ///   <item><description>Property: <see cref="EdidProperty.BasicDisplay.DigitalColorBitDepth"/></description></item>
                     ///   <item><description>Unit: <see cref="PropertyUnit.None"/></description></item>
                     ///  </list>
                     /// </para>
@@ -665,7 +671,7 @@ namespace iTin.Hardware.Specification.Eedid
                     ///  <para>1.4</para>
                     /// </para>
                     /// </summary>
-                    public static IPropertyKey ColorBitDepth => new PropertyKey(KnownEdidSection.BasicDisplay, EdidBasicDisplayProperty.DigitalColorBitDepth);
+                    public static IPropertyKey ColorBitDepth => new PropertyKey(EdidSection.BasicDisplay, EdidProperty.BasicDisplay.DigitalColorBitDepth);
                     #endregion
 
                     #region [public] {static} (IPropertyKey) VideoInterface: Gets a value representing the key to retrieve the property value
@@ -675,8 +681,8 @@ namespace iTin.Hardware.Specification.Eedid
                     /// <para>
                     ///  <para><b>Key Composition</b></para>
                     ///  <list type="bullet">
-                    ///   <item><description>Structure: <see cref="KnownEdidSection.BasicDisplay"/></description></item>
-                    ///   <item><description>Property: <see cref="EdidBasicDisplayProperty.DigitalVideoInterface"/></description></item>
+                    ///   <item><description>Structure: <see cref="EdidSection.BasicDisplay"/></description></item>
+                    ///   <item><description>Property: <see cref="EdidProperty.BasicDisplay.DigitalVideoInterface"/></description></item>
                     ///   <item><description>Unit: <see cref="PropertyUnit.None"/></description></item>
                     ///  </list>
                     /// </para>
@@ -689,7 +695,7 @@ namespace iTin.Hardware.Specification.Eedid
                     ///  <para>1.4</para>
                     /// </para>
                     /// </summary>
-                    public static IPropertyKey VideoInterface => new PropertyKey(KnownEdidSection.BasicDisplay, EdidBasicDisplayProperty.DigitalVideoInterface);
+                    public static IPropertyKey VideoInterface => new PropertyKey(EdidSection.BasicDisplay, EdidProperty.BasicDisplay.DigitalVideoInterface);
                     #endregion
 
                     #region [public] {static} (IPropertyKey) ColorEncodingFormat: Gets a value representing the key to retrieve the property value
@@ -699,8 +705,8 @@ namespace iTin.Hardware.Specification.Eedid
                     /// <para>
                     ///  <para><b>Key Composition</b></para>
                     ///  <list type="bullet">
-                    ///   <item><description>Structure: <see cref="KnownEdidSection.BasicDisplay"/></description></item>
-                    ///   <item><description>Property: <see cref="EdidBasicDisplayProperty.DigitalColorEncodingFormat"/></description></item>
+                    ///   <item><description>Structure: <see cref="EdidSection.BasicDisplay"/></description></item>
+                    ///   <item><description>Property: <see cref="EdidProperty.BasicDisplay.DigitalColorEncodingFormat"/></description></item>
                     ///   <item><description>Unit: <see cref="PropertyUnit.None"/></description></item>
                     ///  </list>
                     /// </para>
@@ -713,7 +719,7 @@ namespace iTin.Hardware.Specification.Eedid
                     ///  <para>1.4</para>
                     /// </para>
                     /// </summary>
-                    public static IPropertyKey ColorEncodingFormat => new PropertyKey(KnownEdidSection.BasicDisplay, EdidBasicDisplayProperty.DigitalColorEncodingFormat);
+                    public static IPropertyKey ColorEncodingFormat => new PropertyKey(EdidSection.BasicDisplay, EdidProperty.BasicDisplay.DigitalColorEncodingFormat);
                     #endregion
                 }
                 #endregion
@@ -737,8 +743,8 @@ namespace iTin.Hardware.Specification.Eedid
                         /// <para>
                         ///  <para><b>Key Composition</b></para>
                         ///  <list type="bullet">
-                        ///   <item><description>Structure: <see cref="KnownEdidSection.BasicDisplay"/></description></item>
-                        ///   <item><description>Property: <see cref="EdidBasicDisplayProperty.SrgbDefaultColorSpace"/></description></item>
+                        ///   <item><description>Structure: <see cref="EdidSection.BasicDisplay"/></description></item>
+                        ///   <item><description>Property: <see cref="EdidProperty.BasicDisplay.SrgbDefaultColorSpace"/></description></item>
                         ///   <item><description>Unit: <see cref="PropertyUnit.None"/></description></item>
                         ///  </list>
                         /// </para>
@@ -751,7 +757,7 @@ namespace iTin.Hardware.Specification.Eedid
                         ///  <para>1.4</para>
                         /// </para>
                         /// </summary>
-                        public static IPropertyKey IsSrgbDefaultColorSpace => new PropertyKey(KnownEdidSection.BasicDisplay, EdidBasicDisplayProperty.SrgbDefaultColorSpace);
+                        public static IPropertyKey IsSrgbDefaultColorSpace => new PropertyKey(EdidSection.BasicDisplay, EdidProperty.BasicDisplay.SrgbDefaultColorSpace);
                         #endregion
 
                         #region [public] {static} (IPropertyKey) IncludePreferredTimingMode: Gets a value representing the key to retrieve the property value
@@ -761,8 +767,8 @@ namespace iTin.Hardware.Specification.Eedid
                         /// <para>
                         ///  <para><b>Key Composition</b></para>
                         ///  <list type="bullet">
-                        ///   <item><description>Structure: <see cref="KnownEdidSection.BasicDisplay"/></description></item>
-                        ///   <item><description>Property: <see cref="EdidBasicDisplayProperty.PreferredTimingMode"/></description></item>
+                        ///   <item><description>Structure: <see cref="EdidSection.BasicDisplay"/></description></item>
+                        ///   <item><description>Property: <see cref="EdidProperty.BasicDisplay.PreferredTimingMode"/></description></item>
                         ///   <item><description>Unit: <see cref="PropertyUnit.None"/></description></item>
                         ///  </list>
                         /// </para>
@@ -775,7 +781,7 @@ namespace iTin.Hardware.Specification.Eedid
                         ///  <para>1.4</para>
                         /// </para>
                         /// </summary>
-                        public static IPropertyKey IncludePreferredTimingMode => new PropertyKey(KnownEdidSection.BasicDisplay, EdidBasicDisplayProperty.PreferredTimingMode);
+                        public static IPropertyKey IncludePreferredTimingMode => new PropertyKey(EdidSection.BasicDisplay, EdidProperty.BasicDisplay.PreferredTimingMode);
                         #endregion
 
                         #region [public] {static} (IPropertyKey) IsContinuousFrequency: Gets a value representing the key to retrieve the property value
@@ -785,8 +791,8 @@ namespace iTin.Hardware.Specification.Eedid
                         /// <para>
                         ///  <para><b>Key Composition</b></para>
                         ///  <list type="bullet">
-                        ///   <item><description>Structure: <see cref="KnownEdidSection.BasicDisplay"/></description></item>
-                        ///   <item><description>Property: <see cref="EdidBasicDisplayProperty.ContinuousFrequency"/></description></item>
+                        ///   <item><description>Structure: <see cref="EdidSection.BasicDisplay"/></description></item>
+                        ///   <item><description>Property: <see cref="EdidProperty.BasicDisplay.ContinuousFrequency"/></description></item>
                         ///   <item><description>Unit: <see cref="PropertyUnit.None"/></description></item>
                         ///  </list>
                         /// </para>
@@ -799,7 +805,7 @@ namespace iTin.Hardware.Specification.Eedid
                         ///  <para>1.4</para>
                         /// </para>
                         /// </summary>
-                        public static IPropertyKey IsContinuousFrequency => new PropertyKey(KnownEdidSection.BasicDisplay, EdidBasicDisplayProperty.ContinuousFrequency);
+                        public static IPropertyKey IsContinuousFrequency => new PropertyKey(EdidSection.BasicDisplay, EdidProperty.BasicDisplay.ContinuousFrequency);
                         #endregion
                     }
                     #endregion
@@ -817,8 +823,8 @@ namespace iTin.Hardware.Specification.Eedid
                         /// <para>
                         ///  <para><b>Key Composition</b></para>
                         ///  <list type="bullet">
-                        ///   <item><description>Structure: <see cref="KnownEdidSection.BasicDisplay"/></description></item>
-                        ///   <item><description>Property: <see cref="EdidBasicDisplayProperty.StandbyModeSupported"/></description></item>
+                        ///   <item><description>Structure: <see cref="EdidSection.BasicDisplay"/></description></item>
+                        ///   <item><description>Property: <see cref="EdidProperty.BasicDisplay.StandbyModeSupported"/></description></item>
                         ///   <item><description>Unit: <see cref="PropertyUnit.None"/></description></item>
                         ///  </list>
                         /// </para>
@@ -831,7 +837,7 @@ namespace iTin.Hardware.Specification.Eedid
                         ///  <para>1.4</para>
                         /// </para>
                         /// </summary>
-                        public static IPropertyKey StandbyModeSupported => new PropertyKey(KnownEdidSection.BasicDisplay, EdidBasicDisplayProperty.StandbyModeSupported);
+                        public static IPropertyKey StandbyModeSupported => new PropertyKey(EdidSection.BasicDisplay, EdidProperty.BasicDisplay.StandbyModeSupported);
                         #endregion
 
                         #region [public] {static} (IPropertyKey) SuspendModeSupported: Gets a value representing the key to retrieve the property value
@@ -841,8 +847,8 @@ namespace iTin.Hardware.Specification.Eedid
                         /// <para>
                         ///  <para><b>Key Composition</b></para>
                         ///  <list type="bullet">
-                        ///   <item><description>Structure: <see cref="KnownEdidSection.BasicDisplay"/></description></item>
-                        ///   <item><description>Property: <see cref="EdidBasicDisplayProperty.SuspendModeSupported"/></description></item>
+                        ///   <item><description>Structure: <see cref="EdidSection.BasicDisplay"/></description></item>
+                        ///   <item><description>Property: <see cref="EdidProperty.BasicDisplay.SuspendModeSupported"/></description></item>
                         ///   <item><description>Unit: <see cref="PropertyUnit.None"/></description></item>
                         ///  </list>
                         /// </para>
@@ -855,7 +861,7 @@ namespace iTin.Hardware.Specification.Eedid
                         ///  <para>1.4</para>
                         /// </para>
                         /// </summary>
-                        public static IPropertyKey SuspendModeSupported => new PropertyKey(KnownEdidSection.BasicDisplay, EdidBasicDisplayProperty.SuspendModeSupported);
+                        public static IPropertyKey SuspendModeSupported => new PropertyKey(EdidSection.BasicDisplay, EdidProperty.BasicDisplay.SuspendModeSupported);
                         #endregion
 
                         #region [public] {static} (IPropertyKey) ActiveOffSupported: Gets a value representing the key to retrieve the property value
@@ -865,8 +871,8 @@ namespace iTin.Hardware.Specification.Eedid
                         /// <para>
                         ///  <para><b>Key Composition</b></para>
                         ///  <list type="bullet">
-                        ///   <item><description>Structure: <see cref="KnownEdidSection.BasicDisplay"/></description></item>
-                        ///   <item><description>Property: <see cref="EdidBasicDisplayProperty.ActiveOffSupported"/></description></item>
+                        ///   <item><description>Structure: <see cref="EdidSection.BasicDisplay"/></description></item>
+                        ///   <item><description>Property: <see cref="EdidProperty.BasicDisplay.ActiveOffSupported"/></description></item>
                         ///   <item><description>Unit: <see cref="PropertyUnit.None"/></description></item>
                         ///  </list>
                         /// </para>
@@ -879,7 +885,7 @@ namespace iTin.Hardware.Specification.Eedid
                         ///  <para>1.4</para>
                         /// </para>
                         /// </summary>
-                        public static IPropertyKey ActiveOffSupported => new PropertyKey(KnownEdidSection.BasicDisplay, EdidBasicDisplayProperty.ActiveOffSupported);
+                        public static IPropertyKey ActiveOffSupported => new PropertyKey(EdidSection.BasicDisplay, EdidProperty.BasicDisplay.ActiveOffSupported);
                         #endregion
                     }
                     #endregion
@@ -892,7 +898,7 @@ namespace iTin.Hardware.Specification.Eedid
 
             #region [public] {static} (class) ColorCharacteristics: Definition of keys in the 'Color Characteristics' section
             /// <summary>
-            /// Definition of keys in the <see cref="KnownEdidSection.ColorCharacteristics"/> section.
+            /// Definition of keys in the <see cref="EdidSection.ColorCharacteristics"/> section.
             /// </summary>
             public static class ColorCharacteristics
             {
@@ -903,8 +909,8 @@ namespace iTin.Hardware.Specification.Eedid
                 /// <para>
                 ///  <para><b>Key Composition</b></para>
                 ///  <list type="bullet">
-                ///   <item><description>Structure: <see cref="KnownEdidSection.ColorCharacteristics"/></description></item>
-                ///   <item><description>Property: <see cref="EdidColorCharacteristicsProperty.Red"/></description></item>
+                ///   <item><description>Structure: <see cref="EdidSection.ColorCharacteristics"/></description></item>
+                ///   <item><description>Property: <see cref="EdidProperty.ColorCharacteristics.Red"/></description></item>
                 ///   <item><description>Unit: <see cref="PropertyUnit.None"/></description></item>
                 ///  </list>
                 /// </para>
@@ -917,7 +923,7 @@ namespace iTin.Hardware.Specification.Eedid
                 ///  <para>1.4</para>
                 /// </para>
                 /// </summary>
-                public static IPropertyKey Red => new PropertyKey(KnownEdidSection.ColorCharacteristics, EdidColorCharacteristicsProperty.Red);
+                public static IPropertyKey Red => new PropertyKey(EdidSection.ColorCharacteristics, EdidProperty.ColorCharacteristics.Red);
                 #endregion
 
                 #region [public] {static} (IPropertyKey) Green: Gets a value representing the key to retrieve the property value
@@ -927,8 +933,8 @@ namespace iTin.Hardware.Specification.Eedid
                 /// <para>
                 ///  <para><b>Key Composition</b></para>
                 ///  <list type="bullet">
-                ///   <item><description>Structure: <see cref="KnownEdidSection.ColorCharacteristics"/></description></item>
-                ///   <item><description>Property: <see cref="EdidColorCharacteristicsProperty.Green"/></description></item>
+                ///   <item><description>Structure: <see cref="EdidSection.ColorCharacteristics"/></description></item>
+                ///   <item><description>Property: <see cref="EdidProperty.ColorCharacteristics.Green"/></description></item>
                 ///   <item><description>Unit: <see cref="PropertyUnit.None"/></description></item>
                 ///  </list>
                 /// </para>
@@ -941,7 +947,7 @@ namespace iTin.Hardware.Specification.Eedid
                 ///  <para>1.4</para>
                 /// </para>
                 /// </summary>
-                public static IPropertyKey Green => new PropertyKey(KnownEdidSection.ColorCharacteristics, EdidColorCharacteristicsProperty.Green);
+                public static IPropertyKey Green => new PropertyKey(EdidSection.ColorCharacteristics, EdidProperty.ColorCharacteristics.Green);
                 #endregion
 
                 #region [public] {static} (IPropertyKey) Blue: Gets a value representing the key to retrieve the property value
@@ -951,8 +957,8 @@ namespace iTin.Hardware.Specification.Eedid
                 /// <para>
                 ///  <para><b>Key Composition</b></para>
                 ///  <list type="bullet">
-                ///   <item><description>Structure: <see cref="KnownEdidSection.ColorCharacteristics"/></description></item>
-                ///   <item><description>Property: <see cref="EdidColorCharacteristicsProperty.Blue"/></description></item>
+                ///   <item><description>Structure: <see cref="EdidSection.ColorCharacteristics"/></description></item>
+                ///   <item><description>Property: <see cref="EdidProperty.ColorCharacteristics.Blue"/></description></item>
                 ///   <item><description>Unit: <see cref="PropertyUnit.None"/></description></item>
                 ///  </list>
                 /// </para>
@@ -965,7 +971,7 @@ namespace iTin.Hardware.Specification.Eedid
                 ///  <para>1.4</para>
                 /// </para>
                 /// </summary>
-                public static IPropertyKey Blue => new PropertyKey(KnownEdidSection.ColorCharacteristics, EdidColorCharacteristicsProperty.Blue);
+                public static IPropertyKey Blue => new PropertyKey(EdidSection.ColorCharacteristics, EdidProperty.ColorCharacteristics.Blue);
                 #endregion
 
                 #region [public] {static} (IPropertyKey) White: Gets a value representing the key to retrieve the property value
@@ -975,8 +981,8 @@ namespace iTin.Hardware.Specification.Eedid
                 /// <para>
                 ///  <para><b>Key Composition</b></para>
                 ///  <list type="bullet">
-                ///   <item><description>Structure: <see cref="KnownEdidSection.ColorCharacteristics"/></description></item>
-                ///   <item><description>Property: <see cref="EdidColorCharacteristicsProperty.White"/></description></item>
+                ///   <item><description>Structure: <see cref="EdidSection.ColorCharacteristics"/></description></item>
+                ///   <item><description>Property: <see cref="EdidProperty.ColorCharacteristics.White"/></description></item>
                 ///   <item><description>Unit: <see cref="PropertyUnit.None"/></description></item>
                 ///  </list>
                 /// </para>
@@ -989,14 +995,14 @@ namespace iTin.Hardware.Specification.Eedid
                 ///  <para>1.4</para>
                 /// </para>
                 /// </summary>
-                public static IPropertyKey White => new PropertyKey(KnownEdidSection.ColorCharacteristics, EdidColorCharacteristicsProperty.White);
+                public static IPropertyKey White => new PropertyKey(EdidSection.ColorCharacteristics, EdidProperty.ColorCharacteristics.White);
                 #endregion
             }
             #endregion
 
             #region [public] {static} (class) EstablishedTimings: Definition of keys in the 'Established Timings I, II' section
             /// <summary>
-            /// Definition of keys in the <see cref="KnownEdidSection.EstablishedTimings"/> section.
+            /// Definition of keys in the <see cref="EdidSection.EstablishedTimings"/> section.
             /// </summary>
             public static class EstablishedTimings
             {
@@ -1007,8 +1013,8 @@ namespace iTin.Hardware.Specification.Eedid
                 /// <para>
                 ///  <para><b>Key Composition</b></para>
                 ///  <list type="bullet">
-                ///   <item><description>Structure: <see cref="KnownEdidSection.EstablishedTimings"/></description></item>
-                ///   <item><description>Property: <see cref="EdidEstablishedTimingsProperty.Resolutions"/></description></item>
+                ///   <item><description>Structure: <see cref="EdidSection.EstablishedTimings"/></description></item>
+                ///   <item><description>Property: <see cref="EdidProperty.EstablishedTimings.Resolutions"/></description></item>
                 ///   <item><description>Unit: <see cref="PropertyUnit.None"/></description></item>
                 ///  </list>
                 /// </para>
@@ -1021,14 +1027,14 @@ namespace iTin.Hardware.Specification.Eedid
                 ///  <para>1.4</para>
                 /// </para>
                 /// </summary>
-                public static IPropertyKey Resolutions => new PropertyKey(KnownEdidSection.EstablishedTimings, EdidEstablishedTimingsProperty.Resolutions);
+                public static IPropertyKey Resolutions => new PropertyKey(EdidSection.EstablishedTimings, EdidProperty.EstablishedTimings.Resolutions);
                 #endregion
             }
             #endregion
 
             #region [public] {static} (class) StandardTimings: Definition of keys in the 'Standard Timings 16 Bytes' section
             /// <summary>
-            /// Definition of keys in the <see cref="KnownEdidSection.StandardTimings"/> section.
+            /// Definition of keys in the <see cref="EdidSection.StandardTimings"/> section.
             /// </summary>
             public static class StandardTimings
             {
@@ -1039,8 +1045,8 @@ namespace iTin.Hardware.Specification.Eedid
                 /// <para>
                 ///  <para><b>Key Composition</b></para>
                 ///  <list type="bullet">
-                ///   <item><description>Structure: <see cref="KnownEdidSection.StandardTimings"/></description></item>
-                ///   <item><description>Property: <see cref="EdidStandardTimingProperty.Timing1"/></description></item>
+                ///   <item><description>Structure: <see cref="EdidSection.StandardTimings"/></description></item>
+                ///   <item><description>Property: <see cref="EdidProperty.StandardTiming.Timing1"/></description></item>
                 ///   <item><description>Unit: <see cref="PropertyUnit.None"/></description></item>
                 ///  </list>
                 /// </para>
@@ -1053,7 +1059,7 @@ namespace iTin.Hardware.Specification.Eedid
                 ///  <para>1.4</para>
                 /// </para>
                 /// </summary>
-                public static IPropertyKey Timing1 => new PropertyKey(KnownEdidSection.StandardTimings, EdidStandardTimingProperty.Timing1);
+                public static IPropertyKey Timing1 => new PropertyKey(EdidSection.StandardTimings, EdidProperty.StandardTiming.Timing1);
                 #endregion
 
                 #region [public] {static} (IPropertyKey) Timing2: Gets a value representing the key to retrieve the property value
@@ -1063,8 +1069,8 @@ namespace iTin.Hardware.Specification.Eedid
                 /// <para>
                 ///  <para><b>Key Composition</b></para>
                 ///  <list type="bullet">
-                ///   <item><description>Structure: <see cref="KnownEdidSection.StandardTimings"/></description></item>
-                ///   <item><description>Property: <see cref="EdidStandardTimingProperty.Timing2"/></description></item>
+                ///   <item><description>Structure: <see cref="EdidSection.StandardTimings"/></description></item>
+                ///   <item><description>Property: <see cref="EdidProperty.StandardTiming.Timing2"/></description></item>
                 ///   <item><description>Unit: <see cref="PropertyUnit.None"/></description></item>
                 ///  </list>
                 /// </para>
@@ -1077,7 +1083,7 @@ namespace iTin.Hardware.Specification.Eedid
                 ///  <para>1.4</para>
                 /// </para>
                 /// </summary>
-                public static IPropertyKey Timing2 => new PropertyKey(KnownEdidSection.StandardTimings, EdidStandardTimingProperty.Timing2);
+                public static IPropertyKey Timing2 => new PropertyKey(EdidSection.StandardTimings, EdidProperty.StandardTiming.Timing2);
                 #endregion
 
                 #region [public] {static} (IPropertyKey) Timing3: Gets a value representing the key to retrieve the property value
@@ -1087,8 +1093,8 @@ namespace iTin.Hardware.Specification.Eedid
                 /// <para>
                 ///  <para><b>Key Composition</b></para>
                 ///  <list type="bullet">
-                ///   <item><description>Structure: <see cref="KnownEdidSection.StandardTimings"/></description></item>
-                ///   <item><description>Property: <see cref="EdidStandardTimingProperty.Timing3"/></description></item>
+                ///   <item><description>Structure: <see cref="EdidSection.StandardTimings"/></description></item>
+                ///   <item><description>Property: <see cref="EdidProperty.StandardTiming.Timing3"/></description></item>
                 ///   <item><description>Unit: <see cref="PropertyUnit.None"/></description></item>
                 ///  </list>
                 /// </para>
@@ -1101,7 +1107,7 @@ namespace iTin.Hardware.Specification.Eedid
                 ///  <para>1.4</para>
                 /// </para>
                 /// </summary>
-                public static IPropertyKey Timing3 => new PropertyKey(KnownEdidSection.StandardTimings, EdidStandardTimingProperty.Timing3);
+                public static IPropertyKey Timing3 => new PropertyKey(EdidSection.StandardTimings, EdidProperty.StandardTiming.Timing3);
                 #endregion
 
                 #region [public] {static} (IPropertyKey) Timing4: Gets a value representing the key to retrieve the property value
@@ -1111,8 +1117,8 @@ namespace iTin.Hardware.Specification.Eedid
                 /// <para>
                 ///  <para><b>Key Composition</b></para>
                 ///  <list type="bullet">
-                ///   <item><description>Structure: <see cref="KnownEdidSection.StandardTimings"/></description></item>
-                ///   <item><description>Property: <see cref="EdidStandardTimingProperty.Timing4"/></description></item>
+                ///   <item><description>Structure: <see cref="EdidSection.StandardTimings"/></description></item>
+                ///   <item><description>Property: <see cref="EdidProperty.StandardTiming.Timing4"/></description></item>
                 ///   <item><description>Unit: <see cref="PropertyUnit.None"/></description></item>
                 ///  </list>
                 /// </para>
@@ -1125,7 +1131,7 @@ namespace iTin.Hardware.Specification.Eedid
                 ///  <para>1.4</para>
                 /// </para>
                 /// </summary>
-                public static IPropertyKey Timing4 => new PropertyKey(KnownEdidSection.StandardTimings, EdidStandardTimingProperty.Timing4);
+                public static IPropertyKey Timing4 => new PropertyKey(EdidSection.StandardTimings, EdidProperty.StandardTiming.Timing4);
                 #endregion
 
                 #region [public] {static} (IPropertyKey) Timing5: Gets a value representing the key to retrieve the property value
@@ -1135,8 +1141,8 @@ namespace iTin.Hardware.Specification.Eedid
                 /// <para>
                 ///  <para><b>Key Composition</b></para>
                 ///  <list type="bullet">
-                ///   <item><description>Structure: <see cref="KnownEdidSection.StandardTimings"/></description></item>
-                ///   <item><description>Property: <see cref="EdidStandardTimingProperty.Timing5"/></description></item>
+                ///   <item><description>Structure: <see cref="EdidSection.StandardTimings"/></description></item>
+                ///   <item><description>Property: <see cref="EdidProperty.StandardTiming.Timing5"/></description></item>
                 ///   <item><description>Unit: <see cref="PropertyUnit.None"/></description></item>
                 ///  </list>
                 /// </para>
@@ -1149,7 +1155,7 @@ namespace iTin.Hardware.Specification.Eedid
                 ///  <para>1.4</para>
                 /// </para>
                 /// </summary>
-                public static IPropertyKey Timing5 => new PropertyKey(KnownEdidSection.StandardTimings, EdidStandardTimingProperty.Timing5);
+                public static IPropertyKey Timing5 => new PropertyKey(EdidSection.StandardTimings, EdidProperty.StandardTiming.Timing5);
                 #endregion
 
                 #region [public] {static} (IPropertyKey) Timing6: Gets a value representing the key to retrieve the property value
@@ -1159,8 +1165,8 @@ namespace iTin.Hardware.Specification.Eedid
                 /// <para>
                 ///  <para><b>Key Composition</b></para>
                 ///  <list type="bullet">
-                ///   <item><description>Structure: <see cref="KnownEdidSection.StandardTimings"/></description></item>
-                ///   <item><description>Property: <see cref="EdidStandardTimingProperty.Timing6"/></description></item>
+                ///   <item><description>Structure: <see cref="EdidSection.StandardTimings"/></description></item>
+                ///   <item><description>Property: <see cref="EdidProperty.StandardTiming.Timing6"/></description></item>
                 ///   <item><description>Unit: <see cref="PropertyUnit.None"/></description></item>
                 ///  </list>
                 /// </para>
@@ -1173,7 +1179,7 @@ namespace iTin.Hardware.Specification.Eedid
                 ///  <para>1.4</para>
                 /// </para>
                 /// </summary>
-                public static IPropertyKey Timing6 => new PropertyKey(KnownEdidSection.StandardTimings, EdidStandardTimingProperty.Timing6);
+                public static IPropertyKey Timing6 => new PropertyKey(EdidSection.StandardTimings, EdidProperty.StandardTiming.Timing6);
                 #endregion
 
                 #region [public] {static} (IPropertyKey) Timing7: Gets a value representing the key to retrieve the property value
@@ -1183,8 +1189,8 @@ namespace iTin.Hardware.Specification.Eedid
                 /// <para>
                 ///  <para><b>Key Composition</b></para>
                 ///  <list type="bullet">
-                ///   <item><description>Structure: <see cref="KnownEdidSection.StandardTimings"/></description></item>
-                ///   <item><description>Property: <see cref="EdidStandardTimingProperty.Timing7"/></description></item>
+                ///   <item><description>Structure: <see cref="EdidSection.StandardTimings"/></description></item>
+                ///   <item><description>Property: <see cref="EdidProperty.StandardTiming.Timing7"/></description></item>
                 ///   <item><description>Unit: <see cref="PropertyUnit.None"/></description></item>
                 ///  </list>
                 /// </para>
@@ -1197,7 +1203,7 @@ namespace iTin.Hardware.Specification.Eedid
                 ///  <para>1.4</para>
                 /// </para>
                 /// </summary>
-                public static IPropertyKey Timing7 => new PropertyKey(KnownEdidSection.StandardTimings, EdidStandardTimingProperty.Timing7);
+                public static IPropertyKey Timing7 => new PropertyKey(EdidSection.StandardTimings, EdidProperty.StandardTiming.Timing7);
                 #endregion
 
                 #region [public] {static} (IPropertyKey) Timing8: Gets a value representing the key to retrieve the property value
@@ -1207,8 +1213,8 @@ namespace iTin.Hardware.Specification.Eedid
                 /// <para>
                 ///  <para><b>Key Composition</b></para>
                 ///  <list type="bullet">
-                ///   <item><description>Structure: <see cref="KnownEdidSection.StandardTimings"/></description></item>
-                ///   <item><description>Property: <see cref="EdidStandardTimingProperty.Timing8"/></description></item>
+                ///   <item><description>Structure: <see cref="EdidSection.StandardTimings"/></description></item>
+                ///   <item><description>Property: <see cref="EdidProperty.StandardTiming.Timing8"/></description></item>
                 ///   <item><description>Unit: <see cref="PropertyUnit.None"/></description></item>
                 ///  </list>
                 /// </para>
@@ -1221,14 +1227,14 @@ namespace iTin.Hardware.Specification.Eedid
                 ///  <para>1.4</para>
                 /// </para>
                 /// </summary>
-                public static IPropertyKey Timing8 => new PropertyKey(KnownEdidSection.StandardTimings, EdidStandardTimingProperty.Timing8);
+                public static IPropertyKey Timing8 => new PropertyKey(EdidSection.StandardTimings, EdidProperty.StandardTiming.Timing8);
                 #endregion
             }
             #endregion
 
             #region [public] {static} (class) DataBlock: Definition of keys in the '18 Byte Data Blocks Descriptors' section
             /// <summary>
-            /// Definition of keys in the <see cref="KnownEdidSection.DataBlocks"/> section.
+            /// Definition of keys in the <see cref="EdidSection.DataBlocks"/> section.
             /// </summary>
             public static class DataBlock
             {
@@ -1241,8 +1247,8 @@ namespace iTin.Hardware.Specification.Eedid
                 /// <para>
                 ///  <para><b>Key Composition</b></para>
                 ///  <list type="bullet">
-                ///   <item><description>Structure: <see cref="KnownEdidSection.DataBlocks"/></description></item>
-                ///   <item><description>Property: <see cref="EdidDataBlockProperty.Descriptor1"/></description></item>
+                ///   <item><description>Structure: <see cref="EdidSection.DataBlocks"/></description></item>
+                ///   <item><description>Property: <see cref="EdidProperty.DataBlock.Descriptor1"/></description></item>
                 ///   <item><description>Unit: <see cref="PropertyUnit.None"/></description></item>
                 ///  </list>
                 /// </para>
@@ -1255,7 +1261,7 @@ namespace iTin.Hardware.Specification.Eedid
                 ///  <para>1.4</para>
                 /// </para>
                 /// </summary>
-                public static IPropertyKey Descriptor1 => new PropertyKey(KnownEdidSection.DataBlocks, EdidDataBlockProperty.Descriptor1);
+                public static IPropertyKey Descriptor1 => new PropertyKey(EdidSection.DataBlocks, EdidProperty.DataBlock.Descriptor1);
                 #endregion
 
                 #region [public] {static} (IPropertyKey) Descriptor2: Gets a value representing the key to retrieve the property value
@@ -1265,8 +1271,8 @@ namespace iTin.Hardware.Specification.Eedid
                 /// <para>
                 ///  <para><b>Key Composition</b></para>
                 ///  <list type="bullet">
-                ///   <item><description>Structure: <see cref="KnownEdidSection.DataBlocks"/></description></item>
-                ///   <item><description>Property: <see cref="EdidDataBlockProperty.Descriptor2"/></description></item>
+                ///   <item><description>Structure: <see cref="EdidSection.DataBlocks"/></description></item>
+                ///   <item><description>Property: <see cref="EdidProperty.DataBlock.Descriptor2"/></description></item>
                 ///   <item><description>Unit: <see cref="PropertyUnit.None"/></description></item>
                 ///  </list>
                 /// </para>
@@ -1279,7 +1285,7 @@ namespace iTin.Hardware.Specification.Eedid
                 ///  <para>1.4</para>
                 /// </para>
                 /// </summary>
-                public static IPropertyKey Descriptor2 => new PropertyKey(KnownEdidSection.DataBlocks, EdidDataBlockProperty.Descriptor2);
+                public static IPropertyKey Descriptor2 => new PropertyKey(EdidSection.DataBlocks, EdidProperty.DataBlock.Descriptor2);
                 #endregion
 
                 #region [public] {static} (IPropertyKey) Descriptor3: Gets a value representing the key to retrieve the property value
@@ -1289,8 +1295,8 @@ namespace iTin.Hardware.Specification.Eedid
                 /// <para>
                 ///  <para><b>Key Composition</b></para>
                 ///  <list type="bullet">
-                ///   <item><description>Structure: <see cref="KnownEdidSection.DataBlocks"/></description></item>
-                ///   <item><description>Property: <see cref="EdidDataBlockProperty.Descriptor3"/></description></item>
+                ///   <item><description>Structure: <see cref="EdidSection.DataBlocks"/></description></item>
+                ///   <item><description>Property: <see cref="EdidProperty.DataBlock.Descriptor3"/></description></item>
                 ///   <item><description>Unit: <see cref="PropertyUnit.None"/></description></item>
                 ///  </list>
                 /// </para>
@@ -1303,7 +1309,7 @@ namespace iTin.Hardware.Specification.Eedid
                 ///  <para>1.4</para>
                 /// </para>
                 /// </summary>
-                public static IPropertyKey Descriptor3 => new PropertyKey(KnownEdidSection.DataBlocks, EdidDataBlockProperty.Descriptor3);
+                public static IPropertyKey Descriptor3 => new PropertyKey(EdidSection.DataBlocks, EdidProperty.DataBlock.Descriptor3);
                 #endregion
 
                 #region [public] {static} (IPropertyKey) Descriptor4: Gets a value representing the key to retrieve the property value
@@ -1313,8 +1319,8 @@ namespace iTin.Hardware.Specification.Eedid
                 /// <para>
                 ///  <para><b>Key Composition</b></para>
                 ///  <list type="bullet">
-                ///   <item><description>Structure: <see cref="KnownEdidSection.DataBlocks"/></description></item>
-                ///   <item><description>Property: <see cref="EdidDataBlockProperty.Descriptor4"/></description></item>
+                ///   <item><description>Structure: <see cref="EdidSection.DataBlocks"/></description></item>
+                ///   <item><description>Property: <see cref="EdidProperty.DataBlock.Descriptor4"/></description></item>
                 ///   <item><description>Unit: <see cref="PropertyUnit.None"/></description></item>
                 ///  </list>
                 /// </para>
@@ -1327,7 +1333,7 @@ namespace iTin.Hardware.Specification.Eedid
                 ///  <para>1.4</para>
                 /// </para>
                 /// </summary>
-                public static IPropertyKey Descriptor4 => new PropertyKey(KnownEdidSection.DataBlocks, EdidDataBlockProperty.Descriptor4);
+                public static IPropertyKey Descriptor4 => new PropertyKey(EdidSection.DataBlocks, EdidProperty.DataBlock.Descriptor4);
                 #endregion
 
                 #endregion
@@ -1337,7 +1343,7 @@ namespace iTin.Hardware.Specification.Eedid
 
                 #region [public] {static} (class) Definition: Definition of keys in the 'DataBlocks'.
                 /// <summary>
-                /// Definition of keys in the <see cref="KnownEdidSection.DataBlocks"/>.
+                /// Definition of keys in the <see cref="EdidSection.DataBlocks"/>.
                 /// </summary>
                 public static class Definition
                 {
@@ -1355,7 +1361,7 @@ namespace iTin.Hardware.Specification.Eedid
                         ///  <para><b>Key Composition</b></para>
                         ///  <list type="bullet">
                         ///   <item><description>Structure: <see cref="EdidDataBlockDescriptor.AlphaNumericDataString"/></description></item>
-                        ///   <item><description>Property: <see cref="AlphanumericDataStringDescriptorProperty.Text"/></description></item>
+                        ///   <item><description>Property: <see cref="EdidProperty.DataBlocks.Descriptors.AlphanumericDataStringDescriptor.Text"/></description></item>
                         ///   <item><description>Unit: <see cref="PropertyUnit.None"/></description></item>
                         ///  </list>
                         /// </para>
@@ -1368,7 +1374,7 @@ namespace iTin.Hardware.Specification.Eedid
                         ///  <para>1.4</para>
                         /// </para>
                         /// </summary>
-                        public static IPropertyKey Data => new PropertyKey(EdidDataBlockDescriptor.AlphaNumericDataString, AlphanumericDataStringDescriptorProperty.Text);
+                        public static IPropertyKey Data => new PropertyKey(EdidDataBlockDescriptor.AlphaNumericDataString, EdidProperty.DataBlocks.Descriptors.AlphanumericDataStringDescriptor.Text);
                         #endregion
                     }
                     #endregion
@@ -1389,7 +1395,7 @@ namespace iTin.Hardware.Specification.Eedid
                         ///  <para><b>Key Composition</b></para>
                         ///  <list type="bullet">
                         ///   <item><description>Structure: <see cref="EdidDataBlockDescriptor.ColorManagementData"/></description></item>
-                        ///   <item><description>Property: <see cref="ColorManagementDataDescriptorProperty.Version"/></description></item>
+                        ///   <item><description>Property: <see cref="EdidProperty.DataBlocks.Descriptors.ColorManagementDataDescriptor.Version"/></description></item>
                         ///   <item><description>Unit: <see cref="PropertyUnit.None"/></description></item>
                         ///  </list>
                         /// </para>
@@ -1402,7 +1408,7 @@ namespace iTin.Hardware.Specification.Eedid
                         ///  <para>1.4</para>
                         /// </para>
                         /// </summary>
-                        public static IPropertyKey VersionNumber => new PropertyKey(EdidDataBlockDescriptor.ColorManagementData, ColorManagementDataDescriptorProperty.Version);
+                        public static IPropertyKey VersionNumber => new PropertyKey(EdidDataBlockDescriptor.ColorManagementData, EdidProperty.DataBlocks.Descriptors.ColorManagementDataDescriptor.Version);
                         #endregion
 
                         #region [public] {static} (IPropertyKey) Red: Gets a value representing the key to retrieve the property value
@@ -1413,20 +1419,20 @@ namespace iTin.Hardware.Specification.Eedid
                         ///  <para><b>Key Composition</b></para>
                         ///  <list type="bullet">
                         ///   <item><description>Structure: <see cref="EdidDataBlockDescriptor.ColorManagementData"/></description></item>
-                        ///   <item><description>Property: <see cref="ColorManagementDataDescriptorProperty.Red"/></description></item>
+                        ///   <item><description>Property: <see cref="EdidProperty.DataBlocks.Descriptors.ColorManagementDataDescriptor.Red"/></description></item>
                         ///   <item><description>Unit: <see cref="PropertyUnit.None"/></description></item>
                         ///  </list>
                         /// </para>
                         /// <para>
                         ///  <para><b>Return Value</b></para>
-                        /// <para>Type: <see cref="ColorManagementDataDescriptorItemProperty"/>.</para>
+                        ///  <para>Type: <see cref="ColorManagementDataDescriptorItem"/>.</para>
                         /// </para>
                         /// <para>
                         ///  <para><b>Remarks</b></para>
                         ///  <para>1.4</para>
                         /// </para>
                         /// </summary>
-                        public static IPropertyKey Red => new PropertyKey(EdidDataBlockDescriptor.ColorManagementData, ColorManagementDataDescriptorProperty.Red);
+                        public static IPropertyKey Red => new PropertyKey(EdidDataBlockDescriptor.ColorManagementData, EdidProperty.DataBlocks.Descriptors.ColorManagementDataDescriptor.Red);
                         #endregion
 
                         #region [public] {static} (IPropertyKey) Green: Gets a value representing the key to retrieve the property value
@@ -1437,20 +1443,20 @@ namespace iTin.Hardware.Specification.Eedid
                         ///  <para><b>Key Composition</b></para>
                         ///  <list type="bullet">
                         ///   <item><description>Structure: <see cref="EdidDataBlockDescriptor.ColorManagementData"/></description></item>
-                        ///   <item><description>Property: <see cref="ColorManagementDataDescriptorProperty.Green"/></description></item>
+                        ///   <item><description>Property: <see cref="EdidProperty.DataBlocks.Descriptors.ColorManagementDataDescriptor.Green"/></description></item>
                         ///   <item><description>Unit: <see cref="PropertyUnit.None"/></description></item>
                         ///  </list>
                         /// </para>
                         /// <para>
                         ///  <para><b>Return Value</b></para>
-                        /// <para>Type: <see cref="ColorManagementDataDescriptorItemProperty"/>.</para>
+                        /// <para>Type: <see cref="ColorManagementDataDescriptorItem"/>.</para>
                         /// </para>
                         /// <para>
                         ///  <para><b>Remarks</b></para>
                         ///  <para>1.4</para>
                         /// </para>
                         /// </summary>
-                        public static IPropertyKey Green => new PropertyKey(EdidDataBlockDescriptor.ColorManagementData, ColorManagementDataDescriptorProperty.Green);
+                        public static IPropertyKey Green => new PropertyKey(EdidDataBlockDescriptor.ColorManagementData, EdidProperty.DataBlocks.Descriptors.ColorManagementDataDescriptor.Green);
                         #endregion
 
                         #region [public] {static} (IPropertyKey) Blue: Gets a value representing the key to retrieve the property value
@@ -1461,20 +1467,20 @@ namespace iTin.Hardware.Specification.Eedid
                         ///  <para><b>Key Composition</b></para>
                         ///  <list type="bullet">
                         ///   <item><description>Structure: <see cref="EdidDataBlockDescriptor.ColorManagementData"/></description></item>
-                        ///   <item><description>Property: <see cref="ColorManagementDataDescriptorProperty.Blue"/></description></item>
+                        ///   <item><description>Property: <see cref="EdidProperty.DataBlocks.Descriptors.ColorManagementDataDescriptor.Blue"/></description></item>
                         ///   <item><description>Unit: <see cref="PropertyUnit.None"/></description></item>
                         ///  </list>
                         /// </para>
                         /// <para>
                         ///  <para><b>Return Value</b></para>
-                        /// <para>Type: <see cref="ColorManagementDataDescriptorItemProperty"/>.</para>
+                        /// <para>Type: <see cref="ColorManagementDataDescriptorItem"/>.</para>
                         /// </para>
                         /// <para>
                         ///  <para><b>Remarks</b></para>
                         ///  <para>1.4</para>
                         /// </para>
                         /// </summary>
-                        public static IPropertyKey Blue => new PropertyKey(EdidDataBlockDescriptor.ColorManagementData, ColorManagementDataDescriptorProperty.Blue);
+                        public static IPropertyKey Blue => new PropertyKey(EdidDataBlockDescriptor.ColorManagementData, EdidProperty.DataBlocks.Descriptors.ColorManagementDataDescriptor.Blue);
                         #endregion
 
                         #endregion
@@ -1494,7 +1500,7 @@ namespace iTin.Hardware.Specification.Eedid
                             ///  <para><b>Key Composition</b></para>
                             ///  <list type="bullet">
                             ///   <item><description>Structure: <see cref="EdidDataBlockDescriptor.ColorManagementData"/></description></item>
-                            ///   <item><description>Property: <see cref="ColorManagementDataDescriptorItemProperty.A2"/></description></item>
+                            ///   <item><description>Property: <see cref="EdidProperty.DataBlocks.Descriptors.DescriptorItems.ColorManagementDataDescriptorItem.A2"/></description></item>
                             ///   <item><description>Unit: <see cref="PropertyUnit.None"/></description></item>
                             ///  </list>
                             /// </para>
@@ -1507,7 +1513,7 @@ namespace iTin.Hardware.Specification.Eedid
                             ///  <para>1.4</para>
                             /// </para>
                             /// </summary>
-                            public static IPropertyKey A2 => new PropertyKey(EdidDataBlockDescriptor.ColorManagementData, ColorManagementDataDescriptorItemProperty.A2);
+                            public static IPropertyKey A2 => new PropertyKey(EdidDataBlockDescriptor.ColorManagementData, EdidProperty.DataBlocks.Descriptors.DescriptorItems.ColorManagementDataDescriptorItem.A2);
                             #endregion
 
                             #region [public] {static} (IPropertyKey) A3: Gets a value representing the key to retrieve the property value
@@ -1518,7 +1524,7 @@ namespace iTin.Hardware.Specification.Eedid
                             ///  <para><b>Key Composition</b></para>
                             ///  <list type="bullet">
                             ///   <item><description>Structure: <see cref="EdidDataBlockDescriptor.ColorManagementData"/></description></item>
-                            ///   <item><description>Property: <see cref="ColorManagementDataDescriptorItemProperty.A3"/></description></item>
+                            ///   <item><description>Property: <see cref="EdidProperty.DataBlocks.Descriptors.DescriptorItems.ColorManagementDataDescriptorItem.A3"/></description></item>
                             ///   <item><description>Unit: <see cref="PropertyUnit.None"/></description></item>
                             ///  </list>
                             /// </para>
@@ -1531,7 +1537,7 @@ namespace iTin.Hardware.Specification.Eedid
                             ///  <para>1.4</para>
                             /// </para>
                             /// </summary>
-                            public static IPropertyKey A3 => new PropertyKey(EdidDataBlockDescriptor.ColorManagementData, ColorManagementDataDescriptorItemProperty.A3);
+                            public static IPropertyKey A3 => new PropertyKey(EdidDataBlockDescriptor.ColorManagementData, EdidProperty.DataBlocks.Descriptors.DescriptorItems.ColorManagementDataDescriptorItem.A3);
                             #endregion
                         }
                         #endregion
@@ -1554,7 +1560,7 @@ namespace iTin.Hardware.Specification.Eedid
                         ///  <para><b>Key Composition</b></para>
                         ///  <list type="bullet">
                         ///   <item><description>Structure: <see cref="EdidDataBlockDescriptor.ColorPointData"/></description></item>
-                        ///   <item><description>Property: <see cref="ColorPointDataDescriptorProperty.Point1"/></description></item>
+                        ///   <item><description>Property: <see cref="EdidProperty.DataBlocks.Descriptors.ColorPointDataDescriptor.Point1"/></description></item>
                         ///   <item><description>Unit: <see cref="PropertyUnit.None"/></description></item>
                         ///  </list>
                         /// </para>
@@ -1567,7 +1573,7 @@ namespace iTin.Hardware.Specification.Eedid
                         ///  <para>1.4</para>
                         /// </para>
                         /// </summary>
-                        public static IPropertyKey Point1 => new PropertyKey(EdidDataBlockDescriptor.ColorPointData, ColorPointDataDescriptorProperty.Point1);
+                        public static IPropertyKey Point1 => new PropertyKey(EdidDataBlockDescriptor.ColorPointData, EdidProperty.DataBlocks.Descriptors.ColorPointDataDescriptor.Point1);
                         #endregion
 
                         #region [public] {static} (IPropertyKey) Point2: Gets a value representing the key to retrieve the property value
@@ -1578,7 +1584,7 @@ namespace iTin.Hardware.Specification.Eedid
                         ///  <para><b>Key Composition</b></para>
                         ///  <list type="bullet">
                         ///   <item><description>Structure: <see cref="EdidDataBlockDescriptor.ColorPointData"/></description></item>
-                        ///   <item><description>Property: <see cref="ColorPointDataDescriptorProperty.Point2"/></description></item>
+                        ///   <item><description>Property: <see cref="EdidProperty.DataBlocks.Descriptors.ColorPointDataDescriptor.Point2"/></description></item>
                         ///   <item><description>Unit: <see cref="PropertyUnit.None"/></description></item>
                         ///  </list>
                         /// </para>
@@ -1591,7 +1597,7 @@ namespace iTin.Hardware.Specification.Eedid
                         ///  <para>1.4</para>
                         /// </para>
                         /// </summary>
-                        public static IPropertyKey Point2 => new PropertyKey(EdidDataBlockDescriptor.ColorPointData, ColorPointDataDescriptorProperty.Point2);
+                        public static IPropertyKey Point2 => new PropertyKey(EdidDataBlockDescriptor.ColorPointData, EdidProperty.DataBlocks.Descriptors.ColorPointDataDescriptor.Point2);
                         #endregion
 
                         #endregion
@@ -1613,7 +1619,7 @@ namespace iTin.Hardware.Specification.Eedid
                             ///  <para><b>Key Composition</b></para>
                             ///  <list type="bullet">
                             ///   <item><description>Structure: <see cref="EdidDataBlockDescriptor.ColorPointData"/></description></item>
-                            ///   <item><description>Property: <see cref="ColorPointDataDescriptorItemProperty.Index"/></description></item>
+                            ///   <item><description>Property: <see cref="EdidProperty.DataBlocks.Descriptors.DescriptorItems.ColorPointDataDescriptorItem.Index"/></description></item>
                             ///   <item><description>Unit: <see cref="PropertyUnit.None"/></description></item>
                             ///  </list>
                             /// </para>
@@ -1626,7 +1632,7 @@ namespace iTin.Hardware.Specification.Eedid
                             ///  <para>1.4</para>
                             /// </para>
                             /// </summary>
-                            public static IPropertyKey Index => new PropertyKey(EdidDataBlockDescriptor.ColorPointData, ColorPointDataDescriptorItemProperty.Index);
+                            public static IPropertyKey Index => new PropertyKey(EdidDataBlockDescriptor.ColorPointData, EdidProperty.DataBlocks.Descriptors.DescriptorItems.ColorPointDataDescriptorItem.Index);
                             #endregion
 
                             #region [public] {static} (IPropertyKey) White: Gets a value representing the key to retrieve the property value
@@ -1637,7 +1643,7 @@ namespace iTin.Hardware.Specification.Eedid
                             ///  <para><b>Key Composition</b></para>
                             ///  <list type="bullet">
                             ///   <item><description>Structure: <see cref="EdidDataBlockDescriptor.ColorPointData"/></description></item>
-                            ///   <item><description>Property: <see cref="ColorPointDataDescriptorItemProperty.White"/></description></item>
+                            ///   <item><description>Property: <see cref="EdidProperty.DataBlocks.Descriptors.DescriptorItems.ColorPointDataDescriptorItem.White"/></description></item>
                             ///   <item><description>Unit: <see cref="PropertyUnit.None"/></description></item>
                             ///  </list>
                             /// </para>
@@ -1650,7 +1656,7 @@ namespace iTin.Hardware.Specification.Eedid
                             ///  <para>1.4</para>
                             /// </para>
                             /// </summary>
-                            public static IPropertyKey White => new PropertyKey(EdidDataBlockDescriptor.ColorPointData, ColorPointDataDescriptorItemProperty.White);
+                            public static IPropertyKey White => new PropertyKey(EdidDataBlockDescriptor.ColorPointData, EdidProperty.DataBlocks.Descriptors.DescriptorItems.ColorPointDataDescriptorItem.White);
                             #endregion
 
                             #region [public] {static} (IPropertyKey) Gamma: Gets a value representing the key to retrieve the property value
@@ -1661,7 +1667,7 @@ namespace iTin.Hardware.Specification.Eedid
                             ///  <para><b>Key Composition</b></para>
                             ///  <list type="bullet">
                             ///   <item><description>Structure: <see cref="EdidDataBlockDescriptor.ColorPointData"/></description></item>
-                            ///   <item><description>Property: <see cref="ColorPointDataDescriptorItemProperty.Gamma"/></description></item>
+                            ///   <item><description>Property: <see cref="EdidProperty.DataBlocks.Descriptors.DescriptorItems.ColorPointDataDescriptorItem.Gamma"/></description></item>
                             ///   <item><description>Unit: <see cref="PropertyUnit.None"/></description></item>
                             ///  </list>
                             /// </para>
@@ -1674,7 +1680,7 @@ namespace iTin.Hardware.Specification.Eedid
                             ///  <para>1.4</para>
                             /// </para>
                             /// </summary>
-                            public static IPropertyKey Gamma => new PropertyKey(EdidDataBlockDescriptor.ColorPointData, ColorPointDataDescriptorItemProperty.Gamma);
+                            public static IPropertyKey Gamma => new PropertyKey(EdidDataBlockDescriptor.ColorPointData, EdidProperty.DataBlocks.Descriptors.DescriptorItems.ColorPointDataDescriptorItem.Gamma);
                             #endregion
                         }
                         #endregion
@@ -1699,7 +1705,7 @@ namespace iTin.Hardware.Specification.Eedid
                         ///  <para><b>Key Composition</b></para>
                         ///  <list type="bullet">
                         ///   <item><description>Structure: <see cref="EdidDataBlockDescriptor.Cvt3ByteCode"/></description></item>
-                        ///   <item><description>Property: <see cref="Cvt3ByteCodeDescriptorProperty.Version"/></description></item>
+                        ///   <item><description>Property: <see cref="EdidProperty.DataBlocks.Descriptors.Cvt3ByteCodeDescriptor.Version"/></description></item>
                         ///   <item><description>Unit: <see cref="PropertyUnit.None"/></description></item>
                         ///  </list>
                         /// </para>
@@ -1712,7 +1718,7 @@ namespace iTin.Hardware.Specification.Eedid
                         ///  <para>1.4</para>
                         /// </para>
                         /// </summary>
-                        public static IPropertyKey VersionNumber => new PropertyKey(EdidDataBlockDescriptor.Cvt3ByteCode, Cvt3ByteCodeDescriptorProperty.Version);
+                        public static IPropertyKey VersionNumber => new PropertyKey(EdidDataBlockDescriptor.Cvt3ByteCode, EdidProperty.DataBlocks.Descriptors.Cvt3ByteCodeDescriptor.Version);
                         #endregion
 
                         #region [public] {static} (IPropertyKey) Priority1: Gets a value representing the key to retrieve the property value
@@ -1723,7 +1729,7 @@ namespace iTin.Hardware.Specification.Eedid
                         ///  <para><b>Key Composition</b></para>
                         ///  <list type="bullet">
                         ///   <item><description>Structure: <see cref="EdidDataBlockDescriptor.Cvt3ByteCode"/></description></item>
-                        ///   <item><description>Property: <see cref="Cvt3ByteCodeDescriptorProperty.Priority1"/></description></item>
+                        ///   <item><description>Property: <see cref="EdidProperty.DataBlocks.Descriptors.Cvt3ByteCodeDescriptor.Priority1"/></description></item>
                         ///   <item><description>Unit: <see cref="PropertyUnit.None"/></description></item>
                         ///  </list>
                         /// </para>
@@ -1736,7 +1742,7 @@ namespace iTin.Hardware.Specification.Eedid
                         ///  <para>1.4</para>
                         /// </para>
                         /// </summary>
-                        public static IPropertyKey Priority1 => new PropertyKey(EdidDataBlockDescriptor.Cvt3ByteCode, Cvt3ByteCodeDescriptorProperty.Priority1);
+                        public static IPropertyKey Priority1 => new PropertyKey(EdidDataBlockDescriptor.Cvt3ByteCode, EdidProperty.DataBlocks.Descriptors.Cvt3ByteCodeDescriptor.Priority1);
                         #endregion
 
                         #region [public] {static} (IPropertyKey) Priority2: Gets a value representing the key to retrieve the property value
@@ -1747,7 +1753,7 @@ namespace iTin.Hardware.Specification.Eedid
                         ///  <para><b>Key Composition</b></para>
                         ///  <list type="bullet">
                         ///   <item><description>Structure: <see cref="EdidDataBlockDescriptor.Cvt3ByteCode"/></description></item>
-                        ///   <item><description>Property: <see cref="Cvt3ByteCodeDescriptorProperty.Priority2"/></description></item>
+                        ///   <item><description>Property: <see cref="EdidProperty.DataBlocks.Descriptors.Cvt3ByteCodeDescriptor.Priority2"/></description></item>
                         ///   <item><description>Unit: <see cref="PropertyUnit.None"/></description></item>
                         ///  </list>
                         /// </para>
@@ -1760,7 +1766,7 @@ namespace iTin.Hardware.Specification.Eedid
                         ///  <para>1.4</para>
                         /// </para>
                         /// </summary>
-                        public static IPropertyKey Priority2 => new PropertyKey(EdidDataBlockDescriptor.Cvt3ByteCode, Cvt3ByteCodeDescriptorProperty.Priority2);
+                        public static IPropertyKey Priority2 => new PropertyKey(EdidDataBlockDescriptor.Cvt3ByteCode, EdidProperty.DataBlocks.Descriptors.Cvt3ByteCodeDescriptor.Priority2);
                         #endregion
 
                         #region [public] {static} (IPropertyKey) Priority3: Gets a value representing the key to retrieve the property value
@@ -1771,7 +1777,7 @@ namespace iTin.Hardware.Specification.Eedid
                         ///  <para><b>Key Composition</b></para>
                         ///  <list type="bullet">
                         ///   <item><description>Structure: <see cref="EdidDataBlockDescriptor.Cvt3ByteCode"/></description></item>
-                        ///   <item><description>Property: <see cref="Cvt3ByteCodeDescriptorProperty.Priority3"/></description></item>
+                        ///   <item><description>Property: <see cref="EdidProperty.DataBlocks.Descriptors.Cvt3ByteCodeDescriptor.Priority3"/></description></item>
                         ///   <item><description>Unit: <see cref="PropertyUnit.None"/></description></item>
                         ///  </list>
                         /// </para>
@@ -1784,7 +1790,7 @@ namespace iTin.Hardware.Specification.Eedid
                         ///  <para>1.4</para>
                         /// </para>
                         /// </summary>
-                        public static IPropertyKey Priority3 => new PropertyKey(EdidDataBlockDescriptor.Cvt3ByteCode, Cvt3ByteCodeDescriptorProperty.Priority3);
+                        public static IPropertyKey Priority3 => new PropertyKey(EdidDataBlockDescriptor.Cvt3ByteCode, EdidProperty.DataBlocks.Descriptors.Cvt3ByteCodeDescriptor.Priority3);
                         #endregion
 
                         #region [public] {static} (IPropertyKey) Priority4: Gets a value representing the key to retrieve the property value
@@ -1795,7 +1801,7 @@ namespace iTin.Hardware.Specification.Eedid
                         ///  <para><b>Key Composition</b></para>
                         ///  <list type="bullet">
                         ///   <item><description>Structure: <see cref="EdidDataBlockDescriptor.Cvt3ByteCode"/></description></item>
-                        ///   <item><description>Property: <see cref="Cvt3ByteCodeDescriptorProperty.Priority4"/></description></item>
+                        ///   <item><description>Property: <see cref="EdidProperty.DataBlocks.Descriptors.Cvt3ByteCodeDescriptor.Priority4"/></description></item>
                         ///   <item><description>Unit: <see cref="PropertyUnit.None"/></description></item>
                         ///  </list>
                         /// </para>
@@ -1808,7 +1814,7 @@ namespace iTin.Hardware.Specification.Eedid
                         ///  <para>1.4</para>
                         /// </para>
                         /// </summary>
-                        public static IPropertyKey Priority4 => new PropertyKey(EdidDataBlockDescriptor.Cvt3ByteCode, Cvt3ByteCodeDescriptorProperty.Priority4);
+                        public static IPropertyKey Priority4 => new PropertyKey(EdidDataBlockDescriptor.Cvt3ByteCode, EdidProperty.DataBlocks.Descriptors.Cvt3ByteCodeDescriptor.Priority4);
                         #endregion
 
                         #endregion
@@ -1833,7 +1839,7 @@ namespace iTin.Hardware.Specification.Eedid
                             ///  <para><b>Key Composition</b></para>
                             ///  <list type="bullet">
                             ///   <item><description>Structure: <see cref="EdidDataBlockDescriptor.Cvt3ByteCode"/></description></item>
-                            ///   <item><description>Property: <see cref="Cvt3ByteCodeDescriptorItemProperty.AddressableVerticalLines"/></description></item>
+                            ///   <item><description>Property: <see cref="EdidProperty.DataBlocks.Descriptors.DescriptorItems.Cvt3ByteCodeDescriptorItem.AddressableVerticalLines"/></description></item>
                             ///   <item><description>Unit: <see cref="PropertyUnit.Lines"/></description></item>
                             ///  </list>
                             /// </para>
@@ -1846,7 +1852,7 @@ namespace iTin.Hardware.Specification.Eedid
                             ///  <para>1.4</para>
                             /// </para>
                             /// </summary>
-                            public static IPropertyKey AddressableVerticalLines => new PropertyKey(EdidDataBlockDescriptor.Cvt3ByteCode, Cvt3ByteCodeDescriptorItemProperty.AddressableVerticalLines, PropertyUnit.Lines);
+                            public static IPropertyKey AddressableVerticalLines => new PropertyKey(EdidDataBlockDescriptor.Cvt3ByteCode, EdidProperty.DataBlocks.Descriptors.DescriptorItems.Cvt3ByteCodeDescriptorItem.AddressableVerticalLines, PropertyUnit.Lines);
                             #endregion
 
                             #region [public] {static} (IPropertyKey) AspectRatio: Gets a value representing the key to retrieve the property value
@@ -1857,7 +1863,7 @@ namespace iTin.Hardware.Specification.Eedid
                             ///  <para><b>Key Composition</b></para>
                             ///  <list type="bullet">
                             ///   <item><description>Structure: <see cref="EdidDataBlockDescriptor.Cvt3ByteCode"/></description></item>
-                            ///   <item><description>Property: <see cref="Cvt3ByteCodeDescriptorItemProperty.AspectRatio"/></description></item>
+                            ///   <item><description>Property: <see cref="EdidProperty.DataBlocks.Descriptors.DescriptorItems.Cvt3ByteCodeDescriptorItem.AspectRatio"/></description></item>
                             ///   <item><description>Unit: <see cref="PropertyUnit.None"/></description></item>
                             ///  </list>
                             /// </para>
@@ -1870,7 +1876,7 @@ namespace iTin.Hardware.Specification.Eedid
                             ///  <para>1.4</para>
                             /// </para>
                             /// </summary>
-                            public static IPropertyKey AspectRatio => new PropertyKey(EdidDataBlockDescriptor.Cvt3ByteCode, Cvt3ByteCodeDescriptorItemProperty.AspectRatio);
+                            public static IPropertyKey AspectRatio => new PropertyKey(EdidDataBlockDescriptor.Cvt3ByteCode, EdidProperty.DataBlocks.Descriptors.DescriptorItems.Cvt3ByteCodeDescriptorItem.AspectRatio);
                             #endregion
 
                             #region [public] {static} (IPropertyKey) PreferredVerticalRate: Gets a value representing the key to retrieve the property value
@@ -1884,7 +1890,7 @@ namespace iTin.Hardware.Specification.Eedid
                             ///  <para><b>Key Composition</b></para>
                             ///  <list type="bullet">
                             ///   <item><description>Structure: <see cref="EdidDataBlockDescriptor.Cvt3ByteCode"/></description></item>
-                            ///   <item><description>Property: <see cref="Cvt3ByteCodeDescriptorItemProperty.PreferredVerticalRate"/></description></item>
+                            ///   <item><description>Property: <see cref="EdidProperty.DataBlocks.Descriptors.DescriptorItems.Cvt3ByteCodeDescriptorItem.PreferredVerticalRate"/></description></item>
                             ///   <item><description>Unit: <see cref="PropertyUnit.Hz"/></description></item>
                             ///  </list>
                             /// </para>
@@ -1897,7 +1903,7 @@ namespace iTin.Hardware.Specification.Eedid
                             ///  <para>1.4</para>
                             /// </para>
                             /// </summary>
-                            public static IPropertyKey PreferredVerticalRate => new PropertyKey(EdidDataBlockDescriptor.Cvt3ByteCode, Cvt3ByteCodeDescriptorItemProperty.PreferredVerticalRate, PropertyUnit.Hz);
+                            public static IPropertyKey PreferredVerticalRate => new PropertyKey(EdidDataBlockDescriptor.Cvt3ByteCode, EdidProperty.DataBlocks.Descriptors.DescriptorItems.Cvt3ByteCodeDescriptorItem.PreferredVerticalRate, PropertyUnit.Hz);
                             #endregion
 
                             #endregion
@@ -1919,7 +1925,7 @@ namespace iTin.Hardware.Specification.Eedid
                                 ///  <para><b>Key Composition</b></para>
                                 ///  <list type="bullet">
                                 ///   <item><description>Structure: <see cref="EdidDataBlockDescriptor.Cvt3ByteCode"/></description></item>
-                                ///   <item><description>Property: <see cref="Cvt3ByteCodeDescriptorItemProperty.IsSupported50HzWithStandardBlanking"/></description></item>
+                                ///   <item><description>Property: <see cref="EdidProperty.DataBlocks.Descriptors.DescriptorItems.Cvt3ByteCodeDescriptorItem.IsSupported50HzWithStandardBlanking"/></description></item>
                                 ///   <item><description>Unit: <see cref="PropertyUnit.None"/></description></item>
                                 ///  </list>
                                 /// </para>
@@ -1932,7 +1938,7 @@ namespace iTin.Hardware.Specification.Eedid
                                 ///  <para>1.4</para>
                                 /// </para>
                                 /// </summary>
-                                public static IPropertyKey IsSupported50HzWithStandardBlanking => new PropertyKey(EdidDataBlockDescriptor.Cvt3ByteCode, Cvt3ByteCodeDescriptorItemProperty.IsSupported50HzWithStandardBlanking);
+                                public static IPropertyKey IsSupported50HzWithStandardBlanking => new PropertyKey(EdidDataBlockDescriptor.Cvt3ByteCode, EdidProperty.DataBlocks.Descriptors.DescriptorItems.Cvt3ByteCodeDescriptorItem.IsSupported50HzWithStandardBlanking);
                                 #endregion
 
                                 #region [public] {static} (IPropertyKey) IsSupported60HzWithStandardBlanking: Gets a value representing the key to retrieve the property value
@@ -1943,7 +1949,7 @@ namespace iTin.Hardware.Specification.Eedid
                                 ///  <para><b>Key Composition</b></para>
                                 ///  <list type="bullet">
                                 ///   <item><description>Structure: <see cref="EdidDataBlockDescriptor.Cvt3ByteCode"/></description></item>
-                                ///   <item><description>Property: <see cref="Cvt3ByteCodeDescriptorItemProperty.IsSupported60HzWithStandardBlanking"/></description></item>
+                                ///   <item><description>Property: <see cref="EdidProperty.DataBlocks.Descriptors.DescriptorItems.Cvt3ByteCodeDescriptorItem.IsSupported60HzWithStandardBlanking"/></description></item>
                                 ///   <item><description>Unit: <see cref="PropertyUnit.None"/></description></item>
                                 ///  </list>
                                 /// </para>
@@ -1956,7 +1962,7 @@ namespace iTin.Hardware.Specification.Eedid
                                 ///  <para>1.4</para>
                                 /// </para>
                                 /// </summary>
-                                public static IPropertyKey IsSupported60HzWithStandardBlanking => new PropertyKey(EdidDataBlockDescriptor.Cvt3ByteCode, Cvt3ByteCodeDescriptorItemProperty.IsSupported60HzWithStandardBlanking);
+                                public static IPropertyKey IsSupported60HzWithStandardBlanking => new PropertyKey(EdidDataBlockDescriptor.Cvt3ByteCode, EdidProperty.DataBlocks.Descriptors.DescriptorItems.Cvt3ByteCodeDescriptorItem.IsSupported60HzWithStandardBlanking);
                                 #endregion
 
                                 #region [public] {static} (IPropertyKey) IsSupported75HzWithStandardBlanking: Gets a value representing the key to retrieve the property value
@@ -1967,7 +1973,7 @@ namespace iTin.Hardware.Specification.Eedid
                                 ///  <para><b>Key Composition</b></para>
                                 ///  <list type="bullet">
                                 ///   <item><description>Structure: <see cref="EdidDataBlockDescriptor.Cvt3ByteCode"/></description></item>
-                                ///   <item><description>Property: <see cref="Cvt3ByteCodeDescriptorItemProperty.IsSupported75HzWithStandardBlanking"/></description></item>
+                                ///   <item><description>Property: <see cref="EdidProperty.DataBlocks.Descriptors.DescriptorItems.Cvt3ByteCodeDescriptorItem.IsSupported75HzWithStandardBlanking"/></description></item>
                                 ///   <item><description>Unit: <see cref="PropertyUnit.None"/></description></item>
                                 ///  </list>
                                 /// </para>
@@ -1980,7 +1986,7 @@ namespace iTin.Hardware.Specification.Eedid
                                 ///  <para>1.4</para>
                                 /// </para>
                                 /// </summary>
-                                public static IPropertyKey IsSupported75HzWithStandardBlanking => new PropertyKey(EdidDataBlockDescriptor.Cvt3ByteCode, Cvt3ByteCodeDescriptorItemProperty.IsSupported75HzWithStandardBlanking);
+                                public static IPropertyKey IsSupported75HzWithStandardBlanking => new PropertyKey(EdidDataBlockDescriptor.Cvt3ByteCode, EdidProperty.DataBlocks.Descriptors.DescriptorItems.Cvt3ByteCodeDescriptorItem.IsSupported75HzWithStandardBlanking);
                                 #endregion
 
                                 #region [public] {static} (IPropertyKey) IsSupported85HzWithStandardBlanking: Gets a value representing the key to retrieve the property value
@@ -1991,7 +1997,7 @@ namespace iTin.Hardware.Specification.Eedid
                                 ///  <para><b>Key Composition</b></para>
                                 ///  <list type="bullet">
                                 ///   <item><description>Structure: <see cref="EdidDataBlockDescriptor.Cvt3ByteCode"/></description></item>
-                                ///   <item><description>Property: <see cref="Cvt3ByteCodeDescriptorItemProperty.IsSupported85HzWithStandardBlanking"/></description></item>
+                                ///   <item><description>Property: <see cref="EdidProperty.DataBlocks.Descriptors.DescriptorItems.Cvt3ByteCodeDescriptorItem.IsSupported85HzWithStandardBlanking"/></description></item>
                                 ///   <item><description>Unit: <see cref="PropertyUnit.None"/></description></item>
                                 ///  </list>
                                 /// </para>
@@ -2004,7 +2010,7 @@ namespace iTin.Hardware.Specification.Eedid
                                 ///  <para>1.4</para>
                                 /// </para>
                                 /// </summary>
-                                public static IPropertyKey IsSupported85HzWithStandardBlanking => new PropertyKey(EdidDataBlockDescriptor.Cvt3ByteCode, Cvt3ByteCodeDescriptorItemProperty.IsSupported85HzWithStandardBlanking);
+                                public static IPropertyKey IsSupported85HzWithStandardBlanking => new PropertyKey(EdidDataBlockDescriptor.Cvt3ByteCode, EdidProperty.DataBlocks.Descriptors.DescriptorItems.Cvt3ByteCodeDescriptorItem.IsSupported85HzWithStandardBlanking);
                                 #endregion
 
                                 #region [public] {static} (IPropertyKey) IsSupported60HzWithReducedBlanking: Gets a value representing the key to retrieve the property value
@@ -2015,7 +2021,7 @@ namespace iTin.Hardware.Specification.Eedid
                                 ///  <para><b>Key Composition</b></para>
                                 ///  <list type="bullet">
                                 ///   <item><description>Structure: <see cref="EdidDataBlockDescriptor.Cvt3ByteCode"/></description></item>
-                                ///   <item><description>Property: <see cref="Cvt3ByteCodeDescriptorItemProperty.IsSupported60HzWithReducedBlanking"/></description></item>
+                                ///   <item><description>Property: <see cref="EdidProperty.DataBlocks.Descriptors.DescriptorItems.Cvt3ByteCodeDescriptorItem.IsSupported60HzWithReducedBlanking"/></description></item>
                                 ///   <item><description>Unit: <see cref="PropertyUnit.None"/></description></item>
                                 ///  </list>
                                 /// </para>
@@ -2028,7 +2034,7 @@ namespace iTin.Hardware.Specification.Eedid
                                 ///  <para>1.4</para>
                                 /// </para>
                                 /// </summary>
-                                public static IPropertyKey IsSupported60HzWithReducedBlanking => new PropertyKey(EdidDataBlockDescriptor.Cvt3ByteCode, Cvt3ByteCodeDescriptorItemProperty.IsSupported60HzWithReducedBlanking);
+                                public static IPropertyKey IsSupported60HzWithReducedBlanking => new PropertyKey(EdidDataBlockDescriptor.Cvt3ByteCode, EdidProperty.DataBlocks.Descriptors.DescriptorItems.Cvt3ByteCodeDescriptorItem.IsSupported60HzWithReducedBlanking);
                                 #endregion
                             }
                             #endregion
@@ -2056,7 +2062,7 @@ namespace iTin.Hardware.Specification.Eedid
                         ///  <para><b>Key Composition</b></para>
                         ///  <list type="bullet">
                         ///   <item><description>Structure: <see cref="EdidDataBlockDescriptor.DetailedTimingMode"/></description></item>
-                        ///   <item><description>Property: <see cref="DetailedTimingModeDescriptorProperty.PixelClock"/></description></item>
+                        ///   <item><description>Property: <see cref="EdidProperty.DataBlocks.Descriptors.DetailedTimingModeDescriptor.PixelClock"/></description></item>
                         ///   <item><description>Unit: <see cref="PropertyUnit.KHz"/></description></item>
                         ///  </list>
                         /// </para>
@@ -2069,7 +2075,7 @@ namespace iTin.Hardware.Specification.Eedid
                         ///  <para>1.4</para>
                         /// </para>
                         /// </summary>
-                        public static IPropertyKey PixelClock => new PropertyKey(EdidDataBlockDescriptor.DetailedTimingMode, DetailedTimingModeDescriptorProperty.PixelClock, PropertyUnit.KHz);
+                        public static IPropertyKey PixelClock => new PropertyKey(EdidDataBlockDescriptor.DetailedTimingMode, EdidProperty.DataBlocks.Descriptors.DetailedTimingModeDescriptor.PixelClock, PropertyUnit.KHz);
                         #endregion
 
                         #region [public] {static} (IPropertyKey) HorizontalResolution: Gets a value representing the key to retrieve the property value
@@ -2083,7 +2089,7 @@ namespace iTin.Hardware.Specification.Eedid
                         ///  <para><b>Key Composition</b></para>
                         ///  <list type="bullet">
                         ///   <item><description>Structure: <see cref="EdidDataBlockDescriptor.DetailedTimingMode"/></description></item>
-                        ///   <item><description>Property: <see cref="DetailedTimingModeDescriptorProperty.HorizontalResolution"/></description></item>
+                        ///   <item><description>Property: <see cref="EdidProperty.DataBlocks.Descriptors.DetailedTimingModeDescriptor.HorizontalResolution"/></description></item>
                         ///   <item><description>Unit: <see cref="PropertyUnit.Pixels"/></description></item>
                         ///  </list>
                         /// </para>
@@ -2096,7 +2102,7 @@ namespace iTin.Hardware.Specification.Eedid
                         ///  <para>1.4</para>
                         /// </para>
                         /// </summary>
-                        public static IPropertyKey HorizontalResolution => new PropertyKey(EdidDataBlockDescriptor.DetailedTimingMode, DetailedTimingModeDescriptorProperty.HorizontalResolution, PropertyUnit.Pixels);
+                        public static IPropertyKey HorizontalResolution => new PropertyKey(EdidDataBlockDescriptor.DetailedTimingMode, EdidProperty.DataBlocks.Descriptors.DetailedTimingModeDescriptor.HorizontalResolution, PropertyUnit.Pixels);
                         #endregion
 
                         #region [public] {static} (IPropertyKey) HorizontalBlanking: Gets a value representing the key to retrieve the property value
@@ -2110,7 +2116,7 @@ namespace iTin.Hardware.Specification.Eedid
                         ///  <para><b>Key Composition</b></para>
                         ///  <list type="bullet">
                         ///   <item><description>Structure: <see cref="EdidDataBlockDescriptor.DetailedTimingMode"/></description></item>
-                        ///   <item><description>Property: <see cref="DetailedTimingModeDescriptorProperty.HorizontalResolution"/></description></item>
+                        ///   <item><description>Property: <see cref="EdidProperty.DataBlocks.Descriptors.DetailedTimingModeDescriptor.HorizontalResolution"/></description></item>
                         ///   <item><description>Unit: <see cref="PropertyUnit.Pixels"/></description></item>
                         ///  </list>
                         /// </para>
@@ -2123,7 +2129,7 @@ namespace iTin.Hardware.Specification.Eedid
                         ///  <para>1.4</para>
                         /// </para>
                         /// </summary>
-                        public static IPropertyKey HorizontalBlanking => new PropertyKey(EdidDataBlockDescriptor.DetailedTimingMode, DetailedTimingModeDescriptorProperty.HorizontalBlanking, PropertyUnit.Pixels);
+                        public static IPropertyKey HorizontalBlanking => new PropertyKey(EdidDataBlockDescriptor.DetailedTimingMode, EdidProperty.DataBlocks.Descriptors.DetailedTimingModeDescriptor.HorizontalBlanking, PropertyUnit.Pixels);
                         #endregion
 
                         #region [public] {static} (IPropertyKey) VerticalLines: Gets a value representing the key to retrieve the property value
@@ -2137,7 +2143,7 @@ namespace iTin.Hardware.Specification.Eedid
                         ///  <para><b>Key Composition</b></para>
                         ///  <list type="bullet">
                         ///   <item><description>Structure: <see cref="EdidDataBlockDescriptor.DetailedTimingMode"/></description></item>
-                        ///   <item><description>Property: <see cref="DetailedTimingModeDescriptorProperty.VerticalLines"/></description></item>
+                        ///   <item><description>Property: <see cref="EdidProperty.DataBlocks.Descriptors.DetailedTimingModeDescriptor.VerticalLines"/></description></item>
                         ///   <item><description>Unit: <see cref="PropertyUnit.Lines"/></description></item>
                         ///  </list>
                         /// </para>
@@ -2150,7 +2156,7 @@ namespace iTin.Hardware.Specification.Eedid
                         ///  <para>1.4</para>
                         /// </para>
                         /// </summary>
-                        public static IPropertyKey VerticalLines => new PropertyKey(EdidDataBlockDescriptor.DetailedTimingMode, DetailedTimingModeDescriptorProperty.VerticalLines, PropertyUnit.Lines);
+                        public static IPropertyKey VerticalLines => new PropertyKey(EdidDataBlockDescriptor.DetailedTimingMode, EdidProperty.DataBlocks.Descriptors.DetailedTimingModeDescriptor.VerticalLines, PropertyUnit.Lines);
                         #endregion
 
                         #region [public] {static} (IPropertyKey) VerticalBlanking: Gets a value representing the key to retrieve the property value
@@ -2164,7 +2170,7 @@ namespace iTin.Hardware.Specification.Eedid
                         ///  <para><b>Key Composition</b></para>
                         ///  <list type="bullet">
                         ///   <item><description>Structure: <see cref="EdidDataBlockDescriptor.DetailedTimingMode"/></description></item>
-                        ///   <item><description>Property: <see cref="DetailedTimingModeDescriptorProperty.VerticalBlanking"/></description></item>
+                        ///   <item><description>Property: <see cref="EdidProperty.DataBlocks.Descriptors.DetailedTimingModeDescriptor.VerticalBlanking"/></description></item>
                         ///   <item><description>Unit: <see cref="PropertyUnit.Lines"/></description></item>
                         ///  </list>
                         /// </para>
@@ -2177,7 +2183,7 @@ namespace iTin.Hardware.Specification.Eedid
                         ///  <para>1.4</para>
                         /// </para>
                         /// </summary>
-                        public static IPropertyKey VerticalBlanking => new PropertyKey(EdidDataBlockDescriptor.DetailedTimingMode, DetailedTimingModeDescriptorProperty.VerticalBlanking, PropertyUnit.Lines);
+                        public static IPropertyKey VerticalBlanking => new PropertyKey(EdidDataBlockDescriptor.DetailedTimingMode, EdidProperty.DataBlocks.Descriptors.DetailedTimingModeDescriptor.VerticalBlanking, PropertyUnit.Lines);
                         #endregion
 
                         #region [public] {static} (IPropertyKey) HorizontalFrontPorch: Gets a value representing the key to retrieve the property value
@@ -2191,7 +2197,7 @@ namespace iTin.Hardware.Specification.Eedid
                         ///  <para><b>Key Composition</b></para>
                         ///  <list type="bullet">
                         ///   <item><description>Structure: <see cref="EdidDataBlockDescriptor.DetailedTimingMode"/></description></item>
-                        ///   <item><description>Property: <see cref="DetailedTimingModeDescriptorProperty.HorizontalFrontPorch"/></description></item>
+                        ///   <item><description>Property: <see cref="EdidProperty.DataBlocks.Descriptors.DetailedTimingModeDescriptor.HorizontalFrontPorch"/></description></item>
                         ///   <item><description>Unit: <see cref="PropertyUnit.Pixels"/></description></item>
                         ///  </list>
                         /// </para>
@@ -2204,7 +2210,7 @@ namespace iTin.Hardware.Specification.Eedid
                         ///  <para>1.4</para>
                         /// </para>
                         /// </summary>
-                        public static IPropertyKey HorizontalFrontPorch => new PropertyKey(EdidDataBlockDescriptor.DetailedTimingMode, DetailedTimingModeDescriptorProperty.HorizontalFrontPorch, PropertyUnit.Pixels);
+                        public static IPropertyKey HorizontalFrontPorch => new PropertyKey(EdidDataBlockDescriptor.DetailedTimingMode, EdidProperty.DataBlocks.Descriptors.DetailedTimingModeDescriptor.HorizontalFrontPorch, PropertyUnit.Pixels);
                         #endregion
 
                         #region [public] {static} (IPropertyKey) HorizontalSyncPulseWidth: Gets a value representing the key to retrieve the property value
@@ -2218,7 +2224,7 @@ namespace iTin.Hardware.Specification.Eedid
                         ///  <para><b>Key Composition</b></para>
                         ///  <list type="bullet">
                         ///   <item><description>Structure: <see cref="EdidDataBlockDescriptor.DetailedTimingMode"/></description></item>
-                        ///   <item><description>Property: <see cref="DetailedTimingModeDescriptorProperty.HorizontalSyncPulseWidth"/></description></item>
+                        ///   <item><description>Property: <see cref="EdidProperty.DataBlocks.Descriptors.DetailedTimingModeDescriptor.HorizontalSyncPulseWidth"/></description></item>
                         ///   <item><description>Unit: <see cref="PropertyUnit.Pixels"/></description></item>
                         ///  </list>
                         /// </para>
@@ -2231,7 +2237,7 @@ namespace iTin.Hardware.Specification.Eedid
                         ///  <para>1.4</para>
                         /// </para>
                         /// </summary>
-                        public static IPropertyKey HorizontalSyncPulseWidth => new PropertyKey(EdidDataBlockDescriptor.DetailedTimingMode, DetailedTimingModeDescriptorProperty.HorizontalSyncPulseWidth, PropertyUnit.Pixels);
+                        public static IPropertyKey HorizontalSyncPulseWidth => new PropertyKey(EdidDataBlockDescriptor.DetailedTimingMode, EdidProperty.DataBlocks.Descriptors.DetailedTimingModeDescriptor.HorizontalSyncPulseWidth, PropertyUnit.Pixels);
                         #endregion
 
                         #region [public] {static} (IPropertyKey) VerticalFrontPorch: Gets a value representing the key to retrieve the property value
@@ -2245,7 +2251,7 @@ namespace iTin.Hardware.Specification.Eedid
                         ///  <para><b>Key Composition</b></para>
                         ///  <list type="bullet">
                         ///   <item><description>Structure: <see cref="EdidDataBlockDescriptor.DetailedTimingMode"/></description></item>
-                        ///   <item><description>Property: <see cref="DetailedTimingModeDescriptorProperty.VerticalFrontPorch"/></description></item>
+                        ///   <item><description>Property: <see cref="EdidProperty.DataBlocks.Descriptors.DetailedTimingModeDescriptor.VerticalFrontPorch"/></description></item>
                         ///   <item><description>Unit: <see cref="PropertyUnit.Lines"/></description></item>
                         ///  </list>
                         /// </para>
@@ -2258,7 +2264,7 @@ namespace iTin.Hardware.Specification.Eedid
                         ///  <para>1.4</para>
                         /// </para>
                         /// </summary>
-                        public static IPropertyKey VerticalFrontPorch => new PropertyKey(EdidDataBlockDescriptor.DetailedTimingMode, DetailedTimingModeDescriptorProperty.VerticalFrontPorch, PropertyUnit.Lines);
+                        public static IPropertyKey VerticalFrontPorch => new PropertyKey(EdidDataBlockDescriptor.DetailedTimingMode, EdidProperty.DataBlocks.Descriptors.DetailedTimingModeDescriptor.VerticalFrontPorch, PropertyUnit.Lines);
                         #endregion
 
                         #region [public] {static} (IPropertyKey) VerticalSyncPulseWidth: Gets a value representing the key to retrieve the property value
@@ -2272,7 +2278,7 @@ namespace iTin.Hardware.Specification.Eedid
                         ///  <para><b>Key Composition</b></para>
                         ///  <list type="bullet">
                         ///   <item><description>Structure: <see cref="EdidDataBlockDescriptor.DetailedTimingMode"/></description></item>
-                        ///   <item><description>Property: <see cref="DetailedTimingModeDescriptorProperty.VerticalSyncPulseWidth"/></description></item>
+                        ///   <item><description>Property: <see cref="EdidProperty.DataBlocks.Descriptors.DetailedTimingModeDescriptor.VerticalSyncPulseWidth"/></description></item>
                         ///   <item><description>Unit: <see cref="PropertyUnit.Lines"/></description></item>
                         ///  </list>
                         /// </para>
@@ -2285,7 +2291,7 @@ namespace iTin.Hardware.Specification.Eedid
                         ///  <para>1.4</para>
                         /// </para>
                         /// </summary>
-                        public static IPropertyKey VerticalSyncPulseWidth => new PropertyKey(EdidDataBlockDescriptor.DetailedTimingMode, DetailedTimingModeDescriptorProperty.VerticalSyncPulseWidth, PropertyUnit.Lines);
+                        public static IPropertyKey VerticalSyncPulseWidth => new PropertyKey(EdidDataBlockDescriptor.DetailedTimingMode, EdidProperty.DataBlocks.Descriptors.DetailedTimingModeDescriptor.VerticalSyncPulseWidth, PropertyUnit.Lines);
                         #endregion
 
                         #region [public] {static} (IPropertyKey) HorizontalImageSize: Gets a value representing the key to retrieve the property value
@@ -2299,7 +2305,7 @@ namespace iTin.Hardware.Specification.Eedid
                         ///  <para><b>Key Composition</b></para>
                         ///  <list type="bullet">
                         ///   <item><description>Structure: <see cref="EdidDataBlockDescriptor.DetailedTimingMode"/></description></item>
-                        ///   <item><description>Property: <see cref="DetailedTimingModeDescriptorProperty.HorizontalImageSize"/></description></item>
+                        ///   <item><description>Property: <see cref="EdidProperty.DataBlocks.Descriptors.DetailedTimingModeDescriptor.HorizontalImageSize"/></description></item>
                         ///   <item><description>Unit: <see cref="PropertyUnit.mm"/></description></item>
                         ///  </list>
                         /// </para>
@@ -2312,7 +2318,7 @@ namespace iTin.Hardware.Specification.Eedid
                         ///  <para>1.4</para>
                         /// </para>
                         /// </summary>
-                        public static IPropertyKey HorizontalImageSize => new PropertyKey(EdidDataBlockDescriptor.DetailedTimingMode, DetailedTimingModeDescriptorProperty.HorizontalImageSize, PropertyUnit.mm);
+                        public static IPropertyKey HorizontalImageSize => new PropertyKey(EdidDataBlockDescriptor.DetailedTimingMode, EdidProperty.DataBlocks.Descriptors.DetailedTimingModeDescriptor.HorizontalImageSize, PropertyUnit.mm);
                         #endregion
 
                         #region [public] {static} (IPropertyKey) VerticalImageSize: Gets a value representing the key to retrieve the property value
@@ -2326,7 +2332,7 @@ namespace iTin.Hardware.Specification.Eedid
                         ///  <para><b>Key Composition</b></para>
                         ///  <list type="bullet">
                         ///   <item><description>Structure: <see cref="EdidDataBlockDescriptor.DetailedTimingMode"/></description></item>
-                        ///   <item><description>Property: <see cref="DetailedTimingModeDescriptorProperty.VerticalImageSize"/></description></item>
+                        ///   <item><description>Property: <see cref="EdidProperty.DataBlocks.Descriptors.DetailedTimingModeDescriptor.VerticalImageSize"/></description></item>
                         ///   <item><description>Unit: <see cref="PropertyUnit.mm"/></description></item>
                         ///  </list>
                         /// </para>
@@ -2339,7 +2345,7 @@ namespace iTin.Hardware.Specification.Eedid
                         ///  <para>1.4</para>
                         /// </para>
                         /// </summary>
-                        public static IPropertyKey VerticalImageSize => new PropertyKey(EdidDataBlockDescriptor.DetailedTimingMode, DetailedTimingModeDescriptorProperty.VerticalImageSize, PropertyUnit.mm);
+                        public static IPropertyKey VerticalImageSize => new PropertyKey(EdidDataBlockDescriptor.DetailedTimingMode, EdidProperty.DataBlocks.Descriptors.DetailedTimingModeDescriptor.VerticalImageSize, PropertyUnit.mm);
                         #endregion
 
                         #region [public] {static} (IPropertyKey) HorizontalBorder: Gets a value representing the key to retrieve the property value
@@ -2353,7 +2359,7 @@ namespace iTin.Hardware.Specification.Eedid
                         ///  <para><b>Key Composition</b></para>
                         ///  <list type="bullet">
                         ///   <item><description>Structure: <see cref="EdidDataBlockDescriptor.DetailedTimingMode"/></description></item>
-                        ///   <item><description>Property: <see cref="DetailedTimingModeDescriptorProperty.HorizontalBorder"/></description></item>
+                        ///   <item><description>Property: <see cref="EdidProperty.DataBlocks.Descriptors.DetailedTimingModeDescriptor.HorizontalBorder"/></description></item>
                         ///   <item><description>Unit: <see cref="PropertyUnit.Pixels"/></description></item>
                         ///  </list>
                         /// </para>
@@ -2366,7 +2372,7 @@ namespace iTin.Hardware.Specification.Eedid
                         ///  <para>1.4</para>
                         /// </para>
                         /// </summary>
-                        public static IPropertyKey HorizontalBorder => new PropertyKey(EdidDataBlockDescriptor.DetailedTimingMode, DetailedTimingModeDescriptorProperty.HorizontalBorder, PropertyUnit.Pixels);
+                        public static IPropertyKey HorizontalBorder => new PropertyKey(EdidDataBlockDescriptor.DetailedTimingMode, EdidProperty.DataBlocks.Descriptors.DetailedTimingModeDescriptor.HorizontalBorder, PropertyUnit.Pixels);
                         #endregion
 
                         #region [public] {static} (IPropertyKey) VerticalBorder: Gets a value representing the key to retrieve the property value
@@ -2380,7 +2386,7 @@ namespace iTin.Hardware.Specification.Eedid
                         ///  <para><b>Key Composition</b></para>
                         ///  <list type="bullet">
                         ///   <item><description>Structure: <see cref="EdidDataBlockDescriptor.DetailedTimingMode"/></description></item>
-                        ///   <item><description>Property: <see cref="DetailedTimingModeDescriptorProperty.VerticalBorder"/></description></item>
+                        ///   <item><description>Property: <see cref="EdidProperty.DataBlocks.Descriptors.DetailedTimingModeDescriptor.VerticalBorder"/></description></item>
                         ///   <item><description>Unit: <see cref="PropertyUnit.Pixels"/></description></item>
                         ///  </list>
                         /// </para>
@@ -2393,7 +2399,7 @@ namespace iTin.Hardware.Specification.Eedid
                         ///  <para>1.4</para>
                         /// </para>
                         /// </summary>
-                        public static IPropertyKey VerticalBorder => new PropertyKey(EdidDataBlockDescriptor.DetailedTimingMode, DetailedTimingModeDescriptorProperty.VerticalBorder, PropertyUnit.Pixels);
+                        public static IPropertyKey VerticalBorder => new PropertyKey(EdidDataBlockDescriptor.DetailedTimingMode, EdidProperty.DataBlocks.Descriptors.DetailedTimingModeDescriptor.VerticalBorder, PropertyUnit.Pixels);
                         #endregion
 
                         #region [public] {static} (IPropertyKey) IsInterlaced: Gets a value representing the key to retrieve the property value
@@ -2404,7 +2410,7 @@ namespace iTin.Hardware.Specification.Eedid
                         ///  <para><b>Key Composition</b></para>
                         ///  <list type="bullet">
                         ///   <item><description>Structure: <see cref="EdidDataBlockDescriptor.DetailedTimingMode"/></description></item>
-                        ///   <item><description>Property: <see cref="DetailedTimingModeDescriptorProperty.Interlaced"/></description></item>
+                        ///   <item><description>Property: <see cref="EdidProperty.DataBlocks.Descriptors.DetailedTimingModeDescriptor.Interlaced"/></description></item>
                         ///   <item><description>Unit: <see cref="PropertyUnit.None"/></description></item>
                         ///  </list>
                         /// </para>
@@ -2417,7 +2423,7 @@ namespace iTin.Hardware.Specification.Eedid
                         ///  <para>1.4</para>
                         /// </para>
                         /// </summary>
-                        public static IPropertyKey IsInterlaced => new PropertyKey(EdidDataBlockDescriptor.DetailedTimingMode, DetailedTimingModeDescriptorProperty.Interlaced);
+                        public static IPropertyKey IsInterlaced => new PropertyKey(EdidDataBlockDescriptor.DetailedTimingMode, EdidProperty.DataBlocks.Descriptors.DetailedTimingModeDescriptor.Interlaced);
                         #endregion
 
                         #region [public] {static} (IPropertyKey) StereoViewingSupport: Gets a value representing the key to retrieve the property value
@@ -2428,7 +2434,7 @@ namespace iTin.Hardware.Specification.Eedid
                         ///  <para><b>Key Composition</b></para>
                         ///  <list type="bullet">
                         ///   <item><description>Structure: <see cref="EdidDataBlockDescriptor.DetailedTimingMode"/></description></item>
-                        ///   <item><description>Property: <see cref="DetailedTimingModeDescriptorProperty.StereoViewingSupport"/></description></item>
+                        ///   <item><description>Property: <see cref="EdidProperty.DataBlocks.Descriptors.DetailedTimingModeDescriptor.StereoViewingSupport"/></description></item>
                         ///   <item><description>Unit: <see cref="PropertyUnit.None"/></description></item>
                         ///  </list>
                         /// </para>
@@ -2441,7 +2447,7 @@ namespace iTin.Hardware.Specification.Eedid
                         ///  <para>1.4</para>
                         /// </para>
                         /// </summary>
-                        public static IPropertyKey StereoViewingSupport => new PropertyKey(EdidDataBlockDescriptor.DetailedTimingMode, DetailedTimingModeDescriptorProperty.StereoViewingSupport);
+                        public static IPropertyKey StereoViewingSupport => new PropertyKey(EdidDataBlockDescriptor.DetailedTimingMode, EdidProperty.DataBlocks.Descriptors.DetailedTimingModeDescriptor.StereoViewingSupport);
                         #endregion
 
                         #region [public] {static} (IPropertyKey) SyncSignalType: Gets a value representing the key to retrieve the property value
@@ -2452,7 +2458,7 @@ namespace iTin.Hardware.Specification.Eedid
                         ///  <para><b>Key Composition</b></para>
                         ///  <list type="bullet">
                         ///   <item><description>Structure: <see cref="EdidDataBlockDescriptor.DetailedTimingMode"/></description></item>
-                        ///   <item><description>Property: <see cref="DetailedTimingModeDescriptorProperty.SyncSignalType"/></description></item>
+                        ///   <item><description>Property: <see cref="EdidProperty.DataBlocks.Descriptors.DetailedTimingModeDescriptor.SyncSignalType"/></description></item>
                         ///   <item><description>Unit: <see cref="PropertyUnit.None"/></description></item>
                         ///  </list>
                         /// </para>
@@ -2465,7 +2471,7 @@ namespace iTin.Hardware.Specification.Eedid
                         ///  <para>1.4</para>
                         /// </para>
                         /// </summary>
-                        public static IPropertyKey SyncSignalType => new PropertyKey(EdidDataBlockDescriptor.DetailedTimingMode, DetailedTimingModeDescriptorProperty.SyncSignalType);
+                        public static IPropertyKey SyncSignalType => new PropertyKey(EdidDataBlockDescriptor.DetailedTimingMode, EdidProperty.DataBlocks.Descriptors.DetailedTimingModeDescriptor.SyncSignalType);
                         #endregion
                     }
                     #endregion
@@ -2484,7 +2490,7 @@ namespace iTin.Hardware.Specification.Eedid
                         ///  <para><b>Key Composition</b></para>
                         ///  <list type="bullet">
                         ///   <item><description>Structure: <see cref="EdidDataBlockDescriptor.DisplayProductName"/></description></item>
-                        ///   <item><description>Property: <see cref="DisplayProductNameDescriptorProperty.Text"/></description></item>
+                        ///   <item><description>Property: <see cref="EdidProperty.DataBlocks.Descriptors.DisplayProductNameDescriptor.Text"/></description></item>
                         ///   <item><description>Unit: <see cref="PropertyUnit.None"/></description></item>
                         ///  </list>
                         /// </para>
@@ -2497,7 +2503,7 @@ namespace iTin.Hardware.Specification.Eedid
                         ///  <para>1.4</para>
                         /// </para>
                         /// </summary>
-                        public static IPropertyKey Data => new PropertyKey(EdidDataBlockDescriptor.DisplayProductName, DisplayProductNameDescriptorProperty.Text);
+                        public static IPropertyKey Data => new PropertyKey(EdidDataBlockDescriptor.DisplayProductName, EdidProperty.DataBlocks.Descriptors.DisplayProductNameDescriptor.Text);
                         #endregion
                     }
                     #endregion
@@ -2516,7 +2522,7 @@ namespace iTin.Hardware.Specification.Eedid
                         ///  <para><b>Key Composition</b></para>
                         ///  <list type="bullet">
                         ///   <item><description>Structure: <see cref="EdidDataBlockDescriptor.DisplayProductSerialNumber"/></description></item>
-                        ///   <item><description>Property: <see cref="DisplayProductSerialNumberDescriptorProperty.Text"/></description></item>
+                        ///   <item><description>Property: <see cref="EdidProperty.DataBlocks.Descriptors.DisplayProductSerialNumberDescriptor.Text"/></description></item>
                         ///   <item><description>Unit: <see cref="PropertyUnit.None"/></description></item>
                         ///  </list>
                         /// </para>
@@ -2529,7 +2535,7 @@ namespace iTin.Hardware.Specification.Eedid
                         ///  <para>1.4</para>
                         /// </para>
                         /// </summary>
-                        public static IPropertyKey Data => new PropertyKey(EdidDataBlockDescriptor.DisplayProductSerialNumber, DisplayProductSerialNumberDescriptorProperty.Text);
+                        public static IPropertyKey Data => new PropertyKey(EdidDataBlockDescriptor.DisplayProductSerialNumber, EdidProperty.DataBlocks.Descriptors.DisplayProductSerialNumberDescriptor.Text);
                         #endregion
                     }
                     #endregion
@@ -2551,7 +2557,7 @@ namespace iTin.Hardware.Specification.Eedid
                         ///  <para><b>Key Composition</b></para>
                         ///  <list type="bullet">
                         ///   <item><description>Structure: <see cref="EdidDataBlockDescriptor.DisplayRangeLimits"/></description></item>
-                        ///   <item><description>Property: <see cref="DisplayRangeLimitsDescriptorProperty.MinimumVerticalRate"/></description></item>
+                        ///   <item><description>Property: <see cref="EdidProperty.DataBlocks.Descriptors.DisplayRangeLimitsDescriptor.MinimumVerticalRate"/></description></item>
                         ///   <item><description>Unit: <see cref="PropertyUnit.Hz"/></description></item>
                         ///  </list>
                         /// </para>
@@ -2564,7 +2570,7 @@ namespace iTin.Hardware.Specification.Eedid
                         ///  <para>1.4</para>
                         /// </para>
                         /// </summary>
-                        public static IPropertyKey MinimumVerticalRate => new PropertyKey(EdidDataBlockDescriptor.DisplayRangeLimits, DisplayRangeLimitsDescriptorProperty.MinimumVerticalRate, PropertyUnit.Hz);
+                        public static IPropertyKey MinimumVerticalRate => new PropertyKey(EdidDataBlockDescriptor.DisplayRangeLimits, EdidProperty.DataBlocks.Descriptors.DisplayRangeLimitsDescriptor.MinimumVerticalRate, PropertyUnit.Hz);
                         #endregion
 
                         #region [public] {static} (IPropertyKey) MaximumVerticalRate: Gets a value representing the key to retrieve the property value
@@ -2578,7 +2584,7 @@ namespace iTin.Hardware.Specification.Eedid
                         ///  <para><b>Key Composition</b></para>
                         ///  <list type="bullet">
                         ///   <item><description>Structure: <see cref="EdidDataBlockDescriptor.DisplayRangeLimits"/></description></item>
-                        ///   <item><description>Property: <see cref="DisplayRangeLimitsDescriptorProperty.MaximumVerticalRate"/></description></item>
+                        ///   <item><description>Property: <see cref="EdidProperty.DataBlocks.Descriptors.DisplayRangeLimitsDescriptor.MaximumVerticalRate"/></description></item>
                         ///   <item><description>Unit: <see cref="PropertyUnit.Hz"/></description></item>
                         ///  </list>
                         /// </para>
@@ -2591,7 +2597,7 @@ namespace iTin.Hardware.Specification.Eedid
                         ///  <para>1.4</para>
                         /// </para>
                         /// </summary>
-                        public static IPropertyKey MaximumVerticalRate => new PropertyKey(EdidDataBlockDescriptor.DisplayRangeLimits, DisplayRangeLimitsDescriptorProperty.MaximumVerticalRate, PropertyUnit.Hz);
+                        public static IPropertyKey MaximumVerticalRate => new PropertyKey(EdidDataBlockDescriptor.DisplayRangeLimits, EdidProperty.DataBlocks.Descriptors.DisplayRangeLimitsDescriptor.MaximumVerticalRate, PropertyUnit.Hz);
                         #endregion
 
                         #region [public] {static} (IPropertyKey) MinimumHorizontalRate: Gets a value representing the key to retrieve the property value
@@ -2605,7 +2611,7 @@ namespace iTin.Hardware.Specification.Eedid
                         ///  <para><b>Key Composition</b></para>
                         ///  <list type="bullet">
                         ///   <item><description>Structure: <see cref="EdidDataBlockDescriptor.DisplayRangeLimits"/></description></item>
-                        ///   <item><description>Property: <see cref="DisplayRangeLimitsDescriptorProperty.MinimumHorizontalRate"/></description></item>
+                        ///   <item><description>Property: <see cref="EdidProperty.DataBlocks.Descriptors.DisplayRangeLimitsDescriptor.MinimumHorizontalRate"/></description></item>
                         ///   <item><description>Unit: <see cref="PropertyUnit.KHz"/></description></item>
                         ///  </list>
                         /// </para>
@@ -2618,7 +2624,7 @@ namespace iTin.Hardware.Specification.Eedid
                         ///  <para>1.4</para>
                         /// </para>
                         /// </summary>
-                        public static IPropertyKey MinimumHorizontalRate => new PropertyKey(EdidDataBlockDescriptor.DisplayRangeLimits, DisplayRangeLimitsDescriptorProperty.MinimumHorizontalRate, PropertyUnit.KHz);
+                        public static IPropertyKey MinimumHorizontalRate => new PropertyKey(EdidDataBlockDescriptor.DisplayRangeLimits, EdidProperty.DataBlocks.Descriptors.DisplayRangeLimitsDescriptor.MinimumHorizontalRate, PropertyUnit.KHz);
                         #endregion
 
                         #region [public] {static} (IPropertyKey) MaximumHorizontalRate: Gets a value representing the key to retrieve the property value
@@ -2632,7 +2638,7 @@ namespace iTin.Hardware.Specification.Eedid
                         ///  <para><b>Key Composition</b></para>
                         ///  <list type="bullet">
                         ///   <item><description>Structure: <see cref="EdidDataBlockDescriptor.DisplayRangeLimits"/></description></item>
-                        ///   <item><description>Property: <see cref="DisplayRangeLimitsDescriptorProperty.MaximumHorizontalRate"/></description></item>
+                        ///   <item><description>Property: <see cref="EdidProperty.DataBlocks.Descriptors.DisplayRangeLimitsDescriptor.MaximumHorizontalRate"/></description></item>
                         ///   <item><description>Unit: <see cref="PropertyUnit.KHz"/></description></item>
                         ///  </list>
                         /// </para>
@@ -2645,7 +2651,7 @@ namespace iTin.Hardware.Specification.Eedid
                         ///  <para>1.4</para>
                         /// </para>
                         /// </summary>
-                        public static IPropertyKey MaximumHorizontalRate => new PropertyKey(EdidDataBlockDescriptor.DisplayRangeLimits, DisplayRangeLimitsDescriptorProperty.MaximumHorizontalRate, PropertyUnit.KHz);
+                        public static IPropertyKey MaximumHorizontalRate => new PropertyKey(EdidDataBlockDescriptor.DisplayRangeLimits, EdidProperty.DataBlocks.Descriptors.DisplayRangeLimitsDescriptor.MaximumHorizontalRate, PropertyUnit.KHz);
                         #endregion
 
                         #region [public] {static} (IPropertyKey) MaximumPixelClock: Gets a value representing the key to retrieve the property value
@@ -2659,7 +2665,7 @@ namespace iTin.Hardware.Specification.Eedid
                         ///  <para><b>Key Composition</b></para>
                         ///  <list type="bullet">
                         ///   <item><description>Structure: <see cref="EdidDataBlockDescriptor.DisplayRangeLimits"/></description></item>
-                        ///   <item><description>Property: <see cref="DisplayRangeLimitsDescriptorProperty.MaximumPixelClock"/></description></item>
+                        ///   <item><description>Property: <see cref="EdidProperty.DataBlocks.Descriptors.DisplayRangeLimitsDescriptor.MaximumPixelClock"/></description></item>
                         ///   <item><description>Unit: <see cref="PropertyUnit.MHz"/></description></item>
                         ///  </list>
                         /// </para>
@@ -2673,7 +2679,7 @@ namespace iTin.Hardware.Specification.Eedid
                         /// </para>
                         /// </summary>
                         ///
-                        public static IPropertyKey MaximumPixelClock => new PropertyKey(EdidDataBlockDescriptor.DisplayRangeLimits, DisplayRangeLimitsDescriptorProperty.MaximumPixelClock, PropertyUnit.MHz);
+                        public static IPropertyKey MaximumPixelClock => new PropertyKey(EdidDataBlockDescriptor.DisplayRangeLimits, EdidProperty.DataBlocks.Descriptors.DisplayRangeLimitsDescriptor.MaximumPixelClock, PropertyUnit.MHz);
                         #endregion
                     }
                     #endregion
@@ -2692,7 +2698,7 @@ namespace iTin.Hardware.Specification.Eedid
                         ///  <para><b>Key Composition</b></para>
                         ///  <list type="bullet">
                         ///   <item><description>Structure: <see cref="EdidDataBlockDescriptor.DummyData"/></description></item>
-                        ///   <item><description>Property: <see cref="DummyDataDescriptorProperty.OriginalData"/></description></item>
+                        ///   <item><description>Property: <see cref="EdidProperty.DataBlocks.Descriptors.DummyDataDescriptor.OriginalData"/></description></item>
                         ///   <item><description>Unit: <see cref="PropertyUnit.None"/></description></item>
                         ///  </list>
                         /// </para>
@@ -2705,7 +2711,7 @@ namespace iTin.Hardware.Specification.Eedid
                         ///  <para>1.4</para>
                         /// </para>
                         /// </summary>
-                        public static IPropertyKey OriginalData => new PropertyKey(EdidDataBlockDescriptor.DummyData, DummyDataDescriptorProperty.OriginalData);
+                        public static IPropertyKey OriginalData => new PropertyKey(EdidDataBlockDescriptor.DummyData, EdidProperty.DataBlocks.Descriptors.DummyDataDescriptor.OriginalData);
                         #endregion
 
                         #region [public] {static} (IPropertyKey) PrintableData: Gets a value representing the key to retrieve the property value
@@ -2716,7 +2722,7 @@ namespace iTin.Hardware.Specification.Eedid
                         ///  <para><b>Key Composition</b></para>
                         ///  <list type="bullet">
                         ///   <item><description>Structure: <see cref="EdidDataBlockDescriptor.DummyData"/></description></item>
-                        ///   <item><description>Property: <see cref="DummyDataDescriptorProperty.PrintableData"/></description></item>
+                        ///   <item><description>Property: <see cref="EdidProperty.DataBlocks.Descriptors.DummyDataDescriptor.PrintableData"/></description></item>
                         ///   <item><description>Unit: <see cref="PropertyUnit.None"/></description></item>
                         ///  </list>
                         /// </para>
@@ -2729,7 +2735,7 @@ namespace iTin.Hardware.Specification.Eedid
                         ///  <para>1.4</para>
                         /// </para>
                         /// </summary>
-                        public static IPropertyKey PrintableData => new PropertyKey(EdidDataBlockDescriptor.DummyData, DummyDataDescriptorProperty.PrintableData);
+                        public static IPropertyKey PrintableData => new PropertyKey(EdidDataBlockDescriptor.DummyData, EdidProperty.DataBlocks.Descriptors.DummyDataDescriptor.PrintableData);
                         #endregion
                     }
                     #endregion
@@ -2748,7 +2754,7 @@ namespace iTin.Hardware.Specification.Eedid
                         ///  <para><b>Key Composition</b></para>
                         ///  <list type="bullet">
                         ///   <item><description>Structure: <see cref="EdidDataBlockDescriptor.EstablishedTimingsIII"/></description></item>
-                        ///   <item><description>Property: <see cref="EstablishedTimingsIIIDescriptorProperty.Revision"/></description></item>
+                        ///   <item><description>Property: <see cref="EdidProperty.DataBlocks.Descriptors.EstablishedTimingsIIIDescriptor.Revision"/></description></item>
                         ///   <item><description>Unit: <see cref="PropertyUnit.None"/></description></item>
                         ///  </list>
                         /// </para>
@@ -2761,7 +2767,7 @@ namespace iTin.Hardware.Specification.Eedid
                         ///  <para>1.4</para>
                         /// </para>
                         /// </summary>
-                        public static IPropertyKey Revision => new PropertyKey(EdidDataBlockDescriptor.EstablishedTimingsIII, EstablishedTimingsIIIDescriptorProperty.Revision);
+                        public static IPropertyKey Revision => new PropertyKey(EdidDataBlockDescriptor.EstablishedTimingsIII, EdidProperty.DataBlocks.Descriptors.EstablishedTimingsIIIDescriptor.Revision);
                         #endregion
 
                         #region [public] {static} (IPropertyKey) Resolutions:Gets a value representing the key to retrieve the property value
@@ -2772,7 +2778,7 @@ namespace iTin.Hardware.Specification.Eedid
                         ///  <para><b>Key Composition</b></para>
                         ///  <list type="bullet">
                         ///   <item><description>Structure: <see cref="EdidDataBlockDescriptor.EstablishedTimingsIII"/></description></item>
-                        ///   <item><description>Property: <see cref="EstablishedTimingsIIIDescriptorProperty.Resolutions"/></description></item>
+                        ///   <item><description>Property: <see cref="EdidProperty.DataBlocks.Descriptors.EstablishedTimingsIIIDescriptor.Resolutions"/></description></item>
                         ///   <item><description>Unit: <see cref="PropertyUnit.None"/></description></item>
                         ///  </list>
                         /// </para>
@@ -2785,7 +2791,7 @@ namespace iTin.Hardware.Specification.Eedid
                         ///  <para>1.4</para>
                         /// </para>
                         /// </summary>
-                        public static IPropertyKey Resolutions => new PropertyKey(EdidDataBlockDescriptor.EstablishedTimingsIII, EstablishedTimingsIIIDescriptorProperty.Resolutions);
+                        public static IPropertyKey Resolutions => new PropertyKey(EdidDataBlockDescriptor.EstablishedTimingsIII, EdidProperty.DataBlocks.Descriptors.EstablishedTimingsIIIDescriptor.Resolutions);
                         #endregion
                     }
                     #endregion
@@ -2804,7 +2810,7 @@ namespace iTin.Hardware.Specification.Eedid
                         ///  <para><b>Key Composition</b></para>
                         ///  <list type="bullet">
                         ///   <item><description>Structure: <see cref="EdidDataBlockDescriptor.ManufacturerSpecifiedData00"/></description></item>
-                        ///   <item><description>Property: <see cref="ManufacturerSpecifiedDataDescriptorProperty.Data"/></description></item>
+                        ///   <item><description>Property: <see cref="EdidProperty.DataBlocks.Descriptors.ManufacturerSpecifiedDataDescriptor.Data"/></description></item>
                         ///   <item><description>Unit: <see cref="PropertyUnit.None"/></description></item>
                         ///  </list>
                         /// </para>
@@ -2817,7 +2823,7 @@ namespace iTin.Hardware.Specification.Eedid
                         ///  <para>1.4</para>
                         /// </para>
                         /// </summary>
-                        public static IPropertyKey Data => new PropertyKey(EdidDataBlockDescriptor.ManufacturerSpecifiedData00, ManufacturerSpecifiedDataDescriptorProperty.Data);
+                        public static IPropertyKey Data => new PropertyKey(EdidDataBlockDescriptor.ManufacturerSpecifiedData00, EdidProperty.DataBlocks.Descriptors.ManufacturerSpecifiedDataDescriptor.Data);
                         #endregion
                     }
                     #endregion
@@ -2836,7 +2842,7 @@ namespace iTin.Hardware.Specification.Eedid
                         ///  <para><b>Key Composition</b></para>
                         ///  <list type="bullet">
                         ///   <item><description>Structure: <see cref="EdidDataBlockDescriptor.StandardTimingIdentifier"/></description></item>
-                        ///   <item><description>Property: <see cref="StandardTimingIdentifierDescriptorProperty.Timing9"/></description></item>
+                        ///   <item><description>Property: <see cref="EdidProperty.DataBlocks.Descriptors.StandardTimingIdentifierDescriptor.Timing9"/></description></item>
                         ///   <item><description>Unit: <see cref="PropertyUnit.None"/></description></item>
                         ///  </list>
                         /// </para>
@@ -2849,7 +2855,7 @@ namespace iTin.Hardware.Specification.Eedid
                         ///  <para>1.4</para>
                         /// </para>
                         /// </summary>
-                        public static IPropertyKey Timing9 => new PropertyKey(EdidDataBlockDescriptor.StandardTimingIdentifier, StandardTimingIdentifierDescriptorProperty.Timing9);
+                        public static IPropertyKey Timing9 => new PropertyKey(EdidDataBlockDescriptor.StandardTimingIdentifier, EdidProperty.DataBlocks.Descriptors.StandardTimingIdentifierDescriptor.Timing9);
                         #endregion
 
                         #region [public] {static} (IPropertyKey) Timing10: Gets a value representing the key to retrieve the property value
@@ -2860,7 +2866,7 @@ namespace iTin.Hardware.Specification.Eedid
                         ///  <para><b>Key Composition</b></para>
                         ///  <list type="bullet">
                         ///   <item><description>Structure: <see cref="EdidDataBlockDescriptor.StandardTimingIdentifier"/></description></item>
-                        ///   <item><description>Property: <see cref="StandardTimingIdentifierDescriptorProperty.Timing10"/></description></item>
+                        ///   <item><description>Property: <see cref="EdidProperty.DataBlocks.Descriptors.StandardTimingIdentifierDescriptor.Timing10"/></description></item>
                         ///   <item><description>Unit: <see cref="PropertyUnit.None"/></description></item>
                         ///  </list>
                         /// </para>
@@ -2873,7 +2879,7 @@ namespace iTin.Hardware.Specification.Eedid
                         ///  <para>1.4</para>
                         /// </para>
                         /// </summary>
-                        public static IPropertyKey Timing10 => new PropertyKey(EdidDataBlockDescriptor.StandardTimingIdentifier, StandardTimingIdentifierDescriptorProperty.Timing10);
+                        public static IPropertyKey Timing10 => new PropertyKey(EdidDataBlockDescriptor.StandardTimingIdentifier, EdidProperty.DataBlocks.Descriptors.StandardTimingIdentifierDescriptor.Timing10);
                         #endregion
 
                         #region [public] {static} (IPropertyKey) Timing11: Gets a value representing the key to retrieve the property value
@@ -2884,7 +2890,7 @@ namespace iTin.Hardware.Specification.Eedid
                         ///  <para><b>Key Composition</b></para>
                         ///  <list type="bullet">
                         ///   <item><description>Structure: <see cref="EdidDataBlockDescriptor.StandardTimingIdentifier"/></description></item>
-                        ///   <item><description>Property: <see cref="StandardTimingIdentifierDescriptorProperty.Timing11"/></description></item>
+                        ///   <item><description>Property: <see cref="EdidProperty.DataBlocks.Descriptors.StandardTimingIdentifierDescriptor.Timing11"/></description></item>
                         ///   <item><description>Unit: <see cref="PropertyUnit.None"/></description></item>
                         ///  </list>
                         /// </para>
@@ -2897,7 +2903,7 @@ namespace iTin.Hardware.Specification.Eedid
                         ///  <para>1.4</para>
                         /// </para>
                         /// </summary>
-                        public static IPropertyKey Timing11 => new PropertyKey(EdidDataBlockDescriptor.StandardTimingIdentifier, StandardTimingIdentifierDescriptorProperty.Timing11);
+                        public static IPropertyKey Timing11 => new PropertyKey(EdidDataBlockDescriptor.StandardTimingIdentifier, EdidProperty.DataBlocks.Descriptors.StandardTimingIdentifierDescriptor.Timing11);
                         #endregion
 
                         #region [public] {static} (IPropertyKey) Timing12: Gets a value representing the key to retrieve the property value
@@ -2908,7 +2914,7 @@ namespace iTin.Hardware.Specification.Eedid
                         ///  <para><b>Key Composition</b></para>
                         ///  <list type="bullet">
                         ///   <item><description>Structure: <see cref="EdidDataBlockDescriptor.StandardTimingIdentifier"/></description></item>
-                        ///   <item><description>Property: <see cref="StandardTimingIdentifierDescriptorProperty.Timing12"/></description></item>
+                        ///   <item><description>Property: <see cref="EdidProperty.DataBlocks.Descriptors.StandardTimingIdentifierDescriptor.Timing12"/></description></item>
                         ///   <item><description>Unit: <see cref="PropertyUnit.None"/></description></item>
                         ///  </list>
                         /// </para>
@@ -2921,7 +2927,7 @@ namespace iTin.Hardware.Specification.Eedid
                         ///  <para>1.4</para>
                         /// </para>
                         /// </summary>
-                        public static IPropertyKey Timing12 => new PropertyKey(EdidDataBlockDescriptor.StandardTimingIdentifier, StandardTimingIdentifierDescriptorProperty.Timing12);
+                        public static IPropertyKey Timing12 => new PropertyKey(EdidDataBlockDescriptor.StandardTimingIdentifier, EdidProperty.DataBlocks.Descriptors.StandardTimingIdentifierDescriptor.Timing12);
                         #endregion
 
                         #region [public] {static} (IPropertyKey) Timing13: Gets a value representing the key to retrieve the property value
@@ -2932,7 +2938,7 @@ namespace iTin.Hardware.Specification.Eedid
                         ///  <para><b>Key Composition</b></para>
                         ///  <list type="bullet">
                         ///   <item><description>Structure: <see cref="EdidDataBlockDescriptor.StandardTimingIdentifier"/></description></item>
-                        ///   <item><description>Property: <see cref="StandardTimingIdentifierDescriptorProperty.Timing13"/></description></item>
+                        ///   <item><description>Property: <see cref="EdidProperty.DataBlocks.Descriptors.StandardTimingIdentifierDescriptor.Timing13"/></description></item>
                         ///   <item><description>Unit: <see cref="PropertyUnit.None"/></description></item>
                         ///  </list>
                         /// </para>
@@ -2945,7 +2951,7 @@ namespace iTin.Hardware.Specification.Eedid
                         ///  <para>1.4</para>
                         /// </para>
                         /// </summary>
-                        public static IPropertyKey Timing13 => new PropertyKey(EdidDataBlockDescriptor.StandardTimingIdentifier, StandardTimingIdentifierDescriptorProperty.Timing13);
+                        public static IPropertyKey Timing13 => new PropertyKey(EdidDataBlockDescriptor.StandardTimingIdentifier, EdidProperty.DataBlocks.Descriptors.StandardTimingIdentifierDescriptor.Timing13);
                         #endregion
 
                         #region [public] {static} (IPropertyKey) Timing14: Gets a value representing the key to retrieve the property value
@@ -2956,7 +2962,7 @@ namespace iTin.Hardware.Specification.Eedid
                         ///  <para><b>Key Composition</b></para>
                         ///  <list type="bullet">
                         ///   <item><description>Structure: <see cref="EdidDataBlockDescriptor.StandardTimingIdentifier"/></description></item>
-                        ///   <item><description>Property: <see cref="StandardTimingIdentifierDescriptorProperty.Timing14"/></description></item>
+                        ///   <item><description>Property: <see cref="EdidProperty.DataBlocks.Descriptors.StandardTimingIdentifierDescriptor.Timing14"/></description></item>
                         ///   <item><description>Unit: <see cref="PropertyUnit.None"/></description></item>
                         ///  </list>
                         /// </para>
@@ -2969,7 +2975,7 @@ namespace iTin.Hardware.Specification.Eedid
                         ///  <para>1.4</para>
                         /// </para>
                         /// </summary>
-                        public static IPropertyKey Timing14 => new PropertyKey(EdidDataBlockDescriptor.StandardTimingIdentifier, StandardTimingIdentifierDescriptorProperty.Timing14);
+                        public static IPropertyKey Timing14 => new PropertyKey(EdidDataBlockDescriptor.StandardTimingIdentifier, EdidProperty.DataBlocks.Descriptors.StandardTimingIdentifierDescriptor.Timing14);
                         #endregion
                     }
                     #endregion
@@ -2989,7 +2995,7 @@ namespace iTin.Hardware.Specification.Eedid
                     /// <para>
                     ///  <para><b>Key Composition</b></para>
                     ///  <list type="bullet">
-                    ///   <item><description>Structure: <see cref="KnownEdidSection.DataBlocks"/></description></item>
+                    ///   <item><description>Structure: <see cref="EdidSection.DataBlocks"/></description></item>
                     ///   <item><description>Property: <see cref="EdidDataBlockDescriptor.AlphaNumericDataString"/></description></item>
                     ///   <item><description>Unit: <see cref="PropertyUnit.None"/></description></item>
                     ///  </list>
@@ -3003,7 +3009,7 @@ namespace iTin.Hardware.Specification.Eedid
                     ///  <para>1.4</para>
                     /// </para>
                     /// </summary>
-                    public static IPropertyKey AlphaNumericDataString => new PropertyKey(KnownEdidSection.DataBlocks, EdidDataBlockDescriptor.AlphaNumericDataString);
+                    public static IPropertyKey AlphaNumericDataString => new PropertyKey(EdidSection.DataBlocks, EdidDataBlockDescriptor.AlphaNumericDataString);
                     #endregion
 
                     #region [public] {static} (IPropertyKey) ColorManagementData: Gets a value representing the key to retrieve the property value
@@ -3013,7 +3019,7 @@ namespace iTin.Hardware.Specification.Eedid
                     /// <para>
                     ///  <para><b>Key Composition</b></para>
                     ///  <list type="bullet">
-                    ///   <item><description>Structure: <see cref="KnownEdidSection.DataBlocks"/></description></item>
+                    ///   <item><description>Structure: <see cref="EdidSection.DataBlocks"/></description></item>
                     ///   <item><description>Property: <see cref="EdidDataBlockDescriptor.ColorManagementData"/></description></item>
                     ///   <item><description>Unit: <see cref="PropertyUnit.None"/></description></item>
                     ///  </list>
@@ -3027,7 +3033,7 @@ namespace iTin.Hardware.Specification.Eedid
                     ///  <para>1.4</para>
                     /// </para>
                     /// </summary>
-                    public static IPropertyKey ColorManagementData => new PropertyKey(KnownEdidSection.DataBlocks, EdidDataBlockDescriptor.ColorManagementData);
+                    public static IPropertyKey ColorManagementData => new PropertyKey(EdidSection.DataBlocks, EdidDataBlockDescriptor.ColorManagementData);
                     #endregion
 
                     #region [public] {static} (IPropertyKey) ColorPointData: Gets a value representing the key to retrieve the property value
@@ -3037,7 +3043,7 @@ namespace iTin.Hardware.Specification.Eedid
                     /// <para>
                     ///  <para><b>Key Composition</b></para>
                     ///  <list type="bullet">
-                    ///   <item><description>Structure: <see cref="KnownEdidSection.DataBlocks"/></description></item>
+                    ///   <item><description>Structure: <see cref="EdidSection.DataBlocks"/></description></item>
                     ///   <item><description>Property: <see cref="EdidDataBlockDescriptor.ColorPointData"/></description></item>
                     ///   <item><description>Unit: <see cref="PropertyUnit.None"/></description></item>
                     ///  </list>
@@ -3051,7 +3057,7 @@ namespace iTin.Hardware.Specification.Eedid
                     ///  <para>1.4</para>
                     /// </para>
                     /// </summary>
-                    public static IPropertyKey ColorPointData => new PropertyKey(KnownEdidSection.DataBlocks, EdidDataBlockDescriptor.ColorPointData);
+                    public static IPropertyKey ColorPointData => new PropertyKey(EdidSection.DataBlocks, EdidDataBlockDescriptor.ColorPointData);
                     #endregion
 
                     #region [public] {static} (IPropertyKey) CVT3ByteCode: Gets a value representing the key to retrieve the property value
@@ -3061,7 +3067,7 @@ namespace iTin.Hardware.Specification.Eedid
                     /// <para>
                     ///  <para><b>Key Composition</b></para>
                     ///  <list type="bullet">
-                    ///   <item><description>Structure: <see cref="KnownEdidSection.DataBlocks"/></description></item>
+                    ///   <item><description>Structure: <see cref="EdidSection.DataBlocks"/></description></item>
                     ///   <item><description>Property: <see cref="EdidDataBlockDescriptor.Cvt3ByteCode"/></description></item>
                     ///   <item><description>Unit: <see cref="PropertyUnit.None"/></description></item>
                     ///  </list>
@@ -3075,7 +3081,7 @@ namespace iTin.Hardware.Specification.Eedid
                     ///  <para>1.4</para>
                     /// </para>
                     /// </summary>
-                    public static IPropertyKey CVT3ByteCode => new PropertyKey(KnownEdidSection.DataBlocks, EdidDataBlockDescriptor.Cvt3ByteCode);
+                    public static IPropertyKey CVT3ByteCode => new PropertyKey(EdidSection.DataBlocks, EdidDataBlockDescriptor.Cvt3ByteCode);
                     #endregion
 
                     #region [public] {static} (IPropertyKey) DetailedTimingMode: Gets a value representing the key to retrieve the property value
@@ -3085,7 +3091,7 @@ namespace iTin.Hardware.Specification.Eedid
                     /// <para>
                     ///  <para><b>Key Composition</b></para>
                     ///  <list type="bullet">
-                    ///   <item><description>Structure: <see cref="KnownEdidSection.DataBlocks"/></description></item>
+                    ///   <item><description>Structure: <see cref="EdidSection.DataBlocks"/></description></item>
                     ///   <item><description>Property: <see cref="EdidDataBlockDescriptor.DetailedTimingMode"/></description></item>
                     ///   <item><description>Unit: <see cref="PropertyUnit.None"/></description></item>
                     ///  </list>
@@ -3099,7 +3105,7 @@ namespace iTin.Hardware.Specification.Eedid
                     ///  <para>1.4</para>
                     /// </para>
                     /// </summary>
-                    public static IPropertyKey DetailedTimingMode => new PropertyKey(KnownEdidSection.DataBlocks, EdidDataBlockDescriptor.DetailedTimingMode);
+                    public static IPropertyKey DetailedTimingMode => new PropertyKey(EdidSection.DataBlocks, EdidDataBlockDescriptor.DetailedTimingMode);
                     #endregion
 
                     #region [public] {static} (IPropertyKey) DisplayProductName: Gets a value representing the key to retrieve the property value
@@ -3109,7 +3115,7 @@ namespace iTin.Hardware.Specification.Eedid
                     /// <para>
                     ///  <para><b>Key Composition</b></para>
                     ///  <list type="bullet">
-                    ///   <item><description>Structure: <see cref="KnownEdidSection.DataBlocks"/></description></item>
+                    ///   <item><description>Structure: <see cref="EdidSection.DataBlocks"/></description></item>
                     ///   <item><description>Property: <see cref="EdidDataBlockDescriptor.DisplayProductName"/></description></item>
                     ///   <item><description>Unit: <see cref="PropertyUnit.None"/></description></item>
                     ///  </list>
@@ -3123,7 +3129,7 @@ namespace iTin.Hardware.Specification.Eedid
                     ///  <para>1.4</para>
                     /// </para>
                     /// </summary>
-                    public static IPropertyKey DisplayProductName => new PropertyKey(KnownEdidSection.DataBlocks, EdidDataBlockDescriptor.DisplayProductName);
+                    public static IPropertyKey DisplayProductName => new PropertyKey(EdidSection.DataBlocks, EdidDataBlockDescriptor.DisplayProductName);
                     #endregion
 
                     #region [public] {static} (IPropertyKey) DisplayProductSerialNumber: Gets a value representing the key to retrieve the property value
@@ -3133,7 +3139,7 @@ namespace iTin.Hardware.Specification.Eedid
                     /// <para>
                     ///  <para><b>Key Composition</b></para>
                     ///  <list type="bullet">
-                    ///   <item><description>Structure: <see cref="KnownEdidSection.DataBlocks"/></description></item>
+                    ///   <item><description>Structure: <see cref="EdidSection.DataBlocks"/></description></item>
                     ///   <item><description>Property: <see cref="EdidDataBlockDescriptor.DisplayProductSerialNumber"/></description></item>
                     ///   <item><description>Unit: <see cref="PropertyUnit.None"/></description></item>
                     ///  </list>
@@ -3147,7 +3153,7 @@ namespace iTin.Hardware.Specification.Eedid
                     ///  <para>1.4</para>
                     /// </para>
                     /// </summary>
-                    public static IPropertyKey DisplayProductSerialNumber => new PropertyKey(KnownEdidSection.DataBlocks, EdidDataBlockDescriptor.DisplayProductSerialNumber);
+                    public static IPropertyKey DisplayProductSerialNumber => new PropertyKey(EdidSection.DataBlocks, EdidDataBlockDescriptor.DisplayProductSerialNumber);
                     #endregion
 
                     #region [public] {static} (IPropertyKey) DisplayRangeLimits: Gets a value representing the key to retrieve the property value
@@ -3157,7 +3163,7 @@ namespace iTin.Hardware.Specification.Eedid
                     /// <para>
                     ///  <para><b>Key Composition</b></para>
                     ///  <list type="bullet">
-                    ///   <item><description>Structure: <see cref="KnownEdidSection.DataBlocks"/></description></item>
+                    ///   <item><description>Structure: <see cref="EdidSection.DataBlocks"/></description></item>
                     ///   <item><description>Property: <see cref="EdidDataBlockDescriptor.DisplayRangeLimits"/></description></item>
                     ///   <item><description>Unit: <see cref="PropertyUnit.None"/></description></item>
                     ///  </list>
@@ -3171,7 +3177,7 @@ namespace iTin.Hardware.Specification.Eedid
                     ///  <para>1.4</para>
                     /// </para>
                     /// </summary>
-                    public static IPropertyKey DisplayRangeLimits => new PropertyKey(KnownEdidSection.DataBlocks, EdidDataBlockDescriptor.DisplayRangeLimits);
+                    public static IPropertyKey DisplayRangeLimits => new PropertyKey(EdidSection.DataBlocks, EdidDataBlockDescriptor.DisplayRangeLimits);
                     #endregion
 
                     #region [public] {static} (IPropertyKey) DummyData: Gets a value representing the key to retrieve the property value
@@ -3181,7 +3187,7 @@ namespace iTin.Hardware.Specification.Eedid
                     /// <para>
                     ///  <para><b>Key Composition</b></para>
                     ///  <list type="bullet">
-                    ///   <item><description>Structure: <see cref="KnownEdidSection.DataBlocks"/></description></item>
+                    ///   <item><description>Structure: <see cref="EdidSection.DataBlocks"/></description></item>
                     ///   <item><description>Property: <see cref="EdidDataBlockDescriptor.DummyData"/></description></item>
                     ///   <item><description>Unit: <see cref="PropertyUnit.None"/></description></item>
                     ///  </list>
@@ -3195,7 +3201,7 @@ namespace iTin.Hardware.Specification.Eedid
                     ///  <para>1.4</para>
                     /// </para>
                     /// </summary>
-                    public static IPropertyKey DummyData => new PropertyKey(KnownEdidSection.DataBlocks, EdidDataBlockDescriptor.DummyData);
+                    public static IPropertyKey DummyData => new PropertyKey(EdidSection.DataBlocks, EdidDataBlockDescriptor.DummyData);
                     #endregion
 
                     #region [public] {static} (IPropertyKey) EstablishedTimingsIII: Gets a value representing the key to retrieve the property value
@@ -3205,7 +3211,7 @@ namespace iTin.Hardware.Specification.Eedid
                     /// <para>
                     ///  <para><b>Key Composition</b></para>
                     ///  <list type="bullet">
-                    ///   <item><description>Structure: <see cref="KnownEdidSection.DataBlocks"/></description></item>
+                    ///   <item><description>Structure: <see cref="EdidSection.DataBlocks"/></description></item>
                     ///   <item><description>Property: <see cref="EdidDataBlockDescriptor.EstablishedTimingsIII"/></description></item>
                     ///   <item><description>Unit: <see cref="PropertyUnit.None"/></description></item>
                     ///  </list>
@@ -3219,7 +3225,7 @@ namespace iTin.Hardware.Specification.Eedid
                     ///  <para>1.4</para>
                     /// </para>
                     /// </summary>
-                    public static IPropertyKey EstablishedTimingsIII => new PropertyKey(KnownEdidSection.DataBlocks, EdidDataBlockDescriptor.EstablishedTimingsIII);
+                    public static IPropertyKey EstablishedTimingsIII => new PropertyKey(EdidSection.DataBlocks, EdidDataBlockDescriptor.EstablishedTimingsIII);
                     #endregion
 
                     #region [public] {static} (IPropertyKey) ManufacturerSpecifiedData00: Gets a value representing the key to retrieve the property value
@@ -3229,7 +3235,7 @@ namespace iTin.Hardware.Specification.Eedid
                     /// <para>
                     ///  <para><b>Key Composition</b></para>
                     ///  <list type="bullet">
-                    ///   <item><description>Structure: <see cref="KnownEdidSection.DataBlocks"/></description></item>
+                    ///   <item><description>Structure: <see cref="EdidSection.DataBlocks"/></description></item>
                     ///   <item><description>Property: <see cref="EdidDataBlockDescriptor.ManufacturerSpecifiedData00"/></description></item>
                     ///   <item><description>Unit: <see cref="PropertyUnit.None"/></description></item>
                     ///  </list>
@@ -3243,7 +3249,7 @@ namespace iTin.Hardware.Specification.Eedid
                     ///  <para>1.4</para>
                     /// </para>
                     /// </summary>
-                    public static IPropertyKey ManufacturerSpecifiedData00 => new PropertyKey(KnownEdidSection.DataBlocks, EdidDataBlockDescriptor.ManufacturerSpecifiedData00);
+                    public static IPropertyKey ManufacturerSpecifiedData00 => new PropertyKey(EdidSection.DataBlocks, EdidDataBlockDescriptor.ManufacturerSpecifiedData00);
                     #endregion
 
                     #region [public] {static} (IPropertyKey) StandardTimingIdentifier: Gets a value representing the key to retrieve the property value
@@ -3253,7 +3259,7 @@ namespace iTin.Hardware.Specification.Eedid
                     /// <para>
                     ///  <para><b>Key Composition</b></para>
                     ///  <list type="bullet">
-                    ///   <item><description>Structure: <see cref="KnownEdidSection.DataBlocks"/></description></item>
+                    ///   <item><description>Structure: <see cref="EdidSection.DataBlocks"/></description></item>
                     ///   <item><description>Property: <see cref="EdidDataBlockDescriptor.StandardTimingIdentifier"/></description></item>
                     ///   <item><description>Unit: <see cref="PropertyUnit.None"/></description></item>
                     ///  </list>
@@ -3267,7 +3273,7 @@ namespace iTin.Hardware.Specification.Eedid
                     ///  <para>1.4</para>
                     /// </para>
                     /// </summary>
-                    public static IPropertyKey StandardTimingIdentifier => new PropertyKey(KnownEdidSection.DataBlocks, EdidDataBlockDescriptor.StandardTimingIdentifier);
+                    public static IPropertyKey StandardTimingIdentifier => new PropertyKey(EdidSection.DataBlocks, EdidDataBlockDescriptor.StandardTimingIdentifier);
                     #endregion
                 }
                 #endregion
@@ -3278,7 +3284,7 @@ namespace iTin.Hardware.Specification.Eedid
 
             #region [public] {static} (class) ExtensionBlocks: Definition of keys in the 'ExtensionBlocks' section
             /// <summary>
-            /// Definition of keys in the <see cref="KnownEdidSection.ExtensionBlocks"/> section.
+            /// Definition of keys in the <see cref="EdidSection.ExtensionBlocks"/> section.
             /// </summary>
             public static class ExtensionBlocks
             {
@@ -3289,8 +3295,8 @@ namespace iTin.Hardware.Specification.Eedid
                 /// <para>
                 ///  <para><b>Key Composition</b></para>
                 ///  <list type="bullet">
-                ///   <item><description>Structure: <see cref="KnownEdidSection.ExtensionBlocks"/></description></item>
-                ///   <item><description>Property: <see cref="EdidExtensionBlocksProperty.Count"/></description></item>
+                ///   <item><description>Structure: <see cref="EdidSection.ExtensionBlocks"/></description></item>
+                ///   <item><description>Property: <see cref="EdidProperty.ExtensionBlocks.Count"/></description></item>
                 ///   <item><description>Unit: <see cref="PropertyUnit.None"/></description></item>
                 ///  </list>
                 /// </para>
@@ -3303,7 +3309,7 @@ namespace iTin.Hardware.Specification.Eedid
                 ///  <para>1.4</para>
                 /// </para>
                 /// </summary>
-                public static IPropertyKey Count => new PropertyKey(KnownEdidSection.ExtensionBlocks, EdidExtensionBlocksProperty.Count);
+                public static IPropertyKey Count => new PropertyKey(EdidSection.ExtensionBlocks, EdidProperty.ExtensionBlocks.Count);
                 #endregion
 
                 #region [public] {static} (IPropertyKey) HasBlocks: Gets a value representing the key to retrieve the property value
@@ -3313,8 +3319,8 @@ namespace iTin.Hardware.Specification.Eedid
                 /// <para>
                 ///  <para><b>Key Composition</b></para>
                 ///  <list type="bullet">
-                ///   <item><description>Structure: <see cref="KnownEdidSection.ExtensionBlocks"/></description></item>
-                ///   <item><description>Property: <see cref="EdidExtensionBlocksProperty.HasBlocks"/></description></item>
+                ///   <item><description>Structure: <see cref="EdidSection.ExtensionBlocks"/></description></item>
+                ///   <item><description>Property: <see cref="EdidProperty.ExtensionBlocks.HasBlocks"/></description></item>
                 ///   <item><description>Unit: <see cref="PropertyUnit.None"/></description></item>
                 ///  </list>
                 /// </para>
@@ -3327,14 +3333,14 @@ namespace iTin.Hardware.Specification.Eedid
                 ///  <para>1.4</para>
                 /// </para>
                 /// </summary>
-                public static IPropertyKey HasBlocks => new PropertyKey(KnownEdidSection.ExtensionBlocks, EdidExtensionBlocksProperty.HasBlocks);
+                public static IPropertyKey HasBlocks => new PropertyKey(EdidSection.ExtensionBlocks, EdidProperty.ExtensionBlocks.HasBlocks);
                 #endregion
             }
             #endregion
 
             #region [public] {static} (class) CheckSum: Definition of keys in the 'CheckSum' section
             /// <summary>
-            /// Definition of keys in the <see cref="KnownEdidSection.CheckSum"/> section.
+            /// Definition of keys in the <see cref="EdidSection.Checksum"/> section.
             /// </summary>
             public static class CheckSum
             {
@@ -3345,8 +3351,8 @@ namespace iTin.Hardware.Specification.Eedid
                 /// <para>
                 ///  <para><b>Key Composition</b></para>
                 ///  <list type="bullet">
-                ///   <item><description>Structure: <see cref="KnownEdidSection.CheckSum"/></description></item>
-                ///   <item><description>Property: <see cref="EdidCheckSumProperty.Ok"/></description></item>
+                ///   <item><description>Structure: <see cref="EdidSection.Checksum"/></description></item>
+                ///   <item><description>Property: <see cref="EdidProperty.Checksum.Ok"/></description></item>
                 ///   <item><description>Unit: <see cref="PropertyUnit.None"/></description></item>
                 ///  </list>
                 /// </para>
@@ -3359,7 +3365,7 @@ namespace iTin.Hardware.Specification.Eedid
                 ///  <para>1.4</para>
                 /// </para>
                 /// </summary>
-                public static IPropertyKey Ok => new PropertyKey(KnownEdidSection.CheckSum, EdidCheckSumProperty.Ok);
+                public static IPropertyKey Ok => new PropertyKey(EdidSection.Checksum, EdidProperty.Checksum.Ok);
                 #endregion
 
                 #region [public] {static} (IPropertyKey) Value: Gets a value representing the key to retrieve the property value
@@ -3369,8 +3375,8 @@ namespace iTin.Hardware.Specification.Eedid
                 /// <para>
                 ///  <para><b>Key Composition</b></para>
                 ///  <list type="bullet">
-                ///   <item><description>Structure: <see cref="KnownEdidSection.CheckSum"/></description></item>
-                ///   <item><description>Property: <see cref="EdidCheckSumProperty.Value"/></description></item>
+                ///   <item><description>Structure: <see cref="EdidSection.Checksum"/></description></item>
+                ///   <item><description>Property: <see cref="EdidProperty.Checksum.Value"/></description></item>
                 ///   <item><description>Unit: <see cref="PropertyUnit.None"/></description></item>
                 ///  </list>
                 /// </para>
@@ -3383,7 +3389,7 @@ namespace iTin.Hardware.Specification.Eedid
                 ///  <para>1.4</para>
                 /// </para>
                 /// </summary>
-                public static IPropertyKey Value => new PropertyKey(KnownEdidSection.CheckSum, EdidCheckSumProperty.Value);
+                public static IPropertyKey Value => new PropertyKey(EdidSection.Checksum, EdidProperty.Checksum.Value);
                 #endregion
             }
             #endregion
@@ -3398,7 +3404,7 @@ namespace iTin.Hardware.Specification.Eedid
         {
             #region [public] {static} (class) Information: Definition of keys in the 'Information' section
             /// <summary>
-            /// Definition of keys in the <see cref="KnownCeaSection.Information"/> section.
+            /// Definition of keys in the <see cref="CeaSection.Information"/> section.
             /// </summary>
             public static class Information
             {
@@ -3409,8 +3415,8 @@ namespace iTin.Hardware.Specification.Eedid
                 /// <para>
                 ///  <para><b>Key Composition</b></para>
                 ///  <list type="bullet">
-                ///   <item><description>Structure: <see cref="KnownCeaSection.Information"/></description></item>
-                ///   <item><description>Property: <see cref="CeaInformation.Revision"/></description></item>
+                ///   <item><description>Structure: <see cref="CeaSection.Information"/></description></item>
+                ///   <item><description>Property: <see cref="CeaProperty.Information.Revision"/></description></item>
                 ///   <item><description>Unit: <see cref="PropertyUnit.None"/></description></item>
                 ///  </list>
                 /// </para>
@@ -3423,7 +3429,7 @@ namespace iTin.Hardware.Specification.Eedid
                 ///  <para>1.4</para>
                 /// </para>
                 /// </summary>
-                public static IPropertyKey Revision => new PropertyKey(KnownCeaSection.Information, CeaInformation.Revision);
+                public static IPropertyKey Revision => new PropertyKey(CeaSection.Information, CeaProperty.Information.Revision);
                 #endregion
 
                 #region [public] {static} (IPropertyKey) Implemented: Gets a value representing the key to retrieve the property value
@@ -3433,8 +3439,8 @@ namespace iTin.Hardware.Specification.Eedid
                 /// <para>
                 ///  <para><b>Key Composition</b></para>
                 ///  <list type="bullet">
-                ///   <item><description>Structure: <see cref="KnownCeaSection.Information"/></description></item>
-                ///   <item><description>Property: <see cref="CeaInformation.Implemented"/></description></item>
+                ///   <item><description>Structure: <see cref="CeaSection.Information"/></description></item>
+                ///   <item><description>Property: <see cref="CeaProperty.Information.Implemented"/></description></item>
                 ///   <item><description>Unit: <see cref="PropertyUnit.None"/></description></item>
                 ///  </list>
                 /// </para>
@@ -3447,14 +3453,14 @@ namespace iTin.Hardware.Specification.Eedid
                 ///  <para>1.4</para>
                 /// </para>
                 /// </summary>
-                public static IPropertyKey Implemented => new PropertyKey(KnownCeaSection.Information, CeaInformation.Implemented);
+                public static IPropertyKey Implemented => new PropertyKey(CeaSection.Information, CeaProperty.Information.Implemented);
                 #endregion
             }
             #endregion
 
             #region [public] {static} (class) MonitorSupport: Definition of keys in the 'MonitorSupport' section
             /// <summary>
-            /// Definition of keys in the <see cref="KnownCeaSection.MonitorSupport"/> section.
+            /// Definition of keys in the <see cref="CeaSection.MonitorSupport"/> section.
             /// </summary>
             public static class MonitorSupport
             {
@@ -3465,8 +3471,8 @@ namespace iTin.Hardware.Specification.Eedid
                 /// <para>
                 ///  <para><b>Key Composition</b></para>
                 ///  <list type="bullet">
-                ///   <item><description>Structure: <see cref="KnownCeaSection.MonitorSupport"/></description></item>
-                ///   <item><description>Property: <see cref="CeaMonitorSupport.IsDvtUnderscan"/></description></item>
+                ///   <item><description>Structure: <see cref="CeaSection.MonitorSupport"/></description></item>
+                ///   <item><description>Property: <see cref="CeaProperty.MonitorSupport.IsDvtUnderscan"/></description></item>
                 ///   <item><description>Unit: <see cref="PropertyUnit.None"/></description></item>
                 ///  </list>
                 /// </para>
@@ -3479,7 +3485,7 @@ namespace iTin.Hardware.Specification.Eedid
                 ///  <para>1.4</para>
                 /// </para>
                 /// </summary>
-                public static IPropertyKey IsDvtUnderscan => new PropertyKey(KnownCeaSection.MonitorSupport, CeaMonitorSupport.IsDvtUnderscan);
+                public static IPropertyKey IsDvtUnderscan => new PropertyKey(CeaSection.MonitorSupport, CeaProperty.MonitorSupport.IsDvtUnderscan);
                 #endregion
 
                 #region [public] {static} (IPropertyKey) BasicAudioSupported: Gets a value representing the key to retrieve the property value
@@ -3489,8 +3495,8 @@ namespace iTin.Hardware.Specification.Eedid
                 /// <para>
                 ///  <para><b>Key Composition</b></para>
                 ///  <list type="bullet">
-                ///   <item><description>Structure: <see cref="KnownCeaSection.MonitorSupport"/></description></item>
-                ///   <item><description>Property: <see cref="CeaMonitorSupport.BasicAudioSupported"/></description></item>
+                ///   <item><description>Structure: <see cref="CeaSection.MonitorSupport"/></description></item>
+                ///   <item><description>Property: <see cref="CeaProperty.MonitorSupport.BasicAudioSupported"/></description></item>
                 ///   <item><description>Unit: <see cref="PropertyUnit.None"/></description></item>
                 ///  </list>
                 /// </para>
@@ -3503,7 +3509,7 @@ namespace iTin.Hardware.Specification.Eedid
                 ///  <para>1.4</para>
                 /// </para>
                 /// </summary>
-                public static IPropertyKey BasicAudioSupported => new PropertyKey(KnownCeaSection.MonitorSupport, CeaMonitorSupport.BasicAudioSupported);
+                public static IPropertyKey BasicAudioSupported => new PropertyKey(CeaSection.MonitorSupport, CeaProperty.MonitorSupport.BasicAudioSupported);
                 #endregion
 
                 #region [public] {static} (IPropertyKey) YCbCr444Supported: Gets a value representing the key to retrieve the property value
@@ -3513,8 +3519,8 @@ namespace iTin.Hardware.Specification.Eedid
                 /// <para>
                 ///  <para><b>Key Composition</b></para>
                 ///  <list type="bullet">
-                ///   <item><description>Structure: <see cref="KnownCeaSection.MonitorSupport"/></description></item>
-                ///   <item><description>Property: <see cref="CeaMonitorSupport.YCbCr444Supported"/></description></item>
+                ///   <item><description>Structure: <see cref="CeaSection.MonitorSupport"/></description></item>
+                ///   <item><description>Property: <see cref="CeaProperty.MonitorSupport.YCbCr444Supported"/></description></item>
                 ///   <item><description>Unit: <see cref="PropertyUnit.None"/></description></item>
                 ///  </list>
                 /// </para>
@@ -3527,7 +3533,7 @@ namespace iTin.Hardware.Specification.Eedid
                 ///  <para>1.4</para>
                 /// </para>
                 /// </summary>
-                public static IPropertyKey YCbCr444Supported => new PropertyKey(KnownCeaSection.MonitorSupport, CeaMonitorSupport.YCbCr444Supported);
+                public static IPropertyKey YCbCr444Supported => new PropertyKey(CeaSection.MonitorSupport, CeaProperty.MonitorSupport.YCbCr444Supported);
                 #endregion
 
                 #region [public] {static} (IPropertyKey) YCbCr422Supported: Gets a value representing the key to retrieve the property value
@@ -3537,8 +3543,8 @@ namespace iTin.Hardware.Specification.Eedid
                 /// <para>
                 ///  <para><b>Key Composition</b></para>
                 ///  <list type="bullet">
-                ///   <item><description>Structure: <see cref="KnownCeaSection.MonitorSupport"/></description></item>
-                ///   <item><description>Property: <see cref="CeaMonitorSupport.YCbCr422Supported"/></description></item>
+                ///   <item><description>Structure: <see cref="CeaSection.MonitorSupport"/></description></item>
+                ///   <item><description>Property: <see cref="CeaProperty.MonitorSupport.YCbCr422Supported"/></description></item>
                 ///   <item><description>Unit: <see cref="PropertyUnit.None"/></description></item>
                 ///  </list>
                 /// </para>
@@ -3551,14 +3557,14 @@ namespace iTin.Hardware.Specification.Eedid
                 ///  <para>1.4</para>
                 /// </para>
                 /// </summary>
-                public static IPropertyKey YCbCr422Supported => new PropertyKey(KnownCeaSection.MonitorSupport, CeaMonitorSupport.YCbCr422Supported);
+                public static IPropertyKey YCbCr422Supported => new PropertyKey(CeaSection.MonitorSupport, CeaProperty.MonitorSupport.YCbCr422Supported);
                 #endregion  
             }
             #endregion
 
             #region [public] {static} (class) DetailedTiming: Definition of keys in the 'DetailedTimings' section
             /// <summary>
-            /// Definition of keys in the <see cref="KnownCeaSection.DetailedTiming"/> section.
+            /// Definition of keys in the <see cref="CeaSection.DetailedTiming"/> section.
             /// </summary>
             public static class DetailedTiming
             {
@@ -3569,8 +3575,8 @@ namespace iTin.Hardware.Specification.Eedid
                 /// <para>
                 ///  <para><b>Key Composition</b></para>
                 ///  <list type="bullet">
-                ///   <item><description>Structure: <see cref="KnownCeaSection.DetailedTiming"/></description></item>
-                ///   <item><description>Property: <see cref="CeaDetailedTiming.Timings"/></description></item>
+                ///   <item><description>Structure: <see cref="CeaSection.DetailedTiming"/></description></item>
+                ///   <item><description>Property: <see cref="CeaProperty.DetailedTiming.Timings"/></description></item>
                 ///   <item><description>Unit: <see cref="PropertyUnit.None"/></description></item>
                 ///  </list>
                 /// </para>
@@ -3583,7 +3589,7 @@ namespace iTin.Hardware.Specification.Eedid
                 ///  <para>1.4</para>
                 /// </para>
                 /// </summary>
-                public static IPropertyKey Timings => new PropertyKey(KnownCeaSection.DetailedTiming, CeaDetailedTiming.Timings);
+                public static IPropertyKey Timings => new PropertyKey(CeaSection.DetailedTiming, CeaProperty.DetailedTiming.Timings);
                 #endregion
 
 
@@ -3605,8 +3611,8 @@ namespace iTin.Hardware.Specification.Eedid
                     /// <para>
                     ///  <para><b>Key Composition</b></para>
                     ///  <list type="bullet">
-                    ///   <item><description>Structure: <see cref="KnownCeaSection.DetailedTiming"/></description></item>
-                    ///   <item><description>Property: <see cref="CeaDetailedTimingDescriptor.PixelClock"/></description></item>
+                    ///   <item><description>Structure: <see cref="CeaSection.DetailedTiming"/></description></item>
+                    ///   <item><description>Property: <see cref="CeaProperty.DetailedTimingDescriptor.PixelClock"/></description></item>
                     ///   <item><description>Unit: <see cref="PropertyUnit.KHz"/></description></item>
                     ///  </list>
                     /// </para>
@@ -3619,7 +3625,7 @@ namespace iTin.Hardware.Specification.Eedid
                     ///  <para>1.4</para>
                     /// </para>
                     /// </summary>
-                    public static IPropertyKey PixelClock => new PropertyKey(KnownCeaSection.DetailedTiming, CeaDetailedTimingDescriptor.PixelClock, PropertyUnit.KHz);
+                    public static IPropertyKey PixelClock => new PropertyKey(CeaSection.DetailedTiming, CeaProperty.DetailedTimingDescriptor.PixelClock, PropertyUnit.KHz);
                     #endregion
 
                     #region [public] {static} (IPropertyKey) HorizontalResolution: Gets a value representing the key to retrieve the property value
@@ -3632,8 +3638,8 @@ namespace iTin.Hardware.Specification.Eedid
                     /// <para>
                     ///  <para><b>Key Composition</b></para>
                     ///  <list type="bullet">
-                    ///   <item><description>Structure: <see cref="KnownCeaSection.DetailedTiming"/></description></item>
-                    ///   <item><description>Property: <see cref="CeaDetailedTimingDescriptor.HorizontalResolution"/></description></item>
+                    ///   <item><description>Structure: <see cref="CeaSection.DetailedTiming"/></description></item>
+                    ///   <item><description>Property: <see cref="CeaProperty.DetailedTimingDescriptor.HorizontalResolution"/></description></item>
                     ///   <item><description>Unit: <see cref="PropertyUnit.Pixels"/></description></item>
                     ///  </list>
                     /// </para>
@@ -3646,7 +3652,7 @@ namespace iTin.Hardware.Specification.Eedid
                     ///  <para>1.4</para>
                     /// </para>
                     /// </summary>
-                    public static IPropertyKey HorizontalResolution => new PropertyKey(KnownCeaSection.DetailedTiming, CeaDetailedTimingDescriptor.HorizontalResolution, PropertyUnit.Pixels);
+                    public static IPropertyKey HorizontalResolution => new PropertyKey(CeaSection.DetailedTiming, CeaProperty.DetailedTimingDescriptor.HorizontalResolution, PropertyUnit.Pixels);
                     #endregion
 
                     #region [public] {static} (IPropertyKey) HorizontalBlanking: Gets a value representing the key to retrieve the property value
@@ -3659,8 +3665,8 @@ namespace iTin.Hardware.Specification.Eedid
                     /// <para>
                     ///  <para><b>Key Composition</b></para>
                     ///  <list type="bullet">
-                    ///   <item><description>Structure: <see cref="KnownCeaSection.DetailedTiming"/></description></item>
-                    ///   <item><description>Property: <see cref="CeaDetailedTimingDescriptor.HorizontalBlanking"/></description></item>
+                    ///   <item><description>Structure: <see cref="CeaSection.DetailedTiming"/></description></item>
+                    ///   <item><description>Property: <see cref="CeaProperty.DetailedTimingDescriptor.HorizontalBlanking"/></description></item>
                     ///   <item><description>Unit: <see cref="PropertyUnit.Pixels"/></description></item>
                     ///  </list>
                     /// </para>
@@ -3673,7 +3679,7 @@ namespace iTin.Hardware.Specification.Eedid
                     ///  <para>1.4</para>
                     /// </para>
                     /// </summary>
-                    public static IPropertyKey HorizontalBlanking => new PropertyKey(KnownCeaSection.DetailedTiming, CeaDetailedTimingDescriptor.HorizontalBlanking, PropertyUnit.Pixels);
+                    public static IPropertyKey HorizontalBlanking => new PropertyKey(CeaSection.DetailedTiming, CeaProperty.DetailedTimingDescriptor.HorizontalBlanking, PropertyUnit.Pixels);
                     #endregion
 
                     #region [public] {static} (IPropertyKey) VerticalLines: Gets a value representing the key to retrieve the property value
@@ -3686,8 +3692,8 @@ namespace iTin.Hardware.Specification.Eedid
                     /// <para>
                     ///  <para><b>Key Composition</b></para>
                     ///  <list type="bullet">
-                    ///   <item><description>Structure: <see cref="KnownCeaSection.DetailedTiming"/></description></item>
-                    ///   <item><description>Property: <see cref="CeaDetailedTimingDescriptor.VerticalLines"/></description></item>
+                    ///   <item><description>Structure: <see cref="CeaSection.DetailedTiming"/></description></item>
+                    ///   <item><description>Property: <see cref="CeaProperty.DetailedTimingDescriptor.VerticalLines"/></description></item>
                     ///   <item><description>Unit: <see cref="PropertyUnit.Lines"/></description></item>
                     ///  </list>
                     /// </para>
@@ -3700,7 +3706,7 @@ namespace iTin.Hardware.Specification.Eedid
                     ///  <para>1.4</para>
                     /// </para>
                     /// </summary>
-                    public static IPropertyKey VerticalLines => new PropertyKey(KnownCeaSection.DetailedTiming, CeaDetailedTimingDescriptor.VerticalLines, PropertyUnit.Lines);
+                    public static IPropertyKey VerticalLines => new PropertyKey(CeaSection.DetailedTiming, CeaProperty.DetailedTimingDescriptor.VerticalLines, PropertyUnit.Lines);
                     #endregion
 
                     #region [public] {static} (IPropertyKey) VerticalBlanking: Gets a value representing the key to retrieve the property value
@@ -3713,8 +3719,8 @@ namespace iTin.Hardware.Specification.Eedid
                     /// <para>
                     ///  <para><b>Key Composition</b></para>
                     ///  <list type="bullet">
-                    ///   <item><description>Structure: <see cref="KnownCeaSection.DetailedTiming"/></description></item>
-                    ///   <item><description>Property: <see cref="CeaDetailedTimingDescriptor.VerticalBlanking"/></description></item>
+                    ///   <item><description>Structure: <see cref="CeaSection.DetailedTiming"/></description></item>
+                    ///   <item><description>Property: <see cref="CeaProperty.DetailedTimingDescriptor.VerticalBlanking"/></description></item>
                     ///   <item><description>Unit: <see cref="PropertyUnit.Lines"/></description></item>
                     ///  </list>
                     /// </para>
@@ -3727,7 +3733,7 @@ namespace iTin.Hardware.Specification.Eedid
                     ///  <para>1.4</para>
                     /// </para>
                     /// </summary>
-                    public static IPropertyKey VerticalBlanking => new PropertyKey(KnownCeaSection.DetailedTiming, CeaDetailedTimingDescriptor.VerticalBlanking, PropertyUnit.Lines);
+                    public static IPropertyKey VerticalBlanking => new PropertyKey(CeaSection.DetailedTiming, CeaProperty.DetailedTimingDescriptor.VerticalBlanking, PropertyUnit.Lines);
                     #endregion
 
                     #region [public] {static} (IPropertyKey) HorizontalFrontPorch: Gets a value representing the key to retrieve the property value
@@ -3740,8 +3746,8 @@ namespace iTin.Hardware.Specification.Eedid
                     /// <para>
                     ///  <para><b>Key Composition</b></para>
                     ///  <list type="bullet">
-                    ///   <item><description>Structure: <see cref="KnownCeaSection.DetailedTiming"/></description></item>
-                    ///   <item><description>Property: <see cref="CeaDetailedTimingDescriptor.HorizontalFrontPorch"/></description></item>
+                    ///   <item><description>Structure: <see cref="CeaSection.DetailedTiming"/></description></item>
+                    ///   <item><description>Property: <see cref="CeaProperty.DetailedTimingDescriptor.HorizontalFrontPorch"/></description></item>
                     ///   <item><description>Unit: <see cref="PropertyUnit.Pixels"/></description></item>
                     ///  </list>
                     /// </para>
@@ -3754,7 +3760,7 @@ namespace iTin.Hardware.Specification.Eedid
                     ///  <para>1.4</para>
                     /// </para>
                     /// </summary>
-                    public static IPropertyKey HorizontalFrontPorch => new PropertyKey(KnownCeaSection.DetailedTiming, CeaDetailedTimingDescriptor.HorizontalFrontPorch, PropertyUnit.Pixels);
+                    public static IPropertyKey HorizontalFrontPorch => new PropertyKey(CeaSection.DetailedTiming, CeaProperty.DetailedTimingDescriptor.HorizontalFrontPorch, PropertyUnit.Pixels);
                     #endregion
 
                     #region [public] {static} (IPropertyKey) HorizontalSyncPulseWidth: Gets a value representing the key to retrieve the property value
@@ -3767,8 +3773,8 @@ namespace iTin.Hardware.Specification.Eedid
                     /// <para>
                     ///  <para><b>Key Composition</b></para>
                     ///  <list type="bullet">
-                    ///   <item><description>Structure: <see cref="KnownCeaSection.DetailedTiming"/></description></item>
-                    ///   <item><description>Property: <see cref="CeaDetailedTimingDescriptor.HorizontalSyncPulseWidth"/></description></item>
+                    ///   <item><description>Structure: <see cref="CeaSection.DetailedTiming"/></description></item>
+                    ///   <item><description>Property: <see cref="CeaProperty.DetailedTimingDescriptor.HorizontalSyncPulseWidth"/></description></item>
                     ///   <item><description>Unit: <see cref="PropertyUnit.Pixels"/></description></item>
                     ///  </list>
                     /// </para>
@@ -3781,7 +3787,7 @@ namespace iTin.Hardware.Specification.Eedid
                     ///  <para>1.4</para>
                     /// </para>
                     /// </summary>
-                    public static IPropertyKey HorizontalSyncPulseWidth => new PropertyKey(KnownCeaSection.DetailedTiming, CeaDetailedTimingDescriptor.HorizontalSyncPulseWidth, PropertyUnit.Pixels);
+                    public static IPropertyKey HorizontalSyncPulseWidth => new PropertyKey(CeaSection.DetailedTiming, CeaProperty.DetailedTimingDescriptor.HorizontalSyncPulseWidth, PropertyUnit.Pixels);
                     #endregion
 
                     #region [public] {static} (IPropertyKey) VerticalFrontPorch: Gets a value representing the key to retrieve the property value
@@ -3794,8 +3800,8 @@ namespace iTin.Hardware.Specification.Eedid
                     /// <para>
                     ///  <para><b>Key Composition</b></para>
                     ///  <list type="bullet">
-                    ///   <item><description>Structure: <see cref="KnownCeaSection.DetailedTiming"/></description></item>
-                    ///   <item><description>Property: <see cref="CeaDetailedTimingDescriptor.VerticalFrontPorch"/></description></item>
+                    ///   <item><description>Structure: <see cref="CeaSection.DetailedTiming"/></description></item>
+                    ///   <item><description>Property: <see cref="CeaProperty.DetailedTimingDescriptor.VerticalFrontPorch"/></description></item>
                     ///   <item><description>Unit: <see cref="PropertyUnit.Lines"/></description></item>
                     ///  </list>
                     /// </para>
@@ -3808,7 +3814,7 @@ namespace iTin.Hardware.Specification.Eedid
                     ///  <para>1.4</para>
                     /// </para>
                     /// </summary>
-                    public static IPropertyKey VerticalFrontPorch => new PropertyKey(KnownCeaSection.DetailedTiming, CeaDetailedTimingDescriptor.VerticalFrontPorch, PropertyUnit.Lines);
+                    public static IPropertyKey VerticalFrontPorch => new PropertyKey(CeaSection.DetailedTiming, CeaProperty.DetailedTimingDescriptor.VerticalFrontPorch, PropertyUnit.Lines);
                     #endregion
 
                     #region [public] {static} (IPropertyKey) VerticalSyncPulseWidth: Gets a value representing the key to retrieve the property value
@@ -3821,8 +3827,8 @@ namespace iTin.Hardware.Specification.Eedid
                     /// <para>
                     ///  <para><b>Key Composition</b></para>
                     ///  <list type="bullet">
-                    ///   <item><description>Structure: <see cref="KnownCeaSection.DetailedTiming"/></description></item>
-                    ///   <item><description>Property: <see cref="CeaDetailedTimingDescriptor.VerticalSyncPulseWidth"/></description></item>
+                    ///   <item><description>Structure: <see cref="CeaSection.DetailedTiming"/></description></item>
+                    ///   <item><description>Property: <see cref="CeaProperty.DetailedTimingDescriptor.VerticalSyncPulseWidth"/></description></item>
                     ///   <item><description>Unit: <see cref="PropertyUnit.Lines"/></description></item>
                     ///  </list>
                     /// </para>
@@ -3835,7 +3841,7 @@ namespace iTin.Hardware.Specification.Eedid
                     ///  <para>1.4</para>
                     /// </para>
                     /// </summary>
-                    public static IPropertyKey VerticalSyncPulseWidth => new PropertyKey(KnownCeaSection.DetailedTiming, CeaDetailedTimingDescriptor.VerticalSyncPulseWidth, PropertyUnit.Lines);
+                    public static IPropertyKey VerticalSyncPulseWidth => new PropertyKey(CeaSection.DetailedTiming, CeaProperty.DetailedTimingDescriptor.VerticalSyncPulseWidth, PropertyUnit.Lines);
                     #endregion
 
                     #region [public] {static} (IPropertyKey) HorizontalImageSize: Gets a value representing the key to retrieve the property value
@@ -3848,8 +3854,8 @@ namespace iTin.Hardware.Specification.Eedid
                     /// <para>
                     ///  <para><b>Key Composition</b></para>
                     ///  <list type="bullet">
-                    ///   <item><description>Structure: <see cref="KnownCeaSection.DetailedTiming"/></description></item>
-                    ///   <item><description>Property: <see cref="CeaDetailedTimingDescriptor.HorizontalImageSize"/></description></item>
+                    ///   <item><description>Structure: <see cref="CeaSection.DetailedTiming"/></description></item>
+                    ///   <item><description>Property: <see cref="CeaProperty.DetailedTimingDescriptor.HorizontalImageSize"/></description></item>
                     ///   <item><description>Unit: <see cref="PropertyUnit.mm"/></description></item>
                     ///  </list>
                     /// </para>
@@ -3862,7 +3868,7 @@ namespace iTin.Hardware.Specification.Eedid
                     ///  <para>1.4</para>
                     /// </para>
                     /// </summary>
-                    public static IPropertyKey HorizontalImageSize => new PropertyKey(KnownCeaSection.DetailedTiming, CeaDetailedTimingDescriptor.HorizontalImageSize, PropertyUnit.mm);
+                    public static IPropertyKey HorizontalImageSize => new PropertyKey(CeaSection.DetailedTiming, CeaProperty.DetailedTimingDescriptor.HorizontalImageSize, PropertyUnit.mm);
                     #endregion
 
                     #region [public] {static} (IPropertyKey) VerticalImageSize: Gets a value representing the key to retrieve the property value
@@ -3875,8 +3881,8 @@ namespace iTin.Hardware.Specification.Eedid
                     /// <para>
                     ///  <para><b>Key Composition</b></para>
                     ///  <list type="bullet">
-                    ///   <item><description>Structure: <see cref="KnownCeaSection.DetailedTiming"/></description></item>
-                    ///   <item><description>Property: <see cref="CeaDetailedTimingDescriptor.VerticalImageSize"/></description></item>
+                    ///   <item><description>Structure: <see cref="CeaSection.DetailedTiming"/></description></item>
+                    ///   <item><description>Property: <see cref="CeaProperty.DetailedTimingDescriptor.VerticalImageSize"/></description></item>
                     ///   <item><description>Unit: <see cref="PropertyUnit.mm"/></description></item>
                     ///  </list>
                     /// </para>
@@ -3889,7 +3895,7 @@ namespace iTin.Hardware.Specification.Eedid
                     ///  <para>1.4</para>
                     /// </para>
                     /// </summary>
-                    public static IPropertyKey VerticalImageSize => new PropertyKey(KnownCeaSection.DetailedTiming, CeaDetailedTimingDescriptor.VerticalImageSize, PropertyUnit.mm);
+                    public static IPropertyKey VerticalImageSize => new PropertyKey(CeaSection.DetailedTiming, CeaProperty.DetailedTimingDescriptor.VerticalImageSize, PropertyUnit.mm);
                     #endregion
 
                     #region [public] {static} (IPropertyKey) HorizontalBorder: Gets a value representing the key to retrieve the property value
@@ -3902,8 +3908,8 @@ namespace iTin.Hardware.Specification.Eedid
                     /// <para>
                     ///  <para><b>Key Composition</b></para>
                     ///  <list type="bullet">
-                    ///   <item><description>Structure: <see cref="KnownCeaSection.DetailedTiming"/></description></item>
-                    ///   <item><description>Property: <see cref="CeaDetailedTimingDescriptor.HorizontalBorder"/></description></item>
+                    ///   <item><description>Structure: <see cref="CeaSection.DetailedTiming"/></description></item>
+                    ///   <item><description>Property: <see cref="CeaProperty.DetailedTimingDescriptor.HorizontalBorder"/></description></item>
                     ///   <item><description>Unit: <see cref="PropertyUnit.Pixels"/></description></item>
                     ///  </list>
                     /// </para>
@@ -3916,7 +3922,7 @@ namespace iTin.Hardware.Specification.Eedid
                     ///  <para>1.4</para>
                     /// </para>
                     /// </summary>
-                    public static IPropertyKey HorizontalBorder => new PropertyKey(KnownCeaSection.DetailedTiming, CeaDetailedTimingDescriptor.HorizontalBorder, PropertyUnit.Pixels);
+                    public static IPropertyKey HorizontalBorder => new PropertyKey(CeaSection.DetailedTiming, CeaProperty.DetailedTimingDescriptor.HorizontalBorder, PropertyUnit.Pixels);
                     #endregion
 
                     #region [public] {static} (IPropertyKey) VerticalBorder: Gets a value representing the key to retrieve the property value
@@ -3929,8 +3935,8 @@ namespace iTin.Hardware.Specification.Eedid
                     /// <para>
                     ///  <para><b>Key Composition</b></para>
                     ///  <list type="bullet">
-                    ///   <item><description>Structure: <see cref="KnownCeaSection.DetailedTiming"/></description></item>
-                    ///   <item><description>Property: <see cref="CeaDetailedTimingDescriptor.VerticalBorder"/></description></item>
+                    ///   <item><description>Structure: <see cref="CeaSection.DetailedTiming"/></description></item>
+                    ///   <item><description>Property: <see cref="CeaProperty.DetailedTimingDescriptor.VerticalBorder"/></description></item>
                     ///   <item><description>Unit: <see cref="PropertyUnit.Pixels"/></description></item>
                     ///  </list>
                     /// </para>
@@ -3943,7 +3949,7 @@ namespace iTin.Hardware.Specification.Eedid
                     ///  <para>1.4</para>
                     /// </para>
                     /// </summary>
-                    public static IPropertyKey VerticalBorder => new PropertyKey(KnownCeaSection.DetailedTiming, CeaDetailedTimingDescriptor.VerticalBorder, PropertyUnit.Pixels);
+                    public static IPropertyKey VerticalBorder => new PropertyKey(CeaSection.DetailedTiming, CeaProperty.DetailedTimingDescriptor.VerticalBorder, PropertyUnit.Pixels);
                     #endregion
 
                     #region [public] {static} (IPropertyKey) IsInterlaced: Gets a value representing the key to retrieve the property value
@@ -3953,8 +3959,8 @@ namespace iTin.Hardware.Specification.Eedid
                     /// <para>
                     ///  <para><b>Key Composition</b></para>
                     ///  <list type="bullet">
-                    ///   <item><description>Structure: <see cref="KnownCeaSection.DetailedTiming"/></description></item>
-                    ///   <item><description>Property: <see cref="CeaDetailedTimingDescriptor.Interlaced"/></description></item>
+                    ///   <item><description>Structure: <see cref="CeaSection.DetailedTiming"/></description></item>
+                    ///   <item><description>Property: <see cref="CeaProperty.DetailedTimingDescriptor.Interlaced"/></description></item>
                     ///   <item><description>Unit: <see cref="PropertyUnit.None"/></description></item>
                     ///  </list>
                     /// </para>
@@ -3967,7 +3973,7 @@ namespace iTin.Hardware.Specification.Eedid
                     ///  <para>1.4</para>
                     /// </para>
                     /// </summary>
-                    public static IPropertyKey IsInterlaced => new PropertyKey(KnownCeaSection.DetailedTiming, CeaDetailedTimingDescriptor.Interlaced);
+                    public static IPropertyKey IsInterlaced => new PropertyKey(CeaSection.DetailedTiming, CeaProperty.DetailedTimingDescriptor.Interlaced);
                     #endregion
 
                     #region [public] {static} (IPropertyKey) StereoViewingSupport: Gets a value representing the key to retrieve the property value
@@ -3977,8 +3983,8 @@ namespace iTin.Hardware.Specification.Eedid
                     /// <para>
                     ///  <para><b>Key Composition</b></para>
                     ///  <list type="bullet">
-                    ///   <item><description>Structure: <see cref="KnownCeaSection.DetailedTiming"/></description></item>
-                    ///   <item><description>Property: <see cref="CeaDetailedTimingDescriptor.StereoViewingSupport"/></description></item>
+                    ///   <item><description>Structure: <see cref="CeaSection.DetailedTiming"/></description></item>
+                    ///   <item><description>Property: <see cref="CeaProperty.DetailedTimingDescriptor.StereoViewingSupport"/></description></item>
                     ///   <item><description>Unit: <see cref="PropertyUnit.None"/></description></item>
                     ///  </list>
                     /// </para>
@@ -3991,7 +3997,7 @@ namespace iTin.Hardware.Specification.Eedid
                     ///  <para>1.4</para>
                     /// </para>
                     /// </summary>
-                    public static IPropertyKey StereoViewingSupport => new PropertyKey(KnownCeaSection.DetailedTiming, CeaDetailedTimingDescriptor.StereoViewingSupport);
+                    public static IPropertyKey StereoViewingSupport => new PropertyKey(CeaSection.DetailedTiming, CeaProperty.DetailedTimingDescriptor.StereoViewingSupport);
                     #endregion
 
                     #region [public] {static} (IPropertyKey) SyncSignalType: Gets a value representing the key to retrieve the property value
@@ -4001,8 +4007,8 @@ namespace iTin.Hardware.Specification.Eedid
                     /// <para>
                     ///  <para><b>Key Composition</b></para>
                     ///  <list type="bullet">
-                    ///   <item><description>Structure: <see cref="KnownCeaSection.DetailedTiming"/></description></item>
-                    ///   <item><description>Property: <see cref="CeaDetailedTimingDescriptor.SyncSignalType"/></description></item>
+                    ///   <item><description>Structure: <see cref="CeaSection.DetailedTiming"/></description></item>
+                    ///   <item><description>Property: <see cref="CeaProperty.DetailedTimingDescriptor.SyncSignalType"/></description></item>
                     ///   <item><description>Unit: <see cref="PropertyUnit.None"/></description></item>
                     ///  </list>
                     /// </para>
@@ -4015,7 +4021,7 @@ namespace iTin.Hardware.Specification.Eedid
                     ///  <para>1.4</para>
                     /// </para>
                     /// </summary>
-                    public static IPropertyKey SyncSignalType => new PropertyKey(KnownCeaSection.DetailedTiming, CeaDetailedTimingDescriptor.SyncSignalType);
+                    public static IPropertyKey SyncSignalType => new PropertyKey(CeaSection.DetailedTiming, CeaProperty.DetailedTimingDescriptor.SyncSignalType);
                     #endregion
                 }
                 #endregion
@@ -4026,7 +4032,7 @@ namespace iTin.Hardware.Specification.Eedid
 
             #region [public] {static} (class) DataBlock: Definition of keys in the 'DataBlockCollection' section
             /// <summary>
-            /// Definition of keys in the <see cref="KnownCeaSection.DataBlockCollection"/> section.
+            /// Definition of keys in the <see cref="CeaSection.DataBlockCollection"/> section.
             /// </summary>
             public static class DataBlock
             {
@@ -4047,8 +4053,8 @@ namespace iTin.Hardware.Specification.Eedid
                     /// <para>
                     ///  <para><b>Key Composition</b></para>
                     ///  <list type="bullet">
-                    ///   <item><description>Structure: <see cref="KnownCeaSection.DataBlockCollection"/></description></item>
-                    ///   <item><description>Property: <see cref="CeaDataBlockTags.Audio"/></description></item>
+                    ///   <item><description>Structure: <see cref="CeaSection.DataBlockCollection"/></description></item>
+                    ///   <item><description>Property: <see cref="CeaProperty.DataBlockTags.Audio"/></description></item>
                     ///   <item><description>Unit: <see cref="PropertyUnit.None"/></description></item>
                     ///  </list>
                     /// </para>
@@ -4061,7 +4067,7 @@ namespace iTin.Hardware.Specification.Eedid
                     ///  <para>1.4</para>
                     /// </para>
                     /// </summary>
-                    public static IPropertyKey Audio => new PropertyKey(KnownCeaSection.DataBlockCollection, CeaDataBlockTags.Audio);
+                    public static IPropertyKey Audio => new PropertyKey(CeaSection.DataBlockCollection, CeaProperty.DataBlockTags.Audio);
                     #endregion
 
                     #region [public] {static} (IPropertyKey) Extended: Gets a value representing the key to retrieve the property value
@@ -4071,8 +4077,8 @@ namespace iTin.Hardware.Specification.Eedid
                     /// <para>
                     ///  <para><b>Key Composition</b></para>
                     ///  <list type="bullet">
-                    ///   <item><description>Structure: <see cref="KnownCeaSection.DataBlockCollection"/></description></item>
-                    ///   <item><description>Property: <see cref="CeaDataBlockTags.Extended"/></description></item>
+                    ///   <item><description>Structure: <see cref="CeaSection.DataBlockCollection"/></description></item>
+                    ///   <item><description>Property: <see cref="CeaProperty.DataBlockTags.Extended"/></description></item>
                     ///   <item><description>Unit: <see cref="PropertyUnit.None"/></description></item>
                     ///  </list>
                     /// </para>
@@ -4085,7 +4091,7 @@ namespace iTin.Hardware.Specification.Eedid
                     ///  <para>1.4</para>
                     /// </para>
                     /// </summary>
-                    public static IPropertyKey Extended => new PropertyKey(KnownCeaSection.DataBlockCollection, CeaDataBlockTags.Extended);
+                    public static IPropertyKey Extended => new PropertyKey(CeaSection.DataBlockCollection, CeaProperty.DataBlockTags.Extended);
                     #endregion
 
                     #region [public] {static} (IPropertyKey) Reserved: Gets a value representing the key to retrieve the property value
@@ -4095,8 +4101,8 @@ namespace iTin.Hardware.Specification.Eedid
                     /// <para>
                     ///  <para><b>Key Composition</b></para>
                     ///  <list type="bullet">
-                    ///   <item><description>Structure: <see cref="KnownCeaSection.DataBlockCollection"/></description></item>
-                    ///   <item><description>Property: <see cref="CeaDataBlockTags.Reserved"/></description></item>
+                    ///   <item><description>Structure: <see cref="CeaSection.DataBlockCollection"/></description></item>
+                    ///   <item><description>Property: <see cref="CeaProperty.DataBlockTags.Reserved"/></description></item>
                     ///   <item><description>Unit: <see cref="PropertyUnit.None"/></description></item>
                     ///  </list>
                     /// </para>
@@ -4109,7 +4115,7 @@ namespace iTin.Hardware.Specification.Eedid
                     ///  <para>1.4</para>
                     /// </para>
                     /// </summary>
-                    public static IPropertyKey Reserved => new PropertyKey(KnownCeaSection.DataBlockCollection, CeaDataBlockTags.Reserved);
+                    public static IPropertyKey Reserved => new PropertyKey(CeaSection.DataBlockCollection, CeaProperty.DataBlockTags.Reserved);
                     #endregion
 
                     #region [public] {static} (IPropertyKey) Speaker: Gets a value representing the key to retrieve the property value
@@ -4119,8 +4125,8 @@ namespace iTin.Hardware.Specification.Eedid
                     /// <para>
                     ///  <para><b>Key Composition</b></para>
                     ///  <list type="bullet">
-                    ///   <item><description>Structure: <see cref="KnownCeaSection.DataBlockCollection"/></description></item>
-                    ///   <item><description>Property: <see cref="CeaDataBlockTags.Speaker"/></description></item>
+                    ///   <item><description>Structure: <see cref="CeaSection.DataBlockCollection"/></description></item>
+                    ///   <item><description>Property: <see cref="CeaProperty.DataBlockTags.Speaker"/></description></item>
                     ///   <item><description>Unit: <see cref="PropertyUnit.None"/></description></item>
                     ///  </list>
                     /// </para>
@@ -4133,7 +4139,7 @@ namespace iTin.Hardware.Specification.Eedid
                     ///  <para>1.4</para>
                     /// </para>
                     /// </summary>
-                    public static IPropertyKey Speaker => new PropertyKey(KnownCeaSection.DataBlockCollection, CeaDataBlockTags.Speaker);
+                    public static IPropertyKey Speaker => new PropertyKey(CeaSection.DataBlockCollection, CeaProperty.DataBlockTags.Speaker);
                     #endregion
 
                     #region [public] {static} (IPropertyKey) Vendor: Gets a value representing the key to retrieve the property value
@@ -4143,8 +4149,8 @@ namespace iTin.Hardware.Specification.Eedid
                     /// <para>
                     ///  <para><b>Key Composition</b></para>
                     ///  <list type="bullet">
-                    ///   <item><description>Structure: <see cref="KnownCeaSection.DataBlockCollection"/></description></item>
-                    ///   <item><description>Property: <see cref="CeaDataBlockTags.Vendor"/></description></item>
+                    ///   <item><description>Structure: <see cref="CeaSection.DataBlockCollection"/></description></item>
+                    ///   <item><description>Property: <see cref="CeaProperty.DataBlockTags.Vendor"/></description></item>
                     ///   <item><description>Unit: <see cref="PropertyUnit.None"/></description></item>
                     ///  </list>
                     /// </para>
@@ -4157,7 +4163,7 @@ namespace iTin.Hardware.Specification.Eedid
                     ///  <para>1.4</para>
                     /// </para>
                     /// </summary>
-                    public static IPropertyKey Vendor => new PropertyKey(KnownCeaSection.DataBlockCollection, CeaDataBlockTags.Vendor);
+                    public static IPropertyKey Vendor => new PropertyKey(CeaSection.DataBlockCollection, CeaProperty.DataBlockTags.Vendor);
                     #endregion
 
                     #region [public] {static} (IPropertyKey) VESA: Gets a value representing the key to retrieve the property value
@@ -4167,8 +4173,8 @@ namespace iTin.Hardware.Specification.Eedid
                     /// <para>
                     ///  <para><b>Key Composition</b></para>
                     ///  <list type="bullet">
-                    ///   <item><description>Structure: <see cref="KnownCeaSection.DataBlockCollection"/></description></item>
-                    ///   <item><description>Property: <see cref="CeaDataBlockTags.VESA"/></description></item>
+                    ///   <item><description>Structure: <see cref="CeaSection.DataBlockCollection"/></description></item>
+                    ///   <item><description>Property: <see cref="CeaProperty.DataBlockTags.VESA"/></description></item>
                     ///   <item><description>Unit: <see cref="PropertyUnit.None"/></description></item>
                     ///  </list>
                     /// </para>
@@ -4181,7 +4187,7 @@ namespace iTin.Hardware.Specification.Eedid
                     ///  <para>1.4</para>
                     /// </para>
                     /// </summary>
-                    public static IPropertyKey VESA => new PropertyKey(KnownCeaSection.DataBlockCollection, CeaDataBlockTags.VESA);
+                    public static IPropertyKey VESA => new PropertyKey(CeaSection.DataBlockCollection, CeaProperty.DataBlockTags.VESA);
                     #endregion
 
                     #region [public] {static} (IPropertyKey) Video: Gets a value representing the key to retrieve the property value
@@ -4191,8 +4197,8 @@ namespace iTin.Hardware.Specification.Eedid
                     /// <para>
                     ///  <para><b>Key Composition</b></para>
                     ///  <list type="bullet">
-                    ///   <item><description>Structure: <see cref="KnownCeaSection.DataBlockCollection"/></description></item>
-                    ///   <item><description>Property: <see cref="CeaDataBlockTags.Video"/></description></item>
+                    ///   <item><description>Structure: <see cref="CeaSection.DataBlockCollection"/></description></item>
+                    ///   <item><description>Property: <see cref="CeaProperty.DataBlockTags.Video"/></description></item>
                     ///   <item><description>Unit: <see cref="PropertyUnit.None"/></description></item>
                     ///  </list>
                     /// </para>
@@ -4205,7 +4211,7 @@ namespace iTin.Hardware.Specification.Eedid
                     ///  <para>1.4</para>
                     /// </para>
                     /// </summary>
-                    public static IPropertyKey Video => new PropertyKey(KnownCeaSection.DataBlockCollection, CeaDataBlockTags.Video);
+                    public static IPropertyKey Video => new PropertyKey(CeaSection.DataBlockCollection, CeaProperty.DataBlockTags.Video);
                     #endregion
 
                     #endregion
@@ -4226,8 +4232,8 @@ namespace iTin.Hardware.Specification.Eedid
                     /// <para>
                     ///  <para><b>Key Composition</b></para>
                     ///  <list type="bullet">
-                    ///   <item><description>Structure: <see cref="KnownCeaSection.DataBlockCollection"/></description></item>
-                    ///   <item><description>Property: <see cref="CeaAudioDataBlock.Descriptor"/></description></item>
+                    ///   <item><description>Structure: <see cref="CeaSection.DataBlockCollection"/></description></item>
+                    ///   <item><description>Property: <see cref="CeaProperty.AudioDataBlock.Descriptor"/></description></item>
                     ///   <item><description>Unit: <see cref="PropertyUnit.None"/></description></item>
                     ///  </list>
                     /// </para>
@@ -4240,7 +4246,7 @@ namespace iTin.Hardware.Specification.Eedid
                     ///  <para>1.4</para>
                     /// </para>
                     /// </summary>
-                    public static IPropertyKey Descriptor => new PropertyKey(KnownCeaSection.DataBlockCollection, CeaAudioDataBlock.Descriptor);
+                    public static IPropertyKey Descriptor => new PropertyKey(CeaSection.DataBlockCollection, CeaProperty.AudioDataBlock.Descriptor);
                     #endregion
 
                     #region [public] {static} (IPropertyKey) BitDepth: Gets a value representing the key to retrieve the property value
@@ -4250,8 +4256,8 @@ namespace iTin.Hardware.Specification.Eedid
                     /// <para>
                     ///  <para><b>Key Composition</b></para>
                     ///  <list type="bullet">
-                    ///   <item><description>Structure: <see cref="KnownCeaSection.DataBlockCollection"/></description></item>
-                    ///   <item><description>Property: <see cref="CeaAudioDataBlock.BitDepth"/></description></item>
+                    ///   <item><description>Structure: <see cref="CeaSection.DataBlockCollection"/></description></item>
+                    ///   <item><description>Property: <see cref="CeaProperty.AudioDataBlock.BitDepth"/></description></item>
                     ///   <item><description>Unit: <see cref="PropertyUnit.None"/></description></item>
                     ///  </list>
                     /// </para>
@@ -4264,7 +4270,7 @@ namespace iTin.Hardware.Specification.Eedid
                     ///  <para>1.4</para>
                     /// </para>
                     /// </summary>
-                    public static IPropertyKey BitDepth => new PropertyKey(KnownCeaSection.DataBlockCollection, CeaAudioDataBlock.BitDepth);
+                    public static IPropertyKey BitDepth => new PropertyKey(CeaSection.DataBlockCollection, CeaProperty.AudioDataBlock.BitDepth);
                     #endregion
 
                     #region [public] {static} (IPropertyKey) Channels: Gets a value representing the key to retrieve the property value
@@ -4274,8 +4280,8 @@ namespace iTin.Hardware.Specification.Eedid
                     /// <para>
                     ///  <para><b>Key Composition</b></para>
                     ///  <list type="bullet">
-                    ///   <item><description>Structure: <see cref="KnownCeaSection.DataBlockCollection"/></description></item>
-                    ///   <item><description>Property: <see cref="CeaAudioDataBlock.Channels"/></description></item>
+                    ///   <item><description>Structure: <see cref="CeaSection.DataBlockCollection"/></description></item>
+                    ///   <item><description>Property: <see cref="CeaProperty.AudioDataBlock.Channels"/></description></item>
                     ///   <item><description>Unit: <see cref="PropertyUnit.None"/></description></item>
                     ///  </list>
                     /// </para>
@@ -4288,7 +4294,7 @@ namespace iTin.Hardware.Specification.Eedid
                     ///  <para>1.4</para>
                     /// </para>
                     /// </summary>
-                    public static IPropertyKey Channels => new PropertyKey(KnownCeaSection.DataBlockCollection, CeaAudioDataBlock.Channels);
+                    public static IPropertyKey Channels => new PropertyKey(CeaSection.DataBlockCollection, CeaProperty.AudioDataBlock.Channels);
                     #endregion
 
                     #region [public] {static} (IPropertyKey) Format: Gets a value representing the key to retrieve the property value
@@ -4298,8 +4304,8 @@ namespace iTin.Hardware.Specification.Eedid
                     /// <para>
                     ///  <para><b>Key Composition</b></para>
                     ///  <list type="bullet">
-                    ///   <item><description>Structure: <see cref="KnownCeaSection.DataBlockCollection"/></description></item>
-                    ///   <item><description>Property: <see cref="CeaAudioDataBlock.Format"/></description></item>
+                    ///   <item><description>Structure: <see cref="CeaSection.DataBlockCollection"/></description></item>
+                    ///   <item><description>Property: <see cref="CeaProperty.AudioDataBlock.Format"/></description></item>
                     ///   <item><description>Unit: <see cref="PropertyUnit.None"/></description></item>
                     ///  </list>
                     /// </para>
@@ -4312,7 +4318,7 @@ namespace iTin.Hardware.Specification.Eedid
                     ///  <para>1.4</para>
                     /// </para>
                     /// </summary>
-                    public static IPropertyKey Format => new PropertyKey(KnownCeaSection.DataBlockCollection, CeaAudioDataBlock.Format);
+                    public static IPropertyKey Format => new PropertyKey(CeaSection.DataBlockCollection, CeaProperty.AudioDataBlock.Format);
                     #endregion
 
                     #region [public] {static} (IPropertyKey) MaxBitrate: Gets a value representing the key to retrieve the property value
@@ -4322,8 +4328,8 @@ namespace iTin.Hardware.Specification.Eedid
                     /// <para>
                     ///  <para><b>Key Composition</b></para>
                     ///  <list type="bullet">
-                    ///   <item><description>Structure: <see cref="KnownCeaSection.DataBlockCollection"/></description></item>
-                    ///   <item><description>Property: <see cref="CeaAudioDataBlock.Format"/></description></item>
+                    ///   <item><description>Structure: <see cref="CeaSection.DataBlockCollection"/></description></item>
+                    ///   <item><description>Property: <see cref="CeaProperty.AudioDataBlock.Format"/></description></item>
                     ///   <item><description>Unit: <see cref="PropertyUnit.None"/></description></item>
                     ///  </list>
                     /// </para>
@@ -4336,7 +4342,7 @@ namespace iTin.Hardware.Specification.Eedid
                     ///  <para>1.4</para>
                     /// </para>
                     /// </summary>
-                    public static IPropertyKey MaxBitrate => new PropertyKey(KnownCeaSection.DataBlockCollection, CeaAudioDataBlock.MaxBitrate);
+                    public static IPropertyKey MaxBitrate => new PropertyKey(CeaSection.DataBlockCollection, CeaProperty.AudioDataBlock.MaxBitrate);
                     #endregion
 
                     #region [public] {static} (IPropertyKey) SamplingFrequencies: Gets a value representing the key to retrieve the property value
@@ -4346,8 +4352,8 @@ namespace iTin.Hardware.Specification.Eedid
                     /// <para>
                     ///  <para><b>Key Composition</b></para>
                     ///  <list type="bullet">
-                    ///   <item><description>Structure: <see cref="KnownCeaSection.DataBlockCollection"/></description></item>
-                    ///   <item><description>Property: <see cref="CeaAudioDataBlock.SamplingFrequencies"/></description></item>
+                    ///   <item><description>Structure: <see cref="CeaSection.DataBlockCollection"/></description></item>
+                    ///   <item><description>Property: <see cref="CeaProperty.AudioDataBlock.SamplingFrequencies"/></description></item>
                     ///   <item><description>Unit: <see cref="PropertyUnit.None"/></description></item>
                     ///  </list>
                     /// </para>
@@ -4360,7 +4366,7 @@ namespace iTin.Hardware.Specification.Eedid
                     ///  <para>1.4</para>
                     /// </para>
                     /// </summary>
-                    public static IPropertyKey SamplingFrequencies => new PropertyKey(KnownCeaSection.DataBlockCollection, CeaAudioDataBlock.SamplingFrequencies);
+                    public static IPropertyKey SamplingFrequencies => new PropertyKey(CeaSection.DataBlockCollection, CeaProperty.AudioDataBlock.SamplingFrequencies);
                     #endregion
                 }
                 #endregion
@@ -4386,8 +4392,8 @@ namespace iTin.Hardware.Specification.Eedid
                         /// <para>
                         ///  <para><b>Key Composition</b></para>
                         ///  <list type="bullet">
-                        ///   <item><description>Structure: <see cref="KnownCeaSection.DataBlockCollection"/></description></item>
-                        ///   <item><description>Property: <see cref="CeaExtendedColorimetryDataBlock.AdobeRGB"/></description></item>
+                        ///   <item><description>Structure: <see cref="CeaSection.DataBlockCollection"/></description></item>
+                        ///   <item><description>Property: <see cref="CeaProperty.ExtendedColorimetryDataBlock.AdobeRGB"/></description></item>
                         ///   <item><description>Unit: <see cref="PropertyUnit.None"/></description></item>
                         ///  </list>
                         /// </para>
@@ -4400,7 +4406,7 @@ namespace iTin.Hardware.Specification.Eedid
                         ///  <para>1.4</para>
                         /// </para>
                         /// </summary>
-                        public static IPropertyKey AdobeRGB => new PropertyKey(KnownCeaSection.DataBlockCollection, CeaExtendedColorimetryDataBlock.AdobeRGB);
+                        public static IPropertyKey AdobeRGB => new PropertyKey(CeaSection.DataBlockCollection, CeaProperty.ExtendedColorimetryDataBlock.AdobeRGB);
                         #endregion
 
                         #region [public] {static} (IPropertyKey) AdobeYCC601: Gets a value representing the key to retrieve the property value
@@ -4410,8 +4416,8 @@ namespace iTin.Hardware.Specification.Eedid
                         /// <para>
                         ///  <para><b>Key Composition</b></para>
                         ///  <list type="bullet">
-                        ///   <item><description>Structure: <see cref="KnownCeaSection.DataBlockCollection"/></description></item>
-                        ///   <item><description>Property: <see cref="CeaExtendedColorimetryDataBlock.AdobeYCC601"/></description></item>
+                        ///   <item><description>Structure: <see cref="CeaSection.DataBlockCollection"/></description></item>
+                        ///   <item><description>Property: <see cref="CeaProperty.ExtendedColorimetryDataBlock.AdobeYCC601"/></description></item>
                         ///   <item><description>Unit: <see cref="PropertyUnit.None"/></description></item>
                         ///  </list>
                         /// </para>
@@ -4424,7 +4430,7 @@ namespace iTin.Hardware.Specification.Eedid
                         ///  <para>1.4</para>
                         /// </para>
                         /// </summary>
-                        public static IPropertyKey AdobeYCC601 => new PropertyKey(KnownCeaSection.DataBlockCollection, CeaExtendedColorimetryDataBlock.AdobeYCC601);
+                        public static IPropertyKey AdobeYCC601 => new PropertyKey(CeaSection.DataBlockCollection, CeaProperty.ExtendedColorimetryDataBlock.AdobeYCC601);
                         #endregion
 
                         #region [public] {static} (IPropertyKey) sYCC601: Gets a value representing the key to retrieve the property value
@@ -4434,8 +4440,8 @@ namespace iTin.Hardware.Specification.Eedid
                         /// <para>
                         ///  <para><b>Key Composition</b></para>
                         ///  <list type="bullet">
-                        ///   <item><description>Structure: <see cref="KnownCeaSection.DataBlockCollection"/></description></item>
-                        ///   <item><description>Property: <see cref="CeaExtendedColorimetryDataBlock.sYCC601"/></description></item>
+                        ///   <item><description>Structure: <see cref="CeaSection.DataBlockCollection"/></description></item>
+                        ///   <item><description>Property: <see cref="CeaProperty.ExtendedColorimetryDataBlock.sYCC601"/></description></item>
                         ///   <item><description>Unit: <see cref="PropertyUnit.None"/></description></item>
                         ///  </list>
                         /// </para>
@@ -4448,7 +4454,7 @@ namespace iTin.Hardware.Specification.Eedid
                         ///  <para>1.4</para>
                         /// </para>
                         /// </summary>
-                        public static IPropertyKey sYCC601 => new PropertyKey(KnownCeaSection.DataBlockCollection, CeaExtendedColorimetryDataBlock.sYCC601);
+                        public static IPropertyKey sYCC601 => new PropertyKey(CeaSection.DataBlockCollection, CeaProperty.ExtendedColorimetryDataBlock.sYCC601);
                         #endregion
 
                         #region [public] {static} (IPropertyKey) xvYCC709: Gets a value representing the key to retrieve the property value
@@ -4458,8 +4464,8 @@ namespace iTin.Hardware.Specification.Eedid
                         /// <para>
                         ///  <para><b>Key Composition</b></para>
                         ///  <list type="bullet">
-                        ///   <item><description>Structure: <see cref="KnownCeaSection.DataBlockCollection"/></description></item>
-                        ///   <item><description>Property: <see cref="CeaExtendedColorimetryDataBlock.xvYCC709"/></description></item>
+                        ///   <item><description>Structure: <see cref="CeaSection.DataBlockCollection"/></description></item>
+                        ///   <item><description>Property: <see cref="CeaProperty.ExtendedColorimetryDataBlock.xvYCC709"/></description></item>
                         ///   <item><description>Unit: <see cref="PropertyUnit.None"/></description></item>
                         ///  </list>
                         /// </para>
@@ -4472,7 +4478,7 @@ namespace iTin.Hardware.Specification.Eedid
                         ///  <para>1.4</para>
                         /// </para>
                         /// </summary>
-                        public static IPropertyKey xvYCC709 => new PropertyKey(KnownCeaSection.DataBlockCollection, CeaExtendedColorimetryDataBlock.xvYCC709);
+                        public static IPropertyKey xvYCC709 => new PropertyKey(CeaSection.DataBlockCollection, CeaProperty.ExtendedColorimetryDataBlock.xvYCC709);
                         #endregion
 
                         #region [public] {static} (IPropertyKey) xvYCC601: Gets a value representing the key to retrieve the property value
@@ -4482,8 +4488,8 @@ namespace iTin.Hardware.Specification.Eedid
                         /// <para>
                         ///  <para><b>Key Composition</b></para>
                         ///  <list type="bullet">
-                        ///   <item><description>Structure: <see cref="KnownCeaSection.DataBlockCollection"/></description></item>
-                        ///   <item><description>Property: <see cref="CeaExtendedColorimetryDataBlock.xvYCC601"/></description></item>
+                        ///   <item><description>Structure: <see cref="CeaSection.DataBlockCollection"/></description></item>
+                        ///   <item><description>Property: <see cref="CeaProperty.ExtendedColorimetryDataBlock.xvYCC601"/></description></item>
                         ///   <item><description>Unit: <see cref="PropertyUnit.None"/></description></item>
                         ///  </list>
                         /// </para>
@@ -4496,7 +4502,7 @@ namespace iTin.Hardware.Specification.Eedid
                         ///  <para>1.4</para>
                         /// </para>
                         /// </summary>
-                        public static IPropertyKey xvYCC601 => new PropertyKey(KnownCeaSection.DataBlockCollection, CeaExtendedColorimetryDataBlock.xvYCC601);
+                        public static IPropertyKey xvYCC601 => new PropertyKey(CeaSection.DataBlockCollection, CeaProperty.ExtendedColorimetryDataBlock.xvYCC601);
                         #endregion
                     }
                     #endregion
@@ -4541,8 +4547,8 @@ namespace iTin.Hardware.Specification.Eedid
                         /// <para>
                         ///  <para><b>Key Composition</b></para>
                         ///  <list type="bullet">
-                        ///   <item><description>Structure: <see cref="KnownCeaSection.DataBlockCollection"/></description></item>
-                        ///   <item><description>Property: <see cref="CeaExtendedVideoCapabilityDataBlock.CEOverscan"/></description></item>
+                        ///   <item><description>Structure: <see cref="CeaSection.DataBlockCollection"/></description></item>
+                        ///   <item><description>Property: <see cref="CeaProperty.ExtendedVideoCapabilityDataBlock.CEOverscan"/></description></item>
                         ///   <item><description>Unit: <see cref="PropertyUnit.None"/></description></item>
                         ///  </list>
                         /// </para>
@@ -4555,7 +4561,7 @@ namespace iTin.Hardware.Specification.Eedid
                         ///  <para>1.4</para>
                         /// </para>
                         /// </summary>
-                        public static IPropertyKey CEOverscan => new PropertyKey(KnownCeaSection.DataBlockCollection, CeaExtendedVideoCapabilityDataBlock.CEOverscan);
+                        public static IPropertyKey CEOverscan => new PropertyKey(CeaSection.DataBlockCollection, CeaProperty.ExtendedVideoCapabilityDataBlock.CEOverscan);
                         #endregion
 
                         #region [public] {static} (IPropertyKey) ITOverscan: Gets a value representing the key to retrieve the property value
@@ -4565,8 +4571,8 @@ namespace iTin.Hardware.Specification.Eedid
                         /// <para>
                         ///  <para><b>Key Composition</b></para>
                         ///  <list type="bullet">
-                        ///   <item><description>Structure: <see cref="KnownCeaSection.DataBlockCollection"/></description></item>
-                        ///   <item><description>Property: <see cref="CeaExtendedVideoCapabilityDataBlock.ITOverscan"/></description></item>
+                        ///   <item><description>Structure: <see cref="CeaSection.DataBlockCollection"/></description></item>
+                        ///   <item><description>Property: <see cref="CeaProperty.ExtendedVideoCapabilityDataBlock.ITOverscan"/></description></item>
                         ///   <item><description>Unit: <see cref="PropertyUnit.None"/></description></item>
                         ///  </list>
                         /// </para>
@@ -4579,7 +4585,7 @@ namespace iTin.Hardware.Specification.Eedid
                         ///  <para>1.4</para>
                         /// </para>
                         /// </summary>
-                        public static IPropertyKey ITOverscan => new PropertyKey(KnownCeaSection.DataBlockCollection, CeaExtendedVideoCapabilityDataBlock.ITOverscan);
+                        public static IPropertyKey ITOverscan => new PropertyKey(CeaSection.DataBlockCollection, CeaProperty.ExtendedVideoCapabilityDataBlock.ITOverscan);
                         #endregion
 
                         #region [public] {static} (IPropertyKey) PTOverscan: Gets a value representing the key to retrieve the property value
@@ -4589,8 +4595,8 @@ namespace iTin.Hardware.Specification.Eedid
                         /// <para>
                         ///  <para><b>Key Composition</b></para>
                         ///  <list type="bullet">
-                        ///   <item><description>Structure: <see cref="KnownCeaSection.DataBlockCollection"/></description></item>
-                        ///   <item><description>Property: <see cref="CeaExtendedVideoCapabilityDataBlock.PTOverscan"/></description></item>
+                        ///   <item><description>Structure: <see cref="CeaSection.DataBlockCollection"/></description></item>
+                        ///   <item><description>Property: <see cref="CeaProperty.ExtendedVideoCapabilityDataBlock.PTOverscan"/></description></item>
                         ///   <item><description>Unit: <see cref="PropertyUnit.None"/></description></item>
                         ///  </list>
                         /// </para>
@@ -4603,7 +4609,7 @@ namespace iTin.Hardware.Specification.Eedid
                         ///  <para>1.4</para>
                         /// </para>
                         /// </summary>
-                        public static IPropertyKey PTOverscan => new PropertyKey(KnownCeaSection.DataBlockCollection, CeaExtendedVideoCapabilityDataBlock.PTOverscan);
+                        public static IPropertyKey PTOverscan => new PropertyKey(CeaSection.DataBlockCollection, CeaProperty.ExtendedVideoCapabilityDataBlock.PTOverscan);
                         #endregion
 
                         #region [public] {static} (IPropertyKey) QuantizationRangeRGB: Gets a value representing the key to retrieve the property value
@@ -4613,8 +4619,8 @@ namespace iTin.Hardware.Specification.Eedid
                         /// <para>
                         ///  <para><b>Key Composition</b></para>
                         ///  <list type="bullet">
-                        ///   <item><description>Structure: <see cref="KnownCeaSection.DataBlockCollection"/></description></item>
-                        ///   <item><description>Property: <see cref="CeaExtendedVideoCapabilityDataBlock.QuantizationRangeRGB"/></description></item>
+                        ///   <item><description>Structure: <see cref="CeaSection.DataBlockCollection"/></description></item>
+                        ///   <item><description>Property: <see cref="CeaProperty.ExtendedVideoCapabilityDataBlock.QuantizationRangeRGB"/></description></item>
                         ///   <item><description>Unit: <see cref="PropertyUnit.None"/></description></item>
                         ///  </list>
                         /// </para>
@@ -4627,7 +4633,7 @@ namespace iTin.Hardware.Specification.Eedid
                         ///  <para>1.4</para>
                         /// </para>
                         /// </summary>
-                        public static IPropertyKey QuantizationRangeRGB => new PropertyKey(KnownCeaSection.DataBlockCollection, CeaExtendedVideoCapabilityDataBlock.QuantizationRangeRGB);
+                        public static IPropertyKey QuantizationRangeRGB => new PropertyKey(CeaSection.DataBlockCollection, CeaProperty.ExtendedVideoCapabilityDataBlock.QuantizationRangeRGB);
                         #endregion
 
                         #region [public] {static} (IPropertyKey) QuantizationRangeYCC: Gets a value representing the key to retrieve the property value
@@ -4637,8 +4643,8 @@ namespace iTin.Hardware.Specification.Eedid
                         /// <para>
                         ///  <para><b>Key Composition</b></para>
                         ///  <list type="bullet">
-                        ///   <item><description>Structure: <see cref="KnownCeaSection.DataBlockCollection"/></description></item>
-                        ///   <item><description>Property: <see cref="CeaExtendedVideoCapabilityDataBlock.QuantizationRangeYCC"/></description></item>
+                        ///   <item><description>Structure: <see cref="CeaSection.DataBlockCollection"/></description></item>
+                        ///   <item><description>Property: <see cref="CeaProperty.ExtendedVideoCapabilityDataBlock.QuantizationRangeYCC"/></description></item>
                         ///   <item><description>Unit: <see cref="PropertyUnit.None"/></description></item>
                         ///  </list>
                         /// </para>
@@ -4651,7 +4657,7 @@ namespace iTin.Hardware.Specification.Eedid
                         ///  <para>1.4</para>
                         /// </para>
                         /// </summary>
-                        public static IPropertyKey QuantizationRangeYCC => new PropertyKey(KnownCeaSection.DataBlockCollection, CeaExtendedVideoCapabilityDataBlock.QuantizationRangeYCC);
+                        public static IPropertyKey QuantizationRangeYCC => new PropertyKey(CeaSection.DataBlockCollection, CeaProperty.ExtendedVideoCapabilityDataBlock.QuantizationRangeYCC);
                         #endregion
                     }
                     #endregion
@@ -4673,8 +4679,8 @@ namespace iTin.Hardware.Specification.Eedid
                     /// <para>
                     ///  <para><b>Key Composition</b></para>
                     ///  <list type="bullet">
-                    ///   <item><description>Structure: <see cref="KnownCeaSection.DataBlockCollection"/></description></item>
-                    ///   <item><description>Property: <see cref="CeaReservedDataBlock.Data"/></description></item>
+                    ///   <item><description>Structure: <see cref="CeaSection.DataBlockCollection"/></description></item>
+                    ///   <item><description>Property: <see cref="CeaProperty.ReservedDataBlock.Data"/></description></item>
                     ///   <item><description>Unit: <see cref="PropertyUnit.None"/></description></item>
                     ///  </list>
                     /// </para>
@@ -4687,7 +4693,7 @@ namespace iTin.Hardware.Specification.Eedid
                     ///  <para>1.4</para>
                     /// </para>
                     /// </summary>
-                    public static IPropertyKey Data => new PropertyKey(KnownCeaSection.DataBlockCollection, CeaReservedDataBlock.Data);
+                    public static IPropertyKey Data => new PropertyKey(CeaSection.DataBlockCollection, CeaProperty.ReservedDataBlock.Data);
                     #endregion
                 }
                 #endregion
@@ -4705,8 +4711,8 @@ namespace iTin.Hardware.Specification.Eedid
                     /// <para>
                     ///  <para><b>Key Composition</b></para>
                     ///  <list type="bullet">
-                    ///   <item><description>Structure: <see cref="KnownCeaSection.DataBlockCollection"/></description></item>
-                    ///   <item><description>Property: <see cref="CeaSpeakerDataBlock.FrontLeftRightHigh"/></description></item>
+                    ///   <item><description>Structure: <see cref="CeaSection.DataBlockCollection"/></description></item>
+                    ///   <item><description>Property: <see cref="CeaProperty.SpeakerDataBlock.FrontLeftRightHigh"/></description></item>
                     ///   <item><description>Unit: <see cref="PropertyUnit.None"/></description></item>
                     ///  </list>
                     /// </para>
@@ -4719,7 +4725,7 @@ namespace iTin.Hardware.Specification.Eedid
                     ///  <para>1.4</para>
                     /// </para>
                     /// </summary>
-                    public static IPropertyKey FrontLeftRightHigh => new PropertyKey(KnownCeaSection.DataBlockCollection, CeaSpeakerDataBlock.FrontLeftRightHigh);
+                    public static IPropertyKey FrontLeftRightHigh => new PropertyKey(CeaSection.DataBlockCollection, CeaProperty.SpeakerDataBlock.FrontLeftRightHigh);
                     #endregion
 
                     #region [public] {static} (IPropertyKey) FrontLeftRightWide: Gets a value representing the key to retrieve the property value
@@ -4729,8 +4735,8 @@ namespace iTin.Hardware.Specification.Eedid
                     /// <para>
                     ///  <para><b>Key Composition</b></para>
                     ///  <list type="bullet">
-                    ///   <item><description>Structure: <see cref="KnownCeaSection.DataBlockCollection"/></description></item>
-                    ///   <item><description>Property: <see cref="CeaSpeakerDataBlock.FrontLeftRightWide"/></description></item>
+                    ///   <item><description>Structure: <see cref="CeaSection.DataBlockCollection"/></description></item>
+                    ///   <item><description>Property: <see cref="CeaProperty.SpeakerDataBlock.FrontLeftRightWide"/></description></item>
                     ///   <item><description>Unit: <see cref="PropertyUnit.None"/></description></item>
                     ///  </list>
                     /// </para>
@@ -4743,7 +4749,7 @@ namespace iTin.Hardware.Specification.Eedid
                     ///  <para>1.4</para>
                     /// </para>
                     /// </summary>
-                    public static IPropertyKey FrontLeftRightWide => new PropertyKey(KnownCeaSection.DataBlockCollection, CeaSpeakerDataBlock.FrontLeftRightWide);
+                    public static IPropertyKey FrontLeftRightWide => new PropertyKey(CeaSection.DataBlockCollection, CeaProperty.SpeakerDataBlock.FrontLeftRightWide);
                     #endregion
 
                     #region [public] {static} (IPropertyKey) RearLeftRightCenter: Gets a value representing the key to retrieve the property value
@@ -4753,8 +4759,8 @@ namespace iTin.Hardware.Specification.Eedid
                     /// <para>
                     ///  <para><b>Key Composition</b></para>
                     ///  <list type="bullet">
-                    ///   <item><description>Structure: <see cref="KnownCeaSection.DataBlockCollection"/></description></item>
-                    ///   <item><description>Property: <see cref="CeaSpeakerDataBlock.RearLeftRightCenter"/></description></item>
+                    ///   <item><description>Structure: <see cref="CeaSection.DataBlockCollection"/></description></item>
+                    ///   <item><description>Property: <see cref="CeaProperty.SpeakerDataBlock.RearLeftRightCenter"/></description></item>
                     ///   <item><description>Unit: <see cref="PropertyUnit.None"/></description></item>
                     ///  </list>
                     /// </para>
@@ -4767,7 +4773,7 @@ namespace iTin.Hardware.Specification.Eedid
                     ///  <para>1.4</para>
                     /// </para>
                     /// </summary>
-                    public static IPropertyKey RearLeftRightCenter => new PropertyKey(KnownCeaSection.DataBlockCollection, CeaSpeakerDataBlock.RearLeftRightCenter);
+                    public static IPropertyKey RearLeftRightCenter => new PropertyKey(CeaSection.DataBlockCollection, CeaProperty.SpeakerDataBlock.RearLeftRightCenter);
                     #endregion
 
                     #region [public] {static} (IPropertyKey) FrontLeftRightCenter: Gets a value representing the key to retrieve the property value
@@ -4777,8 +4783,8 @@ namespace iTin.Hardware.Specification.Eedid
                     /// <para>
                     ///  <para><b>Key Composition</b></para>
                     ///  <list type="bullet">
-                    ///   <item><description>Structure: <see cref="KnownCeaSection.DataBlockCollection"/></description></item>
-                    ///   <item><description>Property: <see cref="CeaSpeakerDataBlock.FrontLeftRightCenter"/></description></item>
+                    ///   <item><description>Structure: <see cref="CeaSection.DataBlockCollection"/></description></item>
+                    ///   <item><description>Property: <see cref="CeaProperty.SpeakerDataBlock.FrontLeftRightCenter"/></description></item>
                     ///   <item><description>Unit: <see cref="PropertyUnit.None"/></description></item>
                     ///  </list>
                     /// </para>
@@ -4791,7 +4797,7 @@ namespace iTin.Hardware.Specification.Eedid
                     ///  <para>1.4</para>
                     /// </para>
                     /// </summary>
-                    public static IPropertyKey FrontLeftRightCenter => new PropertyKey(KnownCeaSection.DataBlockCollection, CeaSpeakerDataBlock.FrontLeftRightCenter);
+                    public static IPropertyKey FrontLeftRightCenter => new PropertyKey(CeaSection.DataBlockCollection, CeaProperty.SpeakerDataBlock.FrontLeftRightCenter);
                     #endregion
 
                     #region [public] {static} (IPropertyKey) RearCenter: Gets a value representing the key to retrieve the property value
@@ -4801,8 +4807,8 @@ namespace iTin.Hardware.Specification.Eedid
                     /// <para>
                     ///  <para><b>Key Composition</b></para>
                     ///  <list type="bullet">
-                    ///   <item><description>Structure: <see cref="KnownCeaSection.DataBlockCollection"/></description></item>
-                    ///   <item><description>Property: <see cref="CeaSpeakerDataBlock.RearCenter"/></description></item>
+                    ///   <item><description>Structure: <see cref="CeaSection.DataBlockCollection"/></description></item>
+                    ///   <item><description>Property: <see cref="CeaProperty.SpeakerDataBlock.RearCenter"/></description></item>
                     ///   <item><description>Unit: <see cref="PropertyUnit.None"/></description></item>
                     ///  </list>
                     /// </para>
@@ -4815,7 +4821,7 @@ namespace iTin.Hardware.Specification.Eedid
                     ///  <para>1.4</para>
                     /// </para>
                     /// </summary>
-                    public static IPropertyKey RearCenter => new PropertyKey(KnownCeaSection.DataBlockCollection, CeaSpeakerDataBlock.RearCenter);
+                    public static IPropertyKey RearCenter => new PropertyKey(CeaSection.DataBlockCollection, CeaProperty.SpeakerDataBlock.RearCenter);
                     #endregion
 
                     #region [public] {static} (IPropertyKey) RearLeftRight: Gets a value representing the key to retrieve the property value
@@ -4825,8 +4831,8 @@ namespace iTin.Hardware.Specification.Eedid
                     /// <para>
                     ///  <para><b>Key Composition</b></para>
                     ///  <list type="bullet">
-                    ///   <item><description>Structure: <see cref="KnownCeaSection.DataBlockCollection"/></description></item>
-                    ///   <item><description>Property: <see cref="CeaSpeakerDataBlock.RearLeftRight"/></description></item>
+                    ///   <item><description>Structure: <see cref="CeaSection.DataBlockCollection"/></description></item>
+                    ///   <item><description>Property: <see cref="CeaProperty.SpeakerDataBlock.RearLeftRight"/></description></item>
                     ///   <item><description>Unit: <see cref="PropertyUnit.None"/></description></item>
                     ///  </list>
                     /// </para>
@@ -4839,7 +4845,7 @@ namespace iTin.Hardware.Specification.Eedid
                     ///  <para>1.4</para>
                     /// </para>
                     /// </summary>
-                    public static IPropertyKey RearLeftRight => new PropertyKey(KnownCeaSection.DataBlockCollection, CeaSpeakerDataBlock.RearLeftRight);
+                    public static IPropertyKey RearLeftRight => new PropertyKey(CeaSection.DataBlockCollection, CeaProperty.SpeakerDataBlock.RearLeftRight);
                     #endregion
 
                     #region [public] {static} (IPropertyKey) FrontCenter: Gets a value representing the key to retrieve the property value
@@ -4849,8 +4855,8 @@ namespace iTin.Hardware.Specification.Eedid
                     /// <para>
                     ///  <para><b>Key Composition</b></para>
                     ///  <list type="bullet">
-                    ///   <item><description>Structure: <see cref="KnownCeaSection.DataBlockCollection"/></description></item>
-                    ///   <item><description>Property: <see cref="CeaSpeakerDataBlock.FrontCenter"/></description></item>
+                    ///   <item><description>Structure: <see cref="CeaSection.DataBlockCollection"/></description></item>
+                    ///   <item><description>Property: <see cref="CeaProperty.SpeakerDataBlock.FrontCenter"/></description></item>
                     ///   <item><description>Unit: <see cref="PropertyUnit.None"/></description></item>
                     ///  </list>
                     /// </para>
@@ -4863,7 +4869,7 @@ namespace iTin.Hardware.Specification.Eedid
                     ///  <para>1.4</para>
                     /// </para>
                     /// </summary>
-                    public static IPropertyKey FrontCenter => new PropertyKey(KnownCeaSection.DataBlockCollection, CeaSpeakerDataBlock.FrontCenter);
+                    public static IPropertyKey FrontCenter => new PropertyKey(CeaSection.DataBlockCollection, CeaProperty.SpeakerDataBlock.FrontCenter);
                     #endregion
 
                     #region [public] {static} (IPropertyKey) LFEChannel: Gets a value representing the key to retrieve the property value
@@ -4873,8 +4879,8 @@ namespace iTin.Hardware.Specification.Eedid
                     /// <para>
                     ///  <para><b>Key Composition</b></para>
                     ///  <list type="bullet">
-                    ///   <item><description>Structure: <see cref="KnownCeaSection.DataBlockCollection"/></description></item>
-                    ///   <item><description>Property: <see cref="CeaSpeakerDataBlock.LFEChannel"/></description></item>
+                    ///   <item><description>Structure: <see cref="CeaSection.DataBlockCollection"/></description></item>
+                    ///   <item><description>Property: <see cref="CeaProperty.SpeakerDataBlock.LFEChannel"/></description></item>
                     ///   <item><description>Unit: <see cref="PropertyUnit.None"/></description></item>
                     ///  </list>
                     /// </para>
@@ -4887,7 +4893,7 @@ namespace iTin.Hardware.Specification.Eedid
                     ///  <para>1.4</para>
                     /// </para>
                     /// </summary>
-                    public static IPropertyKey LFEChannel => new PropertyKey(KnownCeaSection.DataBlockCollection, CeaSpeakerDataBlock.LFEChannel);
+                    public static IPropertyKey LFEChannel => new PropertyKey(CeaSection.DataBlockCollection, CeaProperty.SpeakerDataBlock.LFEChannel);
                     #endregion
 
                     #region [public] {static} (IPropertyKey) FrontLeftRight: Gets a value representing the key to retrieve the property value
@@ -4897,8 +4903,8 @@ namespace iTin.Hardware.Specification.Eedid
                     /// <para>
                     ///  <para><b>Key Composition</b></para>
                     ///  <list type="bullet">
-                    ///   <item><description>Structure: <see cref="KnownCeaSection.DataBlockCollection"/></description></item>
-                    ///   <item><description>Property: <see cref="CeaSpeakerDataBlock.FrontLeftRight"/></description></item>
+                    ///   <item><description>Structure: <see cref="CeaSection.DataBlockCollection"/></description></item>
+                    ///   <item><description>Property: <see cref="CeaProperty.SpeakerDataBlock.FrontLeftRight"/></description></item>
                     ///   <item><description>Unit: <see cref="PropertyUnit.None"/></description></item>
                     ///  </list>
                     /// </para>
@@ -4911,7 +4917,7 @@ namespace iTin.Hardware.Specification.Eedid
                     ///  <para>1.4</para>
                     /// </para>
                     /// </summary>
-                    public static IPropertyKey FrontLeftRight => new PropertyKey(KnownCeaSection.DataBlockCollection, CeaSpeakerDataBlock.FrontLeftRight);
+                    public static IPropertyKey FrontLeftRight => new PropertyKey(CeaSection.DataBlockCollection, CeaProperty.SpeakerDataBlock.FrontLeftRight);
                     #endregion
 
                     #region [public] {static} (IPropertyKey) TopCenter: Gets a value representing the key to retrieve the property value
@@ -4921,8 +4927,8 @@ namespace iTin.Hardware.Specification.Eedid
                     /// <para>
                     ///  <para><b>Key Composition</b></para>
                     ///  <list type="bullet">
-                    ///   <item><description>Structure: <see cref="KnownCeaSection.DataBlockCollection"/></description></item>
-                    ///   <item><description>Property: <see cref="CeaSpeakerDataBlock.TopCenter"/></description></item>
+                    ///   <item><description>Structure: <see cref="CeaSection.DataBlockCollection"/></description></item>
+                    ///   <item><description>Property: <see cref="CeaProperty.SpeakerDataBlock.TopCenter"/></description></item>
                     ///   <item><description>Unit: <see cref="PropertyUnit.None"/></description></item>
                     ///  </list>
                     /// </para>
@@ -4935,7 +4941,7 @@ namespace iTin.Hardware.Specification.Eedid
                     ///  <para>1.4</para>
                     /// </para>
                     /// </summary>
-                    public static IPropertyKey TopCenter => new PropertyKey(KnownCeaSection.DataBlockCollection, CeaSpeakerDataBlock.TopCenter);
+                    public static IPropertyKey TopCenter => new PropertyKey(CeaSection.DataBlockCollection, CeaProperty.SpeakerDataBlock.TopCenter);
                     #endregion
 
                     #region [public] {static} (IPropertyKey) FrontCenterHigh: Gets a value representing the key to retrieve the property value
@@ -4945,8 +4951,8 @@ namespace iTin.Hardware.Specification.Eedid
                     /// <para>
                     ///  <para><b>Key Composition</b></para>
                     ///  <list type="bullet">
-                    ///   <item><description>Structure: <see cref="KnownCeaSection.DataBlockCollection"/></description></item>
-                    ///   <item><description>Property: <see cref="CeaSpeakerDataBlock.FrontCenterHigh"/></description></item>
+                    ///   <item><description>Structure: <see cref="CeaSection.DataBlockCollection"/></description></item>
+                    ///   <item><description>Property: <see cref="CeaProperty.SpeakerDataBlock.FrontCenterHigh"/></description></item>
                     ///   <item><description>Unit: <see cref="PropertyUnit.None"/></description></item>
                     ///  </list>
                     /// </para>
@@ -4959,7 +4965,7 @@ namespace iTin.Hardware.Specification.Eedid
                     ///  <para>1.4</para>
                     /// </para>
                     /// </summary>
-                    public static IPropertyKey FrontCenterHigh => new PropertyKey(KnownCeaSection.DataBlockCollection, CeaSpeakerDataBlock.FrontCenterHigh);
+                    public static IPropertyKey FrontCenterHigh => new PropertyKey(CeaSection.DataBlockCollection, CeaProperty.SpeakerDataBlock.FrontCenterHigh);
                     #endregion
                 }
                 #endregion
@@ -4977,8 +4983,8 @@ namespace iTin.Hardware.Specification.Eedid
                     /// <para>
                     ///  <para><b>Key Composition</b></para>
                     ///  <list type="bullet">
-                    ///   <item><description>Structure: <see cref="KnownCeaSection.DataBlockCollection"/></description></item>
-                    ///   <item><description>Property: <see cref="CeaVendorDataBlock.IEEERegistrationIdentifier"/></description></item>
+                    ///   <item><description>Structure: <see cref="CeaSection.DataBlockCollection"/></description></item>
+                    ///   <item><description>Property: <see cref="CeaProperty.VendorDataBlock.IEEERegistrationIdentifier"/></description></item>
                     ///   <item><description>Unit: <see cref="PropertyUnit.None"/></description></item>
                     ///  </list>
                     /// </para>
@@ -4991,7 +4997,7 @@ namespace iTin.Hardware.Specification.Eedid
                     ///  <para>1.4</para>
                     /// </para>
                     /// </summary>
-                    public static IPropertyKey IEEERegistrationIdentifier => new PropertyKey(KnownCeaSection.DataBlockCollection, CeaVendorDataBlock.IEEERegistrationIdentifier);
+                    public static IPropertyKey IEEERegistrationIdentifier => new PropertyKey(CeaSection.DataBlockCollection, CeaProperty.VendorDataBlock.IEEERegistrationIdentifier);
                     #endregion
 
                     #region [public] {static} (IPropertyKey) PhysicalAddress: Gets a value representing the key to retrieve the property value
@@ -5001,8 +5007,8 @@ namespace iTin.Hardware.Specification.Eedid
                     /// <para>
                     ///  <para><b>Key Composition</b></para>
                     ///  <list type="bullet">
-                    ///   <item><description>Structure: <see cref="KnownCeaSection.DataBlockCollection"/></description></item>
-                    ///   <item><description>Property: <see cref="CeaVendorDataBlock.PhysicalAddress"/></description></item>
+                    ///   <item><description>Structure: <see cref="CeaSection.DataBlockCollection"/></description></item>
+                    ///   <item><description>Property: <see cref="CeaProperty.VendorDataBlock.PhysicalAddress"/></description></item>
                     ///   <item><description>Unit: <see cref="PropertyUnit.None"/></description></item>
                     ///  </list>
                     /// </para>
@@ -5015,7 +5021,7 @@ namespace iTin.Hardware.Specification.Eedid
                     ///  <para>1.4</para>
                     /// </para>
                     /// </summary>
-                    public static IPropertyKey PhysicalAddress => new PropertyKey(KnownCeaSection.DataBlockCollection, CeaVendorDataBlock.PhysicalAddress);
+                    public static IPropertyKey PhysicalAddress => new PropertyKey(CeaSection.DataBlockCollection, CeaProperty.VendorDataBlock.PhysicalAddress);
                     #endregion
 
                     #region [public] {static} (IPropertyKey) Flags: Gets a value representing the key to retrieve the property value
@@ -5025,8 +5031,8 @@ namespace iTin.Hardware.Specification.Eedid
                     /// <para>
                     ///  <para><b>Key Composition</b></para>
                     ///  <list type="bullet">
-                    ///   <item><description>Structure: <see cref="KnownCeaSection.DataBlockCollection"/></description></item>
-                    ///   <item><description>Property: <see cref="CeaVendorDataBlock.Flags"/></description></item>
+                    ///   <item><description>Structure: <see cref="CeaSection.DataBlockCollection"/></description></item>
+                    ///   <item><description>Property: <see cref="CeaProperty.VendorDataBlock.Flags"/></description></item>
                     ///   <item><description>Unit: <see cref="PropertyUnit.None"/></description></item>
                     ///  </list>
                     /// </para>
@@ -5039,7 +5045,7 @@ namespace iTin.Hardware.Specification.Eedid
                     ///  <para>1.4</para>
                     /// </para>
                     /// </summary>
-                    public static IPropertyKey Flags => new PropertyKey(KnownCeaSection.DataBlockCollection, CeaVendorDataBlock.Flags);
+                    public static IPropertyKey Flags => new PropertyKey(CeaSection.DataBlockCollection, CeaProperty.VendorDataBlock.Flags);
                     #endregion
 
                     #region [public] {static} (IPropertyKey) MaxClock: Gets a value representing the key to retrieve the property value
@@ -5049,8 +5055,8 @@ namespace iTin.Hardware.Specification.Eedid
                     /// <para>
                     ///  <para><b>Key Composition</b></para>
                     ///  <list type="bullet">
-                    ///   <item><description>Structure: <see cref="KnownCeaSection.DataBlockCollection"/></description></item>
-                    ///   <item><description>Property: <see cref="CeaVendorDataBlock.MaxClock"/></description></item>
+                    ///   <item><description>Structure: <see cref="CeaSection.DataBlockCollection"/></description></item>
+                    ///   <item><description>Property: <see cref="CeaProperty.VendorDataBlock.MaxClock"/></description></item>
                     ///   <item><description>Unit: <see cref="PropertyUnit.None"/></description></item>
                     ///  </list>
                     /// </para>
@@ -5063,7 +5069,7 @@ namespace iTin.Hardware.Specification.Eedid
                     ///  <para>1.4</para>
                     /// </para>
                     /// </summary>
-                    public static IPropertyKey MaxClock => new PropertyKey(KnownCeaSection.DataBlockCollection, CeaVendorDataBlock.MaxClock);
+                    public static IPropertyKey MaxClock => new PropertyKey(CeaSection.DataBlockCollection, CeaProperty.VendorDataBlock.MaxClock);
                     #endregion
 
                     #region [public] {static} (IPropertyKey) VendorPayload: Gets a value representing the key to retrieve the property value
@@ -5073,8 +5079,8 @@ namespace iTin.Hardware.Specification.Eedid
                     /// <para>
                     ///  <para><b>Key Composition</b></para>
                     ///  <list type="bullet">
-                    ///   <item><description>Structure: <see cref="KnownCeaSection.DataBlockCollection"/></description></item>
-                    ///   <item><description>Property: <see cref="CeaVendorDataBlock.VendorPayload"/></description></item>
+                    ///   <item><description>Structure: <see cref="CeaSection.DataBlockCollection"/></description></item>
+                    ///   <item><description>Property: <see cref="CeaProperty.VendorDataBlock.VendorPayload"/></description></item>
                     ///   <item><description>Unit: <see cref="PropertyUnit.None"/></description></item>
                     ///  </list>
                     /// </para>
@@ -5087,7 +5093,7 @@ namespace iTin.Hardware.Specification.Eedid
                     ///  <para>1.4</para>
                     /// </para>
                     /// </summary>
-                    public static IPropertyKey VendorPayload => new PropertyKey(KnownCeaSection.DataBlockCollection, CeaVendorDataBlock.VendorPayload);
+                    public static IPropertyKey VendorPayload => new PropertyKey(CeaSection.DataBlockCollection, CeaProperty.VendorDataBlock.VendorPayload);
                     #endregion
                 }
                 #endregion
@@ -5105,8 +5111,8 @@ namespace iTin.Hardware.Specification.Eedid
                     /// <para>
                     ///  <para><b>Key Composition</b></para>
                     ///  <list type="bullet">
-                    ///   <item><description>Structure: <see cref="KnownCeaSection.DataBlockCollection"/></description></item>
-                    ///   <item><description>Property: <see cref="CeaVideoDataBlock.SupportedTimings"/></description></item>
+                    ///   <item><description>Structure: <see cref="CeaSection.DataBlockCollection"/></description></item>
+                    ///   <item><description>Property: <see cref="CeaProperty.VideoDataBlock.SupportedTimings"/></description></item>
                     ///   <item><description>Unit: <see cref="PropertyUnit.None"/></description></item>
                     ///  </list>
                     /// </para>
@@ -5119,7 +5125,7 @@ namespace iTin.Hardware.Specification.Eedid
                     ///  <para>1.4</para>
                     /// </para>
                     /// </summary>
-                    public static IPropertyKey SupportedTimings => new PropertyKey(KnownCeaSection.DataBlockCollection, CeaVideoDataBlock.SupportedTimings);
+                    public static IPropertyKey SupportedTimings => new PropertyKey(CeaSection.DataBlockCollection, CeaProperty.VideoDataBlock.SupportedTimings);
                     #endregion
                 }
                 #endregion
@@ -5128,9 +5134,9 @@ namespace iTin.Hardware.Specification.Eedid
             }
             #endregion
 
-            #region [public] {static} (class) CheckSum: Definition of keys in the 'CheckSum' section
+            #region [public] {static} (class) Checksum: Definition of keys in the 'CheckSum' section
             /// <summary>
-            /// Definition of keys in the <see cref="KnownCeaSection.CheckSum"/> section.
+            /// Definition of keys in the <see cref="CeaSection.Checksum"/> section.
             /// </summary>
             public static class CheckSum
             {
@@ -5141,8 +5147,8 @@ namespace iTin.Hardware.Specification.Eedid
                 /// <para>
                 ///  <para><b>Key Composition</b></para>
                 ///  <list type="bullet">
-                ///   <item><description>Structure: <see cref="KnownCeaSection.CheckSum"/></description></item>
-                ///   <item><description>Property: <see cref="CeaCheckSum.Ok"/></description></item>
+                ///   <item><description>Structure: <see cref="CeaSection.Checksum"/></description></item>
+                ///   <item><description>Property: <see cref="CeaProperty.Checksum.Ok"/></description></item>
                 ///   <item><description>Unit: <see cref="PropertyUnit.None"/></description></item>
                 ///  </list>
                 /// </para>
@@ -5155,7 +5161,7 @@ namespace iTin.Hardware.Specification.Eedid
                 ///  <para>1.4</para>
                 /// </para>
                 /// </summary>
-                public static IPropertyKey Ok => new PropertyKey(KnownCeaSection.CheckSum, CeaCheckSum.Ok);
+                public static IPropertyKey Ok => new PropertyKey(CeaSection.Checksum, CeaProperty.Checksum.Ok);
                 #endregion
 
                 #region [public] {static} (IPropertyKey) Value: Gets a value representing the key to retrieve the property value
@@ -5165,8 +5171,8 @@ namespace iTin.Hardware.Specification.Eedid
                 /// <para>
                 ///  <para><b>Key Composition</b></para>
                 ///  <list type="bullet">
-                ///   <item><description>Structure: <see cref="KnownCeaSection.CheckSum"/></description></item>
-                ///   <item><description>Property: <see cref="CeaCheckSum.Value"/></description></item>
+                ///   <item><description>Structure: <see cref="CeaSection.Checksum"/></description></item>
+                ///   <item><description>Property: <see cref="CeaProperty.Checksum.Value"/></description></item>
                 ///   <item><description>Unit: <see cref="PropertyUnit.None"/></description></item>
                 ///  </list>
                 /// </para>
@@ -5179,9 +5185,8 @@ namespace iTin.Hardware.Specification.Eedid
                 ///  <para>1.4</para>
                 /// </para>
                 /// </summary>
-                public static IPropertyKey Value => new PropertyKey(KnownCeaSection.CheckSum, CeaCheckSum.Value);
+                public static IPropertyKey Value => new PropertyKey(CeaSection.Checksum, CeaProperty.Checksum.Value);
                 #endregion
-
             }
             #endregion
         }
@@ -5195,7 +5200,7 @@ namespace iTin.Hardware.Specification.Eedid
         {
             #region [public] {static} (class) Information: Definition of keys in the 'Information' section
             /// <summary>
-            /// Definition of keys in the <see cref="KnownDiSection.Information"/> section.
+            /// Definition of keys in the <see cref="DiSection.Information"/> section.
             /// </summary>
             public static class Information
             {
@@ -5206,8 +5211,8 @@ namespace iTin.Hardware.Specification.Eedid
                 /// <para>
                 ///  <para><b>Key Composition</b></para>
                 ///  <list type="bullet">
-                ///   <item><description>Structure: <see cref="KnownDiSection.Information"/></description></item>
-                ///   <item><description>Property: <see cref="DiInformation.VersionNumber"/></description></item>
+                ///   <item><description>Structure: <see cref="DiSection.Information"/></description></item>
+                ///   <item><description>Property: <see cref="DiProperty.Information.VersionNumber"/></description></item>
                 ///   <item><description>Unit: <see cref="PropertyUnit.None"/></description></item>
                 ///  </list>
                 /// </para>
@@ -5220,14 +5225,14 @@ namespace iTin.Hardware.Specification.Eedid
                 ///  <para>1.4</para>
                 /// </para>
                 /// </summary>
-                public static IPropertyKey VersionNumber => new PropertyKey(KnownDiSection.Information, DiInformation.VersionNumber);
+                public static IPropertyKey VersionNumber => new PropertyKey(DiSection.Information, DiProperty.Information.VersionNumber);
                 #endregion
             }
             #endregion
 
             #region [public] {static} (class) DigitalInterface: Definition of keys in the 'Digital Interface' section
             /// <summary>
-            /// Definition of keys in the <see cref="KnownDiSection.DigitalInterface"/> section.
+            /// Definition of keys in the <see cref="DiSection.DigitalInterface"/> section.
             /// </summary>
             public static class DigitalInterface
             {
@@ -5238,8 +5243,8 @@ namespace iTin.Hardware.Specification.Eedid
                 /// <para>
                 ///  <para><b>Key Composition</b></para>
                 ///  <list type="bullet">
-                ///   <item><description>Structure: <see cref="KnownDiSection.DigitalInterface"/></description></item>
-                ///   <item><description>Property: <see cref="DiDigitalInterface.SupportedDigitalInterface"/></description></item>
+                ///   <item><description>Structure: <see cref="DiSection.DigitalInterface"/></description></item>
+                ///   <item><description>Property: <see cref="DiProperty.DigitalInterface.SupportedDigitalInterface"/></description></item>
                 ///   <item><description>Unit: <see cref="PropertyUnit.None"/></description></item>
                 ///  </list>
                 /// </para>
@@ -5248,7 +5253,7 @@ namespace iTin.Hardware.Specification.Eedid
                 ///  <para>Type: <see cref="string"/>.</para>
                 /// </para>
                 /// </summary>
-                public static IPropertyKey SupportedDigitalInterface => new PropertyKey(KnownDiSection.DigitalInterface, DiDigitalInterface.SupportedDigitalInterface);
+                public static IPropertyKey SupportedDigitalInterface => new PropertyKey(DiSection.DigitalInterface, DiProperty.DigitalInterface.SupportedDigitalInterface);
                 #endregion
 
                 #region [public] {static} (IPropertyKey) DataEnableSignalUsageAvailable: Gets a value representing the key to retrieve the property value
@@ -5258,8 +5263,8 @@ namespace iTin.Hardware.Specification.Eedid
                 /// <para>
                 ///  <para><b>Key Composition</b></para>
                 ///  <list type="bullet">
-                ///   <item><description>Structure: <see cref="KnownDiSection.DigitalInterface"/></description></item>
-                ///   <item><description>Property: <see cref="DiDigitalInterface.DataEnableSignalUsageAvailable"/></description></item>
+                ///   <item><description>Structure: <see cref="DiSection.DigitalInterface"/></description></item>
+                ///   <item><description>Property: <see cref="DiProperty.DigitalInterface.DataEnableSignalUsageAvailable"/></description></item>
                 ///   <item><description>Unit: <see cref="PropertyUnit.None"/></description></item>
                 ///  </list>
                 /// </para>
@@ -5268,7 +5273,7 @@ namespace iTin.Hardware.Specification.Eedid
                 ///  <para>Type: <see cref="bool"/>.</para>
                 /// </para>
                 /// </summary>
-                public static IPropertyKey DataEnableSignalUsageAvailable => new PropertyKey(KnownDiSection.DigitalInterface, DiDigitalInterface.DataEnableSignalUsageAvailable);
+                public static IPropertyKey DataEnableSignalUsageAvailable => new PropertyKey(DiSection.DigitalInterface, DiProperty.DigitalInterface.DataEnableSignalUsageAvailable);
                 #endregion
 
                 #region [public] {static} (IPropertyKey) DataEnableSignalHighOrLow: Gets a value representing the key to retrieve the property value
@@ -5278,8 +5283,8 @@ namespace iTin.Hardware.Specification.Eedid
                 /// <para>
                 ///  <para><b>Key Composition</b></para>
                 ///  <list type="bullet">
-                ///   <item><description>Structure: <see cref="KnownDiSection.DigitalInterface"/></description></item>
-                ///   <item><description>Property: <see cref="DiDigitalInterface.DataEnableSignalHighOrLow"/></description></item>
+                ///   <item><description>Structure: <see cref="DiSection.DigitalInterface"/></description></item>
+                ///   <item><description>Property: <see cref="DiProperty.DigitalInterface.DataEnableSignalHighOrLow"/></description></item>
                 ///   <item><description>Unit: <see cref="PropertyUnit.None"/></description></item>
                 ///  </list>
                 /// </para>
@@ -5288,7 +5293,7 @@ namespace iTin.Hardware.Specification.Eedid
                 ///  <para>Type: <see cref="string"/>.</para>
                 /// </para>
                 /// </summary>
-                public static IPropertyKey DataEnableSignalHighOrLow => new PropertyKey(KnownDiSection.DigitalInterface, DiDigitalInterface.DataEnableSignalHighOrLow);
+                public static IPropertyKey DataEnableSignalHighOrLow => new PropertyKey(DiSection.DigitalInterface, DiProperty.DigitalInterface.DataEnableSignalHighOrLow);
                 #endregion
 
                 #region [public] {static} (IPropertyKey) EdgeOfShiftClock: Gets a value representing the key to retrieve the property value
@@ -5298,8 +5303,8 @@ namespace iTin.Hardware.Specification.Eedid
                 /// <para>
                 ///  <para><b>Key Composition</b></para>
                 ///  <list type="bullet">
-                ///   <item><description>Structure: <see cref="KnownDiSection.DigitalInterface"/></description></item>
-                ///   <item><description>Property: <see cref="DiDigitalInterface.EdgeOfShiftClock"/></description></item>
+                ///   <item><description>Structure: <see cref="DiSection.DigitalInterface"/></description></item>
+                ///   <item><description>Property: <see cref="DiProperty.DigitalInterface.EdgeOfShiftClock"/></description></item>
                 ///   <item><description>Unit: <see cref="PropertyUnit.None"/></description></item>
                 ///  </list>
                 /// </para>
@@ -5308,7 +5313,7 @@ namespace iTin.Hardware.Specification.Eedid
                 ///  <para>Type: <see cref="string"/>.</para>
                 /// </para>
                 /// </summary>
-                public static IPropertyKey EdgeOfShiftClock => new PropertyKey(KnownDiSection.DigitalInterface, DiDigitalInterface.EdgeOfShiftClock);
+                public static IPropertyKey EdgeOfShiftClock => new PropertyKey(DiSection.DigitalInterface, DiProperty.DigitalInterface.EdgeOfShiftClock);
                 #endregion
 
                 #region [public] {static} (IPropertyKey) HdcpSupport: Gets a value representing the key to retrieve the property value
@@ -5318,8 +5323,8 @@ namespace iTin.Hardware.Specification.Eedid
                 /// <para>
                 ///  <para><b>Key Composition</b></para>
                 ///  <list type="bullet">
-                ///   <item><description>Structure: <see cref="KnownDiSection.DigitalInterface"/></description></item>
-                ///   <item><description>Property: <see cref="DiDigitalInterface.HdcpSupport"/></description></item>
+                ///   <item><description>Structure: <see cref="DiSection.DigitalInterface"/></description></item>
+                ///   <item><description>Property: <see cref="DiProperty.DigitalInterface.HdcpSupport"/></description></item>
                 ///   <item><description>Unit: <see cref="PropertyUnit.None"/></description></item>
                 ///  </list>
                 /// </para>
@@ -5328,7 +5333,7 @@ namespace iTin.Hardware.Specification.Eedid
                 ///  <para>Type: <see cref="bool"/>.</para>
                 /// </para>
                 /// </summary>
-                public static IPropertyKey HdcpSupport => new PropertyKey(KnownDiSection.DigitalInterface, DiDigitalInterface.HdcpSupport);
+                public static IPropertyKey HdcpSupport => new PropertyKey(DiSection.DigitalInterface, DiProperty.DigitalInterface.HdcpSupport);
                 #endregion
 
                 #region [public] {static} (IPropertyKey) DoubleClockingOfInputData: Gets a value representing the key to retrieve the property value
@@ -5338,8 +5343,8 @@ namespace iTin.Hardware.Specification.Eedid
                 /// <para>
                 ///  <para><b>Key Composition</b></para>
                 ///  <list type="bullet">
-                ///   <item><description>Structure: <see cref="KnownDiSection.DigitalInterface"/></description></item>
-                ///   <item><description>Property: <see cref="DiDigitalInterface.DoubleClockingOfInputData"/></description></item>
+                ///   <item><description>Structure: <see cref="DiSection.DigitalInterface"/></description></item>
+                ///   <item><description>Property: <see cref="DiProperty.DigitalInterface.DoubleClockingOfInputData"/></description></item>
                 ///   <item><description>Unit: <see cref="PropertyUnit.None"/></description></item>
                 ///  </list>
                 /// </para>
@@ -5348,7 +5353,7 @@ namespace iTin.Hardware.Specification.Eedid
                 ///  <para>Type: <see cref="bool"/>.</para>
                 /// </para>
                 /// </summary>
-                public static IPropertyKey DoubleClockingOfInputData => new PropertyKey(KnownDiSection.DigitalInterface, DiDigitalInterface.DoubleClockingOfInputData);
+                public static IPropertyKey DoubleClockingOfInputData => new PropertyKey(DiSection.DigitalInterface, DiProperty.DigitalInterface.DoubleClockingOfInputData);
                 #endregion
 
                 #region [public] {static} (IPropertyKey) SupportForPacketizedDigitalVideoSupport: Gets a value representing the key to retrieve the property value
@@ -5358,8 +5363,8 @@ namespace iTin.Hardware.Specification.Eedid
                 /// <para>
                 ///  <para><b>Key Composition</b></para>
                 ///  <list type="bullet">
-                ///   <item><description>Structure: <see cref="KnownDiSection.DigitalInterface"/></description></item>
-                ///   <item><description>Property: <see cref="DiDigitalInterface.SupportForPacketizedDigitalVideoSupport"/></description></item>
+                ///   <item><description>Structure: <see cref="DiSection.DigitalInterface"/></description></item>
+                ///   <item><description>Property: <see cref="DiProperty.DigitalInterface.SupportForPacketizedDigitalVideoSupport"/></description></item>
                 ///   <item><description>Unit: <see cref="PropertyUnit.None"/></description></item>
                 ///  </list>
                 /// </para>
@@ -5368,7 +5373,7 @@ namespace iTin.Hardware.Specification.Eedid
                 ///  <para>Type: <see cref="bool"/>.</para>
                 /// </para>
                 /// </summary>
-                public static IPropertyKey SupportForPacketizedDigitalVideoSupport => new PropertyKey(KnownDiSection.DigitalInterface, DiDigitalInterface.SupportForPacketizedDigitalVideoSupport);
+                public static IPropertyKey SupportForPacketizedDigitalVideoSupport => new PropertyKey(DiSection.DigitalInterface, DiProperty.DigitalInterface.SupportForPacketizedDigitalVideoSupport);
                 #endregion
 
                 #region [public] {static} (IPropertyKey) DataFormats: Gets a value representing the key to retrieve the property value
@@ -5378,8 +5383,8 @@ namespace iTin.Hardware.Specification.Eedid
                 /// <para>
                 ///  <para><b>Key Composition</b></para>
                 ///  <list type="bullet">
-                ///   <item><description>Structure: <see cref="KnownDiSection.DigitalInterface"/></description></item>
-                ///   <item><description>Property: <see cref="DiDigitalInterface.DataFormats"/></description></item>
+                ///   <item><description>Structure: <see cref="DiSection.DigitalInterface"/></description></item>
+                ///   <item><description>Property: <see cref="DiProperty.DigitalInterface.DataFormats"/></description></item>
                 ///   <item><description>Unit: <see cref="PropertyUnit.None"/></description></item>
                 ///  </list>
                 /// </para>
@@ -5388,7 +5393,7 @@ namespace iTin.Hardware.Specification.Eedid
                 ///  <para>Type: <see cref="string"/>.</para>
                 /// </para>
                 /// </summary>
-                public static IPropertyKey DataFormats => new PropertyKey(KnownDiSection.DigitalInterface, DiDigitalInterface.DataFormats);
+                public static IPropertyKey DataFormats => new PropertyKey(DiSection.DigitalInterface, DiProperty.DigitalInterface.DataFormats);
                 #endregion
 
                 #region [public] {static} (IPropertyKey) MinimumPixelClockFrequencyPerLink: Gets a value representing the key to retrieve the property value
@@ -5406,8 +5411,8 @@ namespace iTin.Hardware.Specification.Eedid
                 /// <para>
                 ///  <para><b>Key Composition</b></para>
                 ///  <list type="bullet">
-                ///   <item><description>Structure: <see cref="KnownDiSection.DigitalInterface"/></description></item>
-                ///   <item><description>Property: <see cref="DiDigitalInterface.MinimumPixelClockFrequencyPerLink"/></description></item>
+                ///   <item><description>Structure: <see cref="DiSection.DigitalInterface"/></description></item>
+                ///   <item><description>Property: <see cref="DiProperty.DigitalInterface.MinimumPixelClockFrequencyPerLink"/></description></item>
                 ///   <item><description>Unit: <see cref="PropertyUnit.MHz"/></description></item>
                 ///  </list>
                 /// </para>
@@ -5416,7 +5421,7 @@ namespace iTin.Hardware.Specification.Eedid
                 ///  <para>Type: <see cref="byte"/>.</para>
                 /// </para>
                 /// </summary>
-                public static IPropertyKey MinimumPixelClockFrequencyPerLink => new PropertyKey(KnownDiSection.DigitalInterface, DiDigitalInterface.MinimumPixelClockFrequencyPerLink, PropertyUnit.MHz);
+                public static IPropertyKey MinimumPixelClockFrequencyPerLink => new PropertyKey(DiSection.DigitalInterface, DiProperty.DigitalInterface.MinimumPixelClockFrequencyPerLink, PropertyUnit.MHz);
                 #endregion
 
                 #region [public] {static} (IPropertyKey) MaximumPixelClockFrequencyPerLink: Gets a value representing the key to retrieve the property value
@@ -5434,8 +5439,8 @@ namespace iTin.Hardware.Specification.Eedid
                 /// <para>
                 ///  <para><b>Key Composition</b></para>
                 ///  <list type="bullet">
-                ///   <item><description>Structure: <see cref="KnownDiSection.DigitalInterface"/></description></item>
-                ///   <item><description>Property: <see cref="DiDigitalInterface.MaximumPixelClockFrequencyPerLink"/></description></item>
+                ///   <item><description>Structure: <see cref="DiSection.DigitalInterface"/></description></item>
+                ///   <item><description>Property: <see cref="DiProperty.DigitalInterface.MaximumPixelClockFrequencyPerLink"/></description></item>
                 ///   <item><description>Unit: <see cref="PropertyUnit.MHz"/></description></item>
                 ///  </list>
                 /// </para>
@@ -5444,7 +5449,7 @@ namespace iTin.Hardware.Specification.Eedid
                 ///  <para>Type: <see cref="int"/>.</para>
                 /// </para>
                 /// </summary>
-                public static IPropertyKey MaximumPixelClockFrequencyPerLink => new PropertyKey(KnownDiSection.DigitalInterface, DiDigitalInterface.MaximumPixelClockFrequencyPerLink, PropertyUnit.MHz);
+                public static IPropertyKey MaximumPixelClockFrequencyPerLink => new PropertyKey(DiSection.DigitalInterface, DiProperty.DigitalInterface.MaximumPixelClockFrequencyPerLink, PropertyUnit.MHz);
                 #endregion
 
                 #region [public] {static} (IPropertyKey) CrossoverFrequency: Gets a value representing the key to retrieve the property value
@@ -5462,8 +5467,8 @@ namespace iTin.Hardware.Specification.Eedid
                 /// <para>
                 ///  <para><b>Key Composition</b></para>
                 ///  <list type="bullet">
-                ///   <item><description>Structure: <see cref="KnownDiSection.DigitalInterface"/></description></item>
-                ///   <item><description>Property: <see cref="DiDigitalInterface.CrossoverFrequency"/></description></item>
+                ///   <item><description>Structure: <see cref="DiSection.DigitalInterface"/></description></item>
+                ///   <item><description>Property: <see cref="DiProperty.DigitalInterface.CrossoverFrequency"/></description></item>
                 ///   <item><description>Unit: <see cref="PropertyUnit.MHz"/></description></item>
                 ///  </list>
                 /// </para>
@@ -5472,14 +5477,14 @@ namespace iTin.Hardware.Specification.Eedid
                 ///  <para>Type: <see cref="int"/>.</para>
                 /// </para>
                 /// </summary>
-                public static IPropertyKey CrossoverFrequency => new PropertyKey(KnownDiSection.DigitalInterface, DiDigitalInterface.CrossoverFrequency, PropertyUnit.MHz);
+                public static IPropertyKey CrossoverFrequency => new PropertyKey(DiSection.DigitalInterface, DiProperty.DigitalInterface.CrossoverFrequency, PropertyUnit.MHz);
                 #endregion
             }
             #endregion
 
             #region [public] {static} (class) DisplayDevice: Definition of keys in the 'Display Device' section
             /// <summary>
-            /// Definition of keys in the <see cref="KnownDiSection.DisplayDevice"/> section.
+            /// Definition of keys in the <see cref="DiSection.DisplayDevice"/> section.
             /// </summary>
             public static class DisplayDevice
             {
@@ -5490,8 +5495,8 @@ namespace iTin.Hardware.Specification.Eedid
                 /// <para>
                 ///  <para><b>Key Composition</b></para>
                 ///  <list type="bullet">
-                ///   <item><description>Structure: <see cref="KnownDiSection.DisplayDevice"/></description></item>
-                ///   <item><description>Property: <see cref="DiDisplayDevice.SubPixelLayout"/></description></item>
+                ///   <item><description>Structure: <see cref="DiSection.DisplayDevice"/></description></item>
+                ///   <item><description>Property: <see cref="DiProperty.DisplayDevice.SubPixelLayout"/></description></item>
                 ///   <item><description>Unit: <see cref="PropertyUnit.None"/></description></item>
                 ///  </list>
                 /// </para>
@@ -5500,7 +5505,7 @@ namespace iTin.Hardware.Specification.Eedid
                 ///  <para>Type: <see cref="string"/>.</para>
                 /// </para>
                 /// </summary>
-                public static IPropertyKey SubPixelLayout => new PropertyKey(KnownDiSection.DisplayDevice, DiDisplayDevice.SubPixelLayout);
+                public static IPropertyKey SubPixelLayout => new PropertyKey(DiSection.DisplayDevice, DiProperty.DisplayDevice.SubPixelLayout);
                 #endregion
 
                 #region [public] {static} (IPropertyKey) SubPixelConfiguration: Gets a value representing the key to retrieve the property value
@@ -5510,8 +5515,8 @@ namespace iTin.Hardware.Specification.Eedid
                 /// <para>
                 ///  <para><b>Key Composition</b></para>
                 ///  <list type="bullet">
-                ///   <item><description>Structure: <see cref="KnownDiSection.DisplayDevice"/></description></item>
-                ///   <item><description>Property: <see cref="DiDisplayDevice.SubPixelConfiguration"/></description></item>
+                ///   <item><description>Structure: <see cref="DiSection.DisplayDevice"/></description></item>
+                ///   <item><description>Property: <see cref="DiProperty.DisplayDevice.SubPixelConfiguration"/></description></item>
                 ///   <item><description>Unit: <see cref="PropertyUnit.None"/></description></item>
                 ///  </list>
                 /// </para>
@@ -5520,7 +5525,7 @@ namespace iTin.Hardware.Specification.Eedid
                 ///  <para>Type: <see cref="string"/>.</para>
                 /// </para>
                 /// </summary>
-                public static IPropertyKey SubPixelConfiguration => new PropertyKey(KnownDiSection.DisplayDevice, DiDisplayDevice.SubPixelConfiguration);
+                public static IPropertyKey SubPixelConfiguration => new PropertyKey(DiSection.DisplayDevice, DiProperty.DisplayDevice.SubPixelConfiguration);
                 #endregion
 
                 #region [public] {static} (IPropertyKey) SubPixelShape: Gets a value representing the key to retrieve the property value
@@ -5530,8 +5535,8 @@ namespace iTin.Hardware.Specification.Eedid
                 /// <para>
                 ///  <para><b>Key Composition</b></para>
                 ///  <list type="bullet">
-                ///   <item><description>Structure: <see cref="KnownDiSection.DisplayDevice"/></description></item>
-                ///   <item><description>Property: <see cref="DiDisplayDevice.SubPixelShape"/></description></item>
+                ///   <item><description>Structure: <see cref="DiSection.DisplayDevice"/></description></item>
+                ///   <item><description>Property: <see cref="DiProperty.DisplayDevice.SubPixelShape"/></description></item>
                 ///   <item><description>Unit: <see cref="PropertyUnit.None"/></description></item>
                 ///  </list>
                 /// </para>
@@ -5540,7 +5545,7 @@ namespace iTin.Hardware.Specification.Eedid
                 ///  <para>Type: <see cref="string"/>.</para>
                 /// </para>
                 /// </summary>
-                public static IPropertyKey SubPixelShape => new PropertyKey(KnownDiSection.DisplayDevice, DiDisplayDevice.SubPixelShape);
+                public static IPropertyKey SubPixelShape => new PropertyKey(DiSection.DisplayDevice, DiProperty.DisplayDevice.SubPixelShape);
                 #endregion
 
                 #region [public] {static} (IPropertyKey) HorizontalDotPixelPitch: Gets a value representing the key to retrieve the property value
@@ -5550,8 +5555,8 @@ namespace iTin.Hardware.Specification.Eedid
                 /// <para>
                 ///  <para><b>Key Composition</b></para>
                 ///  <list type="bullet">
-                ///   <item><description>Structure: <see cref="KnownDiSection.DisplayDevice"/></description></item>
-                ///   <item><description>Property: <see cref="DiDisplayDevice.HorizontalDotPixelPitch"/></description></item>
+                ///   <item><description>Structure: <see cref="DiSection.DisplayDevice"/></description></item>
+                ///   <item><description>Property: <see cref="DiProperty.DisplayDevice.HorizontalDotPixelPitch"/></description></item>
                 ///   <item><description>Unit: <see cref="PropertyUnit.mm"/></description></item>
                 ///  </list>
                 /// </para>
@@ -5560,7 +5565,7 @@ namespace iTin.Hardware.Specification.Eedid
                 ///  <para>Type: <see cref="string"/>.</para>
                 /// </para>
                 /// </summary>
-                public static IPropertyKey HorizontalDotPixelPitch => new PropertyKey(KnownDiSection.DisplayDevice, DiDisplayDevice.HorizontalDotPixelPitch, PropertyUnit.mm);
+                public static IPropertyKey HorizontalDotPixelPitch => new PropertyKey(DiSection.DisplayDevice, DiProperty.DisplayDevice.HorizontalDotPixelPitch, PropertyUnit.mm);
                 #endregion
 
                 #region [public] {static} (IPropertyKey) VerticalDotPixelPitch: Gets a value representing the key to retrieve the property value
@@ -5570,8 +5575,8 @@ namespace iTin.Hardware.Specification.Eedid
                 /// <para>
                 ///  <para><b>Key Composition</b></para>
                 ///  <list type="bullet">
-                ///   <item><description>Structure: <see cref="KnownDiSection.DisplayDevice"/></description></item>
-                ///   <item><description>Property: <see cref="DiDisplayDevice.VerticalDotPixelPitch"/></description></item>
+                ///   <item><description>Structure: <see cref="DiSection.DisplayDevice"/></description></item>
+                ///   <item><description>Property: <see cref="DiProperty.DisplayDevice.VerticalDotPixelPitch"/></description></item>
                 ///   <item><description>Unit: <see cref="PropertyUnit.mm"/></description></item>
                 ///  </list>
                 /// </para>
@@ -5580,7 +5585,7 @@ namespace iTin.Hardware.Specification.Eedid
                 ///  <para>Type: <see cref="string"/>.</para>
                 /// </para>
                 /// </summary>
-                public static IPropertyKey VerticalDotPixelPitch => new PropertyKey(KnownDiSection.DisplayDevice, DiDisplayDevice.VerticalDotPixelPitch, PropertyUnit.mm);
+                public static IPropertyKey VerticalDotPixelPitch => new PropertyKey(DiSection.DisplayDevice, DiProperty.DisplayDevice.VerticalDotPixelPitch, PropertyUnit.mm);
                 #endregion
 
                 #region [public] {static} (IPropertyKey) FixedPixelFormat: Gets a value representing the key to retrieve the property value
@@ -5590,8 +5595,8 @@ namespace iTin.Hardware.Specification.Eedid
                 /// <para>
                 ///  <para><b>Key Composition</b></para>
                 ///  <list type="bullet">
-                ///   <item><description>Structure: <see cref="KnownDiSection.DisplayDevice"/></description></item>
-                ///   <item><description>Property: <see cref="DiDisplayDevice.FixedPixelFormat"/></description></item>
+                ///   <item><description>Structure: <see cref="DiSection.DisplayDevice"/></description></item>
+                ///   <item><description>Property: <see cref="DiProperty.DisplayDevice.FixedPixelFormat"/></description></item>
                 ///   <item><description>Unit: <see cref="PropertyUnit.None"/></description></item>
                 ///  </list>
                 /// </para>
@@ -5600,7 +5605,7 @@ namespace iTin.Hardware.Specification.Eedid
                 ///  <para>Type: <see cref="bool"/>.</para>
                 /// </para>
                 /// </summary>
-                public static IPropertyKey FixedPixelFormat => new PropertyKey(KnownDiSection.DisplayDevice, DiDisplayDevice.FixedPixelFormat);
+                public static IPropertyKey FixedPixelFormat => new PropertyKey(DiSection.DisplayDevice, DiProperty.DisplayDevice.FixedPixelFormat);
                 #endregion
 
                 #region [public] {static} (IPropertyKey) ViewDirection: Gets a value representing the key to retrieve the property value
@@ -5610,8 +5615,8 @@ namespace iTin.Hardware.Specification.Eedid
                 /// <para>
                 ///  <para><b>Key Composition</b></para>
                 ///  <list type="bullet">
-                ///   <item><description>Structure: <see cref="KnownDiSection.DisplayDevice"/></description></item>
-                ///   <item><description>Property: <see cref="DiDisplayDevice.ViewDirection"/></description></item>
+                ///   <item><description>Structure: <see cref="DiSection.DisplayDevice"/></description></item>
+                ///   <item><description>Property: <see cref="DiProperty.DisplayDevice.ViewDirection"/></description></item>
                 ///   <item><description>Unit: <see cref="PropertyUnit.None"/></description></item>
                 ///  </list>
                 /// </para>
@@ -5620,7 +5625,7 @@ namespace iTin.Hardware.Specification.Eedid
                 ///  <para>Type: <see cref="string"/>.</para>
                 /// </para>
                 /// </summary>
-                public static IPropertyKey ViewDirection => new PropertyKey(KnownDiSection.DisplayDevice, DiDisplayDevice.ViewDirection);
+                public static IPropertyKey ViewDirection => new PropertyKey(DiSection.DisplayDevice, DiProperty.DisplayDevice.ViewDirection);
                 #endregion
 
                 #region [public] {static} (IPropertyKey) DisplayBackground: Gets a value representing the key to retrieve the property value
@@ -5630,8 +5635,8 @@ namespace iTin.Hardware.Specification.Eedid
                 /// <para>
                 ///  <para><b>Key Composition</b></para>
                 ///  <list type="bullet">
-                ///   <item><description>Structure: <see cref="KnownDiSection.DisplayDevice"/></description></item>
-                ///   <item><description>Property: <see cref="DiDisplayDevice.DisplayBackground"/></description></item>
+                ///   <item><description>Structure: <see cref="DiSection.DisplayDevice"/></description></item>
+                ///   <item><description>Property: <see cref="DiProperty.DisplayDevice.DisplayBackground"/></description></item>
                 ///   <item><description>Unit: <see cref="PropertyUnit.None"/></description></item>
                 ///  </list>
                 /// </para>
@@ -5640,7 +5645,7 @@ namespace iTin.Hardware.Specification.Eedid
                 ///  <para>Type: <see cref="bool"/>.</para>
                 /// </para>
                 /// </summary>
-                public static IPropertyKey DisplayBackground => new PropertyKey(KnownDiSection.DisplayDevice, DiDisplayDevice.DisplayBackground);
+                public static IPropertyKey DisplayBackground => new PropertyKey(DiSection.DisplayDevice, DiProperty.DisplayDevice.DisplayBackground);
                 #endregion
 
                 #region [public] {static} (IPropertyKey) PhysicalImplementation: Gets a value representing the key to retrieve the property value
@@ -5650,8 +5655,8 @@ namespace iTin.Hardware.Specification.Eedid
                 /// <para>
                 ///  <para><b>Key Composition</b></para>
                 ///  <list type="bullet">
-                ///   <item><description>Structure: <see cref="KnownDiSection.DisplayDevice"/></description></item>
-                ///   <item><description>Property: <see cref="DiDisplayDevice.PhysicalImplementation"/></description></item>
+                ///   <item><description>Structure: <see cref="DiSection.DisplayDevice"/></description></item>
+                ///   <item><description>Property: <see cref="DiProperty.DisplayDevice.PhysicalImplementation"/></description></item>
                 ///   <item><description>Unit: <see cref="PropertyUnit.None"/></description></item>
                 ///  </list>
                 /// </para>
@@ -5660,7 +5665,7 @@ namespace iTin.Hardware.Specification.Eedid
                 ///  <para>Type: <see cref="string"/>.</para>
                 /// </para>
                 /// </summary>
-                public static IPropertyKey PhysicalImplementation => new PropertyKey(KnownDiSection.DisplayDevice, DiDisplayDevice.PhysicalImplementation);
+                public static IPropertyKey PhysicalImplementation => new PropertyKey(DiSection.DisplayDevice, DiProperty.DisplayDevice.PhysicalImplementation);
                 #endregion
 
                 #region [public] {static} (IPropertyKey) DDC: Gets a value representing the key to retrieve the property value
@@ -5670,8 +5675,8 @@ namespace iTin.Hardware.Specification.Eedid
                 /// <para>
                 ///  <para><b>Key Composition</b></para>
                 ///  <list type="bullet">
-                ///   <item><description>Structure: <see cref="KnownDiSection.DisplayDevice"/></description></item>
-                ///   <item><description>Property: <see cref="DiDisplayDevice.DDC"/></description></item>
+                ///   <item><description>Structure: <see cref="DiSection.DisplayDevice"/></description></item>
+                ///   <item><description>Property: <see cref="DiProperty.DisplayDevice.DDC"/></description></item>
                 ///   <item><description>Unit: <see cref="PropertyUnit.None"/></description></item>
                 ///  </list>
                 /// </para>
@@ -5680,14 +5685,14 @@ namespace iTin.Hardware.Specification.Eedid
                 ///  <para>Type: <see cref="bool"/>.</para>
                 /// </para>
                 /// </summary>
-                public static IPropertyKey DDC => new PropertyKey(KnownDiSection.DisplayDevice, DiDisplayDevice.DDC);
+                public static IPropertyKey DDC => new PropertyKey(DiSection.DisplayDevice, DiProperty.DisplayDevice.DDC);
                 #endregion
             }
             #endregion
 
             #region [public] {static} (class) DisplayCapabilitiesAndFeatureSupportSet: Definition of keys in the 'Display Capabilities & Feature Support Set' section
             /// <summary>
-            /// Definition of keys in the <see cref="KnownDiSection.DisplayCapabilitiesAndFeatureSupportSet"/> section.
+            /// Definition of keys in the <see cref="DiSection.DisplayCapabilitiesAndFeatureSupportSet"/> section.
             /// </summary>
             public static class DisplayCapabilitiesAndFeatureSupportSet
             {
@@ -5698,8 +5703,8 @@ namespace iTin.Hardware.Specification.Eedid
                 /// <para>
                 ///  <para><b>Key Composition</b></para>
                 ///  <list type="bullet">
-                ///   <item><description>Structure: <see cref="KnownDiSection.DisplayCapabilitiesAndFeatureSupportSet"/></description></item>
-                ///   <item><description>Property: <see cref="DiDisplayCapabilitiesAndFeatureSupportSet.LegacyModes"/></description></item>
+                ///   <item><description>Structure: <see cref="DiSection.DisplayCapabilitiesAndFeatureSupportSet"/></description></item>
+                ///   <item><description>Property: <see cref="DiProperty.DisplayCapabilitiesAndFeatureSupportSet.LegacyModes"/></description></item>
                 ///   <item><description>Unit: <see cref="PropertyUnit.None"/></description></item>
                 ///  </list>
                 /// </para>
@@ -5708,7 +5713,7 @@ namespace iTin.Hardware.Specification.Eedid
                 ///  <para>Type: <see cref="string"/>.</para>
                 /// </para>
                 /// </summary>
-                public static IPropertyKey LegacyModes => new PropertyKey(KnownDiSection.DisplayCapabilitiesAndFeatureSupportSet, DiDisplayCapabilitiesAndFeatureSupportSet.LegacyModes);
+                public static IPropertyKey LegacyModes => new PropertyKey(DiSection.DisplayCapabilitiesAndFeatureSupportSet, DiProperty.DisplayCapabilitiesAndFeatureSupportSet.LegacyModes);
                 #endregion
 
                 #region [public] {static} (IPropertyKey) StereoVideo: Gets a value representing the key to retrieve the property value
@@ -5718,8 +5723,8 @@ namespace iTin.Hardware.Specification.Eedid
                 /// <para>
                 ///  <para><b>Key Composition</b></para>
                 ///  <list type="bullet">
-                ///   <item><description>Structure: <see cref="KnownDiSection.DisplayCapabilitiesAndFeatureSupportSet"/></description></item>
-                ///   <item><description>Property: <see cref="DiDisplayCapabilitiesAndFeatureSupportSet.StereoVideo"/></description></item>
+                ///   <item><description>Structure: <see cref="DiSection.DisplayCapabilitiesAndFeatureSupportSet"/></description></item>
+                ///   <item><description>Property: <see cref="DiProperty.DisplayCapabilitiesAndFeatureSupportSet.StereoVideo"/></description></item>
                 ///   <item><description>Unit: <see cref="PropertyUnit.None"/></description></item>
                 ///  </list>
                 /// </para>
@@ -5728,7 +5733,7 @@ namespace iTin.Hardware.Specification.Eedid
                 ///  <para>Type: <see cref="string"/>.</para>
                 /// </para>
                 /// </summary>
-                public static IPropertyKey StereoVideo => new PropertyKey(KnownDiSection.DisplayCapabilitiesAndFeatureSupportSet, DiDisplayCapabilitiesAndFeatureSupportSet.StereoVideo);
+                public static IPropertyKey StereoVideo => new PropertyKey(DiSection.DisplayCapabilitiesAndFeatureSupportSet, DiProperty.DisplayCapabilitiesAndFeatureSupportSet.StereoVideo);
                 #endregion
 
                 #region [public] {static} (IPropertyKey) ScalerOnBoard: Gets a value representing the key to retrieve the property value
@@ -5738,8 +5743,8 @@ namespace iTin.Hardware.Specification.Eedid
                 /// <para>
                 ///  <para><b>Key Composition</b></para>
                 ///  <list type="bullet">
-                ///   <item><description>Structure: <see cref="KnownDiSection.DisplayCapabilitiesAndFeatureSupportSet"/></description></item>
-                ///   <item><description>Property: <see cref="DiDisplayCapabilitiesAndFeatureSupportSet.ScalerOnBoard"/></description></item>
+                ///   <item><description>Structure: <see cref="DiSection.DisplayCapabilitiesAndFeatureSupportSet"/></description></item>
+                ///   <item><description>Property: <see cref="DiProperty.DisplayCapabilitiesAndFeatureSupportSet.ScalerOnBoard"/></description></item>
                 ///   <item><description>Unit: <see cref="PropertyUnit.None"/></description></item>
                 ///  </list>
                 /// </para>
@@ -5748,7 +5753,7 @@ namespace iTin.Hardware.Specification.Eedid
                 ///  <para>Type: <see cref="bool"/>.</para>
                 /// </para>
                 /// </summary>
-                public static IPropertyKey ScalerOnBoard => new PropertyKey(KnownDiSection.DisplayCapabilitiesAndFeatureSupportSet, DiDisplayCapabilitiesAndFeatureSupportSet.ScalerOnBoard);
+                public static IPropertyKey ScalerOnBoard => new PropertyKey(DiSection.DisplayCapabilitiesAndFeatureSupportSet, DiProperty.DisplayCapabilitiesAndFeatureSupportSet.ScalerOnBoard);
                 #endregion
 
                 #region [public] {static} (IPropertyKey) ImageCentering: Gets a value representing the key to retrieve the property value
@@ -5758,8 +5763,8 @@ namespace iTin.Hardware.Specification.Eedid
                 /// <para>
                 ///  <para><b>Key Composition</b></para>
                 ///  <list type="bullet">
-                ///   <item><description>Structure: <see cref="KnownDiSection.DisplayCapabilitiesAndFeatureSupportSet"/></description></item>
-                ///   <item><description>Property: <see cref="DiDisplayCapabilitiesAndFeatureSupportSet.ImageCentering"/></description></item>
+                ///   <item><description>Structure: <see cref="DiSection.DisplayCapabilitiesAndFeatureSupportSet"/></description></item>
+                ///   <item><description>Property: <see cref="DiProperty.DisplayCapabilitiesAndFeatureSupportSet.ImageCentering"/></description></item>
                 ///   <item><description>Unit: <see cref="PropertyUnit.None"/></description></item>
                 ///  </list>
                 /// </para>
@@ -5768,7 +5773,7 @@ namespace iTin.Hardware.Specification.Eedid
                 ///  <para>Type: <see cref="bool"/>.</para>
                 /// </para>
                 /// </summary>
-                public static IPropertyKey ImageCentering => new PropertyKey(KnownDiSection.DisplayCapabilitiesAndFeatureSupportSet, DiDisplayCapabilitiesAndFeatureSupportSet.ImageCentering);
+                public static IPropertyKey ImageCentering => new PropertyKey(DiSection.DisplayCapabilitiesAndFeatureSupportSet, DiProperty.DisplayCapabilitiesAndFeatureSupportSet.ImageCentering);
                 #endregion
 
                 #region [public] {static} (IPropertyKey) ConditionalUpdate: Gets a value representing the key to retrieve the property value
@@ -5778,8 +5783,8 @@ namespace iTin.Hardware.Specification.Eedid
                 /// <para>
                 ///  <para><b>Key Composition</b></para>
                 ///  <list type="bullet">
-                ///   <item><description>Structure: <see cref="KnownDiSection.DisplayCapabilitiesAndFeatureSupportSet"/></description></item>
-                ///   <item><description>Property: <see cref="DiDisplayCapabilitiesAndFeatureSupportSet.ConditionalUpdate"/></description></item>
+                ///   <item><description>Structure: <see cref="DiSection.DisplayCapabilitiesAndFeatureSupportSet"/></description></item>
+                ///   <item><description>Property: <see cref="DiProperty.DisplayCapabilitiesAndFeatureSupportSet.ConditionalUpdate"/></description></item>
                 ///   <item><description>Unit: <see cref="PropertyUnit.None"/></description></item>
                 ///  </list>
                 /// </para>
@@ -5788,7 +5793,7 @@ namespace iTin.Hardware.Specification.Eedid
                 ///  <para>Type: <see cref="bool"/>.</para>
                 /// </para>
                 /// </summary>
-                public static IPropertyKey ConditionalUpdate => new PropertyKey(KnownDiSection.DisplayCapabilitiesAndFeatureSupportSet, DiDisplayCapabilitiesAndFeatureSupportSet.ConditionalUpdate);
+                public static IPropertyKey ConditionalUpdate => new PropertyKey(DiSection.DisplayCapabilitiesAndFeatureSupportSet, DiProperty.DisplayCapabilitiesAndFeatureSupportSet.ConditionalUpdate);
                 #endregion
 
                 #region [public] {static} (IPropertyKey) InterlacedVideo: Gets a value representing the key to retrieve the property value
@@ -5798,8 +5803,8 @@ namespace iTin.Hardware.Specification.Eedid
                 /// <para>
                 ///  <para><b>Key Composition</b></para>
                 ///  <list type="bullet">
-                ///   <item><description>Structure: <see cref="KnownDiSection.DisplayCapabilitiesAndFeatureSupportSet"/></description></item>
-                ///   <item><description>Property: <see cref="DiDisplayCapabilitiesAndFeatureSupportSet.InterlacedVideo"/></description></item>
+                ///   <item><description>Structure: <see cref="DiSection.DisplayCapabilitiesAndFeatureSupportSet"/></description></item>
+                ///   <item><description>Property: <see cref="DiProperty.DisplayCapabilitiesAndFeatureSupportSet.InterlacedVideo"/></description></item>
                 ///   <item><description>Unit: <see cref="PropertyUnit.None"/></description></item>
                 ///  </list>
                 /// </para>
@@ -5808,7 +5813,7 @@ namespace iTin.Hardware.Specification.Eedid
                 ///  <para>Type: <see cref="bool"/>.</para>
                 /// </para>
                 /// </summary>
-                public static IPropertyKey InterlacedVideo => new PropertyKey(KnownDiSection.DisplayCapabilitiesAndFeatureSupportSet, DiDisplayCapabilitiesAndFeatureSupportSet.InterlacedVideo);
+                public static IPropertyKey InterlacedVideo => new PropertyKey(DiSection.DisplayCapabilitiesAndFeatureSupportSet, DiProperty.DisplayCapabilitiesAndFeatureSupportSet.InterlacedVideo);
                 #endregion
 
                 #region [public] {static} (IPropertyKey) FrameLock: Gets a value representing the key to retrieve the property value
@@ -5818,8 +5823,8 @@ namespace iTin.Hardware.Specification.Eedid
                 /// <para>
                 ///  <para><b>Key Composition</b></para>
                 ///  <list type="bullet">
-                ///   <item><description>Structure: <see cref="KnownDiSection.DisplayCapabilitiesAndFeatureSupportSet"/></description></item>
-                ///   <item><description>Property: <see cref="DiDisplayCapabilitiesAndFeatureSupportSet.FrameLock"/></description></item>
+                ///   <item><description>Structure: <see cref="DiSection.DisplayCapabilitiesAndFeatureSupportSet"/></description></item>
+                ///   <item><description>Property: <see cref="DiProperty.DisplayCapabilitiesAndFeatureSupportSet.FrameLock"/></description></item>
                 ///   <item><description>Unit: <see cref="PropertyUnit.None"/></description></item>
                 ///  </list>
                 /// </para>
@@ -5828,7 +5833,7 @@ namespace iTin.Hardware.Specification.Eedid
                 ///  <para>Type: <see cref="bool"/>.</para>
                 /// </para>
                 /// </summary>
-                public static IPropertyKey FrameLock => new PropertyKey(KnownDiSection.DisplayCapabilitiesAndFeatureSupportSet, DiDisplayCapabilitiesAndFeatureSupportSet.FrameLock);
+                public static IPropertyKey FrameLock => new PropertyKey(DiSection.DisplayCapabilitiesAndFeatureSupportSet, DiProperty.DisplayCapabilitiesAndFeatureSupportSet.FrameLock);
                 #endregion
 
                 #region [public] {static} (IPropertyKey) FrameRateConversion: Gets a value representing the key to retrieve the property value
@@ -5838,8 +5843,8 @@ namespace iTin.Hardware.Specification.Eedid
                 /// <para>
                 ///  <para><b>Key Composition</b></para>
                 ///  <list type="bullet">
-                ///   <item><description>Structure: <see cref="KnownDiSection.DisplayCapabilitiesAndFeatureSupportSet"/></description></item>
-                ///   <item><description>Property: <see cref="DiDisplayCapabilitiesAndFeatureSupportSet.FrameRateConversion"/></description></item>
+                ///   <item><description>Structure: <see cref="DiSection.DisplayCapabilitiesAndFeatureSupportSet"/></description></item>
+                ///   <item><description>Property: <see cref="DiProperty.DisplayCapabilitiesAndFeatureSupportSet.FrameRateConversion"/></description></item>
                 ///   <item><description>Unit: <see cref="PropertyUnit.None"/></description></item>
                 ///  </list>
                 /// </para>
@@ -5848,7 +5853,7 @@ namespace iTin.Hardware.Specification.Eedid
                 ///  <para>Type: <see cref="bool"/>.</para>
                 /// </para>
                 /// </summary>
-                public static IPropertyKey FrameRateConversion => new PropertyKey(KnownDiSection.DisplayCapabilitiesAndFeatureSupportSet, DiDisplayCapabilitiesAndFeatureSupportSet.FrameRateConversion);
+                public static IPropertyKey FrameRateConversion => new PropertyKey(DiSection.DisplayCapabilitiesAndFeatureSupportSet, DiProperty.DisplayCapabilitiesAndFeatureSupportSet.FrameRateConversion);
                 #endregion
 
                 #region [public] {static} (IPropertyKey) VerticalFrequency: Gets a value representing the key to retrieve the property value
@@ -5866,8 +5871,8 @@ namespace iTin.Hardware.Specification.Eedid
                 /// <para>
                 ///  <para><b>Key Composition</b></para>
                 ///  <list type="bullet">
-                ///   <item><description>Structure: <see cref="KnownDiSection.DisplayCapabilitiesAndFeatureSupportSet"/></description></item>
-                ///   <item><description>Property: <see cref="DiDisplayCapabilitiesAndFeatureSupportSet.VerticalFrequency"/></description></item>
+                ///   <item><description>Structure: <see cref="DiSection.DisplayCapabilitiesAndFeatureSupportSet"/></description></item>
+                ///   <item><description>Property: <see cref="DiProperty.DisplayCapabilitiesAndFeatureSupportSet.VerticalFrequency"/></description></item>
                 ///   <item><description>Unit: <see cref="PropertyUnit.Hz"/></description></item>
                 ///  </list>
                 /// </para>
@@ -5876,7 +5881,7 @@ namespace iTin.Hardware.Specification.Eedid
                 ///  <para>Type: <see cref="int"/>.</para>
                 /// </para>
                 /// </summary>
-                public static IPropertyKey VerticalFrequency => new PropertyKey(KnownDiSection.DisplayCapabilitiesAndFeatureSupportSet, DiDisplayCapabilitiesAndFeatureSupportSet.VerticalFrequency, PropertyUnit.Hz);
+                public static IPropertyKey VerticalFrequency => new PropertyKey(DiSection.DisplayCapabilitiesAndFeatureSupportSet, DiProperty.DisplayCapabilitiesAndFeatureSupportSet.VerticalFrequency, PropertyUnit.Hz);
                 #endregion
 
                 #region [public] {static} (IPropertyKey) HorizontalFrequency: Gets a value representing the key to retrieve the property value
@@ -5894,8 +5899,8 @@ namespace iTin.Hardware.Specification.Eedid
                 /// <para>
                 ///  <para><b>Key Composition</b></para>
                 ///  <list type="bullet">
-                ///   <item><description>Structure: <see cref="KnownDiSection.DisplayCapabilitiesAndFeatureSupportSet"/></description></item>
-                ///   <item><description>Property: <see cref="DiDisplayCapabilitiesAndFeatureSupportSet.HorizontalFrequency"/></description></item>
+                ///   <item><description>Structure: <see cref="DiSection.DisplayCapabilitiesAndFeatureSupportSet"/></description></item>
+                ///   <item><description>Property: <see cref="DiProperty.DisplayCapabilitiesAndFeatureSupportSet.HorizontalFrequency"/></description></item>
                 ///   <item><description>Unit: <see cref="PropertyUnit.Hz"/></description></item>
                 ///  </list>
                 /// </para>
@@ -5904,7 +5909,7 @@ namespace iTin.Hardware.Specification.Eedid
                 ///  <para>Type: <see cref="int"/>.</para>
                 /// </para>
                 /// </summary>
-                public static IPropertyKey HorizontalFrequency => new PropertyKey(KnownDiSection.DisplayCapabilitiesAndFeatureSupportSet, DiDisplayCapabilitiesAndFeatureSupportSet.HorizontalFrequency, PropertyUnit.Hz);
+                public static IPropertyKey HorizontalFrequency => new PropertyKey(DiSection.DisplayCapabilitiesAndFeatureSupportSet, DiProperty.DisplayCapabilitiesAndFeatureSupportSet.HorizontalFrequency, PropertyUnit.Hz);
                 #endregion
 
                 #region [public] {static} (IPropertyKey) DisplayScanOrientationType: Gets a value representing the key to retrieve the property value
@@ -5914,8 +5919,8 @@ namespace iTin.Hardware.Specification.Eedid
                 /// <para>
                 ///  <para><b>Key Composition</b></para>
                 ///  <list type="bullet">
-                ///   <item><description>Structure: <see cref="KnownDiSection.DisplayCapabilitiesAndFeatureSupportSet"/></description></item>
-                ///   <item><description>Property: <see cref="DiDisplayCapabilitiesAndFeatureSupportSet.DisplayScanOrientationType"/></description></item>
+                ///   <item><description>Structure: <see cref="DiSection.DisplayCapabilitiesAndFeatureSupportSet"/></description></item>
+                ///   <item><description>Property: <see cref="DiProperty.DisplayCapabilitiesAndFeatureSupportSet.DisplayScanOrientationType"/></description></item>
                 ///   <item><description>Unit: <see cref="PropertyUnit.None"/></description></item>
                 ///  </list>
                 /// </para>
@@ -5924,7 +5929,7 @@ namespace iTin.Hardware.Specification.Eedid
                 ///  <para>Type: <see cref="string"/>.</para>
                 /// </para>
                 /// </summary>
-                public static IPropertyKey DisplayScanOrientationType => new PropertyKey(KnownDiSection.DisplayCapabilitiesAndFeatureSupportSet, DiDisplayCapabilitiesAndFeatureSupportSet.DisplayScanOrientationType);
+                public static IPropertyKey DisplayScanOrientationType => new PropertyKey(DiSection.DisplayCapabilitiesAndFeatureSupportSet, DiProperty.DisplayCapabilitiesAndFeatureSupportSet.DisplayScanOrientationType);
                 #endregion
 
                 #region [public] {static} (IPropertyKey) ScreenOrientation: Gets a value representing the key to retrieve the property value
@@ -5934,8 +5939,8 @@ namespace iTin.Hardware.Specification.Eedid
                 /// <para>
                 ///  <para><b>Key Composition</b></para>
                 ///  <list type="bullet">
-                ///   <item><description>Structure: <see cref="KnownDiSection.DisplayCapabilitiesAndFeatureSupportSet"/></description></item>
-                ///   <item><description>Property: <see cref="DiDisplayCapabilitiesAndFeatureSupportSet.ScreenOrientation"/></description></item>
+                ///   <item><description>Structure: <see cref="DiSection.DisplayCapabilitiesAndFeatureSupportSet"/></description></item>
+                ///   <item><description>Property: <see cref="DiProperty.DisplayCapabilitiesAndFeatureSupportSet.ScreenOrientation"/></description></item>
                 ///   <item><description>Unit: <see cref="PropertyUnit.None"/></description></item>
                 ///  </list>
                 /// </para>
@@ -5944,7 +5949,7 @@ namespace iTin.Hardware.Specification.Eedid
                 ///  <para>Type: <see cref="string"/>.</para>
                 /// </para>
                 /// </summary>
-                public static IPropertyKey ScreenOrientation => new PropertyKey(KnownDiSection.DisplayCapabilitiesAndFeatureSupportSet, DiDisplayCapabilitiesAndFeatureSupportSet.ScreenOrientation);
+                public static IPropertyKey ScreenOrientation => new PropertyKey(DiSection.DisplayCapabilitiesAndFeatureSupportSet, DiProperty.DisplayCapabilitiesAndFeatureSupportSet.ScreenOrientation);
                 #endregion
 
                 #region [public] {static} (IPropertyKey) ZeroPixelLocation: Gets a value representing the key to retrieve the property value
@@ -5954,8 +5959,8 @@ namespace iTin.Hardware.Specification.Eedid
                 /// <para>
                 ///  <para><b>Key Composition</b></para>
                 ///  <list type="bullet">
-                ///   <item><description>Structure: <see cref="KnownDiSection.DisplayCapabilitiesAndFeatureSupportSet"/></description></item>
-                ///   <item><description>Property: <see cref="DiDisplayCapabilitiesAndFeatureSupportSet.ZeroPixelLocation"/></description></item>
+                ///   <item><description>Structure: <see cref="DiSection.DisplayCapabilitiesAndFeatureSupportSet"/></description></item>
+                ///   <item><description>Property: <see cref="DiProperty.DisplayCapabilitiesAndFeatureSupportSet.ZeroPixelLocation"/></description></item>
                 ///   <item><description>Unit: <see cref="PropertyUnit.None"/></description></item>
                 ///  </list>
                 /// </para>
@@ -5964,7 +5969,7 @@ namespace iTin.Hardware.Specification.Eedid
                 ///  <para>Type: <see cref="string"/>.</para>
                 /// </para>
                 /// </summary>
-                public static IPropertyKey ZeroPixelLocation => new PropertyKey(KnownDiSection.DisplayCapabilitiesAndFeatureSupportSet, DiDisplayCapabilitiesAndFeatureSupportSet.ZeroPixelLocation);
+                public static IPropertyKey ZeroPixelLocation => new PropertyKey(DiSection.DisplayCapabilitiesAndFeatureSupportSet, DiProperty.DisplayCapabilitiesAndFeatureSupportSet.ZeroPixelLocation);
                 #endregion
 
                 #region [public] {static} (IPropertyKey) ScanDirection: Gets a value representing the key to retrieve the property value
@@ -5974,8 +5979,8 @@ namespace iTin.Hardware.Specification.Eedid
                 /// <para>
                 ///  <para><b>Key Composition</b></para>
                 ///  <list type="bullet">
-                ///   <item><description>Structure: <see cref="KnownDiSection.DisplayCapabilitiesAndFeatureSupportSet"/></description></item>
-                ///   <item><description>Property: <see cref="DiDisplayCapabilitiesAndFeatureSupportSet.ScanDirection"/></description></item>
+                ///   <item><description>Structure: <see cref="DiSection.DisplayCapabilitiesAndFeatureSupportSet"/></description></item>
+                ///   <item><description>Property: <see cref="DiProperty.DisplayCapabilitiesAndFeatureSupportSet.ScanDirection"/></description></item>
                 ///   <item><description>Unit: <see cref="PropertyUnit.None"/></description></item>
                 ///  </list>
                 /// </para>
@@ -5984,7 +5989,7 @@ namespace iTin.Hardware.Specification.Eedid
                 ///  <para>Type: <see cref="string"/>.</para>
                 /// </para>
                 /// </summary>
-                public static IPropertyKey ScanDirection => new PropertyKey(KnownDiSection.DisplayCapabilitiesAndFeatureSupportSet, DiDisplayCapabilitiesAndFeatureSupportSet.ScanDirection);
+                public static IPropertyKey ScanDirection => new PropertyKey(DiSection.DisplayCapabilitiesAndFeatureSupportSet, DiProperty.DisplayCapabilitiesAndFeatureSupportSet.ScanDirection);
                 #endregion
 
                 #region [public] {static} (IPropertyKey) StandaloneProjector: Gets a value representing the key to retrieve the property value
@@ -5994,8 +5999,8 @@ namespace iTin.Hardware.Specification.Eedid
                 /// <para>
                 ///  <para><b>Key Composition</b></para>
                 ///  <list type="bullet">
-                ///   <item><description>Structure: <see cref="KnownDiSection.DisplayCapabilitiesAndFeatureSupportSet"/></description></item>
-                ///   <item><description>Property: <see cref="DiDisplayCapabilitiesAndFeatureSupportSet.StandaloneProjector"/></description></item>
+                ///   <item><description>Structure: <see cref="DiSection.DisplayCapabilitiesAndFeatureSupportSet"/></description></item>
+                ///   <item><description>Property: <see cref="DiProperty.DisplayCapabilitiesAndFeatureSupportSet.StandaloneProjector"/></description></item>
                 ///   <item><description>Unit: <see cref="PropertyUnit.None"/></description></item>
                 ///  </list>
                 /// </para>
@@ -6004,7 +6009,7 @@ namespace iTin.Hardware.Specification.Eedid
                 ///  <para>Type: <see cref="bool"/>.</para>
                 /// </para>
                 /// </summary>
-                public static IPropertyKey StandaloneProjector => new PropertyKey(KnownDiSection.DisplayCapabilitiesAndFeatureSupportSet, DiDisplayCapabilitiesAndFeatureSupportSet.StandaloneProjector);
+                public static IPropertyKey StandaloneProjector => new PropertyKey(DiSection.DisplayCapabilitiesAndFeatureSupportSet, DiProperty.DisplayCapabilitiesAndFeatureSupportSet.StandaloneProjector);
                 #endregion
 
                 #region [public] {static} (IPropertyKey) DefaultColorLuminanceDecoding: Gets a value representing the key to retrieve the property value
@@ -6014,8 +6019,8 @@ namespace iTin.Hardware.Specification.Eedid
                 /// <para>
                 ///  <para><b>Key Composition</b></para>
                 ///  <list type="bullet">
-                ///   <item><description>Structure: <see cref="KnownDiSection.DisplayCapabilitiesAndFeatureSupportSet"/></description></item>
-                ///   <item><description>Property: <see cref="DiDisplayCapabilitiesAndFeatureSupportSet.DefaultColorLuminanceDecoding"/></description></item>
+                ///   <item><description>Structure: <see cref="DiSection.DisplayCapabilitiesAndFeatureSupportSet"/></description></item>
+                ///   <item><description>Property: <see cref="DiProperty.DisplayCapabilitiesAndFeatureSupportSet.DefaultColorLuminanceDecoding"/></description></item>
                 ///   <item><description>Unit: <see cref="PropertyUnit.None"/></description></item>
                 ///  </list>
                 /// </para>
@@ -6024,7 +6029,7 @@ namespace iTin.Hardware.Specification.Eedid
                 ///  <para>Type: <see cref="string"/>.</para>
                 /// </para>
                 /// </summary>
-                public static IPropertyKey DefaultColorLuminanceDecoding => new PropertyKey(KnownDiSection.DisplayCapabilitiesAndFeatureSupportSet, DiDisplayCapabilitiesAndFeatureSupportSet.DefaultColorLuminanceDecoding);
+                public static IPropertyKey DefaultColorLuminanceDecoding => new PropertyKey(DiSection.DisplayCapabilitiesAndFeatureSupportSet, DiProperty.DisplayCapabilitiesAndFeatureSupportSet.DefaultColorLuminanceDecoding);
                 #endregion
 
                 #region [public] {static} (IPropertyKey) PreferredColorLuminanceDecoder: Gets a value representing the key to retrieve the property value
@@ -6034,8 +6039,8 @@ namespace iTin.Hardware.Specification.Eedid
                 /// <para>
                 ///  <para><b>Key Composition</b></para>
                 ///  <list type="bullet">
-                ///   <item><description>Structure: <see cref="KnownDiSection.DisplayCapabilitiesAndFeatureSupportSet"/></description></item>
-                ///   <item><description>Property: <see cref="DiDisplayCapabilitiesAndFeatureSupportSet.PreferredColorLuminanceDecoder"/></description></item>
+                ///   <item><description>Structure: <see cref="DiSection.DisplayCapabilitiesAndFeatureSupportSet"/></description></item>
+                ///   <item><description>Property: <see cref="DiProperty.DisplayCapabilitiesAndFeatureSupportSet.PreferredColorLuminanceDecoder"/></description></item>
                 ///   <item><description>Unit: <see cref="PropertyUnit.None"/></description></item>
                 ///  </list>
                 /// </para>
@@ -6044,7 +6049,7 @@ namespace iTin.Hardware.Specification.Eedid
                 ///  <para>Type: <see cref="string"/>.</para>
                 /// </para>
                 /// </summary>
-                public static IPropertyKey PreferredColorLuminanceDecoder => new PropertyKey(KnownDiSection.DisplayCapabilitiesAndFeatureSupportSet, DiDisplayCapabilitiesAndFeatureSupportSet.PreferredColorLuminanceDecoder);
+                public static IPropertyKey PreferredColorLuminanceDecoder => new PropertyKey(DiSection.DisplayCapabilitiesAndFeatureSupportSet, DiProperty.DisplayCapabilitiesAndFeatureSupportSet.PreferredColorLuminanceDecoder);
                 #endregion
 
                 #region [public] {static} (IPropertyKey) ColorLuminanceDecodingCapabilities: Gets a value representing the key to retrieve the property value
@@ -6054,17 +6059,17 @@ namespace iTin.Hardware.Specification.Eedid
                 /// <para>
                 ///  <para><b>Key Composition</b></para>
                 ///  <list type="bullet">
-                ///   <item><description>Structure: <see cref="KnownDiSection.DisplayCapabilitiesAndFeatureSupportSet"/></description></item>
-                ///   <item><description>Property: <see cref="DiDisplayCapabilitiesAndFeatureSupportSet.ColorLuminanceDecodingCapabilities"/></description></item>
+                ///   <item><description>Structure: <see cref="DiSection.DisplayCapabilitiesAndFeatureSupportSet"/></description></item>
+                ///   <item><description>Property: <see cref="DiProperty.DisplayCapabilitiesAndFeatureSupportSet.ColorLuminanceDecodingCapabilities"/></description></item>
                 ///   <item><description>Unit: <see cref="PropertyUnit.None"/></description></item>
                 ///  </list>
                 /// </para>
                 /// <para>
                 ///  <para><b>Return Value</b></para>
-                ///  <para>Type: <see cref="string[]"/>.</para>
+                ///  <para>Type: <see cref="string"/>[].</para>
                 /// </para>
                 /// </summary>
-                public static IPropertyKey ColorLuminanceDecodingCapabilities => new PropertyKey(KnownDiSection.DisplayCapabilitiesAndFeatureSupportSet, DiDisplayCapabilitiesAndFeatureSupportSet.ColorLuminanceDecodingCapabilities);
+                public static IPropertyKey ColorLuminanceDecodingCapabilities => new PropertyKey(DiSection.DisplayCapabilitiesAndFeatureSupportSet, DiProperty.DisplayCapabilitiesAndFeatureSupportSet.ColorLuminanceDecodingCapabilities);
                 #endregion
 
                 #region [public] {static} (IPropertyKey) Dithering: Gets a value representing the key to retrieve the property value
@@ -6074,8 +6079,8 @@ namespace iTin.Hardware.Specification.Eedid
                 /// <para>
                 ///  <para><b>Key Composition</b></para>
                 ///  <list type="bullet">
-                ///   <item><description>Structure: <see cref="KnownDiSection.DisplayCapabilitiesAndFeatureSupportSet"/></description></item>
-                ///   <item><description>Property: <see cref="DiDisplayCapabilitiesAndFeatureSupportSet.Dithering"/></description></item>
+                ///   <item><description>Structure: <see cref="DiSection.DisplayCapabilitiesAndFeatureSupportSet"/></description></item>
+                ///   <item><description>Property: <see cref="DiProperty.DisplayCapabilitiesAndFeatureSupportSet.Dithering"/></description></item>
                 ///   <item><description>Unit: <see cref="PropertyUnit.None"/></description></item>
                 ///  </list>
                 /// </para>
@@ -6084,7 +6089,7 @@ namespace iTin.Hardware.Specification.Eedid
                 ///  <para>Type: <see cref="bool"/>.</para>
                 /// </para>
                 /// </summary>
-                public static IPropertyKey Dithering => new PropertyKey(KnownDiSection.DisplayCapabilitiesAndFeatureSupportSet, DiDisplayCapabilitiesAndFeatureSupportSet.Dithering);
+                public static IPropertyKey Dithering => new PropertyKey(DiSection.DisplayCapabilitiesAndFeatureSupportSet, DiProperty.DisplayCapabilitiesAndFeatureSupportSet.Dithering);
                 #endregion
 
                 #region [public] {static} (IPropertyKey) SupportedColorBitDepthSubChannel0Blue: Gets a value representing the key to retrieve the property value
@@ -6102,8 +6107,8 @@ namespace iTin.Hardware.Specification.Eedid
                 /// <para>
                 ///  <para><b>Key Composition</b></para>
                 ///  <list type="bullet">
-                ///   <item><description>Structure: <see cref="KnownDiSection.DisplayCapabilitiesAndFeatureSupportSet"/></description></item>
-                ///   <item><description>Property: <see cref="DiDisplayCapabilitiesAndFeatureSupportSet.SupportedColorBitDepthSubChannel0Blue"/></description></item>
+                ///   <item><description>Structure: <see cref="DiSection.DisplayCapabilitiesAndFeatureSupportSet"/></description></item>
+                ///   <item><description>Property: <see cref="DiProperty.DisplayCapabilitiesAndFeatureSupportSet.SupportedColorBitDepthSubChannel0Blue"/></description></item>
                 ///   <item><description>Unit: <see cref="PropertyUnit.Bits"/></description></item>
                 ///  </list>
                 /// </para>
@@ -6112,7 +6117,7 @@ namespace iTin.Hardware.Specification.Eedid
                 ///  <para>Type: <see cref="byte"/>.</para>
                 /// </para>
                 /// </summary>
-                public static IPropertyKey SupportedColorBitDepthSubChannel0Blue => new PropertyKey(KnownDiSection.DisplayCapabilitiesAndFeatureSupportSet, DiDisplayCapabilitiesAndFeatureSupportSet.SupportedColorBitDepthSubChannel0Blue, PropertyUnit.Bits);
+                public static IPropertyKey SupportedColorBitDepthSubChannel0Blue => new PropertyKey(DiSection.DisplayCapabilitiesAndFeatureSupportSet, DiProperty.DisplayCapabilitiesAndFeatureSupportSet.SupportedColorBitDepthSubChannel0Blue, PropertyUnit.Bits);
                 #endregion
 
                 #region [public] {static} (IPropertyKey) SupportedColorBitDepthSubChannel1Green: Gets a value representing the key to retrieve the property value
@@ -6130,8 +6135,8 @@ namespace iTin.Hardware.Specification.Eedid
                 /// <para>
                 ///  <para><b>Key Composition</b></para>
                 ///  <list type="bullet">
-                ///   <item><description>Structure: <see cref="KnownDiSection.DisplayCapabilitiesAndFeatureSupportSet"/></description></item>
-                ///   <item><description>Property: <see cref="DiDisplayCapabilitiesAndFeatureSupportSet.SupportedColorBitDepthSubChannel1Green"/></description></item>
+                ///   <item><description>Structure: <see cref="DiSection.DisplayCapabilitiesAndFeatureSupportSet"/></description></item>
+                ///   <item><description>Property: <see cref="DiProperty.DisplayCapabilitiesAndFeatureSupportSet.SupportedColorBitDepthSubChannel1Green"/></description></item>
                 ///   <item><description>Unit: <see cref="PropertyUnit.Bits"/></description></item>
                 ///  </list>
                 /// </para>
@@ -6140,7 +6145,7 @@ namespace iTin.Hardware.Specification.Eedid
                 ///  <para>Type: <see cref="byte"/>.</para>
                 /// </para>
                 /// </summary>
-                public static IPropertyKey SupportedColorBitDepthSubChannel1Green => new PropertyKey(KnownDiSection.DisplayCapabilitiesAndFeatureSupportSet, DiDisplayCapabilitiesAndFeatureSupportSet.SupportedColorBitDepthSubChannel1Green, PropertyUnit.Bits);
+                public static IPropertyKey SupportedColorBitDepthSubChannel1Green => new PropertyKey(DiSection.DisplayCapabilitiesAndFeatureSupportSet, DiProperty.DisplayCapabilitiesAndFeatureSupportSet.SupportedColorBitDepthSubChannel1Green, PropertyUnit.Bits);
                 #endregion
 
                 #region [public] {static} (IPropertyKey) SupportedColorBitDepthSubChannel2Red: Gets a value representing the key to retrieve the property value
@@ -6158,8 +6163,8 @@ namespace iTin.Hardware.Specification.Eedid
                 /// <para>
                 ///  <para><b>Key Composition</b></para>
                 ///  <list type="bullet">
-                ///   <item><description>Structure: <see cref="KnownDiSection.DisplayCapabilitiesAndFeatureSupportSet"/></description></item>
-                ///   <item><description>Property: <see cref="DiDisplayCapabilitiesAndFeatureSupportSet.SupportedColorBitDepthSubChannel2Red"/></description></item>
+                ///   <item><description>Structure: <see cref="DiSection.DisplayCapabilitiesAndFeatureSupportSet"/></description></item>
+                ///   <item><description>Property: <see cref="DiProperty.DisplayCapabilitiesAndFeatureSupportSet.SupportedColorBitDepthSubChannel2Red"/></description></item>
                 ///   <item><description>Unit: <see cref="PropertyUnit.Bits"/></description></item>
                 ///  </list>
                 /// </para>
@@ -6168,7 +6173,7 @@ namespace iTin.Hardware.Specification.Eedid
                 ///  <para>Type: <see cref="byte"/>.</para>
                 /// </para>
                 /// </summary>
-                public static IPropertyKey SupportedColorBitDepthSubChannel2Red => new PropertyKey(KnownDiSection.DisplayCapabilitiesAndFeatureSupportSet, DiDisplayCapabilitiesAndFeatureSupportSet.SupportedColorBitDepthSubChannel2Red, PropertyUnit.Bits);
+                public static IPropertyKey SupportedColorBitDepthSubChannel2Red => new PropertyKey(DiSection.DisplayCapabilitiesAndFeatureSupportSet, DiProperty.DisplayCapabilitiesAndFeatureSupportSet.SupportedColorBitDepthSubChannel2Red, PropertyUnit.Bits);
                 #endregion
 
                 #region [public] {static} (IPropertyKey) SupportedColorBitDepthSubChannel0CbPb: Gets a value representing the key to retrieve the property value
@@ -6186,8 +6191,8 @@ namespace iTin.Hardware.Specification.Eedid
                 /// <para>
                 ///  <para><b>Key Composition</b></para>
                 ///  <list type="bullet">
-                ///   <item><description>Structure: <see cref="KnownDiSection.DisplayCapabilitiesAndFeatureSupportSet"/></description></item>
-                ///   <item><description>Property: <see cref="DiDisplayCapabilitiesAndFeatureSupportSet.SupportedColorBitDepthSubChannel0CbPb"/></description></item>
+                ///   <item><description>Structure: <see cref="DiSection.DisplayCapabilitiesAndFeatureSupportSet"/></description></item>
+                ///   <item><description>Property: <see cref="DiProperty.DisplayCapabilitiesAndFeatureSupportSet.SupportedColorBitDepthSubChannel0CbPb"/></description></item>
                 ///   <item><description>Unit: <see cref="PropertyUnit.Bits"/></description></item>
                 ///  </list>
                 /// </para>
@@ -6196,7 +6201,7 @@ namespace iTin.Hardware.Specification.Eedid
                 ///  <para>Type: <see cref="byte"/>.</para>
                 /// </para>
                 /// </summary>
-                public static IPropertyKey SupportedColorBitDepthSubChannel0CbPb => new PropertyKey(KnownDiSection.DisplayCapabilitiesAndFeatureSupportSet, DiDisplayCapabilitiesAndFeatureSupportSet.SupportedColorBitDepthSubChannel0CbPb, PropertyUnit.Bits);
+                public static IPropertyKey SupportedColorBitDepthSubChannel0CbPb => new PropertyKey(DiSection.DisplayCapabilitiesAndFeatureSupportSet, DiProperty.DisplayCapabilitiesAndFeatureSupportSet.SupportedColorBitDepthSubChannel0CbPb, PropertyUnit.Bits);
                 #endregion
 
                 #region [public] {static} (IPropertyKey) SupportedColorBitDepthSubChannel1Y: Gets a value representing the key to retrieve the property value
@@ -6214,8 +6219,8 @@ namespace iTin.Hardware.Specification.Eedid
                 /// <para>
                 ///  <para><b>Key Composition</b></para>
                 ///  <list type="bullet">
-                ///   <item><description>Structure: <see cref="KnownDiSection.DisplayCapabilitiesAndFeatureSupportSet"/></description></item>
-                ///   <item><description>Property: <see cref="DiDisplayCapabilitiesAndFeatureSupportSet.SupportedColorBitDepthSubChannel1Y"/></description></item>
+                ///   <item><description>Structure: <see cref="DiSection.DisplayCapabilitiesAndFeatureSupportSet"/></description></item>
+                ///   <item><description>Property: <see cref="DiProperty.DisplayCapabilitiesAndFeatureSupportSet.SupportedColorBitDepthSubChannel1Y"/></description></item>
                 ///   <item><description>Unit: <see cref="PropertyUnit.Bits"/></description></item>
                 ///  </list>
                 /// </para>
@@ -6224,7 +6229,7 @@ namespace iTin.Hardware.Specification.Eedid
                 ///  <para>Type: <see cref="byte"/>.</para>
                 /// </para>
                 /// </summary>
-                public static IPropertyKey SupportedColorBitDepthSubChannel1Y => new PropertyKey(KnownDiSection.DisplayCapabilitiesAndFeatureSupportSet, DiDisplayCapabilitiesAndFeatureSupportSet.SupportedColorBitDepthSubChannel1Y, PropertyUnit.Bits);
+                public static IPropertyKey SupportedColorBitDepthSubChannel1Y => new PropertyKey(DiSection.DisplayCapabilitiesAndFeatureSupportSet, DiProperty.DisplayCapabilitiesAndFeatureSupportSet.SupportedColorBitDepthSubChannel1Y, PropertyUnit.Bits);
                 #endregion
 
                 #region [public] {static} (IPropertyKey) SupportedColorBitDepthSubChannel2CrPr: Gets a value representing the key to retrieve the property value
@@ -6242,8 +6247,8 @@ namespace iTin.Hardware.Specification.Eedid
                 /// <para>
                 ///  <para><b>Key Composition</b></para>
                 ///  <list type="bullet">
-                ///   <item><description>Structure: <see cref="KnownDiSection.DisplayCapabilitiesAndFeatureSupportSet"/></description></item>
-                ///   <item><description>Property: <see cref="DiDisplayCapabilitiesAndFeatureSupportSet.SupportedColorBitDepthSubChannel2CrPr"/></description></item>
+                ///   <item><description>Structure: <see cref="DiSection.DisplayCapabilitiesAndFeatureSupportSet"/></description></item>
+                ///   <item><description>Property: <see cref="DiProperty.DisplayCapabilitiesAndFeatureSupportSet.SupportedColorBitDepthSubChannel2CrPr"/></description></item>
                 ///   <item><description>Unit: <see cref="PropertyUnit.Bits"/></description></item>
                 ///  </list>
                 /// </para>
@@ -6252,7 +6257,7 @@ namespace iTin.Hardware.Specification.Eedid
                 ///  <para>Type: <see cref="byte"/>.</para>
                 /// </para>
                 /// </summary>
-                public static IPropertyKey SupportedColorBitDepthSubChannel2CrPr => new PropertyKey(KnownDiSection.DisplayCapabilitiesAndFeatureSupportSet, DiDisplayCapabilitiesAndFeatureSupportSet.SupportedColorBitDepthSubChannel2CrPr, PropertyUnit.Bits);
+                public static IPropertyKey SupportedColorBitDepthSubChannel2CrPr => new PropertyKey(DiSection.DisplayCapabilitiesAndFeatureSupportSet, DiProperty.DisplayCapabilitiesAndFeatureSupportSet.SupportedColorBitDepthSubChannel2CrPr, PropertyUnit.Bits);
                 #endregion
 
                 #region [public] {static} (IPropertyKey) AspectRatioConversionModes: Gets a value representing the key to retrieve the property value
@@ -6262,8 +6267,8 @@ namespace iTin.Hardware.Specification.Eedid
                 /// <para>
                 ///  <para><b>Key Composition</b></para>
                 ///  <list type="bullet">
-                ///   <item><description>Structure: <see cref="KnownDiSection.DisplayCapabilitiesAndFeatureSupportSet"/></description></item>
-                ///   <item><description>Property: <see cref="DiDisplayCapabilitiesAndFeatureSupportSet.AspectRatioConversionModes"/></description></item>
+                ///   <item><description>Structure: <see cref="DiSection.DisplayCapabilitiesAndFeatureSupportSet"/></description></item>
+                ///   <item><description>Property: <see cref="DiProperty.DisplayCapabilitiesAndFeatureSupportSet.AspectRatioConversionModes"/></description></item>
                 ///   <item><description>Unit: <see cref="PropertyUnit.None"/></description></item>
                 ///  </list>
                 /// </para>
@@ -6272,7 +6277,7 @@ namespace iTin.Hardware.Specification.Eedid
                 ///  <para>Type: <see cref="string"/>.</para>
                 /// </para>
                 /// </summary>
-                public static IPropertyKey AspectRatioConversionModes => new PropertyKey(KnownDiSection.DisplayCapabilitiesAndFeatureSupportSet, DiDisplayCapabilitiesAndFeatureSupportSet.AspectRatioConversionModes);
+                public static IPropertyKey AspectRatioConversionModes => new PropertyKey(DiSection.DisplayCapabilitiesAndFeatureSupportSet, DiProperty.DisplayCapabilitiesAndFeatureSupportSet.AspectRatioConversionModes);
                 #endregion
 
                 #region [public] {static} (IPropertyKey) PacketizedDigitalVideoSupportInformation: Gets a value representing the key to retrieve the property value
@@ -6285,8 +6290,8 @@ namespace iTin.Hardware.Specification.Eedid
                 /// <para>
                 ///  <para><b>Key Composition</b></para>
                 ///  <list type="bullet">
-                ///   <item><description>Structure: <see cref="KnownDiSection.DisplayCapabilitiesAndFeatureSupportSet"/></description></item>
-                ///   <item><description>Property: <see cref="DiDisplayCapabilitiesAndFeatureSupportSet.PacketizedDigitalVideoSupportInformation"/></description></item>
+                ///   <item><description>Structure: <see cref="DiSection.DisplayCapabilitiesAndFeatureSupportSet"/></description></item>
+                ///   <item><description>Property: <see cref="DiProperty.DisplayCapabilitiesAndFeatureSupportSet.PacketizedDigitalVideoSupportInformation"/></description></item>
                 ///   <item><description>Unit: <see cref="PropertyUnit.None"/></description></item>
                 ///  </list>
                 /// </para>
@@ -6295,14 +6300,14 @@ namespace iTin.Hardware.Specification.Eedid
                 ///  <para>Type: <see cref="ReadOnlyCollection{T}"/> where <b>T</b> is <see cref="byte"/>.</para>
                 /// </para>
                 /// </summary>
-                public static IPropertyKey PacketizedDigitalVideoSupportInformation => new PropertyKey(KnownDiSection.DisplayCapabilitiesAndFeatureSupportSet, DiDisplayCapabilitiesAndFeatureSupportSet.PacketizedDigitalVideoSupportInformation);
+                public static IPropertyKey PacketizedDigitalVideoSupportInformation => new PropertyKey(DiSection.DisplayCapabilitiesAndFeatureSupportSet, DiProperty.DisplayCapabilitiesAndFeatureSupportSet.PacketizedDigitalVideoSupportInformation);
                 #endregion
             }
             #endregion
 
             #region [public] {static} (class) UnusedBytes: Definition of keys in the 'Unused Bytes' section
             /// <summary>
-            /// Definition of keys in the <see cref="KnownDiSection.UnusedBytes"/> section.
+            /// Definition of keys in the <see cref="DiSection.UnusedBytes"/> section.
             /// </summary>
             public static class UnusedBytes
             {
@@ -6316,8 +6321,8 @@ namespace iTin.Hardware.Specification.Eedid
                 /// <para>
                 ///  <para><b>Key Composition</b></para>
                 ///  <list type="bullet">
-                ///   <item><description>Structure: <see cref="KnownDiSection.UnusedBytes"/></description></item>
-                ///   <item><description>Property: <see cref="DiUnusedBytes.Data"/></description></item>
+                ///   <item><description>Structure: <see cref="DiSection.UnusedBytes"/></description></item>
+                ///   <item><description>Property: <see cref="DiProperty.UnusedBytes.Data"/></description></item>
                 ///   <item><description>Unit: <see cref="PropertyUnit.None"/></description></item>
                 ///  </list>
                 /// </para>
@@ -6326,14 +6331,14 @@ namespace iTin.Hardware.Specification.Eedid
                 ///  <para>Type: <see cref="ReadOnlyCollection{T}"/> where <b>T</b> is <see cref="byte"/>.</para>
                 /// </para>
                 /// </summary>
-                public static IPropertyKey Data => new PropertyKey(KnownDiSection.UnusedBytes, DiUnusedBytes.Data);
+                public static IPropertyKey Data => new PropertyKey(DiSection.UnusedBytes, DiProperty.UnusedBytes.Data);
                 #endregion
             }
             #endregion
 
             #region [public] {static} (class) AudioSupport: Definition of keys in the 'Audio Support' section
             /// <summary>
-            /// Definition of keys in the <see cref="KnownDiSection.AudioSupport"/> section.
+            /// Definition of keys in the <see cref="DiSection.AudioSupport"/> section.
             /// </summary>
             public static class AudioSupport
             {
@@ -6347,8 +6352,8 @@ namespace iTin.Hardware.Specification.Eedid
                 /// <para>
                 ///  <para><b>Key Composition</b></para>
                 ///  <list type="bullet">
-                ///   <item><description>Structure: <see cref="KnownDiSection.AudioSupport"/></description></item>
-                ///   <item><description>Property: <see cref="DiAudioSupport.Data"/></description></item>
+                ///   <item><description>Structure: <see cref="DiSection.AudioSupport"/></description></item>
+                ///   <item><description>Property: <see cref="DiProperty.AudioSupport.Data"/></description></item>
                 ///   <item><description>Unit: <see cref="PropertyUnit.None"/></description></item>
                 ///  </list>
                 /// </para>
@@ -6357,14 +6362,14 @@ namespace iTin.Hardware.Specification.Eedid
                 ///  <para>Type: <see cref="ReadOnlyCollection{T}"/> where <b>T</b> is <see cref="byte"/>.</para>
                 /// </para>
                 /// </summary>
-                public static IPropertyKey Data => new PropertyKey(KnownDiSection.AudioSupport, DiUnusedBytes.Data);
+                public static IPropertyKey Data => new PropertyKey(DiSection.AudioSupport, DiProperty.UnusedBytes.Data);
                 #endregion
             }
             #endregion
 
             #region [public] {static} (class) DisplayTransferCharacteristic: Definition of keys in the 'Display Transfer Characteristic' section
             /// <summary>
-            /// Definition of keys in the <see cref="KnownDiSection.DisplayTransferCharacteristic "/> section.
+            /// Definition of keys in the <see cref="DiSection.DisplayTransferCharacteristic "/> section.
             /// </summary>
             public static class DisplayTransferCharacteristic
             {
@@ -6375,8 +6380,8 @@ namespace iTin.Hardware.Specification.Eedid
                 /// <para>
                 ///  <para><b>Key Composition</b></para>
                 ///  <list type="bullet">
-                ///   <item><description>Structure: <see cref="KnownDiSection.DisplayTransferCharacteristic"/></description></item>
-                ///   <item><description>Property: <see cref="DiDisplayTransferCharacteristic.Status"/></description></item>
+                ///   <item><description>Structure: <see cref="DiSection.DisplayTransferCharacteristic"/></description></item>
+                ///   <item><description>Property: <see cref="DiProperty.DisplayTransferCharacteristic.Status"/></description></item>
                 ///   <item><description>Unit: <see cref="PropertyUnit.None"/></description></item>
                 ///  </list>
                 /// </para>
@@ -6385,7 +6390,7 @@ namespace iTin.Hardware.Specification.Eedid
                 ///  <para>Type: <see cref="string"/>.</para>
                 /// </para>
                 /// </summary>
-                public static IPropertyKey Status => new PropertyKey(KnownDiSection.DisplayTransferCharacteristic, DiDisplayTransferCharacteristic.Status);
+                public static IPropertyKey Status => new PropertyKey(DiSection.DisplayTransferCharacteristic, DiProperty.DisplayTransferCharacteristic.Status);
                 #endregion
 
                 #region [public] {static} (IPropertyKey) NumberLuminanceEntries: Gets a value representing the key to retrieve the property value
@@ -6395,8 +6400,8 @@ namespace iTin.Hardware.Specification.Eedid
                 /// <para>
                 ///  <para><b>Key Composition</b></para>
                 ///  <list type="bullet">
-                ///   <item><description>Structure: <see cref="KnownDiSection.DisplayTransferCharacteristic"/></description></item>
-                ///   <item><description>Property: <see cref="DiDisplayTransferCharacteristic.NumberLuminanceEntries"/></description></item>
+                ///   <item><description>Structure: <see cref="DiSection.DisplayTransferCharacteristic"/></description></item>
+                ///   <item><description>Property: <see cref="DiProperty.DisplayTransferCharacteristic.NumberLuminanceEntries"/></description></item>
                 ///   <item><description>Unit: <see cref="PropertyUnit.None"/></description></item>
                 ///  </list>
                 /// </para>
@@ -6405,21 +6410,21 @@ namespace iTin.Hardware.Specification.Eedid
                 ///  <para>Type: <see cref="byte"/>.</para>
                 /// </para>
                 /// </summary>
-                public static IPropertyKey NumberLuminanceEntries => new PropertyKey(KnownDiSection.DisplayTransferCharacteristic, DiDisplayTransferCharacteristic.NumberLuminanceEntries);
+                public static IPropertyKey NumberLuminanceEntries => new PropertyKey(DiSection.DisplayTransferCharacteristic, DiProperty.DisplayTransferCharacteristic.NumberLuminanceEntries);
                 #endregion
             }
             #endregion
 
             #region [public] {static} (class) Miscellaneous: Definition of keys in the 'Miscellaneous Items' section
             /// <summary>
-            /// Definition of keys in the <see cref="KnownDiSection.Miscellaneous"/> section.
+            /// Definition of keys in the <see cref="DiSection.Miscellaneous"/> section.
             /// </summary>
             public static class Miscellaneous
             {
                 /// <summary>
                 /// 
                 /// </summary>
-                public static class CheckSum
+                public static class Checksum
                 {
                     #region [public] {static} (IPropertyKey) Ok: Gets a value representing the key to retrieve the property value
                     /// <summary>
@@ -6428,8 +6433,8 @@ namespace iTin.Hardware.Specification.Eedid
                     /// <para>
                     ///  <para><b>Key Composition</b></para>
                     ///  <list type="bullet">
-                    ///   <item><description>Structure: <see cref="KnownDiSection.Miscellaneous"/></description></item>
-                    ///   <item><description>Property: <see cref="DiMiscellaneous.CheckSum.Value"/></description></item>
+                    ///   <item><description>Structure: <see cref="DiSection.Miscellaneous"/></description></item>
+                    ///   <item><description>Property: <see cref="DiProperty.Miscellaneous.Checksum.Ok"/></description></item>
                     ///   <item><description>Unit: <see cref="PropertyUnit.None"/></description></item>
                     ///  </list>
                     /// </para>
@@ -6438,7 +6443,7 @@ namespace iTin.Hardware.Specification.Eedid
                     ///  <para>Type: <see cref="bool"/>.</para>
                     /// </para>
                     /// </summary>
-                    public static IPropertyKey Ok => new PropertyKey(KnownCeaSection.CheckSum, CeaCheckSum.Ok);
+                    public static IPropertyKey Ok => new PropertyKey(DiSection.Miscellaneous, DiProperty.Miscellaneous.Checksum.Ok);
                     #endregion
 
                     #region [public] {static} (IPropertyKey) Value: Gets a value representing the key to retrieve the property value
@@ -6448,8 +6453,8 @@ namespace iTin.Hardware.Specification.Eedid
                     /// <para>
                     ///  <para><b>Key Composition</b></para>
                     ///  <list type="bullet">
-                    ///   <item><description>Structure: <see cref="KnownDiSection.Miscellaneous"/></description></item>
-                    ///   <item><description>Property: <see cref="DiMiscellaneous.CheckSum.Value"/></description></item>
+                    ///   <item><description>Structure: <see cref="DiSection.Miscellaneous"/></description></item>
+                    ///   <item><description>Property: <see cref="DiProperty.Miscellaneous.Checksum.Value"/></description></item>
                     ///   <item><description>Unit: <see cref="PropertyUnit.None"/></description></item>
                     ///  </list>
                     /// </para>
@@ -6458,9 +6463,161 @@ namespace iTin.Hardware.Specification.Eedid
                     ///  <para>Type: <see cref="byte"/>.</para>
                     /// </para>
                     /// </summary>
-                    public static IPropertyKey Value => new PropertyKey(KnownDiSection.Miscellaneous, DiMiscellaneous.CheckSum.Value);
+                    public static IPropertyKey Value => new PropertyKey(DiSection.Miscellaneous, DiProperty.Miscellaneous.Checksum.Value);
                     #endregion
                 }
+            }
+            #endregion
+        }
+        #endregion
+
+        #region [public] {static} (class) DisplayID: Definition of keys in the 'DisplayID' block
+        /// <summary>
+        /// Definition of keys in the <see cref="KnownDataBlock.DisplayID"/> block.
+        /// </summary>
+        public static class DisplayID
+        {
+            #region [public] {static} (class) General: Definition of keys in the 'General' section
+            /// <summary>
+            /// Definition of keys in the <see cref="DisplayIdSection.General"/> section.
+            /// </summary>
+            public static class General
+            {
+                #region [public] {static} (IPropertyKey) DisplayProductType: Gets a value representing the key to retrieve the property value
+                /// <summary>
+                /// <para>Gets a value representing the key to retrieve the property value.</para>
+                /// <para>Display Product Type Identifier.</para>
+                /// <para>
+                ///  <para><b>Key Composition</b></para>
+                ///  <list type="bullet">
+                ///   <item><description>Structure: <see cref="DisplayIdSection.General"/></description></item>
+                ///   <item><description>Property: <see cref="DisplayIdProperty.General.Data.DisplayProductType"/></description></item>
+                ///   <item><description>Unit: <see cref="PropertyUnit.None"/></description></item>
+                ///  </list>
+                /// </para>
+                /// <para>
+                ///  <para><b>Return Value</b></para>
+                ///  <para>Type: <see cref="string"/>.</para>
+                /// </para>
+                /// </summary>
+                public static IPropertyKey DisplayProductType => new PropertyKey(DisplayIdSection.General, DisplayIdProperty.General.Data.DisplayProductType);
+                #endregion
+
+                #region [public] {static} (IPropertyKey) ExtensionCount: Gets a value representing the key to retrieve the property value
+                /// <summary>
+                /// <para>Gets a value representing the key to retrieve the property value.</para>
+                /// <para>Extension Count.</para>
+                /// <para>
+                ///  <para><b>Key Composition</b></para>
+                ///  <list type="bullet">
+                ///   <item><description>Structure: <see cref="DisplayIdSection.General"/></description></item>
+                ///   <item><description>Property: <see cref="DisplayIdProperty.General.Data.ExtensionCount"/></description></item>
+                ///   <item><description>Unit: <see cref="PropertyUnit.None"/></description></item>
+                ///  </list>
+                /// </para>
+                /// <para>
+                ///  <para><b>Return Value</b></para>
+                ///  <para>Type: <see cref="byte"/>.</para>
+                /// </para>
+                /// </summary>
+                public static IPropertyKey ExtensionCount => new PropertyKey(DisplayIdSection.General, DisplayIdProperty.General.Data.ExtensionCount);
+                #endregion
+
+                #region [public] {static} (IPropertyKey) Version: Gets a value representing the key to retrieve the property value
+                /// <summary>
+                /// <para>Gets a value representing the key to retrieve the property value.</para>
+                /// <para>Implemented version number.</para>
+                /// <para>
+                ///  <para><b>Key Composition</b></para>
+                ///  <list type="bullet">
+                ///   <item><description>Structure: <see cref="DisplayIdSection.General"/></description></item>
+                ///   <item><description>Property: <see cref="DisplayIdProperty.General.Version.Number"/></description></item>
+                ///   <item><description>Unit: <see cref="PropertyUnit.None"/></description></item>
+                ///  </list>
+                /// </para>
+                /// <para>
+                ///  <para><b>Return Value</b></para>
+                ///  <para>Type: <see cref="byte"/>.</para>
+                /// </para>
+                /// </summary>
+                public static IPropertyKey Version => new PropertyKey(DisplayIdSection.General, DisplayIdProperty.General.Version.Number);
+                #endregion
+
+                #region [public] {static} (IPropertyKey) Revision: Gets a value representing the key to retrieve the property value
+                /// <summary>
+                /// <para>Gets a value representing the key to retrieve the property value.</para>
+                /// <para>Implemented revision number.</para>
+                /// <para>
+                ///  <para><b>Key Composition</b></para>
+                ///  <list type="bullet">
+                ///   <item><description>Structure: <see cref="DisplayIdSection.General"/></description></item>
+                ///   <item><description>Property: <see cref="DisplayIdProperty.General.Version.Revision"/></description></item>
+                ///   <item><description>Unit: <see cref="PropertyUnit.None"/></description></item>
+                ///  </list>
+                /// </para>
+                /// <para>
+                ///  <para><b>Return Value</b></para>
+                ///  <para>Type: <see cref="byte"/>.</para>
+                /// </para>
+                /// </summary>
+                public static IPropertyKey Revision => new PropertyKey(DisplayIdSection.General, DisplayIdProperty.General.Version.Revision);
+                #endregion
+            }
+            #endregion
+
+            #region [public] {static} (class) Miscellaneous: Definition of keys in the 'Miscellaneous' section
+            /// <summary>
+            /// Definition of keys in the <see cref="DisplayIdSection.Miscellaneous"/> section.
+            /// </summary>
+            public static class Miscellaneous
+            {
+                #region [public] {static} (class) CheckSum: Definition of keys in the 'CheckSum' section
+                /// <summary>
+                /// Definition of keys in the <b>CheckSum</b> section.
+                /// </summary>
+                public static class CheckSum
+                {
+                    #region [public] {static} (IPropertyKey) Ok: Gets a value representing the key to retrieve the property value
+                    /// <summary>
+                    /// <para>Gets a value representing the key to retrieve the property value.</para>
+                    /// <para>Indicates if is a valid <see cref="DisplayID"/> structure.</para>
+                    /// <para>
+                    ///  <para><b>Key Composition</b></para>
+                    ///  <list type="bullet">
+                    ///   <item><description>Structure: <see cref="DisplayIdSection.Miscellaneous"/></description></item>
+                    ///   <item><description>Property: <see cref="DisplayIdProperty.Miscellaneous.CheckSum.Ok"/></description></item>
+                    ///   <item><description>Unit: <see cref="PropertyUnit.None"/></description></item>
+                    ///  </list>
+                    /// </para>
+                    /// <para>
+                    ///  <para><b>Return Value</b></para>
+                    ///  <para>Type: <see cref="bool"/>.</para>
+                    /// </para>
+                    /// </summary>
+                    public static IPropertyKey Ok => new PropertyKey(DisplayIdSection.Miscellaneous, DisplayIdProperty.Miscellaneous.CheckSum.Ok);
+                    #endregion
+
+                    #region [public] {static} (IPropertyKey) Value: Gets a value representing the key to retrieve the property value
+                    /// <summary>
+                    /// <para>Gets a value representing the key to retrieve the property value.</para>
+                    /// <para>Contains checksum byte block value.</para>
+                    /// <para>
+                    ///  <para><b>Key Composition</b></para>
+                    ///  <list type="bullet">
+                    ///   <item><description>Structure: <see cref="DisplayIdSection.Miscellaneous"/></description></item>
+                    ///   <item><description>Property: <see cref="DisplayIdProperty.Miscellaneous.CheckSum.Value"/></description></item>
+                    ///   <item><description>Unit: <see cref="PropertyUnit.None"/></description></item>
+                    ///  </list>
+                    /// </para>
+                    /// <para>
+                    ///  <para><b>Return Value</b></para>
+                    ///  <para>Type: <see cref="byte"/>.</para>
+                    /// </para>
+                    /// </summary>
+                    public static IPropertyKey Value => new PropertyKey(DisplayIdSection.Miscellaneous, DisplayIdProperty.Miscellaneous.CheckSum.Value);
+                    #endregion
+                }
+                #endregion
             }
             #endregion
         }

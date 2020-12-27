@@ -1,9 +1,10 @@
 ﻿
-namespace iTin.Hardware.Specification.Eedid
+namespace iTin.Hardware.Specification.Eedid.Blocks
 {
     using System;
     using System.Collections.Generic;
     using System.Collections.ObjectModel;
+    using System.Linq;
 
     /// <summary>
     /// Specialization of the <see cref="BaseDataBlock"/> class.<br/>
@@ -29,6 +30,17 @@ namespace iTin.Hardware.Specification.Eedid
         #endregion
 
         #region protected override methods
+
+        #region [protected] {override} (void) InitDataSectionTable(Dictionary<Enum, ReadOnlyCollection<byte>>): Initialize dictionary with the available data for the sections of this block
+        /// <summary>
+        /// Initialize dictionary with the available data for the sections of this block.
+        /// </summary>
+        /// <param name="dataSectionDictionary">Dictionary that contains the available data for the sections of this block</param>
+        protected override void InitDataSectionTable(Dictionary<Enum, ReadOnlyCollection<byte>> dataSectionDictionary)
+        {
+            var dataArray = RawData.ToArray();
+        }
+        #endregion
 
         #region [protected] {override} (void) InitSectionTable(Dictionary<Enum, BaseDataSection>): Initialize dictionary with the available data for the sections of this block
         /// <summary>

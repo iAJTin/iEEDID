@@ -1,10 +1,13 @@
 ﻿
-namespace iTin.Hardware.Specification.Eedid
+namespace iTin.Hardware.Specification.Eedid.Blocks
 {
     using System;
     using System.Collections.Generic;
     using System.Collections.ObjectModel;
     using System.Linq;
+
+    using CEA;
+    using CEA.Sections;
 
     // •——————————————————————————————————————————————•
     // | CEA BLOCK                                    |
@@ -61,28 +64,28 @@ namespace iTin.Hardware.Specification.Eedid
 
             var dataSectionArray = new byte[0x01];
             Array.Copy(ceaDataArray, 0x01, dataSectionArray, 0x00, 0x01);
-            dataSectionDictionary.Add(KnownCeaSection.Information, new ReadOnlyCollection<byte>(dataSectionArray));
+            dataSectionDictionary.Add(CeaSection.Information, new ReadOnlyCollection<byte>(dataSectionArray));
 
             if (ceaDataArray[0x01] != 0x01)
             {
                 dataSectionArray = new byte[0x01];
                 Array.Copy(ceaDataArray, 0x03, dataSectionArray, 0x00, 0x01);
-                dataSectionDictionary.Add(KnownCeaSection.MonitorSupport, new ReadOnlyCollection<byte>(dataSectionArray));
+                dataSectionDictionary.Add(CeaSection.MonitorSupport, new ReadOnlyCollection<byte>(dataSectionArray));
             }
 
             var dataBlocks = GetDataBlocks(RawData);
             if (dataBlocks != null)
             {
-                dataSectionDictionary.Add(KnownCeaSection.DataBlockCollection, dataBlocks);
+                dataSectionDictionary.Add(CeaSection.DataBlockCollection, dataBlocks);
             }
 
             var dataTimmings = GetDetailedTimingData(RawData);
             if (dataTimmings != null)
             {
-                dataSectionDictionary.Add(KnownCeaSection.DetailedTiming, dataTimmings);
+                dataSectionDictionary.Add(CeaSection.DetailedTiming, dataTimmings);
             }
 
-            dataSectionDictionary.Add(KnownCeaSection.CheckSum, RawData);
+            dataSectionDictionary.Add(CeaSection.Checksum, RawData);
         }
         #endregion
 
@@ -93,26 +96,26 @@ namespace iTin.Hardware.Specification.Eedid
         /// <param name="sectionDictionary">Dictionary containing the sections available for this block</param>
         protected override void InitSectionTable(Dictionary<Enum, BaseDataSection> sectionDictionary)
         {
-            sectionDictionary.Add(KnownCeaSection.Information, new InformationCeaSection(DataSectionTable[KnownCeaSection.Information]));
+            sectionDictionary.Add(CeaSection.Information, new InformationSection(DataSectionTable[CeaSection.Information]));
 
-            if (DataSectionTable.ContainsKey(KnownCeaSection.MonitorSupport))
+            if (DataSectionTable.ContainsKey(CeaSection.MonitorSupport))
             {
-                sectionDictionary.Add(KnownCeaSection.MonitorSupport, new MonitorSupportCeaSection(DataSectionTable[KnownCeaSection.MonitorSupport]));
+                sectionDictionary.Add(CeaSection.MonitorSupport, new MonitorSupportSection(DataSectionTable[CeaSection.MonitorSupport]));
             }
 
-            if (DataSectionTable.ContainsKey(KnownCeaSection.DataBlockCollection))
+            if (DataSectionTable.ContainsKey(CeaSection.DataBlockCollection))
             {
-                sectionDictionary.Add(KnownCeaSection.DataBlockCollection, new DataBlockCollectionCeaSection(DataSectionTable[KnownCeaSection.DataBlockCollection]));
+                sectionDictionary.Add(CeaSection.DataBlockCollection, new DataBlockCollectionSection(DataSectionTable[CeaSection.DataBlockCollection]));
             }
 
-            if (DataSectionTable.ContainsKey(KnownCeaSection.DetailedTiming))
+            if (DataSectionTable.ContainsKey(CeaSection.DetailedTiming))
             {
-                sectionDictionary.Add(KnownCeaSection.DetailedTiming, new DetailedTimingsCeaSection(DataSectionTable[KnownCeaSection.DetailedTiming]));
+                sectionDictionary.Add(CeaSection.DetailedTiming, new DetailedTimingsSection(DataSectionTable[CeaSection.DetailedTiming]));
             }
 
-            if (DataSectionTable.ContainsKey(KnownCeaSection.CheckSum))
+            if (DataSectionTable.ContainsKey(CeaSection.Checksum))
             {
-                sectionDictionary.Add(KnownCeaSection.CheckSum, new CheckSumCeaSection(DataSectionTable[KnownCeaSection.CheckSum]));
+                sectionDictionary.Add(CeaSection.Checksum, new ChecksumSection(DataSectionTable[CeaSection.Checksum]));
             }
         }
         #endregion
@@ -147,11 +150,11 @@ namespace iTin.Hardware.Specification.Eedid
 
         #region [private] {static} (ReadOnlyCollection<byte>) GetDetailedTimingData(int, ReadOnlyCollection<byte>): Gets an array that contains the Detailed Timings Descriptors structure of an unprocessed CEA block
         /// <summary>
-        /// Gets an array that contains the <see cref="KnownCeaSection.DetailedTiming"/> structure of an unprocessed <see cref="KnownDataBlock.CEA"/> block.
+        /// Gets an array that contains the <see cref="CeaSection.DetailedTiming"/> structure of an unprocessed <see cref="KnownDataBlock.CEA"/> block.
         /// </summary>
-        /// <param name="ceaData">Array containing the structures <see cref="KnownCeaSection.DetailedTiming"/> of the block <see cref="KnownDataBlock.CEA"/>.</param>
+        /// <param name="ceaData">Array containing the structures <see cref="CeaSection.DetailedTiming"/> of the block <see cref="KnownDataBlock.CEA"/>.</param>
         /// <returns>
-        /// Array containing the structure <see cref="KnownCeaSection.DetailedTiming"/> of this block <see cref="KnownDataBlock.CEA"/> unprocessed.
+        /// Array containing the structure <see cref="CeaSection.DetailedTiming"/> of this block <see cref="KnownDataBlock.CEA"/> unprocessed.
         /// </returns>
         private static ReadOnlyCollection<byte> GetDetailedTimingData(ReadOnlyCollection<byte> ceaData)
         {
@@ -164,20 +167,18 @@ namespace iTin.Hardware.Specification.Eedid
 
             int begin = d;
             var ceaDataArray = ceaData.ToArray();
-            List<byte> detailedTimingData = new List<byte>();
+            var detailedTimingData = new List<byte>();
             while (true)
             {
-                if ((ceaDataArray[begin] == 0x00) && (ceaDataArray[begin + 1] == 0x00))
+                if (ceaDataArray[begin] == 0x00 && (ceaDataArray[begin + 1] == 0x00))
                 {
                     break;
                 }
-                else
-                {
-                    byte[] data = new byte[0x12];
-                    Array.Copy(ceaDataArray, begin, data, 0x00, 0x12);
-                    detailedTimingData.AddRange(data);
-                    begin += 0x12;
-                }
+
+                byte[] data = new byte[0x12];
+                Array.Copy(ceaDataArray, begin, data, 0x00, 0x12);
+                detailedTimingData.AddRange(data);
+                begin += 0x12;
             }
 
             return new ReadOnlyCollection<byte>(detailedTimingData);

@@ -1,5 +1,5 @@
 ﻿
-namespace iTin.Hardware.Specification.Eedid
+namespace iTin.Hardware.Specification.Eedid.Blocks.CEA.Sections.Descriptors.DataBlocks
 {
     using System.Collections.Generic;
     using System.Collections.ObjectModel;
@@ -9,7 +9,7 @@ namespace iTin.Hardware.Specification.Eedid
     using iTin.Core.Helpers.Enumerations;
 
     /// <summary>
-    /// Structure <see cref="VendorDataBlock"/> that contains the logic to decode the data of a block of the type <see cref="ShortVendorDescriptorCeaSection"/>.
+    /// Structure <see cref="VendorDataBlock"/> that contains the logic to decode the data of a block of the type <see cref="ShortVendorDescriptorSection"/>.
     /// </summary> 
     internal struct VendorDataBlock
     {

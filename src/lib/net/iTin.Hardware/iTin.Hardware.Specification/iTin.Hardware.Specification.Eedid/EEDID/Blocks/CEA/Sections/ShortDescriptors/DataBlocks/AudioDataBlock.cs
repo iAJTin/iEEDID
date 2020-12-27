@@ -1,5 +1,5 @@
 ﻿
-namespace iTin.Hardware.Specification.Eedid
+namespace iTin.Hardware.Specification.Eedid.Blocks.CEA.Sections.Descriptors.DataBlocks
 {
     using System.Collections.Generic;
     using System.Collections.ObjectModel;
@@ -8,7 +8,7 @@ namespace iTin.Hardware.Specification.Eedid
     using iTin.Core.Helpers.Enumerations;
 
     /// <summary>
-    /// Structure <see cref="AudioDataBlock"/> that contains the logic to decode the data of a block of type <see cref="ShortAudioDescriptorCeaSection"/>.
+    /// Structure <see cref="AudioDataBlock"/> that contains the logic to decode the data of a block of type <see cref="ShortAudioDescriptorSection"/>.
     /// </summary> 
     internal struct AudioDataBlock 
     {
@@ -21,13 +21,13 @@ namespace iTin.Hardware.Specification.Eedid
         /// <param name="audioDataBlock">Data of this audio block.</param>
         public AudioDataBlock(ReadOnlyCollection<byte> audioDataBlock)
         {
-            var formatCode = (KnownAudioFormatCode)(audioDataBlock[0x00] >> 3 & 0x0f);
+            var formatCode = (AudioFormatCode)(audioDataBlock[0x00] >> 3 & 0x0f);
 
             Format = AudioFormat((byte)formatCode);
             Channels = (ushort)(1 + (byte)(audioDataBlock[0x00] & 0x07));
             SamplingFrequencies = SamplingFrequenciesValue((byte)(audioDataBlock[0x01] & 0x7f));
 
-            if (formatCode == KnownAudioFormatCode.PCM)
+            if (formatCode == AudioFormatCode.PCM)
             {
                 MaxBitrate = -1;
                 BitDepth = BitDepthValue((byte)(audioDataBlock[0x02] & 0x07));

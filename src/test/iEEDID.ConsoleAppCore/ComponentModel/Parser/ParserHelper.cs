@@ -11,7 +11,13 @@ namespace iEEDID.ComponentModel.Parser
     using iTin.Core.Hardware.Common;
 
     using iTin.Logging.ComponentModel;
+
     using iTin.Hardware.Specification.Eedid;
+    using iTin.Hardware.Specification.Eedid.Blocks.CEA;
+    using iTin.Hardware.Specification.Eedid.Blocks.DI;
+    using iTin.Hardware.Specification.Eedid.Blocks.DisplayId;
+    using iTin.Hardware.Specification.Eedid.Blocks.EDID;
+    using iTin.Hardware.Specification.Eedid.Blocks.EDID.Sections.Descriptors;
 
     /// <summary>
     /// static class containing methods for prints <b>EEDID</b> instances.
@@ -54,16 +60,20 @@ namespace iEEDID.ComponentModel.Parser
         {
             switch (block.Key)
             {
-                case KnownDataBlock.EDID:
-                    PrintsEdidBlock(logger, block, index);
-                    break;
-
                 case KnownDataBlock.CEA:
                     PrintsCeaBlock(logger, block, index);
                     break;
 
                 case KnownDataBlock.DI:
                     PrintsDiBlock(logger, block, index);
+                    break;
+
+                case KnownDataBlock.DisplayID:
+                    PrintsDisplayIdBlock(logger, block, index);
+                    break;
+
+                case KnownDataBlock.EDID:
+                    PrintsEdidBlock(logger, block, index);
                     break;
             }
         }
@@ -76,7 +86,7 @@ namespace iEEDID.ComponentModel.Parser
             #endregion
 
             #region Information Section
-            var informationSection = block.Sections[(int)KnownCeaSection.Information];
+            var informationSection = block.Sections[(int)CeaSection.Information];
             var revisionInformation = informationSection.GetProperty(EedidProperty.Cea.Information.Revision);
             logger.Info($@"   Revision: {revisionInformation.Result.Value}");
             #endregion
@@ -95,13 +105,13 @@ namespace iEEDID.ComponentModel.Parser
             #endregion
 
             #region Information Section
-            var informationSection = block.Sections[(int)KnownDiSection.Information];
+            var informationSection = block.Sections[(int)DiSection.Information];
             var versionNumber = informationSection.GetProperty(EedidProperty.DI.Information.VersionNumber);
             logger.Info($@"   Version: {versionNumber.Result.Value}");
             #endregion
 
             #region Digital Interface Section
-            var digitalInterfaceSection = block.Sections[(int)KnownDiSection.DigitalInterface];
+            var digitalInterfaceSection = block.Sections[(int)DiSection.DigitalInterface];
             if (digitalInterfaceSection != null)
             {
                 logger.Info($@" Digital Interface:");
@@ -206,7 +216,7 @@ namespace iEEDID.ComponentModel.Parser
             #endregion
 
             #region Display Device Section
-            var displayDeviceSection = block.Sections[(int)KnownDiSection.DisplayDevice];
+            var displayDeviceSection = block.Sections[(int)DiSection.DisplayDevice];
             if (displayDeviceSection != null)
             {
                 logger.Info($@" Display Device:");
@@ -277,7 +287,7 @@ namespace iEEDID.ComponentModel.Parser
             #endregion
 
             #region Display Capabities & Feature Support Set Section
-            var displayCapabitiesSection = block.Sections[(int)KnownDiSection.DisplayCapabilitiesAndFeatureSupportSet];
+            var displayCapabitiesSection = block.Sections[(int)DiSection.DisplayCapabilitiesAndFeatureSupportSet];
             if (displayCapabitiesSection != null)
             {
                 logger.Info($@" Display Capabities & Feature Support Set:");
@@ -529,7 +539,7 @@ namespace iEEDID.ComponentModel.Parser
             #endregion
 
             #region Display Transfer Characteristics
-            var displayTransferCharacteristicSection = block.Sections[(int)KnownDiSection.DisplayTransferCharacteristic];
+            var displayTransferCharacteristicSection = block.Sections[(int)DiSection.DisplayTransferCharacteristic];
             if (displayTransferCharacteristicSection != null)
             {
                 logger.Info($@" Display Transfer Characteristics - Gamma:");
@@ -543,10 +553,49 @@ namespace iEEDID.ComponentModel.Parser
             #endregion
 
             #region Miscellaneous Section
-            var miscellaneousSection = block.Sections[(int)KnownDiSection.Miscellaneous];
-            var status = miscellaneousSection.GetProperty(EedidProperty.DI.Miscellaneous.CheckSum.Ok);
-            var value = miscellaneousSection.GetProperty(EedidProperty.DI.Miscellaneous.CheckSum.Value);
+            var miscellaneousSection = block.Sections[(int)DiSection.Miscellaneous];
+            var status = miscellaneousSection.GetProperty(EedidProperty.DI.Miscellaneous.Checksum.Ok);
+            var value = miscellaneousSection.GetProperty(EedidProperty.DI.Miscellaneous.Checksum.Value);
             logger.Info($@" Checksum: {value.Result.Value:x2} ({((bool)status.Result.Value ? "Valid" : "Invalid")})");
+            #endregion
+
+            #region End Block
+            logger.Info("");
+            logger.Info(new string('─', 15));
+            logger.Info("");
+            #endregion
+        }
+
+        private static void PrintsDisplayIdBlock(ILogger logger, DataBlock block, int index)
+        {
+            #region Init Block
+            logger.Info($@" Block {index}, {block.Key.GetPropertyDescription()}:");
+            #endregion
+
+            #region General Section
+            var generalSection = block.Sections[(int)DisplayIdSection.General];
+            var version = generalSection.GetProperty(EedidProperty.DisplayID.General.Version);
+            var revision = generalSection.GetProperty(EedidProperty.DisplayID.General.Revision);
+            logger.Info($@"   Version: {version.Result.Value:x1}.{revision.Result.Value:x1}");
+
+            var extensionCount = generalSection.GetProperty(EedidProperty.DisplayID.General.ExtensionCount);
+            if (extensionCount.Success)
+            {
+                logger.Info($@"   {EedidProperty.DisplayID.General.ExtensionCount.GetPropertyName()}: {extensionCount.Result.Value}");
+            }
+
+            var displayProductType = generalSection.GetProperty(EedidProperty.DisplayID.General.DisplayProductType);
+            if (displayProductType.Success)
+            {
+                logger.Info($@"   {EedidProperty.DisplayID.General.DisplayProductType.GetPropertyName()}: {displayProductType.Result.Value}");
+            }
+            #endregion
+
+            #region Miscellaneous Section
+            var miscellaneousSection = block.Sections[(int)DisplayIdSection.Miscellaneous];
+            var status = miscellaneousSection.GetProperty(EedidProperty.DisplayID.Miscellaneous.CheckSum.Ok);
+            var value = miscellaneousSection.GetProperty(EedidProperty.DisplayID.Miscellaneous.CheckSum.Value);
+            logger.Info($@"   Checksum: {value.Result.Value:x2} ({((bool)status.Result.Value ? "Valid" : "Invalid")})");
             #endregion
 
             #region End Block
@@ -564,14 +613,14 @@ namespace iEEDID.ComponentModel.Parser
             #endregion
 
             #region Version Section
-            var versionSection = block.Sections[(int)KnownEdidSection.Version];
+            var versionSection = block.Sections[(int)EdidSection.Version];
             var version = versionSection.GetProperty(EedidProperty.Edid.Version.Number);
             var revision = versionSection.GetProperty(EedidProperty.Edid.Version.Revision);
             logger.Info($@"   EDID Structure Version & Revision: {version.Result.Value}.{revision.Result.Value}");
             #endregion
 
             #region Vendor Section
-            var vendorSection = block.Sections[(int)KnownEdidSection.Vendor];
+            var vendorSection = block.Sections[(int)EdidSection.Vendor];
             logger.Info($@"   Vendor & Product Identification:");
             var manufacturer = vendorSection.GetProperty(EedidProperty.Edid.Vendor.IdManufacturerName);
             if (manufacturer.Success)
@@ -599,7 +648,7 @@ namespace iEEDID.ComponentModel.Parser
             #endregion
 
             #region Basic Display Section
-            var basicDisplaySection = block.Sections[(int)KnownEdidSection.BasicDisplay];
+            var basicDisplaySection = block.Sections[(int)EdidSection.BasicDisplay];
             logger.Info(@"   Basic Display Parameters & Features:");
 
             bool isDigital = true;
@@ -756,7 +805,7 @@ namespace iEEDID.ComponentModel.Parser
             #endregion
 
             #region Color Characteristics Section
-            var colorSection = block.Sections[(int)KnownEdidSection.ColorCharacteristics];
+            var colorSection = block.Sections[(int)EdidSection.ColorCharacteristics];
             logger.Info(@"   Color Characteristics:");
 
             var red = colorSection.GetProperty(EedidProperty.Edid.ColorCharacteristics.Red);
@@ -785,7 +834,7 @@ namespace iEEDID.ComponentModel.Parser
             #endregion
 
             #region Established Timings Section
-            var establishedTimingsSection = block.Sections[(int)KnownEdidSection.EstablishedTimings];
+            var establishedTimingsSection = block.Sections[(int)EdidSection.EstablishedTimings];
             var resolutions = establishedTimingsSection.GetProperty(EedidProperty.Edid.EstablishedTimings.Resolutions);
             if (resolutions.Success)
             {
@@ -811,7 +860,7 @@ namespace iEEDID.ComponentModel.Parser
             #endregion
 
             #region Standard Timings Section
-            var standardTimingsSection = block.Sections[(int)KnownEdidSection.StandardTimings];
+            var standardTimingsSection = block.Sections[(int)EdidSection.StandardTimings];
             var timing1 = standardTimingsSection.GetProperty(EedidProperty.Edid.StandardTimings.Timing1);
             var timing2 = standardTimingsSection.GetProperty(EedidProperty.Edid.StandardTimings.Timing2);
             var timing3 = standardTimingsSection.GetProperty(EedidProperty.Edid.StandardTimings.Timing3);
@@ -852,7 +901,7 @@ namespace iEEDID.ComponentModel.Parser
 
             #region Detailed Timing Descriptors
             logger.Info(@"   Detailed Timing Descriptors:");
-            var dataBlocksSection = block.Sections[(int)KnownEdidSection.DataBlocks];
+            var dataBlocksSection = block.Sections[(int)EdidSection.DataBlocks];
 
             #region Descriptor 1. Preferred Timing Mode (Required)
             var descriptor1 = dataBlocksSection.GetProperty(EedidProperty.Edid.DataBlock.Descriptor1);
@@ -905,7 +954,7 @@ namespace iEEDID.ComponentModel.Parser
             #endregion
 
             #region Extension Blocks Section
-            var extensionBlocksSection = block.Sections[(int)KnownEdidSection.ExtensionBlocks];
+            var extensionBlocksSection = block.Sections[(int)EdidSection.ExtensionBlocks];
             var count = extensionBlocksSection.GetProperty(EedidProperty.Edid.ExtensionBlocks.Count);
             if (count.Success)
             {
@@ -918,7 +967,7 @@ namespace iEEDID.ComponentModel.Parser
             #endregion
 
             #region CheckSum Section
-            var checksumSection = block.Sections[(int)KnownEdidSection.CheckSum];
+            var checksumSection = block.Sections[(int)EdidSection.Checksum];
             var status = checksumSection.GetProperty(EedidProperty.Edid.CheckSum.Ok);
             var value = checksumSection.GetProperty(EedidProperty.Edid.CheckSum.Value);
             logger.Info($@" Checksum: {value.Result.Value:x2} ({((bool)status.Result.Value ? "Valid" : "Invalid")})");

@@ -1,5 +1,5 @@
 
-namespace iTin.Hardware.Specification.Eedid
+namespace iTin.Hardware.Specification.Eedid.Blocks.EDID.Sections.Descriptors
 {
     using System;
     using System.Collections.Generic;
@@ -20,7 +20,7 @@ namespace iTin.Hardware.Specification.Eedid
 
     /// <summary>
     /// Specialization of the <see cref="BaseDataSection"/> class.<br/>
-    /// Represents the <see cref="KnownEdidSection.DataBlocks"/> section of type this block <see cref="EdidDataBlockDescriptor.ColorPointData" />.
+    /// Represents the <see cref="EdidSection.DataBlocks"/> section of type this block <see cref="EedidProperty.Edid.DataBlock.Definition.ColorPointData" />.
     /// </summary> 
     internal sealed class ColorPointDataDescriptor : BaseDataSection
     {

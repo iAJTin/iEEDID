@@ -47,7 +47,7 @@ namespace iTin.Hardware.Specification.Eedid
         /// Implements DisplayID: VESA Display Identification Data (DisplayID)
         /// </summary>
         [PropertyName("DisplayID")]
-        [PropertyDescription("DisplayID: VESA Display Identification Data (DisplayID)")]
+        [PropertyDescription("DisplayID Extension Block")]
         DisplayID,
     }
 }

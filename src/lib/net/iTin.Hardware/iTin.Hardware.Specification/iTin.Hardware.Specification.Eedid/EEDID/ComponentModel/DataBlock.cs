@@ -7,6 +7,11 @@ namespace iTin.Hardware.Specification.Eedid
     using System.Diagnostics;
     using System.Linq;
 
+    using Blocks.CEA.Sections;
+    using Blocks.DI.Sections;
+    using Blocks.DisplayId.Sections;
+    using Blocks.EDID.Sections;
+
     /// <summary>
     /// Represents a data block
     /// </summary>
@@ -96,33 +101,44 @@ namespace iTin.Hardware.Specification.Eedid
         {
             get
             {
-                if (HasSections)
+                if (!HasSections)
                 {
-                    if (_sections == null)
-                    {
-                        switch (Key)
-                        {
-                            case KnownDataBlock.CEA:
-                                _sections = new CeaDataSectionCollection(this);
-                                break;
+                    return _sections;
+                }
 
-                            case KnownDataBlock.DI:
-                                _sections = new DiDataSectionCollection(this);
-                                break;
+                if (_sections != null)
+                {
+                    return _sections;
+                }
 
-                            case KnownDataBlock.EDID:
-                                _sections = new EdidDataSectionCollection(this);
-                                break;
+                switch (Key)
+                {
+                    case KnownDataBlock.CEA:
+                        _sections = new CeaDataSectionCollection(this);
+                        break;
 
-                            case KnownDataBlock.LS:
-                                _sections = new CeaDataSectionCollection(this);
-                                break;
+                    case KnownDataBlock.DI:
+                        _sections = new DiDataSectionCollection(this);
+                        break;
 
-                            case KnownDataBlock.VTB:
-                                _sections = new CeaDataSectionCollection(this);
-                                break;
-                        }
-                    }
+                    case KnownDataBlock.DisplayID:
+                        _sections = new DisplayIdDataSectionCollection(this);
+                        break;
+
+                    case KnownDataBlock.EDID:
+                        _sections = new EdidDataSectionCollection(this);
+                        break;
+
+                    case KnownDataBlock.LS:
+                        _sections = new CeaDataSectionCollection(this);
+                        break;
+
+                    case KnownDataBlock.VTB:
+                        _sections = new CeaDataSectionCollection(this);
+                        break;
+
+                    default:
+                        throw new ArgumentOutOfRangeException();
                 }
 
                 return _sections;

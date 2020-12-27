@@ -1,15 +1,16 @@
 ﻿
-using System.Collections.Generic;
-
 namespace iTin.Hardware.Specification.Eedid
 {
     using System;
+    using System.Collections.Generic;
     using System.Collections.ObjectModel;
     using System.Diagnostics;
     using System.Linq;
 
     using iTin.Core;
     using iTin.Core.Hardware.Common;
+
+    using Blocks.EDID;
 
     /// <summary>
     /// Defines header data block descriptor.
@@ -25,7 +26,7 @@ namespace iTin.Hardware.Specification.Eedid
 
         #region [internal] DataBlockDescriptorData(ReadOnlyCollection<byte>): Initialize a new instance of the structure with the data of one of the Data Block Descriptor untreated
         /// <summary>
-        /// Initialize a new instance of the <see cref="DataBlockDescriptorData" /> structure with the data of one of the <see cref="KnownEdidSection.DataBlocks" /> Descriptor untreated.
+        /// Initialize a new instance of the <see cref="DataBlockDescriptorData" /> structure with the data of one of the <see cref="EdidSection.DataBlocks"/> Descriptor untreated.
         /// </summary>
         /// <param name="blockData">Raw data of this block</param>
         internal DataBlockDescriptorData(ReadOnlyCollection<byte> blockData)
@@ -141,22 +142,25 @@ namespace iTin.Hardware.Specification.Eedid
 
                 return result;
 
-                if (tag == EdidDataBlockDescriptor.DetailedTimingMode || tag == EdidDataBlockDescriptor.DisplayRangeLimits)
-                {
-                    return result;
-                }
+                //if (tag == EdidDataBlockDescriptor.DetailedTimingMode || tag == EdidDataBlockDescriptor.DisplayRangeLimits)
+                //{
+                //    return result;
+                //}
 
-                var rawDataArray = new byte[0x0d];
-                byte[] blockDataArray = _blockData.ToArray();
+                //var rawDataArray = new byte[0x0d];
+                //byte[] blockDataArray = _blockData.ToArray();
 
-                Array.Copy(blockDataArray, 0x05, rawDataArray, 0x00, 0x0d);
-                result = new ReadOnlyCollection<byte>(rawDataArray);
+                //Array.Copy(blockDataArray, 0x05, rawDataArray, 0x00, 0x0d);
+                //result = new ReadOnlyCollection<byte>(rawDataArray);
 
-                return result;
+                //return result;
             }
         }
         #endregion
 
+        /// <summary>
+        /// 
+        /// </summary>
         public IEnumerable<IPropertyKey> ImplementedProperties => Properties.Keys;
 
         private SectionPropertiesTable Properties => DataBlockDescriptorFactory.GetDataBlockDescription(this).Properties;

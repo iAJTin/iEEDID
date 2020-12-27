@@ -1,5 +1,5 @@
 ﻿
-namespace iTin.Hardware.Specification.Eedid
+namespace iTin.Hardware.Specification.Eedid.Blocks.CEA.Sections.Descriptors.DataBlocks
 {
     using System.Collections.ObjectModel;
 
@@ -7,7 +7,7 @@ namespace iTin.Hardware.Specification.Eedid
     using iTin.Core.Helpers.Enumerations;
 
     /// <summary>
-    /// Structure <see cref="VideoCapabilityDataBlock"/> that contains the logic to decode the data of a block of type <see cref="KnownExtendedTag.VideoCapability"/>.
+    /// Structure <see cref="VideoCapabilityDataBlock"/> that contains the logic to decode the data of a block of type <see cref="ExtendedTag.VideoCapability"/>.
     /// </summary> 
     internal struct VideoCapabilityDataBlock
     {

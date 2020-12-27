@@ -1,5 +1,5 @@
 
-namespace iTin.Hardware.Specification.Eedid
+namespace iTin.Hardware.Specification.Eedid.Blocks.EDID.Sections.Descriptors
 {
     using System.Collections.Generic;
     using System.Collections.ObjectModel;
@@ -76,7 +76,7 @@ namespace iTin.Hardware.Specification.Eedid
 
     /// <summary>
     /// Specialization of the <see cref="BaseDataSection"/> class.<br/>
-    /// Represents the <see cref="KnownEdidSection.DataBlocks"/> section of type this block <see cref="EdidDataBlockDescriptor.EstablishedTimingsIII"/>.
+    /// Represents the <see cref="EdidSection.DataBlocks"/> section of type this block <see cref="EedidProperty.Edid.DataBlock.Definition.EstablishedTimingsIII"/>.
     /// </summary> 
     internal sealed class EstablishedTimingsIIIDescriptor : BaseDataSection
     {

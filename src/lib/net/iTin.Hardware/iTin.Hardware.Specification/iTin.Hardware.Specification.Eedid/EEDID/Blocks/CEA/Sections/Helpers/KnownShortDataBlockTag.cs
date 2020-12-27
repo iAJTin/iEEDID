@@ -1,10 +1,10 @@
 ﻿
-namespace iTin.Hardware.Specification.Eedid
+namespace iTin.Hardware.Specification.Eedid.Blocks.CEA.Sections
 {
     /// <summary>
     /// CEA Extension Block Type.
     /// </summary>
-    internal enum KnownShortDataBlockTag
+    internal enum ShortDataBlockTag
     {
         /// <summary>
         /// Reserved

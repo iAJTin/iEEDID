@@ -1,5 +1,5 @@
 ﻿
-namespace iTin.Hardware.Specification.Eedid
+namespace iTin.Hardware.Specification.Eedid.Blocks.CEA.Sections
 {
     using System;
     using System.Collections.ObjectModel;
@@ -52,7 +52,7 @@ namespace iTin.Hardware.Specification.Eedid
 
         #region [public] (DataSection) InformationSection: Obtiene un valor que representa a la sección 'Information' de un bloque 'CEA' de la especificación 'EEDID'.
         /// <summary>
-        /// Obtiene un valor que representa la sección <see cref="KnownCeaSection.Information"/> de un bloque <see cref="KnownDataBlock.CEA"/> de la especificación <see cref="EEDID"/>.
+        /// Obtiene un valor que representa la sección <see cref="CeaSection.Information"/> de un bloque <see cref="KnownDataBlock.CEA"/> de la especificación <see cref="EEDID"/>.
         /// </summary>
         /// <value>
         ///   <para>Tipo: <see cref="DataSection"/></para>
@@ -68,10 +68,10 @@ namespace iTin.Hardware.Specification.Eedid
                 }
 
                 var sections = Sections;
-                var exitsSection = sections.Contains(KnownCeaSection.Information);
+                var exitsSection = sections.Contains(CeaSection.Information);
                 if (exitsSection)
                 {
-                    _informationSection = _ceaSections[KnownCeaSection.Information];
+                    _informationSection = _ceaSections[CeaSection.Information];
                 }
 
                 return _informationSection;
@@ -81,7 +81,7 @@ namespace iTin.Hardware.Specification.Eedid
 
         #region [public] (DataSection) MonitorSupportSection: Obtiene un valor que representa a la sección 'MonitorSupport' de un bloque 'CEA' de la especificación 'EEDID'.
         /// <summary>
-        /// Obtiene un valor que representa la sección <see cref="KnownCeaSection.MonitorSupport"/> de un bloque <see cref="KnownDataBlock.CEA"/> de la especificación <see cref="EEDID"/>.
+        /// Obtiene un valor que representa la sección <see cref="CeaSection.MonitorSupport"/> de un bloque <see cref="KnownDataBlock.CEA"/> de la especificación <see cref="EEDID"/>.
         /// </summary>
         /// <value>
         ///   <para>Tipo: <see cref="DataSection"/></para>
@@ -97,10 +97,10 @@ namespace iTin.Hardware.Specification.Eedid
                 }
 
                 var sections = Sections;
-                var exitsSection = sections.Contains(KnownCeaSection.MonitorSupport);
+                var exitsSection = sections.Contains(CeaSection.MonitorSupport);
                 if (exitsSection)
                 {
-                    _monitorSupportSection = _ceaSections[KnownCeaSection.MonitorSupport];
+                    _monitorSupportSection = _ceaSections[CeaSection.MonitorSupport];
                 }
 
                 return _monitorSupportSection;
@@ -110,7 +110,7 @@ namespace iTin.Hardware.Specification.Eedid
 
         #region [public] (DataSection) DetailedTimingSection: Obtiene un valor que representa a la sección 'DetailedTiming' de un bloque 'CEA' de la especificación 'EEDID'.
         /// <summary>
-        /// Obtiene un valor que representa la sección <see cref="KnownCeaSection.DetailedTiming"/> de un bloque <see cref="KnownDataBlock.CEA"/> de la especificación <see cref="EEDID"/>.
+        /// Obtiene un valor que representa la sección <see cref="CeaSection.DetailedTiming"/> de un bloque <see cref="KnownDataBlock.CEA"/> de la especificación <see cref="EEDID"/>.
         /// </summary>
         /// <value>
         ///   <para>Tipo: <see cref="DataSection"/></para>
@@ -126,10 +126,10 @@ namespace iTin.Hardware.Specification.Eedid
                 }
 
                 var sections = Sections;
-                var exitsSection = sections.Contains(KnownCeaSection.DetailedTiming);
+                var exitsSection = sections.Contains(CeaSection.DetailedTiming);
                 if (exitsSection)
                 {
-                    _detailedTimingSection = _ceaSections[KnownCeaSection.DetailedTiming];
+                    _detailedTimingSection = _ceaSections[CeaSection.DetailedTiming];
                 }
 
                 return _detailedTimingSection;
@@ -139,7 +139,7 @@ namespace iTin.Hardware.Specification.Eedid
 
         #region [public] (DataSection) DataBlocksSection: Obtiene un valor que representa a la sección 'DataBlockCollection' de un bloque 'CEA' de la especificación 'EEDID'.
         /// <summary>
-        /// Obtiene un valor que representa la sección <see cref="KnownCeaSection.DataBlockCollection"/> de un bloque <see cref="KnownDataBlock.CEA"/> de la especificación <see cref="EEDID"/>.
+        /// Obtiene un valor que representa la sección <see cref="CeaSection.DataBlockCollection"/> de un bloque <see cref="KnownDataBlock.CEA"/> de la especificación <see cref="EEDID"/>.
         /// </summary>
         /// <value>
         ///   <para>Tipo: <see cref="DataSection"/></para>
@@ -155,10 +155,10 @@ namespace iTin.Hardware.Specification.Eedid
                 }
 
                 var sections = Sections;
-                var exitsSection = sections.Contains(KnownCeaSection.DataBlockCollection);
+                var exitsSection = sections.Contains(CeaSection.DataBlockCollection);
                 if (exitsSection)
                 {
-                    _dataBlocksCollectionSection = _ceaSections[KnownCeaSection.DataBlockCollection];
+                    _dataBlocksCollectionSection = _ceaSections[CeaSection.DataBlockCollection];
                 }
 
                 return _dataBlocksCollectionSection;
@@ -168,7 +168,7 @@ namespace iTin.Hardware.Specification.Eedid
 
         #region [public] (DataSection) DataBlocksSection: Obtiene un valor que representa a la sección 'CheckSum' de un bloque 'CEA' de la especificación 'EEDID'.
         /// <summary>
-        /// Obtiene un valor que representa la sección <see cref="KnownCeaSection.CheckSum"/> de un bloque <see cref="KnownDataBlock.CEA"/> de la especificación <see cref="EEDID"/>.
+        /// Obtiene un valor que representa la sección <see cref="CeaSection.Checksum"/> de un bloque <see cref="KnownDataBlock.CEA"/> de la especificación <see cref="EEDID"/>.
         /// </summary>
         /// <value>
         ///   <para>Tipo: <see cref="DataSection"/></para>
@@ -184,10 +184,10 @@ namespace iTin.Hardware.Specification.Eedid
                 }
 
                 var sections = Sections;
-                var exitsSection = sections.Contains(KnownCeaSection.CheckSum);
+                var exitsSection = sections.Contains(CeaSection.Checksum);
                 if (exitsSection)
                 {
-                    _checkSumSection = _ceaSections[KnownCeaSection.CheckSum];
+                    _checkSumSection = _ceaSections[CeaSection.Checksum];
                 }
 
                 return _checkSumSection;

@@ -12,6 +12,7 @@ namespace iEEDID.ComponentModel.Parser
 
     using iTin.Hardware.Specification;
     using iTin.Hardware.Specification.Eedid;
+    using iTin.Hardware.Specification.Eedid.Blocks.EDID.Sections.Descriptors;
 
     /// <summary>
     /// Specialization of the <see cref="IParser"/> interface.<br/>
