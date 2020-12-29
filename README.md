@@ -18,7 +18,7 @@ The following **EDID** standards are supported by **iEEDID**:
 
 | Standard | Status |
 |:------|:------|
-| EDID 1.4: VESA Enhanced Extended Display Identication Data Standard, Release A, Revision 2 | Implemented |
+| EDID 1.4: VESA Enhanced Extended Display Identication Data Standard, Release A, Rev. 2 | Implemented |
 | DisplayID 1.3: VESA Display Identification Data (DisplayID) Standard, Version 1.3 | **In progress...** |
 | DisplayID 2.0: VESA DisplayID Standard, Version 2.0 | **In progress...** |
 | CTA-861-G: A DTV Profile for Uncompressed High Speed Digital Interfaces | **In progress...** |
