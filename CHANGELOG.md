@@ -18,7 +18,9 @@ All notable changes to this project will be documented in this file.
     | Big Sur | 11.0.1 |
     | Catalina | 10.15.7 |
 
+ - Added support for **DI** blocks (Implemented)
  - Added support for **CEA** blocks (In progress...)
+ - Added support for **DisplayID** blocks (In progress...)
  
  - Added **EEDID.Instance** static property for gets all available **EEDID** structures for current system
 

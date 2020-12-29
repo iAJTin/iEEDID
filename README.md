@@ -26,6 +26,9 @@ The following **EDID** standards are supported by **iEEDID**:
 | LS-EXT: VESA Enhanced EDID Localized String Extension Standard, Release A | **In progress...** |
 | VTB-EXT: VESA Video Timing Block Extension Data Standard, Release A | **In progress...** |
 
+For more information, please see the [CHANGELOG] document.
+
+
 # Install via NuGet
 
 - From nuget gallery
@@ -259,3 +262,4 @@ My email address is
 
 [email]: ./assets/email.png "email"
 [documentation]: ./documentation/iTin.Hardware.Specification.Eedid.md
+[CHANGELOG]: ./CHANGELOG.md
