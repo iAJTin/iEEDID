@@ -12,6 +12,19 @@
 # What is iEEDID?
 **iEEDID** is a lightweight implementation that allows us to obtain the **EDID** information.
 
+### Standards
+
+The following **EDID** standards are supported by **iEEDID**:
+
+| Standard | Status |
+|:------|:------|
+| EDID 1.4: VESA Enhanced Extended Display Identication Data Standard, Release A, Revision 2 | Implemented |
+| DisplayID 1.3: VESA Display Identification Data (DisplayID) Standard, Version 1.3 | **Partial, in progress...** |
+| DisplayID 2.0: VESA DisplayID Standard, Version 2.0 | **Partial, in progress...** |
+| CTA-861-G: A DTV Profile for Uncompressed High Speed Digital Interfaces | **Partial, in progress...** |
+| DI-EXT: VESA Display Information Extension Block Standard, Release A | Implemented |
+| LS-EXT: VESA Enhanced EDID Localized String Extension Standard, Release A | **Partial, in progress...** |
+| VTB-EXT: VESA Video Timing Block Extension Data Standard, Release A | **Partial, in progress...** |
 
 # Install via NuGet
 
