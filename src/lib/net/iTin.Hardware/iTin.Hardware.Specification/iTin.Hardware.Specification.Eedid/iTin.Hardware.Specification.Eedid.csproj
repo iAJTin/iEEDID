@@ -29,6 +29,7 @@
     <ProjectReference Include="..\..\..\iTin.Core\iTin.Core.Hardware\iTin.Core.Hardware.Common\iTin.Core.Hardware.Common.csproj" />
     <ProjectReference Include="..\..\..\iTin.Core\iTin.Core\iTin.Core.csproj" />
     <ProjectReference Include="..\..\iTin.Hardware.Abstractions\iTin.Hardware.Abstractions\iTin.Hardware.Abstractions.Devices.csproj" />
+    <ProjectReference Include="..\iTin.Hardware.Specification.IEEE\iTin.Hardware.Specification.IEEE.csproj" />
   </ItemGroup>
 
 </Project>

@@ -18,11 +18,11 @@ namespace iTin.Hardware.Specification.Eedid.Blocks.DisplayId
         General,
 
         /// <summary>
-        /// <b>Extension Block Count</b> section, for more information see <see cref="ExtensionBlocksSection"/>.
+        /// <b>DataBlocks</b> section, for more information see <see cref="DataBlocksSection"/>.
         /// </summary>
-        [PropertyName("Extension Blocks")]
-        [PropertyDescription("Extension Block Count")]
-        ExtensionBlocks,
+        [PropertyName("Data Blocks")]
+        [PropertyDescription("Data Blocks")]
+        DataBlocks,
 
         /// <summary>
         /// <b>Miscellaneous</b> section, for more information see <see cref="MiscellaneousSection"/>.

@@ -22,12 +22,18 @@ namespace iTin.Hardware.Specification.Eedid
 
         #region constructor/s
 
-        #region [protected] BaseDataSection(ReadOnlyCollection<byte>): Initializes a new instance of the class BaseDataSection with the raw data of this section
+        #region [protected] BaseDataSection(ReadOnlyCollection<byte>, int? = null): Initializes a new instance of the class BaseDataSection with the raw data of this section with version block
         /// <summary>
-        /// Initializes a new instance of the class <see cref="BaseDataSection"/> with the raw data of this section.
+        /// Initializes a new instance of the class <see cref="BaseDataSection"/> with the raw data of this section with version block.
         /// </summary>
         /// <param name="sectionData">Raw data section.</param>
-        protected BaseDataSection(ReadOnlyCollection<byte> sectionData) => RawData = sectionData;
+        /// <param name="version">Block version.</param>
+        protected BaseDataSection(ReadOnlyCollection<byte> sectionData, int? version = null)
+        {
+            Version = version;
+            RawData = sectionData;
+        }
+
         #endregion
 
         #endregion
@@ -62,7 +68,7 @@ namespace iTin.Hardware.Specification.Eedid
 
         #region internal properties
 
-        #region [internal] (ReadOnlyCollection<byte>) RawData: Gets a value that represents the data to be processed.
+        #region [internal] (ReadOnlyCollection<byte>) RawData: Gets a value that represents the data to be processed
         /// <summary>
         /// Gets a value that represents the data to be processed
         /// </summary>
@@ -70,6 +76,16 @@ namespace iTin.Hardware.Specification.Eedid
         /// Data to process.
         /// </value>
         internal ReadOnlyCollection<byte> RawData { get; }
+        #endregion
+
+        #region [internal] (int?) Version: Gets a value containing the version block
+        /// <summary>
+        /// Gets a value containing the version block
+        /// </summary>
+        /// <value>
+        /// Version block.
+        /// </value>
+        internal int? Version { get; }
         #endregion
 
         #endregion

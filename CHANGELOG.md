@@ -24,6 +24,12 @@ All notable changes to this project will be documented in this file.
  
  - Added **EEDID.Instance** static property for gets all available **EEDID** structures for current system
 
+ - Library versions added in this version
+  
+    | Library | Version | Description |
+    |:------|:------|:----------|
+    | iTin.Hardware.Specification.IEEE | **1.0.0.0** | IEEE Registration Authority |
+
  - Library documentation
  
  - ```tools``` folder in solution root. Contains a script for update help md files.

@@ -43,12 +43,13 @@ namespace iTin.Hardware.Specification.Eedid.Blocks.DisplayId.Sections
     {
         #region constructor/s
 
-        #region [public] GeneralSection(ReadOnlyCollection<byte>): Initialize a new instance of the class with the data in this section untreated
+        #region [public] GeneralSection(ReadOnlyCollection<byte>, int? = null): Initialize a new instance of the class with the data in this section untreated with version block
         /// <summary>
-        /// Initialize a new instance of the <see cref="GeneralSection"/> class with the data in this section untreated.
+        /// Initialize a new instance of the <see cref="GeneralSection"/> class with the data in this section untreated with version block.
         /// </summary>
         /// <param name="sectionData">Unprocessed data in this section</param>
-        public GeneralSection(ReadOnlyCollection<byte> sectionData) : base(sectionData)
+        /// <param name="version">Block version.</param>
+        public GeneralSection(ReadOnlyCollection<byte> sectionData, int? version = null) : base(sectionData, version)
         {
         }
         #endregion
@@ -126,7 +127,7 @@ namespace iTin.Hardware.Specification.Eedid.Blocks.DisplayId.Sections
             properties.Add(EedidProperty.DisplayID.General.Version, Version);
             properties.Add(EedidProperty.DisplayID.General.Revision, Revision);
             properties.Add(EedidProperty.DisplayID.General.ExtensionCount, ExtensionCount);
-            properties.Add(EedidProperty.DisplayID.General.DisplayProductType, GetDisplayProductType(DisplayProductType));
+            properties.Add(EedidProperty.DisplayID.General.DisplayProduct, GetDisplayProduct(DisplayProductType, Version));
         }
         #endregion
 
@@ -135,7 +136,12 @@ namespace iTin.Hardware.Specification.Eedid.Blocks.DisplayId.Sections
 
         #region VESA Display Identification Data (DisplayID)
 
-        private static string GetDisplayProductType(byte code)
+        private static string GetDisplayProduct(byte code, byte version) => 
+            version == 2 
+                ? GetDisplayProduct20(code) 
+                : GetDisplayProduct13(code);
+
+        private static string GetDisplayProduct13(byte code)
         {
             var items = new List<string>
             {
@@ -149,6 +155,26 @@ namespace iTin.Hardware.Specification.Eedid.Blocks.DisplayId.Sections
             };
 
             return code > 0x06
+                ? "Reserved"
+                : items[code];
+        }
+
+        private static string GetDisplayProduct20(byte code)
+        {
+            var items = new List<string>
+            {
+                "Extension Section",             // 0x00
+                "Test Structure",
+                "Generic Display",
+                "Television display",
+                "Desktop productivity display",
+                "Desktop gaming display",
+                "Presentation display",
+                "Virtual Reality display",
+                "Augmented Reality display"     // 0x08
+            };
+
+            return code > 0x08
                 ? "Reserved"
                 : items[code];
         }

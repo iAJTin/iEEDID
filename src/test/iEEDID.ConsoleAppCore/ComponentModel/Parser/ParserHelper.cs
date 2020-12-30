@@ -1,6 +1,7 @@
 ﻿
 namespace iEEDID.ComponentModel.Parser
 {
+    using System;
     using System.Collections.Generic;
     using System.Collections.ObjectModel;
     using System.Drawing;
@@ -16,6 +17,7 @@ namespace iEEDID.ComponentModel.Parser
     using iTin.Hardware.Specification.Eedid.Blocks.CEA;
     using iTin.Hardware.Specification.Eedid.Blocks.DI;
     using iTin.Hardware.Specification.Eedid.Blocks.DisplayId;
+    using iTin.Hardware.Specification.Eedid.Blocks.DisplayId.Sections.DataBlocks.ComponentModel;
     using iTin.Hardware.Specification.Eedid.Blocks.EDID;
     using iTin.Hardware.Specification.Eedid.Blocks.EDID.Sections.Descriptors;
 
@@ -584,10 +586,26 @@ namespace iEEDID.ComponentModel.Parser
                 logger.Info($@"   {EedidProperty.DisplayID.General.ExtensionCount.GetPropertyName()}: {extensionCount.Result.Value}");
             }
 
-            var displayProductType = generalSection.GetProperty(EedidProperty.DisplayID.General.DisplayProductType);
+            var displayProductType = generalSection.GetProperty(EedidProperty.DisplayID.General.DisplayProduct);
             if (displayProductType.Success)
             {
-                logger.Info($@"   {EedidProperty.DisplayID.General.DisplayProductType.GetPropertyName()}: {displayProductType.Result.Value}");
+                logger.Info($@"   {EedidProperty.DisplayID.General.DisplayProduct.GetPropertyName()}: {displayProductType.Result.Value}");
+            }
+            #endregion
+
+            #region Data Blocks Section
+            var dataBlocksSection = block.Sections[(int)DisplayIdSection.DataBlocks];
+            if (dataBlocksSection != null)
+            {
+                var implementedBlocksProperty = dataBlocksSection.GetProperty(EedidProperty.DisplayID.DataBlocks.ImplementedBlocks);
+                if (implementedBlocksProperty.Success)
+                {
+                    var implementedBlocks = (IEnumerable<DataBlockData>) implementedBlocksProperty.Result.Value;
+                    foreach (var implementedBlock in implementedBlocks)
+                    {
+                        PrintsDisplayIdDataBlock(implementedBlock, logger);
+                    }
+                }
             }
             #endregion
 
@@ -910,7 +928,7 @@ namespace iEEDID.ComponentModel.Parser
                 var descriptorValue = descriptor1.Result.Value;
                 if (descriptorValue != null)
                 {
-                    PrintsDescriptor((DataBlockDescriptorData) descriptorValue, logger);
+                    PrintsEdidDescriptor((DataBlockDescriptorData) descriptorValue, logger);
                 }
             }
             #endregion
@@ -922,7 +940,7 @@ namespace iEEDID.ComponentModel.Parser
                 var descriptorValue = descriptor2.Result.Value;
                 if (descriptorValue != null)
                 {
-                    PrintsDescriptor((DataBlockDescriptorData)descriptorValue, logger);
+                    PrintsEdidDescriptor((DataBlockDescriptorData)descriptorValue, logger);
                 }
             }
             #endregion
@@ -934,7 +952,7 @@ namespace iEEDID.ComponentModel.Parser
                 var descriptorValue = descriptor3.Result.Value;
                 if (descriptorValue != null)
                 {
-                    PrintsDescriptor((DataBlockDescriptorData)descriptorValue, logger);
+                    PrintsEdidDescriptor((DataBlockDescriptorData)descriptorValue, logger);
                 }
             }
             #endregion
@@ -946,7 +964,7 @@ namespace iEEDID.ComponentModel.Parser
                 var descriptorValue = descriptor4.Result.Value;
                 if (descriptorValue != null)
                 {
-                    PrintsDescriptor((DataBlockDescriptorData)descriptorValue, logger);
+                    PrintsEdidDescriptor((DataBlockDescriptorData)descriptorValue, logger);
                 }
             }
             #endregion
@@ -992,7 +1010,7 @@ namespace iEEDID.ComponentModel.Parser
             logger.Info($@"     {resolution1,9}{'\t'}{data.RefreshRate} Hz{'\t'}{data.AspectRatio}");
         }
 
-        private static void PrintsDescriptor(DataBlockDescriptorData data, ILogger logger)
+        private static void PrintsEdidDescriptor(DataBlockDescriptorData data, ILogger logger)
         {
             var type = data.DescriptorType;
             switch (type)
@@ -1271,6 +1289,54 @@ namespace iEEDID.ComponentModel.Parser
                     }
                     break;
                 #endregion
+            }
+        }
+
+        private static void PrintsDisplayIdDataBlock(DataBlockData data, ILogger logger)
+        {
+            switch (data.BlockTag)
+            {
+                case DataBlockTag.VendorSpecific:
+                    var manufacturerProperty = data.GetProperty(EedidProperty.DisplayID.DataBlocks.Blocks.VendorSpecific.Manufacturer);
+                    if (!manufacturerProperty.Success)
+                    {
+                        return;
+                    }
+
+                    logger.Info($@"   {data.BlockTag.GetPropertyName()} Data Block: ({manufacturerProperty.Result.Value})");
+                    var vendorSpecificDataProperty = data.GetProperty(EedidProperty.DisplayID.DataBlocks.Blocks.VendorSpecific.Data);
+                    if (vendorSpecificDataProperty.Success)
+                    {
+                        PrintsVendorSpecificRawData(logger, (IEnumerable<byte>)vendorSpecificDataProperty.Result.Value);
+                    }
+                    break;
+
+                default:
+                    throw new ArgumentOutOfRangeException();
+            }
+        }
+
+        public static void PrintsVendorSpecificRawData(ILogger logger, IEnumerable<byte> data)
+        {
+            var offset = 0;
+            var dataAsList = data.ToList();
+            var printableData = dataAsList.ToArray().ToPrintableString();
+            var instanceRawData = dataAsList.AsHexadecimal().ToList();
+            var totalBytes = instanceRawData.Count;
+            for (int i = 0; i <= (totalBytes - 1) / 16; i++)
+            {
+                var newLine = new[] {"  ", "  ", "  ", "  ", "  ", "  ", "  ", "  ", "  ", "  ", "  ", "  ", "  ", "  ", "  ", "  "};
+
+                var piece = instanceRawData.Skip(offset);
+                var line = piece.Take(16).ToArray();
+                Array.Copy(line, newLine, line.Length);
+                
+                var printablePiece = printableData.Skip(offset);
+                var printableLine = printablePiece.Take(16);
+
+                logger.Info($@"     {string.Join(" ", newLine)} '{string.Join("", printableLine)}'");
+
+                offset += 16;
             }
         }
     }

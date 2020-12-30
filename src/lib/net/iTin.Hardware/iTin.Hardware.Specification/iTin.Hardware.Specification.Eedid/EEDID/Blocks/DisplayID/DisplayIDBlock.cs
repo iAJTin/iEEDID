@@ -6,6 +6,8 @@ namespace iTin.Hardware.Specification.Eedid.Blocks
     using System.Collections.ObjectModel;
     using System.Linq;
 
+    using iTin.Core;
+
     using DisplayId;
     using DisplayId.Sections;
 
@@ -52,17 +54,23 @@ namespace iTin.Hardware.Specification.Eedid.Blocks
         /// <param name="dataSectionDictionary">Dictionary that contains the available data for the sections of this block</param>
         protected override void InitDataSectionTable(Dictionary<Enum, ReadOnlyCollection<byte>> dataSectionDictionary)
         {
-            var dataArray = RawData.ToArray();
+            var rawBlockArray = RawData.Extract(0x01).ToArray();
+
+            PopulatesVersionBlock(rawBlockArray);
 
             var displayStructureArray = new byte[0x04];
-            Array.Copy(dataArray, 0x01, displayStructureArray, 0x00, 0x04);
+            Array.Copy(rawBlockArray, 0x00, displayStructureArray, 0x00, 0x04);
             dataSectionDictionary.Add(DisplayIdSection.General, new ReadOnlyCollection<byte>(displayStructureArray));
 
-            var sectionBytes = dataArray[01];
-            var extensionBlocksSectionArray = new byte[sectionBytes];
-            Array.Copy(dataArray, 0x05, extensionBlocksSectionArray, 0x00, sectionBytes);
-            dataSectionDictionary.Add(DisplayIdSection.ExtensionBlocks, new ReadOnlyCollection<byte>(extensionBlocksSectionArray));
-
+            var sectionBytes = rawBlockArray[01];
+            dataSectionDictionary.Add(DisplayIdSection.DataBlocks, new ReadOnlyCollection<byte>(new List<byte>()));
+            if (sectionBytes != 0x00)
+            {
+                var dataBlocksStructureArray = new byte[sectionBytes];
+                Array.Copy(rawBlockArray, 0x04, dataBlocksStructureArray, 0x00, sectionBytes);
+                dataSectionDictionary[DisplayIdSection.DataBlocks] = new ReadOnlyCollection<byte>(dataBlocksStructureArray);
+            }
+            
             dataSectionDictionary.Add(DisplayIdSection.Miscellaneous, RawData);
         }
         #endregion
@@ -75,10 +83,22 @@ namespace iTin.Hardware.Specification.Eedid.Blocks
         protected override void InitSectionTable(Dictionary<Enum, BaseDataSection> sectionDictionary)
         {
             sectionDictionary.Add(DisplayIdSection.General, new GeneralSection(DataSectionTable[DisplayIdSection.General]));
-            sectionDictionary.Add(DisplayIdSection.ExtensionBlocks, new ExtensionBlocksSection(DataSectionTable[DisplayIdSection.ExtensionBlocks]));
+            sectionDictionary.Add(DisplayIdSection.DataBlocks, new DataBlocksSection(DataSectionTable[DisplayIdSection.DataBlocks], BlockVersion));
             sectionDictionary.Add(DisplayIdSection.Miscellaneous, new MiscellaneousSection(DataSectionTable[DisplayIdSection.Miscellaneous]));
         }
         #endregion
+
+        #endregion
+
+        #region private methods
+
+        private void PopulatesVersionBlock(byte[] data)
+        {
+            var rawVersion = data[0x00].ToNibbles();
+            var version = rawVersion[0x00];
+            var revision = rawVersion[0x01];
+            BlockVersion = int.Parse($"{version}{revision}");
+        }
 
         #endregion
     }

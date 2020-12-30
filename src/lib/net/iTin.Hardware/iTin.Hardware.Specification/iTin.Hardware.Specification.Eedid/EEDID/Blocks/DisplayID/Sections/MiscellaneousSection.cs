@@ -20,12 +20,13 @@ namespace iTin.Hardware.Specification.Eedid.Blocks.DisplayId.Sections
     {
         #region constructor/s
 
-        #region [public] MiscellaneousSection(ReadOnlyCollection<byte>): Initializes a new instance of the class with the data from this raw section
+        #region [public] MiscellaneousSection(ReadOnlyCollection<byte>, int? = null): Initialize a new instance of the class with the data in this section untreated with version block
         /// <summary>
-        /// Initializes a new instance of the <see cref="MiscellaneousSection"/> class with the data from this raw section.
+        /// Initialize a new instance of the <see cref="GeneralSection"/> class with the data in this section untreated with version block.
         /// </summary>
-        /// <param name="sectionData">Data from this section untreated.</param>
-        public MiscellaneousSection(ReadOnlyCollection<byte> sectionData) : base(sectionData)
+        /// <param name="sectionData">Unprocessed data in this section</param>
+        /// <param name="version">Block version.</param>
+        public MiscellaneousSection(ReadOnlyCollection<byte> sectionData, int? version = null) : base(sectionData, version)
         {
         }
         #endregion

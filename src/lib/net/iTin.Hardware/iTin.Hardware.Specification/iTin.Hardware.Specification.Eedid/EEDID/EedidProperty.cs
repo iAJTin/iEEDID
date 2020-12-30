@@ -11,6 +11,7 @@ namespace iTin.Hardware.Specification.Eedid
     using Blocks.CEA;
     using Blocks.DI;
     using Blocks.DisplayId;
+    using Blocks.DisplayId.Sections.DataBlocks.ComponentModel;
     using Blocks.EDID;
     using Blocks.EDID.Sections.Descriptors;
 
@@ -6483,7 +6484,7 @@ namespace iTin.Hardware.Specification.Eedid
             /// </summary>
             public static class General
             {
-                #region [public] {static} (IPropertyKey) DisplayProductType: Gets a value representing the key to retrieve the property value
+                #region [public] {static} (IPropertyKey) DisplayProduct: Gets a value representing the key to retrieve the property value
                 /// <summary>
                 /// <para>Gets a value representing the key to retrieve the property value.</para>
                 /// <para>Display Product Type Identifier.</para>
@@ -6491,7 +6492,7 @@ namespace iTin.Hardware.Specification.Eedid
                 ///  <para><b>Key Composition</b></para>
                 ///  <list type="bullet">
                 ///   <item><description>Structure: <see cref="DisplayIdSection.General"/></description></item>
-                ///   <item><description>Property: <see cref="DisplayIdProperty.General.Data.DisplayProductType"/></description></item>
+                ///   <item><description>Property: <see cref="DisplayIdProperty.General.Data.DisplayProduct"/></description></item>
                 ///   <item><description>Unit: <see cref="PropertyUnit.None"/></description></item>
                 ///  </list>
                 /// </para>
@@ -6500,7 +6501,7 @@ namespace iTin.Hardware.Specification.Eedid
                 ///  <para>Type: <see cref="string"/>.</para>
                 /// </para>
                 /// </summary>
-                public static IPropertyKey DisplayProductType => new PropertyKey(DisplayIdSection.General, DisplayIdProperty.General.Data.DisplayProductType);
+                public static IPropertyKey DisplayProduct => new PropertyKey(DisplayIdSection.General, DisplayIdProperty.General.Data.DisplayProduct);
                 #endregion
 
                 #region [public] {static} (IPropertyKey) ExtensionCount: Gets a value representing the key to retrieve the property value
@@ -6561,6 +6562,92 @@ namespace iTin.Hardware.Specification.Eedid
                 /// </para>
                 /// </summary>
                 public static IPropertyKey Revision => new PropertyKey(DisplayIdSection.General, DisplayIdProperty.General.Version.Revision);
+                #endregion
+            }
+            #endregion
+
+            #region [public] {static} (class) DataBlocks: Definition of keys in the 'DataBlocks' section
+            /// <summary>
+            /// Definition of keys in the <see cref="DisplayIdSection.DataBlocks"/> section.
+            /// </summary>
+            public static class DataBlocks
+            {
+                #region [public] {static} (IPropertyKey) ImplementedBlocks: Gets a value representing the key to retrieve the property value
+                /// <summary>
+                /// <para>Gets a value representing the key to retrieve the property value.</para>
+                /// <para>Implemented Data Blocks.</para>
+                /// <para>
+                ///  <para><b>Key Composition</b></para>
+                ///  <list type="bullet">
+                ///   <item><description>Structure: <see cref="DisplayIdSection.DataBlocks"/></description></item>
+                ///   <item><description>Property: <see cref="DisplayIdProperty.DataBlocks.Implemented.ImplementedBlocks"/></description></item>
+                ///   <item><description>Unit: <see cref="PropertyUnit.None"/></description></item>
+                ///  </list>
+                /// </para>
+                /// <para>
+                ///  <para><b>Return Value</b></para>
+                ///  <para>Type: <see cref="ReadOnlyCollection{T}"/> where <b>T</b> is <see cref="DataBlockData"/>.</para>
+                /// </para>
+                /// </summary>
+                public static IPropertyKey ImplementedBlocks => new PropertyKey(DisplayIdSection.DataBlocks, DisplayIdProperty.DataBlocks.Implemented.ImplementedBlocks);
+                #endregion
+
+
+                #region [public] {static} (class) Blocks: Definition of keys for a known data blocks
+                /// <summary>
+                /// Definition of properties for a known data blocks.
+                /// </summary>
+                public static class Blocks
+                {
+                    #region [public] {static} (class) VendorSpecific: Definition of keys for a 'Vendor Specific' data block
+                    /// <summary>
+                    /// Definition of properties for a <b>Vendor Specific</b> data block.
+                    /// </summary>
+                    public static class VendorSpecific
+                    {
+                        #region [public] {static} (IPropertyKey) Data: Gets a value representing the key to retrieve the property value
+                        /// <summary>
+                        /// <para>Gets a value representing the key to retrieve the property value.</para>
+                        /// <para>Vendor-Specific data.</para>
+                        /// <para>
+                        ///  <para><b>Key Composition</b></para>
+                        ///  <list type="bullet">
+                        ///   <item><description>Structure: <see cref="DisplayIdSection.DataBlocks"/></description></item>
+                        ///   <item><description>Property: <see cref="DisplayIdProperty.DataBlocks.Blocks.VendorSpecific.Data"/></description></item>
+                        ///   <item><description>Unit: <see cref="PropertyUnit.None"/></description></item>
+                        ///  </list>
+                        /// </para>
+                        /// <para>
+                        ///  <para><b>Return Value</b></para>
+                        ///  <para>Type: <see cref="ReadOnlyCollection{T}"/> where <b>T</b> is <see cref="byte"/>.</para>
+                        /// </para>
+                        /// </summary>
+                        public static IPropertyKey Data => new PropertyKey(DisplayIdSection.DataBlocks, DisplayIdProperty.DataBlocks.Blocks.VendorSpecific.Data);
+                        #endregion
+
+                        #region [public] {static} (IPropertyKey) Manufacturer: Gets a value representing the key to retrieve the property value
+                        /// <summary>
+                        /// <para>Gets a value representing the key to retrieve the property value.</para>
+                        /// <para>Manufacturer/Vendor ID.</para>
+                        /// <para>
+                        ///  <para><b>Key Composition</b></para>
+                        ///  <list type="bullet">
+                        ///   <item><description>Structure: <see cref="DisplayIdSection.DataBlocks"/></description></item>
+                        ///   <item><description>Property: <see cref="DisplayIdProperty.DataBlocks.Blocks.VendorSpecific.Manufacturer"/></description></item>
+                        ///   <item><description>Unit: <see cref="PropertyUnit.None"/></description></item>
+                        ///  </list>
+                        /// </para>
+                        /// <para>
+                        ///  <para><b>Return Value</b></para>
+                        ///  <para>Type: <see cref="string"/>.</para>
+                        /// </para>
+                        /// </summary>
+                        public static IPropertyKey Manufacturer => new PropertyKey(DisplayIdSection.DataBlocks, DisplayIdProperty.DataBlocks.Blocks.VendorSpecific.Manufacturer);
+                        #endregion
+
+                    }
+                    #endregion
+                }
                 #endregion
             }
             #endregion

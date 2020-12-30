@@ -1,13 +1,18 @@
 ﻿
 namespace iTin.Hardware.Specification.Eedid.Blocks.DisplayId
 {
+    using System.Collections.Generic;
+
     using iTin.Core.Hardware.Common;
+
+    using Sections.DataBlocks.ComponentModel;
 
     /// <summary>
     /// Contains all availables section properties for a <see cref="DisplayIdBlock"/> block.
     /// </summary>
     internal static class DisplayIdProperty
     {
+
         #region [public] {static} (class) General: Definition of properties for a section of type 'General'
         /// <summary>
         /// Definition of properties for a section of type <see cref="DisplayIdSection.General"/>.
@@ -19,10 +24,10 @@ namespace iTin.Hardware.Specification.Eedid.Blocks.DisplayId
             /// </summary>
             public enum Data
             {
-                [PropertyName("Display Product Type")]
+                [PropertyName("Display Product")]
                 [PropertyDescription("Display Product Type Identifier")]
                 [PropertyType(typeof(string))]
-                DisplayProductType,
+                DisplayProduct,
 
                 [PropertyName("Extension Count")]
                 [PropertyDescription("Extension Count")]
@@ -44,6 +49,47 @@ namespace iTin.Hardware.Specification.Eedid.Blocks.DisplayId
                 [PropertyDescription("The Revision Number for the DisplayID Block Data Structure")]
                 [PropertyType(typeof(byte))]
                 Revision,
+            }
+        }
+        #endregion
+
+        #region [public] {static} (class) DataBlocks: Definition of properties for a section of type 'Data Blocks'
+        /// <summary>
+        /// Definition of properties for a section of type <see cref="DisplayIdSection.DataBlocks"/>.
+        /// </summary>
+        public static class DataBlocks
+        {
+            /// <summary>
+            /// Definition of properties for a <b>Data Blocks</b> section.
+            /// </summary>
+            public enum Implemented
+            {
+                [PropertyName("Implemented Blocks")]
+                [PropertyDescription("DImplemented Blocks")]
+                [PropertyType(typeof(IEnumerable<DataBlockData>))]
+                ImplementedBlocks
+            }
+
+            /// <summary>
+            /// Definition of properties for a known data blocks.
+            /// </summary>
+            public static class Blocks
+            {
+                /// <summary>
+                /// Definition of properties for a <b>Vendor Specific</b> data block.
+                /// </summary>
+                public enum VendorSpecific
+                {
+                    [PropertyName("Vendor-Specific data")]
+                    [PropertyDescription("Vendor-Specific data")]
+                    [PropertyType(typeof(IEnumerable<byte>))]
+                    Data,
+
+                    [PropertyName("Manufacturer")]
+                    [PropertyDescription("Manufacturer/Vendor ID")]
+                    [PropertyType(typeof(string))]
+                    Manufacturer
+                }
             }
         }
         #endregion

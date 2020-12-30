@@ -20,7 +20,7 @@ namespace iEEDID.Code
             //EEDID instance = EEDID.Parse(ChiMeiOptoelectronics.Digital.CMO002C);
             //EEDID instance = EEDID.Parse(Denon.Digital.DON003D);
             //EEDID instance = EEDID.Parse(LGDisplay.Digital.LGD0000);
-            EEDID instance = EEDID.Parse(Apple.Digital.APPA044);
+            EEDID instance = EEDID.Parse(Apple.Digital.APPA03D);
             //EEDID instance = EEDID.Parse(Lenovo.Analog.LEN23CD);
             //EEDID instance = EEDID.Parse(Eizo.Digital.ENC1607);
             //EEDID instance = EEDID.Parse(HP.Analog.HWP3356);

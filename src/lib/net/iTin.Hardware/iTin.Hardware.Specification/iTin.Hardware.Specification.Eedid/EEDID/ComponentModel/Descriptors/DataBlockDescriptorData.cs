@@ -126,6 +126,16 @@ namespace iTin.Hardware.Specification.Eedid
         }
         #endregion
 
+        #region [public] (IEnumerable<IPropertyKey>) ImplementedProperties: Gets a value containing the implemented properties for this data block
+        /// <summary>
+        /// Gets a value containing the implemented properties for this data block.
+        /// </summary>
+        /// <value>
+        /// A property collection.
+        /// </value>
+        public IEnumerable<IPropertyKey> ImplementedProperties => Properties.Keys;
+        #endregion
+
         #region [public] (ReadOnlyCollection<byte>) RawData: Get the raw data from a block descriptor
         /// <summary>
         /// Get the raw data from a block descriptor
@@ -158,10 +168,9 @@ namespace iTin.Hardware.Specification.Eedid
         }
         #endregion
 
-        /// <summary>
-        /// 
-        /// </summary>
-        public IEnumerable<IPropertyKey> ImplementedProperties => Properties.Keys;
+        #endregion
+
+        #region private readonly properties
 
         private SectionPropertiesTable Properties => DataBlockDescriptorFactory.GetDataBlockDescription(this).Properties;
 

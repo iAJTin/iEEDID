@@ -59,6 +59,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "iTin.Core.Interop.Windows.D
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "iTin.Core.Hardware.Linux.Device.Desktop", "src\lib\net\iTin.Core\iTin.Core.Hardware\iTin.Core.Hardware.Linux\iTin.Core.Hardware.Linux.Device.Desktop\iTin.Core.Hardware.Linux.Device.Desktop.csproj", "{C7D6598D-0687-46A9-93DE-6E258E916231}"
 EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "iTin.Hardware.Specification.IEEE", "src\lib\net\iTin.Hardware\iTin.Hardware.Specification\iTin.Hardware.Specification.IEEE\iTin.Hardware.Specification.IEEE.csproj", "{42378A32-9C07-43BC-A5AF-0A57F32FBA59}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -113,6 +115,10 @@ Global
 		{C7D6598D-0687-46A9-93DE-6E258E916231}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C7D6598D-0687-46A9-93DE-6E258E916231}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C7D6598D-0687-46A9-93DE-6E258E916231}.Release|Any CPU.Build.0 = Release|Any CPU
+		{42378A32-9C07-43BC-A5AF-0A57F32FBA59}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{42378A32-9C07-43BC-A5AF-0A57F32FBA59}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{42378A32-9C07-43BC-A5AF-0A57F32FBA59}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{42378A32-9C07-43BC-A5AF-0A57F32FBA59}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -144,6 +150,7 @@ Global
 		{D6ED5F1E-FE33-4D71-9F4D-DBACE40897D0} = {EDD48F04-16D1-495C-8C26-71EED242C9DD}
 		{A9B24E43-71BE-4DA6-AF73-15E6DE8672FC} = {D6ED5F1E-FE33-4D71-9F4D-DBACE40897D0}
 		{C7D6598D-0687-46A9-93DE-6E258E916231} = {ED326CE4-519B-4627-83DB-2900DC42D2D0}
+		{42378A32-9C07-43BC-A5AF-0A57F32FBA59} = {FB0E1A10-5DA3-47BC-BA3B-16A0E2031F40}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {7E253257-825E-40F1-9BD8-3624F02E7544}

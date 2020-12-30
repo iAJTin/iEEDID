@@ -34,6 +34,20 @@ namespace iTin.Hardware.Specification.Eedid
 
         #endregion
 
+        #region protected properties
+
+        #region [protected] (int) BlockVersion: Gets or sets the current block version
+        /// <summary>
+        ///  Gets or sets the current block version.
+        /// </summary>
+        /// <value>
+        /// Current block version.
+        /// </value>
+        protected int BlockVersion { get; set; }
+        #endregion
+
+        #endregion
+
         #region protected readonly properties
 
         #region [protected] (Dictionary<Enum, ReadOnlyCollection<byte>>) DataSectionTable: Gets a value that represents the raw data available for sections of the current block.
