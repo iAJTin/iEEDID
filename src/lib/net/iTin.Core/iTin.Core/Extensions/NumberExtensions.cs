@@ -8,9 +8,9 @@ namespace iTin.Core
     using Logging;
 
     /// <summary>
-    /// Static class than contains extension methods for <see cref="T:System.Byte" /> structure, <see cref="T:System.Int32" /> structure,
-    /// <see cref="T:System.UInt32" /> structure, <see cref="T:System.Int64" /> structure, <see cref="T:System.UInt64" /> structure,
-    /// <see cref="T:System.Short" /> structure and <see cref="T:System.UShort" /> structure.
+    /// Static class than contains extension methods for <see cref="byte"/> structure, <see cref="int"/> structure,
+    /// <see cref="uint"/> structure, <see cref="long"/> structure, <see cref="ulong"/> structure,
+    /// <see cref="short"/> structure and <see cref="ushort"/> structure.
     /// </summary> 
     public static class NumberExtensions
     {

@@ -16,11 +16,14 @@ namespace iEEDID.ComponentModel.Parser
     using iTin.Hardware.Specification.Eedid;
     using iTin.Hardware.Specification.Eedid.Blocks.CEA;
     using iTin.Hardware.Specification.Eedid.Blocks.DI;
+    
     using iTin.Hardware.Specification.Eedid.Blocks.DisplayId;
+    using iTin.Hardware.Specification.Eedid.Blocks.DisplayId.Sections.DataBlocks;
     using iTin.Hardware.Specification.Eedid.Blocks.DisplayId.Sections.DataBlocks.ComponentModel;
+
     using iTin.Hardware.Specification.Eedid.Blocks.EDID;
     using iTin.Hardware.Specification.Eedid.Blocks.EDID.Sections.Descriptors;
-
+    
     /// <summary>
     /// static class containing methods for prints <b>EEDID</b> instances.
     /// </summary> 
@@ -600,6 +603,8 @@ namespace iEEDID.ComponentModel.Parser
                 var implementedBlocksProperty = dataBlocksSection.GetProperty(EedidProperty.DisplayID.DataBlocks.ImplementedBlocks);
                 if (implementedBlocksProperty.Success)
                 {
+                    logger.Info($@"   {DisplayIdSection.DataBlocks.GetPropertyName()}:");
+
                     var implementedBlocks = (IEnumerable<DataBlockData>) implementedBlocksProperty.Result.Value;
                     foreach (var implementedBlock in implementedBlocks)
                     {
@@ -649,7 +654,7 @@ namespace iEEDID.ComponentModel.Parser
             var model = vendorSection.GetProperty(EedidProperty.Edid.Vendor.IdProductCode);
             if (model.Success)
             {
-                logger.Info($@"     Model: {model.Result.Value}");
+                logger.Info($@"     Model: {model.Result.Value} ({model.Result.Value:X4})");
             }
 
             var serialNumber = vendorSection.GetProperty(EedidProperty.Edid.Vendor.IdSerialNumber);
@@ -1296,14 +1301,52 @@ namespace iEEDID.ComponentModel.Parser
         {
             switch (data.BlockTag)
             {
+                case DataBlockTag.DetailedTimingTypeI:
+                    var timingsProperty = data.GetProperty(EedidProperty.DisplayID.DataBlocks.Blocks.DetailedTimingTypeI.Timings);
+                    if (!timingsProperty.Success)
+                    {
+                        break;
+                    }
+
+                    var timings = (ReadOnlyCollection<DetailedTimingTypeIData>) timingsProperty.Result.Value;
+                    if (!timingsProperty.Success)
+                    {
+                        break;
+                    }
+
+                    foreach (var timing in timings)
+                    {
+                        var horizontalActiveImageProperty = timing.GetProperty(EedidProperty.DisplayID.DataBlocks.Blocks.DetailedTimingTypeI.Timing.HorizontalActiveImage);
+                        var verticalActiveImageProperty = timing.GetProperty(EedidProperty.DisplayID.DataBlocks.Blocks.DetailedTimingTypeI.Timing.VerticalActiveImage);
+                        var pixelClockProperty = timing.GetProperty(EedidProperty.DisplayID.DataBlocks.Blocks.DetailedTimingTypeI.Timing.PixelClock);
+                        var aspectRatioProperty = timing.GetProperty(EedidProperty.DisplayID.DataBlocks.Blocks.DetailedTimingTypeI.Timing.AspectRatio);
+                        var isPreferredTimingProperty = timing.GetProperty(EedidProperty.DisplayID.DataBlocks.Blocks.DetailedTimingTypeI.Timing.IsPreferredTiming);
+
+                        var preferredText = (bool) isPreferredTimingProperty.Result.Value ? " (Preferred)" : " ";
+                        var resolution = $@"{horizontalActiveImageProperty.Result.Value}x{verticalActiveImageProperty.Result.Value}";
+                        logger.Info($@"     {DataBlockTag.DetailedTimingTypeI.GetPropertyName()}{preferredText}:");
+                        logger.Info($@"{resolution, 16} {(int)pixelClockProperty.Result.Value / 1000:N0} MHz {aspectRatioProperty.Result.Value}");
+
+                        var horizontalFront = timing.GetProperty(EedidProperty.DisplayID.DataBlocks.Blocks.DetailedTimingTypeI.Timing.HorizontalFrontPorchOffset);
+                        var horizontalSyncPulse = timing.GetProperty(EedidProperty.DisplayID.DataBlocks.Blocks.DetailedTimingTypeI.Timing.HorizontalSyncWidth);
+                        var horizontalSyncPolarity = timing.GetProperty(EedidProperty.DisplayID.DataBlocks.Blocks.DetailedTimingTypeI.Timing.HorizontalSyncPolarity);
+                        logger.Info($@"{"Hfront", 16} {horizontalFront.Result.Value,5} Hsync{horizontalSyncPulse.Result.Value,4} Hpol {horizontalSyncPolarity.Result.Value}");
+
+                        var verticalFront = timing.GetProperty(EedidProperty.DisplayID.DataBlocks.Blocks.DetailedTimingTypeI.Timing.VerticalSyncFrontPorchOffset);
+                        var verticalSyncPulse = timing.GetProperty(EedidProperty.DisplayID.DataBlocks.Blocks.DetailedTimingTypeI.Timing.VerticalSyncWidth);
+                        var verticalSyncPolarity = timing.GetProperty(EedidProperty.DisplayID.DataBlocks.Blocks.DetailedTimingTypeI.Timing.VerticalSyncPolarity);
+                        logger.Info($@"{"Vfront", 16} {verticalFront.Result.Value,5} Vsync{verticalSyncPulse.Result.Value,4} Vpol {verticalSyncPolarity.Result.Value}");
+                    }
+                    break;
+
                 case DataBlockTag.VendorSpecific:
                     var manufacturerProperty = data.GetProperty(EedidProperty.DisplayID.DataBlocks.Blocks.VendorSpecific.Manufacturer);
                     if (!manufacturerProperty.Success)
                     {
                         return;
                     }
-
-                    logger.Info($@"   {data.BlockTag.GetPropertyName()} Data Block: ({manufacturerProperty.Result.Value})");
+                       
+                    logger.Info($@"     {data.BlockTag.GetPropertyName()} Data Block: ({manufacturerProperty.Result.Value})");
                     var vendorSpecificDataProperty = data.GetProperty(EedidProperty.DisplayID.DataBlocks.Blocks.VendorSpecific.Data);
                     if (vendorSpecificDataProperty.Success)
                     {
@@ -1334,7 +1377,7 @@ namespace iEEDID.ComponentModel.Parser
                 var printablePiece = printableData.Skip(offset);
                 var printableLine = printablePiece.Take(16);
 
-                logger.Info($@"     {string.Join(" ", newLine)} '{string.Join("", printableLine)}'");
+                logger.Info($@"       {string.Join(" ", newLine)} '{string.Join("", printableLine)}'");
 
                 offset += 16;
             }

@@ -11,6 +11,7 @@ namespace iTin.Hardware.Specification.Eedid
     using Blocks.CEA;
     using Blocks.DI;
     using Blocks.DisplayId;
+    using Blocks.DisplayId.Sections.DataBlocks;
     using Blocks.DisplayId.Sections.DataBlocks.ComponentModel;
     using Blocks.EDID;
     using Blocks.EDID.Sections.Descriptors;
@@ -6572,6 +6573,8 @@ namespace iTin.Hardware.Specification.Eedid
             /// </summary>
             public static class DataBlocks
             {
+                #region public readonly properties
+
                 #region [public] {static} (IPropertyKey) ImplementedBlocks: Gets a value representing the key to retrieve the property value
                 /// <summary>
                 /// <para>Gets a value representing the key to retrieve the property value.</para>
@@ -6592,6 +6595,10 @@ namespace iTin.Hardware.Specification.Eedid
                 public static IPropertyKey ImplementedBlocks => new PropertyKey(DisplayIdSection.DataBlocks, DisplayIdProperty.DataBlocks.Implemented.ImplementedBlocks);
                 #endregion
 
+                #endregion
+
+
+                #region nested classes
 
                 #region [public] {static} (class) Blocks: Definition of keys for a known data blocks
                 /// <summary>
@@ -6599,6 +6606,390 @@ namespace iTin.Hardware.Specification.Eedid
                 /// </summary>
                 public static class Blocks
                 {
+                    #region [public] {static} (class) DetailedTimingTypeI: Definition of keys for a 'Detailed Timing Type I' data block
+                    /// <summary>
+                    /// Definition of properties for a <b>Detailed Timing Type I</b> data block.
+                    /// </summary>
+                    public static class DetailedTimingTypeI
+                    {
+                        #region public readonly properties
+
+                        #region [public] {static} (IPropertyKey) Timings: Gets a value representing the key to retrieve the property value
+                        /// <summary>
+                        /// <para>Gets a value representing the key to retrieve the property value.</para>
+                        /// <para>Available timings.</para>
+                        /// <para>
+                        ///  <para><b>Key Composition</b></para>
+                        ///  <list type="bullet">
+                        ///   <item><description>Structure: <see cref="DisplayIdSection.DataBlocks"/></description></item>
+                        ///   <item><description>Property: <see cref="DisplayIdProperty.DataBlocks.Blocks.DetailedTimingTypeI.General.Timings"/></description></item>
+                        ///   <item><description>Unit: <see cref="PropertyUnit.None"/></description></item>
+                        ///  </list>
+                        /// </para>
+                        /// <para>
+                        ///  <para><b>Return Value</b></para>
+                        ///  <para>Type: <see cref="ReadOnlyCollection{T}"/> where <b>T</b> is <see cref="DetailedTimingTypeIData"/>.</para>
+                        /// </para>
+                        /// </summary>
+                        public static IPropertyKey Timings => new PropertyKey(DisplayIdSection.DataBlocks, DisplayIdProperty.DataBlocks.Blocks.DetailedTimingTypeI.General.Timings);
+                        #endregion
+
+                        #endregion
+
+
+                        #region nested classes
+
+                        #region [public] {static} (class) Timing: Definition of keys for a 'Timing' entry
+                        /// <summary>
+                        /// Definition of properties for a <b>Timing</b> entry.
+                        /// </summary>
+                        public static class Timing
+                        {
+                            #region [public] {static} (IPropertyKey) PixelClock: Gets a value representing the key to retrieve the property value
+                            /// <summary>
+                            /// <para>Gets a value representing the key to retrieve the property value.</para>
+                            /// <para>
+                            /// Pixel clock value.<br/>
+                            /// This value is measured in <see cref="PropertyUnit.KHz"/>.
+                            /// </para>
+                            /// <para>
+                            ///  <para><b>Key Composition</b></para>
+                            ///  <list type="bullet">
+                            ///   <item><description>Structure: <see cref="DisplayIdSection.DataBlocks"/></description></item>
+                            ///   <item><description>Property: <see cref="DisplayIdProperty.DataBlocks.Blocks.DetailedTimingTypeI.Timing.PixelClock"/></description></item>
+                            ///   <item><description>Unit: <see cref="PropertyUnit.KHz"/></description></item>
+                            ///  </list>
+                            /// </para>
+                            /// <para>
+                            ///  <para><b>Return Value</b></para>
+                            /// <para>Type: <see cref="int"/>.</para>
+                            /// </para>
+                            /// </summary>
+                            public static IPropertyKey PixelClock => new PropertyKey(DisplayIdSection.DataBlocks, DisplayIdProperty.DataBlocks.Blocks.DetailedTimingTypeI.Timing.PixelClock, PropertyUnit.KHz);
+                            #endregion
+
+                            #region [public] {static} (IPropertyKey) AspectRatio: Gets a value representing the key to retrieve the property value
+                            /// <summary>
+                            /// <para>Gets a value representing the key to retrieve the property value.</para>
+                            /// <para>
+                            /// Aspect Ratio.
+                            /// </para>
+                            /// <para>
+                            ///  <para><b>Key Composition</b></para>
+                            ///  <list type="bullet">
+                            ///   <item><description>Structure: <see cref="DisplayIdSection.DataBlocks"/></description></item>
+                            ///   <item><description>Property: <see cref="DisplayIdProperty.DataBlocks.Blocks.DetailedTimingTypeI.Timing.AspectRatio"/></description></item>
+                            ///   <item><description>Unit: <see cref="PropertyUnit.None"/></description></item>
+                            ///  </list>
+                            /// </para>
+                            /// <para>
+                            ///  <para><b>Return Value</b></para>
+                            /// <para>Type: <see cref="string"/>.</para>
+                            /// </para>
+                            /// </summary>
+                            public static IPropertyKey AspectRatio => new PropertyKey(DisplayIdSection.DataBlocks, DisplayIdProperty.DataBlocks.Blocks.DetailedTimingTypeI.Timing.AspectRatio);
+                            #endregion
+
+                            #region [public] {static} (IPropertyKey) InterfaceFrameScanningType: Gets a value representing the key to retrieve the property value
+                            /// <summary>
+                            /// <para>Gets a value representing the key to retrieve the property value.</para>
+                            /// <para>
+                            /// Interface Frame Scanning Type.
+                            /// </para>
+                            /// <para>
+                            ///  <para><b>Key Composition</b></para>
+                            ///  <list type="bullet">
+                            ///   <item><description>Structure: <see cref="DisplayIdSection.DataBlocks"/></description></item>
+                            ///   <item><description>Property: <see cref="DisplayIdProperty.DataBlocks.Blocks.DetailedTimingTypeI.Timing.InterfaceFrameScanningType"/></description></item>
+                            ///   <item><description>Unit: <see cref="PropertyUnit.None"/></description></item>
+                            ///  </list>
+                            /// </para>
+                            /// <para>
+                            ///  <para><b>Return Value</b></para>
+                            /// <para>Type: <see cref="string"/>.</para>
+                            /// </para>
+                            /// </summary>
+                            public static IPropertyKey InterfaceFrameScanningType => new PropertyKey(DisplayIdSection.DataBlocks, DisplayIdProperty.DataBlocks.Blocks.DetailedTimingTypeI.Timing.InterfaceFrameScanningType);
+                            #endregion
+
+                            #region [public] {static} (IPropertyKey) Stereo3DSupport: Gets a value representing the key to retrieve the property value
+                            /// <summary>
+                            /// <para>Gets a value representing the key to retrieve the property value.</para>
+                            /// <para>
+                            /// 3D Stereo Support.
+                            /// </para>
+                            /// <para>
+                            ///  <para><b>Key Composition</b></para>
+                            ///  <list type="bullet">
+                            ///   <item><description>Structure: <see cref="DisplayIdSection.DataBlocks"/></description></item>
+                            ///   <item><description>Property: <see cref="DisplayIdProperty.DataBlocks.Blocks.DetailedTimingTypeI.Timing.Stereo3DSupport"/></description></item>
+                            ///   <item><description>Unit: <see cref="PropertyUnit.None"/></description></item>
+                            ///  </list>
+                            /// </para>
+                            /// <para>
+                            ///  <para><b>Return Value</b></para>
+                            /// <para>Type: <see cref="string"/>.</para>
+                            /// </para>
+                            /// </summary>
+                            public static IPropertyKey Stereo3DSupport => new PropertyKey(DisplayIdSection.DataBlocks, DisplayIdProperty.DataBlocks.Blocks.DetailedTimingTypeI.Timing.Stereo3DSupport);
+                            #endregion
+
+                            #region [public] {static} (IPropertyKey) IsPreferredTiming: Gets a value representing the key to retrieve the property value
+                            /// <summary>
+                            /// <para>Gets a value representing the key to retrieve the property value.</para>
+                            /// <para>
+                            /// Is Preferred Detailed Timing.
+                            /// </para>
+                            /// <para>
+                            ///  <para><b>Key Composition</b></para>
+                            ///  <list type="bullet">
+                            ///   <item><description>Structure: <see cref="DisplayIdSection.DataBlocks"/></description></item>
+                            ///   <item><description>Property: <see cref="DisplayIdProperty.DataBlocks.Blocks.DetailedTimingTypeI.Timing.IsPreferredTiming"/></description></item>
+                            ///   <item><description>Unit: <see cref="PropertyUnit.None"/></description></item>
+                            ///  </list>
+                            /// </para>
+                            /// <para>
+                            ///  <para><b>Return Value</b></para>
+                            /// <para>Type: <see cref="bool"/>.</para>
+                            /// </para>
+                            /// </summary>
+                            public static IPropertyKey IsPreferredTiming => new PropertyKey(DisplayIdSection.DataBlocks, DisplayIdProperty.DataBlocks.Blocks.DetailedTimingTypeI.Timing.IsPreferredTiming);
+                            #endregion
+
+                            #region [public] {static} (IPropertyKey) HorizontalActiveImage: Gets a value representing the key to retrieve the property value
+                            /// <summary>
+                            /// <para>Gets a value representing the key to retrieve the property value.</para>
+                            /// <para>
+                            /// Horizontal active image pixels.<br/>
+                            /// This value is measured in <see cref="PropertyUnit.Pixels"/>.
+                            /// </para>
+                            /// <para>
+                            ///  <para><b>Key Composition</b></para>
+                            ///  <list type="bullet">
+                            ///   <item><description>Structure: <see cref="DisplayIdSection.DataBlocks"/></description></item>
+                            ///   <item><description>Property: <see cref="DisplayIdProperty.DataBlocks.Blocks.DetailedTimingTypeI.Timing.HorizontalActiveImage"/></description></item>
+                            ///   <item><description>Unit: <see cref="PropertyUnit.Pixels"/></description></item>
+                            ///  </list>
+                            /// </para>
+                            /// <para>
+                            ///  <para><b>Return Value</b></para>
+                            /// <para>Type: <see cref="int"/>.</para>
+                            /// </para>
+                            /// </summary>
+                            public static IPropertyKey HorizontalActiveImage => new PropertyKey(DisplayIdSection.DataBlocks, DisplayIdProperty.DataBlocks.Blocks.DetailedTimingTypeI.Timing.HorizontalActiveImage, PropertyUnit.Pixels);
+                            #endregion
+
+                            #region [public] {static} (IPropertyKey) HorizontalBlankPixels: Gets a value representing the key to retrieve the property value
+                            /// <summary>
+                            /// <para>Gets a value representing the key to retrieve the property value.</para>
+                            /// <para>
+                            /// Horizontal blank value.<br/>
+                            /// This value is measured in <see cref="PropertyUnit.Pixels"/>.
+                            /// </para>
+                            /// <para>
+                            ///  <para><b>Key Composition</b></para>
+                            ///  <list type="bullet">
+                            ///   <item><description>Structure: <see cref="DisplayIdSection.DataBlocks"/></description></item>
+                            ///   <item><description>Property: <see cref="DisplayIdProperty.DataBlocks.Blocks.DetailedTimingTypeI.Timing.HorizontalBlankPixels"/></description></item>
+                            ///   <item><description>Unit: <see cref="PropertyUnit.Pixels"/></description></item>
+                            ///  </list>
+                            /// </para>
+                            /// <para>
+                            ///  <para><b>Return Value</b></para>
+                            /// <para>Type: <see cref="int"/>.</para>
+                            /// </para>
+                            /// </summary>
+                            public static IPropertyKey HorizontalBlankPixels => new PropertyKey(DisplayIdSection.DataBlocks, DisplayIdProperty.DataBlocks.Blocks.DetailedTimingTypeI.Timing.HorizontalBlankPixels, PropertyUnit.Pixels);
+                            #endregion
+
+                            #region [public] {static} (IPropertyKey) HorizontalFrontPorchOffset: Gets a value representing the key to retrieve the property value
+                            /// <summary>
+                            /// <para>Gets a value representing the key to retrieve the property value.</para>
+                            /// <para>
+                            /// Horizontal front porch.<br/>
+                            /// This value is measured in <see cref="PropertyUnit.Pixels"/>.
+                            /// </para>
+                            /// <para>
+                            ///  <para><b>Key Composition</b></para>
+                            ///  <list type="bullet">
+                            ///   <item><description>Structure: <see cref="DisplayIdSection.DataBlocks"/></description></item>
+                            ///   <item><description>Property: <see cref="DisplayIdProperty.DataBlocks.Blocks.DetailedTimingTypeI.Timing.HorizontalFrontPorchOffset"/></description></item>
+                            ///   <item><description>Unit: <see cref="PropertyUnit.Pixels"/></description></item>
+                            ///  </list>
+                            /// </para>
+                            /// <para>
+                            ///  <para><b>Return Value</b></para>
+                            /// <para>Type: <see cref="int"/>.</para>
+                            /// </para>
+                            /// </summary>
+                            public static IPropertyKey HorizontalFrontPorchOffset => new PropertyKey(DisplayIdSection.DataBlocks, DisplayIdProperty.DataBlocks.Blocks.DetailedTimingTypeI.Timing.HorizontalFrontPorchOffset, PropertyUnit.Pixels);
+                            #endregion
+
+                            #region [public] {static} (IPropertyKey) HorizontalSyncPolarity: Gets a value representing the key to retrieve the property value
+                            /// <summary>
+                            /// <para>Gets a value representing the key to retrieve the property value.</para>
+                            /// <para>
+                            /// Horizontal sync polarity.<br/>
+                            /// </para>
+                            /// <para>
+                            ///  <para><b>Key Composition</b></para>
+                            ///  <list type="bullet">
+                            ///   <item><description>Structure: <see cref="DisplayIdSection.DataBlocks"/></description></item>
+                            ///   <item><description>Property: <see cref="DisplayIdProperty.DataBlocks.Blocks.DetailedTimingTypeI.Timing.HorizontalSyncPolarity"/></description></item>
+                            ///   <item><description>Unit: <see cref="PropertyUnit.None"/></description></item>
+                            ///  </list>
+                            /// </para>
+                            /// <para>
+                            ///  <para><b>Return Value</b></para>
+                            /// <para>Type: <see cref="string"/>.</para>
+                            /// </para>
+                            /// </summary>
+                            public static IPropertyKey HorizontalSyncPolarity => new PropertyKey(DisplayIdSection.DataBlocks, DisplayIdProperty.DataBlocks.Blocks.DetailedTimingTypeI.Timing.HorizontalSyncPolarity);
+                            #endregion
+
+                            #region [public] {static} (IPropertyKey) HorizontalSyncWidth: Gets a value representing the key to retrieve the property value
+                            /// <summary>
+                            /// <para>Gets a value representing the key to retrieve the property value.</para>
+                            /// <para>
+                            /// Horizontal sync width.<br/>
+                            /// This value is measured in <see cref="PropertyUnit.Pixels"/>.
+                            /// </para>
+                            /// <para>
+                            ///  <para><b>Key Composition</b></para>
+                            ///  <list type="bullet">
+                            ///   <item><description>Structure: <see cref="DisplayIdSection.DataBlocks"/></description></item>
+                            ///   <item><description>Property: <see cref="DisplayIdProperty.DataBlocks.Blocks.DetailedTimingTypeI.Timing.HorizontalSyncWidth"/></description></item>
+                            ///   <item><description>Unit: <see cref="PropertyUnit.Pixels"/></description></item>
+                            ///  </list>
+                            /// </para>
+                            /// <para>
+                            ///  <para><b>Return Value</b></para>
+                            /// <para>Type: <see cref="int"/>.</para>
+                            /// </para>
+                            /// </summary>
+                            public static IPropertyKey HorizontalSyncWidth => new PropertyKey(DisplayIdSection.DataBlocks, DisplayIdProperty.DataBlocks.Blocks.DetailedTimingTypeI.Timing.HorizontalSyncWidth, PropertyUnit.Pixels);
+                            #endregion
+
+                            #region [public] {static} (IPropertyKey) VerticalActiveImage: Gets a value representing the key to retrieve the property value
+                            /// <summary>
+                            /// <para>Gets a value representing the key to retrieve the property value.</para>
+                            /// <para>
+                            /// Vertical active image.<br/>
+                            /// This value is measured in <see cref="PropertyUnit.Pixels"/>.
+                            /// </para>
+                            /// <para>
+                            ///  <para><b>Key Composition</b></para>
+                            ///  <list type="bullet">
+                            ///   <item><description>Structure: <see cref="DisplayIdSection.DataBlocks"/></description></item>
+                            ///   <item><description>Property: <see cref="DisplayIdProperty.DataBlocks.Blocks.DetailedTimingTypeI.Timing.VerticalActiveImage"/></description></item>
+                            ///   <item><description>Unit: <see cref="PropertyUnit.Pixels"/></description></item>
+                            ///  </list>
+                            /// </para>
+                            /// <para>
+                            ///  <para><b>Return Value</b></para>
+                            /// <para>Type: <see cref="int"/>.</para>
+                            /// </para>
+                            /// </summary>
+                            public static IPropertyKey VerticalActiveImage => new PropertyKey(DisplayIdSection.DataBlocks, DisplayIdProperty.DataBlocks.Blocks.DetailedTimingTypeI.Timing.VerticalActiveImage, PropertyUnit.Pixels);
+                            #endregion
+
+                            #region [public] {static} (IPropertyKey) VerticalBlankLines: Gets a value representing the key to retrieve the property value
+                            /// <summary>
+                            /// <para>Gets a value representing the key to retrieve the property value.</para>
+                            /// <para>
+                            /// Number of vertical blank lines value.<br/>
+                            /// This value is measured in <see cref="PropertyUnit.Lines"/>.
+                            /// </para>
+                            /// <para>
+                            ///  <para><b>Key Composition</b></para>
+                            ///  <list type="bullet">
+                            ///   <item><description>Structure: <see cref="DisplayIdSection.DataBlocks"/></description></item>
+                            ///   <item><description>Property: <see cref="DisplayIdProperty.DataBlocks.Blocks.DetailedTimingTypeI.Timing.VerticalBlankLines"/></description></item>
+                            ///   <item><description>Unit: <see cref="PropertyUnit.Lines"/></description></item>
+                            ///  </list>
+                            /// </para>
+                            /// <para>
+                            ///  <para><b>Return Value</b></para>
+                            /// <para>Type: <see cref="int"/>.</para>
+                            /// </para>
+                            /// </summary>
+                            public static IPropertyKey VerticalBlankLines => new PropertyKey(DisplayIdSection.DataBlocks, DisplayIdProperty.DataBlocks.Blocks.DetailedTimingTypeI.Timing.VerticalBlankLines, PropertyUnit.Lines);
+                            #endregion
+
+                            #region [public] {static} (IPropertyKey) VerticalSyncFrontPorchOffset: Gets a value representing the key to retrieve the property value
+                            /// <summary>
+                            /// <para>Gets a value representing the key to retrieve the property value.</para>
+                            /// <para>
+                            /// Vertical sync front porch offset.<br/>
+                            /// This value is measured in <see cref="PropertyUnit.Lines"/>.
+                            /// </para>
+                            /// <para>
+                            ///  <para><b>Key Composition</b></para>
+                            ///  <list type="bullet">
+                            ///   <item><description>Structure: <see cref="DisplayIdSection.DataBlocks"/></description></item>
+                            ///   <item><description>Property: <see cref="DisplayIdProperty.DataBlocks.Blocks.DetailedTimingTypeI.Timing.VerticalSyncFrontPorchOffset"/></description></item>
+                            ///   <item><description>Unit: <see cref="PropertyUnit.Lines"/></description></item>
+                            ///  </list>
+                            /// </para>
+                            /// <para>
+                            ///  <para><b>Return Value</b></para>
+                            /// <para>Type: <see cref="int"/>.</para>
+                            /// </para>
+                            /// </summary>
+                            public static IPropertyKey VerticalSyncFrontPorchOffset => new PropertyKey(DisplayIdSection.DataBlocks, DisplayIdProperty.DataBlocks.Blocks.DetailedTimingTypeI.Timing.VerticalSyncFrontPorchOffset, PropertyUnit.Lines);
+                            #endregion
+
+                            #region [public] {static} (IPropertyKey) VerticalSyncPolarity: Gets a value representing the key to retrieve the property value
+                            /// <summary>
+                            /// <para>Gets a value representing the key to retrieve the property value.</para>
+                            /// <para>
+                            /// Vertical sync polarity.<br/>
+                            /// </para>
+                            /// <para>
+                            ///  <para><b>Key Composition</b></para>
+                            ///  <list type="bullet">
+                            ///   <item><description>Structure: <see cref="DisplayIdSection.DataBlocks"/></description></item>
+                            ///   <item><description>Property: <see cref="DisplayIdProperty.DataBlocks.Blocks.DetailedTimingTypeI.Timing.VerticalSyncPolarity"/></description></item>
+                            ///   <item><description>Unit: <see cref="PropertyUnit.None"/></description></item>
+                            ///  </list>
+                            /// </para>
+                            /// <para>
+                            ///  <para><b>Return Value</b></para>
+                            /// <para>Type: <see cref="string"/>.</para>
+                            /// </para>
+                            /// </summary>
+                            public static IPropertyKey VerticalSyncPolarity => new PropertyKey(DisplayIdSection.DataBlocks, DisplayIdProperty.DataBlocks.Blocks.DetailedTimingTypeI.Timing.VerticalSyncPolarity);
+                            #endregion
+
+                            #region [public] {static} (IPropertyKey) VerticalSyncWidth: Gets a value representing the key to retrieve the property value
+                            /// <summary>
+                            /// <para>Gets a value representing the key to retrieve the property value.</para>
+                            /// <para>
+                            /// Number of vertical sync lines.<br/>
+                            /// This value is measured in <see cref="PropertyUnit.Lines"/>.
+                            /// </para>
+                            /// <para>
+                            ///  <para><b>Key Composition</b></para>
+                            ///  <list type="bullet">
+                            ///   <item><description>Structure: <see cref="DisplayIdSection.DataBlocks"/></description></item>
+                            ///   <item><description>Property: <see cref="DisplayIdProperty.DataBlocks.Blocks.DetailedTimingTypeI.Timing.VerticalSyncWidth"/></description></item>
+                            ///   <item><description>Unit: <see cref="PropertyUnit.Lines"/></description></item>
+                            ///  </list>
+                            /// </para>
+                            /// <para>
+                            ///  <para><b>Return Value</b></para>
+                            /// <para>Type: <see cref="int"/>.</para>
+                            /// </para>
+                            /// </summary>
+                            public static IPropertyKey VerticalSyncWidth => new PropertyKey(DisplayIdSection.DataBlocks, DisplayIdProperty.DataBlocks.Blocks.DetailedTimingTypeI.Timing.VerticalSyncWidth, PropertyUnit.Lines);
+                            #endregion
+                        }
+                        #endregion
+
+                        #endregion
+                    }
+                    #endregion
+
                     #region [public] {static} (class) VendorSpecific: Definition of keys for a 'Vendor Specific' data block
                     /// <summary>
                     /// Definition of properties for a <b>Vendor Specific</b> data block.
@@ -6644,10 +7035,11 @@ namespace iTin.Hardware.Specification.Eedid
                         /// </summary>
                         public static IPropertyKey Manufacturer => new PropertyKey(DisplayIdSection.DataBlocks, DisplayIdProperty.DataBlocks.Blocks.VendorSpecific.Manufacturer);
                         #endregion
-
                     }
                     #endregion
                 }
+                #endregion
+
                 #endregion
             }
             #endregion

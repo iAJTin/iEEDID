@@ -9,7 +9,7 @@ namespace iTin.Hardware.Specification.Eedid.Blocks.DisplayId.Sections.DataBlocks
     using ComponentModel;
     using IEEE;
 
-    // Data Block Descriptor: Alphanumeric Data String Descriptor Definition
+    // Data Block: Vendor Specific Data Block
     // •—————————————————————————————————————————————————————————————————————————————————————————————————•
     // | Offset       Name                    Lenght      Description                                    |
     // •—————————————————————————————————————————————————————————————————————————————————————————————————•

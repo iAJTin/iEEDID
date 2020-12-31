@@ -35,13 +35,20 @@ namespace iTin.Hardware.Specification.Eedid.Blocks.DisplayId.Sections.DataBlocks
         //ColorCharacteristics = 0x02,
 
         /// <summary>
+        /// <b>Detailed Timing Type I</b> data block, for more information see <see cref ="DetailedTimingTypeIDataBlock"/>.
+        /// </summary>
+        [PropertyType(typeof(DetailedTimingTypeIDataBlock))]
+        [PropertyName("Detailed Timing Type I")]
+        [PropertyDescription("Detailed Timing Type I Data Block")]
+        DetailedTimingTypeI = 0x03,
+
+        /// <summary>
         /// <b>Vendor-Specific</b> data block, for more information see <see cref ="VendorSpecificDataBlock"/>.
         /// </summary>
         [PropertyType(typeof(VendorSpecificDataBlock))]
         [PropertyName("Vendor-Specific")]
         [PropertyDescription("Vendor-Specific Data Block")]
         VendorSpecific = 0x7f,
-
 
         ///// <summary>
         ///// <b>Product Identification</b> data block, for more information see <see cref ="ProductIdentification20DataBlock"/>.
