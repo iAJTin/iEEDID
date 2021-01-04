@@ -23,13 +23,7 @@ namespace iTin.Hardware.Specification.Eedid.Blocks.DisplayId.Sections.DataBlocks
     // |              Other Data                          02:00    Block Revision, 000b Rev. 0 (default) |
     // |                                                  07:03    Reserved (Cleared to all 0s)          |
     // •—————————————————————————————————————————————————————————————————————————————————————————————————•
-    // | 02h          Number of Payload       1 BYTE      Number of payload bytes within the data block  |
-    // |              Bytes in Block                      ranges from 20 through 240 (1 ≤ N ≤ 12).       |
-    // |              Bytes in Block                      When N  represents the number of Detailed      |
-    // |                                                  Timing Descriptors in the data block.          |
-    // |                                                  Value is based on N × 20 – 14h, 28h, 3Ch, etc. |
-    // |                                                  through F0h.                                   |
-    // |                                                  All other values are RESERVED.                 |
+    // | 02h          Number of Payload       1 BYTE      Value ranges from 0Ch through F8h.             |
     // •—————————————————————————————————————————————————————————————————————————————————————————————————•
     // | 03h          Manufacturer/Vendor ID   3 BYTEs                                                   |
     // •—————————————————————————————————————————————————————————————————————————————————————————————————•

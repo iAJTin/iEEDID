@@ -1303,39 +1303,76 @@ namespace iEEDID.ComponentModel.Parser
             {
                 #region Product Identification
                 case DataBlockTag.ProductIdentification:
-                {
-                    logger.Info($@"     {data.BlockTag.GetPropertyName()} Data Block:");
-                    var manufacturerProperty = data.GetProperty(EedidProperty.DisplayID.DataBlocks.Blocks.ProductIdentification.Manufacturer);
-                    if (manufacturerProperty.Success)
                     {
-                        logger.Info($@"     {manufacturerProperty.Result.Key.GetPropertyName()}: {manufacturerProperty.Result.Value}");
-                    }
+                        logger.Info($@"     {data.BlockTag.GetPropertyName()} Data Block:");
+                        var manufacturerProperty = data.GetProperty(EedidProperty.DisplayID.DataBlocks.Blocks.ProductIdentification.Manufacturer);
+                        if (manufacturerProperty.Success)
+                        {
+                            logger.Info($@"     {manufacturerProperty.Result.Key.GetPropertyName()}: {manufacturerProperty.Result.Value}");
+                        }
 
-                    var productIdCodeProperty = data.GetProperty(EedidProperty.DisplayID.DataBlocks.Blocks.ProductIdentification.ProductIdCode);
-                    if (productIdCodeProperty.Success)
-                    {
-                        logger.Info($@"     {productIdCodeProperty.Result.Key.GetPropertyName()}: {productIdCodeProperty.Result.Value} ({productIdCodeProperty.Result.Value:X})");
-                    }
+                        var productIdCodeProperty = data.GetProperty(EedidProperty.DisplayID.DataBlocks.Blocks.ProductIdentification.ProductIdCode);
+                        if (productIdCodeProperty.Success)
+                        {
+                            logger.Info($@"     {productIdCodeProperty.Result.Key.GetPropertyName()}: {productIdCodeProperty.Result.Value} ({productIdCodeProperty.Result.Value:X})");
+                        }
 
-                    var serialNumberProperty = data.GetProperty(EedidProperty.DisplayID.DataBlocks.Blocks.ProductIdentification.SerialNumber);
-                    if (serialNumberProperty.Success)
-                    {
-                        logger.Info($@"     {serialNumberProperty.Result.Key.GetPropertyName()}: {serialNumberProperty.Result.Value} ({serialNumberProperty.Result.Value:X})");
-                    }
+                        var serialNumberProperty = data.GetProperty(EedidProperty.DisplayID.DataBlocks.Blocks.ProductIdentification.SerialNumber);
+                        if (serialNumberProperty.Success)
+                        {
+                            logger.Info($@"     {serialNumberProperty.Result.Key.GetPropertyName()}: {serialNumberProperty.Result.Value} ({serialNumberProperty.Result.Value:X})");
+                        }
 
-                    var manufactureDateProperty = data.GetProperty(EedidProperty.DisplayID.DataBlocks.Blocks.ProductIdentification.ManufactureDate);
-                    if (manufactureDateProperty.Success)
-                    {
-                        logger.Info($@"     {manufactureDateProperty.Result.Key.GetPropertyName()}: {manufactureDateProperty.Result.Value}");
-                    }
+                        var manufactureDateProperty = data.GetProperty(EedidProperty.DisplayID.DataBlocks.Blocks.ProductIdentification.ManufactureDate);
+                        if (manufactureDateProperty.Success)
+                        {
+                            logger.Info($@"     {manufactureDateProperty.Result.Key.GetPropertyName()}: {manufactureDateProperty.Result.Value}");
+                        }
 
-                    var productNameProperty = data.GetProperty(EedidProperty.DisplayID.DataBlocks.Blocks.ProductIdentification.ProductName);
-                    if (productNameProperty.Success)
-                    {
-                        logger.Info($@"     {productNameProperty.Result.Key.GetPropertyName()}: {productNameProperty.Result.Value}");
+                        var productNameProperty = data.GetProperty(EedidProperty.DisplayID.DataBlocks.Blocks.ProductIdentification.ProductName);
+                        if (productNameProperty.Success)
+                        {
+                            logger.Info($@"     {productNameProperty.Result.Key.GetPropertyName()}: {productNameProperty.Result.Value}");
+                        }
                     }
-                }
-                break;
+                    break;
+                #endregion
+
+                #region Dynamic Video Timing Range Limits
+                case DataBlockTag.DynamicVideoTimingRangeLimits:
+                    {
+                        logger.Info($@"     {data.BlockTag.GetPropertyName()} Data Block:");
+                        var minimumPixelClockProperty = data.GetProperty(EedidProperty.DisplayID.DataBlocks.Blocks.DynamicVideoTimingRangeLimits.MinimumPixelClock);
+                        if (minimumPixelClockProperty.Success)
+                        {
+                            logger.Info($@"     {minimumPixelClockProperty.Result.Key.GetPropertyName()}: {minimumPixelClockProperty.Result.Value} {minimumPixelClockProperty.Result.Key.PropertyUnit}");
+                        }
+
+                        var maximumPixelClockProperty = data.GetProperty(EedidProperty.DisplayID.DataBlocks.Blocks.DynamicVideoTimingRangeLimits.MaximumPixelClock);
+                        if (maximumPixelClockProperty.Success)
+                        {
+                            logger.Info($@"     {maximumPixelClockProperty.Result.Key.GetPropertyName()}: {maximumPixelClockProperty.Result.Value} {maximumPixelClockProperty.Result.Key.PropertyUnit}");
+                        }
+
+                        var minimumVerticalRefreshRateProperty = data.GetProperty(EedidProperty.DisplayID.DataBlocks.Blocks.DynamicVideoTimingRangeLimits.MinimumVerticalRefreshRate);
+                        if (minimumVerticalRefreshRateProperty.Success)
+                        {
+                            logger.Info($@"     {minimumVerticalRefreshRateProperty.Result.Key.GetPropertyName()}: {minimumVerticalRefreshRateProperty.Result.Value} ({minimumVerticalRefreshRateProperty.Result.Key.PropertyUnit}");
+                        }
+
+                        var maximumVerticalRefreshRateProperty = data.GetProperty(EedidProperty.DisplayID.DataBlocks.Blocks.DynamicVideoTimingRangeLimits.MaximumVerticalRefreshRate);
+                        if (maximumVerticalRefreshRateProperty.Success)
+                        {
+                            logger.Info($@"     {maximumVerticalRefreshRateProperty.Result.Key.GetPropertyName()}: {maximumVerticalRefreshRateProperty.Result.Value} ({maximumVerticalRefreshRateProperty.Result.Key.PropertyUnit}");
+                        }
+
+                        var SupportSeamlessDynamicVideoTimingPropertys= data.GetProperty(EedidProperty.DisplayID.DataBlocks.Blocks.DynamicVideoTimingRangeLimits.SupportSeamlessDynamicVideoTiming);
+                        if (SupportSeamlessDynamicVideoTimingPropertys.Success)
+                        {
+                            logger.Info($@"     {SupportSeamlessDynamicVideoTimingPropertys.Result.Key.GetPropertyName()}: {((bool) SupportSeamlessDynamicVideoTimingPropertys.Result.Value ? "Yes" : "No")}");
+                        }
+                    }
+                    break;
                 #endregion
 
                 #region Detailed Timing Type I

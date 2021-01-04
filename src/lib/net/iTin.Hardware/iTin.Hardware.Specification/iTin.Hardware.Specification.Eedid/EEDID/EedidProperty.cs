@@ -6989,6 +6989,114 @@ namespace iTin.Hardware.Specification.Eedid
                     }
                     #endregion
 
+                    #region [public] {static} (class) DynamicVideoTimingRangeLimits: Definition of keys for a 'Dynamic Video Timing Range Limits' data block
+                    /// <summary>
+                    /// Definition of properties for a <b>Dynamic Video Timing Range Limits</b> data block.
+                    /// </summary>
+                    public static class DynamicVideoTimingRangeLimits
+                    {
+                        #region [public] {static} (IPropertyKey) MinimumPixelClock: Gets a value representing the key to retrieve the property value
+                        /// <summary>
+                        /// <para>Gets a value representing the key to retrieve the property value.</para>
+                        /// <para>Minimum Pixel Clock.</para>
+                        /// <para>
+                        ///  <para><b>Key Composition</b></para>
+                        ///  <list type="bullet">
+                        ///   <item><description>Structure: <see cref="DisplayIdProperty.DataBlocks.Blocks.Identifier.DynamicVideoTimingRangeLimits"/></description></item>
+                        ///   <item><description>Property: <see cref="DisplayIdProperty.DataBlocks.Blocks.DynamicVideoTimingRangeLimits.MinimumPixelClock"/></description></item>
+                        ///   <item><description>Unit: <see cref="PropertyUnit.KHz"/></description></item>
+                        ///  </list>
+                        /// </para>
+                        /// <para>
+                        ///  <para><b>Return Value</b></para>
+                        ///  <para>Type: <see cref="int"/>.</para>
+                        /// </para>
+                        /// </summary>
+                        public static IPropertyKey MinimumPixelClock => new PropertyKey(DisplayIdProperty.DataBlocks.Blocks.Identifier.DynamicVideoTimingRangeLimits, DisplayIdProperty.DataBlocks.Blocks.DynamicVideoTimingRangeLimits.MinimumPixelClock, PropertyUnit.KHz);
+                        #endregion
+
+                        #region [public] {static} (IPropertyKey) MaximumPixelClock: Gets a value representing the key to retrieve the property value
+                        /// <summary>
+                        /// <para>Gets a value representing the key to retrieve the property value.</para>
+                        /// <para>Maximum Pixel Clock.</para>
+                        /// <para>
+                        ///  <para><b>Key Composition</b></para>
+                        ///  <list type="bullet">
+                        ///   <item><description>Structure: <see cref="DisplayIdProperty.DataBlocks.Blocks.Identifier.DynamicVideoTimingRangeLimits"/></description></item>
+                        ///   <item><description>Property: <see cref="DisplayIdProperty.DataBlocks.Blocks.DynamicVideoTimingRangeLimits.MaximumPixelClock"/></description></item>
+                        ///   <item><description>Unit: <see cref="PropertyUnit.KHz"/></description></item>
+                        ///  </list>
+                        /// </para>
+                        /// <para>
+                        ///  <para><b>Return Value</b></para>
+                        ///  <para>Type: <see cref="int"/>.</para>
+                        /// </para>
+                        /// </summary>
+                        public static IPropertyKey MaximumPixelClock => new PropertyKey(DisplayIdProperty.DataBlocks.Blocks.Identifier.DynamicVideoTimingRangeLimits, DisplayIdProperty.DataBlocks.Blocks.DynamicVideoTimingRangeLimits.MaximumPixelClock, PropertyUnit.KHz);
+                        #endregion
+
+                        #region [public] {static} (IPropertyKey) MinimumVerticalRefreshRate: Gets a value representing the key to retrieve the property value
+                        /// <summary>
+                        /// <para>Gets a value representing the key to retrieve the property value.</para>
+                        /// <para>Minimum Vertical Refresh Rate.</para>
+                        /// <para>
+                        ///  <para><b>Key Composition</b></para>
+                        ///  <list type="bullet">
+                        ///   <item><description>Structure: <see cref="DisplayIdProperty.DataBlocks.Blocks.Identifier.DynamicVideoTimingRangeLimits"/></description></item>
+                        ///   <item><description>Property: <see cref="DisplayIdProperty.DataBlocks.Blocks.DynamicVideoTimingRangeLimits.MinimumVerticalRefreshRate"/></description></item>
+                        ///   <item><description>Unit: <see cref="PropertyUnit.Hz"/></description></item>
+                        ///  </list>
+                        /// </para>
+                        /// <para>
+                        ///  <para><b>Return Value</b></para>
+                        ///  <para>Type: <see cref="byte"/>.</para>
+                        /// </para>
+                        /// </summary>
+                        public static IPropertyKey MinimumVerticalRefreshRate => new PropertyKey(DisplayIdProperty.DataBlocks.Blocks.Identifier.DynamicVideoTimingRangeLimits, DisplayIdProperty.DataBlocks.Blocks.DynamicVideoTimingRangeLimits.MinimumVerticalRefreshRate, PropertyUnit.Hz);
+                        #endregion
+
+                        #region [public] {static} (IPropertyKey) MaximumVerticalRefreshRate: Gets a value representing the key to retrieve the property value
+                        /// <summary>
+                        /// <para>Gets a value representing the key to retrieve the property value.</para>
+                        /// <para>Maximum Vertical Refresh Rate.</para>
+                        /// <para>
+                        ///  <para><b>Key Composition</b></para>
+                        ///  <list type="bullet">
+                        ///   <item><description>Structure: <see cref="DisplayIdProperty.DataBlocks.Blocks.Identifier.DynamicVideoTimingRangeLimits"/></description></item>
+                        ///   <item><description>Property: <see cref="DisplayIdProperty.DataBlocks.Blocks.DynamicVideoTimingRangeLimits.MaximumVerticalRefreshRate"/></description></item>
+                        ///   <item><description>Unit: <see cref="PropertyUnit.Hz"/></description></item>
+                        ///  </list>
+                        /// </para>
+                        /// <para>
+                        ///  <para><b>Return Value</b></para>
+                        ///  <para>Type: <see cref="byte"/>.</para>
+                        /// </para>
+                        /// </summary>
+                        public static IPropertyKey MaximumVerticalRefreshRate => new PropertyKey(DisplayIdProperty.DataBlocks.Blocks.Identifier.DynamicVideoTimingRangeLimits, DisplayIdProperty.DataBlocks.Blocks.DynamicVideoTimingRangeLimits.MaximumVerticalRefreshRate, PropertyUnit.Hz);
+                        #endregion
+
+                        #region [public] {static} (IPropertyKey) SupportSeamlessDynamicVideoTiming: Gets a value representing the key to retrieve the property value
+                        /// <summary>
+                        /// <para>Gets a value representing the key to retrieve the property value.</para>
+                        /// <para>Support Seamless Dynamic Video Timing.</para>
+                        /// <para>
+                        ///  <para><b>Key Composition</b></para>
+                        ///  <list type="bullet">
+                        ///   <item><description>Structure: <see cref="DisplayIdProperty.DataBlocks.Blocks.Identifier.DynamicVideoTimingRangeLimits"/></description></item>
+                        ///   <item><description>Property: <see cref="DisplayIdProperty.DataBlocks.Blocks.DynamicVideoTimingRangeLimits.SupportSeamlessDynamicVideoTiming"/></description></item>
+                        ///   <item><description>Unit: <see cref="PropertyUnit.None"/></description></item>
+                        ///  </list>
+                        /// </para>
+                        /// <para>
+                        ///  <para><b>Return Value</b></para>
+                        ///  <para>Type: <see cref="bool"/>.</para>
+                        /// </para>
+                        /// </summary>
+                        public static IPropertyKey SupportSeamlessDynamicVideoTiming => new PropertyKey(DisplayIdProperty.DataBlocks.Blocks.Identifier.DynamicVideoTimingRangeLimits, DisplayIdProperty.DataBlocks.Blocks.DynamicVideoTimingRangeLimits.SupportSeamlessDynamicVideoTiming);
+                        #endregion
+                    }
+                    #endregion
+
                     #region [public] {static} (class) ProductIdentification: Definition of keys for a 'Product Identification' data block
                     /// <summary>
                     /// Definition of properties for a <b>Product Identification</b> data block.

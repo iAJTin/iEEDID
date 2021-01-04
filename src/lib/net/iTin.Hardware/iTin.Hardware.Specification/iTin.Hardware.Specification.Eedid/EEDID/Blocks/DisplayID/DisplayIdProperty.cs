@@ -90,6 +90,11 @@ namespace iTin.Hardware.Specification.Eedid.Blocks.DisplayId
                     [PropertyType(typeof(ProductIdentificationDataBlock))]
                     ProductIdentification,
 
+                    [PropertyName("Dynamic Video Timing Range Limits")]
+                    [PropertyDescription("Dynamic Video Timing Range Limits")]
+                    [PropertyType(typeof(DynamicVideoTimingRangeLimitsDataBlock))]
+                    DynamicVideoTimingRangeLimits,
+
                     [PropertyName("Vendor Specific")]
                     [PropertyDescription("Vendor Specific")]
                     [PropertyType(typeof(VendorSpecificDataBlock))]
@@ -239,6 +244,37 @@ namespace iTin.Hardware.Specification.Eedid.Blocks.DisplayId
                     [PropertyDescription("Product Name")]
                     [PropertyType(typeof(string))]
                     ProductName,
+                }
+
+                /// <summary>
+                /// Definition of properties for a <b>Dynamic Video Timing Range Limits</b> data block.
+                /// </summary>
+                public enum DynamicVideoTimingRangeLimits
+                {
+                    [PropertyName("Minimum Pixel Clock")]
+                    [PropertyDescription("Minimum Pixel Clock")]
+                    [PropertyType(typeof(int))]
+                    MinimumPixelClock,
+
+                    [PropertyName("Maximum Pixel Clock")]
+                    [PropertyDescription("Maximum Pixel Clock")]
+                    [PropertyType(typeof(int))]
+                    MaximumPixelClock,
+
+                    [PropertyName("Minimum Vertical Refresh Rate")]
+                    [PropertyDescription("Minimum Vertical Refresh Rate")]
+                    [PropertyType(typeof(byte))]
+                    MinimumVerticalRefreshRate,
+
+                    [PropertyName("Maximum Vertical Refresh Rate")]
+                    [PropertyDescription("Maximum Vertical Refresh Rate")]
+                    [PropertyType(typeof(byte))]
+                    MaximumVerticalRefreshRate,
+
+                    [PropertyName("Seamless Dynamic Video Timing Support")]
+                    [PropertyDescription("Seamless Dynamic Video Timing Support")]
+                    [PropertyType(typeof(bool))]
+                    SupportSeamlessDynamicVideoTiming
                 }
 
                 /// <summary>
