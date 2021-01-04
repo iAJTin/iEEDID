@@ -10,9 +10,16 @@ namespace iTin.Hardware.Specification.Eedid.Blocks.DisplayId.Sections.DataBlocks
             var type = data.BlockTag;
             switch (type)
             {
+                case DataBlockTag.ProductIdentification13:
+                    return new ProductIdentificationDataBlock(data.RawData, data.StructureVersion);
+
+
+                case DataBlockTag.ProductIdentification:
+                    return new ProductIdentificationDataBlock(data.RawData, data.StructureVersion);
+
                 case DataBlockTag.DetailedTimingTypeI:
                     return new DetailedTimingTypeIDataBlock(data.RawData, data.StructureVersion);
-
+                
                 case DataBlockTag.VendorSpecific:
                     return new VendorSpecificDataBlock(data.RawData, data.StructureVersion);
 

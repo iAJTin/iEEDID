@@ -5,6 +5,7 @@ namespace iTin.Hardware.Specification.Eedid.Blocks.DisplayId
 
     using iTin.Core.Hardware.Common;
 
+    using Sections.DataBlocks;
     using Sections.DataBlocks.ComponentModel;
 
     /// <summary>
@@ -74,6 +75,28 @@ namespace iTin.Hardware.Specification.Eedid.Blocks.DisplayId
             /// </summary>
             public static class Blocks
             {
+                /// <summary>
+                /// Definition of data block identifiers.
+                /// </summary>
+                public enum Identifier
+                {
+                    [PropertyName("Detailed Timing Type I")]
+                    [PropertyDescription("Detailed Timing Type I")]
+                    [PropertyType(typeof(DetailedTimingTypeIDataBlock))]
+                    DetailedTimingTypeI,
+
+                    [PropertyName("Product Identification")]
+                    [PropertyDescription("Product Identification")]
+                    [PropertyType(typeof(ProductIdentificationDataBlock))]
+                    ProductIdentification,
+
+                    [PropertyName("Vendor Specific")]
+                    [PropertyDescription("Vendor Specific")]
+                    [PropertyType(typeof(VendorSpecificDataBlock))]
+                    VendorSpecific,
+                }
+
+
                 /// <summary>
                 /// Definition of properties for a <b>Detailed Timing Type I</b> data block.
                 /// </summary>
@@ -170,6 +193,52 @@ namespace iTin.Hardware.Specification.Eedid.Blocks.DisplayId
                         [PropertyType(typeof(int))]
                         VerticalSyncWidth,
                     }
+                }
+
+                /// <summary>
+                /// Definition of properties for a <b>Product Identification</b> data block.
+                /// </summary>
+                public enum ProductIdentification
+                {
+                    [PropertyName("Manufacturer")]
+                    [PropertyDescription("Manufacturer/Vendor ID")]
+                    [PropertyType(typeof(string))]
+                    Manufacturer,
+
+                    [PropertyName("Product Id")]
+                    [PropertyDescription("Product Id Code")]
+                    [PropertyType(typeof(int))]
+                    ProductIdCode,
+
+                    [PropertyName("Serial Number")]
+                    [PropertyDescription("Serial Number")]
+                    [PropertyType(typeof(int))]
+                    SerialNumber,
+
+                    [PropertyDescription("Week Of Manufacture Or Model Tag")]
+                    [PropertyType(typeof(byte?))]
+                    [PropertyName("Week Of Manufacture Or Model Tag")]
+                    WeekOfManufactureOrModelTag,
+
+                    [PropertyDescription("Year Of Manufacture Or Model Year")]
+                    [PropertyType(typeof(byte?))]
+                    [PropertyName("Year Of Manufacture Or Model Year")]
+                    YearOfManufactureOrModelYear,
+
+                    [PropertyDescription("Manufacturer Date")]
+                    [PropertyType(typeof(string))]
+                    [PropertyName("Manufacturer Date")]
+                    ManufactureDate,
+
+                    [PropertyDescription("Model Year Strategy")]
+                    [PropertyType(typeof(KnownModelYearStrategy))]
+                    [PropertyName("Model Year")]
+                    ModelYearStrategy,
+
+                    [PropertyName("Product Name")]
+                    [PropertyDescription("Product Name")]
+                    [PropertyType(typeof(string))]
+                    ProductName,
                 }
 
                 /// <summary>

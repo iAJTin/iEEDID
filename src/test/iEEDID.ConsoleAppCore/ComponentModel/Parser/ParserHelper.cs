@@ -1301,61 +1301,108 @@ namespace iEEDID.ComponentModel.Parser
         {
             switch (data.BlockTag)
             {
+                #region Product Identification
+                case DataBlockTag.ProductIdentification:
+                {
+                    logger.Info($@"     {data.BlockTag.GetPropertyName()} Data Block:");
+                    var manufacturerProperty = data.GetProperty(EedidProperty.DisplayID.DataBlocks.Blocks.ProductIdentification.Manufacturer);
+                    if (manufacturerProperty.Success)
+                    {
+                        logger.Info($@"     {manufacturerProperty.Result.Key.GetPropertyName()}: {manufacturerProperty.Result.Value}");
+                    }
+
+                    var productIdCodeProperty = data.GetProperty(EedidProperty.DisplayID.DataBlocks.Blocks.ProductIdentification.ProductIdCode);
+                    if (productIdCodeProperty.Success)
+                    {
+                        logger.Info($@"     {productIdCodeProperty.Result.Key.GetPropertyName()}: {productIdCodeProperty.Result.Value} ({productIdCodeProperty.Result.Value:X})");
+                    }
+
+                    var serialNumberProperty = data.GetProperty(EedidProperty.DisplayID.DataBlocks.Blocks.ProductIdentification.SerialNumber);
+                    if (serialNumberProperty.Success)
+                    {
+                        logger.Info($@"     {serialNumberProperty.Result.Key.GetPropertyName()}: {serialNumberProperty.Result.Value} ({serialNumberProperty.Result.Value:X})");
+                    }
+
+                    var manufactureDateProperty = data.GetProperty(EedidProperty.DisplayID.DataBlocks.Blocks.ProductIdentification.ManufactureDate);
+                    if (manufactureDateProperty.Success)
+                    {
+                        logger.Info($@"     {manufactureDateProperty.Result.Key.GetPropertyName()}: {manufactureDateProperty.Result.Value}");
+                    }
+
+                    var productNameProperty = data.GetProperty(EedidProperty.DisplayID.DataBlocks.Blocks.ProductIdentification.ProductName);
+                    if (productNameProperty.Success)
+                    {
+                        logger.Info($@"     {productNameProperty.Result.Key.GetPropertyName()}: {productNameProperty.Result.Value}");
+                    }
+                }
+                break;
+                #endregion
+
+                #region Detailed Timing Type I
                 case DataBlockTag.DetailedTimingTypeI:
-                    var timingsProperty = data.GetProperty(EedidProperty.DisplayID.DataBlocks.Blocks.DetailedTimingTypeI.Timings);
-                    if (!timingsProperty.Success)
-                    {
-                        break;
-                    }
+                    { 
+                        var timingsProperty = data.GetProperty(EedidProperty.DisplayID.DataBlocks.Blocks.DetailedTimingTypeI.Timings);
+                        if (!timingsProperty.Success)
+                        {
+                            break;
+                        }
 
-                    var timings = (ReadOnlyCollection<DetailedTimingTypeIData>) timingsProperty.Result.Value;
-                    if (!timingsProperty.Success)
-                    {
-                        break;
-                    }
+                        var timings = (ReadOnlyCollection<DetailedTimingTypeIData>) timingsProperty.Result.Value;
+                        if (!timingsProperty.Success)
+                        {
+                            break;
+                        }
 
-                    foreach (var timing in timings)
-                    {
-                        var horizontalActiveImageProperty = timing.GetProperty(EedidProperty.DisplayID.DataBlocks.Blocks.DetailedTimingTypeI.Timing.HorizontalActiveImage);
-                        var verticalActiveImageProperty = timing.GetProperty(EedidProperty.DisplayID.DataBlocks.Blocks.DetailedTimingTypeI.Timing.VerticalActiveImage);
-                        var pixelClockProperty = timing.GetProperty(EedidProperty.DisplayID.DataBlocks.Blocks.DetailedTimingTypeI.Timing.PixelClock);
-                        var aspectRatioProperty = timing.GetProperty(EedidProperty.DisplayID.DataBlocks.Blocks.DetailedTimingTypeI.Timing.AspectRatio);
-                        var isPreferredTimingProperty = timing.GetProperty(EedidProperty.DisplayID.DataBlocks.Blocks.DetailedTimingTypeI.Timing.IsPreferredTiming);
+                        foreach (var timing in timings)
+                        {
+                            var horizontalActiveImageProperty = timing.GetProperty(EedidProperty.DisplayID.DataBlocks.Blocks.DetailedTimingTypeI.Timing.HorizontalActiveImage);
+                            var verticalActiveImageProperty = timing.GetProperty(EedidProperty.DisplayID.DataBlocks.Blocks.DetailedTimingTypeI.Timing.VerticalActiveImage);
+                            var pixelClockProperty = timing.GetProperty(EedidProperty.DisplayID.DataBlocks.Blocks.DetailedTimingTypeI.Timing.PixelClock);
+                            var aspectRatioProperty = timing.GetProperty(EedidProperty.DisplayID.DataBlocks.Blocks.DetailedTimingTypeI.Timing.AspectRatio);
+                            var isPreferredTimingProperty = timing.GetProperty(EedidProperty.DisplayID.DataBlocks.Blocks.DetailedTimingTypeI.Timing.IsPreferredTiming);
 
-                        var preferredText = (bool) isPreferredTimingProperty.Result.Value ? " (Preferred)" : " ";
-                        var resolution = $@"{horizontalActiveImageProperty.Result.Value}x{verticalActiveImageProperty.Result.Value}";
-                        logger.Info($@"     {DataBlockTag.DetailedTimingTypeI.GetPropertyName()}{preferredText}:");
-                        logger.Info($@"{resolution, 16} {(int)pixelClockProperty.Result.Value / 1000:N0} MHz {aspectRatioProperty.Result.Value}");
+                            var preferredText = (bool) isPreferredTimingProperty.Result.Value ? " (Preferred)" : " ";
+                            var resolution = $@"{horizontalActiveImageProperty.Result.Value}x{verticalActiveImageProperty.Result.Value}";
+                            logger.Info($@"     {DataBlockTag.DetailedTimingTypeI.GetPropertyName()}{preferredText}:");
+                            logger.Info($@"{resolution, 16} {(int)pixelClockProperty.Result.Value / 1000:N0} MHz {aspectRatioProperty.Result.Value}");
 
-                        var horizontalFront = timing.GetProperty(EedidProperty.DisplayID.DataBlocks.Blocks.DetailedTimingTypeI.Timing.HorizontalFrontPorchOffset);
-                        var horizontalSyncPulse = timing.GetProperty(EedidProperty.DisplayID.DataBlocks.Blocks.DetailedTimingTypeI.Timing.HorizontalSyncWidth);
-                        var horizontalSyncPolarity = timing.GetProperty(EedidProperty.DisplayID.DataBlocks.Blocks.DetailedTimingTypeI.Timing.HorizontalSyncPolarity);
-                        logger.Info($@"{"Hfront", 16} {horizontalFront.Result.Value,5} Hsync{horizontalSyncPulse.Result.Value,4} Hpol {horizontalSyncPolarity.Result.Value}");
+                            var horizontalFront = timing.GetProperty(EedidProperty.DisplayID.DataBlocks.Blocks.DetailedTimingTypeI.Timing.HorizontalFrontPorchOffset);
+                            var horizontalSyncPulse = timing.GetProperty(EedidProperty.DisplayID.DataBlocks.Blocks.DetailedTimingTypeI.Timing.HorizontalSyncWidth);
+                            var horizontalSyncPolarity = timing.GetProperty(EedidProperty.DisplayID.DataBlocks.Blocks.DetailedTimingTypeI.Timing.HorizontalSyncPolarity);
+                            logger.Info($@"{"Hfront", 16} {horizontalFront.Result.Value,5} Hsync{horizontalSyncPulse.Result.Value,4} Hpol {horizontalSyncPolarity.Result.Value}");
 
-                        var verticalFront = timing.GetProperty(EedidProperty.DisplayID.DataBlocks.Blocks.DetailedTimingTypeI.Timing.VerticalSyncFrontPorchOffset);
-                        var verticalSyncPulse = timing.GetProperty(EedidProperty.DisplayID.DataBlocks.Blocks.DetailedTimingTypeI.Timing.VerticalSyncWidth);
-                        var verticalSyncPolarity = timing.GetProperty(EedidProperty.DisplayID.DataBlocks.Blocks.DetailedTimingTypeI.Timing.VerticalSyncPolarity);
-                        logger.Info($@"{"Vfront", 16} {verticalFront.Result.Value,5} Vsync{verticalSyncPulse.Result.Value,4} Vpol {verticalSyncPolarity.Result.Value}");
+                            var verticalFront = timing.GetProperty(EedidProperty.DisplayID.DataBlocks.Blocks.DetailedTimingTypeI.Timing.VerticalSyncFrontPorchOffset);
+                            var verticalSyncPulse = timing.GetProperty(EedidProperty.DisplayID.DataBlocks.Blocks.DetailedTimingTypeI.Timing.VerticalSyncWidth);
+                            var verticalSyncPolarity = timing.GetProperty(EedidProperty.DisplayID.DataBlocks.Blocks.DetailedTimingTypeI.Timing.VerticalSyncPolarity);
+                            logger.Info($@"{"Vfront", 16} {verticalFront.Result.Value,5} Vsync{verticalSyncPulse.Result.Value,4} Vpol {verticalSyncPolarity.Result.Value}");
+                        }
                     }
                     break;
+                #endregion
 
+                #region Vendor Specific
                 case DataBlockTag.VendorSpecific:
+                {
                     var manufacturerProperty = data.GetProperty(EedidProperty.DisplayID.DataBlocks.Blocks.VendorSpecific.Manufacturer);
                     if (!manufacturerProperty.Success)
                     {
                         return;
                     }
-                       
+
                     logger.Info($@"     {data.BlockTag.GetPropertyName()} Data Block: ({manufacturerProperty.Result.Value})");
                     var vendorSpecificDataProperty = data.GetProperty(EedidProperty.DisplayID.DataBlocks.Blocks.VendorSpecific.Data);
                     if (vendorSpecificDataProperty.Success)
                     {
-                        PrintsVendorSpecificRawData(logger, (IEnumerable<byte>)vendorSpecificDataProperty.Result.Value);
+                        PrintsVendorSpecificRawData(logger, (IEnumerable<byte>) vendorSpecificDataProperty.Result.Value);
                     }
-                    break;
+                }
+                break;
+                #endregion
 
+                #region default
                 default:
                     throw new ArgumentOutOfRangeException();
+                #endregion
             }
         }
 

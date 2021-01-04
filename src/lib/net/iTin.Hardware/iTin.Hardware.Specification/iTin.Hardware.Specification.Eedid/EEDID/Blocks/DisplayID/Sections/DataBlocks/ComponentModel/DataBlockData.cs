@@ -100,15 +100,7 @@ namespace iTin.Hardware.Specification.Eedid.Blocks.DisplayId.Sections.DataBlocks
         /// <value>
         /// Type of data block.
         /// </value>
-        public DataBlockTag BlockTag
-        {
-            get
-            {
-                var tag = (DataBlockTag) RawData[0];
-
-                return tag;
-            }
-        }
+        public DataBlockTag BlockTag => (DataBlockTag) RawData[0];
         #endregion
 
         #region [public] (IEnumerable<IPropertyKey>) ImplementedProperties: Gets a value containing the implemented properties for this data block

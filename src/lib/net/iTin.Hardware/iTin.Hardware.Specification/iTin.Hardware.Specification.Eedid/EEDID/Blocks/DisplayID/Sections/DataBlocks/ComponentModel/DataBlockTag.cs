@@ -3,20 +3,18 @@ namespace iTin.Hardware.Specification.Eedid.Blocks.DisplayId.Sections.DataBlocks
 {
     using iTin.Core.Hardware.Common;
 
-    using Sections;
-
     /// <summary>
     /// Available data blocks.
     /// </summary> 
     public enum DataBlockTag
     {
-        ///// <summary>
-        ///// <b>Product Identification</b> data block, for more information see <see cref ="ProductIdentificationDataBlock"/>.
-        ///// </summary>
-        //[PropertyType(typeof(ProductIdentificationDataBlock))]
-        //[PropertyName("Product Identification")]
-        //[PropertyDescription("Product Identification Data Block")]
-        //ProductIdentification = 0x00,
+        /// <summary>
+        /// <b>Product Identification</b> data block, for more information see <see cref ="ProductIdentificationDataBlock"/>.
+        /// </summary>
+        [PropertyType(typeof(ProductIdentificationDataBlock))]
+        [PropertyName("Product Identification")]
+        [PropertyDescription("Product Identification Data Block")]
+        ProductIdentification13 = 0x00,
 
         ///// <summary>
         ///// <b>Display Parameters</b> data block, for more information see <see cref ="DisplayParametersDataBlock"/>.
@@ -41,6 +39,14 @@ namespace iTin.Hardware.Specification.Eedid.Blocks.DisplayId.Sections.DataBlocks
         [PropertyName("Detailed Timing Type I")]
         [PropertyDescription("Detailed Timing Type I Data Block")]
         DetailedTimingTypeI = 0x03,
+
+        /// <summary>
+        /// <b>Product Identification</b> data block, for more information see <see cref ="ProductIdentificationDataBlock"/>.
+        /// </summary>
+        [PropertyType(typeof(ProductIdentificationDataBlock))]
+        [PropertyName("Product Identification")]
+        [PropertyDescription("Product Identification Data Block")]
+        ProductIdentification = 0x20,
 
         /// <summary>
         /// <b>Vendor-Specific</b> data block, for more information see <see cref ="VendorSpecificDataBlock"/>.

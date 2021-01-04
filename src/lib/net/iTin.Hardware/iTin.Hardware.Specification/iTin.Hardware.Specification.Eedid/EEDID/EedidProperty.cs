@@ -11,7 +11,6 @@ namespace iTin.Hardware.Specification.Eedid
     using Blocks.CEA;
     using Blocks.DI;
     using Blocks.DisplayId;
-    using Blocks.DisplayId.Sections.DataBlocks;
     using Blocks.DisplayId.Sections.DataBlocks.ComponentModel;
     using Blocks.EDID;
     using Blocks.EDID.Sections.Descriptors;
@@ -6621,7 +6620,7 @@ namespace iTin.Hardware.Specification.Eedid
                         /// <para>
                         ///  <para><b>Key Composition</b></para>
                         ///  <list type="bullet">
-                        ///   <item><description>Structure: <see cref="DisplayIdSection.DataBlocks"/></description></item>
+                        ///   <item><description>Structure: <see cref="DisplayIdProperty.DataBlocks.Blocks.Identifier.DetailedTimingTypeI"/></description></item>
                         ///   <item><description>Property: <see cref="DisplayIdProperty.DataBlocks.Blocks.DetailedTimingTypeI.General.Timings"/></description></item>
                         ///   <item><description>Unit: <see cref="PropertyUnit.None"/></description></item>
                         ///  </list>
@@ -6631,7 +6630,7 @@ namespace iTin.Hardware.Specification.Eedid
                         ///  <para>Type: <see cref="ReadOnlyCollection{T}"/> where <b>T</b> is <see cref="DetailedTimingTypeIData"/>.</para>
                         /// </para>
                         /// </summary>
-                        public static IPropertyKey Timings => new PropertyKey(DisplayIdSection.DataBlocks, DisplayIdProperty.DataBlocks.Blocks.DetailedTimingTypeI.General.Timings);
+                        public static IPropertyKey Timings => new PropertyKey(DisplayIdProperty.DataBlocks.Blocks.Identifier.DetailedTimingTypeI, DisplayIdProperty.DataBlocks.Blocks.DetailedTimingTypeI.General.Timings);
                         #endregion
 
                         #endregion
@@ -6655,7 +6654,7 @@ namespace iTin.Hardware.Specification.Eedid
                             /// <para>
                             ///  <para><b>Key Composition</b></para>
                             ///  <list type="bullet">
-                            ///   <item><description>Structure: <see cref="DisplayIdSection.DataBlocks"/></description></item>
+                            ///   <item><description>Structure: <see cref="DisplayIdProperty.DataBlocks.Blocks.Identifier.DetailedTimingTypeI"/></description></item>
                             ///   <item><description>Property: <see cref="DisplayIdProperty.DataBlocks.Blocks.DetailedTimingTypeI.Timing.PixelClock"/></description></item>
                             ///   <item><description>Unit: <see cref="PropertyUnit.KHz"/></description></item>
                             ///  </list>
@@ -6665,7 +6664,7 @@ namespace iTin.Hardware.Specification.Eedid
                             /// <para>Type: <see cref="int"/>.</para>
                             /// </para>
                             /// </summary>
-                            public static IPropertyKey PixelClock => new PropertyKey(DisplayIdSection.DataBlocks, DisplayIdProperty.DataBlocks.Blocks.DetailedTimingTypeI.Timing.PixelClock, PropertyUnit.KHz);
+                            public static IPropertyKey PixelClock => new PropertyKey(DisplayIdProperty.DataBlocks.Blocks.Identifier.DetailedTimingTypeI, DisplayIdProperty.DataBlocks.Blocks.DetailedTimingTypeI.Timing.PixelClock, PropertyUnit.KHz);
                             #endregion
 
                             #region [public] {static} (IPropertyKey) AspectRatio: Gets a value representing the key to retrieve the property value
@@ -6677,7 +6676,7 @@ namespace iTin.Hardware.Specification.Eedid
                             /// <para>
                             ///  <para><b>Key Composition</b></para>
                             ///  <list type="bullet">
-                            ///   <item><description>Structure: <see cref="DisplayIdSection.DataBlocks"/></description></item>
+                            ///   <item><description>Structure: <see cref="DisplayIdProperty.DataBlocks.Blocks.Identifier.DetailedTimingTypeI"/></description></item>
                             ///   <item><description>Property: <see cref="DisplayIdProperty.DataBlocks.Blocks.DetailedTimingTypeI.Timing.AspectRatio"/></description></item>
                             ///   <item><description>Unit: <see cref="PropertyUnit.None"/></description></item>
                             ///  </list>
@@ -6687,7 +6686,7 @@ namespace iTin.Hardware.Specification.Eedid
                             /// <para>Type: <see cref="string"/>.</para>
                             /// </para>
                             /// </summary>
-                            public static IPropertyKey AspectRatio => new PropertyKey(DisplayIdSection.DataBlocks, DisplayIdProperty.DataBlocks.Blocks.DetailedTimingTypeI.Timing.AspectRatio);
+                            public static IPropertyKey AspectRatio => new PropertyKey(DisplayIdProperty.DataBlocks.Blocks.Identifier.DetailedTimingTypeI, DisplayIdProperty.DataBlocks.Blocks.DetailedTimingTypeI.Timing.AspectRatio);
                             #endregion
 
                             #region [public] {static} (IPropertyKey) InterfaceFrameScanningType: Gets a value representing the key to retrieve the property value
@@ -6699,7 +6698,7 @@ namespace iTin.Hardware.Specification.Eedid
                             /// <para>
                             ///  <para><b>Key Composition</b></para>
                             ///  <list type="bullet">
-                            ///   <item><description>Structure: <see cref="DisplayIdSection.DataBlocks"/></description></item>
+                            ///   <item><description>Structure: <see cref="DisplayIdProperty.DataBlocks.Blocks.Identifier.DetailedTimingTypeI"/></description></item>
                             ///   <item><description>Property: <see cref="DisplayIdProperty.DataBlocks.Blocks.DetailedTimingTypeI.Timing.InterfaceFrameScanningType"/></description></item>
                             ///   <item><description>Unit: <see cref="PropertyUnit.None"/></description></item>
                             ///  </list>
@@ -6709,7 +6708,7 @@ namespace iTin.Hardware.Specification.Eedid
                             /// <para>Type: <see cref="string"/>.</para>
                             /// </para>
                             /// </summary>
-                            public static IPropertyKey InterfaceFrameScanningType => new PropertyKey(DisplayIdSection.DataBlocks, DisplayIdProperty.DataBlocks.Blocks.DetailedTimingTypeI.Timing.InterfaceFrameScanningType);
+                            public static IPropertyKey InterfaceFrameScanningType => new PropertyKey(DisplayIdProperty.DataBlocks.Blocks.Identifier.DetailedTimingTypeI, DisplayIdProperty.DataBlocks.Blocks.DetailedTimingTypeI.Timing.InterfaceFrameScanningType);
                             #endregion
 
                             #region [public] {static} (IPropertyKey) Stereo3DSupport: Gets a value representing the key to retrieve the property value
@@ -6721,7 +6720,7 @@ namespace iTin.Hardware.Specification.Eedid
                             /// <para>
                             ///  <para><b>Key Composition</b></para>
                             ///  <list type="bullet">
-                            ///   <item><description>Structure: <see cref="DisplayIdSection.DataBlocks"/></description></item>
+                            ///   <item><description>Structure: <see cref="DisplayIdProperty.DataBlocks.Blocks.Identifier.DetailedTimingTypeI"/></description></item>
                             ///   <item><description>Property: <see cref="DisplayIdProperty.DataBlocks.Blocks.DetailedTimingTypeI.Timing.Stereo3DSupport"/></description></item>
                             ///   <item><description>Unit: <see cref="PropertyUnit.None"/></description></item>
                             ///  </list>
@@ -6731,7 +6730,7 @@ namespace iTin.Hardware.Specification.Eedid
                             /// <para>Type: <see cref="string"/>.</para>
                             /// </para>
                             /// </summary>
-                            public static IPropertyKey Stereo3DSupport => new PropertyKey(DisplayIdSection.DataBlocks, DisplayIdProperty.DataBlocks.Blocks.DetailedTimingTypeI.Timing.Stereo3DSupport);
+                            public static IPropertyKey Stereo3DSupport => new PropertyKey(DisplayIdProperty.DataBlocks.Blocks.Identifier.DetailedTimingTypeI, DisplayIdProperty.DataBlocks.Blocks.DetailedTimingTypeI.Timing.Stereo3DSupport);
                             #endregion
 
                             #region [public] {static} (IPropertyKey) IsPreferredTiming: Gets a value representing the key to retrieve the property value
@@ -6743,7 +6742,7 @@ namespace iTin.Hardware.Specification.Eedid
                             /// <para>
                             ///  <para><b>Key Composition</b></para>
                             ///  <list type="bullet">
-                            ///   <item><description>Structure: <see cref="DisplayIdSection.DataBlocks"/></description></item>
+                            ///   <item><description>Structure: <see cref="DisplayIdProperty.DataBlocks.Blocks.Identifier.DetailedTimingTypeI"/></description></item>
                             ///   <item><description>Property: <see cref="DisplayIdProperty.DataBlocks.Blocks.DetailedTimingTypeI.Timing.IsPreferredTiming"/></description></item>
                             ///   <item><description>Unit: <see cref="PropertyUnit.None"/></description></item>
                             ///  </list>
@@ -6753,7 +6752,7 @@ namespace iTin.Hardware.Specification.Eedid
                             /// <para>Type: <see cref="bool"/>.</para>
                             /// </para>
                             /// </summary>
-                            public static IPropertyKey IsPreferredTiming => new PropertyKey(DisplayIdSection.DataBlocks, DisplayIdProperty.DataBlocks.Blocks.DetailedTimingTypeI.Timing.IsPreferredTiming);
+                            public static IPropertyKey IsPreferredTiming => new PropertyKey(DisplayIdProperty.DataBlocks.Blocks.Identifier.DetailedTimingTypeI, DisplayIdProperty.DataBlocks.Blocks.DetailedTimingTypeI.Timing.IsPreferredTiming);
                             #endregion
 
                             #region [public] {static} (IPropertyKey) HorizontalActiveImage: Gets a value representing the key to retrieve the property value
@@ -6766,7 +6765,7 @@ namespace iTin.Hardware.Specification.Eedid
                             /// <para>
                             ///  <para><b>Key Composition</b></para>
                             ///  <list type="bullet">
-                            ///   <item><description>Structure: <see cref="DisplayIdSection.DataBlocks"/></description></item>
+                            ///   <item><description>Structure: <see cref="DisplayIdProperty.DataBlocks.Blocks.Identifier.DetailedTimingTypeI"/></description></item>
                             ///   <item><description>Property: <see cref="DisplayIdProperty.DataBlocks.Blocks.DetailedTimingTypeI.Timing.HorizontalActiveImage"/></description></item>
                             ///   <item><description>Unit: <see cref="PropertyUnit.Pixels"/></description></item>
                             ///  </list>
@@ -6776,7 +6775,7 @@ namespace iTin.Hardware.Specification.Eedid
                             /// <para>Type: <see cref="int"/>.</para>
                             /// </para>
                             /// </summary>
-                            public static IPropertyKey HorizontalActiveImage => new PropertyKey(DisplayIdSection.DataBlocks, DisplayIdProperty.DataBlocks.Blocks.DetailedTimingTypeI.Timing.HorizontalActiveImage, PropertyUnit.Pixels);
+                            public static IPropertyKey HorizontalActiveImage => new PropertyKey(DisplayIdProperty.DataBlocks.Blocks.Identifier.DetailedTimingTypeI, DisplayIdProperty.DataBlocks.Blocks.DetailedTimingTypeI.Timing.HorizontalActiveImage, PropertyUnit.Pixels);
                             #endregion
 
                             #region [public] {static} (IPropertyKey) HorizontalBlankPixels: Gets a value representing the key to retrieve the property value
@@ -6789,7 +6788,7 @@ namespace iTin.Hardware.Specification.Eedid
                             /// <para>
                             ///  <para><b>Key Composition</b></para>
                             ///  <list type="bullet">
-                            ///   <item><description>Structure: <see cref="DisplayIdSection.DataBlocks"/></description></item>
+                            ///   <item><description>Structure: <see cref="DisplayIdProperty.DataBlocks.Blocks.Identifier.DetailedTimingTypeI"/></description></item>
                             ///   <item><description>Property: <see cref="DisplayIdProperty.DataBlocks.Blocks.DetailedTimingTypeI.Timing.HorizontalBlankPixels"/></description></item>
                             ///   <item><description>Unit: <see cref="PropertyUnit.Pixels"/></description></item>
                             ///  </list>
@@ -6799,7 +6798,7 @@ namespace iTin.Hardware.Specification.Eedid
                             /// <para>Type: <see cref="int"/>.</para>
                             /// </para>
                             /// </summary>
-                            public static IPropertyKey HorizontalBlankPixels => new PropertyKey(DisplayIdSection.DataBlocks, DisplayIdProperty.DataBlocks.Blocks.DetailedTimingTypeI.Timing.HorizontalBlankPixels, PropertyUnit.Pixels);
+                            public static IPropertyKey HorizontalBlankPixels => new PropertyKey(DisplayIdProperty.DataBlocks.Blocks.Identifier.DetailedTimingTypeI, DisplayIdProperty.DataBlocks.Blocks.DetailedTimingTypeI.Timing.HorizontalBlankPixels, PropertyUnit.Pixels);
                             #endregion
 
                             #region [public] {static} (IPropertyKey) HorizontalFrontPorchOffset: Gets a value representing the key to retrieve the property value
@@ -6812,7 +6811,7 @@ namespace iTin.Hardware.Specification.Eedid
                             /// <para>
                             ///  <para><b>Key Composition</b></para>
                             ///  <list type="bullet">
-                            ///   <item><description>Structure: <see cref="DisplayIdSection.DataBlocks"/></description></item>
+                            ///   <item><description>Structure: <see cref="DisplayIdProperty.DataBlocks.Blocks.Identifier.DetailedTimingTypeI"/></description></item>
                             ///   <item><description>Property: <see cref="DisplayIdProperty.DataBlocks.Blocks.DetailedTimingTypeI.Timing.HorizontalFrontPorchOffset"/></description></item>
                             ///   <item><description>Unit: <see cref="PropertyUnit.Pixels"/></description></item>
                             ///  </list>
@@ -6822,7 +6821,7 @@ namespace iTin.Hardware.Specification.Eedid
                             /// <para>Type: <see cref="int"/>.</para>
                             /// </para>
                             /// </summary>
-                            public static IPropertyKey HorizontalFrontPorchOffset => new PropertyKey(DisplayIdSection.DataBlocks, DisplayIdProperty.DataBlocks.Blocks.DetailedTimingTypeI.Timing.HorizontalFrontPorchOffset, PropertyUnit.Pixels);
+                            public static IPropertyKey HorizontalFrontPorchOffset => new PropertyKey(DisplayIdProperty.DataBlocks.Blocks.Identifier.DetailedTimingTypeI, DisplayIdProperty.DataBlocks.Blocks.DetailedTimingTypeI.Timing.HorizontalFrontPorchOffset, PropertyUnit.Pixels);
                             #endregion
 
                             #region [public] {static} (IPropertyKey) HorizontalSyncPolarity: Gets a value representing the key to retrieve the property value
@@ -6834,7 +6833,7 @@ namespace iTin.Hardware.Specification.Eedid
                             /// <para>
                             ///  <para><b>Key Composition</b></para>
                             ///  <list type="bullet">
-                            ///   <item><description>Structure: <see cref="DisplayIdSection.DataBlocks"/></description></item>
+                            ///   <item><description>Structure: <see cref="DisplayIdProperty.DataBlocks.Blocks.Identifier.DetailedTimingTypeI"/></description></item>
                             ///   <item><description>Property: <see cref="DisplayIdProperty.DataBlocks.Blocks.DetailedTimingTypeI.Timing.HorizontalSyncPolarity"/></description></item>
                             ///   <item><description>Unit: <see cref="PropertyUnit.None"/></description></item>
                             ///  </list>
@@ -6844,7 +6843,7 @@ namespace iTin.Hardware.Specification.Eedid
                             /// <para>Type: <see cref="string"/>.</para>
                             /// </para>
                             /// </summary>
-                            public static IPropertyKey HorizontalSyncPolarity => new PropertyKey(DisplayIdSection.DataBlocks, DisplayIdProperty.DataBlocks.Blocks.DetailedTimingTypeI.Timing.HorizontalSyncPolarity);
+                            public static IPropertyKey HorizontalSyncPolarity => new PropertyKey(DisplayIdProperty.DataBlocks.Blocks.Identifier.DetailedTimingTypeI, DisplayIdProperty.DataBlocks.Blocks.DetailedTimingTypeI.Timing.HorizontalSyncPolarity);
                             #endregion
 
                             #region [public] {static} (IPropertyKey) HorizontalSyncWidth: Gets a value representing the key to retrieve the property value
@@ -6857,7 +6856,7 @@ namespace iTin.Hardware.Specification.Eedid
                             /// <para>
                             ///  <para><b>Key Composition</b></para>
                             ///  <list type="bullet">
-                            ///   <item><description>Structure: <see cref="DisplayIdSection.DataBlocks"/></description></item>
+                            ///   <item><description>Structure: <see cref="DisplayIdProperty.DataBlocks.Blocks.Identifier.DetailedTimingTypeI"/></description></item>
                             ///   <item><description>Property: <see cref="DisplayIdProperty.DataBlocks.Blocks.DetailedTimingTypeI.Timing.HorizontalSyncWidth"/></description></item>
                             ///   <item><description>Unit: <see cref="PropertyUnit.Pixels"/></description></item>
                             ///  </list>
@@ -6867,7 +6866,7 @@ namespace iTin.Hardware.Specification.Eedid
                             /// <para>Type: <see cref="int"/>.</para>
                             /// </para>
                             /// </summary>
-                            public static IPropertyKey HorizontalSyncWidth => new PropertyKey(DisplayIdSection.DataBlocks, DisplayIdProperty.DataBlocks.Blocks.DetailedTimingTypeI.Timing.HorizontalSyncWidth, PropertyUnit.Pixels);
+                            public static IPropertyKey HorizontalSyncWidth => new PropertyKey(DisplayIdProperty.DataBlocks.Blocks.Identifier.DetailedTimingTypeI, DisplayIdProperty.DataBlocks.Blocks.DetailedTimingTypeI.Timing.HorizontalSyncWidth, PropertyUnit.Pixels);
                             #endregion
 
                             #region [public] {static} (IPropertyKey) VerticalActiveImage: Gets a value representing the key to retrieve the property value
@@ -6880,7 +6879,7 @@ namespace iTin.Hardware.Specification.Eedid
                             /// <para>
                             ///  <para><b>Key Composition</b></para>
                             ///  <list type="bullet">
-                            ///   <item><description>Structure: <see cref="DisplayIdSection.DataBlocks"/></description></item>
+                            ///   <item><description>Structure: <see cref="DisplayIdProperty.DataBlocks.Blocks.Identifier.DetailedTimingTypeI"/></description></item>
                             ///   <item><description>Property: <see cref="DisplayIdProperty.DataBlocks.Blocks.DetailedTimingTypeI.Timing.VerticalActiveImage"/></description></item>
                             ///   <item><description>Unit: <see cref="PropertyUnit.Pixels"/></description></item>
                             ///  </list>
@@ -6890,7 +6889,7 @@ namespace iTin.Hardware.Specification.Eedid
                             /// <para>Type: <see cref="int"/>.</para>
                             /// </para>
                             /// </summary>
-                            public static IPropertyKey VerticalActiveImage => new PropertyKey(DisplayIdSection.DataBlocks, DisplayIdProperty.DataBlocks.Blocks.DetailedTimingTypeI.Timing.VerticalActiveImage, PropertyUnit.Pixels);
+                            public static IPropertyKey VerticalActiveImage => new PropertyKey(DisplayIdProperty.DataBlocks.Blocks.Identifier.DetailedTimingTypeI, DisplayIdProperty.DataBlocks.Blocks.DetailedTimingTypeI.Timing.VerticalActiveImage, PropertyUnit.Pixels);
                             #endregion
 
                             #region [public] {static} (IPropertyKey) VerticalBlankLines: Gets a value representing the key to retrieve the property value
@@ -6903,7 +6902,7 @@ namespace iTin.Hardware.Specification.Eedid
                             /// <para>
                             ///  <para><b>Key Composition</b></para>
                             ///  <list type="bullet">
-                            ///   <item><description>Structure: <see cref="DisplayIdSection.DataBlocks"/></description></item>
+                            ///   <item><description>Structure: <see cref="DisplayIdProperty.DataBlocks.Blocks.Identifier.DetailedTimingTypeI"/></description></item>
                             ///   <item><description>Property: <see cref="DisplayIdProperty.DataBlocks.Blocks.DetailedTimingTypeI.Timing.VerticalBlankLines"/></description></item>
                             ///   <item><description>Unit: <see cref="PropertyUnit.Lines"/></description></item>
                             ///  </list>
@@ -6913,7 +6912,7 @@ namespace iTin.Hardware.Specification.Eedid
                             /// <para>Type: <see cref="int"/>.</para>
                             /// </para>
                             /// </summary>
-                            public static IPropertyKey VerticalBlankLines => new PropertyKey(DisplayIdSection.DataBlocks, DisplayIdProperty.DataBlocks.Blocks.DetailedTimingTypeI.Timing.VerticalBlankLines, PropertyUnit.Lines);
+                            public static IPropertyKey VerticalBlankLines => new PropertyKey(DisplayIdProperty.DataBlocks.Blocks.Identifier.DetailedTimingTypeI, DisplayIdProperty.DataBlocks.Blocks.DetailedTimingTypeI.Timing.VerticalBlankLines, PropertyUnit.Lines);
                             #endregion
 
                             #region [public] {static} (IPropertyKey) VerticalSyncFrontPorchOffset: Gets a value representing the key to retrieve the property value
@@ -6926,7 +6925,7 @@ namespace iTin.Hardware.Specification.Eedid
                             /// <para>
                             ///  <para><b>Key Composition</b></para>
                             ///  <list type="bullet">
-                            ///   <item><description>Structure: <see cref="DisplayIdSection.DataBlocks"/></description></item>
+                            ///   <item><description>Structure: <see cref="DisplayIdProperty.DataBlocks.Blocks.Identifier.DetailedTimingTypeI"/></description></item>
                             ///   <item><description>Property: <see cref="DisplayIdProperty.DataBlocks.Blocks.DetailedTimingTypeI.Timing.VerticalSyncFrontPorchOffset"/></description></item>
                             ///   <item><description>Unit: <see cref="PropertyUnit.Lines"/></description></item>
                             ///  </list>
@@ -6936,7 +6935,7 @@ namespace iTin.Hardware.Specification.Eedid
                             /// <para>Type: <see cref="int"/>.</para>
                             /// </para>
                             /// </summary>
-                            public static IPropertyKey VerticalSyncFrontPorchOffset => new PropertyKey(DisplayIdSection.DataBlocks, DisplayIdProperty.DataBlocks.Blocks.DetailedTimingTypeI.Timing.VerticalSyncFrontPorchOffset, PropertyUnit.Lines);
+                            public static IPropertyKey VerticalSyncFrontPorchOffset => new PropertyKey(DisplayIdProperty.DataBlocks.Blocks.Identifier.DetailedTimingTypeI, DisplayIdProperty.DataBlocks.Blocks.DetailedTimingTypeI.Timing.VerticalSyncFrontPorchOffset, PropertyUnit.Lines);
                             #endregion
 
                             #region [public] {static} (IPropertyKey) VerticalSyncPolarity: Gets a value representing the key to retrieve the property value
@@ -6948,7 +6947,7 @@ namespace iTin.Hardware.Specification.Eedid
                             /// <para>
                             ///  <para><b>Key Composition</b></para>
                             ///  <list type="bullet">
-                            ///   <item><description>Structure: <see cref="DisplayIdSection.DataBlocks"/></description></item>
+                            ///   <item><description>Structure: <see cref="DisplayIdProperty.DataBlocks.Blocks.Identifier.DetailedTimingTypeI"/></description></item>
                             ///   <item><description>Property: <see cref="DisplayIdProperty.DataBlocks.Blocks.DetailedTimingTypeI.Timing.VerticalSyncPolarity"/></description></item>
                             ///   <item><description>Unit: <see cref="PropertyUnit.None"/></description></item>
                             ///  </list>
@@ -6958,7 +6957,7 @@ namespace iTin.Hardware.Specification.Eedid
                             /// <para>Type: <see cref="string"/>.</para>
                             /// </para>
                             /// </summary>
-                            public static IPropertyKey VerticalSyncPolarity => new PropertyKey(DisplayIdSection.DataBlocks, DisplayIdProperty.DataBlocks.Blocks.DetailedTimingTypeI.Timing.VerticalSyncPolarity);
+                            public static IPropertyKey VerticalSyncPolarity => new PropertyKey(DisplayIdProperty.DataBlocks.Blocks.Identifier.DetailedTimingTypeI, DisplayIdProperty.DataBlocks.Blocks.DetailedTimingTypeI.Timing.VerticalSyncPolarity);
                             #endregion
 
                             #region [public] {static} (IPropertyKey) VerticalSyncWidth: Gets a value representing the key to retrieve the property value
@@ -6971,7 +6970,7 @@ namespace iTin.Hardware.Specification.Eedid
                             /// <para>
                             ///  <para><b>Key Composition</b></para>
                             ///  <list type="bullet">
-                            ///   <item><description>Structure: <see cref="DisplayIdSection.DataBlocks"/></description></item>
+                            ///   <item><description>Structure: <see cref="DisplayIdProperty.DataBlocks.Blocks.Identifier.DetailedTimingTypeI"/></description></item>
                             ///   <item><description>Property: <see cref="DisplayIdProperty.DataBlocks.Blocks.DetailedTimingTypeI.Timing.VerticalSyncWidth"/></description></item>
                             ///   <item><description>Unit: <see cref="PropertyUnit.Lines"/></description></item>
                             ///  </list>
@@ -6981,11 +6980,184 @@ namespace iTin.Hardware.Specification.Eedid
                             /// <para>Type: <see cref="int"/>.</para>
                             /// </para>
                             /// </summary>
-                            public static IPropertyKey VerticalSyncWidth => new PropertyKey(DisplayIdSection.DataBlocks, DisplayIdProperty.DataBlocks.Blocks.DetailedTimingTypeI.Timing.VerticalSyncWidth, PropertyUnit.Lines);
+                            public static IPropertyKey VerticalSyncWidth => new PropertyKey(DisplayIdProperty.DataBlocks.Blocks.Identifier.DetailedTimingTypeI, DisplayIdProperty.DataBlocks.Blocks.DetailedTimingTypeI.Timing.VerticalSyncWidth, PropertyUnit.Lines);
                             #endregion
                         }
                         #endregion
 
+                        #endregion
+                    }
+                    #endregion
+
+                    #region [public] {static} (class) ProductIdentification: Definition of keys for a 'Product Identification' data block
+                    /// <summary>
+                    /// Definition of properties for a <b>Product Identification</b> data block.
+                    /// </summary>
+                    public static class ProductIdentification
+                    {
+                        #region [public] {static} (IPropertyKey) Manufacturer: Gets a value representing the key to retrieve the property value
+                        /// <summary>
+                        /// <para>Gets a value representing the key to retrieve the property value.</para>
+                        /// <para>Manufacturer/Vendor ID.</para>
+                        /// <para>
+                        ///  <para><b>Key Composition</b></para>
+                        ///  <list type="bullet">
+                        ///   <item><description>Structure: <see cref="DisplayIdProperty.DataBlocks.Blocks.Identifier.ProductIdentification"/></description></item>
+                        ///   <item><description>Property: <see cref="DisplayIdProperty.DataBlocks.Blocks.ProductIdentification.Manufacturer"/></description></item>
+                        ///   <item><description>Unit: <see cref="PropertyUnit.None"/></description></item>
+                        ///  </list>
+                        /// </para>
+                        /// <para>
+                        ///  <para><b>Return Value</b></para>
+                        ///  <para>Type: <see cref="string"/>.</para>
+                        /// </para>
+                        /// </summary>
+                        public static IPropertyKey Manufacturer => new PropertyKey(DisplayIdProperty.DataBlocks.Blocks.Identifier.ProductIdentification, DisplayIdProperty.DataBlocks.Blocks.ProductIdentification.Manufacturer);
+                        #endregion
+
+                        #region [public] {static} (IPropertyKey) ProductIdCode: Gets a value representing the key to retrieve the property value
+                        /// <summary>
+                        /// <para>Gets a value representing the key to retrieve the property value.</para>
+                        /// <para>Product Id Code.</para>
+                        /// <para>
+                        ///  <para><b>Key Composition</b></para>
+                        ///  <list type="bullet">
+                        ///   <item><description>Structure: <see cref="DisplayIdSection.DataBlocksDisplayIdProperty.DataBlocks.Blocks.Identifier.ProductIdentification"/></description></item>
+                        ///   <item><description>Property: <see cref="DisplayIdProperty.DataBlocks.Blocks.ProductIdentification.ProductIdCode"/></description></item>
+                        ///   <item><description>Unit: <see cref="PropertyUnit.None"/></description></item>
+                        ///  </list>
+                        /// </para>
+                        /// <para>
+                        ///  <para><b>Return Value</b></para>
+                        ///  <para>Type: <see cref="int"/>.</para>
+                        /// </para>
+                        /// </summary>
+                        public static IPropertyKey ProductIdCode => new PropertyKey(DisplayIdProperty.DataBlocks.Blocks.Identifier.ProductIdentification, DisplayIdProperty.DataBlocks.Blocks.ProductIdentification.ProductIdCode);
+                        #endregion
+
+                        #region [public] {static} (IPropertyKey) SerialNumber: Gets a value representing the key to retrieve the property value
+                        /// <summary>
+                        /// <para>Gets a value representing the key to retrieve the property value.</para>
+                        /// <para>Serial Number.</para>
+                        /// <para>
+                        ///  <para><b>Key Composition</b></para>
+                        ///  <list type="bullet">
+                        ///   <item><description>Structure: <see cref="DisplayIdProperty.DataBlocks.Blocks.Identifier.ProductIdentification"/></description></item>
+                        ///   <item><description>Property: <see cref="DisplayIdProperty.DataBlocks.Blocks.ProductIdentification.SerialNumber"/></description></item>
+                        ///   <item><description>Unit: <see cref="PropertyUnit.None"/></description></item>
+                        ///  </list>
+                        /// </para>
+                        /// <para>
+                        ///  <para><b>Return Value</b></para>
+                        ///  <para>Type: <see cref="uint"/>.</para>
+                        /// </para>
+                        /// </summary>
+                        public static IPropertyKey SerialNumber => new PropertyKey(DisplayIdProperty.DataBlocks.Blocks.Identifier.ProductIdentification, DisplayIdProperty.DataBlocks.Blocks.ProductIdentification.SerialNumber);
+                        #endregion
+
+                        #region [public] {static} (IPropertyKey) WeekOfManufactureOrModelTag: Gets a value representing the key to retrieve the property value
+                        /// <summary>
+                        /// <para>Gets a value representing the key to retrieve the property value.</para>
+                        /// <para>Contains a week number or model year.</para>
+                        /// <para>
+                        ///  <para><b>Key Composition</b></para>
+                        ///  <list type="bullet">
+                        ///   <item><description>Structure: <see cref="DisplayIdProperty.DataBlocks.Blocks.Identifier.ProductIdentification"/></description></item>
+                        ///   <item><description>Property: <see cref="DisplayIdProperty.DataBlocks.Blocks.ProductIdentification.WeekOfManufactureOrModelTag"/></description></item>
+                        ///   <item><description>Unit: <see cref="PropertyUnit.None"/></description></item>
+                        ///  </list>
+                        /// </para>
+                        /// <para>
+                        ///  <para><b>Return Value</b></para>
+                        ///  <para>Type: <see cref="Nullable{T}"/> where <b>T</b> is <see cref="byte"/>.</para>
+                        /// </para>
+                        /// </summary>
+                        public static IPropertyKey WeekOfManufactureOrModelTag => new PropertyKey(DisplayIdProperty.DataBlocks.Blocks.Identifier.ProductIdentification, DisplayIdProperty.DataBlocks.Blocks.ProductIdentification.WeekOfManufactureOrModelTag);
+                        #endregion
+
+                        #region [public] {static} (IPropertyKey) YearOfManufactureOrModelYear: Gets a value representing the key to retrieve the property value
+                        /// <summary>
+                        /// <para>Gets a value representing the key to retrieve the property value.</para>
+                        /// <para>Contains the manufacture year or model year.</para>
+                        /// <para>
+                        ///  <para><b>Key Composition</b></para>
+                        ///  <list type="bullet">
+                        ///   <item><description>Structure: <see cref="DisplayIdProperty.DataBlocks.Blocks.Identifier.ProductIdentification"/></description></item>
+                        ///   <item><description>Property: <see cref="DisplayIdProperty.DataBlocks.Blocks.ProductIdentification.YearOfManufactureOrModelYear"/></description></item>
+                        ///   <item><description>Unit: <see cref="PropertyUnit.None"/></description></item>
+                        ///  </list>
+                        /// </para>
+                        /// <para>
+                        ///  <para><b>Return Value</b></para>
+                        ///  <para>Type: <see cref="Nullable{T}"/> where <b>T</b> is <see cref="byte"/>.</para>
+                        /// </para>
+                        /// </summary>
+                        public static IPropertyKey YearOfManufactureOrModelYear => new PropertyKey(DisplayIdProperty.DataBlocks.Blocks.Identifier.ProductIdentification, DisplayIdProperty.DataBlocks.Blocks.ProductIdentification.YearOfManufactureOrModelYear);
+                        #endregion
+
+                        #region [public] {static} (IPropertyKey) ManufactureDate: Gets a value representing the key to retrieve the property value
+                        /// <summary>
+                        /// <para>Gets a value representing the key to retrieve the property value.</para>
+                        /// <para>
+                        /// The manufacuture data.<br/>
+                        /// See <see cref="ModelYearStrategy"/> property for known the strategy used.
+                        /// </para>
+                        /// <para>
+                        ///  <para><b>Key Composition</b></para>
+                        ///  <list type="bullet">
+                        ///   <item><description>Structure: <see cref="DisplayIdProperty.DataBlocks.Blocks.Identifier.ProductIdentification"/></description></item>
+                        ///   <item><description>Property: <see cref="DisplayIdProperty.DataBlocks.Blocks.ProductIdentification.ManufactureDate"/></description></item>
+                        ///   <item><description>Unit: <see cref="PropertyUnit.None"/></description></item>
+                        ///  </list>
+                        /// </para>
+                        /// <para>
+                        ///  <para><b>Return Value</b></para>
+                        ///  <para>Type: <see cref="string"/>.</para>
+                        /// </para>
+                        /// </summary>
+                        public static IPropertyKey ManufactureDate => new PropertyKey(DisplayIdProperty.DataBlocks.Blocks.Identifier.ProductIdentification, DisplayIdProperty.DataBlocks.Blocks.ProductIdentification.ManufactureDate);
+                        #endregion
+
+                        #region [public] {static} (IPropertyKey) ModelYearStrategy: Gets a value representing the key to retrieve the property
+                        /// <summary>
+                        /// <para>Gets a value representing the key to retrieve the property value.</para>
+                        /// <para>
+                        /// Returns a value indicating the strategy used for model year data.
+                        /// </para>
+                        /// <para>
+                        ///  <para><b>Key Composition</b></para>
+                        ///  <list type="bullet">
+                        ///   <item><description>Structure: <see cref="DisplayIdProperty.DataBlocks.Blocks.Identifier.ProductIdentification"/></description></item>
+                        ///   <item><description>Property: <see cref="DisplayIdProperty.DataBlocks.Blocks.ProductIdentification.ModelYearStrategy"/></description></item>
+                        ///   <item><description>Unit: <see cref="PropertyUnit.None"/></description></item>
+                        ///  </list>
+                        /// </para>
+                        /// <para>
+                        ///  <para><b>Return Value</b></para>
+                        ///  <para>Type: <see cref="KnownModelYearStrategy"/>.</para>
+                        /// </para>
+                        /// </summary>
+                        public static IPropertyKey ModelYearStrategy => new PropertyKey(DisplayIdProperty.DataBlocks.Blocks.Identifier.ProductIdentification, DisplayIdProperty.DataBlocks.Blocks.ProductIdentification.ModelYearStrategy);
+                        #endregion
+
+                        #region [public] {static} (IPropertyKey) ProductName: Gets a value representing the key to retrieve the property value
+                        /// <summary>
+                        /// <para>Gets a value representing the key to retrieve the property value.</para>
+                        /// <para>Product Name.</para>
+                        /// <para>
+                        ///  <para><b>Key Composition</b></para>
+                        ///  <list type="bullet">
+                        ///   <item><description>Structure: <see cref="DisplayIdProperty.DataBlocks.Blocks.Identifier.ProductIdentification"/></description></item>
+                        ///   <item><description>Property: <see cref="DisplayIdProperty.DataBlocks.Blocks.ProductIdentification.ProductName"/></description></item>
+                        ///   <item><description>Unit: <see cref="PropertyUnit.None"/></description></item>
+                        ///  </list>
+                        /// </para>
+                        /// <para>
+                        ///  <para><b>Return Value</b></para>
+                        ///  <para>Type: <see cref="string"/>.</para>
+                        /// </para>
+                        /// </summary>
+                        public static IPropertyKey ProductName => new PropertyKey(DisplayIdProperty.DataBlocks.Blocks.Identifier.ProductIdentification, DisplayIdProperty.DataBlocks.Blocks.ProductIdentification.ProductName);
                         #endregion
                     }
                     #endregion
@@ -7003,7 +7175,7 @@ namespace iTin.Hardware.Specification.Eedid
                         /// <para>
                         ///  <para><b>Key Composition</b></para>
                         ///  <list type="bullet">
-                        ///   <item><description>Structure: <see cref="DisplayIdSection.DataBlocks"/></description></item>
+                        ///   <item><description>Structure: <see cref="DisplayIdProperty.DataBlocks.Blocks.Identifier.VendorSpecific"/></description></item>
                         ///   <item><description>Property: <see cref="DisplayIdProperty.DataBlocks.Blocks.VendorSpecific.Data"/></description></item>
                         ///   <item><description>Unit: <see cref="PropertyUnit.None"/></description></item>
                         ///  </list>
@@ -7013,7 +7185,7 @@ namespace iTin.Hardware.Specification.Eedid
                         ///  <para>Type: <see cref="ReadOnlyCollection{T}"/> where <b>T</b> is <see cref="byte"/>.</para>
                         /// </para>
                         /// </summary>
-                        public static IPropertyKey Data => new PropertyKey(DisplayIdSection.DataBlocks, DisplayIdProperty.DataBlocks.Blocks.VendorSpecific.Data);
+                        public static IPropertyKey Data => new PropertyKey(DisplayIdProperty.DataBlocks.Blocks.Identifier.VendorSpecific, DisplayIdProperty.DataBlocks.Blocks.VendorSpecific.Data);
                         #endregion
 
                         #region [public] {static} (IPropertyKey) Manufacturer: Gets a value representing the key to retrieve the property value
@@ -7023,7 +7195,7 @@ namespace iTin.Hardware.Specification.Eedid
                         /// <para>
                         ///  <para><b>Key Composition</b></para>
                         ///  <list type="bullet">
-                        ///   <item><description>Structure: <see cref="DisplayIdSection.DataBlocks"/></description></item>
+                        ///   <item><description>Structure: <see cref="DisplayIdProperty.DataBlocks.Blocks.Identifier.VendorSpecific"/></description></item>
                         ///   <item><description>Property: <see cref="DisplayIdProperty.DataBlocks.Blocks.VendorSpecific.Manufacturer"/></description></item>
                         ///   <item><description>Unit: <see cref="PropertyUnit.None"/></description></item>
                         ///  </list>
@@ -7033,7 +7205,7 @@ namespace iTin.Hardware.Specification.Eedid
                         ///  <para>Type: <see cref="string"/>.</para>
                         /// </para>
                         /// </summary>
-                        public static IPropertyKey Manufacturer => new PropertyKey(DisplayIdSection.DataBlocks, DisplayIdProperty.DataBlocks.Blocks.VendorSpecific.Manufacturer);
+                        public static IPropertyKey Manufacturer => new PropertyKey(DisplayIdProperty.DataBlocks.Blocks.Identifier.VendorSpecific, DisplayIdProperty.DataBlocks.Blocks.VendorSpecific.Manufacturer);
                         #endregion
                     }
                     #endregion
