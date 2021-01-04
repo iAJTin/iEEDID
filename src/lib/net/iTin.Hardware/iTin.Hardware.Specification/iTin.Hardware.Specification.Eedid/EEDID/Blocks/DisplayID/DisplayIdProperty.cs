@@ -80,6 +80,11 @@ namespace iTin.Hardware.Specification.Eedid.Blocks.DisplayId
                 /// </summary>
                 public enum Identifier
                 {
+                    [PropertyName("Container ID")]
+                    [PropertyDescription("Container ID")]
+                    [PropertyType(typeof(ContainerIdDataBlock))]
+                    ContainerID,
+
                     [PropertyName("Detailed Timing Type I")]
                     [PropertyDescription("Detailed Timing Type I")]
                     [PropertyType(typeof(DetailedTimingTypeIDataBlock))]
@@ -275,6 +280,17 @@ namespace iTin.Hardware.Specification.Eedid.Blocks.DisplayId
                     [PropertyDescription("Seamless Dynamic Video Timing Support")]
                     [PropertyType(typeof(bool))]
                     SupportSeamlessDynamicVideoTiming
+                }
+
+                /// <summary>
+                /// Definition of properties for a <b>ContainerID</b> data block.
+                /// </summary>
+                public enum ContainerID
+                {
+                    [PropertyName("UUID")]
+                    [PropertyDescription("16-byte Universally Unique Identifier (UUID)")]
+                    [PropertyType(typeof(string))]
+                    UUID,
                 }
 
                 /// <summary>

@@ -55,7 +55,15 @@ namespace iTin.Hardware.Specification.Eedid.Blocks.DisplayId.Sections.DataBlocks
         [PropertyName("Dynamic Video Timing Range Limits")]
         [PropertyDescription("Dynamic Video Timing Range Limits Data Block")]
         DynamicVideoTimingRangeLimits = 0x25,
-        
+
+        /// <summary>
+        /// <b>Container ID</b> data block, for more information see <see cref ="ContainerIdDataBlock"/>.
+        /// </summary>
+        [PropertyType(typeof(ContainerIdDataBlock))]
+        [PropertyName("Container ID")]
+        [PropertyDescription("Container ID Data Block")]
+        ContainerID = 0x29,
+
         /// <summary>
         /// <b>Vendor-Specific</b> data block, for more information see <see cref ="VendorSpecificDataBlock"/>.
         /// </summary>

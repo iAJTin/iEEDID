@@ -1301,6 +1301,19 @@ namespace iEEDID.ComponentModel.Parser
         {
             switch (data.BlockTag)
             {
+                #region Container ID
+                case DataBlockTag.ContainerID:
+                    {
+                        logger.Info($@"     {data.BlockTag.GetPropertyName()} Data Block:");
+                        var uuidProperty = data.GetProperty(EedidProperty.DisplayID.DataBlocks.Blocks.ContainerID.UUID);
+                        if (uuidProperty.Success)
+                        {
+                            logger.Info($@"     {uuidProperty.Result.Key.GetPropertyName()}: {uuidProperty.Result.Value}");
+                        }
+                    }
+                    break;
+                #endregion
+
                 #region Product Identification
                 case DataBlockTag.ProductIdentification:
                     {

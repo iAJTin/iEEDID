@@ -6605,6 +6605,34 @@ namespace iTin.Hardware.Specification.Eedid
                 /// </summary>
                 public static class Blocks
                 {
+                    #region [public] {static} (class) ContainerID: Definition of keys for a 'Container ID' data block
+                    /// <summary>
+                    /// Definition of properties for a <b>Container ID</b> data block.
+                    /// </summary>
+                    public static class ContainerID
+                    {
+                        #region [public] {static} (IPropertyKey) UUID: Gets a value representing the key to retrieve the property value
+                        /// <summary>
+                        /// <para>Gets a value representing the key to retrieve the property value.</para>
+                        /// <para>16-byte Universally Unique Identifier.</para>
+                        /// <para>
+                        ///  <para><b>Key Composition</b></para>
+                        ///  <list type="bullet">
+                        ///   <item><description>Structure: <see cref="DisplayIdProperty.DataBlocks.Blocks.Identifier.ContainerID"/></description></item>
+                        ///   <item><description>Property: <see cref="DisplayIdProperty.DataBlocks.Blocks.ContainerID.UUID"/></description></item>
+                        ///   <item><description>Unit: <see cref="PropertyUnit.None"/></description></item>
+                        ///  </list>
+                        /// </para>
+                        /// <para>
+                        ///  <para><b>Return Value</b></para>
+                        ///  <para>Type: <see cref="string"/>.</para>
+                        /// </para>
+                        /// </summary>
+                        public static IPropertyKey UUID => new PropertyKey(DisplayIdProperty.DataBlocks.Blocks.Identifier.ContainerID, DisplayIdProperty.DataBlocks.Blocks.ContainerID.UUID);
+                        #endregion
+                    }
+                    #endregion
+
                     #region [public] {static} (class) DetailedTimingTypeI: Definition of keys for a 'Detailed Timing Type I' data block
                     /// <summary>
                     /// Definition of properties for a <b>Detailed Timing Type I</b> data block.
