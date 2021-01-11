@@ -7298,6 +7298,95 @@ namespace iTin.Hardware.Specification.Eedid
                     }
                     #endregion
 
+                    #region [public] {static} (class) DisplayParameters: Definition of keys for a 'Display Parameters' data block
+                    /// <summary>
+                    /// Definition of properties for a <b>Display Parameters</b> data block.
+                    /// </summary>
+                    public static class DisplayParameters
+                    {
+                        #region [public] {static} (IPropertyKey) HorizontalImageSize: Gets a value representing the key to retrieve the property value
+                        /// <summary>
+                        /// <para>Gets a value representing the key to retrieve the property value.</para>
+                        /// <para>Size along the horizontal axis.</para>
+                        /// <para>
+                        ///  <para><b>Key Composition</b></para>
+                        ///  <list type="bullet">
+                        ///   <item><description>Structure: <see cref="DisplayIdProperty.DataBlocks.Blocks.Identifier.DisplayParameters"/></description></item>
+                        ///   <item><description>Property: <see cref="DisplayIdProperty.DataBlocks.Blocks.DisplayParameters.HorizontalImageSize"/></description></item>
+                        ///   <item><description>Unit: <see cref="PropertyUnit.mm"/></description></item>
+                        ///  </list>
+                        /// </para>
+                        /// <para>
+                        ///  <para><b>Return Value</b></para>
+                        ///  <para>Type: <see cref="int"/>.</para>
+                        /// </para>
+                        /// </summary>
+                        public static IPropertyKey HorizontalImageSize => new PropertyKey(DisplayIdProperty.DataBlocks.Blocks.Identifier.DisplayParameters, DisplayIdProperty.DataBlocks.Blocks.DisplayParameters.HorizontalImageSize, PropertyUnit.mm);
+                        #endregion
+
+                        #region [public] {static} (IPropertyKey) VerticalImageSize: Gets a value representing the key to retrieve the property value
+                        /// <summary>
+                        /// <para>Gets a value representing the key to retrieve the property value.</para>
+                        /// <para>Size along the vertical axis.</para>
+                        /// <para>
+                        ///  <para><b>Key Composition</b></para>
+                        ///  <list type="bullet">
+                        ///   <item><description>Structure: <see cref="DisplayIdProperty.DataBlocks.Blocks.Identifier.DisplayParameters"/></description></item>
+                        ///   <item><description>Property: <see cref="DisplayIdProperty.DataBlocks.Blocks.DisplayParameters.VerticalImageSize"/></description></item>
+                        ///   <item><description>Unit: <see cref="PropertyUnit.mm"/></description></item>
+                        ///  </list>
+                        /// </para>
+                        /// <para>
+                        ///  <para><b>Return Value</b></para>
+                        ///  <para>Type: <see cref="int"/>.</para>
+                        /// </para>
+                        /// </summary>
+                        public static IPropertyKey VerticalImageSize => new PropertyKey(DisplayIdProperty.DataBlocks.Blocks.Identifier.DisplayParameters, DisplayIdProperty.DataBlocks.Blocks.DisplayParameters.VerticalImageSize, PropertyUnit.mm);
+                        #endregion
+
+                        #region [public] {static} (IPropertyKey) HorizontalPixelCount: Gets a value representing the key to retrieve the property value
+                        /// <summary>
+                        /// <para>Gets a value representing the key to retrieve the property value.</para>
+                        /// <para>Size along the horizontal axis measuerd in pixels.</para>
+                        /// <para>
+                        ///  <para><b>Key Composition</b></para>
+                        ///  <list type="bullet">
+                        ///   <item><description>Structure: <see cref="DisplayIdProperty.DataBlocks.Blocks.Identifier.DisplayParameters"/></description></item>
+                        ///   <item><description>Property: <see cref="DisplayIdProperty.DataBlocks.Blocks.DisplayParameters.HorizontalPixelCount"/></description></item>
+                        ///   <item><description>Unit: <see cref="PropertyUnit.Pixels"/></description></item>
+                        ///  </list>
+                        /// </para>
+                        /// <para>
+                        ///  <para><b>Return Value</b></para>
+                        ///  <para>Type: <see cref="int"/>.</para>
+                        /// </para>
+                        /// </summary>
+                        public static IPropertyKey HorizontalPixelCount => new PropertyKey(DisplayIdProperty.DataBlocks.Blocks.Identifier.DisplayParameters, DisplayIdProperty.DataBlocks.Blocks.DisplayParameters.HorizontalPixelCount, PropertyUnit.Pixels);
+                        #endregion
+
+                        #region [public] {static} (IPropertyKey) VerticalPixelCount: Gets a value representing the key to retrieve the property value
+                        /// <summary>
+                        /// <para>Gets a value representing the key to retrieve the property value.</para>
+                        /// <para>Size along the horizontal axis measuerd in pixels.</para>
+                        /// <para>
+                        ///  <para><b>Key Composition</b></para>
+                        ///  <list type="bullet">
+                        ///   <item><description>Structure: <see cref="DisplayIdProperty.DataBlocks.Blocks.Identifier.DisplayParameters"/></description></item>
+                        ///   <item><description>Property: <see cref="DisplayIdProperty.DataBlocks.Blocks.DisplayParameters.VerticalPixelCount"/></description></item>
+                        ///   <item><description>Unit: <see cref="PropertyUnit.Pixels"/></description></item>
+                        ///  </list>
+                        /// </para>
+                        /// <para>
+                        ///  <para><b>Return Value</b></para>
+                        ///  <para>Type: <see cref="int"/>.</para>
+                        /// </para>
+                        /// </summary>
+                        public static IPropertyKey VerticalPixelCount => new PropertyKey(DisplayIdProperty.DataBlocks.Blocks.Identifier.DisplayParameters, DisplayIdProperty.DataBlocks.Blocks.DisplayParameters.VerticalPixelCount, PropertyUnit.Pixels);
+                        #endregion
+
+                    }
+                    #endregion
+
                     #region [public] {static} (class) VendorSpecific: Definition of keys for a 'Vendor Specific' data block
                     /// <summary>
                     /// Definition of properties for a <b>Vendor Specific</b> data block.

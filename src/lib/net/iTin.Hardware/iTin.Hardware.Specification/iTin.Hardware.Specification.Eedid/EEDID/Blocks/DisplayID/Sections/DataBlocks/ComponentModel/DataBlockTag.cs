@@ -9,15 +9,23 @@ namespace iTin.Hardware.Specification.Eedid.Blocks.DisplayId.Sections.DataBlocks
     public enum DataBlockTag
     {
         /// <summary>
-        /// <b>Product Identification</b> data block, for more information see <see cref ="ProductIdentificationDataBlock"/>.
+        /// <b>Product Identification</b> data block, for more information see <see cref="ProductIdentificationDataBlock"/>.
         /// </summary>
         [PropertyType(typeof(ProductIdentificationDataBlock))]
         [PropertyName("Product Identification")]
         [PropertyDescription("Product Identification Data Block")]
         ProductIdentification13 = 0x00,
 
+        /// <summary>
+        /// <b>Display Parameters</b> data block, for more information see <see cref="DisplayParametersDataBlock"/>.
+        /// </summary>
+        [PropertyType(typeof(DisplayParametersDataBlock))]
+        [PropertyName("Display Parameters")]
+        [PropertyDescription("Display Parameters Data Block")]
+        DisplayParameters13 = 0x01,
+
         ///// <summary>
-        ///// <b>Display Parameters</b> data block, for more information see <see cref ="DisplayParametersDataBlock"/>.
+        ///// <b>Display Parameters</b> data block, for more information see <see cref="DisplayParametersDataBlock"/>.
         ///// </summary>
         //[PropertyType(typeof(DisplayParametersDataBlock))]
         //[PropertyName("Display Parameters")]
@@ -25,7 +33,7 @@ namespace iTin.Hardware.Specification.Eedid.Blocks.DisplayId.Sections.DataBlocks
         //DisplayParameters = 0x01,
 
         ///// <summary>
-        ///// <b>Color Characteristics</b> data block, for more information see <see cref ="ColorCharacteristicsDataBlock"/>.
+        ///// <b>Color Characteristics</b> data block, for more information see <see cref="ColorCharacteristicsDataBlock"/>.
         ///// </summary>
         //[PropertyType(typeof(ColorCharacteristicsDataBlock))]
         //[PropertyName("Color Characteristics")]
@@ -33,7 +41,7 @@ namespace iTin.Hardware.Specification.Eedid.Blocks.DisplayId.Sections.DataBlocks
         //ColorCharacteristics = 0x02,
 
         /// <summary>
-        /// <b>Detailed Timing Type I</b> data block, for more information see <see cref ="DetailedTimingTypeIDataBlock"/>.
+        /// <b>Detailed Timing Type I</b> data block, for more information see <see cref="DetailedTimingTypeIDataBlock"/>.
         /// </summary>
         [PropertyType(typeof(DetailedTimingTypeIDataBlock))]
         [PropertyName("Detailed Timing Type I")]
@@ -41,7 +49,7 @@ namespace iTin.Hardware.Specification.Eedid.Blocks.DisplayId.Sections.DataBlocks
         DetailedTimingTypeI = 0x03,
 
         /// <summary>
-        /// <b>Product Identification</b> data block, for more information see <see cref ="ProductIdentificationDataBlock"/>.
+        /// <b>Product Identification</b> data block, for more information see <see cref="ProductIdentificationDataBlock"/>.
         /// </summary>
         [PropertyType(typeof(ProductIdentificationDataBlock))]
         [PropertyName("Product Identification")]
@@ -49,7 +57,15 @@ namespace iTin.Hardware.Specification.Eedid.Blocks.DisplayId.Sections.DataBlocks
         ProductIdentification = 0x20,
 
         /// <summary>
-        /// <b>Dynamic Video Timing Range Limits</b> data block, for more information see <see cref ="DynamicVideoTimingRangeLimitsDataBlock"/>.
+        /// <b>Display Parameters</b> data block, for more information see <see cref="DisplayParametersDataBlock"/>.
+        /// </summary>
+        [PropertyType(typeof(DisplayParametersDataBlock))]
+        [PropertyName("Display Parameters")]
+        [PropertyDescription("Display Parameters Data Block")]
+        DisplayParameters = 0x21,
+
+        /// <summary>
+        /// <b>Dynamic Video Timing Range Limits</b> data block, for more information see <see cref="DynamicVideoTimingRangeLimitsDataBlock"/>.
         /// </summary>
         [PropertyType(typeof(DynamicVideoTimingRangeLimitsDataBlock))]
         [PropertyName("Dynamic Video Timing Range Limits")]
@@ -57,7 +73,7 @@ namespace iTin.Hardware.Specification.Eedid.Blocks.DisplayId.Sections.DataBlocks
         DynamicVideoTimingRangeLimits = 0x25,
 
         /// <summary>
-        /// <b>Container ID</b> data block, for more information see <see cref ="ContainerIdDataBlock"/>.
+        /// <b>Container ID</b> data block, for more information see <see cref="ContainerIdDataBlock"/>.
         /// </summary>
         [PropertyType(typeof(ContainerIdDataBlock))]
         [PropertyName("Container ID")]
@@ -65,7 +81,7 @@ namespace iTin.Hardware.Specification.Eedid.Blocks.DisplayId.Sections.DataBlocks
         ContainerID = 0x29,
 
         /// <summary>
-        /// <b>Vendor-Specific</b> data block, for more information see <see cref ="VendorSpecificDataBlock"/>.
+        /// <b>Vendor-Specific</b> data block, for more information see <see cref="VendorSpecificDataBlock"/>.
         /// </summary>
         [PropertyType(typeof(VendorSpecificDataBlock))]
         [PropertyName("Vendor-Specific")]
@@ -73,7 +89,7 @@ namespace iTin.Hardware.Specification.Eedid.Blocks.DisplayId.Sections.DataBlocks
         VendorSpecific = 0x7f,
 
         ///// <summary>
-        ///// <b>Product Identification</b> data block, for more information see <see cref ="ProductIdentification20DataBlock"/>.
+        ///// <b>Product Identification</b> data block, for more information see <see cref="ProductIdentification20DataBlock"/>.
         ///// </summary>
         //[PropertyType(typeof(ProductIdentification20DataBlock))]
         //[PropertyName("Product Identification")]
@@ -81,7 +97,7 @@ namespace iTin.Hardware.Specification.Eedid.Blocks.DisplayId.Sections.DataBlocks
         //ProductIdentification20 = 0x20,
 
         ///// <summary>
-        ///// <b>Display Parameters</b> data block, for more information see <see cref ="DisplayParameters20DataBlock"/>.
+        ///// <b>Display Parameters</b> data block, for more information see <see cref="DisplayParameters20DataBlock"/>.
         ///// </summary>
         //[PropertyType(typeof(DisplayParameters20DataBlock))]
         //[PropertyName("Display Parameters")]
@@ -89,7 +105,7 @@ namespace iTin.Hardware.Specification.Eedid.Blocks.DisplayId.Sections.DataBlocks
         //DisplayParameters20 = 0x21,
 
         ///// <summary>
-        ///// <b>Detailed Timing</b> data block, for more information see <see cref ="DetailedTimingDataBlock"/>.
+        ///// <b>Detailed Timing</b> data block, for more information see <see cref="DetailedTimingDataBlock"/>.
         ///// </summary>
         //[PropertyType(typeof(DetailedTimingDataBlock))]
         //[PropertyName("Detailed Timing")]
@@ -97,7 +113,7 @@ namespace iTin.Hardware.Specification.Eedid.Blocks.DisplayId.Sections.DataBlocks
         //DetailedTiming = 0x22,
 
         ///// <summary>
-        ///// <b>Enumerated Timing Code</b> data block, for more information see <see cref ="EnumeratedTimingCodeDataBlock"/>.
+        ///// <b>Enumerated Timing Code</b> data block, for more information see <see cref="EnumeratedTimingCodeDataBlock"/>.
         ///// </summary>
         //[PropertyType(typeof(EnumeratedTimingCodeDataBlock))]
         //[PropertyName("Enumerated Timing Code")]
@@ -105,7 +121,7 @@ namespace iTin.Hardware.Specification.Eedid.Blocks.DisplayId.Sections.DataBlocks
         //EnumeratedTimingCode = 0x23,
 
         ///// <summary>
-        ///// <b>Enumerated Timing Code</b> data block, for more information see <see cref ="FormulaBasedTimingDataBlock"/>.
+        ///// <b>Enumerated Timing Code</b> data block, for more information see <see cref="FormulaBasedTimingDataBlock"/>.
         ///// </summary>
         //[PropertyType(typeof(FormulaBasedTimingDataBlock))]
         //[PropertyName("Formula-based Timing")]
@@ -113,7 +129,7 @@ namespace iTin.Hardware.Specification.Eedid.Blocks.DisplayId.Sections.DataBlocks
         //FormulaBasedTiming = 0x24,
 
         ///// <summary>
-        ///// <b>Dynamic Video Timing Range Limits</b> data block, for more information see <see cref ="DynamicVideoTimingRangeLimitsDataBlock"/>.
+        ///// <b>Dynamic Video Timing Range Limits</b> data block, for more information see <see cref="DynamicVideoTimingRangeLimitsDataBlock"/>.
         ///// </summary>
         //[PropertyType(typeof(DynamicVideoTimingRangeLimitsDataBlock))]
         //[PropertyName("Dynamic Video Timing Range Limits")]
@@ -121,7 +137,7 @@ namespace iTin.Hardware.Specification.Eedid.Blocks.DisplayId.Sections.DataBlocks
         //DynamicVideoTimingRangeLimits = 0x25,
 
         ///// <summary>
-        ///// <b>Display Interface Features</b> data block, for more information see <see cref ="DisplayInterfaceFeaturesDataBlock"/>.
+        ///// <b>Display Interface Features</b> data block, for more information see <see cref="DisplayInterfaceFeaturesDataBlock"/>.
         ///// </summary>
         //[PropertyType(typeof(DisplayInterfaceFeaturesDataBlock))]
         //[PropertyName("Display Interface Features")]
@@ -129,7 +145,7 @@ namespace iTin.Hardware.Specification.Eedid.Blocks.DisplayId.Sections.DataBlocks
         //DisplayInterfaceFeatures = 0x26,
 
         ///// <summary>
-        ///// <b>Stereo Display Interface</b> data block, for more information see <see cref ="StereoDisplayInterfaceDataBlock"/>.
+        ///// <b>Stereo Display Interface</b> data block, for more information see <see cref="StereoDisplayInterfaceDataBlock"/>.
         ///// </summary>
         //[PropertyType(typeof(StereoDisplayInterfaceDataBlock))]
         //[PropertyName("Stereo Display Interface")]
@@ -137,7 +153,7 @@ namespace iTin.Hardware.Specification.Eedid.Blocks.DisplayId.Sections.DataBlocks
         //StereoDisplayInterface = 0x27,
 
         ///// <summary>
-        ///// <b>Tiled Display Topology</b> data block, for more information see <see cref ="TiledDisplayTopologyDataBlock"/>.
+        ///// <b>Tiled Display Topology</b> data block, for more information see <see cref="TiledDisplayTopologyDataBlock"/>.
         ///// </summary>
         //[PropertyType(typeof(TiledDisplayTopologyDataBlock))]
         //[PropertyName("Tiled Display Topology")]
@@ -145,7 +161,7 @@ namespace iTin.Hardware.Specification.Eedid.Blocks.DisplayId.Sections.DataBlocks
         //TiledDisplayTopology = 0x28,
 
         ///// <summary>
-        ///// <b>ContainerID</b> data block, for more information see <see cref ="ContainerIdDataBlock"/>.
+        ///// <b>ContainerID</b> data block, for more information see <see cref="ContainerIdDataBlock"/>.
         ///// </summary>
         //[PropertyType(typeof(ContainerIdDataBlock))]
         //[PropertyName("ContainerID")]
@@ -153,7 +169,7 @@ namespace iTin.Hardware.Specification.Eedid.Blocks.DisplayId.Sections.DataBlocks
         //ContainerID = 0x29,
 
         ///// <summary>
-        ///// <b>CTA DisplayID</b> data block, for more information see <see cref ="CtaDisplayIdDataBlock"/>.
+        ///// <b>CTA DisplayID</b> data block, for more information see <see cref="CtaDisplayIdDataBlock"/>.
         ///// </summary>
         //[PropertyType(typeof(CtaDisplayIdDataBlock))]
         //[PropertyName("CTA DisplayID")]

@@ -95,6 +95,11 @@ namespace iTin.Hardware.Specification.Eedid.Blocks.DisplayId
                     [PropertyType(typeof(ProductIdentificationDataBlock))]
                     ProductIdentification,
 
+                    [PropertyName("Display Parameters")]
+                    [PropertyDescription("Display Parameters")]
+                    [PropertyType(typeof(DisplayParametersDataBlock))]
+                    DisplayParameters,
+
                     [PropertyName("Dynamic Video Timing Range Limits")]
                     [PropertyDescription("Dynamic Video Timing Range Limits")]
                     [PropertyType(typeof(DynamicVideoTimingRangeLimitsDataBlock))]
@@ -249,6 +254,32 @@ namespace iTin.Hardware.Specification.Eedid.Blocks.DisplayId
                     [PropertyDescription("Product Name")]
                     [PropertyType(typeof(string))]
                     ProductName,
+                }
+
+                /// <summary>
+                /// Definition of properties for a <b>Display Parameters</b> data block.
+                /// </summary>
+                public enum DisplayParameters
+                {
+                    [PropertyName("Horizontal Image Size")]
+                    [PropertyDescription("Horizontal Image Size")]
+                    [PropertyType(typeof(int))]
+                    HorizontalImageSize,
+
+                    [PropertyName("Vertical Image Size")]
+                    [PropertyDescription("Vertical Image Size")]
+                    [PropertyType(typeof(int))]
+                    VerticalImageSize,
+
+                    [PropertyName("Horizontal Pixel Count")]
+                    [PropertyDescription("Horizontal Pixel Count")]
+                    [PropertyType(typeof(int))]
+                    HorizontalPixelCount,
+
+                    [PropertyName("Vertical Pixel Count")]
+                    [PropertyDescription("Vertical Pixel Count")]
+                    [PropertyType(typeof(int))]
+                    VerticalPixelCount,
                 }
 
                 /// <summary>

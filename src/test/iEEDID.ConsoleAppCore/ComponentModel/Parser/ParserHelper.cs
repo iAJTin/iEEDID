@@ -18,7 +18,6 @@ namespace iEEDID.ComponentModel.Parser
     using iTin.Hardware.Specification.Eedid.Blocks.DI;
     
     using iTin.Hardware.Specification.Eedid.Blocks.DisplayId;
-    using iTin.Hardware.Specification.Eedid.Blocks.DisplayId.Sections.DataBlocks;
     using iTin.Hardware.Specification.Eedid.Blocks.DisplayId.Sections.DataBlocks.ComponentModel;
 
     using iTin.Hardware.Specification.Eedid.Blocks.EDID;
