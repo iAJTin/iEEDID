@@ -7312,7 +7312,7 @@ namespace iTin.Hardware.Specification.Eedid
                         ///  <para><b>Key Composition</b></para>
                         ///  <list type="bullet">
                         ///   <item><description>Structure: <see cref="DisplayIdProperty.DataBlocks.Blocks.Identifier.DisplayParameters"/></description></item>
-                        ///   <item><description>Property: <see cref="DisplayIdProperty.DataBlocks.Blocks.DisplayParameters.HorizontalImageSize"/></description></item>
+                        ///   <item><description>Property: <see cref="DisplayIdProperty.DataBlocks.Blocks.DisplayParameters.Common.HorizontalImageSize"/></description></item>
                         ///   <item><description>Unit: <see cref="PropertyUnit.mm"/></description></item>
                         ///  </list>
                         /// </para>
@@ -7321,7 +7321,7 @@ namespace iTin.Hardware.Specification.Eedid
                         ///  <para>Type: <see cref="int"/>.</para>
                         /// </para>
                         /// </summary>
-                        public static IPropertyKey HorizontalImageSize => new PropertyKey(DisplayIdProperty.DataBlocks.Blocks.Identifier.DisplayParameters, DisplayIdProperty.DataBlocks.Blocks.DisplayParameters.HorizontalImageSize, PropertyUnit.mm);
+                        public static IPropertyKey HorizontalImageSize => new PropertyKey(DisplayIdProperty.DataBlocks.Blocks.Identifier.DisplayParameters, DisplayIdProperty.DataBlocks.Blocks.DisplayParameters.Common.HorizontalImageSize, PropertyUnit.mm);
                         #endregion
 
                         #region [public] {static} (IPropertyKey) VerticalImageSize: Gets a value representing the key to retrieve the property value
@@ -7332,7 +7332,7 @@ namespace iTin.Hardware.Specification.Eedid
                         ///  <para><b>Key Composition</b></para>
                         ///  <list type="bullet">
                         ///   <item><description>Structure: <see cref="DisplayIdProperty.DataBlocks.Blocks.Identifier.DisplayParameters"/></description></item>
-                        ///   <item><description>Property: <see cref="DisplayIdProperty.DataBlocks.Blocks.DisplayParameters.VerticalImageSize"/></description></item>
+                        ///   <item><description>Property: <see cref="DisplayIdProperty.DataBlocks.Blocks.DisplayParameters.Common.VerticalImageSize"/></description></item>
                         ///   <item><description>Unit: <see cref="PropertyUnit.mm"/></description></item>
                         ///  </list>
                         /// </para>
@@ -7341,7 +7341,7 @@ namespace iTin.Hardware.Specification.Eedid
                         ///  <para>Type: <see cref="int"/>.</para>
                         /// </para>
                         /// </summary>
-                        public static IPropertyKey VerticalImageSize => new PropertyKey(DisplayIdProperty.DataBlocks.Blocks.Identifier.DisplayParameters, DisplayIdProperty.DataBlocks.Blocks.DisplayParameters.VerticalImageSize, PropertyUnit.mm);
+                        public static IPropertyKey VerticalImageSize => new PropertyKey(DisplayIdProperty.DataBlocks.Blocks.Identifier.DisplayParameters, DisplayIdProperty.DataBlocks.Blocks.DisplayParameters.Common.VerticalImageSize, PropertyUnit.mm);
                         #endregion
 
                         #region [public] {static} (IPropertyKey) HorizontalPixelCount: Gets a value representing the key to retrieve the property value
@@ -7352,7 +7352,7 @@ namespace iTin.Hardware.Specification.Eedid
                         ///  <para><b>Key Composition</b></para>
                         ///  <list type="bullet">
                         ///   <item><description>Structure: <see cref="DisplayIdProperty.DataBlocks.Blocks.Identifier.DisplayParameters"/></description></item>
-                        ///   <item><description>Property: <see cref="DisplayIdProperty.DataBlocks.Blocks.DisplayParameters.HorizontalPixelCount"/></description></item>
+                        ///   <item><description>Property: <see cref="DisplayIdProperty.DataBlocks.Blocks.DisplayParameters.Common.HorizontalPixelCount"/></description></item>
                         ///   <item><description>Unit: <see cref="PropertyUnit.Pixels"/></description></item>
                         ///  </list>
                         /// </para>
@@ -7361,7 +7361,7 @@ namespace iTin.Hardware.Specification.Eedid
                         ///  <para>Type: <see cref="int"/>.</para>
                         /// </para>
                         /// </summary>
-                        public static IPropertyKey HorizontalPixelCount => new PropertyKey(DisplayIdProperty.DataBlocks.Blocks.Identifier.DisplayParameters, DisplayIdProperty.DataBlocks.Blocks.DisplayParameters.HorizontalPixelCount, PropertyUnit.Pixels);
+                        public static IPropertyKey HorizontalPixelCount => new PropertyKey(DisplayIdProperty.DataBlocks.Blocks.Identifier.DisplayParameters, DisplayIdProperty.DataBlocks.Blocks.DisplayParameters.Common.HorizontalPixelCount, PropertyUnit.Pixels);
                         #endregion
 
                         #region [public] {static} (IPropertyKey) VerticalPixelCount: Gets a value representing the key to retrieve the property value
@@ -7372,7 +7372,7 @@ namespace iTin.Hardware.Specification.Eedid
                         ///  <para><b>Key Composition</b></para>
                         ///  <list type="bullet">
                         ///   <item><description>Structure: <see cref="DisplayIdProperty.DataBlocks.Blocks.Identifier.DisplayParameters"/></description></item>
-                        ///   <item><description>Property: <see cref="DisplayIdProperty.DataBlocks.Blocks.DisplayParameters.VerticalPixelCount"/></description></item>
+                        ///   <item><description>Property: <see cref="DisplayIdProperty.DataBlocks.Blocks.DisplayParameters.Common.VerticalPixelCount"/></description></item>
                         ///   <item><description>Unit: <see cref="PropertyUnit.Pixels"/></description></item>
                         ///  </list>
                         /// </para>
@@ -7381,9 +7381,635 @@ namespace iTin.Hardware.Specification.Eedid
                         ///  <para>Type: <see cref="int"/>.</para>
                         /// </para>
                         /// </summary>
-                        public static IPropertyKey VerticalPixelCount => new PropertyKey(DisplayIdProperty.DataBlocks.Blocks.Identifier.DisplayParameters, DisplayIdProperty.DataBlocks.Blocks.DisplayParameters.VerticalPixelCount, PropertyUnit.Pixels);
+                        public static IPropertyKey VerticalPixelCount => new PropertyKey(DisplayIdProperty.DataBlocks.Blocks.Identifier.DisplayParameters, DisplayIdProperty.DataBlocks.Blocks.DisplayParameters.Common.VerticalPixelCount, PropertyUnit.Pixels);
                         #endregion
 
+                        #region [public] {static} (IPropertyKey) PrimaryColor1: Gets a value representing the key to retrieve the property value
+                        /// <summary>
+                        /// <para>Gets a value representing the key to retrieve the property value.</para>
+                        /// <para>Defines primary color 1.</para>
+                        /// <para>
+                        ///  <para><b>Key Composition</b></para>
+                        ///  <list type="bullet">
+                        ///   <item><description>Structure: <see cref="DisplayIdProperty.DataBlocks.Blocks.Identifier.DisplayParameters"/></description></item>
+                        ///   <item><description>Property: <see cref="DisplayIdProperty.DataBlocks.Blocks.DisplayParameters.Common.PrimaryColor1"/></description></item>
+                        ///   <item><description>Unit: <see cref="PropertyUnit.None"/></description></item>
+                        ///  </list>
+                        /// </para>
+                        /// <para>
+                        ///  <para><b>Return Value</b></para>
+                        ///  <para>Type: <see cref="PointF"/>.</para>
+                        /// </para>
+                        /// <para>
+                        ///  <para><b>Remarks</b></para>
+                        ///  <para>2.0</para>
+                        /// </para>
+                        /// </summary>
+                        public static IPropertyKey PrimaryColor1 => new PropertyKey(DisplayIdProperty.DataBlocks.Blocks.Identifier.DisplayParameters, DisplayIdProperty.DataBlocks.Blocks.DisplayParameters.Common.PrimaryColor1);
+                        #endregion
+
+                        #region [public] {static} (IPropertyKey) PrimaryColor2: Gets a value representing the key to retrieve the property value
+                        /// <summary>
+                        /// <para>Gets a value representing the key to retrieve the property value.</para>
+                        /// <para>Defines primary color 2.</para>
+                        /// <para>
+                        ///  <para><b>Key Composition</b></para>
+                        ///  <list type="bullet">
+                        ///   <item><description>Structure: <see cref="DisplayIdProperty.DataBlocks.Blocks.Identifier.DisplayParameters"/></description></item>
+                        ///   <item><description>Property: <see cref="DisplayIdProperty.DataBlocks.Blocks.DisplayParameters.Common.PrimaryColor2"/></description></item>
+                        ///   <item><description>Unit: <see cref="PropertyUnit.None"/></description></item>
+                        ///  </list>
+                        /// </para>
+                        /// <para>
+                        ///  <para><b>Return Value</b></para>
+                        ///  <para>Type: <see cref="PointF"/>.</para>
+                        /// </para>
+                        /// <para>
+                        ///  <para><b>Remarks</b></para>
+                        ///  <para>2.0</para>
+                        /// </para>
+                        /// </summary>
+                        public static IPropertyKey PrimaryColor2 => new PropertyKey(DisplayIdProperty.DataBlocks.Blocks.Identifier.DisplayParameters, DisplayIdProperty.DataBlocks.Blocks.DisplayParameters.Common.PrimaryColor2);
+                        #endregion
+
+                        #region [public] {static} (IPropertyKey) PrimaryColor3: Gets a value representing the key to retrieve the property value
+                        /// <summary>
+                        /// <para>Gets a value representing the key to retrieve the property value.</para>
+                        /// <para>Defines primary color 3.</para>
+                        /// <para>
+                        ///  <para><b>Key Composition</b></para>
+                        ///  <list type="bullet">
+                        ///   <item><description>Structure: <see cref="DisplayIdProperty.DataBlocks.Blocks.Identifier.DisplayParameters"/></description></item>
+                        ///   <item><description>Property: <see cref="DisplayIdProperty.DataBlocks.Blocks.DisplayParameters.Common.PrimaryColor3"/></description></item>
+                        ///   <item><description>Unit: <see cref="PropertyUnit.None"/></description></item>
+                        ///  </list>
+                        /// </para>
+                        /// <para>
+                        ///  <para><b>Return Value</b></para>
+                        ///  <para>Type: <see cref="PointF"/>.</para>
+                        /// </para>
+                        /// <para>
+                        ///  <para><b>Remarks</b></para>
+                        ///  <para>2.0</para>
+                        /// </para>
+                        /// </summary>
+                        public static IPropertyKey PrimaryColor3 => new PropertyKey(DisplayIdProperty.DataBlocks.Blocks.Identifier.DisplayParameters, DisplayIdProperty.DataBlocks.Blocks.DisplayParameters.Common.PrimaryColor3);
+                        #endregion
+
+                        #region [public] {static} (IPropertyKey) WhitePoint: Gets a value representing the key to retrieve the property value
+                        /// <summary>
+                        /// <para>Gets a value representing the key to retrieve the property value.</para>
+                        /// <para>Defines white point.</para>
+                        /// <para>
+                        ///  <para><b>Key Composition</b></para>
+                        ///  <list type="bullet">
+                        ///   <item><description>Structure: <see cref="DisplayIdProperty.DataBlocks.Blocks.Identifier.DisplayParameters"/></description></item>
+                        ///   <item><description>Property: <see cref="DisplayIdProperty.DataBlocks.Blocks.DisplayParameters.Common.WhitePoint"/></description></item>
+                        ///   <item><description>Unit: <see cref="PropertyUnit.None"/></description></item>
+                        ///  </list>
+                        /// </para>
+                        /// <para>
+                        ///  <para><b>Return Value</b></para>
+                        ///  <para>Type: <see cref="PointF"/>.</para>
+                        /// </para>
+                        /// <para>
+                        ///  <para><b>Remarks</b></para>
+                        ///  <para>2.0</para>
+                        /// </para>
+                        /// </summary>
+                        public static IPropertyKey WhitePoint => new PropertyKey(DisplayIdProperty.DataBlocks.Blocks.Identifier.DisplayParameters, DisplayIdProperty.DataBlocks.Blocks.DisplayParameters.Common.WhitePoint);
+                        #endregion
+
+                        #region [public] {static} (IPropertyKey) Gamma: Gets a value representing the key to retrieve the property value
+                        /// <summary>
+                        /// <para>Gets a value representing the key to retrieve the property value.</para>
+                        /// <para>Defines the transfer characteristic gamma value for version 1.3 or Native Gamma EOTF for version 2.0</para>
+                        /// <para>
+                        ///  <para><b>Key Composition</b></para>
+                        ///  <list type="bullet">
+                        ///   <item><description>Structure: <see cref="DisplayIdProperty.DataBlocks.Blocks.Identifier.DisplayParameters"/></description></item>
+                        ///   <item><description>Property: <see cref="DisplayIdProperty.DataBlocks.Blocks.DisplayParameters.Common.Gamma"/></description></item>
+                        ///   <item><description>Unit: <see cref="PropertyUnit.None"/></description></item>
+                        ///  </list>
+                        /// </para>
+                        /// <para>
+                        ///  <para><b>Return Value</b></para>
+                        ///  <para>Type: <see cref="double"/>.</para>
+                        /// </para>
+                        /// </summary>
+                        public static IPropertyKey Gamma => new PropertyKey(DisplayIdProperty.DataBlocks.Blocks.Identifier.DisplayParameters, DisplayIdProperty.DataBlocks.Blocks.DisplayParameters.Common.Gamma);
+                        #endregion
+
+                        #region [public] {static} (IPropertyKey) AspectRatio: Gets a value representing the key to retrieve the property value
+                        /// <summary>
+                        /// <para>Gets a value representing the key to retrieve the property value.</para>
+                        /// <para>Defines the aspect ratio.</para>
+                        /// <para>
+                        ///  <para><b>Key Composition</b></para>
+                        ///  <list type="bullet">
+                        ///   <item><description>Structure: <see cref="DisplayIdProperty.DataBlocks.Blocks.Identifier.DisplayParameters"/></description></item>
+                        ///   <item><description>Property: <see cref="DisplayIdProperty.DataBlocks.Blocks.DisplayParameters.Common.AspectRatio"/></description></item>
+                        ///   <item><description>Unit: <see cref="PropertyUnit.None"/></description></item>
+                        ///  </list>
+                        /// </para>
+                        /// <para>
+                        ///  <para><b>Return Value</b></para>
+                        ///  <para>Type: <see cref="double"/>.</para>
+                        /// </para>
+                        /// <para>
+                        ///  <para><b>Remarks</b></para>
+                        ///  <para>2.0</para>
+                        /// </para>
+                        /// </summary>
+                        public static IPropertyKey AspectRatio => new PropertyKey(DisplayIdProperty.DataBlocks.Blocks.Identifier.DisplayParameters, DisplayIdProperty.DataBlocks.Blocks.DisplayParameters.Common.AspectRatio);
+                        #endregion
+
+                        #region [public] {static} (IPropertyKey) DisplayOverallColorBitDepth: Gets a value representing the key to retrieve the property value
+                        /// <summary>
+                        /// <para>Gets a value representing the key to retrieve the property value.</para>
+                        /// <para>Indicate the dynamic range, in bits/color, provided by the display overall.</para>
+                        /// <para>
+                        ///  <para><b>Key Composition</b></para>
+                        ///  <list type="bullet">
+                        ///   <item><description>Structure: <see cref="DisplayIdProperty.DataBlocks.Blocks.Identifier.DisplayParameters"/></description></item>
+                        ///   <item><description>Property: <see cref="DisplayIdProperty.DataBlocks.Blocks.DisplayParameters.Common.DisplayOverallColorBitDepth"/></description></item>
+                        ///   <item><description>Unit: <see cref="PropertyUnit.BitsxColor"/></description></item>
+                        ///  </list>
+                        /// </para>
+                        /// <para>
+                        ///  <para><b>Return Value</b></para>
+                        ///  <para>Type: <see cref="byte"/>.</para>
+                        /// </para>
+                        /// </summary>
+                        public static IPropertyKey DisplayOverallColorBitDepth => new PropertyKey(DisplayIdProperty.DataBlocks.Blocks.Identifier.DisplayParameters, DisplayIdProperty.DataBlocks.Blocks.DisplayParameters.Common.DisplayOverallColorBitDepth, PropertyUnit.BitsxColor);
+                        #endregion
+
+                        #region [public] {static} (IPropertyKey) DisplayDeviceColorBitDepth: Gets a value representing the key to retrieve the property value
+                        /// <summary>
+                        /// <para>Gets a value representing the key to retrieve the property value.</para>
+                        /// <para>
+                        /// Indicate the dynamic range provided by the display device (transducer) itself for a single pixel in a single field
+                        /// or frame time(i.e., without spatial dithering over multiple pixels, or temporal dithering over multiple fields or frames).
+                        /// </para>
+                        /// <para>
+                        ///  <para><b>Key Composition</b></para>
+                        ///  <list type="bullet">
+                        ///   <item><description>Structure: <see cref="DisplayIdProperty.DataBlocks.Blocks.Identifier.DisplayParameters"/></description></item>
+                        ///   <item><description>Property: <see cref="DisplayIdProperty.DataBlocks.Blocks.DisplayParameters.Common.DisplayDeviceColorBitDepth"/></description></item>
+                        ///   <item><description>Unit: <see cref="PropertyUnit.BitsxColor"/></description></item>
+                        ///  </list>
+                        /// </para>
+                        /// <para>
+                        ///  <para><b>Return Value</b></para>
+                        ///  <para>Type: <see cref="byte"/>.</para>
+                        /// </para>
+                        /// </summary>
+                        public static IPropertyKey DisplayDeviceColorBitDepth => new PropertyKey(DisplayIdProperty.DataBlocks.Blocks.Identifier.DisplayParameters, DisplayIdProperty.DataBlocks.Blocks.DisplayParameters.Common.DisplayDeviceColorBitDepth, PropertyUnit.BitsxColor);
+                        #endregion
+
+                        #region [public] {static} (IPropertyKey) NativeMaximumLuninanceFullCoverage: Gets a value representing the key to retrieve the property value
+                        /// <summary>
+                        /// <para>Gets a value representing the key to retrieve the property value.</para>
+                        /// <para>
+                        /// Native maximum luminance, in candela per square meter (cd/m2), that shall be physically possible to attain on the display with all pixels programmed to maximum code.
+                        /// </para>
+                        /// <para>
+                        ///  <para><b>Key Composition</b></para>
+                        ///  <list type="bullet">
+                        ///   <item><description>Structure: <see cref="DisplayIdProperty.DataBlocks.Blocks.Identifier.DisplayParameters"/></description></item>
+                        ///   <item><description>Property: <see cref="DisplayIdProperty.DataBlocks.Blocks.DisplayParameters.Common.NativeMaximumLuninanceFullCoverage"/></description></item>
+                        ///   <item><description>Unit: <see cref="PropertyUnit.cdm2"/></description></item>
+                        ///  </list>
+                        /// </para>
+                        /// <para>
+                        ///  <para><b>Return Value</b></para>
+                        ///  <para>Type: <see cref="float"/>.</para>
+                        /// </para>
+                        /// <para>
+                        ///  <para><b>Remarks</b></para>
+                        ///  <para>2.0</para>
+                        /// </para>
+                        /// </summary>
+                        public static IPropertyKey NativeMaximumLuninanceFullCoverage => new PropertyKey(DisplayIdProperty.DataBlocks.Blocks.Identifier.DisplayParameters, DisplayIdProperty.DataBlocks.Blocks.DisplayParameters.Common.NativeMaximumLuninanceFullCoverage, PropertyUnit.cdm2);
+                        #endregion
+
+                        #region [public] {static} (IPropertyKey) NativeMaximumLuninanceRectangularCoverage: Gets a value representing the key to retrieve the property value
+                        /// <summary>
+                        /// <para>Gets a value representing the key to retrieve the property value.</para>
+                        /// <para>
+                        /// Native maximum luminance, in candela per square meter (cd/m2), that shall be physically possible to attain on the display with a 10% rectangular patch
+                        /// programmed to maximum code in the middle of the screen, while the remainder of the screen is programmed to 0 code.
+                        /// </para>
+                        /// <para>
+                        ///  <para><b>Key Composition</b></para>
+                        ///  <list type="bullet">
+                        ///   <item><description>Structure: <see cref="DisplayIdProperty.DataBlocks.Blocks.Identifier.DisplayParameters"/></description></item>
+                        ///   <item><description>Property: <see cref="DisplayIdProperty.DataBlocks.Blocks.DisplayParameters.Common.NativeMaximumLuninanceRectangularCoverage"/></description></item>
+                        ///   <item><description>Unit: <see cref="PropertyUnit.cdm2"/></description></item>
+                        ///  </list>
+                        /// </para>
+                        /// <para>
+                        ///  <para><b>Return Value</b></para>
+                        ///  <para>Type: <see cref="float"/>.</para>
+                        /// </para>
+                        /// <para>
+                        ///  <para><b>Remarks</b></para>
+                        ///  <para>2.0</para>
+                        /// </para>
+                        /// </summary>
+                        public static IPropertyKey NativeMaximumLuninanceRectangularCoverage => new PropertyKey(DisplayIdProperty.DataBlocks.Blocks.Identifier.DisplayParameters, DisplayIdProperty.DataBlocks.Blocks.DisplayParameters.Common.NativeMaximumLuninanceRectangularCoverage, PropertyUnit.cdm2);
+                        #endregion
+
+                        #region [public] {static} (IPropertyKey) NativeMinimumLuninance: Gets a value representing the key to retrieve the property value
+                        /// <summary>
+                        /// <para>Gets a value representing the key to retrieve the property value.</para>
+                        /// <para>
+                        /// Native minimum luminance, in candela per square meter (cd/m2), that shall be physically possible to attain on the display,
+                        /// using a corner box pattern in which a Source device sends a code of 0 everywhere except at the 2.5% rectangular patches
+                        /// at the corners of the screen, which are programmed to maximum code
+                        /// </para>
+                        /// <para>
+                        ///  <para><b>Key Composition</b></para>
+                        ///  <list type="bullet">
+                        ///   <item><description>Structure: <see cref="DisplayIdProperty.DataBlocks.Blocks.Identifier.DisplayParameters"/></description></item>
+                        ///   <item><description>Property: <see cref="DisplayIdProperty.DataBlocks.Blocks.DisplayParameters.Common.NativeMinimumLuninance"/></description></item>
+                        ///   <item><description>Unit: <see cref="PropertyUnit.cdm2"/></description></item>
+                        ///  </list>
+                        /// </para>
+                        /// <para>
+                        ///  <para><b>Return Value</b></para>
+                        ///  <para>Type: <see cref="float"/>.</para>
+                        /// </para>
+                        /// <para>
+                        ///  <para><b>Remarks</b></para>
+                        ///  <para>2.0</para>
+                        /// </para>
+                        /// </summary>
+                        public static IPropertyKey NativeMinimumLuninance => new PropertyKey(DisplayIdProperty.DataBlocks.Blocks.Identifier.DisplayParameters, DisplayIdProperty.DataBlocks.Blocks.DisplayParameters.Common.DisplayDeviceColorBitDepth, PropertyUnit.cdm2);
+                        #endregion
+
+                        #region [public] {static} (IPropertyKey) NativeColorDepth: Gets a value representing the key to retrieve the property value
+                        /// <summary>
+                        /// <para>Gets a value representing the key to retrieve the property value.</para>
+                        /// <para>All available bits per component (bpc) for display output rendering.</para>
+                        /// <para>
+                        ///  <para><b>Key Composition</b></para>
+                        ///  <list type="bullet">
+                        ///   <item><description>Structure: <see cref="DisplayIdProperty.DataBlocks.Blocks.Identifier.DisplayParameters"/></description></item>
+                        ///   <item><description>Property: <see cref="DisplayIdProperty.DataBlocks.Blocks.DisplayParameters.Common.NativeColorDepth"/></description></item>
+                        ///   <item><description>Unit: <see cref="PropertyUnit.bpc"/></description></item>
+                        ///  </list>
+                        /// </para>
+                        /// <para>
+                        ///  <para><b>Return Value</b></para>
+                        ///  <para>Type: <see cref="string"/>.</para>
+                        /// </para>
+                        /// <para>
+                        ///  <para><b>Remarks</b></para>
+                        ///  <para>2.0</para>
+                        /// </para>
+                        /// </summary>
+                        public static IPropertyKey NativeColorDepth => new PropertyKey(DisplayIdProperty.DataBlocks.Blocks.Identifier.DisplayParameters, DisplayIdProperty.DataBlocks.Blocks.DisplayParameters.Common.NativeColorDepth, PropertyUnit.bpc);
+                        #endregion
+
+                        #region [public] {static} (IPropertyKey) DisplayDeviceTechnology: Gets a value representing the key to retrieve the property value
+                        /// <summary>
+                        /// <para>Gets a value representing the key to retrieve the property value.</para>
+                        /// <para>Describes the technology used by the display device’s "glass".</para>
+                        /// <para>
+                        ///  <para><b>Key Composition</b></para>
+                        ///  <list type="bullet">
+                        ///   <item><description>Structure: <see cref="DisplayIdProperty.DataBlocks.Blocks.Identifier.DisplayParameters"/></description></item>
+                        ///   <item><description>Property: <see cref="DisplayIdProperty.DataBlocks.Blocks.DisplayParameters.Common.DisplayDeviceTechnology"/></description></item>
+                        ///   <item><description>Unit: <see cref="PropertyUnit.None"/></description></item>
+                        ///  </list>
+                        /// </para>
+                        /// <para>
+                        ///  <para><b>Return Value</b></para>
+                        ///  <para>Type: <see cref="string"/>.</para>
+                        /// </para>
+                        /// <para>
+                        ///  <para><b>Remarks</b></para>
+                        ///  <para>2.0</para>
+                        /// </para>
+                        /// </summary>
+                        public static IPropertyKey DisplayDeviceTechnology => new PropertyKey(DisplayIdProperty.DataBlocks.Blocks.Identifier.DisplayParameters, DisplayIdProperty.DataBlocks.Blocks.DisplayParameters.Common.DisplayDeviceTechnology);
+                        #endregion
+
+
+                        #region nested classes
+
+                        #region [public] {static} (class) Features: Definition of keys for a 'Features' data block section
+                        /// <summary>
+                        /// Definition of keys for a <b>Features</b> data block section.
+                        /// </summary>
+                        public static class Features
+                        {
+                            #region [public] {static} (IPropertyKey) AudioSupportOnVideoInterface: Gets a value representing the key to retrieve the property value
+                            /// <summary>
+                            /// <para>Gets a value representing the key to retrieve the property value.</para>
+                            /// <para>Determines if audio is supported on the video interface.</para>
+                            /// <para>
+                            ///  <para><b>Key Composition</b></para>
+                            ///  <list type="bullet">
+                            ///   <item><description>Structure: <see cref="DisplayIdProperty.DataBlocks.Blocks.Identifier.DisplayParameters"/></description></item>
+                            ///   <item><description>Property: <see cref="DisplayIdProperty.DataBlocks.Blocks.DisplayParameters.Features.AudioSupportOnVideoInterface"/></description></item>
+                            ///   <item><description>Unit: <see cref="PropertyUnit.None"/></description></item>
+                            ///  </list>
+                            /// </para>
+                            /// <para>
+                            ///  <para><b>Return Value</b></para>
+                            ///  <para>Type: <see cref="bool"/>.</para>
+                            /// </para>
+                            /// <para>
+                            ///  <para><b>Remarks</b></para>
+                            ///  <para>1.3</para>
+                            /// </para>
+                            /// </summary>
+                            public static IPropertyKey AudioSupportOnVideoInterface => new PropertyKey(DisplayIdProperty.DataBlocks.Blocks.Identifier.DisplayParameters, DisplayIdProperty.DataBlocks.Blocks.DisplayParameters.Features.AudioSupportOnVideoInterface);
+                            #endregion
+
+                            #region [public] {static} (IPropertyKey) SeparateAudioInputs: Gets a value representing the key to retrieve the property value
+                            /// <summary>
+                            /// <para>Gets a value representing the key to retrieve the property value.</para>
+                            /// <para>Determines if audio inputs are provided separately from the video interface.</para>
+                            /// <para>
+                            ///  <para><b>Key Composition</b></para>
+                            ///  <list type="bullet">
+                            ///   <item><description>Structure: <see cref="DisplayIdProperty.DataBlocks.Blocks.Identifier.DisplayParameters"/></description></item>
+                            ///   <item><description>Property: <see cref="DisplayIdProperty.DataBlocks.Blocks.DisplayParameters.Features.SeparateAudioInputs"/></description></item>
+                            ///   <item><description>Unit: <see cref="PropertyUnit.None"/></description></item>
+                            ///  </list>
+                            /// </para>
+                            /// <para>
+                            ///  <para><b>Return Value</b></para>
+                            ///  <para>Type: <see cref="bool"/>.</para>
+                            /// </para>
+                            /// <para>
+                            ///  <para><b>Remarks</b></para>
+                            ///  <para>1.3</para>
+                            /// </para>
+                            /// </summary>
+                            public static IPropertyKey SeparateAudioInputs => new PropertyKey(DisplayIdProperty.DataBlocks.Blocks.Identifier.DisplayParameters, DisplayIdProperty.DataBlocks.Blocks.DisplayParameters.Features.SeparateAudioInputs);
+                            #endregion
+
+                            #region [public] {static} (IPropertyKey) AudioInputOverride: Gets a value representing the key to retrieve the property value
+                            /// <summary>
+                            /// <para>Gets a value representing the key to retrieve the property value.</para>
+                            /// <para>
+                            /// Determines if audio information received via the video interface associated with this DisplayID structure will<br/>
+                            /// automatically override any other audio input channels provided and will be routed to the appropriate audio output devices or connectors.
+                            /// </para>
+                            /// <para>
+                            ///  <para><b>Key Composition</b></para>
+                            ///  <list type="bullet">
+                            ///   <item><description>Structure: <see cref="DisplayIdProperty.DataBlocks.Blocks.Identifier.DisplayParameters"/></description></item>
+                            ///   <item><description>Property: <see cref="DisplayIdProperty.DataBlocks.Blocks.DisplayParameters.Features.AudioInputOverride"/></description></item>
+                            ///   <item><description>Unit: <see cref="PropertyUnit.None"/></description></item>
+                            ///  </list>
+                            /// </para>
+                            /// <para>
+                            ///  <para><b>Return Value</b></para>
+                            ///  <para>Type: <see cref="bool"/>.</para>
+                            /// </para>
+                            /// <para>
+                            ///  <para><b>Remarks</b></para>
+                            ///  <para>1.3</para>
+                            /// </para>
+                            /// </summary>
+                            public static IPropertyKey AudioInputOverride => new PropertyKey(DisplayIdProperty.DataBlocks.Blocks.Identifier.DisplayParameters, DisplayIdProperty.DataBlocks.Blocks.DisplayParameters.Features.AudioInputOverride);
+                            #endregion
+
+                            #region [public] {static} (IPropertyKey) VesaPowerManagementSupported: Gets a value representing the key to retrieve the property value
+                            /// <summary>
+                            /// <para>Gets a value representing the key to retrieve the property value.</para>
+                            /// <para>Determines if the display supports the <b>VESA</b> Display Power Management(DPM) standard.</para>
+                            /// <para>
+                            ///  <para><b>Key Composition</b></para>
+                            ///  <list type="bullet">
+                            ///   <item><description>Structure: <see cref="DisplayIdProperty.DataBlocks.Blocks.Identifier.DisplayParameters"/></description></item>
+                            ///   <item><description>Property: <see cref="DisplayIdProperty.DataBlocks.Blocks.DisplayParameters.Features.VesaPowerManagementSupported"/></description></item>
+                            ///   <item><description>Unit: <see cref="PropertyUnit.None"/></description></item>
+                            ///  </list>
+                            /// </para>
+                            /// <para>
+                            ///  <para><b>Return Value</b></para>
+                            ///  <para>Type: <see cref="bool"/>.</para>
+                            /// </para>
+                            /// <para>
+                            ///  <para><b>Remarks</b></para>
+                            ///  <para>1.3</para>
+                            /// </para>
+                            /// </summary>
+                            public static IPropertyKey VesaPowerManagementSupported => new PropertyKey(DisplayIdProperty.DataBlocks.Blocks.Identifier.DisplayParameters, DisplayIdProperty.DataBlocks.Blocks.DisplayParameters.Features.VesaPowerManagementSupported);
+                            #endregion
+
+                            #region [public] {static} (IPropertyKey) FixedTiming: Gets a value representing the key to retrieve the property value
+                            /// <summary>
+                            /// <para>Gets a value representing the key to retrieve the property value.</para>
+                            /// <para>This property shall always be set to true when the display is capable of only a single fixed timing.</para>
+                            /// <para>
+                            ///  <para><b>Key Composition</b></para>
+                            ///  <list type="bullet">
+                            ///   <item><description>Structure: <see cref="DisplayIdProperty.DataBlocks.Blocks.Identifier.DisplayParameters"/></description></item>
+                            ///   <item><description>Property: <see cref="DisplayIdProperty.DataBlocks.Blocks.DisplayParameters.Features.FixedTiming"/></description></item>
+                            ///   <item><description>Unit: <see cref="PropertyUnit.None"/></description></item>
+                            ///  </list>
+                            /// </para>
+                            /// <para>
+                            ///  <para><b>Return Value</b></para>
+                            ///  <para>Type: <see cref="bool"/>.</para>
+                            /// </para>
+                            /// <para>
+                            ///  <para><b>Remarks</b></para>
+                            ///  <para>1.3</para>
+                            /// </para>
+                            /// </summary>
+                            public static IPropertyKey FixedTiming => new PropertyKey(DisplayIdProperty.DataBlocks.Blocks.Identifier.DisplayParameters, DisplayIdProperty.DataBlocks.Blocks.DisplayParameters.Features.FixedTiming);
+                            #endregion
+
+                            #region [public] {static} (IPropertyKey) FixedPixelFormat: Gets a value representing the key to retrieve the property value
+                            /// <summary>
+                            /// <para>Gets a value representing the key to retrieve the property value.</para>
+                            /// <para>
+                            /// This property shall always be set to true when the display is capable of supporting timings at only a single fixed pixel
+                            /// format as detailed in the Horizontal and Vertical pixel counts within this block.
+                            /// </para>
+                            /// <para>
+                            ///  <para><b>Key Composition</b></para>
+                            ///  <list type="bullet">
+                            ///   <item><description>Structure: <see cref="DisplayIdProperty.DataBlocks.Blocks.Identifier.DisplayParameters"/></description></item>
+                            ///   <item><description>Property: <see cref="DisplayIdProperty.DataBlocks.Blocks.DisplayParameters.Features.FixedPixelFormat"/></description></item>
+                            ///   <item><description>Unit: <see cref="PropertyUnit.None"/></description></item>
+                            ///  </list>
+                            /// </para>
+                            /// <para>
+                            ///  <para><b>Return Value</b></para>
+                            ///  <para>Type: <see cref="bool"/>.</para>
+                            /// </para>
+                            /// <para>
+                            ///  <para><b>Remarks</b></para>
+                            ///  <para>1.3</para>
+                            /// </para>
+                            /// </summary>
+                            public static IPropertyKey FixedPixelFormat => new PropertyKey(DisplayIdProperty.DataBlocks.Blocks.Identifier.DisplayParameters, DisplayIdProperty.DataBlocks.Blocks.DisplayParameters.Features.FixedPixelFormat);
+                            #endregion
+
+                            #region [public] {static} (IPropertyKey) SupportAI: Gets a value representing the key to retrieve the property value
+                            /// <summary>
+                            /// <para>Gets a value representing the key to retrieve the property value.</para>
+                            /// <para>This property shall always be set to true when supports and processes ACP, ISRC1 or ISRC2packets.</para>
+                            /// <para>
+                            ///  <para><b>Key Composition</b></para>
+                            ///  <list type="bullet">
+                            ///   <item><description>Structure: <see cref="DisplayIdProperty.DataBlocks.Blocks.Identifier.DisplayParameters"/></description></item>
+                            ///   <item><description>Property: <see cref="DisplayIdProperty.DataBlocks.Blocks.DisplayParameters.Features.SupportAI"/></description></item>
+                            ///   <item><description>Unit: <see cref="PropertyUnit.None"/></description></item>
+                            ///  </list>
+                            /// </para>
+                            /// <para>
+                            ///  <para><b>Return Value</b></para>
+                            ///  <para>Type: <see cref="bool"/>.</para>
+                            /// </para>
+                            /// <para>
+                            ///  <para><b>Remarks</b></para>
+                            ///  <para>1.3</para>
+                            /// </para>
+                            /// </summary>
+                            public static IPropertyKey SupportAI => new PropertyKey(DisplayIdProperty.DataBlocks.Blocks.Identifier.DisplayParameters, DisplayIdProperty.DataBlocks.Blocks.DisplayParameters.Features.SupportAI);
+                            #endregion
+
+                            #region [public] {static} (IPropertyKey) DeInterlacing: Gets a value representing the key to retrieve the property value
+                            /// <summary>
+                            /// <para>Gets a value representing the key to retrieve the property value.</para>
+                            /// <para>Determines if the display by default will de-interlace any interlaced video input and display it in a progressive-scan format.</para>
+                            /// <para>
+                            ///  <para><b>Key Composition</b></para>
+                            ///  <list type="bullet">
+                            ///   <item><description>Structure: <see cref="DisplayIdProperty.DataBlocks.Blocks.Identifier.DisplayParameters"/></description></item>
+                            ///   <item><description>Property: <see cref="DisplayIdProperty.DataBlocks.Blocks.DisplayParameters.Features.DeInterlacing"/></description></item>
+                            ///   <item><description>Unit: <see cref="PropertyUnit.None"/></description></item>
+                            ///  </list>
+                            /// </para>
+                            /// <para>
+                            ///  <para><b>Return Value</b></para>
+                            ///  <para>Type: <see cref="bool"/>.</para>
+                            /// </para>
+                            /// <para>
+                            ///  <para><b>Remarks</b></para>
+                            ///  <para>1.3</para>
+                            /// </para>
+                            /// </summary>
+                            public static IPropertyKey DeInterlacing => new PropertyKey(DisplayIdProperty.DataBlocks.Blocks.Identifier.DisplayParameters, DisplayIdProperty.DataBlocks.Blocks.DisplayParameters.Features.DeInterlacing);
+                            #endregion
+
+
+                            #region [public] {static} (IPropertyKey) ScanOrientation: Gets a value representing the key to retrieve the property value
+                            /// <summary>
+                            /// <para>Gets a value representing the key to retrieve the property value.</para>
+                            /// <para>Determines the scan orientation with respect to normal viewing position.</para>
+                            /// <para>
+                            ///  <para><b>Key Composition</b></para>
+                            ///  <list type="bullet">
+                            ///   <item><description>Structure: <see cref="DisplayIdProperty.DataBlocks.Blocks.Identifier.DisplayParameters"/></description></item>
+                            ///   <item><description>Property: <see cref="DisplayIdProperty.DataBlocks.Blocks.DisplayParameters.Features.ScanOrientation"/></description></item>
+                            ///   <item><description>Unit: <see cref="PropertyUnit.None"/></description></item>
+                            ///  </list>
+                            /// </para>
+                            /// <para>
+                            ///  <para><b>Return Value</b></para>
+                            ///  <para>Type: <see cref="string"/>.</para>
+                            /// </para>
+                            /// <para>
+                            ///  <para><b>Remarks</b></para>
+                            ///  <para>2.0</para>
+                            /// </para>
+                            /// </summary>
+                            public static IPropertyKey ScanOrientation => new PropertyKey(DisplayIdProperty.DataBlocks.Blocks.Identifier.DisplayParameters, DisplayIdProperty.DataBlocks.Blocks.DisplayParameters.Features.ScanOrientation);
+                            #endregion
+
+                            #region [public] {static} (IPropertyKey) LuminanceInformation: Gets a value representing the key to retrieve the property value
+                            /// <summary>
+                            /// <para>Gets a value representing the key to retrieve the property value.</para>
+                            /// <para>
+                            /// When Native Luminance-related fields in the Display Parameters data block contain positive
+                            /// values, this field indicates how to interpret those fields.If the Native Luminance-related fields
+                            /// contain a negative 0 value, -0, this field shall be cleared to all 0s.
+                            /// </para>
+                            /// <para>
+                            ///  <para><b>Key Composition</b></para>
+                            ///  <list type="bullet">
+                            ///   <item><description>Structure: <see cref="DisplayIdProperty.DataBlocks.Blocks.Identifier.DisplayParameters"/></description></item>
+                            ///   <item><description>Property: <see cref="DisplayIdProperty.DataBlocks.Blocks.DisplayParameters.Features.LuminanceInformation"/></description></item>
+                            ///   <item><description>Unit: <see cref="PropertyUnit.None"/></description></item>
+                            ///  </list>
+                            /// </para>
+                            /// <para>
+                            ///  <para><b>Return Value</b></para>
+                            ///  <para>Type: <see cref="string"/>.</para>
+                            /// </para>
+                            /// <para>
+                            ///  <para><b>Remarks</b></para>
+                            ///  <para>2.0</para>
+                            /// </para>
+                            /// </summary>
+                            public static IPropertyKey LuminanceInformation => new PropertyKey(DisplayIdProperty.DataBlocks.Blocks.Identifier.DisplayParameters, DisplayIdProperty.DataBlocks.Blocks.DisplayParameters.Features.LuminanceInformation);
+                            #endregion
+
+                            #region [public] {static} (IPropertyKey) ColorInformationCie1931: Gets a value representing the key to retrieve the property value
+                            /// <summary>
+                            /// <para>Gets a value representing the key to retrieve the property value.</para>
+                            /// <para>
+                            /// If is true all color information contained within this block shall be provided in terms of CIE 1931 (x, y) coordinates.
+                            /// Otherwise all color information contained within this block shall be provided in terms of CIE 1976 (u', v') coordinates.
+                            /// </para>
+                            /// <para>
+                            ///  <para><b>Key Composition</b></para>
+                            ///  <list type="bullet">
+                            ///   <item><description>Structure: <see cref="DisplayIdProperty.DataBlocks.Blocks.Identifier.DisplayParameters"/></description></item>
+                            ///   <item><description>Property: <see cref="DisplayIdProperty.DataBlocks.Blocks.DisplayParameters.Features.ColorInformationCie1931"/></description></item>
+                            ///   <item><description>Unit: <see cref="PropertyUnit.None"/></description></item>
+                            ///  </list>
+                            /// </para>
+                            /// <para>
+                            ///  <para><b>Return Value</b></para>
+                            ///  <para>Type: <see cref="bool"/>.</para>
+                            /// </para>
+                            /// <para>
+                            ///  <para><b>Remarks</b></para>
+                            ///  <para>2.0</para>
+                            /// </para>
+                            /// </summary>
+                            public static IPropertyKey ColorInformationCie1931 => new PropertyKey(DisplayIdProperty.DataBlocks.Blocks.Identifier.DisplayParameters, DisplayIdProperty.DataBlocks.Blocks.DisplayParameters.Features.ColorInformationCie1931);
+                            #endregion
+
+                            #region [public] {static} (IPropertyKey) AudioSpeakersIntegrated: Gets a value representing the key to retrieve the property value
+                            /// <summary>
+                            /// <para>Gets a value representing the key to retrieve the property value.</para>
+                            /// <para>Determines if the audio speakers integrated into the display.</para>
+                            /// <para>
+                            ///  <para><b>Key Composition</b></para>
+                            ///  <list type="bullet">
+                            ///   <item><description>Structure: <see cref="DisplayIdProperty.DataBlocks.Blocks.Identifier.DisplayParameters"/></description></item>
+                            ///   <item><description>Property: <see cref="DisplayIdProperty.DataBlocks.Blocks.DisplayParameters.Features.AudioSpeakersIntegrated"/></description></item>
+                            ///   <item><description>Unit: <see cref="PropertyUnit.None"/></description></item>
+                            ///  </list>
+                            /// </para>
+                            /// <para>
+                            ///  <para><b>Return Value</b></para>
+                            ///  <para>Type: <see cref="bool"/>.</para>
+                            /// </para>
+                            /// <para>
+                            ///  <para><b>Remarks</b></para>
+                            ///  <para>2.0</para>
+                            /// </para>
+                            /// </summary>
+                            public static IPropertyKey AudioSpeakersIntegrated => new PropertyKey(DisplayIdProperty.DataBlocks.Blocks.Identifier.DisplayParameters, DisplayIdProperty.DataBlocks.Blocks.DisplayParameters.Features.AudioSpeakersIntegrated);
+                            #endregion
+                        }
+                        #endregion
+
+                        #endregion
                     }
                     #endregion
 

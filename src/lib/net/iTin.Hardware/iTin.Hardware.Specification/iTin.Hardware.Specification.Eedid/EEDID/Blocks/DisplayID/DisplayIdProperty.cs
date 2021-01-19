@@ -1,4 +1,6 @@
 ﻿
+using System.Drawing;
+
 namespace iTin.Hardware.Specification.Eedid.Blocks.DisplayId
 {
     using System.Collections.Generic;
@@ -259,27 +261,165 @@ namespace iTin.Hardware.Specification.Eedid.Blocks.DisplayId
                 /// <summary>
                 /// Definition of properties for a <b>Display Parameters</b> data block.
                 /// </summary>
-                public enum DisplayParameters
+                public static class DisplayParameters
                 {
-                    [PropertyName("Horizontal Image Size")]
-                    [PropertyDescription("Horizontal Image Size")]
-                    [PropertyType(typeof(int))]
-                    HorizontalImageSize,
+                    /// <summary>
+                    /// Definition of common properties for a <b>Display Parameters</b> data block.
+                    /// </summary>
+                    public enum Common
+                    {
+                        [PropertyName("Horizontal Image Size")]
+                        [PropertyDescription("Horizontal Image Size")]
+                        [PropertyType(typeof(int))]
+                        HorizontalImageSize,
 
-                    [PropertyName("Vertical Image Size")]
-                    [PropertyDescription("Vertical Image Size")]
-                    [PropertyType(typeof(int))]
-                    VerticalImageSize,
+                        [PropertyName("Vertical Image Size")]
+                        [PropertyDescription("Vertical Image Size")]
+                        [PropertyType(typeof(int))]
+                        VerticalImageSize,
 
-                    [PropertyName("Horizontal Pixel Count")]
-                    [PropertyDescription("Horizontal Pixel Count")]
-                    [PropertyType(typeof(int))]
-                    HorizontalPixelCount,
+                        [PropertyName("Horizontal Pixel Count")]
+                        [PropertyDescription("Horizontal Pixel Count")]
+                        [PropertyType(typeof(int))]
+                        HorizontalPixelCount,
 
-                    [PropertyName("Vertical Pixel Count")]
-                    [PropertyDescription("Vertical Pixel Count")]
-                    [PropertyType(typeof(int))]
-                    VerticalPixelCount,
+                        [PropertyName("Vertical Pixel Count")]
+                        [PropertyDescription("Vertical Pixel Count")]
+                        [PropertyType(typeof(int))]
+                        VerticalPixelCount,
+
+                        [PropertyName("Gamma")]
+                        [PropertyDescription("Gamma Value")]
+                        [PropertyType(typeof(double))]
+                        Gamma,
+
+                        [PropertyName("Aspect Ratio")]
+                        [PropertyDescription("Aspect Ratio")]
+                        [PropertyType(typeof(double))]
+                        AspectRatio,
+
+                        [PropertyName("Display Overall Color Bit Depth")]
+                        [PropertyDescription("Indicate the dynamic range, in bits/color, provided by the display overall")]
+                        [PropertyType(typeof(double))]
+                        DisplayOverallColorBitDepth,
+
+                        [PropertyName("Display Device Color Bit Depth")]
+                        [PropertyDescription("Indicate the dynamic range provided by the display device (transducer)")]
+                        [PropertyType(typeof(double))]
+                        DisplayDeviceColorBitDepth,
+
+                        [PropertyName("Primary Color 1")]
+                        [PropertyDescription("Primary Color 1")]
+                        [PropertyType(typeof(PointF))]
+                        PrimaryColor1,
+
+                        [PropertyName("Primary Color 2")]
+                        [PropertyDescription("Primary Color 2")]
+                        [PropertyType(typeof(PointF))]
+                        PrimaryColor2,
+
+                        [PropertyName("Primary Color 3")]
+                        [PropertyDescription("Primary Color 3")]
+                        [PropertyType(typeof(PointF))]
+                        PrimaryColor3,
+
+                        [PropertyName("White Point")]
+                        [PropertyDescription("White Point")]
+                        [PropertyType(typeof(PointF))]
+                        WhitePoint,
+
+                        [PropertyName("Native Maximum Luninance Full Coverage")]
+                        [PropertyDescription("Native maximum luminance, in candela per square meter (cd/m2), that shall be physically possible to attain on the display with all pixels programmed to maximum code)")]
+                        [PropertyType(typeof(float))]
+                        NativeMaximumLuninanceFullCoverage,
+                        
+                        [PropertyName("Native Maximum Luninance Rectangular Coverage")]
+                        [PropertyDescription("Native maximum luminance, in candela per square meter (cd/m2), that shall be physically possible to attain on the display with a 10% rectangular patch programmed to maximum code in the middle of the screen")]
+                        [PropertyType(typeof(float))]
+                        NativeMaximumLuninanceRectangularCoverage,
+
+                        [PropertyName("Native MinimumLun Luninance")]
+                        [PropertyDescription("Native minimum luminance, in candela per square meter (cd/m2), that shall be physically possible to attain on the display")]
+                        [PropertyType(typeof(float))]
+                        NativeMinimumLuninance,
+
+                        [PropertyName("Native Color Depth")]
+                        [PropertyDescription("Native Color Depth. Ability to use all available bits per component(bpc) for display output rendering")]
+                        [PropertyType(typeof(string))]
+                        NativeColorDepth,
+
+                        [PropertyName("Display Device Technology")]
+                        [PropertyDescription("Describes the technology used by the display device’s 'glass'")]
+                        [PropertyType(typeof(string))]
+                        DisplayDeviceTechnology
+                    }
+
+                    /// <summary>
+                    /// Definition of properties for a <b>Features</b> data block section.
+                    /// </summary>
+                    public enum Features
+                    {
+                        [PropertyName("Audio Support On Video Interface")]
+                        [PropertyDescription("Determines if audio is supported on the video interface")]
+                        [PropertyType(typeof(bool))]
+                        AudioSupportOnVideoInterface,
+
+                        [PropertyName("Separate Audio Inputs")]
+                        [PropertyDescription("Determines if audio inputs are provided separately from the video interface")]
+                        [PropertyType(typeof(bool))]
+                        SeparateAudioInputs,
+
+                        [PropertyName("Separate Audio Inputs")]
+                        [PropertyDescription("Determines if audio information received via the video interface structure will automatically override any other audio input channels provided and will be routed to the appropriate audio output devices or connectors")]
+                        [PropertyType(typeof(bool))]
+                        AudioInputOverride,
+
+                        [PropertyName("Power Management")]
+                        [PropertyDescription("Determines if the display supports the VESA Display Power Management(DPM) standard")]
+                        [PropertyType(typeof(bool))]
+                        VesaPowerManagementSupported,
+
+                        [PropertyName("Fixed Timing")]
+                        [PropertyDescription("This property shall always be set to true when the display is capable of only a single fixed timing")]
+                        [PropertyType(typeof(bool))]
+                        FixedTiming,
+
+                        [PropertyName("Fixed Pixel Format")]
+                        [PropertyDescription("This property shall always be set to true when the display is capable of supporting timings at only a single fixed pixel format as detailed in the Horizontal and Vertical pixel counts within this block")]
+                        [PropertyType(typeof(bool))]
+                        FixedPixelFormat,
+
+                        [PropertyName("Support AI")]
+                        [PropertyDescription("This property shall always be set to true when supports and processes ACP, ISRC1 or ISRC2packets")]
+                        [PropertyType(typeof(bool))]
+                        SupportAI,
+
+                        [PropertyName("De-Interlacing")]
+                        [PropertyDescription("Determines if the display by default will de-interlace any interlaced video input and display it in a progressive-scan format")]
+                        [PropertyType(typeof(bool))]
+                        DeInterlacing,
+
+
+                        [PropertyName("Scan Orientation")]
+                        [PropertyDescription("Scan Orientation with respect to normal viewing position")]
+                        [PropertyType(typeof(string))]
+                        ScanOrientation,
+
+                        [PropertyName("Luminance Information")]
+                        [PropertyDescription("Luminance Information")]
+                        [PropertyType(typeof(string))]
+                        LuminanceInformation,
+
+                        [PropertyName("Color Information")]
+                        [PropertyDescription("Color Information provided int terms of CIE 1931 or CIE 1976")]
+                        [PropertyType(typeof(bool))]
+                        ColorInformationCie1931,
+
+                        [PropertyName("Audio Speakers Integrated")]
+                        [PropertyDescription("Determines if the audio speakers integrated into the display")]
+                        [PropertyType(typeof(bool))]
+                        AudioSpeakersIntegrated
+                    }
                 }
 
                 /// <summary>
