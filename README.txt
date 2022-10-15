@@ -11,10 +11,18 @@ Changes in this version (v1.0.7)
 · Fixed
   -----
 
-    - Fixes a problem that throws an exception when a property is not available
+    - Fixes an issue that generates an exception when a property that returns an object of type QueryPropertyDictionaryResult not available.
 
 · Added
   -----
+
+    - Added support for **netstandard2.1** 
+ 
+      - Add **SplitEnumerator** ref struct.
+   
+      - ByteReader class rewritten to work with Span in net core projects.
+
+    - Added sample project for net60
 
     - Added support for MacOS (In progress...)
  
@@ -27,8 +35,12 @@ Changes in this version (v1.0.7)
       | Catalina     11.0.1 |
       •—————————————————————•
     
-    - Added support for CEA blocks (In progres...)
+    - Added support for DI blocks (Implemented)
+
+    - Added support for CEA blocks (In progress...)
     
+    - Added support for DisplayID blocks (In progress...)
+
     - Added EEDID.Instance static property for gets all available EEDID structures for current system
 
     - Library documentation
@@ -49,9 +61,9 @@ Changes in this version (v1.0.7)
       •————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————•
       | Library                                      Version     Description                                                                       |
       •————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————•
-      | iTin.Core                                    2.0.0.3     Base library containing various extensions, helpers, common constants             |
+      | iTin.Core                                    2.0.0.5     Base library containing various extensions, helpers, common constants             |
       •————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————•
-      | iTin.Core.Hardware.Common                    1.0.0.2     Common Hardware Infrastructure                                                    |
+      | iTin.Core.Hardware.Common                    1.0.0.4     Common Hardware Infrastructure                                                    |
       •————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————•
       | iTin.Core.Hardware.Linux.Device.Desktop      1.0.0.0     Linux Hardware Infrastructure                                                     |
       •————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————•
@@ -59,15 +71,17 @@ Changes in this version (v1.0.7)
       •————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————•
       | iTin.Core.Hardware.Windows.Device.Desktop    1.0.0.0     Generic Common Hardware Abstractions                                              |
       •————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————•
-      | iTin.Core.Interop.Shared                     1.0.0.1     Generic Shared Interop Definitions                                                |
+      | iTin.Core.Interop.Shared                     1.0.0.3     Generic Shared Interop Definitions                                                |
       •————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————•
       | iTin.Core.Interop.Windows.Devices            1.0.0.0     Generic Win32 Interop Definitions, Data Structures, Constants...                  |
       •————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————•
       | iTin.Hardware.Abstractions.Devices           1.0.0.0     Generic Common Hardware Abstractions                                              |
       •————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————•
-      | iTin.Hardware.Specification.Eedid            1.0.0.7     Implementation of the E-EDID (Extended Display Identification Data) specification |
+      | iTin.Hardware.Specification.Eedid            1.0.0.8     Implementation of the E-EDID (Extended Display Identification Data) specification |
       •————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————•
-      | iTin.Logging                                 1.0.0.0     Logging library                                                                   |
+      | iTin.Hardware.Specification.IEEE             1.0.0.0     IEEE Registration Authority                                                       |
+      •————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————•
+      | iTin.Logging                                 1.0.0.1     Logging library                                                                   |
       •————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————•
 
 v1.0.6
