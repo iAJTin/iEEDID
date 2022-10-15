@@ -1,13 +1,13 @@
 ﻿
+using System.Collections.Generic;
+using System.Collections.ObjectModel;
+using System.Linq;
+
+using iTin.Core;
+using iTin.Core.Helpers.Enumerations;
+
 namespace iTin.Hardware.Specification.Eedid.Blocks.CEA.Sections.Descriptors.DataBlocks
 {
-    using System.Collections.Generic;
-    using System.Collections.ObjectModel;
-    using System.Linq;
-
-    using iTin.Core;
-    using iTin.Core.Helpers.Enumerations;
-
     /// <summary>
     /// Structure <see cref="VendorDataBlock"/> that contains the logic to decode the data of a block of the type <see cref="ShortVendorDescriptorSection"/>.
     /// </summary> 

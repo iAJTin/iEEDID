@@ -1,10 +1,8 @@
 
+using System.Collections.ObjectModel;
+
 namespace iTin.Hardware.Specification.Eedid.Blocks.EDID.Sections.Descriptors
 {
-    using System.Collections.ObjectModel;
-    using System.Linq;
-    using System.Text;
-
     // Data Block Descriptor: Manufacturer Spedified Data Descriptor Definition
     // •—————————————————————————————————————————————————————————————————————————————————————————————————•
     // | Offset       Name                      Lenght      Description                                  |

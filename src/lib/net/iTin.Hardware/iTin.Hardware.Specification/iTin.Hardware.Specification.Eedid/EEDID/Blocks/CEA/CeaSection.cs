@@ -1,10 +1,10 @@
 ﻿
+using iTin.Core.Hardware.Common;
+
+using iTin.Hardware.Specification.Eedid.Blocks.CEA.Sections;
+
 namespace iTin.Hardware.Specification.Eedid.Blocks.CEA
 {
-    using iTin.Core.Hardware.Common;
-
-    using Sections;
-
     /// <summary>
     /// Sections corresponding to a block of type <see cref="CeaBlock" />.
     /// </summary>

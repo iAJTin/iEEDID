@@ -1,13 +1,13 @@
 ﻿
+using System.Collections.Generic;
+using System.Collections.ObjectModel;
+using System.Diagnostics;
+
+using iTin.Core;
+using iTin.Core.Helpers.Enumerations;
+
 namespace iTin.Hardware.Specification.Eedid.Blocks.EDID.Sections
 {
-    using System.Collections.Generic;
-    using System.Collections.ObjectModel;
-    using System.Diagnostics;
-
-    using iTin.Core;
-    using iTin.Core.Helpers.Enumerations;
-
     // EDID Section: Basic Display Parameters & Features Information
     // •—————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————•
     // | Offset       Name                      Lenght      Description                                                              |

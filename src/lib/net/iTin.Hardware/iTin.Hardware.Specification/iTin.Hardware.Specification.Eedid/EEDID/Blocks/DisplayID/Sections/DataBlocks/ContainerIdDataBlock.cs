@@ -1,12 +1,12 @@
 
+using System.Collections.ObjectModel;
+using System.Diagnostics;
+using System.Globalization;
+
+using iTin.Hardware.Specification.Eedid.Blocks.DisplayId.Sections.DataBlocks.ComponentModel;
+
 namespace iTin.Hardware.Specification.Eedid.Blocks.DisplayId.Sections.DataBlocks
 {
-    using System.Collections.ObjectModel;
-    using System.Diagnostics;
-    using System.Globalization;
-
-    using ComponentModel;
-
     // Data Block: Vendor Specific Data Block
     // •—————————————————————————————————————————————————————————————————————————————————————————————————•
     // | Offset       Name                    Lenght      Description                                    |

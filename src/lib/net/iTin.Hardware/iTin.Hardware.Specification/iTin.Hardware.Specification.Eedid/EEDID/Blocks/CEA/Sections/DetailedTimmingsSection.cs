@@ -1,13 +1,13 @@
 ﻿
+using System;
+using System.Collections.Generic;
+using System.Collections.ObjectModel;
+using System.Linq;
+
+using iTin.Hardware.Specification.Eedid.Blocks.EDID.Sections.Descriptors;
+
 namespace iTin.Hardware.Specification.Eedid.Blocks.CEA.Sections
 {
-    using System;
-     using System.Collections.Generic;
-     using System.Collections.ObjectModel;
-     using System.Linq;
-
-    using iTin.Hardware.Specification.Eedid.Blocks.EDID.Sections.Descriptors;
-
     // CEA Section: Detailed Timings Descriptors Information
     // •————————————————————————————————————————————————————————————————————————————————————————————————————————•
     // | Offset       Name                      Lenght      Description                                         |

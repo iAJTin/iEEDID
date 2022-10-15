@@ -1,11 +1,11 @@
 ﻿
+using System.Collections.Generic;
+using System.Linq;
+
+using DeviceContext = iTin.Core.Interop.Shared.Windows.Development.Graphics.Legacy.Gdi.DeviceContext;
+
 namespace iTin.Core.Hardware.Windows.Device.Desktop.Monitor.Video
 {
-    using System.Collections.Generic;
-    using System.Linq;
-
-    using DeviceContext = Core.Interop.Shared.Windows.Development.Graphics.Legacy.Gdi.DeviceContext;
-
     /// <summary>
     /// Defines a set of Safe monitor native methods.
     /// </summary>

@@ -1,15 +1,15 @@
 ﻿
+using System.Linq;
+using System.Collections.Generic;
+using System.Collections.ObjectModel;
+using System.Diagnostics;
+
+using iTin.Core;
+using iTin.Core.Hardware.Common;
+using iTin.Core.Helpers;
+
 namespace iTin.Hardware.Specification.Eedid
 {
-    using System.Linq;
-    using System.Collections.Generic;
-    using System.Collections.ObjectModel;
-    using System.Diagnostics;
-
-    using iTin.Core;
-    using iTin.Core.Hardware.Common;
-    using iTin.Core.Helpers;
-
     /// <summary>
     /// Base class that represents a <b>section</b> of a <b>block</b> of the <see cref="EEDID"/> specification.
     /// </summary>

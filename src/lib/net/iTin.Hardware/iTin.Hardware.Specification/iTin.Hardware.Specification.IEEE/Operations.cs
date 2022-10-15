@@ -1,10 +1,10 @@
 ﻿
+using System.Collections.Generic;
+using System.Diagnostics;
+using System.Linq;
+
 namespace iTin.Hardware.Specification.IEEE
 {
-    using System.Collections.Generic;
-    using System.Diagnostics;
-    using System.Linq;
-
     /// <summary>
     /// Contains methods for retrieve the manufacturer
     /// </summary>
@@ -704,9 +704,340 @@ namespace iTin.Hardware.Specification.IEEE
             {"78AC44", "Dell Inc."},
             {"98C8B8", "vivo Mobile Communications Co., Ltd."},
             {"209EF7", "Extreme Networks, Inc."},
+            {"34BA38", "PAL MOHAN ELECTRONICS PVT LTD"},
+            {"9829A6", "COMPAL INFORMATION (KUNSHAN) CO., LTD."},
+            {"CC4D38", "Carnegie Technologies"},
+            {"08E689", "Apple, Inc."},
+            {"DC56E7", "Apple, Inc."},
+            {"A816D0", "Samsung Electronics Co., Ltd"},
+            {"A46CF1", "Samsung Electronics Co., Ltd"},
+            {"08AED6", "Samsung Electronics Co., Ltd"},
+            {"DCBFE9", "Motorola Mobility LLC, a Lenovo Company"},
+            {"B42D56", "Extreme Networks, Inc."},
+            {"4064A4", "THE FURUKAWA ELECTRIC CO., LTD"},
+            {"6CB2AE", "Cisco Systems, Inc"},
+            {"B0982B", "Sagemcom Broadband SAS"},
+            {"34FA9F", "Ruckus Wireless"},
+            {"F065C2", "Yanfeng Visteon Electronics Technology (Shanghai) Co., Ltd."},
+            {"70B7E2", "Jiangsu Miter Technology Co., Ltd."},
+            {"808DB7", "Hewlett Packard Enterprise"},
+            {"A09D86", "Alcatel-Lucent Shanghai Bell Co., Ltd"},
+            {"00C0FF", "Seagate Cloud Systems Inc"},
+            {"D45DDF", "PEGATRON CORPORATION"},
+            {"F8B568", "IEEE Registration Authority"},
+            {"2C6B7D", "Texas Instruments"},
+            {"88D171", "BEGHELLI S.P.A"},
+            {"A09DC1", "China Dragon Technology Limited"},
+            {"2C4205", "Lytx"},
+            {"A825EB", "Cambridge Industries(Group) Co., Ltd."},
+            {"34E380", "Genexis B.V."},
+            {"5C5819", "Jingsheng Technology Co., Ltd."},
+            {"B8CA04", "Holtek Semiconductor Inc."},
+            {"C4C563", "TECNO MOBILE LIMITED"},
+            {"80B708", "Blue Danube Systems, Inc"},
+            {"08BC20", "Hangzhou Royal Cloud Technology Co., Ltd"},
+            {"942A3F", "Diversey Inc"},
+            {"2031EB", "HDSN"},
+            {"F8C96C", "Fiberhome Telecommunication Technologies Co., LTD"},
+            {"844823", "WOXTER TECHNOLOGY Co.Ltd"},
+            {"F41E5E", "RtBrick Inc."},
+            {"6C7660", "KYOCERA CORPORATION"},
+            {"002102", "UpdateLogic Inc."},
+            {"505800", "WyTec International, Inc."},
+            {"C8D12A", "Comtrend Corporation"},
+            {"0CEAC9", "ARRIS Group, Inc."},
+            {"E82A44", "Liteon Technology Corporation"},
+            {"10A4BE", "SHENZHEN BILIAN ELECTRONIC CO.，LTD"},
+            {"947BBE", "Ubicquia"},
+            {"ECC06A", "PowerChord Group Limited"},
+            {"944996", "WiSilica Inc"},
+            {"F81D0F", "Hitron Technologies.Inc" },
+            {"58C935", "Chiun Mai Communication Systems, Inc"},
+            {"0094A1", "F5 Networks, Inc."},
+            {"BCF292", "PLANTRONICS, INC."},
+            {"0450DA", "Qiku Internet Network Scientific (Shenzhen) Co., Ltd"},
+            {"E820E2", "HUMAX Co., Ltd."},
+            {"0026A8", "DAEHAP HYPER-TECH"},
+            {"785C28", "Prime Motion Inc."},
+            {"F4EAB5", "Aerohive Networks Inc."},
+            {"8C5BF0", "ARRIS Group, Inc."},
+            {"1890D8", "Sagemcom Broadband SAS"},
+            {"88835D", "FN-LINK TECHNOLOGY LIMITED"},
+            {"EC9F0D", "IEEE Registration Authority"},
+            {"E078A3", "Shanghai Winner Information Technology Co., Inc"},
+            {"0005A7", "HYPERCHIP Inc."},
+            {"088466", "Novartis Pharma AG"},
+            {"309FFB", "Ardomus Networks Corporation"},
+            {"282373", "Digita"},
+            {"649A08", "Shenzhen SuperElectron Technology Co., LTD"},
+            {"68A682", "Shenzhen YOUHUA Technology Co., Ltd"},
+            {"587A62", "Texas Instruments"},
+            {"547A52", "CTE International srl"},
+            {"F06E0B", "Microsoft Corporation"},
+            {"346FED", "Enovation Controls"},
+            {"5433CB", "Apple, Inc."},
+            {"3408BC", "Apple, Inc."},
+            {"1C36BB", "Apple, Inc."},
+            {"3C2EFF", "Apple, Inc."},
+            {"00E025", "dit Co., Ltd."},
+            {"AC84C6", "TP-LINK TECHNOLOGIES CO., LTD."},
+            {"001530", "Dell EMC"},
+            {"0CB2B7", "Texas Instruments"},
+            {"24F677", "Apple, Inc."},
+            {"B0CA68", "Apple, Inc."},
+            {"C83C85", "Apple, Inc."},
+            {"78870D", "Unifiedgateways India Private Limited"},
+            {"A88200", "Hisense Electric Co., Ltd"},
+            {"3820A8", "ColorTokens, Inc."},
+            {"705896", "InShow Technology"},
+            {"000589", "National Datacomputer"},
+            {"3CA616", "vivo Mobile Communication Co., Ltd."},
+            {"9CE063", "Samsung Electronics Co., Ltd"},
+            {"D03169", "Samsung Electronics Co., Ltd"},
+            {"24F27F", "Hewlett Packard Enterprise"},
+            {"BC0543", "AVM GmbH"},
+            {"00B69F", "Latch"},
+            {"842C80", "Sichuan Changhong Electric Ltd."},
+            {"3CC079", "Shenzhen One-Nine Intelligent Electronic Science and Technology Co., Ltd"},
+            {"98C5DB", "Ericsson AB"},
+            {"149F3C", "Samsung Electronics Co., Ltd"},
+            {"FCEEE6", "FORMIKE ELECTRONIC CO., LTD"},
+            {"84E327", "TAILYN TECHNOLOGIES INC"},
+            {"0021B8", "Inphi Corporation"},
+            {"0C9160", "Hui Zhou Gaoshengda Technology Co., LTD"},
+            {"D8ED1C", "Magna Technology SL"},
+            {"D83134", "Roku, Inc"},
+            {"408BF6", "Shenzhen TCL New Technology Co., Ltd"},
+            {"00006B", "Silicon Graphics"},
+            {"74373B", "UNINET Co., Ltd."},
+            {"7C6456", "Samsung Electronics Co., Ltd"},
+            {"F46E24", "NEC Personal Computers, Ltd."},
+            {"888279", "Shenzhen RB-LINK Intelligent Technology Co.Ltd"},
+            {"68C63A", "Espressif Inc."},
+            {"A0648F", "ASKEY COMPUTER CORP"},
+            {"C850E9", "Raisecom Technology CO., LTD"},
+            {"10F163", "TNK CO., LTD"},
+            {"88DA1A", "Redpine Signals, Inc."},
+            {"98EF9B", "OHSUNG"},
+            {"14CF8D", "OHSUNG"},
+            {"104400", "HUAWEI TECHNOLOGIES CO., LTD"},
+            {"B0E17E", "HUAWEI TECHNOLOGIES CO., LTD"},
+            {"E4A7C5", "HUAWEI TECHNOLOGIES CO., LTD"},
+            {"5C8D2D", "Shanghai Wellpay Information Technology Co., Ltd"},
+            {"90FD9F", "Silicon Laboratories"},
+            {"B430C0", "York Instruments Ltd"},
+            {"E81DA8", "Ruckus Wireless"},
+            {"F03D03", "TECNO MOBILE LIMITED"},
+            {"DCF090", "Nubia Technology Co., Ltd."},
+            {"A0FE61", "Vivint Wireless Inc."},
+            {"5C2BF5", "Vivint Wireless Inc."},
+            {"CC5A53", "Cisco Systems, Inc"},
+            {"006088", "Analog Devices, Inc."},
+            {"084ACF", "GUANGDONG OPPO MOBILE TELECOMMUNICATIONS CORP., LTD"},
+            {"2C279E", "IEEE Registration Authority"},
+            {"8C5F48", "Continental Intelligent Transportation Systems LLC"},
+            {"947EB9", "National Narrowband Network Communications Pty Ltd"},
+            {"646E69", "Liteon Technology Corporation"},
+            {"706BB9", "Cisco Systems, Inc"},
+            {"D4389C", "Sony Mobile Communications Inc"},
+            {"00C0EE", "KYOCERA Display Corporation"},
+            {"245FDF", "KYOCERA CORPORATION"},
+            {"9C63ED", "zte corporation"},
+            {"74F661", "Schneider Electric Fire & Security Oy"},
+            {"B8634D", "Apple, Inc."},
+            {"24C42F", "Philips Lifeline"},
+            {"2CB21A", "Phicomm (Shanghai) Co., Ltd."},
+            {"A4E975", "Apple, Inc."},
+            {"3035AD", "Apple, Inc."},
+            {"844167", "Apple, Inc."},
+            {"9800C6", "Apple, Inc."},
+            {"AC1F74", "Apple, Inc."},
+            {"A85C2C", "Apple, Inc."},
+            {"00DB70", "Apple, Inc."},
+            {"FCE557", "Nokia Corporation"},
+            {"48C58D", "Lear Corporation GmbH"},
+            {"00289F", "Semptian Co., Ltd."},
+            {"9C305B", "Hon Hai Precision Ind.Co., Ltd."},
+            {"104E89", "Garmin International"},
+            {"D8C497", "Quanta Computer Inc."},
+            {"BCC342", "Panasonic Communications Co., Ltd."},
+            {"001BD3", "Panasonic Corporation AVC Networks Company"},
+            {"CC7EE7", "Panasonic Corporation AVC Networks Company"},
+            {"20C6EB", "Panasonic Corporation AVC Networks Company"},
+            {"64B5C6", "Nintendo Co., Ltd"},
+            {"2830AC", "Frontiir Co.Ltd."},
+            {"D4D2E5", "BKAV Corporation"},
+            {"0050B5", "FICHET SECURITE ELECTRONIQUE"},
+            {"001439", "Blonder Tongue Laboratories, Inc"},
+            {"20A6CD", "Hewlett Packard Enterprise"},
+            {"84802D", "Cisco Systems, Inc"},
+            {"001987", "Panasonic Mobile Communications Co., Ltd."},
+            {"E470B8", "Intel Corporate"},
+            {"741C27", "ITEL MOBILE LIMITED"},
+            {"00A0AC", "GILAT SATELLITE NETWORKS, LTD."},
+            {"002609", "Phyllis Co., Ltd."},
+            {"28F537", "IEEE Registration Authority"},
+            {"00869C", "Palo Alto Networks"},
+            {"94D9B3", "TP-LINK TECHNOLOGIES CO., LTD."},
+            {"C84029", "Fiberhome Telecommunication Technologies Co., LTD"},
+            {"F86EEE", "HUAWEI TECHNOLOGIES CO., LTD"},
+            {"7802B1", "Cisco Systems, Inc"},
+            {"B40F3B", "Tenda Technology Co., Ltd.Dongguan branch"},
+            {"00188D", "Nokia Danmark A/S"},
+            {"0015AB", "PRO CO SOUND INC"},
+            {"5876C5", "DIGI I'S LTD"},
+            {"A8B2DA", "FUJITSU LIMITED"},
+            {"001354", "Zcomax Technologies, Inc."},
+            {"78D800", "IEEE Registration Authority"},
+            {"0835B2", "CoreEdge Networks Co., Ltd"},
+            {"4C49E3", "Xiaomi Communications Co Ltd"},
+            {"245880", "VIZEO"},
+            {"54666C", "Shenzhen YOUHUA Technology Co., Ltd"},
+            {"A89675", "Motorola Mobility LLC, a Lenovo Company"},
+            {"389AF6", "Samsung Electronics Co., Ltd"},
+            {"E0AA96", "Samsung Electronics Co., Ltd"},
+            {"507705", "Samsung Electronics Co., Ltd"},
+            {"F83441", "Intel Corporate"},
+            {"28D436", "Jiangsu dewosi electric co., LTD"},
+            {"D4B27A", "ARRIS Group, Inc."},
+            {"44EA4B", "Actlas Inc."},
+            {"C4CB6B", "Airista Flow, Inc."},
+            {"188090", "Cisco Systems, Inc"},
+            {"786256", "HUAWEI TECHNOLOGIES CO., LTD"},
+            {"B05508", "HUAWEI TECHNOLOGIES CO., LTD"},
+            {"B875C0", "PayPal, Inc."},
+            {"001C71", "Emergent Electronics"},
+            {"001A93", "ERCO Leuchten GmbH"},
+            {"94F665", "Ruckus Wireless"},
+            {"B090D4", "Shenzhen Hoin Internet Technology Co., Ltd"},
+            {"C0BAE6", "Application Solutions (Electronics and Vision) Ltd"},
+            {"8C9F3B", "Qingdao Hisense Communications Co.,Ltd."},
+            {"0014B8", "Hill-Rom"},
+            {"ACED5C", "Intel Corporate"},
+            {"842096", "SHENZHEN RF-LINK TECHNOLOGY CO.,LTD."},
+            {"B4C170", "Yi chip Microelectronics(Hangzhou) Co., Ltd"},
+            {"AC6706", "Ruckus Wireless"},
+            {"044FAA", "Ruckus Wireless"},
+            {"589396", "Ruckus Wireless"},
+            {"001F41", "Ruckus Wireless"},
+            {"C4108A", "Ruckus Wireless"},
+            {"F0B052", "Ruckus Wireless"},
+            {"70DF2F", "Cisco Systems, Inc"},
+            {"3894E0", "Syrotech Networks.Ltd."},
+            {"34F64B", "Intel Corporate"},
+            {"F46BEF", "Sagemcom Broadband SAS"},
+            {"08306B", "Palo Alto Networks"},
+            {"10CDB6", "Essential Products, Inc."},
+            {"A4F3E7", "Integrated Device Technology (Malaysia) Sdn. Bhd."},
+            {"E43A6E", "Shenzhen Zeroone Technology CO., LTD"},
+            {"7CE2CA", "Juniper Networks"},
+            {"9061AE", "Intel Corporate"},
+            {"6CF9D2", "CHENGDU POVODO ELECTRONIC TECHNOLOGY CO., LTD"},
+            {"30B62D", "Mojo Networks, Inc."},
+            {"50184C", "Platina Systems Inc."},
+            {"F4B7B3", "vivo Mobile Communication Co., Ltd."},
+            {"CC03D9", "Cisco Meraki"},
+            {"FCA667", "Amazon Technologies Inc."},
+            {"C81FEA", "Avaya Inc"},
+            {"0027E3", "Cisco Systems, Inc"},
+            {"0018AE", "TVT CO., LTD"},
+            {"8891DD", "Racktivity"},
+            {"1C4593", "Texas Instruments"},
+            {"90EC50", "C.O.B.O.SPA"},
+            {"E0D848", "Dell Inc."},
+            {"60271C", "VIDEOR E.Hartig GmbH"},
+            {"00EC0A", "Xiaomi Communications Co Ltd"},
+            {"C8D7B0", "Samsung Electronics Co., Ltd"},
+            {"6C60EB", "ZHI YUAN ELECTRONICS CO., LIMITED"},
+            {"74DADA", "D-Link International"},
+            {"D8F1F0", "Pepxim International Limited"},
+            {"DCC8F5", "Shanghai UMEinfo CO., LTD."},
+            {"88D7F6", "ASUSTek COMPUTER INC."},
+            {"9097F3", "Samsung Electronics Co., Ltd"},
+            {"7C1C68", "Samsung Electronics Co., Ltd"},
+            {"C087EB", "Samsung Electronics Co., Ltd"},
+            {"04714B", "IEEE Registration Authority"},
+            {"2C41A1", "Bose Corporation"},
+            {"4C38D8", "ARRIS Group, Inc."},
+            {"447BBB", "Shenzhen YOUHUA Technology Co., Ltd"},
+            {"9C7BD2", "NEOLAB Convergence"},
+            {"D0F88C", "Motorola (Wuhan) Mobility Technologies Communication Co., Ltd."},
+            {"2CB115", "Integrated Device Technology (Malaysia) Sdn. Bhd."},
+            {"34873D", "Quectel Wireless Solution Co., Ltd."},
+            {"10D07A", "AMPAK Technology, Inc."},
+            {"D4C1C8", "zte corporation"},
+            {"88D274", "zte corporation"},
+            {"002449", "Shen Zhen Lite Star Electronics Technology Co., Ltd"},
+            {"00E18C", "Intel Corporate"},
+            {"847933", "profichip GmbH"},
+            {"881544", "Cisco Meraki"},
+            {"C4ABB2", "vivo Mobile Communication Co., Ltd."},
+            {"80B234", "Technicolor CH USA Inc."},
+            {"44B412", "SIUS AG"},
+            {"0CB912", "JM-DATA GmbH"},
+            {"3CA308", "Texas Instruments"},
+            {"F43E61", "SHENZHEN GONGJIN ELECTRONICS CO., LT"},
+            {"B4417A", "SHENZHEN GONGJIN ELECTRONICS CO., LT"},
+            {"185207", "SICHUAN TIANYI COMHEART TELECOMCO., LTD"},
+            {"000062", "BULL HN INFORMATION SYSTEMS"},
+            {"E8C1D7", "Philips"},
+            {"4C8120", "Taicang T&W Electronics"},
+            {"28A6DB", "HUAWEI TECHNOLOGIES CO., LTD"},
+            {"14A0F8","HUAWEI TECHNOLOGIES CO., LTD"},
+            {"C8F86D", "Alcatel-Lucent Shanghai Bell Co., Ltd"},
+            {"6045CB", "ASUSTek COMPUTER INC."},
+            {"00118B", "Alcatel-Lucent Enterprise"},
+            {"00E0B1", "Alcatel-Lucent Enterprise"},
+            {"00E0DA", "Alcatel-Lucent Enterprise"},
+            {"F8BE0D", "A2UICT Co., Ltd."},
+            {"E442A6", "Intel Corporate"},
+            {"3C678C", "HUAWEI TECHNOLOGIES CO., LTD"},
+            {"D4503F", "GUANGDONG OPPO MOBILE TELECOMMUNICATIONS CORP., LTD"},
+            {"388C50", "LG Electronics"},
+            {"DC0856", "Alcatel-Lucent Enterprise"},
+            {"1CDA27", "vivo Mobile Communication Co., Ltd."},
+            {"90F305", "HUMAX Co., Ltd."},
+            {"4095BD", "NTmore.Co., Ltd"},
+            {"98AAFC", "IEEE Registration Authority"},
+            {"00143F", "Hotway Technology Corporation"},
+            {"D055B2", "Integrated Device Technology (Malaysia) Sdn. Bhd."},
+            {"144FD7", "IEEE Registration Authority"},
+            {"B85510", "Zioncom Electronics (Shenzhen) Ltd."},
+            {"049573", "zte corporation"},
+            {"F0D7AA", "Motorola Mobility LLC, a Lenovo Company"},
+            {"F8FF0B", "lectronic Technology Inc."},
+            {"7C6BF7", "NTI co., ltd."},
+            {"00D318", "SPG Controls"},
+            {"3096FB", "Samsung Electronics Co., Ltd"},
+            {"4827EA", "Samsung Electronics Co., Ltd"},
+            {"7C787E", "Samsung Electronics Co., Ltd"},
+            {"245BA7", "Apple, Inc."},
+            {"70F087", "Apple, Inc."},
+            {"E0C63C", "SICHUAN TIANYI COMHEART TELECOMCO., LTD"},
+            {"000C46", "Allied Telesyn Inc."},
+            {"001F72", "QingDao Hiphone Technology Co,.Ltd"},
+            {"002365", "Insta Elektro GmbH"},
+            {"6091F3", "vivo Mobile Communication Co., Ltd."},
+            {"28395E", "Samsung Electronics Co., Ltd"},
+            {"38295A", "GUANGDONG OPPO MOBILE TELECOMMUNICATIONS CORP., LTD"},
+            {"88E628", "Shenzhen Kezhonglong Optoelectronic Technology Co., Ltd"},
+            {"58238C", "Technicolor CH USA Inc."},
+            {"CC82EB", "KYOCERA CORPORATION"},
+            {"14987D", "Technicolor CH USA Inc."},
+            {"D4CF37", "Symbolic IO"},
+            {"D47DFC", "TECNO MOBILE LIMITED"},
+            {"409F38", "AzureWave Technology Inc."},
+            {"000631", "Calix Inc."},
+            {"BC2F3D", "vivo Mobile Communication Co., Ltd."},
+            {"40FA7F", "Preh Car Connect GmbH"},
+            {"000DBB", "Nippon Dentsu Co., Ltd."},
+            {"2C7E81", "ARRIS Group, Inc."},
+            {"407D0F", "HUAWEI TECHNOLOGIES CO., LTD"},
+            {"68CC6E", "HUAWEI TECHNOLOGIES CO., LTD"},
+            {"3034D2", "Availink, Inc."},
+            {"504061", "Nokia"},
         };
-
-
+        
         /// <summary>
         /// Returns the manufacturer name for a given code.<br/>
         /// If code not exist always returns the <b>Unknown</b> value.
@@ -731,422 +1062,90 @@ namespace iTin.Hardware.Specification.IEEE
     }
 }
 
-//34BA38 PAL MOHAN ELECTRONICS PVT LTD
-//9829A6 COMPAL INFORMATION (KUNSHAN) CO., LTD.
-//CC4D38 Carnegie Technologies
-//08E689, "Apple, Inc.
-//DC56E7 Apple, Inc.
-//A816D0 Samsung Electronics Co., Ltd
-//A46CF1", "Samsung Electronics Co., Ltd
-//08AED6 Samsung Electronics Co., Ltd
-//DCBFE9", "Motorola Mobility LLC, a Lenovo Company
-//B42D56", "Extreme Networks, Inc.
-//4064A4 THE FURUKAWA ELECTRIC CO., LTD
-//6CB2AE Cisco Systems, Inc
-//B0982B", "Sagemcom Broadband SAS
-//34FA9F Ruckus Wireless
-//F065C2", "Yanfeng Visteon Electronics Technology (Shanghai) Co., Ltd.
-//70B7E2 Jiangsu Miter Technology Co., Ltd.
-//808DB7 Hewlett Packard Enterprise
-//A09D86 Alcatel-Lucent Shanghai Bell Co., Ltd
-//00C0FF Seagate Cloud Systems Inc
-//D45DDF", "PEGATRON CORPORATION
-//F8B568 IEEE Registration Authority
-//2C6B7D Texas Instruments
-//88D171, "BEGHELLI S.P.A
-//A09DC1", "China Dragon Technology Limited
-//2C4205 Lytx
-//A825EB Cambridge Industries(Group) Co., Ltd.
-//34E380, "Genexis B.V.
-//5C5819 Jingsheng Technology Co., Ltd.
-//B8CA04 Holtek Semiconductor Inc.
-//C4C563 TECNO MOBILE LIMITED
-//80B708 Blue Danube Systems, Inc
-//08BC20 Hangzhou Royal Cloud Technology Co., Ltd
-//942A3F Diversey Inc
-//2031EB HDSN
-//F8C96C Fiberhome Telecommunication Technologies Co., LTD
-//844823, "WOXTER TECHNOLOGY Co.Ltd
-//F41E5E", "RtBrick Inc.
-//6C7660 KYOCERA CORPORATION
-//002102, "UpdateLogic Inc.
-//505800, "WyTec International, Inc.
-//C8D12A Comtrend Corporation
-//0CEAC9 ARRIS Group, Inc.
-//E82A44 Liteon Technology Corporation
-//10A4BE SHENZHEN BILIAN ELECTRONIC CO.，LTD
-//947BBE Ubicquia
-//ECC06A PowerChord Group Limited
-//944996, "WiSilica Inc
-//F81D0F Hitron Technologies.Inc
-//58C935 Chiun Mai Communication Systems, Inc
-//0094A1 F5 Networks, Inc.
-//BCF292 PLANTRONICS, INC.
-//0450DA Qiku Internet Network Scientific (Shenzhen) Co., Ltd
-//E820E2", "HUMAX Co., Ltd.
-//0026A8 DAEHAP HYPER-TECH
-//785C28 Prime Motion Inc.
-//F4EAB5 Aerohive Networks Inc.
-//8C5BF0 ARRIS Group, Inc.
-//1890D8, "Sagemcom Broadband SAS
-//88835D, "FN-LINK TECHNOLOGY LIMITED
-//EC9F0D", "IEEE Registration Authority
-//E078A3", "Shanghai Winner Information Technology Co., Inc
-//0005A7 HYPERCHIP Inc.
-//088466, "Novartis Pharma AG
-//309FFB Ardomus Networks Corporation
-//282373, "Digita
-//649A08 Shenzhen SuperElectron Technology Co., LTD
-//68A682 Shenzhen YOUHUA Technology Co., Ltd
-//587A62 Texas Instruments
-//547A52 CTE International srl
-//F06E0B Microsoft Corporation
-//346FED Enovation Controls
-//5433CB Apple, Inc.
-//3408BC Apple, Inc.
-//1C36BB Apple, Inc.
-//3C2EFF Apple, Inc.
-//00E025, "dit Co., Ltd.
-//AC84C6 TP-LINK TECHNOLOGIES CO., LTD.
-//001530, "Dell EMC
-//0CB2B7 Texas Instruments
-//24F677, "Apple, Inc.
-//B0CA68 Apple, Inc.
-//C83C85 Apple, Inc.
-//78870D, "Unifiedgateways India Private Limited
-//A88200 Hisense Electric Co., Ltd
-//3820A8 ColorTokens, Inc.
-//705896, "InShow Technology
-//000589, "National Datacomputer
-//3CA616 vivo Mobile Communication Co., Ltd.
-//9CE063 Samsung Electronics Co., Ltd
-//D03169", "Samsung Electronics Co., Ltd
-//24F27F, "Hewlett Packard Enterprise
-//BC0543", "AVM GmbH
-//00B69F Latch
-//842C80 Sichuan Changhong Electric Ltd.
-//3CC079 Shenzhen One-Nine Intelligent Electronic Science and Technology Co., Ltd
-//98C5DB Ericsson AB
-//149F3C Samsung Electronics Co., Ltd
-//FCEEE6", "FORMIKE ELECTRONIC CO., LTD
-//84E327, "TAILYN TECHNOLOGIES INC
-//0021B8 Inphi Corporation
-//0C9160 Hui Zhou Gaoshengda Technology Co., LTD
-//D8ED1C", "Magna Technology SL
-//D83134", "Roku, Inc
-//408BF6 Shenzhen TCL New Technology Co., Ltd
-//00006B Silicon Graphics
-//74373B UNINET Co., Ltd.
-//7C6456 Samsung Electronics Co., Ltd
-//F46E24", "NEC Personal Computers, Ltd.
-//888279, "Shenzhen RB-LINK Intelligent Technology Co.Ltd
-//68C63A Espressif Inc.
-//A0648F ASKEY COMPUTER CORP
-//C850E9 Raisecom Technology CO., LTD
-//10F163, "TNK CO., LTD
-//88DA1A Redpine Signals, Inc.
-//98EF9B OHSUNG
-//14CF8D OHSUNG
-//104400, "HUAWEI TECHNOLOGIES CO., LTD
-//B0E17E", "HUAWEI TECHNOLOGIES CO., LTD
-//E4A7C5", "HUAWEI TECHNOLOGIES CO., LTD
-//5C8D2D Shanghai Wellpay Information Technology Co., Ltd
-//90FD9F Silicon Laboratories
-//B430C0", "York Instruments Ltd
-//E81DA8", "Ruckus Wireless
-//F03D03 TECNO MOBILE LIMITED
-//DCF090 Nubia Technology Co., Ltd.
-//A0FE61 Vivint Wireless Inc.
-//5C2BF5 Vivint Wireless Inc.
-//CC5A53 Cisco Systems, Inc
-//006088, "Analog Devices, Inc.
-//084ACF GUANGDONG OPPO MOBILE TELECOMMUNICATIONS CORP., LTD
-//2C279E IEEE Registration Authority
-//8C5F48 Continental Intelligent Transportation Systems LLC
-//947EB9 National Narrowband Network Communications Pty Ltd
-//646E69, "Liteon Technology Corporation
-//706BB9 Cisco Systems, Inc
-//D4389C", "Sony Mobile Communications Inc
-//00C0EE KYOCERA Display Corporation
-//245FDF KYOCERA CORPORATION
-//9C63ED zte corporation
-//74F661, "Schneider Electric Fire & Security Oy
-//B8634D Apple, Inc.
-//24C42F Philips Lifeline
-//2CB21A Phicomm (Shanghai) Co., Ltd.
-//A4E975 Apple, Inc.
-//3035AD Apple, Inc.
-//844167, "Apple, Inc.
-//9800C6 Apple, Inc.
-//AC1F74 Apple, Inc.
-//A85C2C Apple, Inc.
-//00DB70 Apple, Inc.
-//FCE557 Nokia Corporation
-//48C58D Lear Corporation GmbH
-//00289F, "Semptian Co., Ltd.
-//9C305B Hon Hai Precision Ind.Co., Ltd.
-//104E89, "Garmin International
-//D8C497 Quanta Computer Inc.
-//BCC342 Panasonic Communications Co., Ltd.
-//001BD3 Panasonic Corporation AVC Networks Company
-//CC7EE7 Panasonic Corporation AVC Networks Company
-//20C6EB Panasonic Corporation AVC Networks Company
-//64B5C6 Nintendo Co., Ltd
-//2830AC Frontiir Co.Ltd.
-//D4D2E5 BKAV Corporation
-//0050B5 FICHET SECURITE ELECTRONIQUE
-//001439, "Blonder Tongue Laboratories, Inc
-//20A6CD Hewlett Packard Enterprise
-//84802D, "Cisco Systems, Inc
-//001987, "Panasonic Mobile Communications Co., Ltd.
-//E470B8 Intel Corporate
-//741C27 ITEL MOBILE LIMITED
-//00A0AC GILAT SATELLITE NETWORKS, LTD.
-//002609, "Phyllis Co., Ltd.
-//28F537, "IEEE Registration Authority
-//00869C Palo Alto Networks
-//94D9B3 TP-LINK TECHNOLOGIES CO., LTD.
-//C84029 Fiberhome Telecommunication Technologies Co., LTD
-//F86EEE", "HUAWEI TECHNOLOGIES CO., LTD
-//7802B1 Cisco Systems, Inc
-//B40F3B", "Tenda Technology Co., Ltd.Dongguan branch
-//00188D, "Nokia Danmark A/S
-//0015AB PRO CO SOUND INC
-//5876C5 DIGI I'S LTD
-//A8B2DA FUJITSU LIMITED
-//001354, "Zcomax Technologies, Inc.
-//78D800, "IEEE Registration Authority
-//0835B2 CoreEdge Networks Co., Ltd
-//4C49E3 Xiaomi Communications Co Ltd
-//245880, "VIZEO
-//54666C Shenzhen YOUHUA Technology Co., Ltd
-//A89675", "Motorola Mobility LLC, a Lenovo Company
-//389AF6 Samsung Electronics Co., Ltd
-//E0AA96", "Samsung Electronics Co., Ltd
-//507705, "Samsung Electronics Co., Ltd
-//F83441", "Intel Corporate
-//28D436, "Jiangsu dewosi electric co., LTD
-//D4B27A", "ARRIS Group, Inc.
-//44EA4B Actlas Inc.
-//C4CB6B Airista Flow, Inc.
-//188090, "Cisco Systems, Inc
-//786256, "HUAWEI TECHNOLOGIES CO., LTD
-//B05508", "HUAWEI TECHNOLOGIES CO., LTD
-//B875C0", "PayPal, Inc.
-//001C71 Emergent Electronics
-//001A93 ERCO Leuchten GmbH
-//94F665, "Ruckus Wireless
-//B090D4 Shenzhen Hoin Internet Technology Co., Ltd
-//C0BAE6", "Application Solutions (Electronics and Vision) Ltd
-//8C9F3B Qingdao Hisense Communications Co.,Ltd.
-//0014B8 Hill-Rom
-//ACED5C", "Intel Corporate
-//842096, "SHENZHEN RF-LINK TECHNOLOGY CO.,LTD.
-//B4C170 Yi chip Microelectronics(Hangzhou) Co., Ltd
-//AC6706", "Ruckus Wireless
-//044FAA Ruckus Wireless
-//589396, "Ruckus Wireless
-//001F41, "Ruckus Wireless
-//C4108A Ruckus Wireless
-//F0B052", "Ruckus Wireless
-//70DF2F Cisco Systems, Inc
-//3894E0, "Syrotech Networks.Ltd.
-//34F64B Intel Corporate
-//F46BEF", "Sagemcom Broadband SAS
-//08306B Palo Alto Networks
-//10CDB6 Essential Products, Inc.
-//A4F3E7 Integrated Device Technology (Malaysia) Sdn. Bhd.
-//E43A6E Shenzhen Zeroone Technology CO., LTD
-//7CE2CA Juniper Networks
-//9061AE Intel Corporate
-//6CF9D2 CHENGDU POVODO ELECTRONIC TECHNOLOGY CO., LTD
-//30B62D Mojo Networks, Inc.
-//50184C Platina Systems Inc.
-//F4B7B3 vivo Mobile Communication Co., Ltd.
-//CC03D9 Cisco Meraki
-//FCA667", "Amazon Technologies Inc.
-//C81FEA Avaya Inc
-//0027E3, "Cisco Systems, Inc
-//0018AE TVT CO., LTD
-//8891DD Racktivity
-//1C4593 Texas Instruments
-//90EC50 C.O.B.O.SPA
-//E0D848", "Dell Inc.
-//60271C VIDEOR E.Hartig GmbH
-//00EC0A Xiaomi Communications Co Ltd
-//C8D7B0", "Samsung Electronics Co., Ltd
-//6C60EB ZHI YUAN ELECTRONICS CO., LIMITED
-//74DADA D-Link International
-//D8F1F0 Pepxim International Limited
-//DCC8F5 Shanghai UMEinfo CO., LTD.
-//88D7F6, "ASUSTek COMPUTER INC.
-//9097F3, "Samsung Electronics Co., Ltd
-//7C1C68 Samsung Electronics Co., Ltd
-//C087EB", "Samsung Electronics Co., Ltd
-//04714B IEEE Registration Authority
-//2C41A1 Bose Corporation
-//4C38D8 ARRIS Group, Inc.
-//447BBB Shenzhen YOUHUA Technology Co., Ltd
-//9C7BD2 NEOLAB Convergence
-//D0F88C", "Motorola (Wuhan) Mobility Technologies Communication Co., Ltd.
-//2CB115 Integrated Device Technology (Malaysia) Sdn. Bhd.
-//34873D, "Quectel Wireless Solution Co., Ltd.
-//10D07A AMPAK Technology, Inc.
-//D4C1C8 zte corporation
-//88D274, "zte corporation
-//002449, "Shen Zhen Lite Star Electronics Technology Co., Ltd
-//00E18C Intel Corporate
-//847933, "profichip GmbH
-//881544, "Cisco Meraki
-//C4ABB2 vivo Mobile Communication Co., Ltd.
-//80B234 Technicolor CH USA Inc.
-//44B412 SIUS AG
-//0CB912 JM-DATA GmbH
-//3CA308 Texas Instruments
-//F43E61", "SHENZHEN GONGJIN ELECTRONICS CO., LT
-//B4417A", "SHENZHEN GONGJIN ELECTRONICS CO., LT
-//185207, "SICHUAN TIANYI COMHEART TELECOMCO., LTD
-//000062, "BULL HN INFORMATION SYSTEMS
-//E8C1D7 Philips
-//4C8120 Taicang T&W Electronics
-//28A6DB HUAWEI TECHNOLOGIES CO., LTD
-//14A0F8 HUAWEI TECHNOLOGIES CO., LTD
-//C8F86D", "Alcatel-Lucent Shanghai Bell Co., Ltd
-//6045CB ASUSTek COMPUTER INC.
-//00118B Alcatel-Lucent Enterprise
-//00E0B1 Alcatel-Lucent Enterprise
-//00E0DA Alcatel-Lucent Enterprise
-//F8BE0D A2UICT Co., Ltd.
-//E442A6 Intel Corporate
-//3C678C HUAWEI TECHNOLOGIES CO., LTD
-//D4503F", "GUANGDONG OPPO MOBILE TELECOMMUNICATIONS CORP., LTD
-//388C50 LG Electronics
-//DC0856", "Alcatel-Lucent Enterprise
-//1CDA27 vivo Mobile Communication Co., Ltd.
-//90F305, "HUMAX Co., Ltd.
-//4095BD NTmore.Co., Ltd
-//98AAFC IEEE Registration Authority
-//00143F, "Hotway Technology Corporation
-//D055B2", "Integrated Device Technology (Malaysia) Sdn. Bhd.
-//144FD7 IEEE Registration Authority
-//B85510 Zioncom Electronics (Shenzhen) Ltd.
-//049573, "zte corporation
-//F0D7AA Motorola Mobility LLC, a Lenovo Company
-//F8FF0B", "Electronic Technology Inc.
-//7C6BF7 NTI co., ltd.
-//00D318, "SPG Controls
-//3096FB Samsung Electronics Co., Ltd
-//4827EA Samsung Electronics Co., Ltd
-//7C787E Samsung Electronics Co., Ltd
-//245BA7 Apple, Inc.
-//70F087, "Apple, Inc.
-//E0C63C SICHUAN TIANYI COMHEART TELECOMCO., LTD
-//000C46 Allied Telesyn Inc.
-//001F72, "QingDao Hiphone Technology Co,.Ltd
-//002365, "Insta Elektro GmbH
-//6091F3, "vivo Mobile Communication Co., Ltd.
-//28395E, "Samsung Electronics Co., Ltd
-//38295A GUANGDONG OPPO MOBILE TELECOMMUNICATIONS CORP., LTD
-//88E628, "Shenzhen Kezhonglong Optoelectronic Technology Co., Ltd
-//58238C Technicolor CH USA Inc.
-//CC82EB KYOCERA CORPORATION
-//14987D, "Technicolor CH USA Inc.
-//D4CF37 Symbolic IO
-//D47DFC", "TECNO MOBILE LIMITED
-//409F38, "AzureWave Technology Inc.
-//000631, "Calix Inc.
-//BC2F3D vivo Mobile Communication Co., Ltd.
-//40FA7F Preh Car Connect GmbH
-//000DBB Nippon Dentsu Co., Ltd.
-//2C7E81 ARRIS Group, Inc.
-//407D0F, "HUAWEI TECHNOLOGIES CO., LTD
-//68CC6E HUAWEI TECHNOLOGIES CO., LTD
-//3034D2, "Availink, Inc.
-//504061, "Nokia
-//00108E, "HUGH SYMONS CONCEPT Technologies Ltd.
+//00108E HUGH SYMONS CONCEPT Technologies Ltd.
 //E05163 Arcadyan Corporation
-//54E3F6, "Alcatel-Lucent
+//54E3F6 Alcatel-Lucent
 //40B034 Hewlett Packard
-//B816DB", "CHANT SINCERE CO., LTD
+//B816DB CHANT SINCERE CO., LTD
 //40B4CD Amazon Technologies Inc.
 //D481D7 Dell Inc.
 //F42B48 Ubiqam
 //50F14A Texas Instruments
 //04DEF2 Shenzhen ECOM Technology Co.Ltd
-//540384, "Hangkong Nano IC Technologies Co., Ltd
+//540384 Hangkong Nano IC Technologies Co., Ltd
 //78C1A7 zte corporation
 //4C7872 Cav. Uff.Giacomo Cimberio S.p.A.
 //8CF5A3 SAMSUNG ELECTRO-MECHANICS(THAILAND)
 //8CC8F4 IEEE Registration Authority
 //F483E1 Shanghai Clouder Semiconductor Co., Ltd
-//083E5D, "Sagemcom Broadband SAS
+//083E5D agemcom Broadband SAS
 //3CBD3E Beijing Xiaomi Electronics Co., Ltd.
 //641A22 Heliospectra AB
-//A084CB", "SonicSensory, Inc.
+//A084CB SonicSensory, Inc.
 //D47AE2 Samsung Electronics Co., Ltd
 //6854FD Amazon Technologies Inc.
 //0003BC COT GmbH
-//D4B169", "Le Shi Zhi Xin Electronic Technology (Tianjin) Limited
+//D4B169 Le Shi Zhi Xin Electronic Technology (Tianjin) Limited
 //E44790 GUANGDONG OPPO MOBILE TELECOMMUNICATIONS CORP., LTD
 //38454C Light Labs, Inc.
 //000A49 F5 Networks, Inc.
 //00A0C8 Adtran Inc
-//F49651", "NAKAYO Inc
-//446246, "Comat AG
+//F49651 NAKAYO Inc
+//446246 Comat AG
 //34FCB9 Hewlett Packard Enterprise
-//70918F, "Weber-Stephen Products LLC
-//D8E0E1", "Samsung Electronics Co., Ltd
+//70918F Weber-Stephen Products LLC
+//D8E0E1 Samsung Electronics Co., Ltd
 //7C1015 Brilliant Home Technology, Inc.
 //D8C771 HUAWEI TECHNOLOGIES CO., LTD
-//E02A82", "Universal Global Scientific Industrial Co., Ltd.
+//E02A82 Universal Global Scientific Industrial Co., Ltd.
 //B0F963 Hangzhou H3C Technologies Co., Limited
-//D490E0", "Topcon Electronics GmbH & Co.KG
-//A84041", "Dragino Technology Co., Limited
-//E02202", "ARRIS Group, Inc.
+//D490E0 Topcon Electronics GmbH & Co.KG
+//A84041 Dragino Technology Co., Limited
+//E02202 ARRIS Group, Inc.
 //D825B0 Rockeetech Systems Co., Ltd.
 //74614B Chongqing Huijiatong Information Technology Co., Ltd.
-//98D293, "Google, Inc.
+//98D293 Google, Inc.
 //CCB8A8 AMPAK Technology, Inc.
 //1077B0 Fiberhome Telecommunication Technologies Co., LTD
-//F01DBC", "Microsoft Corporation
-//34049E, "IEEE Registration Authority
+//F01DBC Microsoft Corporation
+//34049E IEEE Registration Authority
 //94FB29 Zebra Technologies Inc.
 //B0702D Apple, Inc.
 //6C19C0 Apple, Inc.
-//00204F, "DEUTSCHE AEROSPACE AG
+//00204F DEUTSCHE AEROSPACE AG
 //00DBDF Intel Corporate
 //94A04E Bostex Technology Co., LTD
 //8CE117 zte corporation
 //688AF0 zte corporation
-//C0210D", "SHENZHEN RF-LINK TECHNOLOGY CO., LTD.
+//C0210D SHENZHEN RF-LINK TECHNOLOGY CO., LTD.
 //4CE2F1 sclak srl
 //504B5B CONTROLtronic GmbH
-//B47447", "CoreOS
+//B47447 CoreOS
 //80D4A5 HUAWEI TECHNOLOGIES CO., LTD
 //04B0E7 HUAWEI TECHNOLOGIES CO., LTD
 //446A2E HUAWEI TECHNOLOGIES CO., LTD
 //0C8DDB Cisco Meraki
-//B0EE7B", "Roku, Inc
-//AC587B", "JCT Healthcare
+//B0EE7B Roku, Inc
+//AC587B JCT Healthcare
 //1062EB D-Link International
-//000894, "InnoVISION Multimedia Ltd.
-//480033, "Technicolor CH USA Inc.
+//000894 InnoVISION Multimedia Ltd.
+//480033 Technicolor CH USA Inc.
 //A06FAA LG Innotek
 //0026AB Seiko Epson Corporation
 //FC10C6 Taicang T&W Electronics
 //2C6FC9 Hon Hai Precision Ind.Co., Ltd.
-//58EF68, "Belkin International Inc.
+//58EF68 Belkin International Inc.
 //000B4F Verifone
 //60C798 Verifone
 //C8662C Beijing Haitai Fangyuan High Technology Co,.Ltd.
 //8096CA Hon Hai Precision Ind.Co., Ltd.
-//186571, "Top Victory Electronics (Taiwan) Co., Ltd.
+//186571 Top Victory Electronics (Taiwan) Co., Ltd.
 //F83F51 Samsung Electronics Co., Ltd
-//50D753, "CONELCOM GmbH
+//50D753 CONELCOM GmbH
 //0CC47A Super Micro Computer, Inc.
-//34D270, "Amazon Technologies Inc.
+//34D270 Amazon Technologies Inc.
 //50795B Interexport Telecomunicaciones S.A.
-//0016D9, "NINGBO BIRD CO., LTD.
+//0016D9 NINGBO BIRD CO., LTD.
 //6CA7FA YOUNGBO ENGINEERING INC.
 //8C7EB3 Lytro, Inc.
 //B4B384 ShenZhen Figigantic Electronic Co., Ltd
@@ -1157,27 +1156,27 @@ namespace iTin.Hardware.Specification.IEEE
 //5C6B4F Hello Inc.
 //2C9924 ARRIS Group, Inc.
 //D058A8 zte corporation
-//D071C4", "zte corporation
+//D071C4 zte corporation
 //A0CC2B Murata Manufacturing Co., Ltd.
-//5001D9, "HUAWEI TECHNOLOGIES CO., LTD
+//5001D9 HUAWEI TECHNOLOGIES CO., LTD
 //00271C MERCURY CORPORATION
-//E0D9E3", "Eltex Enterprise Ltd.
+//E0D9E3 Eltex Enterprise Ltd.
 //805EC0 YEALINK(XIAMEN) NETWORK TECHNOLOGY CO., LTD.
 //007B18 SENTRY Co., LTD.
-//144D67, "Zioncom Electronics (Shenzhen) Ltd.
+//144D67 Zioncom Electronics (Shenzhen) Ltd.
 //4CE173 IEEE Registration Authority
 //0CD86C SHENZHEN FAST TECHNOLOGIES CO., LTD
-//049790, "Lartech telecom LLC
+//049790 Lartech telecom LLC
 //28EED3 Shenzhen Super D Technology Co., Ltd
 //24C44A zte corporation
 //98541B Intel Corporate
 //1C40E8 SHENZHEN PROGRESS&WIN TECHNOLOGY CO., LTD
-//0023D2, "Inhand Electronics, Inc.
+//0023D2 Inhand Electronics, Inc.
 //DC0B34 LG Electronics (Mobile Communications)
-//404E36, "HTC Corporation
+//404E36 HTC Corporation
 //A8E705 Fiberhome Telecommunication Technologies Co., LTD
 //9840BB Dell Inc.
-//0060D6, "NovAtel Inc.
+//0060D6 NovAtel Inc.
 //503AA0 SHENZHEN MERCURY COMMUNICATION TECHNOLOGIES CO., LTD.
 //B0958E TP-LINK TECHNOLOGIES CO., LTD.
 //C025E9 TP-LINK TECHNOLOGIES CO., LTD.
@@ -1190,55 +1189,55 @@ namespace iTin.Hardware.Specification.IEEE
 //245CBF NCSE
 //2C3361 Apple, Inc.
 //60A4D0 Samsung Electronics Co., Ltd
-//008701, "Samsung Electronics Co., Ltd
+//008701 Samsung Electronics Co., Ltd
 //5C9960 Samsung Electronics Co., Ltd
 //9C62AB Sumavision Technologies Co., Ltd
-//C8F946", "LOCOSYS Technology Inc.
+//C8F946 LOCOSYS Technology Inc.
 //487B6B HUAWEI TECHNOLOGIES CO., LTD
 //883FD3 HUAWEI TECHNOLOGIES CO., LTD
-//240D65, "Shenzhen Vsun Communication Technology Co., Ltd.
+//240D65 Shenzhen Vsun Communication Technology Co., Ltd.
 //000B14 ViewSonic Corporation
-//C8028F", "Nova Electronics (Shanghai) Co., Ltd.
+//C8028F Nova Electronics (Shanghai) Co., Ltd.
 //A46011 Verifone
 //5CA933 Luma Home
-//00137E, "CorEdge Networks, Inc.
+//00137E CorEdge Networks, Inc.
 //D814D6 SURE SYSTEM Co Ltd
 //6CEFC6 SHENZHEN TWOWING TECHNOLOGIES CO., LTD.
 //101DC0 Samsung Electronics Co., Ltd
-//002341, "Vanderbilt International (SWE) AB
+//002341 Vanderbilt International (SWE) AB
 //407C7D Nokia
 //24590B White Sky Inc. Limited
 //68EBAE Samsung Electronics Co., Ltd
 //444E1A Samsung Electronics Co., Ltd
-//143365, "TEM Mobile Limited
-//801844, "Dell Inc.
-//78471D, "Samsung Electronics Co., Ltd
-//A07591", "Samsung Electronics Co., Ltd
+//143365 TEM Mobile Limited
+//801844 Dell Inc.
+//78471D Samsung Electronics Co., Ltd
+//A07591 Samsung Electronics Co., Ltd
 //0CDFA4 Samsung Electronics Co., Ltd
-//B072BF", "Murata Manufacturing Co., Ltd.
+//B072BF Murata Manufacturing Co., Ltd.
 //701DC4 NorthStar Battery Company, LLC
 //64DAA0 Robert Bosch Smart Home GmbH
 //14B837 Shenzhen YOUHUA Technology Co., Ltd
 //5C8613 Beijing Zhoenet Technology Co., Ltd
-//CC7314", "HONG KONG WHEATEK TECHNOLOGY LIMITED
-//B8EE65", "Liteon Technology Corporation
+//CC7314 HONG KONG WHEATEK TECHNOLOGY LIMITED
+//B8EE65 Liteon Technology Corporation
 //985BB0 KMDATA INC.
 //E006E6 Hon Hai Precision Ind.Co., Ltd.
 //BC8556 Hon Hai Precision Ind.Co., Ltd.
-//342387, "Hon Hai Precision Ind. Co., Ltd.
-//002637, "SAMSUNG ELECTRO MECHANICS CO., LTD.
-//002119, "SAMSUNG ELECTRO MECHANICS CO., LTD.
+//342387 Hon Hai Precision Ind. Co., Ltd.
+//002637 SAMSUNG ELECTRO MECHANICS CO., LTD.
+//002119 SAMSUNG ELECTRO MECHANICS CO., LTD.
 //F4D9FB Samsung Electronics Co., Ltd
 //3C6200 Samsung Electronics Co., Ltd
-//C417FE", "Hon Hai Precision Ind. Co., Ltd.
-//9439E5, "Hon Hai Precision Ind. Co., Ltd.
-//642737, "Hon Hai Precision Ind. Co., Ltd.
+//C417FE Hon Hai Precision Ind. Co., Ltd.
+//9439E5 Hon Hai Precision Ind. Co., Ltd.
+//642737 Hon Hai Precision Ind. Co., Ltd.
 //A41731 Hon Hai Precision Ind.Co., Ltd.
 //5CA39D SAMSUNG ELECTRO MECHANICS CO., LTD.
 //90187C SAMSUNG ELECTRO MECHANICS CO., LTD.
 //50CCF8 SAMSUNG ELECTRO MECHANICS CO., LTD.
 //00223B Communication Networks, LLC
-//C0F8DA", "Hon Hai Precision Ind. Co., Ltd.
+//C0F8DA Hon Hai Precision Ind. Co., Ltd.
 //0011FF Digitro Tecnologia Ltda
 //001B94 T.E.M.A.S.p.A.
 //F0F002 Hon Hai Precision Ind.Co., Ltd.
@@ -1246,50 +1245,54 @@ namespace iTin.Hardware.Specification.IEEE
 //F07BCB Hon Hai Precision Ind.Co., Ltd.
 //50B7C3 Samsung Electronics Co., Ltd
 //1C5A3E Samsung Electronics Co., Ltd
-//A02195", "Samsung Electronics Co., Ltd
-//B07870", "Wi-NEXT, Inc.
+//A02195 Samsung Electronics Co., Ltd
+//B07870 Wi-NEXT, Inc.
 //E47CF9 Samsung Electronics Co., Ltd
-//4844F7, "Samsung Electronics Co., Ltd
-//001377, "Samsung Electronics Co., Ltd
-//002454, "Samsung Electronics Co., Ltd
-//E81132", "Samsung Electronics Co., Ltd
-//C06599", "Samsung Electronics Co., Ltd
-//BC79AD", "Samsung Electronics Co., Ltd
+//4844F7 Samsung Electronics Co., Ltd
+//001377 Samsung Electronics Co., Ltd
+//002454 Samsung Electronics Co., Ltd
+//E81132 Samsung Electronics Co., Ltd
+//C06599 Samsung Electronics Co., Ltd
+//BC79AD Samsung Electronics Co., Ltd
 //4C3C16 Samsung Electronics Co., Ltd
-//0073E0, "Samsung Electronics Co., Ltd
-//0017D5, "Samsung Electronics Co., Ltd
-//001E7D, "Samsung Electronics Co., Ltd
+//0073E0 Samsung Electronics Co., Ltd
+//0017D5 Samsung Electronics Co., Ltd
+//001E7D Samsung Electronics Co., Ltd
 //001DF6 Samsung Electronics Co., Ltd
-//F008F1", "Samsung Electronics Co., Ltd
+//F008F1 Samsung Electronics Co., Ltd
 //58C38B Samsung Electronics Co., Ltd
 //00E3B2 Samsung Electronics Co., Ltd
-//301966, "Samsung Electronics Co., Ltd
-//F0E77E", "Samsung Electronics Co., Ltd
+//301966 Samsung Electronics Co., Ltd
+//F0E77E Samsung Electronics Co., Ltd
 //94350A Samsung Electronics Co., Ltd
-//001D25, "Samsung Electronics Co., Ltd
-//E4C1F1", "SHENZHEN SPOTMAU INFORMATION TECHNOLIGY CO., Ltd
+//001D25 Samsung Electronics Co., Ltd
+//E4C1F1 SHENZHEN SPOTMAU INFORMATION TECHNOLIGY CO., Ltd
 //240AC4 Espressif Inc.
-//343111, "Samsung Electronics Co., Ltd
+//343111 Samsung Electronics Co., Ltd
 //08FD0E Samsung Electronics Co., Ltd
 //041BBA Samsung Electronics Co., Ltd
 //889B39 Samsung Electronics Co., Ltd
-//E432CB", "Samsung Electronics Co., Ltd
-//BC8CCD", "SAMSUNG ELECTRO-MECHANICS(THAILAND)
-//D022BE", "SAMSUNG ELECTRO-MECHANICS(THAILAND)
-//EC9BF3", "SAMSUNG ELECTRO-MECHANICS(THAILAND)
-//F409D8", "SAMSUNG ELECTRO-MECHANICS(THAILAND)
-//10D542, "Samsung Electronics Co., Ltd
-//A0821F", "Samsung Electronics Co., Ltd
-//F06BCA", "Samsung Electronics Co., Ltd
-//AC3613", "Samsung Electronics Co., Ltd
-//002611, "Licera AB
-//005094, "ARRIS Group, Inc.
+//E432CB Samsung Electronics Co., Ltd
+//BC8CCD SAMSUNG ELECTRO-MECHANICS(THAILAND)
+//D022BE SAMSUNG ELECTRO-MECHANICS(THAILAND)
+//EC9BF3 SAMSUNG ELECTRO-MECHANICS(THAILAND)
+//F409D8 SAMSUNG ELECTRO-MECHANICS(THAILAND)
+//10D542 Samsung Electronics Co., Ltd
+//A0821F Samsung Electronics Co., Ltd
+//F06BCA Samsung Electronics Co., Ltd
+//AC3613 Samsung Electronics Co., Ltd
+//002611 Licera AB
+//005094 ARRIS Group, Inc.
 //E0B7B1 ARRIS Group, Inc.
 //D82522 ARRIS Group, Inc.
 //F0038C AzureWave Technology Inc.
-//18D276, "HUAWEI TECHNOLOGIES CO., LTD
-//005218, "Wuxi Keboda Electron Co.Ltd
-//001E81, "CNB Technology Inc.
+//18D276 HUAWEI TECHNOLOGIES CO., LTD
+//005218 Wuxi Keboda Electron Co.Ltd
+//001E81 CNB Technology Inc.
+
+
+
+
 //7CA97D Objenious
 //A8A648 Qingdao Hisense Communications Co., Ltd.
 //985DAD Texas Instruments

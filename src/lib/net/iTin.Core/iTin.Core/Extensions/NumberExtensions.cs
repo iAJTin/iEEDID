@@ -1,12 +1,12 @@
 ﻿
+using System;
+
+using iTin.Core.Helpers;
+using iTin.Core.Helpers.Enumerations;
+using iTin.Logging;
+
 namespace iTin.Core
 {
-    using System;
-
-    using Helpers;
-    using Helpers.Enumerations;
-    using Logging;
-
     /// <summary>
     /// Static class than contains extension methods for <see cref="byte"/> structure, <see cref="int"/> structure,
     /// <see cref="uint"/> structure, <see cref="long"/> structure, <see cref="ulong"/> structure,
@@ -85,7 +85,7 @@ namespace iTin.Core
             var sign = packet.CheckBit(Bits.Bit15) ? -1 : 1;
             var exponent = (packet >> 10) & 0x1f;
             var mantissa = packet & 0x3ff;
-            
+
             switch (exponent)
             {
                 // Infinities
@@ -95,11 +95,11 @@ namespace iTin.Core
                 // Zero
                 case 0x00 when mantissa == 0x00:
                     return sign * 0.0f;
-                
+
                 // Subnormals Numbers
                 case 0x00:
                     return sign * (2 ^ -14) * (0.0f + mantissa / 1024.0f);
-                
+
                 // Normalized Numbers
                 default:
                     return sign * (2 ^ (exponent - 0x0f)) * (1.0f + mantissa / 1024.0f);
@@ -162,7 +162,7 @@ namespace iTin.Core
             return result;
         }
         #endregion
-        
+
 
         #region [public] {static} (byte[]) ToArray(this byte): Returns reference value splitted into bytes as a 2 byte array
         /// <summary>

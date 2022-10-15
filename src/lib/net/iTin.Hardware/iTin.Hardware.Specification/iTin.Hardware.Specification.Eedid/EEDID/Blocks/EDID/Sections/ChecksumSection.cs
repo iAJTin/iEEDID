@@ -1,10 +1,10 @@
 ﻿
+using System.Collections.ObjectModel;
+using System.Diagnostics;
+using System.Linq;
+
 namespace iTin.Hardware.Specification.Eedid.Blocks.EDID.Sections
 {
-    using System.Collections.ObjectModel;
-    using System.Diagnostics;
-    using System.Linq;
-
     // EDID Section: CheckSum
     // •————————————————————————————————————————————————————————————————————————————————————————————————————————•
     // | Offset       Name                      Lenght      Description                                         |

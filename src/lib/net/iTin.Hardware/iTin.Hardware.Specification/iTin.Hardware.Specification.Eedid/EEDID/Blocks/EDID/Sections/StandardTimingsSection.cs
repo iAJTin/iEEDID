@@ -1,15 +1,15 @@
 ﻿
+using System.Collections.Generic;
+using System.Collections.ObjectModel;
+using System.Diagnostics;
+using System.Linq;
+
+using iTin.Core;
+
+using iTin.Hardware.Specification.Eedid.Blocks.EDID.Sections.Descriptors;
+
 namespace iTin.Hardware.Specification.Eedid.Blocks.EDID.Sections
 {
-    using System.Collections.Generic;
-    using System.Collections.ObjectModel;
-    using System.Diagnostics;
-    using System.Linq;
-
-    using iTin.Core;
-
-    using Descriptors;
-
     // EDID Section: Standard Timings 16 Bytes
     // •————————————————————————————————————————————————————————————————————————————————————————————•
     // | Offset       Name                      Lenght      Description                             |

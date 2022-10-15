@@ -1,12 +1,12 @@
 ﻿
+using System.Collections.ObjectModel;
+using System.Diagnostics;
+
+using iTin.Core;
+using iTin.Core.Helpers;
+
 namespace iTin.Hardware.Specification.Eedid.Blocks.EDID.Sections
 {
-    using System.Collections.ObjectModel;
-    using System.Diagnostics;
-
-    using iTin.Core;
-    using iTin.Core.Helpers;
-
     // EDID Section: Vendor & Product Information
     // •—————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————•
     // | Offset       Name                      Lenght      Description                                                              |

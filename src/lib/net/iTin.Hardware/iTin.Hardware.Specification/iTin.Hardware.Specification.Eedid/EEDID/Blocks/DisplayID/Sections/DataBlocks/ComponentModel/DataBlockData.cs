@@ -1,17 +1,17 @@
 ﻿
+using System;
+using System.Collections.Generic;
+using System.Collections.ObjectModel;
+using System.Linq;
+
+using iTin.Core.Hardware.Common;
+
 namespace iTin.Hardware.Specification.Eedid.Blocks.DisplayId.Sections.DataBlocks.ComponentModel
 {
-    using System;
-    using System.Collections.Generic;
-    using System.Collections.ObjectModel;
-    using System.Linq;
-    
-    using iTin.Core.Hardware.Common;
-
     /// <summary>
     /// Defines header data block descriptor.
     /// </summary>
-    public struct DataBlockData : IEquatable<DataBlockData>
+    public readonly struct DataBlockData : IEquatable<DataBlockData>
     {
         #region private readonly members
 

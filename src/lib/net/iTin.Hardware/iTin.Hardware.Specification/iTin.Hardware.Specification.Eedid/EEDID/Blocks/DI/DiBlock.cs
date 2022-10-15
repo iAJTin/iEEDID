@@ -1,14 +1,14 @@
 ﻿
+using System;
+using System.Collections.Generic;
+using System.Collections.ObjectModel;
+using System.Linq;
+
+using iTin.Hardware.Specification.Eedid.Blocks.DI;
+using iTin.Hardware.Specification.Eedid.Blocks.DI.Sections;
+
 namespace iTin.Hardware.Specification.Eedid.Blocks
 {
-    using System;
-    using System.Collections.Generic;
-    using System.Collections.ObjectModel;
-    using System.Linq;
-
-    using DI;
-    using DI.Sections;
-
     // DI: VESA Display Information Extension Block Standard
     // •—————————————————————————————————————————————————————•
     // | Bytes    Section                                    |

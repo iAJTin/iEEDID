@@ -1,17 +1,17 @@
 ﻿
+using System.Diagnostics;
+using System.Linq;
+using System.Drawing;
+using System;
+
+using iTin.Core.Hardware.Windows.Device.Desktop.Monitor.ComponentModel;
+
 namespace iTin.Core.Hardware.Windows.Device.Desktop.Monitor
 {
-    using System.Diagnostics;
-    using System.Linq;
-    using System.Drawing;
-    using System;
-
-    using ComponentModel;
-
     /// <summary>
     /// The <see cref="MonitorDeviceInfo"/> data structure contains information about a system monitor.
     /// </summary>
-    public struct MonitorDeviceInfo : IEquatable<MonitorDeviceInfo>
+    public readonly struct MonitorDeviceInfo : IEquatable<MonitorDeviceInfo>
     {
         #region private readonly members
         [DebuggerBrowsable(DebuggerBrowsableState.Never)]

@@ -1,12 +1,12 @@
 ﻿
+using System.Collections.ObjectModel;
+using System.Diagnostics;
+
+using iTin.Core;
+using iTin.Core.Helpers.Enumerations;
+
 namespace iTin.Hardware.Specification.Eedid.Blocks.CEA.Sections
 {
-    using System.Collections.ObjectModel;
-    using System.Diagnostics;
-
-    using iTin.Core;
-    using iTin.Core.Helpers.Enumerations;
-
     // CEA Section: Monitor Support Information
     // •————————————————————————————————————————————————————————————————————————————————————————————————————————•
     // | Offset       Name                      Lenght      Description                                         |

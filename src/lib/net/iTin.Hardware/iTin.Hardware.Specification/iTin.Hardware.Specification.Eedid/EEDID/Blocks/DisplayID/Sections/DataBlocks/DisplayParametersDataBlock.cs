@@ -1,18 +1,18 @@
 
+using System.Collections.Generic;
+using System.Collections.ObjectModel;
+using System.Diagnostics;
+using System.Drawing;
+using System.Linq;
+
+using iTin.Core;
+using iTin.Core.Helpers;
+using iTin.Core.Helpers.Enumerations;
+
+using iTin.Hardware.Specification.Eedid.Blocks.DisplayId.Sections.DataBlocks.ComponentModel;
+
 namespace iTin.Hardware.Specification.Eedid.Blocks.DisplayId.Sections.DataBlocks
 {
-    using System.Collections.Generic;
-    using System.Collections.ObjectModel;
-    using System.Diagnostics;
-    using System.Drawing;
-    using System.Linq;
-
-    using iTin.Core;
-    using iTin.Core.Helpers;
-    using iTin.Core.Helpers.Enumerations;
-
-    using ComponentModel;
-
     // Data Block: Display Parameters Data Block v1.3
     // •———————————————————————————————————————————————————————————————————————————————————————————————————————————————•
     // | Offset       Name                    Lenght      Description                                                  |

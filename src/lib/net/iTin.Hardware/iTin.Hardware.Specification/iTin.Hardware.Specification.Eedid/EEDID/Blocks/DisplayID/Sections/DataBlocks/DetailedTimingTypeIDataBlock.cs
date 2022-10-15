@@ -1,14 +1,14 @@
 ﻿
+using System.Collections.Generic;
+using System.Collections.ObjectModel;
+using System.Linq;
+
+using iTin.Core;
+
+using iTin.Hardware.Specification.Eedid.Blocks.DisplayId.Sections.DataBlocks.ComponentModel;
+
 namespace iTin.Hardware.Specification.Eedid.Blocks.DisplayId.Sections.DataBlocks
 {
-    using System.Collections.Generic;
-    using System.Collections.ObjectModel;
-    using System.Linq;
-
-    using iTin.Core;
-
-    using ComponentModel;
-
     // Data Block: Detailed Timing Type I Data Block
     // •—————————————————————————————————————————————————————————————————————————————————————————————————•
     // | Offset       Name                    Lenght      Description                                    |

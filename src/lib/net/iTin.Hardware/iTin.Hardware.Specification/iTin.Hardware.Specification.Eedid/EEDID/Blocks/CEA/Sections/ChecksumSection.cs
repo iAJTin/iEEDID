@@ -1,10 +1,10 @@
 ﻿
+using System.Collections.ObjectModel;
+using System.Diagnostics;
+using System.Linq;
+
 namespace iTin.Hardware.Specification.Eedid.Blocks.CEA.Sections
 {
-    using System.Collections.ObjectModel;
-    using System.Diagnostics;
-    using System.Linq;
-
     // CEA Section: CheckSum
     // •————————————————————————————————————————————————————————————————————————————————————————————————————————•
     // | Offset       Name                      Lenght      Description                                         |

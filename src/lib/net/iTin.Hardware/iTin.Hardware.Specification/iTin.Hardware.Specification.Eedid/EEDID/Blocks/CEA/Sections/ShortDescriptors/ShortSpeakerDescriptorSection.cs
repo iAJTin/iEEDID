@@ -1,10 +1,10 @@
 ﻿
+using System.Collections.ObjectModel;
+
+using iTin.Hardware.Specification.Eedid.Blocks.CEA.Sections.Descriptors.DataBlocks;
+
 namespace iTin.Hardware.Specification.Eedid.Blocks.CEA.Sections.Descriptors
 {
-    using System.Collections.ObjectModel;
-
-    using DataBlocks;
-
     /*  
         •—————•                 •—————•        •—————•          Where:
         | FLH |                 | FCH |        | FRH |                 · FL: Front Left

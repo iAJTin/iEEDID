@@ -1,16 +1,16 @@
 ﻿
+using System;
+using System.Collections;
+using System.Collections.Generic;
+using System.Collections.ObjectModel;
+using System.ComponentModel;
+using System.Diagnostics;
+using System.Linq;
+
+using iTin.Core.Helpers;
+
 namespace iTin.Hardware.Specification.Eedid
 {
-    using System;
-    using System.Collections;
-    using System.Collections.Generic;
-    using System.Collections.ObjectModel;
-    using System.ComponentModel;
-    using System.Diagnostics;
-    using System.Linq;
-
-    using iTin.Core.Helpers;
-
     /// <inheritdoc />
     /// <summary>
     /// Represents a collection of <see cref="DataBlock"/> objects from the <see cref="EEDID"/> specification.

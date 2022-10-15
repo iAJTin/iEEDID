@@ -1,9 +1,9 @@
 ﻿
+using System;
+using System.Collections.ObjectModel;
+
 namespace iTin.Hardware.Specification.Eedid.Blocks.CEA.Sections
 {
-    using System;
-    using System.Collections.ObjectModel;
-
     /* •————————————————•
        | CEA Data Block |
        |   · Tag code   |
@@ -14,7 +14,7 @@ namespace iTin.Hardware.Specification.Eedid.Blocks.CEA.Sections
     /// <summary>
     /// A <see cref="CeaDataBlock"/> structure that contains the raw information of the blocks of type <b>AllcationDataBlock</b>.
     /// </summary> 
-    internal struct CeaDataBlock
+    internal readonly struct CeaDataBlock
     {
         #region constructor/s
 

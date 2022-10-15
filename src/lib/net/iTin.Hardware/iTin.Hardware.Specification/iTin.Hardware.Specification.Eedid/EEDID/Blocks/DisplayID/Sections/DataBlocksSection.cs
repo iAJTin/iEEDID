@@ -1,14 +1,14 @@
 ﻿
+using System.Collections.Generic;
+using System.Collections.ObjectModel;
+using System.Linq;
+
+using iTin.Core;
+
+using iTin.Hardware.Specification.Eedid.Blocks.DisplayId.Sections.DataBlocks.ComponentModel;
+
 namespace iTin.Hardware.Specification.Eedid.Blocks.DisplayId.Sections
 {
-    using System.Collections.Generic;
-    using System.Collections.ObjectModel;
-    using System.Linq;
-
-    using iTin.Core;
-
-    using DataBlocks.ComponentModel;
-
     /// <summary>
     /// Specialization of the <see cref="BaseDataSection"/> class.<br/>
     /// Represents the <see cref="DisplayIdSection.DataBlocks"/> section of this block <see cref="KnownDataBlock.DisplayID"/>.

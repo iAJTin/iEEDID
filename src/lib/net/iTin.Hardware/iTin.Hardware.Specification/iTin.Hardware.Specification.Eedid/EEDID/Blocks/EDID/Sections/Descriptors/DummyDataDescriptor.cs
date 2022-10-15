@@ -1,10 +1,10 @@
 
+using System.Collections.ObjectModel;
+using System.Linq;
+using System.Text;
+
 namespace iTin.Hardware.Specification.Eedid.Blocks.EDID.Sections.Descriptors
 {
-    using System.Collections.ObjectModel;
-    using System.Linq;
-    using System.Text;
-
     // Data Block Descriptor: Dummy Data Descriptor Definition
     // •—————————————————————————————————————————————————————————————————————————————————————————————————•
     // | Offset       Name                      Lenght      Description                                  |

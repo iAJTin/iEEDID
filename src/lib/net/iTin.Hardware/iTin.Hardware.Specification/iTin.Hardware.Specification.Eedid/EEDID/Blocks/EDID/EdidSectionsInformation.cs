@@ -1,10 +1,10 @@
 ﻿
+using System;
+using System.Collections.ObjectModel;
+using System.Diagnostics;
+
 namespace iTin.Hardware.Specification.Eedid.Blocks.EDID.Sections
 {
-    using System;
-    using System.Collections.ObjectModel;
-    using System.Diagnostics;
-
     /// <summary>
     /// Represents the set of <b>sections</b> available for the <see cref="KnownDataBlock.EDID"/> information of the <see cref="EEDID"/> specification.
     /// </summary>

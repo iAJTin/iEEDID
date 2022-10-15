@@ -1,10 +1,10 @@
 ﻿
+using System.Collections.ObjectModel;
+using System.Diagnostics;
+using System.Linq;
+
 namespace iTin.Hardware.Specification.Eedid.Blocks.DisplayId.Sections
 {
-    using System.Collections.ObjectModel;
-    using System.Diagnostics;
-    using System.Linq;
-
     // DI Section: Miscellaneous
     // •————————————————————————————————————————————————————————————————————————————————————————————————————————•
     // | Offset       Name                      Lenght      Description                                         |

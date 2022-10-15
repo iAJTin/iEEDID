@@ -1,10 +1,10 @@
 ﻿
+using System;
+
 namespace iTin.Core.Hardware.Common
 {
-    using System;
-
     /// <summary>
-    /// Defines a generic property
+    /// Defines a value that contains the detailed information of a writer.
     /// </summary>
     public interface IPropertyKey
     {
@@ -23,7 +23,7 @@ namespace iTin.Core.Hardware.Common
         /// Gets a value that represents the unit in which the property is measured.
         /// </summary>
         /// <value>
-        /// Unit in which the property is measured.
+        /// Unidad en que se mide la propiedad.
         /// </value>
         PropertyUnit PropertyUnit { get; }
 

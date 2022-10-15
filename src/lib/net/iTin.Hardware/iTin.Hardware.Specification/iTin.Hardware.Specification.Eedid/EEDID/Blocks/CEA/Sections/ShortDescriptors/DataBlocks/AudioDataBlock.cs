@@ -1,12 +1,12 @@
 ﻿
+using System.Collections.Generic;
+using System.Collections.ObjectModel;
+
+using iTin.Core;
+using iTin.Core.Helpers.Enumerations;
+
 namespace iTin.Hardware.Specification.Eedid.Blocks.CEA.Sections.Descriptors.DataBlocks
 {
-    using System.Collections.Generic;
-    using System.Collections.ObjectModel;
-
-    using iTin.Core;
-    using iTin.Core.Helpers.Enumerations;
-
     /// <summary>
     /// Structure <see cref="AudioDataBlock"/> that contains the logic to decode the data of a block of type <see cref="ShortAudioDescriptorSection"/>.
     /// </summary> 

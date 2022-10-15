@@ -1,22 +1,21 @@
 ﻿
+using System;
+using System.Collections.Generic;
+using System.Collections.ObjectModel;
+using System.Diagnostics;
+using System.Linq;
+using System.Runtime.InteropServices;
+using System.Text;
+
+using iTin.Core.Hardware.Windows.Device.Desktop.Monitor.ComponentModel;
+using iTin.Core.Interop.Shared.Windows;
+
+using Gdi = iTin.Core.Interop.Shared.Windows.Development.Graphics.Legacy.Gdi;
+using Registry = iTin.Core.Interop.Shared.Windows.Development.Registry;
+using SetupApi = iTin.Core.Interop.Shared.Windows.Development.DeviceAndDriverInstallation.SetupApi;
+
 namespace iTin.Core.Hardware.Windows.Device.Desktop.Monitor
 {
-    using System;
-    using System.Collections.Generic;
-    using System.Collections.ObjectModel;
-    using System.Diagnostics;
-    using System.Linq;
-    using System.Runtime.InteropServices;
-    using System.Text;
-
-    using ComponentModel;
-
-    using iTin.Core.Interop.Shared.Windows;
-
-    using Gdi = Interop.Shared.Windows.Development.Graphics.Legacy.Gdi;
-    using Registry = Interop.Shared.Windows.Development.Registry;
-    using SetupApi = Interop.Shared.Windows.Development.DeviceAndDriverInstallation.SetupApi;
-
     /// <summary>
     /// Defines a set of Safe monitor native methods.
     /// </summary>
@@ -40,7 +39,7 @@ namespace iTin.Core.Hardware.Windows.Device.Desktop.Monitor
         {
             var monitors = new Collection<MonitorDeviceInfo>();
 
-            IEnumerable<MonitorDeviceInfoNative> devicesInfo = EnumerateMonitorDevicesImpl().ToList();
+            var devicesInfo = EnumerateMonitorDevicesImpl();
             IEnumerable<MonitorDeviceEdidInfoNative> edidDevicesInfo = EnumerateMonitorEdidDevicesImpl().ToList();
 
             foreach (var deviceInfo in devicesInfo)
@@ -98,19 +97,19 @@ namespace iTin.Core.Hardware.Windows.Device.Desktop.Monitor
         private static IEnumerable<MonitorDeviceEdidInfoNative> EnumerateMonitorEdidDevicesImpl()
         {
             var info = new Collection<MonitorDeviceEdidInfoNative>();
-            var GUID_DEVCLASS_MONITOR = GuidDevClass.GUID_DEVCLASS_MONITOR;
+            var guidDevclassMonitor = GuidDevClass.GUID_DEVCLASS_MONITOR;
 
             var canContinue = true;
             while (canContinue)
             {
-                IntPtr devInfo =
+                var devInfo =
                     SetupApi.NativeMethods.SetupDiGetClassDevsEx(
-                        ref GUID_DEVCLASS_MONITOR,              // class GUID
-                        null,                                   // enumerator
-                        IntPtr.Zero,                            // HWND
+                        ref guidDevclassMonitor,                // class GUID
+                        null,                         // enumerator
+                        IntPtr.Zero,                  // HWND
                         SetupApi.DiGetClassFlags.DIGCF_PRESENT, // Flags
-                        IntPtr.Zero,                            // device info, create a new one
-                        null,                                   // machine name, local machine
+                        IntPtr.Zero,               // device info, create a new one
+                        null,                        // machine name, local machine
                         IntPtr.Zero);
                 if (devInfo == IntPtr.Zero)
                 {
@@ -124,8 +123,8 @@ namespace iTin.Core.Hardware.Windows.Device.Desktop.Monitor
 
                 for (uint i = 0; Marshal.GetLastWin32Error() != Win32ErrorCode.ERROR_NO_MORE_ITEMS; i++)
                 {
-                    SetupApi.SP_DEVINFO_DATA devInfoData = SetupApi.SP_DEVINFO_DATA.Empty;
-                    bool deviceInfoSuccess = SetupApi.NativeMethods.SetupDiEnumDeviceInfo(devInfo, i, ref devInfoData);
+                    var devInfoData = SetupApi.SP_DEVINFO_DATA.Empty;
+                    var deviceInfoSuccess = SetupApi.NativeMethods.SetupDiEnumDeviceInfo(devInfo, i, ref devInfoData);
                     if (!deviceInfoSuccess)
                     {
                         canContinue = false;

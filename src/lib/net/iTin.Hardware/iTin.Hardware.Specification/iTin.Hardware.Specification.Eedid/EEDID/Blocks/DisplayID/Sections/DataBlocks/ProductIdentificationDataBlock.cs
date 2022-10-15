@@ -1,16 +1,16 @@
 ﻿
+using System.Collections.ObjectModel;
+using System.Diagnostics;
+using System.Linq;
+using System.Text;
+
+using iTin.Core;
+
+using iTin.Hardware.Specification.Eedid.Blocks.DisplayId.Sections.DataBlocks.ComponentModel;
+using iTin.Hardware.Specification.IEEE;
+
 namespace iTin.Hardware.Specification.Eedid.Blocks.DisplayId.Sections.DataBlocks
 {
-    using System.Collections.ObjectModel;
-    using System.Diagnostics;
-    using System.Linq;
-    using System.Text;
-
-    using iTin.Core;
-
-    using ComponentModel;
-    using IEEE;
-
     // Data Block: Product Identification Data Block
     // •—————————————————————————————————————————————————————————————————————————————————————————————————•
     // | Offset       Name                    Lenght      Description                                    |

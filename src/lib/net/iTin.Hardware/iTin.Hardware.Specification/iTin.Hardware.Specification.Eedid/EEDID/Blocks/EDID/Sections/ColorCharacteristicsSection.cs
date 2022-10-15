@@ -1,13 +1,13 @@
 ﻿
+using System.Collections.Generic;
+using System.Collections.ObjectModel;
+using System.Diagnostics;
+using System.Drawing;
+
+using iTin.Hardware.Specification.Eedid.Blocks.EDID.Sections.Descriptors;
+
 namespace iTin.Hardware.Specification.Eedid.Blocks.EDID.Sections
 {
-    using System.Collections.Generic;
-    using System.Collections.ObjectModel;
-    using System.Diagnostics;
-    using System.Drawing;
-
-    using Descriptors;
-
     // EDID Section: Color Characteristics
     // •————————————————————————————————————————————————————————————————————————————————————————————————————————•
     // | Offset       Name                        Type        Description                                       |

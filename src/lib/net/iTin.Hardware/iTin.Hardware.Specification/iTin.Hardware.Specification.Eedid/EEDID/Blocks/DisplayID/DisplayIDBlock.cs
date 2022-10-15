@@ -1,16 +1,16 @@
 ﻿
+using System;
+using System.Collections.Generic;
+using System.Collections.ObjectModel;
+using System.Linq;
+
+using iTin.Core;
+
+using iTin.Hardware.Specification.Eedid.Blocks.DisplayId;
+using iTin.Hardware.Specification.Eedid.Blocks.DisplayId.Sections;
+
 namespace iTin.Hardware.Specification.Eedid.Blocks
 {
-    using System;
-    using System.Collections.Generic;
-    using System.Collections.ObjectModel;
-    using System.Linq;
-
-    using iTin.Core;
-
-    using DisplayId;
-    using DisplayId.Sections;
-
     // DisplayID: VESA Display Identification Data 
     // •————————————————————————————————————————————•
     // | Bytes    Section                           |

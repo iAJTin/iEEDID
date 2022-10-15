@@ -1,8 +1,8 @@
 ﻿
+using iTin.Core.Hardware.Common;
+
 namespace iTin.Hardware.Specification.Eedid.Blocks.DI
 {
-    using iTin.Core.Hardware.Common;
-
     /// <summary>
     /// Sections correspodientes to a block of type <see cref="DiBlock"/>.
     /// </summary> 

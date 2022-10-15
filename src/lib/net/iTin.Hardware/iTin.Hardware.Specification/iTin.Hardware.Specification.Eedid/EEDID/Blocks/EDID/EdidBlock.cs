@@ -1,16 +1,16 @@
 ﻿
+using System;
+using System.Collections.Generic;
+using System.Collections.ObjectModel;
+using System.Linq;
+
+using iTin.Core;
+
+using iTin.Hardware.Specification.Eedid.Blocks.EDID;
+using iTin.Hardware.Specification.Eedid.Blocks.EDID.Sections;
+
 namespace iTin.Hardware.Specification.Eedid.Blocks
 {
-    using System;
-    using System.Collections.Generic;
-    using System.Collections.ObjectModel;
-    using System.Linq;
-
-    using iTin.Core;
-
-    using EDID;
-    using EDID.Sections;
-
     // •——————————————————————————————————————————•
     // | BLOCK 0 (EDID)                           |
     // |   · Header                               |

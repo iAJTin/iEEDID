@@ -1,21 +1,21 @@
 ﻿
+using System;
+using System.Collections.Generic;
+using System.Collections.ObjectModel;
+using System.Diagnostics;
+using System.Linq;
+
+using iTin.Core;
+using iTin.Core.Hardware.Common;
+
+using iTin.Hardware.Specification.Eedid.Blocks.EDID;
+
 namespace iTin.Hardware.Specification.Eedid
 {
-    using System;
-    using System.Collections.Generic;
-    using System.Collections.ObjectModel;
-    using System.Diagnostics;
-    using System.Linq;
-
-    using iTin.Core;
-    using iTin.Core.Hardware.Common;
-
-    using Blocks.EDID;
-
     /// <summary>
     /// Defines header data block descriptor.
     /// </summary>
-    public struct DataBlockDescriptorData :  IEquatable<DataBlockDescriptorData>
+    public readonly struct DataBlockDescriptorData :  IEquatable<DataBlockDescriptorData>
     {
         #region private readonly members
         [DebuggerBrowsable(DebuggerBrowsableState.Never)]

@@ -1,12 +1,12 @@
 
+using System.Collections.ObjectModel;
+
+using iTin.Core;
+using iTin.Core.Helpers;
+using iTin.Core.Helpers.Enumerations;
+
 namespace iTin.Hardware.Specification.Eedid.Blocks.EDID.Sections.Descriptors
 {
-    using System.Collections.ObjectModel;
-
-    using iTin.Core;
-    using iTin.Core.Helpers;
-    using iTin.Core.Helpers.Enumerations;
-
     // Data Block Descriptor: Detailed Timing Mode Descriptor Definition
     // •————————————————————————————————————————————————————————————————————————————————————————————————————————————————————•
     // | Offset       Name                      Lenght      Description                                                     |

@@ -1,8 +1,8 @@
 ﻿
+using iTin.Core.Hardware.Common;
+
 namespace iTin.Hardware.Specification.Eedid.Blocks.DisplayId.Sections.DataBlocks.ComponentModel
 {
-    using iTin.Core.Hardware.Common;
-
     /// <summary>
     /// Available data blocks.
     /// </summary> 

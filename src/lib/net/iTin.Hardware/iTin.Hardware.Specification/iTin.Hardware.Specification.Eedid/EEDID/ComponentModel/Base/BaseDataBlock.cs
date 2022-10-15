@@ -1,11 +1,11 @@
 ﻿
+using System;
+using System.Collections.Generic;
+using System.Collections.ObjectModel;
+using System.Diagnostics;
+
 namespace iTin.Hardware.Specification.Eedid
 {
-    using System;
-    using System.Collections.Generic;
-    using System.Collections.ObjectModel;
-    using System.Diagnostics;
-
     /// <summary>
     /// Base class that represents a block of the <b>Extended display identification data (E-EDID)</b>.
     /// </summary> 

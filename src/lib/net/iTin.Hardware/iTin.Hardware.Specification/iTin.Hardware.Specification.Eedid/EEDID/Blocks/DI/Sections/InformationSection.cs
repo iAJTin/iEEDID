@@ -1,9 +1,9 @@
 ﻿
+using System.Collections.ObjectModel;
+using System.Diagnostics;
+
 namespace iTin.Hardware.Specification.Eedid.Blocks.DI.Sections
 {
-    using System.Collections.ObjectModel;
-    using System.Diagnostics;
-
     // DI Section: Information
     // •————————————————————————————————————————————————————————————————————————————————————————————————————————•
     // | Offset       Name                      Lenght      Description                                         |

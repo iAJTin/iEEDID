@@ -1,14 +1,14 @@
 
+using System.Collections.ObjectModel;
+using System.Linq;
+
+using iTin.Core;
+
+using iTin.Hardware.Specification.Eedid.Blocks.DisplayId.Sections.DataBlocks.ComponentModel;
+using iTin.Hardware.Specification.IEEE;
+
 namespace iTin.Hardware.Specification.Eedid.Blocks.DisplayId.Sections.DataBlocks
 {
-    using System.Collections.ObjectModel;
-    using System.Linq;
-
-    using iTin.Core;
-
-    using ComponentModel;
-    using IEEE;
-
     // Data Block: Vendor Specific Data Block
     // •—————————————————————————————————————————————————————————————————————————————————————————————————•
     // | Offset       Name                    Lenght      Description                                    |

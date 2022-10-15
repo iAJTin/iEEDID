@@ -1,8 +1,8 @@
 ﻿
+using iTin.Hardware.Specification.Eedid.Blocks.LS.Sections;
+
 namespace iTin.Hardware.Specification.Eedid.Blocks.LS
 {
-    using Sections;
-
     /// <summary>
     /// Sections corresponding to a block of type <see cref="LsBlock"/>.
     /// </summary>

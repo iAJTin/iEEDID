@@ -1,9 +1,9 @@
 ﻿
+using System;
+using System.Linq;
+
 namespace iTin.Core.Hardware.Windows.Device.Desktop.Monitor.ComponentModel
 {
-    using System;
-    using System.Linq;
-
     /// <summary>
     /// The data structure <see cref="MonitorDeviceEdidInfoNative"/> contains the raw <c>EDID</c> information of a system monitor.
     /// </summary>

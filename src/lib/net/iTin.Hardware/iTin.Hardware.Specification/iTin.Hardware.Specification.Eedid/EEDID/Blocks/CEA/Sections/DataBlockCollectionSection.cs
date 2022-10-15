@@ -1,13 +1,13 @@
 ﻿
+using System;
+using System.Collections.Generic;
+using System.Collections.ObjectModel;
+using System.Linq;
+
+using iTin.Hardware.Specification.Eedid.Blocks.CEA.Sections.Descriptors;
+
 namespace iTin.Hardware.Specification.Eedid.Blocks.CEA.Sections
 {
-    using System;
-    using System.Collections.Generic;
-    using System.Collections.ObjectModel;
-    using System.Linq;
-
-    using Descriptors;
-
     // CEA Section: Data Block Collection Information
     // •————————————————————————————————————————————————————————————————————————————————————————————————————————•
     // | Offset       Name                      Lenght      Description                                         |

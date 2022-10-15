@@ -1,11 +1,11 @@
 ﻿
+using System;
+
+using iTin.Hardware.Specification.Eedid.Blocks.EDID;
+using iTin.Hardware.Specification.Eedid.Blocks.EDID.Sections.Descriptors;
+
 namespace iTin.Hardware.Specification.Eedid
 {
-    using System;
-
-    using Blocks.EDID;
-    using Blocks.EDID.Sections.Descriptors;
-
     internal static class DataBlockDescriptorFactory
     {
         public static BaseDataSection GetDataBlockDescription(DataBlockDescriptorData data)

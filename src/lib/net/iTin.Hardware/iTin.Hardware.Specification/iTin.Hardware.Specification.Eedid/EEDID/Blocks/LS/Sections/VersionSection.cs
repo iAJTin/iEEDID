@@ -1,8 +1,8 @@
 ﻿
+using System.Collections.ObjectModel;
+
 namespace iTin.Hardware.Specification.Eedid.Blocks.LS.Sections
 {
-    using System.Collections.ObjectModel;
-
     /// <summary>
     /// Specialization of the <see cref="BaseDataSection"/> class.<br/>
     /// Represents the <see cref="LsSection.Version"/> section of this block <see cref="KnownDataBlock.LS"/>.

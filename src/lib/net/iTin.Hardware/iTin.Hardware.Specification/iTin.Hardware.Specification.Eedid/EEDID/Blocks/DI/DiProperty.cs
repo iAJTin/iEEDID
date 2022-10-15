@@ -1,10 +1,10 @@
 ﻿
+using System.Collections.ObjectModel;
+
+using iTin.Core.Hardware.Common;
+
 namespace iTin.Hardware.Specification.Eedid.Blocks.DI
 {
-    using System.Collections.ObjectModel;
-
-    using iTin.Core.Hardware.Common;
-
     /// <summary>
     /// Contains all availables section properties for a <see cref="DiBlock"/> block.
     /// </summary>

@@ -1,12 +1,13 @@
 ﻿
+using System.Collections.Generic;
+using System.Runtime.InteropServices;
+
+using Linux = iTin.Core.Hardware.Linux.Device.Desktop;
+using MacOS = iTin.Core.Hardware.MacOS.Device.Desktop;
+using Win = iTin.Core.Hardware.Windows.Device.Desktop.Monitor;
+
 namespace iTin.Hardware.Abstractions.Devices
 {
-    using System.Collections.Generic;
-    using System.Runtime.InteropServices;
-
-    using MacOS = iTin.Core.Hardware.MacOS.Device.Desktop;
-    using Win = iTin.Core.Hardware.Windows.Device.Desktop.Monitor;
-
     /// <summary>
     /// Define 
     /// </summary>
@@ -24,11 +25,11 @@ namespace iTin.Hardware.Abstractions.Devices
             /// </returns>
             public static IEnumerable<byte[]> GetEdidDataCollection()
             {
-                List<byte[]> result = new List<byte[]>();
+                var result = new List<byte[]>();
 
                 if (RuntimeInformation.IsOSPlatform(OSPlatform.Linux))
                 {
-                    // To do
+                    return Linux.Monitor.GetEdidDataCollection();
                 }
 
                 if (RuntimeInformation.IsOSPlatform(OSPlatform.OSX))
@@ -38,8 +39,8 @@ namespace iTin.Hardware.Abstractions.Devices
 
                 if (RuntimeInformation.IsOSPlatform(OSPlatform.Windows))
                 {
-                    IEnumerable<Win.MonitorDeviceInfo> deviceMonitors = Win.SafeMonitorNativeMethods.EnumerateMonitorDevices();
-                    foreach (Win.MonitorDeviceInfo device in deviceMonitors)
+                    var deviceMonitors = Win.SafeMonitorNativeMethods.EnumerateMonitorDevices();
+                    foreach (var device in deviceMonitors)
                     {
                         result.Add((byte[])device.Edid.Clone());
                     }

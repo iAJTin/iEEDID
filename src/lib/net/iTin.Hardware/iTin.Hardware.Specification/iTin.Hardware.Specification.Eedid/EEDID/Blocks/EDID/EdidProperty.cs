@@ -1,15 +1,14 @@
 ﻿
+using System.Collections.Generic;
+using System.Collections.ObjectModel;
+using System.Drawing;
+
+using iTin.Core.Hardware.Common;
+
+using iTin.Hardware.Specification.Eedid.Blocks.EDID.Sections.Descriptors;
+
 namespace iTin.Hardware.Specification.Eedid.Blocks.EDID
 {
-    using System.Collections.Generic;
-    using System.Collections.ObjectModel;
-    using System.Drawing;
-
-    using iTin.Core.Hardware.Common;
-
-    using Blocks;
-    using Sections.Descriptors;
-
     /// <summary>
     /// Contains all availables section properties for a <see cref="EdidBlock"/> block.
     /// </summary>

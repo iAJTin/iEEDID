@@ -1,14 +1,14 @@
 ﻿
+using System;
+using System.Collections.Generic;
+using System.Collections.ObjectModel;
+using System.Linq;
+
+using iTin.Hardware.Specification.Eedid.Blocks.CEA;
+using iTin.Hardware.Specification.Eedid.Blocks.CEA.Sections;
+
 namespace iTin.Hardware.Specification.Eedid.Blocks
 {
-    using System;
-    using System.Collections.Generic;
-    using System.Collections.ObjectModel;
-    using System.Linq;
-
-    using CEA;
-    using CEA.Sections;
-
     // •——————————————————————————————————————————————•
     // | CEA BLOCK                                    |
     // |   · Extension Tag                            |

@@ -1,8 +1,8 @@
 ﻿
+using iTin.Core.Hardware.Common;
+
 namespace iTin.Hardware.Specification.Eedid
 {
-    using iTin.Core.Hardware.Common;
-
     /// <summary>
     /// Types of known blocks.
     /// </summary>

@@ -1,10 +1,10 @@
 ﻿
+using System.Collections.ObjectModel;
+
+using iTin.Hardware.Specification.Eedid.Blocks.CEA.Sections.Descriptors.DataBlocks;
+
 namespace iTin.Hardware.Specification.Eedid.Blocks.CEA.Sections.Descriptors
 {
-    using System.Collections.ObjectModel;
-
-    using DataBlocks;
-
     /// <summary>
     /// Specialization of the <see cref="BaseDataSection"/> class.<br/>
     /// Represents the Short Reserved Descriptor section of the Data Block Collection block.

@@ -1,10 +1,10 @@
 ﻿
+using System;
+
 namespace iTin.Core.Hardware.Common
 {
-    using System;
-
     /// <summary>
-    /// Defines a property.
+    /// Defines a value that contains the detailed information of a writer.
     /// </summary>
     public struct PropertyKey : IPropertyKey, IEquatable<PropertyKey>
     {

@@ -1,9 +1,9 @@
 ﻿
+using System.Collections.ObjectModel;
+using System.Diagnostics;
+
 namespace iTin.Hardware.Specification.Eedid.Blocks.EDID.Sections
 {
-    using System.Collections.ObjectModel;
-    using System.Diagnostics;
-
     // EDID Section: Version & Revision Information
     // •————————————————————————————————————————————————————————————————————————————————————————————————————————•
     // | Offset       Name                      Lenght      Description                                         |

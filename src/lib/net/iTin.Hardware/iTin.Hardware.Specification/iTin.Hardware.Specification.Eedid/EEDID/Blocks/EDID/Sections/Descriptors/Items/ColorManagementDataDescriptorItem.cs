@@ -1,11 +1,11 @@
 ﻿
+using System.Collections.ObjectModel;
+using System.Diagnostics;
+
+using iTin.Core.Helpers;
+
 namespace iTin.Hardware.Specification.Eedid.Blocks.EDID.Sections.Descriptors
 {
-    using System.Collections.ObjectModel;
-    using System.Diagnostics;
-
-    using iTin.Core.Helpers;
-
     // Data Block Descriptor -> Descriptor Item : Color Management Data Descriptor Item Definition
     // •————————————————————————————————————————————————————————————————————————————————————————————•
     // | Offset       Name                      Lenght      Description                             |

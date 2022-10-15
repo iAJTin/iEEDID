@@ -1,8 +1,8 @@
 ﻿
+using iTin.Hardware.Specification.Eedid.Blocks.VTB.Sections;
+
 namespace iTin.Hardware.Specification.Eedid.Blocks.VTB
 {
-    using Sections;
-
     /// <summary>
     /// Sections corresponding to a block of type <see cref="VtbBlock"/>.
     /// </summary> 

@@ -1,13 +1,13 @@
 ﻿
+using System;
+using System.Collections.ObjectModel;
+using System.Linq;
+
+using DeviceContext = iTin.Core.Interop.Shared.Windows.Development.Graphics.Legacy.Gdi.DeviceContext;
+using GdiPrint = iTin.Core.Interop.Shared.Windows.Development.DocumentAndPrinting.Printing.GdiPrint;
+
 namespace iTin.Core.Hardware.Windows.Device.Desktop.Monitor.Video.VideoMode
 {
-    using System;
-    using System.Collections.ObjectModel;
-    using System.Linq;
-
-    using DeviceContext = Core.Interop.Shared.Windows.Development.Graphics.Legacy.Gdi.DeviceContext;
-    using GdiPrint = Core.Interop.Shared.Windows.Development.DocumentAndPrinting.Printing.GdiPrint;
-
     /// <summary>
     /// Defines a set of Safe monitor native methods.
     /// </summary>

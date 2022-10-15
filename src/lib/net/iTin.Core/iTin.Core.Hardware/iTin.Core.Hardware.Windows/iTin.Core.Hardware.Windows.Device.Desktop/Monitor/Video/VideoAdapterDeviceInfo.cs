@@ -1,11 +1,11 @@
 ﻿
+using System;
+using System.Diagnostics;
+
+using iTin.Core.Interop.Shared.Windows.Development.Graphics.Legacy.Gdi.DeviceContext;
+
 namespace iTin.Core.Hardware.Windows.Device.Desktop.Monitor.Video
 {
-    using System;
-    using System.Diagnostics;
-
-    using iTin.Core.Interop.Shared.Windows.Development.Graphics.Legacy.Gdi.DeviceContext;
-
     /// <summary>
     /// The <see cref="VideoAdapterDeviceInfo"/> data structure contains information about a video adapter.
     /// </summary>

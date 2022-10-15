@@ -1,15 +1,15 @@
 ﻿
+using System.Collections.ObjectModel;
+using System.Drawing;
+
+using iTin.Core;
+using iTin.Core.Helpers;
+using iTin.Core.Helpers.Enumerations;
+
+using iTin.Hardware.Specification.Eedid.Blocks.EDID.Sections.Descriptors;
+
 namespace iTin.Hardware.Specification.Eedid.Blocks.EDID.Sections
 {
-    using System.Collections.ObjectModel;
-    using System.Drawing;
-
-    using iTin.Core;
-    using iTin.Core.Helpers;
-    using iTin.Core.Helpers.Enumerations;
-
-    using Descriptors;
-
     // EDID Section Information: ColorCharacteristics -> ColorCharacteristicDetail
     // •————————————————————————————————————————————————————————————————————————————————————————————————————————•
     // | Offset       Name                        Lenght      Description                                       |

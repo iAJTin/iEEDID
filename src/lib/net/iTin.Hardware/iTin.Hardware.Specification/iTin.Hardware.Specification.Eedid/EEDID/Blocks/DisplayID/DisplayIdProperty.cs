@@ -1,15 +1,14 @@
 ﻿
+using System.Collections.Generic;
 using System.Drawing;
+
+using iTin.Core.Hardware.Common;
+
+using iTin.Hardware.Specification.Eedid.Blocks.DisplayId.Sections.DataBlocks;
+using iTin.Hardware.Specification.Eedid.Blocks.DisplayId.Sections.DataBlocks.ComponentModel;
 
 namespace iTin.Hardware.Specification.Eedid.Blocks.DisplayId
 {
-    using System.Collections.Generic;
-
-    using iTin.Core.Hardware.Common;
-
-    using Sections.DataBlocks;
-    using Sections.DataBlocks.ComponentModel;
-
     /// <summary>
     /// Contains all availables section properties for a <see cref="DisplayIdBlock"/> block.
     /// </summary>
@@ -461,7 +460,7 @@ namespace iTin.Hardware.Specification.Eedid.Blocks.DisplayId
                     [PropertyName("UUID")]
                     [PropertyDescription("16-byte Universally Unique Identifier (UUID)")]
                     [PropertyType(typeof(string))]
-                    UUID,
+                    UUID
                 }
 
                 /// <summary>

@@ -1,14 +1,14 @@
 ﻿
+using System;
+using System.Diagnostics;
+using System.Drawing;
+
 namespace iTin.Hardware.Specification.Eedid
 {
-    using System;
-    using System.Diagnostics;
-    using System.Drawing;
-
     /// <summary>
     /// Defines resolution of a monitor.
     /// </summary>
-    public struct MonitorResolutionInfo :  IEquatable<MonitorResolutionInfo>
+    public readonly struct MonitorResolutionInfo :  IEquatable<MonitorResolutionInfo>
     {
         #region private readonly members
         [DebuggerBrowsable(DebuggerBrowsableState.Never)]

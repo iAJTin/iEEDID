@@ -1,20 +1,20 @@
 ﻿
+using System;
+using System.Collections.Generic;
+using System.Collections.ObjectModel;
+using System.Drawing;
+
+using iTin.Core.Hardware.Common;
+
+using iTin.Hardware.Specification.Eedid.Blocks.CEA;
+using iTin.Hardware.Specification.Eedid.Blocks.DI;
+using iTin.Hardware.Specification.Eedid.Blocks.DisplayId;
+using iTin.Hardware.Specification.Eedid.Blocks.DisplayId.Sections.DataBlocks.ComponentModel;
+using iTin.Hardware.Specification.Eedid.Blocks.EDID;
+using iTin.Hardware.Specification.Eedid.Blocks.EDID.Sections.Descriptors;
+
 namespace iTin.Hardware.Specification.Eedid
 {
-    using System;
-    using System.Collections.Generic;
-    using System.Collections.ObjectModel;
-    using System.Drawing;
-
-    using iTin.Core.Hardware.Common;
-
-    using Blocks.CEA;
-    using Blocks.DI;
-    using Blocks.DisplayId;
-    using Blocks.DisplayId.Sections.DataBlocks.ComponentModel;
-    using Blocks.EDID;
-    using Blocks.EDID.Sections.Descriptors;
-
     /// <summary>
     /// Definition of available keys for the <see cref="EEDID"/> specification of a monitor.
     /// </summary>
@@ -7158,7 +7158,7 @@ namespace iTin.Hardware.Specification.Eedid
                         /// <para>
                         ///  <para><b>Key Composition</b></para>
                         ///  <list type="bullet">
-                        ///   <item><description>Structure: <see cref="DisplayIdSection.DataBlocksDisplayIdProperty.DataBlocks.Blocks.Identifier.ProductIdentification"/></description></item>
+                        ///   <item><description>Structure: <see cref="DisplayIdProperty.DataBlocks.Blocks.Identifier.ProductIdentification"/></description></item>
                         ///   <item><description>Property: <see cref="DisplayIdProperty.DataBlocks.Blocks.ProductIdentification.ProductIdCode"/></description></item>
                         ///   <item><description>Unit: <see cref="PropertyUnit.None"/></description></item>
                         ///  </list>

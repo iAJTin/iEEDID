@@ -1,11 +1,11 @@
 ﻿
+using System;
+using System.Collections.Generic;
+using System.Collections.ObjectModel;
+using System.Linq;
+
 namespace iTin.Hardware.Specification.Eedid.Blocks
 {
-    using System;
-    using System.Collections.Generic;
-    using System.Collections.ObjectModel;
-    using System.Linq;
-
     /// <summary>
     /// Specialization of the <see cref="BaseDataBlock"/> class.<br/>
     /// Representing the block <see cref="KnownDataBlock.VTB"/> of the specification <see cref="EEDID"/>.

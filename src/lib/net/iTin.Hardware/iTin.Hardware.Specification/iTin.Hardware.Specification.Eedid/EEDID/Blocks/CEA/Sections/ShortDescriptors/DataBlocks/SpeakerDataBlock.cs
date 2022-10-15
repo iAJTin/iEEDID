@@ -1,11 +1,11 @@
 ﻿
+using System.Collections.ObjectModel;
+
+using iTin.Core;
+using iTin.Core.Helpers.Enumerations;
+
 namespace iTin.Hardware.Specification.Eedid.Blocks.CEA.Sections.Descriptors.DataBlocks
 {
-    using System.Collections.ObjectModel;
-
-    using iTin.Core;
-    using iTin.Core.Helpers.Enumerations;
-
     /// <summary>
     /// Structure <see cref="SpeakerDataBlock"/> that contains the logic to decode the data of a block of type <see cref="ShortSpeakerDescriptorSection"/>.
     /// </summary> 

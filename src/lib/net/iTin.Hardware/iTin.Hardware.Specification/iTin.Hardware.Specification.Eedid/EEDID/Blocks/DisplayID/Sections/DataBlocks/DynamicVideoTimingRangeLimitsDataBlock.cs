@@ -1,15 +1,15 @@
 ﻿
+using System.Collections.ObjectModel;
+using System.Diagnostics;
+using System.Globalization;
+
+using iTin.Core;
+using iTin.Core.Helpers.Enumerations;
+
+using iTin.Hardware.Specification.Eedid.Blocks.DisplayId.Sections.DataBlocks.ComponentModel;
+
 namespace iTin.Hardware.Specification.Eedid.Blocks.DisplayId.Sections.DataBlocks
 {
-    using System.Collections.ObjectModel;
-    using System.Diagnostics;
-    using System.Globalization;
-
-    using iTin.Core;
-    using iTin.Core.Helpers.Enumerations;
-
-    using ComponentModel;
-
     // Data Block: Dynamic Video Timing Range Limits Data Block
     // •—————————————————————————————————————————————————————————————————————————————————————————————————•
     // | Offset       Name                    Lenght      Description                                    |

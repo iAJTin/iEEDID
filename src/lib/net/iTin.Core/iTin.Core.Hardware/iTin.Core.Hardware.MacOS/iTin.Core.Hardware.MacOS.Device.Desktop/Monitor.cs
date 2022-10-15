@@ -1,12 +1,12 @@
 ﻿
+using System;
+using System.Collections.Generic;
+using System.Diagnostics;
+
+using iTin.Core.ComponentModel.Enums;
+
 namespace iTin.Core.Hardware.MacOS.Device.Desktop
 {
-    using System;
-    using System.Collections.Generic;
-    using System.Diagnostics;
-
-    using iTin.Core.ComponentModel.Enums;
-
     /// <summary>
     /// Defines 
     /// </summary>
@@ -19,9 +19,9 @@ namespace iTin.Core.Hardware.MacOS.Device.Desktop
         /// </returns>
         public static IEnumerable<byte[]> GetEdidDataCollection()
         {
-            List<byte[]> result = new List<byte[]>();
+            var result = new List<byte[]>();
 
-            var startInfo = new ProcessStartInfo()
+            var startInfo = new ProcessStartInfo
             {
                 FileName = MacProgram.IoReg.ToString(),
                 Arguments = "-lw0 -r -c \"IODisplayConnect\" -n \"display0\" -d 2 | grep IODisplayEDID",

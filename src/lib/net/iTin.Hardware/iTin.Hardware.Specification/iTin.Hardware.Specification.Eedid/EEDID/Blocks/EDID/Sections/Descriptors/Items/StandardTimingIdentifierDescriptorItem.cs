@@ -1,9 +1,9 @@
 ﻿
+using System.Collections.Generic;
+using System.Diagnostics;
+
 namespace iTin.Hardware.Specification.Eedid.Blocks.EDID.Sections.Descriptors
 {
-    using System.Collections.Generic;
-    using System.Diagnostics;
-    
     // Data Block Descriptor -> Descriptor Item : Standard Timing Identifier Descriptor Item Definition
     // •———————————————————————————————————————————————————————————————————————————————————————————————————————————————————•
     // | Offset       Name          Lenght      Descriptin                                                                 |

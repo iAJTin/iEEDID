@@ -1,17 +1,17 @@
 ﻿
+using System;
+using System.Diagnostics;
+using System.Drawing;
+
+using iTin.Core.Interop.Shared.Windows.Development.Graphics.Legacy.Gdi.DeviceContext;
+using iTin.Core.Interop.Shared.Windows.Development.Graphics.Legacy.Gdi.MultipleDisplayMonitors;
+
 namespace iTin.Core.Hardware.Windows.Device.Desktop.Monitor.ComponentModel
 {
-    using System;
-    using System.Diagnostics;
-    using System.Drawing;
-
-    using iTin.Core.Interop.Shared.Windows.Development.Graphics.Legacy.Gdi.DeviceContext;
-    using iTin.Core.Interop.Shared.Windows.Development.Graphics.Legacy.Gdi.MultipleDisplayMonitors;
-
     /// <summary>
     /// The data structure <see cref="MonitorDeviceInfoNative"/> contains the basic information of a system monitor.
     /// </summary>
-    internal struct MonitorDeviceInfoNative : IEquatable<MonitorDeviceInfoNative>
+    internal readonly struct MonitorDeviceInfoNative : IEquatable<MonitorDeviceInfoNative>
     {
         #region private readonly members
         [DebuggerBrowsable(DebuggerBrowsableState.Never)]

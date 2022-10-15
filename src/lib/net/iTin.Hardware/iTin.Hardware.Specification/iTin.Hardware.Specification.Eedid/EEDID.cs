@@ -1,21 +1,20 @@
 ﻿
+using System.Collections.Generic;
+using System.Collections.ObjectModel;
+using System.Diagnostics;
+using System.Linq;
+using System.Runtime.InteropServices;
+
+using iTin.Core;
+using iTin.Core.Hardware.MacOS.Device.Desktop;
+using iTin.Core.Hardware.Windows.Device.Desktop.Monitor;
+
+using iTin.Hardware.Specification.Eedid;
+using iTin.Hardware.Specification.Eedid.Blocks;
 using iTin.Hardware.Specification.Eedid.Blocks.EDID;
 
 namespace iTin.Hardware.Specification
 {
-    using System.Collections.Generic;
-    using System.Collections.ObjectModel;
-    using System.Diagnostics;
-    using System.Linq;
-    using System.Runtime.InteropServices;
-
-    using iTin.Core;
-    using iTin.Core.Hardware.MacOS.Device.Desktop;
-    using iTin.Core.Hardware.Windows.Device.Desktop.Monitor;
-
-    using iTin.Hardware.Specification.Eedid;
-    using iTin.Hardware.Specification.Eedid.Blocks;
-
     /// <summary>
     /// Implementation of the <b>E-EDID</b> (Extended Display Identification Data) specification.
     /// </summary> 

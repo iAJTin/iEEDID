@@ -1,8 +1,8 @@
 ﻿
+using System.Collections.ObjectModel;
+
 namespace iTin.Hardware.Specification.Eedid.Blocks.VTB.Sections
 {
-    using System.Collections.ObjectModel;
-
     /// <summary>
     /// Specialization of the <see cref="BaseDataSection"/> class.<br/>
     /// Represents the <see cref="VtbSection.Version"/> section of this block <see cref="KnownDataBlock.VTB"/>.

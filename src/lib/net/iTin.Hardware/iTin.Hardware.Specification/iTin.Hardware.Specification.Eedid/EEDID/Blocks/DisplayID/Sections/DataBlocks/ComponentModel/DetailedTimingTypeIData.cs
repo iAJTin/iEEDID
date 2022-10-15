@@ -1,15 +1,14 @@
 ﻿
+using System.Collections.Generic;
+using System.Collections.ObjectModel;
+using System.Diagnostics;
+using System.Globalization;
+
+using iTin.Core;
+using iTin.Core.Helpers.Enumerations;
+
 namespace iTin.Hardware.Specification.Eedid.Blocks.DisplayId.Sections.DataBlocks.ComponentModel
 {
-    using System.Collections.Generic;
-    using System.Collections.ObjectModel;
-    using System.Diagnostics;
-    using System.Globalization;
-
-    using iTin.Core;
-    using iTin.Core.Helpers.Enumerations;
-
-    using ComponentModel;
 
     // Data Block: Detailed Timing Type I Definition
     // •—————————————————————————————————————————————————————————————————————————————————————————————————•

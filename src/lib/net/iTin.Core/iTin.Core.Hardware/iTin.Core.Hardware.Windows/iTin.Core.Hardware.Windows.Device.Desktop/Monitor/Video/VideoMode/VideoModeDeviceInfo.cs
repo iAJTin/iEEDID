@@ -1,12 +1,12 @@
 ﻿
+using System;
+using System.Diagnostics;
+using System.Drawing;
+
+using iTin.Core.Interop.Shared.Windows.Development.DocumentAndPrinting.Printing.GdiPrint;
+
 namespace iTin.Core.Hardware.Windows.Device.Desktop.Monitor.Video.VideoMode
 {
-    using System;
-    using System.Diagnostics;
-    using System.Drawing;
-
-    using Core.Interop.Shared.Windows.Development.DocumentAndPrinting.Printing.GdiPrint;
-
     /// <summary>
     /// La estructura de datos <strong>VideoModeInfo</strong> contiene información abaout a video mode.
     /// </summary>

@@ -1,10 +1,10 @@
 ﻿
+using iTin.Core.Hardware.Common;
+
+using iTin.Hardware.Specification.Eedid.Blocks.DisplayId.Sections;
+
 namespace iTin.Hardware.Specification.Eedid.Blocks.DisplayId
 {
-    using iTin.Core.Hardware.Common;
-
-    using Sections;
-
     /// <summary>
     /// Sections available for a block <see cref="KnownDataBlock.DisplayID" />.
     /// </summary> 

@@ -1,13 +1,13 @@
 ﻿
+using System;
+using System.Collections.Generic;
+using System.Collections.ObjectModel;
+using System.Linq;
+
+using iTin.Hardware.Specification.Eedid.Blocks.CEA.Sections.Descriptors.DataBlocks;
+
 namespace iTin.Hardware.Specification.Eedid.Blocks.CEA.Sections.Descriptors
 {
-    using System;
-    using System.Collections.Generic;
-    using System.Collections.ObjectModel;
-    using System.Linq;
-
-    using DataBlocks;
-
     /// <summary>
     /// Specialization of the <see cref="BaseDataSection"/> class.<br/>
     /// Represents the Short Audio Descriptor section of the Data Block Collection block.

@@ -1,13 +1,13 @@
 
+using System.Collections.Generic;
+using System.Collections.ObjectModel;
+using System.Diagnostics;
+
+using iTin.Core;
+using iTin.Core.Helpers.Enumerations;
+
 namespace iTin.Hardware.Specification.Eedid.Blocks.EDID.Sections.Descriptors
 {
-    using System.Collections.Generic;
-    using System.Collections.ObjectModel;
-    using System.Diagnostics;
-
-    using iTin.Core;
-    using iTin.Core.Helpers.Enumerations;
-
     // Data Block Descriptor: Established Timings III Descriptor Definition
     // •—————————————————————————————————————————————————————————————————————————————————————————————•
     // | Offset       Name                      Lenght      Description                              |

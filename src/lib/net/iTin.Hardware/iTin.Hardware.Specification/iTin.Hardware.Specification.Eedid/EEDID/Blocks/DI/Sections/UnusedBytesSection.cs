@@ -1,8 +1,8 @@
 ﻿
+using System.Collections.ObjectModel;
+
 namespace iTin.Hardware.Specification.Eedid.Blocks.DI.Sections
 {
-    using System.Collections.ObjectModel;
-
     // DI Section: Unused Bytes
     // •——————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————•
     // | Offset       Name                  Lenght      Description                                                                                       |

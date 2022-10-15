@@ -1,11 +1,11 @@
 ﻿
+using System.ComponentModel;
+using System.Linq;
+
+using iTin.Core.Helpers;
+
 namespace iTin.Hardware.Specification.Eedid.Blocks.DI.Sections
 {
-    using System.ComponentModel;
-    using System.Linq;
-
-    using iTin.Core.Helpers;
-
     /// <summary>
     /// Specialization of the class <see cref="BaseDataSectionCollection"/>.<br/>
     /// Representing a collection of objects <see cref="DataSection"/> for a <see cref="DataBlock"/> of type <see cref="KnownDataBlock.DI"/>.

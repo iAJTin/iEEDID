@@ -1,17 +1,17 @@
 ﻿
+using System;
+using System.Collections.Generic;
+using System.Collections.ObjectModel;
+using System.Diagnostics;
+using System.Linq;
+
+using iTin.Hardware.Specification.Eedid.Blocks.CEA.Sections;
+using iTin.Hardware.Specification.Eedid.Blocks.DI.Sections;
+using iTin.Hardware.Specification.Eedid.Blocks.DisplayId.Sections;
+using iTin.Hardware.Specification.Eedid.Blocks.EDID.Sections;
+
 namespace iTin.Hardware.Specification.Eedid
 {
-    using System;
-    using System.Collections.Generic;
-    using System.Collections.ObjectModel;
-    using System.Diagnostics;
-    using System.Linq;
-
-    using Blocks.CEA.Sections;
-    using Blocks.DI.Sections;
-    using Blocks.DisplayId.Sections;
-    using Blocks.EDID.Sections;
-
     /// <summary>
     /// Represents a data block
     /// </summary>
