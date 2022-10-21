@@ -50,6 +50,8 @@ Changes in this version (v1.0.7)
 · Changed
   -------
   
+    - Rewrite hardware libraries for compability with others projects.
+
     - Changed IResultGeneric interface. Changed Value property name by Result (for code clarify).
 
       · This change may have implications in your final code, it is resolved by changing Value to Result
@@ -62,6 +64,8 @@ Changes in this version (v1.0.7)
       | Library                                      Version     Description                                                                       |
       •————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————•
       | iTin.Core                                    2.0.0.6     Base library containing various extensions, helpers, common constants             |
+      •————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————•
+      | iTin.Core.Hardware.Abstractions              1.0.0.0     Generic Common Hardware Abstractions                                              |
       •————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————•
       | iTin.Core.Hardware.Common                    1.0.0.5     Common Hardware Infrastructure                                                    |
       •————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————•

@@ -3,12 +3,10 @@ using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Diagnostics;
 using System.Linq;
-using System.Runtime.InteropServices;
 
 using iTin.Core;
-using iTin.Core.Hardware.MacOS.Device.Desktop;
-using iTin.Core.Hardware.Windows.Device.Desktop.Monitor;
 
+using iTin.Hardware.Abstractions.Devices.Desktop;
 using iTin.Hardware.Specification.Eedid;
 using iTin.Hardware.Specification.Eedid.Blocks;
 using iTin.Hardware.Specification.Eedid.Blocks.EDID;
@@ -62,7 +60,11 @@ namespace iTin.Hardware.Specification
         /// <returns>
         /// A <see cref="EEDID"/> array that contains <b>Extended Display Identification Data</b> information for this machine.
         /// </returns>
-        public static EEDID[] Instance => PlatformResolverStrategy();
+        public static EEDID[] Instance => (EEDID[])MonitorOperations.Instance
+            .GetEdidDataCollection()
+            .Select(rawEdidItem => new EEDID(rawEdidItem))
+            .ToArray()
+            .Clone();
         #endregion
 
         #endregion
@@ -226,46 +228,6 @@ namespace iTin.Hardware.Specification
             }
 
             return dataBlocks;
-        }
-        #endregion
-
-        #region [private] {static} (EEDID[]) PlatformResolverStrategy(): Returns a new instance containing all available EEDID structures for this machine
-        /// <summary>
-        /// Returns a new instance containing all available <see cref="EEDID"/> structures for this machine.
-        /// </summary>
-        /// <returns>
-        /// A <see cref="EEDID"/> array that contains <b>Extended Display Identification Data</b> information for this machine.
-        /// </returns>
-        private static EEDID[] PlatformResolverStrategy()
-        {
-            List<EEDID> result = new List<EEDID>();
-            List<byte[]> rawEdidCollection = new List<byte[]>();
-
-            if (RuntimeInformation.IsOSPlatform(OSPlatform.Linux))
-            {
-                // Nothing to do
-            }
-
-            if (RuntimeInformation.IsOSPlatform(OSPlatform.OSX))
-            {
-                rawEdidCollection = Monitor.GetEdidDataCollection().ToList();
-            }
-
-            if (RuntimeInformation.IsOSPlatform(OSPlatform.Windows))
-            {
-                IEnumerable<MonitorDeviceInfo> deviceMonitors = SafeMonitorNativeMethods.EnumerateMonitorDevices();
-                foreach (var device in deviceMonitors)
-                {
-                    rawEdidCollection.Add(device.Edid);
-                }
-            }
-
-            foreach (var rawEdidItem in rawEdidCollection)
-            {
-                result.Add(new EEDID((byte[])rawEdidItem.Clone()));
-            }
-
-            return (EEDID[])result.ToArray().Clone();
         }
         #endregion
 

@@ -1,10 +1,10 @@
 ﻿
+using System;
+using System.Drawing;
+using System.Runtime.InteropServices;
+
 namespace iTin.Core.Interop.Shared.Windows.Development.Graphics.Legacy.Gdi.Metafiles
 {
-    using System;
-    using System.Drawing;
-    using System.Runtime.InteropServices;
-
     /// <summary>
     /// The <b>POINTL</b> structure contains the coordinates of a point.
     /// </summary>

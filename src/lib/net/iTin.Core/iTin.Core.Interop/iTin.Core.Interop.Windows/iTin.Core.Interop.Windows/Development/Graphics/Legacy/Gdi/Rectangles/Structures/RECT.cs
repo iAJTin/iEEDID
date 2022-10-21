@@ -1,10 +1,10 @@
 ﻿
+using System;
+using System.Drawing;
+using System.Runtime.InteropServices;
+
 namespace iTin.Core.Interop.Shared.Windows.Development.Graphics.Legacy.Gdi.Rectangles
 {
-    using System;
-    using System.Drawing;
-    using System.Runtime.InteropServices;
-
     /// <summary>
     /// The <b>RECT</b> structure defines the coordinates of the upper left and lower right corners of a rectangle.
     /// </summary>

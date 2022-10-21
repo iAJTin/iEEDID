@@ -1,11 +1,11 @@
 ﻿
+using System;
+using System.Runtime.InteropServices;
+
+using iTin.Core.Interop.Shared.Windows.Development.Graphics.Legacy.Gdi.Rectangles;
+
 namespace iTin.Core.Interop.Shared.Windows.Development.Graphics.Legacy.Gdi.MultipleDisplayMonitors
 {
-    using System;
-    using System.Runtime.InteropServices;
-
-    using Rectangles;
-
     /// <summary>
     /// The <strongs>MONITORINFO</strongs> structure contains information about a monitor.
     /// The <strongs>MONITORINFO</strongs> structure is a subset of the <see cref="MONITORINFOEX"/> structure. The <see cref="MONITORINFOEX"/> structure adds a member that contains the name for the monitor.

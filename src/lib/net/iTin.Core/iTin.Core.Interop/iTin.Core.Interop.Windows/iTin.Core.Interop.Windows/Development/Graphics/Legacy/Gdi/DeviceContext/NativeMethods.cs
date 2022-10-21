@@ -1,12 +1,12 @@
 ﻿
+using System;
+using System.Diagnostics.CodeAnalysis;
+using System.Runtime.InteropServices;
+
+using iTin.Core.Interop.Shared.Windows.Development.DocumentAndPrinting.Printing.GdiPrint;
+
 namespace iTin.Core.Interop.Shared.Windows.Development.Graphics.Legacy.Gdi.DeviceContext
 {
-    using System;
-    using System.Diagnostics.CodeAnalysis;
-    using System.Runtime.InteropServices;
-
-    using DocumentAndPrinting.Printing.GdiPrint;
-
     /// <summary>
     /// Functions that can be used to control the configuration of system parameters and various system attributes, such as double click time, the screen saver timeout, the width of the window border.
     /// </summary>

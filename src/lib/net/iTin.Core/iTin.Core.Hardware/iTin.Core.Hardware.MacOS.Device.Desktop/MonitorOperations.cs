@@ -3,21 +3,23 @@ using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 
+using iTin.Core.Hardware.Abstractions.Devices.Desktop.Monitor;
 using iTin.Core.Interop.Shared.MacOS;
 
 namespace iTin.Core.Hardware.MacOS.Device.Desktop
 {
     /// <summary>
-    /// Defines 
+    /// Specialization of the <see cref="IMonitorOperations"/> interface that contains the <b>Monitor</b> operations for <b>MacOS</b> system.
     /// </summary>
-    public static class Monitor
+    public class MonitorOperations : IMonitorOperations
     {
         /// <summary>
-        /// 
+        /// Gets a value containing the raw <b>EDID</b> data.
         /// </summary>
         /// <returns>
+        /// The raw <b>EDID</b> data.
         /// </returns>
-        public static IEnumerable<byte[]> GetEdidDataCollection()
+        public IEnumerable<byte[]> GetEdidDataCollection()
         {
             var result = new List<byte[]>();
 
@@ -31,26 +33,27 @@ namespace iTin.Core.Hardware.MacOS.Device.Desktop
                 RedirectStandardError = true
             };
 
-            var process = new Process()
+            var process = new Process
             {
                 StartInfo = startInfo
             };
 
-            List<string> ioDisplayEdidItems = new List<string>();
+            var ioDisplayEdidItems = new List<string>();
             process.OutputDataReceived += (sender, data) =>
             {
-                if (data != null)
+                if (data?.Data == null)
                 {
-                    if (data.Data != null)
-                    {
-                        if (data.Data.Contains("\"IODisplayEDID\" = <"))
-                        {
-                            string[] splitted = data.Data.Split(new[] { "\"IODisplayEDID\" = " }, StringSplitOptions.RemoveEmptyEntries);
-                            string rawEdid = splitted[1].Replace("<", string.Empty).Replace(">", string.Empty);
-                            ioDisplayEdidItems.Add(rawEdid);
-                        }
-                    }
+                    return;
                 }
+
+                if (!data.Data.Contains("\"IODisplayEDID\" = <"))
+                {
+                    return;
+                }
+
+                var splitted = data.Data.Split(new[] { "\"IODisplayEDID\" = " }, StringSplitOptions.RemoveEmptyEntries);
+                var rawEdid = splitted[1].Replace("<", string.Empty).Replace(">", string.Empty);
+                ioDisplayEdidItems.Add(rawEdid);
             };
 
             process.ErrorDataReceived += (sender, data) =>

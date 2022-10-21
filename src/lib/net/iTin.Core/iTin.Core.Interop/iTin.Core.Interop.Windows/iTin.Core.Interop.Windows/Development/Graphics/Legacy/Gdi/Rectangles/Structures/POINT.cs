@@ -1,10 +1,10 @@
 ﻿
+using System;
+using System.Drawing;
+using System.Runtime.InteropServices;
+
 namespace iTin.Core.Interop.Shared.Windows.Development.Graphics.Legacy.Gdi.Rectangles
 {
-    using System;
-    using System.Drawing;
-    using System.Runtime.InteropServices;
-
     /// <summary>
     /// The <b>POINT</b> structure contains the coordinates of a point.
     /// </summary>

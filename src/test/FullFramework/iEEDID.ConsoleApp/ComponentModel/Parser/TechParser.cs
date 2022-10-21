@@ -1,6 +1,4 @@
 ﻿
-using System.Collections.ObjectModel;
-
 using iTin.Logging.ComponentModel;
 
 using iTin.Hardware.Specification;
@@ -28,17 +26,16 @@ namespace iEEDID.ComponentModel.Parser
         /// <param name="instance"><see cref="EEDID"/> instance to parse.</param>
         public void Parse(EEDID instance)
         {
-            // Instance raw data.
-            ReadOnlyCollection<byte> rawData = instance.GetRawData();
-
             // Prints raw data.
-            ParserHelper.PrintsRawData(Logger, rawData);
+            ParserHelper.PrintsRawData(Logger, instance.GetRawData());
 
             // Prints blocks.
+            int index = 0;
             DataBlockCollection blocks = instance.Blocks;
             foreach (DataBlock block in blocks)
             {
-                ParserHelper.PrintsBlock(Logger, block);
+                ParserHelper.PrintsBlock(Logger, block, index);
+                index++;
             }
         }
     }

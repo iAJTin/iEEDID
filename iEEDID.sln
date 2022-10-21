@@ -59,13 +59,17 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "iTin.Core.Hardware.Linux.De
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "iTin.Core.Hardware.MacOS.Device.Desktop", "src\lib\net\iTin.Core\iTin.Core.Hardware\iTin.Core.Hardware.MacOS.Device.Desktop\iTin.Core.Hardware.MacOS.Device.Desktop.csproj", "{1B9B6633-7D61-4963-A7BA-3EE30BB32626}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "iTin.Core.Hardware.Windows.Device.Desktop", "src\lib\net\iTin.Core\iTin.Core.Hardware\iTin.Core.Hardware.Windows.Device.Desktop\iTin.Core.Hardware.Windows.Device.Desktop.csproj", "{07211F5E-8A9C-45F2-BAF7-A5CC79B98C7F}"
-EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "iTin.Hardware.Abstractions.Devices", "src\lib\net\iTin.Hardware\iTin.Hardware.Abstractions.Devices\iTin.Hardware.Abstractions.Devices.csproj", "{8213344C-0F63-4D7D-A382-5865C21FC836}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "iTin.Hardware.Specification.Eedid", "src\lib\net\iTin.Hardware\iTin.Hardware.Specification.Eedid\iTin.Hardware.Specification.Eedid.csproj", "{173E4B36-21DD-4CFE-92A4-9D1AB230A0B3}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "iTin.Hardware.Specification.IEEE", "src\lib\net\iTin.Hardware\iTin.Hardware.Specification.IEEE\iTin.Hardware.Specification.IEEE.csproj", "{238C1964-69D9-448A-B569-99075CC74C72}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "iTin.Core.Hardware.Abstractions", "src\lib\net\iTin.Core\iTin.Core.Hardware\iTin.Core.Hardware.Abstractions\iTin.Core.Hardware.Abstractions.csproj", "{EF018374-7B9F-4C63-8061-F103E694B8F0}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "iTin.Core.Hardware.Abstractions", "iTin.Core.Hardware.Abstractions", "{982712EF-B1BA-486A-8C17-F81713B89C1A}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "iTin.Core.Hardware.Windows.Device.Desktop", "src\lib\net\iTin.Core\iTin.Core.Hardware\iTin.Core.Hardware.Windows.Device.Desktop\iTin.Core.Hardware.Windows.Device.Desktop.csproj", "{1F8970C6-306A-4370-B46A-FFF731F35CE2}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -113,10 +117,6 @@ Global
 		{1B9B6633-7D61-4963-A7BA-3EE30BB32626}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1B9B6633-7D61-4963-A7BA-3EE30BB32626}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1B9B6633-7D61-4963-A7BA-3EE30BB32626}.Release|Any CPU.Build.0 = Release|Any CPU
-		{07211F5E-8A9C-45F2-BAF7-A5CC79B98C7F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{07211F5E-8A9C-45F2-BAF7-A5CC79B98C7F}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{07211F5E-8A9C-45F2-BAF7-A5CC79B98C7F}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{07211F5E-8A9C-45F2-BAF7-A5CC79B98C7F}.Release|Any CPU.Build.0 = Release|Any CPU
 		{8213344C-0F63-4D7D-A382-5865C21FC836}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{8213344C-0F63-4D7D-A382-5865C21FC836}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8213344C-0F63-4D7D-A382-5865C21FC836}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -129,6 +129,14 @@ Global
 		{238C1964-69D9-448A-B569-99075CC74C72}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{238C1964-69D9-448A-B569-99075CC74C72}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{238C1964-69D9-448A-B569-99075CC74C72}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EF018374-7B9F-4C63-8061-F103E694B8F0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EF018374-7B9F-4C63-8061-F103E694B8F0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EF018374-7B9F-4C63-8061-F103E694B8F0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EF018374-7B9F-4C63-8061-F103E694B8F0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1F8970C6-306A-4370-B46A-FFF731F35CE2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1F8970C6-306A-4370-B46A-FFF731F35CE2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1F8970C6-306A-4370-B46A-FFF731F35CE2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1F8970C6-306A-4370-B46A-FFF731F35CE2}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -160,10 +168,12 @@ Global
 		{FCFE961F-9738-4178-B152-894B4A729299} = {D93D233F-3C18-4B4D-942E-97638BAAF042}
 		{CAD9EE28-CC64-4758-BED9-AC0FF34A82BB} = {ED326CE4-519B-4627-83DB-2900DC42D2D0}
 		{1B9B6633-7D61-4963-A7BA-3EE30BB32626} = {39C422A2-A119-44B3-8CC0-DCBDD7C33E9C}
-		{07211F5E-8A9C-45F2-BAF7-A5CC79B98C7F} = {0D85BDE2-2383-44EF-8357-B4BA051C8435}
 		{8213344C-0F63-4D7D-A382-5865C21FC836} = {F8F7257B-C9D8-4619-BB9E-73B1190B673C}
 		{173E4B36-21DD-4CFE-92A4-9D1AB230A0B3} = {FB0E1A10-5DA3-47BC-BA3B-16A0E2031F40}
 		{238C1964-69D9-448A-B569-99075CC74C72} = {FB0E1A10-5DA3-47BC-BA3B-16A0E2031F40}
+		{EF018374-7B9F-4C63-8061-F103E694B8F0} = {982712EF-B1BA-486A-8C17-F81713B89C1A}
+		{982712EF-B1BA-486A-8C17-F81713B89C1A} = {B9CD054A-6661-4F16-BED2-13EDDCABFD7E}
+		{1F8970C6-306A-4370-B46A-FFF731F35CE2} = {0D85BDE2-2383-44EF-8357-B4BA051C8435}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {7E253257-825E-40F1-9BD8-3624F02E7544}

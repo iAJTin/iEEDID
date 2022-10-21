@@ -1,9 +1,9 @@
 ﻿
+using System;
+using System.Runtime.InteropServices;
+
 namespace iTin.Core.Interop.Shared.Windows.Development.Graphics.Legacy.Gdi.DeviceContext
 {
-    using System;
-    using System.Runtime.InteropServices;
-
     /// <summary>
     /// The <b>DISPLAY_DEVICE</b> structure receives the information from the display device specified by the parameter <c> iDevNum </c> of function <see cref="NativeMethods.EnumDisplayDevices"/>.
     /// For more information, please see http://msdn.microsoft.com/es-es/library/dd183569.aspx.

@@ -1,10 +1,10 @@
 ﻿
+using System;
+using System.Runtime.InteropServices;
+using System.Text;
+
 namespace iTin.Core.Interop.Shared.Windows.Development.Registry
 {
-    using System;
-    using System.Runtime.InteropServices;
-    using System.Text;
-
     /// <summary>
     /// Functions to develop Device and Driver Installation Reference.
     /// </summary>

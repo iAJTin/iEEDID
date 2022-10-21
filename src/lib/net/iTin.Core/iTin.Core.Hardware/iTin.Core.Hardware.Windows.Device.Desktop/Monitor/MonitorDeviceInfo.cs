@@ -1,8 +1,8 @@
 ﻿
-using System.Diagnostics;
-using System.Linq;
-using System.Drawing;
 using System;
+using System.Diagnostics;
+using System.Drawing;
+using System.Linq;
 
 using iTin.Core.Hardware.Windows.Device.Desktop.Monitor.ComponentModel;
 

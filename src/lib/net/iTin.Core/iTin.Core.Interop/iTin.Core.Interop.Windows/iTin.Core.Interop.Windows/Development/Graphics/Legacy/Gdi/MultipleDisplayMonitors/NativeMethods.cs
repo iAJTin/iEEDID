@@ -1,11 +1,11 @@
 ﻿
+using System;
+using System.Runtime.InteropServices;
+
+using iTin.Core.Interop.Shared.Windows.Development.Graphics.Legacy.Gdi.Rectangles;
+
 namespace iTin.Core.Interop.Shared.Windows.Development.Graphics.Legacy.Gdi.MultipleDisplayMonitors
 {
-    using System;
-    using System.Runtime.InteropServices;
-
-    using Rectangles;
-
     /// <summary>
     /// Functions that can be used to control the configuration of system parameters and various system attributes, such as double click time, the screen saver timeout, the width of the window border.
     /// </summary>

@@ -29,6 +29,6 @@
   <files>
     <file src=".\iEEDID.png" target="." />
     <file src="..\README.txt" target="." />
-    <file src="..\src\lib\net\iTin.Hardware\iTin.Hardware.Specification\iTin.Hardware.Specification.Eedid\bin\Release\**" target="lib" exclude="**\*.deps.json;**\*.pdb;" />
+    <file src="..\src\lib\net\iTin.Hardware\iTin.Hardware.Specification.Eedid\bin\Release\**" target="lib" exclude="**\*.deps.json;**\*.pdb;" />
   </files>
 </package>

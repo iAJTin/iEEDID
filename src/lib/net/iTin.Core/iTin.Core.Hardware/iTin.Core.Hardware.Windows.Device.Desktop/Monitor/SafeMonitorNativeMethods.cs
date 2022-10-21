@@ -19,7 +19,7 @@ namespace iTin.Core.Hardware.Windows.Device.Desktop.Monitor
     /// <summary>
     /// Defines a set of Safe monitor native methods.
     /// </summary>
-    public static class SafeMonitorNativeMethods
+    internal static class SafeMonitorNativeMethods
     {
         #region private readonly members
         [DebuggerBrowsable(DebuggerBrowsableState.Never)]
