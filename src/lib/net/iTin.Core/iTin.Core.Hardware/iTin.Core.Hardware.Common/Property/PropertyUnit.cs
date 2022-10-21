@@ -172,3 +172,4 @@ namespace iTin.Core.Hardware.Common
         bpc
     }
 }
+

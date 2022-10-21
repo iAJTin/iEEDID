@@ -1,28 +1,28 @@
 ﻿
+using System;
+using System.Collections.Generic;
+using System.Collections.ObjectModel;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+
+using iTin.Core;
+using iTin.Core.Hardware.Common;
+
+using iTin.Logging.ComponentModel;
+
+using iTin.Hardware.Specification.Eedid;
+using iTin.Hardware.Specification.Eedid.Blocks.CEA;
+using iTin.Hardware.Specification.Eedid.Blocks.DI;
+
+using iTin.Hardware.Specification.Eedid.Blocks.DisplayId;
+using iTin.Hardware.Specification.Eedid.Blocks.DisplayId.Sections.DataBlocks.ComponentModel;
+
+using iTin.Hardware.Specification.Eedid.Blocks.EDID;
+using iTin.Hardware.Specification.Eedid.Blocks.EDID.Sections.Descriptors;
+
 namespace iEEDID.ComponentModel.Parser
 {
-    using System;
-    using System.Collections.Generic;
-    using System.Collections.ObjectModel;
-    using System.Drawing;
-    using System.Linq;
-    using System.Text;
-
-    using iTin.Core;
-    using iTin.Core.Hardware.Common;
-
-    using iTin.Logging.ComponentModel;
-
-    using iTin.Hardware.Specification.Eedid;
-    using iTin.Hardware.Specification.Eedid.Blocks.CEA;
-    using iTin.Hardware.Specification.Eedid.Blocks.DI;
-    
-    using iTin.Hardware.Specification.Eedid.Blocks.DisplayId;
-    using iTin.Hardware.Specification.Eedid.Blocks.DisplayId.Sections.DataBlocks.ComponentModel;
-
-    using iTin.Hardware.Specification.Eedid.Blocks.EDID;
-    using iTin.Hardware.Specification.Eedid.Blocks.EDID.Sections.Descriptors;
-    
     /// <summary>
     /// static class containing methods for prints <b>EEDID</b> instances.
     /// </summary> 

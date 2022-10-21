@@ -65,9 +65,13 @@
       <Project>{d4f4f5c3-77cf-41ce-9de3-da109fc3b06b}</Project>
       <Name>iTin.Core</Name>
     </ProjectReference>
-    <ProjectReference Include="..\..\..\lib\net\iTin.Hardware\iTin.Hardware.Specification\iTin.Hardware.Specification.Eedid\iTin.Hardware.Specification.Eedid.csproj">
-      <Project>{721664b2-81f4-4a58-a1fa-ff44d33b7a6d}</Project>
+    <ProjectReference Include="..\..\..\lib\net\iTin.Hardware\iTin.Hardware.Specification.Eedid\iTin.Hardware.Specification.Eedid.csproj">
+      <Project>{173e4b36-21dd-4cfe-92a4-9d1ab230a0b3}</Project>
       <Name>iTin.Hardware.Specification.Eedid</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\lib\net\iTin.Hardware\iTin.Hardware.Specification.IEEE\iTin.Hardware.Specification.IEEE.csproj">
+      <Project>{238c1964-69d9-448a-b569-99075cc74c72}</Project>
+      <Name>iTin.Hardware.Specification.IEEE</Name>
     </ProjectReference>
     <ProjectReference Include="..\..\..\lib\net\iTin.Logging\iTin.Logging\iTin.Logging.csproj">
       <Project>{64b2e2ae-6b3d-40f4-90ed-9ad997293990}</Project>

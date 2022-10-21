@@ -1,7 +1,7 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFrameworks>net461;netstandard2.0;netstandard2.1</TargetFrameworks>
+    <TargetFrameworks>netstandard2.0;netstandard2.1</TargetFrameworks>
     <SignAssembly>true</SignAssembly>
     <AssemblyOriginatorKeyFile>key.snk</AssemblyOriginatorKeyFile>
     <GenerateDocumentationFile>true</GenerateDocumentationFile>
@@ -12,7 +12,7 @@
     <Company>iTin</Company>
     <Product>iTin.Hardware.Specification.Eedid</Product>
     <Description>Implementation of the E-EDID (Extended Display Identification Data) specification</Description>
-    <Copyright>Copyright © 2020</Copyright>
+    <Copyright>Copyright © 2022</Copyright>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
     <PackageIcon>icon.png</PackageIcon>
   </PropertyGroup>
@@ -26,9 +26,10 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\..\iTin.Core\iTin.Core.Hardware\iTin.Core.Hardware.Common\iTin.Core.Hardware.Common.csproj" />
-    <ProjectReference Include="..\..\..\iTin.Core\iTin.Core\iTin.Core.csproj" />
-    <ProjectReference Include="..\..\iTin.Hardware.Abstractions\iTin.Hardware.Abstractions\iTin.Hardware.Abstractions.Devices.csproj" />
+    <ProjectReference Include="..\..\iTin.Core\iTin.Core.Hardware\iTin.Core.Hardware.Common\iTin.Core.Hardware.Common.csproj" />
+    <ProjectReference Include="..\..\iTin.Core\iTin.Core.Hardware\iTin.Core.Hardware.MacOS.Device.Desktop\iTin.Core.Hardware.MacOS.Device.Desktop.csproj" />
+    <ProjectReference Include="..\..\iTin.Core\iTin.Core.Hardware\iTin.Core.Hardware.Windows.Device.Desktop\iTin.Core.Hardware.Windows.Device.Desktop.csproj" />
+    <ProjectReference Include="..\..\iTin.Core\iTin.Core\iTin.Core.csproj" />
     <ProjectReference Include="..\iTin.Hardware.Specification.IEEE\iTin.Hardware.Specification.IEEE.csproj" />
   </ItemGroup>
 

@@ -609,7 +609,7 @@ namespace iTin.Core
 
             try
             {
-                T result = (T) Enum.Parse(typeof(T), value, true);
+                T result = (T)Enum.Parse(typeof(T), value, true);
                 Logger.Instance.Debug($"  > Output: {result}");
                 return result;
             }
@@ -684,7 +684,7 @@ namespace iTin.Core
             Logger.Instance.Debug($"   > value: {value}");
             Logger.Instance.Debug($"   > separators: {separators.Length}, [{separators[0]} ...]");
 
-            List<string> result  = value.Split(separators, StringSplitOptions.RemoveEmptyEntries).ToList();
+            List<string> result = value.Split(separators, StringSplitOptions.RemoveEmptyEntries).ToList();
             Logger.Instance.Debug($" > Output: {result.Count} elements, [{result[0]} ...]");
 
             return result;
@@ -774,8 +774,8 @@ namespace iTin.Core
         /// </summary>
         /// <param name="str"></param>
         /// <returns></returns>
-        public static string[] SplitLines(this string str) 
-            => str.Split(new[] {'\r', '\n'}, StringSplitOptions.RemoveEmptyEntries);
+        public static string[] SplitLines(this string str)
+            => str.Split(new[] { '\r', '\n' }, StringSplitOptions.RemoveEmptyEntries);
     }
 
 #endif

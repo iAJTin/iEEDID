@@ -1,11 +1,11 @@
 ﻿
+using iTin.Logging.ComponentModel;
+
+using iTin.Hardware.Specification;
+using iTin.Hardware.Specification.Eedid;
+
 namespace iEEDID.ComponentModel.Parser
 {
-    using iTin.Logging.ComponentModel;
-
-    using iTin.Hardware.Specification;
-    using iTin.Hardware.Specification.Eedid;
-    
     /// <summary>
     /// Specialization of the <see cref="IParser"/> interface.<br/>
     /// Defines a custom parser for <see cref="EEDID"/> instances.

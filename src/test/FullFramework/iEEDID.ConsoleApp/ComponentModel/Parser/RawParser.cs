@@ -1,20 +1,19 @@
 ﻿
+using System;
+using System.Collections.Generic;
+using System.Collections.ObjectModel;
+using System.Drawing;
+
+using iTin.Core.Hardware.Common;
+
+using iTin.Logging.ComponentModel;
+
+using iTin.Hardware.Specification;
+using iTin.Hardware.Specification.Eedid;
 using iTin.Hardware.Specification.Eedid.Blocks.EDID.Sections.Descriptors;
 
 namespace iEEDID.ComponentModel.Parser
 {
-    using System;
-    using System.Collections.Generic;
-    using System.Collections.ObjectModel;
-    using System.Drawing;
-
-    using iTin.Core.Hardware.Common;
-
-    using iTin.Logging.ComponentModel;
-
-    using iTin.Hardware.Specification;
-    using iTin.Hardware.Specification.Eedid;
-
     /// <summary>
     /// Specialization of the <see cref="IParser"/> interface.<br/>
     /// Defines a custom parser for <see cref="EEDID"/> raw instances.

@@ -1,14 +1,14 @@
 ﻿
+using System;
+
+using iTin.Logging;
+using iTin.Logging.ComponentModel;
+
+using iEEDID.Code;
+using iEEDID.ComponentModel;
+
 namespace iEEDID
 {
-    using System;
-
-    using iTin.Logging;
-    using iTin.Logging.ComponentModel;
-
-    using Code;
-    using ComponentModel;
-
     class Program
     {
         static void Main(string[] args)

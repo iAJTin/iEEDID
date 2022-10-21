@@ -1,12 +1,12 @@
 ﻿
+using iTin.Logging.ComponentModel;
+
+using iTin.Hardware.Specification;
+
+using iEEDID.ComponentModel.Parser;
+
 namespace iEEDID.Code
 {
-    using iTin.Logging.ComponentModel;
-
-    using iTin.Hardware.Specification;
-
-    using iEEDID.ComponentModel.Parser;
-
     /// <summary>
     /// Parse EEDID Information From Current System.
     /// </summary>

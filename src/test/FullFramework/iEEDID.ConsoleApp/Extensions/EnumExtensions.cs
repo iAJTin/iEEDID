@@ -1,10 +1,10 @@
 ﻿
+using System;
+
+using iTin.Core.Hardware.Common;
+
 namespace iEEDID
 {
-    using System;
-
-    using iTin.Core.Hardware.Common;
-
     /// <summary>
     /// Extension methods for <see cref="Enum"/> types.
     /// </summary>

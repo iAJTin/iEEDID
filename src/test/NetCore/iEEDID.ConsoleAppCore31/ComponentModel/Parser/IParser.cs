@@ -1,10 +1,10 @@
 ﻿
+using iTin.Logging.ComponentModel;
+
+using iTin.Hardware.Specification;
+
 namespace iEEDID.ComponentModel.Parser
 {
-    using iTin.Logging.ComponentModel;
-
-    using iTin.Hardware.Specification;
-
     /// <summary>
     /// Defines a generic parser for <see cref="EEDID"/> instances.
     /// </summary>

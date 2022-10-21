@@ -3,7 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 
-using iTin.Core.ComponentModel.Enums;
+using iTin.Core.Interop.Shared.MacOS;
 
 namespace iTin.Core.Hardware.MacOS.Device.Desktop
 {
@@ -23,7 +23,7 @@ namespace iTin.Core.Hardware.MacOS.Device.Desktop
 
             var startInfo = new ProcessStartInfo
             {
-                FileName = MacProgram.IoReg.ToString(),
+                FileName = Command.IoReg.ToString(),
                 Arguments = "-lw0 -r -c \"IODisplayConnect\" -n \"display0\" -d 2 | grep IODisplayEDID",
                 UseShellExecute = false,
                 CreateNoWindow = false,
