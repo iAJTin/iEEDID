@@ -4,69 +4,61 @@ using System;
 using iTin.Hardware.Specification.Eedid.Blocks.EDID;
 using iTin.Hardware.Specification.Eedid.Blocks.EDID.Sections.Descriptors;
 
-namespace iTin.Hardware.Specification.Eedid
+namespace iTin.Hardware.Specification.Eedid;
+
+internal static class DataBlockDescriptorFactory
 {
-    internal static class DataBlockDescriptorFactory
+    public static BaseDataSection GetDataBlockDescription(DataBlockDescriptorData data)
     {
-        public static BaseDataSection GetDataBlockDescription(DataBlockDescriptorData data)
+        var type = data.DescriptorType;
+
+        return type switch
         {
-            var type = data.DescriptorType;
-            switch (type)
-            {
-                case EdidDataBlockDescriptor.AlphaNumericDataString:
-                    return new AlphaNumericDataStringDescriptor(data.RawData);
-
-                case EdidDataBlockDescriptor.ColorManagementData:
-                    return new ColorManagementDataDescriptor(data.RawData);
-
-                case EdidDataBlockDescriptor.ColorPointData:
-                    return new ColorPointDataDescriptor(data.RawData);
-
-                case EdidDataBlockDescriptor.Cvt3ByteCode:
-                    return new Cvt3ByteCodeDescriptor(data.RawData);
-
-                case EdidDataBlockDescriptor.DetailedTimingMode:
-                    return new DetailedTimingModeDescriptor(data.RawData);
-
-                case EdidDataBlockDescriptor.DisplayProductName:
-                    return new DisplayProductNameDescriptor(data.RawData);
-
-                case EdidDataBlockDescriptor.DisplayProductSerialNumber:
-                    return new DisplayProductSerialNumberDescriptor(data.RawData);
-
-                case EdidDataBlockDescriptor.DisplayRangeLimits:
-                    return new DisplayRangeLimitsDescriptor(data.RawData);
-
-                case EdidDataBlockDescriptor.DummyData:
-                    return new DummyDataDescriptor(data.RawData);
-
-                case EdidDataBlockDescriptor.EstablishedTimingsIII:
-                    return new EstablishedTimingsIIIDescriptor(data.RawData);
-
-                case EdidDataBlockDescriptor.ManufacturerSpecifiedData15:
-                case EdidDataBlockDescriptor.ManufacturerSpecifiedData14:
-                case EdidDataBlockDescriptor.ManufacturerSpecifiedData13:
-                case EdidDataBlockDescriptor.ManufacturerSpecifiedData12:
-                case EdidDataBlockDescriptor.ManufacturerSpecifiedData11:
-                case EdidDataBlockDescriptor.ManufacturerSpecifiedData10:
-                case EdidDataBlockDescriptor.ManufacturerSpecifiedData09:
-                case EdidDataBlockDescriptor.ManufacturerSpecifiedData08:
-                case EdidDataBlockDescriptor.ManufacturerSpecifiedData07:
-                case EdidDataBlockDescriptor.ManufacturerSpecifiedData06:
-                case EdidDataBlockDescriptor.ManufacturerSpecifiedData05:
-                case EdidDataBlockDescriptor.ManufacturerSpecifiedData04:
-                case EdidDataBlockDescriptor.ManufacturerSpecifiedData03:
-                case EdidDataBlockDescriptor.ManufacturerSpecifiedData02:
-                case EdidDataBlockDescriptor.ManufacturerSpecifiedData01:
-                case EdidDataBlockDescriptor.ManufacturerSpecifiedData00:
-                    return new ManufacturerSpecifiedDataDescriptor(data.RawData);
-
-                case EdidDataBlockDescriptor.StandardTimingIdentifier:
-                    return new StandardTimingIdentifierDescriptor(data.RawData);
-
-                default:
-                    throw new ArgumentOutOfRangeException();
-            }
-        }
+            EdidDataBlockDescriptor.AlphaNumericDataString => new AlphaNumericDataStringDescriptor(data.RawData),
+            EdidDataBlockDescriptor.ColorManagementData => new ColorManagementDataDescriptor(data.RawData),
+            EdidDataBlockDescriptor.ColorPointData => new ColorPointDataDescriptor(data.RawData),
+            EdidDataBlockDescriptor.Cvt3ByteCode => new Cvt3ByteCodeDescriptor(data.RawData),
+            EdidDataBlockDescriptor.DetailedTimingMode => new DetailedTimingModeDescriptor(data.RawData),
+            EdidDataBlockDescriptor.DisplayProductName => new DisplayProductNameDescriptor(data.RawData),
+            EdidDataBlockDescriptor.DisplayProductSerialNumber =>
+                new DisplayProductSerialNumberDescriptor(data.RawData),
+            EdidDataBlockDescriptor.DisplayRangeLimits => new DisplayRangeLimitsDescriptor(data.RawData),
+            EdidDataBlockDescriptor.DummyData => new DummyDataDescriptor(data.RawData),
+            EdidDataBlockDescriptor.EstablishedTimingsIII => new EstablishedTimingsIIIDescriptor(data.RawData),
+            EdidDataBlockDescriptor.ManufacturerSpecifiedData15 =>
+                new ManufacturerSpecifiedDataDescriptor(data.RawData),
+            EdidDataBlockDescriptor.ManufacturerSpecifiedData14 =>
+                new ManufacturerSpecifiedDataDescriptor(data.RawData),
+            EdidDataBlockDescriptor.ManufacturerSpecifiedData13 =>
+                new ManufacturerSpecifiedDataDescriptor(data.RawData),
+            EdidDataBlockDescriptor.ManufacturerSpecifiedData12 =>
+                new ManufacturerSpecifiedDataDescriptor(data.RawData),
+            EdidDataBlockDescriptor.ManufacturerSpecifiedData11 =>
+                new ManufacturerSpecifiedDataDescriptor(data.RawData),
+            EdidDataBlockDescriptor.ManufacturerSpecifiedData10 =>
+                new ManufacturerSpecifiedDataDescriptor(data.RawData),
+            EdidDataBlockDescriptor.ManufacturerSpecifiedData09 =>
+                new ManufacturerSpecifiedDataDescriptor(data.RawData),
+            EdidDataBlockDescriptor.ManufacturerSpecifiedData08 =>
+                new ManufacturerSpecifiedDataDescriptor(data.RawData),
+            EdidDataBlockDescriptor.ManufacturerSpecifiedData07 =>
+                new ManufacturerSpecifiedDataDescriptor(data.RawData),
+            EdidDataBlockDescriptor.ManufacturerSpecifiedData06 =>
+                new ManufacturerSpecifiedDataDescriptor(data.RawData),
+            EdidDataBlockDescriptor.ManufacturerSpecifiedData05 =>
+                new ManufacturerSpecifiedDataDescriptor(data.RawData),
+            EdidDataBlockDescriptor.ManufacturerSpecifiedData04 =>
+                new ManufacturerSpecifiedDataDescriptor(data.RawData),
+            EdidDataBlockDescriptor.ManufacturerSpecifiedData03 =>
+                new ManufacturerSpecifiedDataDescriptor(data.RawData),
+            EdidDataBlockDescriptor.ManufacturerSpecifiedData02 =>
+                new ManufacturerSpecifiedDataDescriptor(data.RawData),
+            EdidDataBlockDescriptor.ManufacturerSpecifiedData01 =>
+                new ManufacturerSpecifiedDataDescriptor(data.RawData),
+            EdidDataBlockDescriptor.ManufacturerSpecifiedData00 =>
+                new ManufacturerSpecifiedDataDescriptor(data.RawData),
+            EdidDataBlockDescriptor.StandardTimingIdentifier => new StandardTimingIdentifierDescriptor(data.RawData),
+            _ => throw new ArgumentOutOfRangeException()
+        };
     }
 }

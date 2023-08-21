@@ -14,6 +14,7 @@
     <Description>Generic Common Hardware Abstractions</Description>
     <Copyright>Copyright © 2022</Copyright>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
+    <LangVersion>latest</LangVersion>
   </PropertyGroup>
 
   <ItemGroup>
@@ -21,7 +22,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\iTin.Core\iTin.Core.Hardware\iTin.Core.Hardware.Abstractions\iTin.Core.Hardware.Abstractions.csproj" />
     <ProjectReference Include="..\..\iTin.Core\iTin.Core.Hardware\iTin.Core.Hardware.Linux.Device.Desktop\iTin.Core.Hardware.Linux.Device.Desktop.csproj" />
     <ProjectReference Include="..\..\iTin.Core\iTin.Core.Hardware\iTin.Core.Hardware.MacOS.Device.Desktop\iTin.Core.Hardware.MacOS.Device.Desktop.csproj" />
     <ProjectReference Include="..\..\iTin.Core\iTin.Core.Hardware\iTin.Core.Hardware.Windows.Device.Desktop\iTin.Core.Hardware.Windows.Device.Desktop.csproj" />

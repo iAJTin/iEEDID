@@ -6,6 +6,7 @@
     <title>iEEDID</title>
     <authors>iAJTin</authors>
     <owners>iAJTin</owners>
+    <readme>.\README.md</readme>
     <license type="expression">MIT</license>
     <projectUrl>https://github.com/iAJTin/iEEDID</projectUrl>
     <icon>.\iEEDID.png</icon>
@@ -16,8 +17,6 @@
     <tags>EDID EEDID E-EDID CEA DI LS VTB Monitor hardware iTin</tags>
     <repository type="git" url="https://github.com/iAJTin/iEEDID" commit="3768ae578f99de65ab0496a180cc4dd2158da114" />
     <dependencies>
-      <group targetFramework="net461">
-      </group>
       <group targetFramework=".NETStandard2.0">
       </group>
       <group targetFramework=".NETStandard2.1">
@@ -27,6 +26,7 @@
     </dependencies>
   </metadata>
   <files>
+    <file src=".\README.md" target="." />
     <file src=".\iEEDID.png" target="." />
     <file src="..\README.txt" target="." />
     <file src="..\src\lib\net\iTin.Hardware\iTin.Hardware.Specification.Eedid\bin\Release\**" target="lib" exclude="**\*.deps.json;**\*.pdb;" />

@@ -5,22 +5,21 @@ using iTin.Hardware.Specification;
 
 using iEEDID.ComponentModel.Parser;
 
-namespace iEEDID.Code
-{
-    /// <summary>
-    /// Parse EEDID Information From Current System.
-    /// </summary>
-    internal class Sample03
-    {
-        public static void Generate(ILogger logger)
-        {
-            var parser = new TechParser { Logger = logger };
+namespace iEEDID.Code;
 
-            EEDID[] instances = EEDID.Instance;
-            foreach (var instance in instances)
-            {
-                parser.Parse(instance);
-            }
+/// <summary>
+/// Parse EEDID Information From Current System.
+/// </summary>
+internal class Sample03
+{
+    public static void Generate(ILogger logger)
+    {
+        var parser = new TechParser { Logger = logger };
+
+        var instances = EEDID.Instance;
+        foreach (var instance in instances)
+        {
+            parser.Parse(instance);
         }
     }
 }

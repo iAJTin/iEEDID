@@ -1,18 +1,8 @@
 # DataBlockDescriptorData.Equals method (1 of 2)
 
-Indicates whether the current object is equal to another object of the same type.
-
 ```csharp
 public bool Equals(DataBlockDescriptorData other)
 ```
-
-| parameter | description |
-| --- | --- |
-| other | Objeto que se va a comparar con este objeto. |
-
-## Return Value
-
-Returns true if the current object is equal to the `other` parameter; otherwise, false.
 
 ## See Also
 

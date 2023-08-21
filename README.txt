@@ -11,6 +11,8 @@ Changes in this version (v1.0.7)
 · Fixed
   -----
 
+    - Multiple Repository is used.
+
     - Fixes an issue that generates an exception when a property that returns an object of type QueryPropertyDictionaryResult not available.
 
 · Added
@@ -63,7 +65,7 @@ Changes in this version (v1.0.7)
       •————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————•
       | Library                                      Version     Description                                                                       |
       •————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————•
-      | iTin.Core                                    2.0.0.6     Base library containing various extensions, helpers, common constants             |
+      | iTin.Core                                    2.0.0.7     Base library containing various extensions, helpers, common constants             |
       •————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————•
       | iTin.Core.Hardware.Abstractions              1.0.0.0     Generic Common Hardware Abstractions                                              |
       •————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————•
@@ -85,7 +87,7 @@ Changes in this version (v1.0.7)
       •————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————•
       | iTin.Hardware.Specification.IEEE             1.0.0.0     IEEE Registration Authority                                                       |
       •————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————•
-      | iTin.Logging                                 1.0.0.2     Logging library                                                                   |
+      | iTin.Logging                                 1.0.0.3     Logging library                                                                   |
       •————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————•
 
 v1.0.6

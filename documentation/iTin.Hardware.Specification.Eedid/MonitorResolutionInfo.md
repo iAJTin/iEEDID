@@ -16,7 +16,7 @@ public struct MonitorResolutionInfo : IEquatable<MonitorResolutionInfo>
 | [Name](MonitorResolutionInfo/Name.md) { get; } | Gets a value that represents the resolution name. |
 | [ReduceBlanking](MonitorResolutionInfo/ReduceBlanking.md) { get; } | Gets a value that indicates whether this resolution reduces flicker. |
 | [Size](MonitorResolutionInfo/Size.md) { get; } | Gets a value that represents the size in pixels of the video mode. |
-| [Equals](MonitorResolutionInfo/Equals.md)(…) | Indicates whether the current object is equal to another object of the same type. |
+| [Equals](MonitorResolutionInfo/Equals.md)(…) |  |
 | override [Equals](MonitorResolutionInfo/Equals.md)(…) | Returns a value that indicates whether this object is equal to another. |
 | override [GetHashCode](MonitorResolutionInfo/GetHashCode.md)() | Returns the hash code of the object. |
 | override [ToString](MonitorResolutionInfo/ToString.md)() | Returns a String that represents the current class. |

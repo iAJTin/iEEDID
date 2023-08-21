@@ -1,14 +1,8 @@
 # ColorPointDataDescriptorItem.PopulateProperties method
 
-Populates the property collection for this section.
-
 ```csharp
 protected override void PopulateProperties(SectionPropertiesTable properties)
 ```
-
-| parameter | description |
-| --- | --- |
-| properties | Collection of properties of this section. |
 
 ## See Also
 

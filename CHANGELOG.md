@@ -9,6 +9,12 @@ All notable changes to this project will be documented in this file.
 
 ### Added
 
+- Multiple Repository is used.
+
+    In the image, I show my folder structure, in case it helps someone
+
+    ![multi-repo.png][mutli-repo] 
+
  - Added support for **netstandard2.1** 
  
    - Add **SplitEnumerator** ref struct.
@@ -50,7 +56,7 @@ All notable changes to this project will be documented in this file.
   
     | Library | Version | Description |
     |:------|:------|:----------|
-    | iTin.Core| **2.0.0.6** | Base library containing various extensions, helpers, common constants |
+    | iTin.Core| **2.0.0.7** | Base library containing various extensions, helpers, common constants |
     | **iTin.Core.Hardware.Abstractions** | **1.0.0.0** | **Generic Common Hardware Abstractions** |
     | iTin.Core.Hardware.Common | **1.0.0.5** | Common Hardware Infrastructure |
     | iTin.Core.Hardware.Linux.Device.Desktop | **1.0.0.1** | Linux Hardware Infrastructure |
@@ -61,7 +67,7 @@ All notable changes to this project will be documented in this file.
     | iTin.Hardware.Abstractions.Devices | **1.0.0.1** | Generic Common Hardware Abstractions |
     | iTin.Hardware.Specification.Eedid | **1.0.0.8** | Implementation of the E-EDID (Extended Display Identification Data) specification |
     | iTin.Hardware.Specification.IEEE | **1.0.0.0** | IEEE Registration Authority |
-    | iTin.Logging| **1.0.0.2** | Logging library |
+    | iTin.Logging| **1.0.0.3** | Logging library |
 
 ## [1.0.6] - 2020-10-12
 
@@ -203,4 +209,4 @@ All notable changes to this project will be documented in this file.
 [1.0.0]: https://github.com/iAJTin/iEEDID/releases/tag/v1.0.0
 
 [helpimg]: ./assets/helpimg.png "help"
-
+[mutli-repo]: ./assets/multi-repo.png "folder structure"

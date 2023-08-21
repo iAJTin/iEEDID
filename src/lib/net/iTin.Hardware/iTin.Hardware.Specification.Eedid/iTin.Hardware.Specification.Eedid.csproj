@@ -15,6 +15,7 @@
     <Copyright>Copyright © 2022</Copyright>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
     <PackageIcon>icon.png</PackageIcon>
+    <LangVersion>latest</LangVersion>
   </PropertyGroup>
 
   <ItemGroup>
@@ -26,8 +27,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\iTin.Core\iTin.Core\iTin.Core.csproj" />
-    <ProjectReference Include="..\..\iTin.Core\iTin.Core.Hardware\iTin.Core.Hardware.Common\iTin.Core.Hardware.Common.csproj" />
+    <ProjectReference Include="..\..\..\..\..\..\iTin\iTin.Core\iTin.Core.Hardware.Common\src\iTin.Core.Hardware.Common.csproj" />
     <ProjectReference Include="..\iTin.Hardware.Abstractions.Devices\iTin.Hardware.Abstractions.Devices.csproj" />
     <ProjectReference Include="..\iTin.Hardware.Specification.IEEE\iTin.Hardware.Specification.IEEE.csproj" />
   </ItemGroup>

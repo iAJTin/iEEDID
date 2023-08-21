@@ -15,10 +15,7 @@
     <Copyright>Copyright © 2022</Copyright>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
     <PackageIcon>icon.png</PackageIcon>
+    <LangVersion>latest</LangVersion>
   </PropertyGroup>
-
-  <ItemGroup>
-    <ProjectReference Include="..\..\iTin.Core\iTin.Core\iTin.Core.csproj" />
-  </ItemGroup>
 
 </Project>

@@ -13,7 +13,7 @@ public struct DataBlockDescriptorData : IEquatable<DataBlockDescriptorData>
 | [DescriptorType](DataBlockDescriptorData/DescriptorType.md) { get; } | Gets a value that represents the type of Data Block. |
 | [ImplementedProperties](DataBlockDescriptorData/ImplementedProperties.md) { get; } | Gets a value containing the implemented properties for this data block. |
 | [RawData](DataBlockDescriptorData/RawData.md) { get; } | Get the raw data from a block descriptor |
-| [Equals](DataBlockDescriptorData/Equals.md)(…) | Indicates whether the current object is equal to another object of the same type. |
+| [Equals](DataBlockDescriptorData/Equals.md)(…) |  |
 | override [Equals](DataBlockDescriptorData/Equals.md)(…) | Returns a value that indicates whether this object is equal to another. |
 | [GetDescriptorKeyFromType](DataBlockDescriptorData/GetDescriptorKeyFromType.md)(…) | Returns a value that represents the unique key that identifies the specified descriptor. |
 | override [GetHashCode](DataBlockDescriptorData/GetHashCode.md)() | Returns the hash code of the object. |

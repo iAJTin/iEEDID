@@ -59,13 +59,17 @@
     <None Include="app.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\..\lib\net\iTin.Core\iTin.Core.Hardware\iTin.Core.Hardware.Common\iTin.Core.Hardware.Common.csproj">
-      <Project>{e12cd758-17de-4410-a30e-3a4964bf1f6d}</Project>
+    <ProjectReference Include="..\..\..\..\..\iTin\iTin.Core\iTin.Core.Hardware.Common\src\iTin.Core.Hardware.Common.csproj">
+      <Project>{0D335C73-0FEF-4B7B-A46F-52D6361925B3}</Project>
       <Name>iTin.Core.Hardware.Common</Name>
     </ProjectReference>
-    <ProjectReference Include="..\..\..\lib\net\iTin.Core\iTin.Core\iTin.Core.csproj">
-      <Project>{d4f4f5c3-77cf-41ce-9de3-da109fc3b06b}</Project>
+    <ProjectReference Include="..\..\..\..\..\iTin\iTin.Core\iTin.Core\src\iTin.Core.csproj">
+      <Project>{5DCF5360-5999-4A30-8AB1-6C77B4678C4B}</Project>
       <Name>iTin.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\..\..\iTin\iTin.Logging\src\iTin.Logging.csproj">
+      <Project>{EFCC0433-4A92-4C31-83CB-36E2710C76C0}</Project>
+      <Name>iTin.Logging</Name>
     </ProjectReference>
     <ProjectReference Include="..\..\..\lib\net\iTin.Hardware\iTin.Hardware.Specification.Eedid\iTin.Hardware.Specification.Eedid.csproj">
       <Project>{173e4b36-21dd-4cfe-92a4-9d1ab230a0b3}</Project>
@@ -74,10 +78,6 @@
     <ProjectReference Include="..\..\..\lib\net\iTin.Hardware\iTin.Hardware.Specification.IEEE\iTin.Hardware.Specification.IEEE.csproj">
       <Project>{238c1964-69d9-448a-b569-99075cc74c72}</Project>
       <Name>iTin.Hardware.Specification.IEEE</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\..\..\lib\net\iTin.Logging\iTin.Logging\iTin.Logging.csproj">
-      <Project>{64b2e2ae-6b3d-40f4-90ed-9ad997293990}</Project>
-      <Name>iTin.Logging</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

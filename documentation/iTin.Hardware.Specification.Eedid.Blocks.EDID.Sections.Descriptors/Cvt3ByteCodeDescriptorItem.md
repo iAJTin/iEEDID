@@ -16,7 +16,7 @@ public sealed class Cvt3ByteCodeDescriptorItem : BaseDataSection
 
 | name | description |
 | --- | --- |
-| override [PopulateProperties](Cvt3ByteCodeDescriptorItem/PopulateProperties.md)(…) | Populates the property collection for this section. |
+| override [PopulateProperties](Cvt3ByteCodeDescriptorItem/PopulateProperties.md)(…) |  |
 
 ## See Also
 

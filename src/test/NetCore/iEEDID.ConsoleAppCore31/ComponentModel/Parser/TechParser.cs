@@ -4,39 +4,38 @@ using iTin.Logging.ComponentModel;
 using iTin.Hardware.Specification;
 using iTin.Hardware.Specification.Eedid;
 
-namespace iEEDID.ComponentModel.Parser
+namespace iEEDID.ComponentModel.Parser;
+
+/// <summary>
+/// Specialization of the <see cref="IParser"/> interface.<br/>
+/// Defines a custom parser for <see cref="EEDID"/> instances.
+/// </summary> 
+internal class TechParser : IParser
 {
     /// <summary>
-    /// Specialization of the <see cref="IParser"/> interface.<br/>
-    /// Defines a custom parser for <see cref="EEDID"/> instances.
-    /// </summary> 
-    internal class TechParser : IParser
+    /// Gets or sets the logger to use
+    /// </summary>
+    /// <value>
+    /// A <see cref="ILogger"/> reference.
+    /// </value>
+    public ILogger Logger { get; set; }
+
+    /// <summary>
+    /// Parse the <see cref="EEDID"/> given.
+    /// </summary>
+    /// <param name="instance"><see cref="EEDID"/> instance to parse.</param>
+    public void Parse(EEDID instance)
     {
-        /// <summary>
-        /// Gets or sets the logger to use
-        /// </summary>
-        /// <value>
-        /// A <see cref="ILogger"/> reference.
-        /// </value>
-        public ILogger Logger { get; set; }
+        // Prints raw data.
+        ParserHelper.PrintsRawData(Logger, instance.GetRawData());
 
-        /// <summary>
-        /// Parse the <see cref="EEDID"/> given.
-        /// </summary>
-        /// <param name="instance"><see cref="EEDID"/> instance to parse.</param>
-        public void Parse(EEDID instance)
+        // Prints blocks.
+        int index = 0;
+        DataBlockCollection blocks = instance.Blocks;
+        foreach (DataBlock block in blocks)
         {
-            // Prints raw data.
-            ParserHelper.PrintsRawData(Logger, instance.GetRawData());
-
-            // Prints blocks.
-            int index = 0;
-            DataBlockCollection blocks = instance.Blocks;
-            foreach (DataBlock block in blocks)
-            {
-                ParserHelper.PrintsBlock(Logger, block, index);
-                index++;
-            }
+            ParserHelper.PrintsBlock(Logger, block, index);
+            index++;
         }
     }
 }

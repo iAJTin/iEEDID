@@ -10,7 +10,7 @@ public sealed class ColorPointDataDescriptorItem : BaseDataSection
 
 | name | description |
 | --- | --- |
-| override [PopulateProperties](ColorPointDataDescriptorItem/PopulateProperties.md)(…) | Populates the property collection for this section. |
+| override [PopulateProperties](ColorPointDataDescriptorItem/PopulateProperties.md)(…) |  |
 
 ## See Also
 

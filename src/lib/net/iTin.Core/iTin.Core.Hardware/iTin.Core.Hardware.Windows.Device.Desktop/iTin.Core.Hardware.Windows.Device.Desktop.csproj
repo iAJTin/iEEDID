@@ -14,12 +14,12 @@
     <Description>Win32 Generic Desktop Hardware Calls</Description>
     <Copyright>Copyright © 2022</Copyright>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
+    <LangVersion>latest</LangVersion>
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\iTin.Core\iTin.Core.csproj" />
-    <ProjectReference Include="..\..\iTin.Core.Interop\iTin.Core.Interop.Windows\iTin.Core.Interop.Windows\iTin.Core.Interop.Windows.Devices.csproj" />
-    <ProjectReference Include="..\iTin.Core.Hardware.Abstractions\iTin.Core.Hardware.Abstractions.csproj" />
+    <ProjectReference Include="..\..\..\..\..\..\..\iTin\iTin.Core\iTin.Core.Hardware.Abstractions\src\iTin.Core.Hardware.Abstractions.csproj" />
+    <ProjectReference Include="..\..\..\..\..\..\..\iTin\iTin.Core\iTin.Core.Interop.Windows.Devices\src\iTin.Core.Interop.Windows.Devices.csproj" />
   </ItemGroup>
 
 </Project>
