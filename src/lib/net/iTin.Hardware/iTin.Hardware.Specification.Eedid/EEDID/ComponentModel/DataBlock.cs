@@ -20,9 +20,6 @@ public sealed class DataBlock
     #region private members
 
     [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-    private DataBlockCollection _parent;
-
-    [DebuggerBrowsable(DebuggerBrowsableState.Never)]
     private BaseDataSectionCollection _sections;
 
     #endregion
@@ -50,7 +47,7 @@ public sealed class DataBlock
     /// Gets a value that indicates if there are available sections.
     /// </summary>
     /// <value>
-    /// <b>true</b> if there are sections; otherwise, it is <b>false</b>.
+    /// <strong>true</strong> if there are sections; otherwise <strong>false</strong>.
     /// </value>
     public bool HasSections => SectionTable.Count > 0;
 
@@ -70,7 +67,7 @@ public sealed class DataBlock
     /// Collection <see cref="DataBlockCollection" /> to which this <see cref="DataBlock" /> belongs.
     /// </value>
     [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-    public DataBlockCollection Parent => _parent;
+    public DataBlockCollection Parent { get; private set; }
 
     /// <summary>
     /// Gets current raw data block data.
@@ -85,7 +82,7 @@ public sealed class DataBlock
     /// </summary>
     /// <value>
     /// Object <see cref="BaseDataSectionCollection" /> that contains the object collection <see cref="DataSection" /> for this <see cref="DataBlock" />.
-    /// If there is no <see cref="DataSection" /> object, <b>null</b> is returned.
+    /// If there is no <see cref="DataSection" /> object, <see langword="null"/> is returned.
     /// </value>
     [DebuggerBrowsable(DebuggerBrowsableState.Never)]
     public BaseDataSectionCollection Sections
@@ -155,7 +152,7 @@ public sealed class DataBlock
     /// <param name="parent">Object <see cref="DataBlockCollection" /> to which this <see cref="DataBlock" /> belongs.</param>
     internal void SetParent(DataBlockCollection parent)
     {
-        _parent = parent;
+        Parent = parent;
     }
 
     #endregion

@@ -44,13 +44,7 @@ internal struct MonitorDeviceEdidInfoNative : IEquatable<MonitorDeviceEdidInfoNa
 
     #region interfaces
 
-    /// <summary>
-    /// Indicates whether the current structure is the same as another structure of the same type.
-    /// </summary>
-    /// <param name="other">Structure to be compared with this structure.</param>
-    /// <returns>
-    /// Returns <strong>true</strong> if the current structure is equal to the <c>other</c> parameter; otherwise, <strong>false</strong>.
-    /// </returns>
+    /// <inheritdoc/>
     public bool Equals(MonitorDeviceEdidInfoNative other) => other.Equals((object)this);
 
     #endregion
@@ -81,21 +75,10 @@ internal struct MonitorDeviceEdidInfoNative : IEquatable<MonitorDeviceEdidInfoNa
 
     #region public override methods
 
-    /// <summary>
-    /// Returns a value that represents the hash code of this structure.
-    /// </summary>
-    /// <returns>
-    /// Hash code of this structure.
-    /// </returns>
+    /// <inheritdoc/>
     public override int GetHashCode() => DeviceId.GetHashCode() ^ IsValid.GetHashCode() ^ RawEdid.GetHashCode();
 
-    /// <summary>
-    /// Returns a value that indicates whether this structure is the same as another.
-    /// </summary>
-    /// <param name="obj"> Structure to compare. </param>
-    /// <returns>
-    /// Result of the equality comparison.
-    /// </returns>
+    /// <inheritdoc/>
     public override bool Equals(object obj)
     {
         if (obj is not MonitorDeviceEdidInfoNative other)
@@ -109,12 +92,7 @@ internal struct MonitorDeviceEdidInfoNative : IEquatable<MonitorDeviceEdidInfoNa
             other.RawEdid.SequenceEqual(RawEdid);
     }
 
-    /// <summary>
-    /// Returns a string that represents the current structure
-    /// </summary>
-    /// <returns>
-    /// String representing the current <see cref="MonitorDeviceEdidInfoNative"/> structure.
-    /// </returns>
+    /// <inheritdoc/>
     public override string ToString() => $"{DeviceId}";
 
     #endregion

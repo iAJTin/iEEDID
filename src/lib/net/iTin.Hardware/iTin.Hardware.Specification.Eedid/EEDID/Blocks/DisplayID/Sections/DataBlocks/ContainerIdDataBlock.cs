@@ -9,7 +9,7 @@ namespace iTin.Hardware.Specification.Eedid.Blocks.DisplayId.Sections.DataBlocks
 
 // Data Block: Vendor Specific Data Block
 // •—————————————————————————————————————————————————————————————————————————————————————————————————•
-// | Offset       Name                    Lenght      Description                                    |
+// | Offset       Name                    Length      Description                                    |
 // •—————————————————————————————————————————————————————————————————————————————————————————————————•
 // | 00h          TAG                     1 BYTE      29h                                            |
 // •—————————————————————————————————————————————————————————————————————————————————————————————————•
@@ -46,7 +46,7 @@ internal sealed class ContainerIdDataBlock : BaseDataSection
     #region private readonly properties
 
     /// <summary>
-    /// Gets a value representing the <b>UUID</b> field.
+    /// Gets a value representing the <strong>UUID</strong> field.
     /// </summary>
     /// <value>
     /// Property value.

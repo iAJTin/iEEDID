@@ -24,19 +24,16 @@ public readonly struct VideoAdapterDeviceInfo : IEquatable<VideoAdapterDeviceInf
     /// Initializes a new instance of the <see cref="VideoAdapterDeviceInfo"/> structure.
     /// </summary>
     /// <param name="adapterInfo">Native video adapter information..</param>
-    public VideoAdapterDeviceInfo(DISPLAY_DEVICE adapterInfo) => _adapterInfo = adapterInfo;
+    public VideoAdapterDeviceInfo(DISPLAY_DEVICE adapterInfo)
+    {
+        _adapterInfo = adapterInfo;
+    }
 
     #endregion
 
     #region interfaces
 
-    /// <summary>
-    /// Indicates whether the current structure is the same as another structure of the same type.
-    /// </summary>
-    /// <param name="other">Structure to be compared with this structure.</param>
-    /// <returns>
-    /// Returns <strong> true </strong> if the current structure is equal to the <c>other</c> parameter; otherwise, <strong>false</strong>.
-    /// </returns>
+    /// <inheritdoc/>
     public bool Equals(VideoAdapterDeviceInfo other) => other.Equals((object)this);
 
     #endregion
@@ -49,7 +46,7 @@ public readonly struct VideoAdapterDeviceInfo : IEquatable<VideoAdapterDeviceInf
     /// <param name="left">Left</param>
     /// <param name="right">Right</param>
     /// <returns>
-    /// Returns <strong>true</strong> if <c>left</c> is equal to <c>right</c>; <strong>false</strong> otherwise.
+    /// Returns <see langword="true"/> if <c>left</c> is equal to <c>right</c>; otherwise <see langword="false"/>.
     /// </returns>
     public static bool operator ==(VideoAdapterDeviceInfo left, VideoAdapterDeviceInfo right) => left.Equals(right);
 
@@ -59,7 +56,7 @@ public readonly struct VideoAdapterDeviceInfo : IEquatable<VideoAdapterDeviceInf
     /// <param name="left">Left</param>
     /// <param name="right">Right</param>
     /// <returns>
-    /// Returns <strong>true</strong> if <c>left</c> is not equal to <c>right</c>; <strong>false</strong> otherwise.
+    /// Returns <see langword="true"/> if <c>left</c> is not equal to <c>right</c>; otherwise <see langword="false"/>.
     /// </returns>
     public static bool operator !=(VideoAdapterDeviceInfo left, VideoAdapterDeviceInfo right) => !left.Equals(right);
 
@@ -87,7 +84,7 @@ public readonly struct VideoAdapterDeviceInfo : IEquatable<VideoAdapterDeviceInf
     /// Gets a value that indicates whether the video adapter shows the desktop.
     /// </summary>
     /// <value>
-    /// Returns <strong>true</strong> if it is part of the desktop; <strong>false</strong> otherwise.
+    /// Returns <see langword="true"/> if it is part of the desktop; otherwise <see langword="false"/>.
     /// </value>
     public bool IsAttached
     {
@@ -102,7 +99,7 @@ public readonly struct VideoAdapterDeviceInfo : IEquatable<VideoAdapterDeviceInf
     /// Gets a value that indicates whether this video adapter is the primary adapter.
     /// </summary>
     /// <value>
-    /// Returns <strong>true</strong> if it is the primary adapter; <strong>false</strong> otherwise.
+    /// Returns <see langword="true"/> if it is the primary adapter; otherwise <see langword="false"/>.
     /// </value>
     public bool IsPrimaryVideoAdapter
     {
@@ -123,8 +120,8 @@ public readonly struct VideoAdapterDeviceInfo : IEquatable<VideoAdapterDeviceInf
     {
         get
         {
-            int i = _adapterInfo.DeviceKey.IndexOf("\\System", StringComparison.OrdinalIgnoreCase);
-            string deviceRegistryKeyBranch = _adapterInfo.DeviceKey.Substring(i + 1, _adapterInfo.DeviceKey.Length - (i + 1));
+            var i = _adapterInfo.DeviceKey.IndexOf("\\System", StringComparison.OrdinalIgnoreCase);
+            var deviceRegistryKeyBranch = _adapterInfo.DeviceKey.Substring(i + 1, _adapterInfo.DeviceKey.Length - (i + 1));
 
             return deviceRegistryKeyBranch;
         }
@@ -142,21 +139,10 @@ public readonly struct VideoAdapterDeviceInfo : IEquatable<VideoAdapterDeviceInf
 
     #region public override methods
 
-    /// <summary>
-    /// Returns a value that represents the hash code of this structure.
-    /// </summary>
-    /// <returns>
-    /// Hash code of this structure.
-    /// </returns>
+    /// <inheritdoc/>
     public override int GetHashCode() => _adapterInfo.GetHashCode();
 
-    /// <summary>
-    /// Returns a value that indicates whether this structure is the same as another.
-    /// </summary>
-    /// <param name="obj">Structure to compare.</param>
-    /// <returns>
-    /// Result of the equality comparison.
-    /// </returns>
+    /// <inheritdoc/>
     public override bool Equals(object obj)
     {
         if (obj is not VideoAdapterDeviceInfo other)
@@ -170,12 +156,7 @@ public readonly struct VideoAdapterDeviceInfo : IEquatable<VideoAdapterDeviceInf
             other.IsAttached.Equals(IsAttached);
     }
 
-    /// <summary>
-    /// Returns a string that represents the current <see cref="VideoAdapterDeviceInfo"/> structure.
-    /// </summary>
-    /// <returns>
-    /// String representing the current <see cref="VideoAdapterDeviceInfo"/> structure.
-    /// </returns>
+    /// <inheritdoc/>
     public override string ToString() => $"{VideoAdapterName}";
 
     #endregion

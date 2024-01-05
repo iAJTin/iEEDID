@@ -10,7 +10,7 @@ namespace iTin.Hardware.Specification.Eedid.Blocks.DI.Sections;
 
 // DI Section: Display Capabilities & Feature Support Set
 // •——————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————•
-// | Offset       Name                                  Lenght      Description                                                                       |
+// | Offset       Name                                  Length      Description                                                                       |
 // •——————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————•
 // | 00h          Miscellaneous Display Capabilities    BYTE                                                                                          |
 // •——————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————•
@@ -50,7 +50,7 @@ internal sealed class DisplayCapabilitiesAndFeatureSupportSetSection : BaseDataS
     #region private readonly properties
 
     /// <summary>
-    /// Gets a value representing the <b>Miscellaneous Display Capabilities</b> field.
+    /// Gets a value representing the <strong>Miscellaneous Display Capabilities</strong> field.
     /// </summary>
     /// <value>
     /// Property value.
@@ -59,7 +59,7 @@ internal sealed class DisplayCapabilitiesAndFeatureSupportSetSection : BaseDataS
     private byte MiscellaneousDisplayCapabilities => RawData[0x00];
 
     /// <summary>
-    /// Gets a value representing the <b>Legacy Modes</b> field.
+    /// Gets a value representing the <strong>Legacy Modes</strong> field.
     /// </summary>
     /// <value>
     /// Property value.
@@ -68,7 +68,7 @@ internal sealed class DisplayCapabilitiesAndFeatureSupportSetSection : BaseDataS
     private bool LegacyModes => MiscellaneousDisplayCapabilities.CheckBit(Bits.Bit07);
 
     /// <summary>
-    /// Gets a value representing the <b>Stereo Video</b> field.
+    /// Gets a value representing the <strong>Stereo Video</strong> field.
     /// </summary>
     /// <value>
     /// Property value.
@@ -77,7 +77,7 @@ internal sealed class DisplayCapabilitiesAndFeatureSupportSetSection : BaseDataS
     private byte StereoVideo => (byte)((MiscellaneousDisplayCapabilities >> 4) & 0x07);
 
     /// <summary>
-    /// Gets a value representing the <b>Scaler On Board</b> field.
+    /// Gets a value representing the <strong>Scaler On Board</strong> field.
     /// </summary>
     /// <value>
     /// Property value.
@@ -86,7 +86,7 @@ internal sealed class DisplayCapabilitiesAndFeatureSupportSetSection : BaseDataS
     private bool ScalerOnBoard => MiscellaneousDisplayCapabilities.CheckBit(Bits.Bit03);
 
     /// <summary>
-    /// Gets a value representing the <b>Image Centering</b> field.
+    /// Gets a value representing the <strong>Image Centering</strong> field.
     /// </summary>
     /// <value>
     /// Property value.
@@ -95,7 +95,7 @@ internal sealed class DisplayCapabilitiesAndFeatureSupportSetSection : BaseDataS
     private bool ImageCentering => MiscellaneousDisplayCapabilities.CheckBit(Bits.Bit02);
 
     /// <summary>
-    /// Gets a value representing the <b>Conditional Update</b> field.
+    /// Gets a value representing the <strong>Conditional Update</strong> field.
     /// </summary>
     /// <value>
     /// Property value.
@@ -104,7 +104,7 @@ internal sealed class DisplayCapabilitiesAndFeatureSupportSetSection : BaseDataS
     private bool ConditionalUpdate => MiscellaneousDisplayCapabilities.CheckBit(Bits.Bit01);
 
     /// <summary>
-    /// Gets a value representing the <b>Interlaced Video</b> field.
+    /// Gets a value representing the <strong>Interlaced Video</strong> field.
     /// </summary>
     /// <value>
     /// Property value.
@@ -113,7 +113,7 @@ internal sealed class DisplayCapabilitiesAndFeatureSupportSetSection : BaseDataS
     private bool InterlacedVideo => MiscellaneousDisplayCapabilities.CheckBit(Bits.Bit01);
 
     /// <summary>
-    /// Gets a value representing the <b>Frame Rate Conversion Entry</b> field.
+    /// Gets a value representing the <strong>Frame Rate Conversion Entry</strong> field.
     /// </summary>
     /// <value>
     /// Property value.
@@ -122,7 +122,7 @@ internal sealed class DisplayCapabilitiesAndFeatureSupportSetSection : BaseDataS
     private byte FrameRateConversionEntry => RawData[0x01];
 
     /// <summary>
-    /// Gets a value representing the <b>Frame Lock</b> field.
+    /// Gets a value representing the <strong>Frame Lock</strong> field.
     /// </summary>
     /// <value>
     /// Property value.
@@ -131,7 +131,7 @@ internal sealed class DisplayCapabilitiesAndFeatureSupportSetSection : BaseDataS
     private bool FrameLock => FrameRateConversionEntry.CheckBit(Bits.Bit07);
 
     /// <summary>
-    /// Gets a value representing the <b>Frame Rate Conversion</b> field.
+    /// Gets a value representing the <strong>Frame Rate Conversion</strong> field.
     /// </summary>
     /// <value>
     /// Property value.
@@ -140,7 +140,7 @@ internal sealed class DisplayCapabilitiesAndFeatureSupportSetSection : BaseDataS
     private byte FrameRateConversion => (byte)((FrameRateConversionEntry >> 5) & 0x03);
 
     /// <summary>
-    /// Gets a value representing the <b>Vertical Frequency</b> field.
+    /// Gets a value representing the <strong>Vertical Frequency</strong> field.
     /// </summary>
     /// <value>
     /// Property value.
@@ -149,7 +149,7 @@ internal sealed class DisplayCapabilitiesAndFeatureSupportSetSection : BaseDataS
     private int VerticalFrequency => RawData.GetWord(2);
 
     /// <summary>
-    /// Gets a value representing the <b>Horizontal Frequency</b> field.
+    /// Gets a value representing the <strong>Horizontal Frequency</strong> field.
     /// </summary>
     /// <value>
     /// Property value.
@@ -158,7 +158,7 @@ internal sealed class DisplayCapabilitiesAndFeatureSupportSetSection : BaseDataS
     private int HorizontalFrequency => RawData.GetWord(4);
 
     /// <summary>
-    /// Gets a value representing the <b>Display/Scan Orientation Entry</b> field.
+    /// Gets a value representing the <strong>Display/Scan Orientation Entry</strong> field.
     /// </summary>
     /// <value>
     /// Property value.
@@ -167,7 +167,7 @@ internal sealed class DisplayCapabilitiesAndFeatureSupportSetSection : BaseDataS
     private byte DisplayScanOrientationEntry => RawData[0x06];
 
     /// <summary>
-    /// Gets a value representing the <b>Display/Scan Orientation Definition Type</b> field.
+    /// Gets a value representing the <strong>Display/Scan Orientation Definition Type</strong> field.
     /// </summary>
     /// <value>
     /// Property value.
@@ -176,7 +176,7 @@ internal sealed class DisplayCapabilitiesAndFeatureSupportSetSection : BaseDataS
     private byte DisplayScanOrientationType => (byte) ((DisplayScanOrientationEntry >> 6) & 0x03);
 
     /// <summary>
-    /// Gets a value representing the <b>Screen Orientation</b> field.
+    /// Gets a value representing the <strong>Screen Orientation</strong> field.
     /// </summary>
     /// <value>
     /// Property value.
@@ -185,7 +185,7 @@ internal sealed class DisplayCapabilitiesAndFeatureSupportSetSection : BaseDataS
     private bool ScreenOrientation => DisplayScanOrientationEntry.CheckBit(Bits.Bit05);
 
     /// <summary>
-    /// Gets a value representing the <b>Zero Pixel Location</b> field.
+    /// Gets a value representing the <strong>Zero Pixel Location</strong> field.
     /// </summary>
     /// <value>
     /// Property value.
@@ -194,7 +194,7 @@ internal sealed class DisplayCapabilitiesAndFeatureSupportSetSection : BaseDataS
     private byte ZeroPixelLocation => (byte)((DisplayScanOrientationEntry >> 3) & 0x03);
 
     /// <summary>
-    /// Gets a value representing the <b>Scan Direction</b> field.
+    /// Gets a value representing the <strong>Scan Direction</strong> field.
     /// </summary>
     /// <value>
     /// Property value.
@@ -203,7 +203,7 @@ internal sealed class DisplayCapabilitiesAndFeatureSupportSetSection : BaseDataS
     private byte ScanDirection => (byte) ((DisplayScanOrientationEntry >> 1) & 0x03);
 
     /// <summary>
-    /// Gets a value representing the <b>Standalone Projector</b> field.
+    /// Gets a value representing the <strong>Standalone Projector</strong> field.
     /// </summary>
     /// <value>
     /// Property value.
@@ -212,7 +212,7 @@ internal sealed class DisplayCapabilitiesAndFeatureSupportSetSection : BaseDataS
     private bool StandaloneProjector => DisplayScanOrientationEntry.CheckBit(Bits.Bit00);
 
     /// <summary>
-    /// Gets a value representing the <b>Color/Luminance Decoding Description</b> field.
+    /// Gets a value representing the <strong>Color/Luminance Decoding Description</strong> field.
     /// </summary>
     /// <value>
     /// Property value.
@@ -221,7 +221,7 @@ internal sealed class DisplayCapabilitiesAndFeatureSupportSetSection : BaseDataS
     private byte DefaultColorLuminanceDecoding => RawData[0x07];
 
     /// <summary>
-    /// Gets a value representing the <b>Preferred Color/Luminance Decoder</b> field.
+    /// Gets a value representing the <strong>Preferred Color/Luminance Decoder</strong> field.
     /// </summary>
     /// <value>
     /// Property value.
@@ -230,7 +230,7 @@ internal sealed class DisplayCapabilitiesAndFeatureSupportSetSection : BaseDataS
     private byte PreferredColorLuminanceDecoder => RawData[0x08];
 
     /// <summary>
-    /// Gets a value representing the <b>Color/Luminance Decoding Capabilities</b> field.
+    /// Gets a value representing the <strong>Color/Luminance Decoding Capabilities</strong> field.
     /// </summary>
     /// <value>
     /// Property value.
@@ -239,7 +239,7 @@ internal sealed class DisplayCapabilitiesAndFeatureSupportSetSection : BaseDataS
     private int ColorLuminanceDecodingCapabilities => RawData.GetWord(0x09);
 
     /// <summary>
-    /// Gets a value representing the <b>Dithering</b> field.
+    /// Gets a value representing the <strong>Dithering</strong> field.
     /// </summary>
     /// <value>
     /// Property value.
@@ -248,7 +248,7 @@ internal sealed class DisplayCapabilitiesAndFeatureSupportSetSection : BaseDataS
     private bool Dithering => RawData[0x0b].CheckBit(Bits.Bit07);
 
     /// <summary>
-    /// Gets a value representing the <b>Supported Color Bit-Depth of Sub-Channel 0 (Blue)</b> field.
+    /// Gets a value representing the <strong>Supported Color Bit-Depth of Sub-Channel 0 (Blue)</strong> field.
     /// </summary>
     /// <value>
     /// Property value.
@@ -257,7 +257,7 @@ internal sealed class DisplayCapabilitiesAndFeatureSupportSetSection : BaseDataS
     private byte SupportedColorBitDepthSubChannel0Blue => RawData[0x0c];
 
     /// <summary>
-    /// Gets a value representing the <b>Supported Color Bit-Depth of Sub-Channel 1 (Green)</b> field.
+    /// Gets a value representing the <strong>Supported Color Bit-Depth of Sub-Channel 1 (Green)</strong> field.
     /// </summary>
     /// <value>
     /// Property value.
@@ -266,7 +266,7 @@ internal sealed class DisplayCapabilitiesAndFeatureSupportSetSection : BaseDataS
     private byte SupportedColorBitDepthSubChannel1Green => RawData[0x0d];
 
     /// <summary>
-    /// Gets a value representing the <b>Supported Color Bit-Depth of Sub-Channel 2 (Red)</b> field.
+    /// Gets a value representing the <strong>Supported Color Bit-Depth of Sub-Channel 2 (Red)</strong> field.
     /// </summary>
     /// <value>
     /// Property value.
@@ -275,7 +275,7 @@ internal sealed class DisplayCapabilitiesAndFeatureSupportSetSection : BaseDataS
     private byte SupportedColorBitDepthSubChannel2Red => RawData[0x0e];
 
     /// <summary>
-    /// Gets a value representing the <b>Supported Color Bit-Depth of Sub-Channel 0 (Cb/Pb)</b> field.
+    /// Gets a value representing the <strong>Supported Color Bit-Depth of Sub-Channel 0 (Cb/Pb)</strong> field.
     /// </summary>
     /// <value>
     /// Property value.
@@ -284,7 +284,7 @@ internal sealed class DisplayCapabilitiesAndFeatureSupportSetSection : BaseDataS
     private byte SupportedColorBitDepthSubChannel0CbPb => RawData[0x0f];
 
     /// <summary>
-    /// Gets a value representing the <b>Supported Color Bit-Depth of Sub-Channel 1 (Y)</b> field.
+    /// Gets a value representing the <strong>Supported Color Bit-Depth of Sub-Channel 1 (Y)</strong> field.
     /// </summary>
     /// <value>
     /// Property value.
@@ -293,7 +293,7 @@ internal sealed class DisplayCapabilitiesAndFeatureSupportSetSection : BaseDataS
     private byte SupportedColorBitDepthSubChannel1Y => RawData[0x10];
 
     /// <summary>
-    /// Gets a value representing the <b>Supported Color Bit-Depth of Sub-Channel 2 (Cr/Pr)</b> field.
+    /// Gets a value representing the <strong>Supported Color Bit-Depth of Sub-Channel 2 (Cr/Pr)</strong> field.
     /// </summary>
     /// <value>
     /// Property value.
@@ -302,7 +302,7 @@ internal sealed class DisplayCapabilitiesAndFeatureSupportSetSection : BaseDataS
     private byte SupportedColorBitDepthSubChannel2CrPr => RawData[0x11];
 
     /// <summary>
-    /// Gets a value representing the <b>Aspect Ratio Conversion Modes</b> field.
+    /// Gets a value representing the <strong>Aspect Ratio Conversion Modes</strong> field.
     /// </summary>
     /// <value>
     /// Property value.
@@ -311,7 +311,7 @@ internal sealed class DisplayCapabilitiesAndFeatureSupportSetSection : BaseDataS
     private byte AspectRatioConversionModes => RawData[0x12];
 
     /// <summary>
-    /// Gets a value representing the <b>Packetized Digital Video Support Information</b> field.
+    /// Gets a value representing the <strong>Packetized Digital Video Support Information</strong> field.
     /// </summary>
     /// <value>
     /// Property value.

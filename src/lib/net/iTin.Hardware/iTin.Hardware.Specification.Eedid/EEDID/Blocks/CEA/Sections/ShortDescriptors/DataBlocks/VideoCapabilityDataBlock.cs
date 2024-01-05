@@ -34,7 +34,7 @@ internal readonly struct VideoCapabilityDataBlock
     /// Obtiene un valor que indica si cumple con el estandard IEC 61966-2-5.
     /// </summary>
     /// <value>
-    /// Es <b>true</b> si cumple con el estandard IEC 61966-2-5; en caso contrario, es <b>false</b>.
+    /// Es <strong>true</strong> si cumple con el estandard IEC 61966-2-5; en caso contrario, es <strong>false</strong>.
     /// </value>
     public int CEOverscan { get; }
 
@@ -42,7 +42,7 @@ internal readonly struct VideoCapabilityDataBlock
     /// Obtiene un valor que indica si cumple con el estandard IEC 61966-2-5 Annex A.
     /// </summary>
     /// <value>
-    /// Es <b>true</b> si cumple con el estandard IEC 61966-2-5 Annex A; en caso contrario, es <b>false</b>.
+    /// Es <strong>true</strong> si cumple con el estandard IEC 61966-2-5 Annex A; en caso contrario, es <strong>false</strong>.
     /// </value>
     public int ITOverscan { get; }
 
@@ -50,7 +50,7 @@ internal readonly struct VideoCapabilityDataBlock
     /// Obtiene un valor que indica si cumple con el estandard IEC 61966-2-1/Amendment 1.
     /// </summary>
     /// <value>
-    /// Es <b>true</b> si cumple con el estandard IEC 61966-2-1/Amendment 1; en caso contrario, es <b>false</b>.
+    /// Es <strong>true</strong> si cumple con el estandard IEC 61966-2-1/Amendment 1; en caso contrario, es <strong>false</strong>.
     /// </value>
     public int PTOverscan { get; }
 
@@ -58,7 +58,7 @@ internal readonly struct VideoCapabilityDataBlock
     /// Obtiene un valor que indica si cumple con el estandard IEC 61966-2-4 (High Definition Colorimetry).
     /// </summary>
     /// <value>
-    /// Es <b>true</b> si cumple con el estandard IEC 61966-2-4 (High Definition Colorimetry), es <b>false</b>.
+    /// Es <strong>true</strong> si cumple con el estandard IEC 61966-2-4 (High Definition Colorimetry), es <strong>false</strong>.
     /// </value>
     public bool QuantizationRangeRGB { get; }
 
@@ -66,7 +66,7 @@ internal readonly struct VideoCapabilityDataBlock
     /// Obtiene un valor que indica si cumple con el estandard IEC 61966-2-4 (Standard Definition Colorimetry).
     /// </summary>
     /// <value>
-    /// Es <b>true</b> si cumple con el estandard IEC 61966-2-4 (Standard Definition Colorimetry); en caso contrario, es <b>false</b>.
+    /// Es <strong>true</strong> si cumple con el estandard IEC 61966-2-4 (Standard Definition Colorimetry); en caso contrario, es <strong>false</strong>.
     /// </value>
     public bool QuantizationRangeYCC { get; }
 

@@ -9,7 +9,7 @@ namespace iTin.Hardware.Specification.Eedid.Blocks.EDID.Sections;
 
 // EDID Section: Header
 // •————————————————————————————————————————————————————————————————————————————————————————————————————————•
-// | Offset       Name                      Lenght      Description                                         |
+// | Offset       Name                      Length      Description                                         |
 // •————————————————————————————————————————————————————————————————————————————————————————————————————————•
 // | 00h          Header                    8 BYTES     Must be: 00h, ffh, ffh, ffh, ffh, ffh, ffh, 00h     |
 // |                                                    Note: See Header                                    |

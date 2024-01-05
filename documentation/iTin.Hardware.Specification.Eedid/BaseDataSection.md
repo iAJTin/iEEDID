@@ -13,7 +13,7 @@ public abstract class BaseDataSection
 | [Properties](BaseDataSection/Properties.md) { get; } | Gets the properties available for this section. |
 | [GetProperty](BaseDataSection/GetProperty.md)(…) | Returns the value of specified property. Always returns the first appearance of the property. |
 | [GetPropertyValue](BaseDataSection/GetPropertyValue.md)(…) | Returns the value of specified property. Always returns the first appearance of the property. If it does not exist, returns `null` (`Nothing` in visual basic). |
-| [GetPropertyValue&lt;T&gt;](BaseDataSection/GetPropertyValue.md)(…) | Returns the the strongly typed value of specified property. Always returns the first appearance of the property. If it does not exist, returns `null` (`Nothing` in visual basic). |
+| [GetPropertyValue&lt;T&gt;](BaseDataSection/GetPropertyValue.md)(…) | Returns the strongly typed value of specified property. Always returns the first appearance of the property. If it does not exist, returns `null`. |
 
 ## Protected Members
 
@@ -21,7 +21,7 @@ public abstract class BaseDataSection
 | --- | --- |
 | [BaseDataSection](BaseDataSection/BaseDataSection.md)(…) | Initializes a new instance of the class [`BaseDataSection`](./BaseDataSection.md) with the raw data of this section with version block. |
 | [GetByte](BaseDataSection/GetByte.md)(…) | Returns the stored value from the specified byte. |
-| [GetBytes](BaseDataSection/GetBytes.md)(…) | Returns the stored array from start with specified lenght. |
+| [GetBytes](BaseDataSection/GetBytes.md)(…) | Returns the stored array from start with specified length. |
 | [GetDoubleWord](BaseDataSection/GetDoubleWord.md)(…) | Returns the stored value from the specified byte. |
 | [GetQuadrupleWord](BaseDataSection/GetQuadrupleWord.md)(…) | Returns the stored value from the specified byte. |
 | [GetWord](BaseDataSection/GetWord.md)(…) | Returns the stored value from the specified byte. |

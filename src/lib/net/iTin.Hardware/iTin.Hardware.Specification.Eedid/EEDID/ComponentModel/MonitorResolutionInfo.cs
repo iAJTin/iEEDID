@@ -22,7 +22,6 @@ public readonly struct MonitorResolutionInfo :  IEquatable<MonitorResolutionInfo
 
     #region constructor/s
 
-    /// <inheritdoc />
     /// <summary>
     /// Initialize a new instance of the <see cref="MonitorResolutionInfo" /> class.
     /// </summary>
@@ -41,7 +40,7 @@ public readonly struct MonitorResolutionInfo :  IEquatable<MonitorResolutionInfo
     /// <param name="horizontalResolution">Horizontal resolution in pixels</param>
     /// <param name="verticalResolution">Vertical resolution in pixels.</param>
     /// <param name="verticalRefresh">Vertical refresh rate in Hz</param>
-    /// <param name="reduceBlanking"><b>true</b> if flicker is reduced; <b>false</b> otherwise</param>
+    /// <param name="reduceBlanking"><strong>true</strong> if flicker is reduced; <strong>false</strong> otherwise</param>
     /// <param name="name">Name</param>
     internal MonitorResolutionInfo(int horizontalResolution, int verticalResolution, byte verticalRefresh, bool reduceBlanking, string name) 
         : this(horizontalResolution, verticalResolution, verticalRefresh, false, reduceBlanking, name)
@@ -54,8 +53,8 @@ public readonly struct MonitorResolutionInfo :  IEquatable<MonitorResolutionInfo
     /// <param name="horizontalResolution">Horizontal resolution in pixels</param>
     /// <param name="verticalResolution">Vertical resolution in pixels.</param>
     /// <param name="verticalRefresh">Vertical refresh rate in Hz</param>
-    /// <param name="interlaced"><b>true</b> if it is interlaced; <b>false</b> otherwise</param>
-    /// <param name="reduceBlanking"><b>true</b> if flicker is reduced; <b>false</b> otherwise</param>
+    /// <param name="interlaced"><strong>true</strong> if it is interlaced; <strong>false</strong> otherwise</param>
+    /// <param name="reduceBlanking"><strong>true</strong> if flicker is reduced; <strong>false</strong> otherwise</param>
     /// <param name="name">Name</param>
     internal MonitorResolutionInfo(int horizontalResolution, int verticalResolution, byte verticalRefresh, bool interlaced, bool reduceBlanking, string name)
     {
@@ -84,7 +83,7 @@ public readonly struct MonitorResolutionInfo :  IEquatable<MonitorResolutionInfo
     /// <param name="deviceInfo1">Operand 1</param>
     /// <param name="deviceInfo2">Operand 2</param>
     /// <returns>
-    /// Returns <b>true</b> if <c>deviceInfo1</c> is equal to <c>deviceInfo2</c>; <b>false</b> otherwise.
+    /// Returns <strong>true</strong> if <c>deviceInfo1</c> is equal to <c>deviceInfo2</c>; <strong>false</strong> otherwise.
     /// </returns>
     public static bool operator ==(MonitorResolutionInfo deviceInfo1, MonitorResolutionInfo deviceInfo2) => deviceInfo1.Equals(deviceInfo2);
 
@@ -94,7 +93,7 @@ public readonly struct MonitorResolutionInfo :  IEquatable<MonitorResolutionInfo
     /// <param name="deviceInfo1">Operand 1</param>
     /// <param name="deviceInfo2">Operand 2</param>
     /// <returns>
-    /// Returns <b>true</b> if <c>deviceInfo1</c> is not equal to <c>deviceInfo2</c>; <b>false</b> otherwise.
+    /// Returns <strong>true</strong> if <c>deviceInfo1</c> is not equal to <c>deviceInfo2</c>; <strong>false</strong> otherwise.
     /// </returns>
     public static bool operator !=(MonitorResolutionInfo deviceInfo1, MonitorResolutionInfo deviceInfo2) => !deviceInfo1.Equals(deviceInfo2);
 
@@ -120,7 +119,7 @@ public readonly struct MonitorResolutionInfo :  IEquatable<MonitorResolutionInfo
     {
         get
         {
-            double aspectRatio = Size.Width / (double)Size.Height;
+            var aspectRatio = Size.Width / (double)Size.Height;
 
             return aspectRatio switch
             {
@@ -147,7 +146,7 @@ public readonly struct MonitorResolutionInfo :  IEquatable<MonitorResolutionInfo
     /// Gets a value indicating whether this resolution is interlaced.
     /// </summary>
     /// <value>
-    /// <b>true</b> if it is linked; <b>false</b> otherwise.
+    /// <strong>true</strong> if it is linked; <strong>false</strong> otherwise.
     /// </value>
     public bool Interlaced { get; }
 
@@ -155,7 +154,7 @@ public readonly struct MonitorResolutionInfo :  IEquatable<MonitorResolutionInfo
     /// Gets a value that indicates whether this resolution reduces flicker.
     /// </summary>
     /// <value>
-    /// <b>true</b> if it reduces flicker; <b>false</b> otherwise.
+    /// <strong>true</strong> if it reduces flicker; <strong>false</strong> otherwise.
     /// </value>
     public bool ReduceBlanking { get; }
 

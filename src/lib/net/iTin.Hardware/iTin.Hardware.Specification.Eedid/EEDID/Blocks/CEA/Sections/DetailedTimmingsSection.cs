@@ -10,7 +10,7 @@ namespace iTin.Hardware.Specification.Eedid.Blocks.CEA.Sections;
 
 // CEA Section: Detailed Timings Descriptors Information
 // •————————————————————————————————————————————————————————————————————————————————————————————————————————•
-// | Offset       Name                      Lenght      Description                                         |
+// | Offset       Name                      Length      Description                                         |
 // •————————————————————————————————————————————————————————————————————————————————————————————————————————•
 
 /// <summary>
@@ -172,7 +172,7 @@ internal sealed class DetailedTimingsSection : BaseDataSection
     /// </summary>
     /// <param name="dataTimming">Data Timming Descriptor.</param>
     /// <returns>
-    /// <b>true</b> if the specified Data Timming Descriptor is valid; otherwise <b>false</b>.
+    /// <strong>true</strong> if the specified Data Timming Descriptor is valid; otherwise <strong>false</strong>.
     /// </returns>
     private static bool IsValidDataTimming(ReadOnlyCollection<byte> dataTimming) => !((dataTimming[0x00] == 0x00) & (dataTimming[0x01] == 0x00));
 

@@ -6,7 +6,7 @@ using System.Diagnostics;
 namespace iTin.Hardware.Specification.Eedid.Blocks.EDID.Sections;
 
 /// <summary>
-/// Represents the set of <b>sections</b> available for the <see cref="KnownDataBlock.EDID"/> information of the <see cref="EEDID"/> specification.
+/// Represents the set of <strong>sections</strong> available for the <see cref="KnownDataBlock.EDID"/> information of the <see cref="EEDID"/> specification.
 /// </summary>
 internal sealed class EdidSectionsInformation
 {

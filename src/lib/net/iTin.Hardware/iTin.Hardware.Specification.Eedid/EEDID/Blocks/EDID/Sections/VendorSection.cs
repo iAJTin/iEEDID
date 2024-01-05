@@ -9,7 +9,7 @@ namespace iTin.Hardware.Specification.Eedid.Blocks.EDID.Sections;
 
 // EDID Section: Vendor & Product Information
 // •—————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————•
-// | Offset       Name                      Lenght      Description                                                              |
+// | Offset       Name                      Length      Description                                                              |
 // •—————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————•
 // | 00h          ID Manufacturer Name      WORD        ISA 3-character ID Code.                                                 |
 // |                                                    The ID manufacturer name field, contains a 2-byte representation of the  |

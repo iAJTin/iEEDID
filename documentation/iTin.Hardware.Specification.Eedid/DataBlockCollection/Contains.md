@@ -1,18 +1,8 @@
 # DataBlockCollection.Contains method (1 of 2)
 
-Determina si la colección contiene un objeto [`DataBlock`](../DataBlock.md) específico.
-
 ```csharp
 public bool Contains(DataBlock item)
 ```
-
-| parameter | description |
-| --- | --- |
-| item | Objeto que se va a buscar en la colección. |
-
-## Return Value
-
-true si el objeto [`DataBlock`](../DataBlock.md) se encuentra en la colección; en caso contrario, false.
 
 ## See Also
 

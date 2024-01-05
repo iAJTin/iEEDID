@@ -9,7 +9,7 @@ namespace iTin.Hardware.Specification.Eedid.Blocks.EDID.Sections;
 
 // EDID Section: 18 Byte Data Blocks Descriptors - 72 Bytes
 // •—————————————————————————————————————————————————————————————————————————————————————————————————————•
-// | Offset       Name                      Lenght      Description                                      |
+// | Offset       Name                      Length      Description                                      |
 // •—————————————————————————————————————————————————————————————————————————————————————————————————————•
 // | 00h          First 18 Byte Descriptor  18 BYTEs    Descriptor 1.                                    |
 // |                                                    Note: See Descriptor(KnownEdidDataBlockProperty) |

@@ -8,16 +8,16 @@ using iTin.Core.Hardware.Windows.Device.Desktop.Monitor;
 namespace iTin.Core.Hardware.Windows.Device.Desktop;
 
 /// <summary>
-/// Specialization of the <see cref="IMonitorOperations"/> interface that contains the <b>Monitor</b> operations for <b>Windows</b> system.
+/// Specialization of the <see cref="IMonitorOperations"/> interface that contains the <strong>Monitor</strong> operations for <strong>Windows</strong> system.
 /// </summary>
 public class MonitorOperations : IMonitorOperations
 {
     /// <summary>
-    /// Gets a value containing the raw <b>EDID</b> data.
+    /// Gets a value containing the raw <strong>EDID</strong> data.
     /// </summary>
     /// <returns>
-    /// The raw <b>EDID</b> data.
+    /// The raw <strong>EDID</strong> data.
     /// </returns>
-    public IEnumerable<byte[]> GetEdidDataCollection() 
-        => SafeMonitorNativeMethods.EnumerateMonitorDevices().Select(device => (byte[])device.Edid.Clone());
+    public IEnumerable<byte[]> GetEdidDataCollection() => 
+        SafeMonitorNativeMethods.EnumerateMonitorDevices().Select(device => (byte[])device.Edid.Clone());
 }

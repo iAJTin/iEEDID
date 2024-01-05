@@ -1,6 +1,6 @@
 # DataBlockCollection.Parent property
 
-Gets parent of this datablockcollection.
+Gets parent of this data block collection.
 
 ```csharp
 public EEDID Parent { get; }

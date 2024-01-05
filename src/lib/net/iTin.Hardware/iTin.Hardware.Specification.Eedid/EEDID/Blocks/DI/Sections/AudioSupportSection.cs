@@ -5,7 +5,7 @@ namespace iTin.Hardware.Specification.Eedid.Blocks.DI.Sections;
 
 // DI Section: Audio Support
 // •——————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————•
-// | Offset       Name                  Lenght     Description                                                                                        |
+// | Offset       Name                  Length     Description                                                                                        |
 // •——————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————•
 // | 00h          Unused Bytes          9 BYTE     All 9 Bytes are Reserved (Must be set to "00h"). These Bytes may be defined in a future revision   |
 // |                                               to the DI-EXT Standard.                                                                            |

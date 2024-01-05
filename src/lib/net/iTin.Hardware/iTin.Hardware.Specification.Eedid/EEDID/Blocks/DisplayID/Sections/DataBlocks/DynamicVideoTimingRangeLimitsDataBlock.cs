@@ -12,7 +12,7 @@ namespace iTin.Hardware.Specification.Eedid.Blocks.DisplayId.Sections.DataBlocks
 
 // Data Block: Dynamic Video Timing Range Limits Data Block
 // •—————————————————————————————————————————————————————————————————————————————————————————————————•
-// | Offset       Name                    Lenght      Description                                    |
+// | Offset       Name                    Length      Description                                    |
 // •—————————————————————————————————————————————————————————————————————————————————————————————————•
 // | 00h          TAG                     1 BYTE      25h                                            |
 // •—————————————————————————————————————————————————————————————————————————————————————————————————•
@@ -86,7 +86,7 @@ internal sealed class DynamicVideoTimingRangeLimitsDataBlock : BaseDataSection
     #region private readonly properties
 
     /// <summary>
-    /// Gets a value representing the <b>Minimum Pixel Clock</b> field.
+    /// Gets a value representing the <strong>Minimum Pixel Clock</strong> field.
     /// </summary>
     /// <value>
     /// Property value.
@@ -95,7 +95,7 @@ internal sealed class DynamicVideoTimingRangeLimitsDataBlock : BaseDataSection
     private int MinimumPixelClock => int.Parse($"{RawData[0x05]:x2}{RawData[0x04]:x2}{RawData[0x03]:x2}", NumberStyles.AllowHexSpecifier);
 
     /// <summary>
-    /// Gets a value representing the <b>Maximum Pixel Clock</b> field.
+    /// Gets a value representing the <strong>Maximum Pixel Clock</strong> field.
     /// </summary>
     /// <value>
     /// Property value.
@@ -104,7 +104,7 @@ internal sealed class DynamicVideoTimingRangeLimitsDataBlock : BaseDataSection
     private int MaximumPixelClock => int.Parse($"{RawData[0x08]:x2}{RawData[0x07]:x2}{RawData[0x06]:x2}", NumberStyles.AllowHexSpecifier);
 
     /// <summary>
-    /// Gets a value representing the <b>Minimum Vertical Refresh Rate</b> field.
+    /// Gets a value representing the <strong>Minimum Vertical Refresh Rate</strong> field.
     /// </summary>
     /// <value>
     /// Property value.
@@ -113,7 +113,7 @@ internal sealed class DynamicVideoTimingRangeLimitsDataBlock : BaseDataSection
     private byte MinimumVerticalRefreshRate => RawData[0x09];
 
     /// <summary>
-    /// Gets a value representing the <b>Maximum Vertical Refresh Rate</b> field.
+    /// Gets a value representing the <strong>Maximum Vertical Refresh Rate</strong> field.
     /// </summary>
     /// <value>
     /// Property value.
@@ -122,7 +122,7 @@ internal sealed class DynamicVideoTimingRangeLimitsDataBlock : BaseDataSection
     private byte MaximumVerticalRefreshRate => RawData[0x0a];
 
     /// <summary>
-    /// Gets a value representing the <b>Support Seamless Dynamic Video Timing</b> field.
+    /// Gets a value representing the <strong>Support Seamless Dynamic Video Timing</strong> field.
     /// </summary>
     /// <value>
     /// Property value.

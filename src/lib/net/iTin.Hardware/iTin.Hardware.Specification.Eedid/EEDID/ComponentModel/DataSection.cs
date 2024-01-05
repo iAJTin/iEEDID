@@ -77,10 +77,9 @@ public sealed class DataSection
     /// <value>
     /// Data to process.
     /// </value>
-    public ReadOnlyCollection<byte> RawData => 
-        Key.Equals(EdidSection.Checksum) 
-            ? new ReadOnlyCollection<byte>(new[] { _dataSection.RawData.Take(128).LastOrDefault() }) 
-            : _dataSection.RawData;
+    public ReadOnlyCollection<byte> RawData => Key.Equals(EdidSection.Checksum)
+        ? new ReadOnlyCollection<byte>(new[] { _dataSection.RawData.Take(128).LastOrDefault() })
+        : _dataSection.RawData;
 
     #endregion
 
@@ -116,20 +115,19 @@ public sealed class DataSection
     /// <param name="propertyKey">Key to the property to obtain</param>
     /// <returns>
     /// <para>
-    /// A <see cref="QueryPropertyResult"/> reference that contains the result of the operation, to check if the operation is correct, the <b>Success</b>
-    /// property will be <b>true</b> and the <b>Value</b> property will contain the value; Otherwise, the the <b>Success</b> property
-    /// will be false and the <b>Errors</b> property will contain the errors associated with the operation, if they have been filled in.
+    /// A <see cref="QueryPropertyResult"/> reference that contains the result of the operation, to check if the operation is correct, the <strong>Success</strong>
+    /// property will be <strong>true</strong> and the <strong>Value</strong> property will contain the value; Otherwise, the <strong>Success</strong> property
+    /// will be false and the <strong>Errors</strong> property will contain the errors associated with the operation, if they have been filled in.
     /// </para>
     /// <para>
-    /// The type of the <b>Value</b> property is <see cref="PropertyItem"/>. Contains the result of the operation.
+    /// The type of the <strong>Value</strong> property is <see cref="PropertyItem"/>. Contains the result of the operation.
     /// </para>
     /// <para>
     /// </para>
     /// </returns>
-    public QueryPropertyResult GetProperty(IPropertyKey propertyKey)
-        => _dataSection.Properties.ContainsKey(propertyKey)
-            ? _dataSection.GetProperty(propertyKey)
-            : QueryPropertyResult.CreateErroResult($"Property {propertyKey} not found");
+    public QueryPropertyResult GetProperty(IPropertyKey propertyKey) => _dataSection.Properties.ContainsKey(propertyKey)
+        ? _dataSection.GetProperty(propertyKey)
+        : QueryPropertyResult.CreateErrorResult($"Property {propertyKey} not found");
 
     #endregion
 

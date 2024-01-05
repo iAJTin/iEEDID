@@ -1,14 +1,8 @@
 # DataBlockCollection.RemoveAt method
 
-Elimina el objeto [`DataBlock`](../DataBlock.md) especificado de la colección.
-
 ```csharp
 public void RemoveAt(int index)
 ```
-
-| parameter | description |
-| --- | --- |
-| index | Índice del elemento a eliminar. |
 
 ## See Also
 

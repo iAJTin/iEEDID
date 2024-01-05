@@ -17,7 +17,7 @@ internal sealed class DisplayIdDataSectionCollection : BaseDataSectionCollection
     /// <summary>
     /// Initializes a new instance of the <see cref="DisplayIdDataSectionCollection"/> class specifying the data of the untreated block.
     /// </summary>
-    /// <param name="datablock">Datos del bloque sin tratar.</param>
+    /// <param name="datablock">Raw block data.</param>
     internal DisplayIdDataSectionCollection(DataBlock datablock) : base(datablock, true)
     {                
     }
@@ -33,7 +33,7 @@ internal sealed class DisplayIdDataSectionCollection : BaseDataSectionCollection
     /// Object <see cref="DataSection"/> specified by its key.
     /// </value>
     /// <remarks>
-    /// If the element does not exist, <b>null</b> is returned.
+    /// If the element does not exist, <see langword="null"/> is returned.
     /// </remarks>
     /// <exception cref="InvalidEnumArgumentException"></exception>
     public DataSection this[DisplayIdSection valueKey]
@@ -65,7 +65,7 @@ internal sealed class DisplayIdDataSectionCollection : BaseDataSectionCollection
     /// </summary>
     /// <param name="valueKey">One of the values of <see cref="DisplayIdSection"/> that represents the key of the object <see cref="DataSection"/> to search</param>
     /// <returns>
-    /// <b>true</b> if the <see cref="DataSection"/> object with the <b>valueKey</b> is in the <see cref="DisplayIdDataSectionCollection"/> collection; otherwise, it is <b>false</b>.
+    /// <strong>true</strong> if the <see cref="DataSection"/> object with the <strong>valueKey</strong> is in the <see cref="DisplayIdDataSectionCollection"/> collection; otherwise <strong>false</strong>.
     /// </returns>
     /// <exception cref="InvalidEnumArgumentException"></exception>
     public bool Contains(DisplayIdSection valueKey)
@@ -84,7 +84,7 @@ internal sealed class DisplayIdDataSectionCollection : BaseDataSectionCollection
     /// </summary>
     /// <param name="valueKey">One of the values of <see cref="DisplayIdSection"/> that represents the key of the object to be searched in <see cref="DisplayIdDataSectionCollection"/></param>
     /// <returns>
-    /// Zero-base index of the first occurrence of item in the whole of <see cref="DisplayIdDataSectionCollection"/>, if found; otherwise, <b>-1</b>.
+    /// Zero-base index of the first occurrence of item in the whole of <see cref="DisplayIdDataSectionCollection"/>, if found; otherwise, <strong>-1</strong>.
     /// </returns>
     /// <exception cref="InvalidEnumArgumentException"></exception>
     public int IndexOf(DisplayIdSection valueKey)
@@ -108,7 +108,7 @@ internal sealed class DisplayIdDataSectionCollection : BaseDataSectionCollection
     /// </summary>
     /// <param name="value">Key to check</param>
     /// <returns>
-    /// <b>true</b> if the value belongs to the enumeration <see cref="DisplayIdSection"/>; otherwise, it is <b>false</b>.
+    /// <strong>true</strong> if the value belongs to the enumeration <see cref="DisplayIdSection"/>; otherwise <strong>false</strong>.
     /// </returns>
     private static bool IsValidSection(DisplayIdSection value) => SentinelHelper.IsEnumValid(value);
 

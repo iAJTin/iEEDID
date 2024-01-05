@@ -11,7 +11,7 @@ namespace iTin.Hardware.Specification.Eedid.Blocks.DisplayId.Sections.DataBlocks
 
 // Data Block: Detailed Timing Type I Data Block
 // •—————————————————————————————————————————————————————————————————————————————————————————————————•
-// | Offset       Name                    Lenght      Description                                    |
+// | Offset       Name                    Length      Description                                    |
 // •—————————————————————————————————————————————————————————————————————————————————————————————————•
 // | 00h          TAG                     1 BYTE      03h                                            |
 // •—————————————————————————————————————————————————————————————————————————————————————————————————•

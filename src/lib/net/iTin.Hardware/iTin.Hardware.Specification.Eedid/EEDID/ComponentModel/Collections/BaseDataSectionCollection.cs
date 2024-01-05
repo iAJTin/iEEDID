@@ -18,14 +18,8 @@ public abstract class BaseDataSectionCollection : IList<DataSection>
     [DebuggerBrowsable(DebuggerBrowsableState.Never)]
     private readonly bool _readOnly;
 
-    [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-    private readonly DataBlock _parent;
-
     [DebuggerBrowsable(DebuggerBrowsableState.Never)] 
     private readonly ICollection<Enum> _keys;
-
-    [DebuggerBrowsable(DebuggerBrowsableState.Never)] 
-    private readonly IList<DataSection> _sections;
 
     #endregion
 
@@ -35,13 +29,13 @@ public abstract class BaseDataSectionCollection : IList<DataSection>
     /// Initializes a new instance of the class <see cref="BaseDataSectionCollection"/> specifying the untreated block and if it is read-only.
     /// </summary>
     /// <param name="parent">Data of an untreated block.</param>
-    /// <param name="readOnly"><b>true</b> if the collection should be read-only; otherwise <b>false</b>.</param>
+    /// <param name="readOnly"><strong>true</strong> if the collection should be read-only; otherwise <strong>false</strong>.</param>
     protected BaseDataSectionCollection(DataBlock parent, bool readOnly)
     {
-        _parent = parent ?? throw new ArgumentNullException(nameof(parent));
+        Block = parent ?? throw new ArgumentNullException(nameof(parent));
         _readOnly = readOnly;
         _keys = parent.SectionTable.Keys.ToList();
-        _sections = _parent.SectionTable.Select(sectionDictionaryEntry => new DataSection(sectionDictionaryEntry)).ToList();
+        Sections = Block.SectionTable.Select(sectionDictionaryEntry => new DataSection(sectionDictionaryEntry)).ToList();
 
         SetParentToItemSectionCollection();
     }
@@ -58,7 +52,7 @@ public abstract class BaseDataSectionCollection : IList<DataSection>
     /// <returns>
     /// Object <see cref="T:System.Collections.IEnumerator"/> that can be used to iterate through the collection.
     /// </returns>
-    IEnumerator IEnumerable.GetEnumerator() => _sections.GetEnumerator();
+    IEnumerator IEnumerable.GetEnumerator() => Sections.GetEnumerator();
 
     #endregion
 
@@ -73,7 +67,7 @@ public abstract class BaseDataSectionCollection : IList<DataSection>
     /// </returns>
     public DataSection this[int index]
     {
-        get => _sections[index];
+        get => Sections[index];
         set
         {
             if (_readOnly)
@@ -81,7 +75,7 @@ public abstract class BaseDataSectionCollection : IList<DataSection>
                 throw new InvalidOperationException(""); //enLocalizedMessages.DataBlockCollectionInsertReadOnly);
             }
 
-            _sections[index] = value;
+            Sections[index] = value;
         }
     }
 
@@ -90,9 +84,9 @@ public abstract class BaseDataSectionCollection : IList<DataSection>
     /// </summary>
     /// <param name="item">Item to search</param>
     /// <returns>
-    /// Zero-base index of the first appearance of the item in the collection, if found; otherwise, <b>-1</b>.
+    /// Zero-base index of the first appearance of the item in the collection, if found; otherwise, <strong>-1</strong>.
     /// </returns>
-    public int IndexOf(DataSection item) => _sections.IndexOf(item);
+    public int IndexOf(DataSection item) => Sections.IndexOf(item);
 
     /// <summary>
     /// Inserts a <see cref="DataSection"/> object into collection.
@@ -107,11 +101,11 @@ public abstract class BaseDataSectionCollection : IList<DataSection>
             throw new InvalidOperationException(""); //enLocalizedMessages.DataBlockCollectionInsertReadOnly);
         }
 
-        _sections.Insert(index, item);
+        Sections.Insert(index, item);
     }
 
     /// <summary>
-    /// Elimina el objeto <see cref="DataSection"/> especificado de la colección.
+    /// Removes the specified <see cref="DataSection"/> object from the collection.
     /// </summary>
     /// <param name="index">Index of the element to be eliminated.</param>
     public void RemoveAt(int index)
@@ -121,7 +115,7 @@ public abstract class BaseDataSectionCollection : IList<DataSection>
             throw new InvalidOperationException(""); //enLocalizedMessages.DataBlockCollectionInsertReadOnly);
         }
 
-        _sections.RemoveAt(index);
+        Sections.RemoveAt(index);
     }
 
     #endregion
@@ -131,14 +125,16 @@ public abstract class BaseDataSectionCollection : IList<DataSection>
     /// <summary>
     /// Gets the count.
     /// </summary>
-    /// <value>The count.</value>
-    public int Count => _sections.Count;
+    /// <value>
+    /// The count.
+    /// </value>
+    public int Count => Sections.Count;
 
     /// <summary>
     /// Gets a value indicating whether this instance is read only.
     /// </summary>
     /// <value>
-    /// <b>true</b> if this instance is read only; otherwise, <b>false</b>.
+    /// <strong>true</strong> if this instance is read only; otherwise, <strong>false</strong>.
     /// </value>
     public bool IsReadOnly => _readOnly;
 
@@ -153,7 +149,7 @@ public abstract class BaseDataSectionCollection : IList<DataSection>
             throw new InvalidOperationException(""); //enLocalizedMessages.DataBlockCollectionInsertReadOnly);
         }
 
-        _sections.Add(item);
+        Sections.Add(item);
     }
 
     /// <summary>
@@ -166,7 +162,7 @@ public abstract class BaseDataSectionCollection : IList<DataSection>
             throw new InvalidOperationException(""); //enLocalizedMessages.DataBlockCollectionInsertReadOnly);
         }
 
-        _sections.Clear();
+        Sections.Clear();
     }
 
     /// <summary>
@@ -174,9 +170,9 @@ public abstract class BaseDataSectionCollection : IList<DataSection>
     /// </summary>
     /// <param name="item">The item.</param>
     /// <returns>
-    /// <b>true</b> if contains the specified item; otherwise, <b>false</b>.
+    /// <strong>true</strong> if contains the specified item; otherwise, <strong>false</strong>.
     /// </returns>
-    public bool Contains(DataSection item) => _sections.Contains(item);
+    public bool Contains(DataSection item) => Sections.Contains(item);
 
     /// <summary>
     /// Copies to.
@@ -190,14 +186,14 @@ public abstract class BaseDataSectionCollection : IList<DataSection>
             throw new ArgumentNullException(nameof(array));
         }
 
-        if (array.Length < arrayIndex + _sections.Count)
+        if (array.Length < arrayIndex + Sections.Count)
         {
             throw new ArgumentException(""); //enLocalizedMessages.DataBlockCollectionInsertReadOnly, "array");
         }
 
-        for (int index = 0; index < _sections.Count; index++)
+        for (int index = 0; index < Sections.Count; index++)
         {
-            array[index + arrayIndex] = _sections[index];
+            array[index + arrayIndex] = Sections[index];
         }
     }
 
@@ -213,7 +209,7 @@ public abstract class BaseDataSectionCollection : IList<DataSection>
             throw new InvalidOperationException(""); //enLocalizedMessages.DataBlockCollectionInsertReadOnly);
         }
 
-        return _sections.Remove(item);
+        return Sections.Remove(item);
     }
 
     #endregion
@@ -226,7 +222,7 @@ public abstract class BaseDataSectionCollection : IList<DataSection>
     /// <returns>
     /// Object <see cref="T:System.Collections.IEnumerator"/> that can be used to iterate through the collection.
     /// </returns>
-    public IEnumerator<DataSection> GetEnumerator() => _sections.GetEnumerator();
+    public IEnumerator<DataSection> GetEnumerator() => Sections.GetEnumerator();
 
     #endregion
 
@@ -249,7 +245,7 @@ public abstract class BaseDataSectionCollection : IList<DataSection>
     /// Object <see cref="DataBlock"/> to which this <see cref="BaseDataSectionCollection"/> belongs.
     /// </value>
     [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-    public DataBlock Block => _parent;
+    public DataBlock Block { get; }
 
     #endregion
 
@@ -262,7 +258,7 @@ public abstract class BaseDataSectionCollection : IList<DataSection>
     /// List of available keys.
     /// </value>
     [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-    protected IList<DataSection> Sections => _sections;
+    protected IList<DataSection> Sections { get; }
 
     #endregion
 
@@ -273,7 +269,7 @@ public abstract class BaseDataSectionCollection : IList<DataSection>
     /// </summary>
     private void SetParentToItemSectionCollection()
     {
-        foreach (var item in _sections)
+        foreach (var item in Sections)
         {
             item.SetParent(this);
         }

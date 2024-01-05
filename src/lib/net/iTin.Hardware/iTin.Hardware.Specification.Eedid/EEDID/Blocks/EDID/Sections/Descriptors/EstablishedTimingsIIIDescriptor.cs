@@ -10,7 +10,7 @@ namespace iTin.Hardware.Specification.Eedid.Blocks.EDID.Sections.Descriptors;
 
 // Data Block Descriptor: Established Timings III Descriptor Definition
 // •—————————————————————————————————————————————————————————————————————————————————————————————•
-// | Offset       Name                      Lenght      Description                              |
+// | Offset       Name                      Length      Description                              |
 // •—————————————————————————————————————————————————————————————————————————————————————————————•
 // | 00h          Revision Number           BYTE        0ah, other values reserved.              |
 // •—————————————————————————————————————————————————————————————————————————————————————————————•

@@ -30,13 +30,7 @@ public readonly struct DataBlockData : IEquatable<DataBlockData>
 
     #region interfaces
 
-    /// <summary>
-    /// Indicates whether the current object is equal to another object of the same type.
-    /// </summary>
-    /// <param name="other">Objeto que se va a comparar con este objeto.</param>
-    /// <returns>
-    /// Returns <b>true</b> if the current object is equal to the <c>other</c> parameter; otherwise, <b>false</b>.
-    /// </returns>
+    /// <inheritdoc/>
     public bool Equals(DataBlockData other) => other.Equals((object)this);
 
     #endregion
@@ -49,7 +43,7 @@ public readonly struct DataBlockData : IEquatable<DataBlockData>
     /// <param name="left">Operand 1</param>
     /// <param name="right">Operand 2</param>
     /// <returns>
-    /// Returns <b>true</b> if <c>left</c> is equal to <c>right</c>; <b>false</b> otherwise.
+    /// Returns <strong>true</strong> if <c>left</c> is equal to <c>right</c>; <strong>false</strong> otherwise.
     /// </returns>
     public static bool operator ==(DataBlockData left, DataBlockData right) => left.Equals(right);
 
@@ -59,7 +53,7 @@ public readonly struct DataBlockData : IEquatable<DataBlockData>
     /// <param name="left">Operand 1</param>
     /// <param name="right">Operand 2</param>
     /// <returns>
-    /// Returns <b>true</b> if <c>left</c> is not equal to <c>right</c>; <b>false</b> otherwise.
+    /// Returns <strong>true</strong> if <c>left</c> is not equal to <c>right</c>; <strong>false</strong> otherwise.
     /// </returns>
     public static bool operator !=(DataBlockData left, DataBlockData right) => !left.Equals(right);
 
@@ -123,20 +117,19 @@ public readonly struct DataBlockData : IEquatable<DataBlockData>
     /// <param name="propertyKey">Key to the property to obtain</param>
     /// <returns>
     /// <para>
-    /// A <see cref="QueryPropertyResult"/> reference that contains the result of the operation, to check if the operation is correct, the <b>Success</b>
-    /// property will be <b>true</b> and the <b>Value</b> property will contain the value; Otherwise, the the <b>Success</b> property
-    /// will be false and the <b>Errors</b> property will contain the errors associated with the operation, if they have been filled in.
+    /// A <see cref="QueryPropertyResult"/> reference that contains the result of the operation, to check if the operation is correct, the <strong>Success</strong>
+    /// property will be <strong>true</strong> and the <strong>Value</strong> property will contain the value; Otherwise, the <strong>Success</strong> property
+    /// will be false and the <strong>Errors</strong> property will contain the errors associated with the operation, if they have been filled in.
     /// </para>
     /// <para>
-    /// The type of the <b>Value</b> property is <see cref="PropertyItem"/>. Contains the result of the operation.
+    /// The type of the <strong>Value</strong> property is <see cref="PropertyItem"/>. Contains the result of the operation.
     /// </para>
     /// <para>
     /// </para>
     /// </returns>
-    public QueryPropertyResult GetProperty(IPropertyKey propertyKey)
-        => !Properties.ContainsKey(propertyKey)
-            ? QueryPropertyResult.CreateErroResult("Can not found specified property key")
-            : QueryPropertyResult.CreateSuccessResult(((IEnumerable<PropertyItem>)Properties[propertyKey]).FirstOrDefault());
+    public QueryPropertyResult GetProperty(IPropertyKey propertyKey) => !Properties.ContainsKey(propertyKey)
+        ? QueryPropertyResult.CreateErrorResult("Can not found specified property key")
+        : QueryPropertyResult.CreateSuccessResult(((IEnumerable<PropertyItem>)Properties[propertyKey]).FirstOrDefault());
 
     //#region [public] (IPropertyKey) GetDescriptorKeyFromType(EdidDataBlockDescriptorTag): Returns a value that represents the unique key that identifies the specified descriptor
     ///// <summary>
@@ -224,21 +217,10 @@ public readonly struct DataBlockData : IEquatable<DataBlockData>
 
     #region public override methods
 
-    /// <summary>
-    /// Returns the hash code of the object.
-    /// </summary>
-    /// <returns>
-    /// Hash code.
-    /// </returns>
+    /// <inheritdoc/>
     public override int GetHashCode() => ToString().GetHashCode();
 
-    /// <summary>
-    /// Returns a value that indicates whether this object is equal to another.
-    /// </summary>
-    /// <param name="obj">Object with which to compare</param>
-    /// <returns>
-    /// Equality result.
-    /// </returns>
+    /// <inheritdoc/>
     public override bool Equals(object obj)
     {
         if (obj is not DataBlockData other)
@@ -249,12 +231,7 @@ public readonly struct DataBlockData : IEquatable<DataBlockData>
         return other.BlockTag.Equals(BlockTag);
     }
 
-    /// <summary>
-    /// Returns a <see cref="string"/> that represents the current class.
-    /// </summary>
-    /// <returns>
-    /// A <see cref="string"/> that represents the <see cref="DataBlockData"/> current class.
-    /// </returns>
+    /// <inheritdoc/>
     public override string ToString() => $"{BlockTag} Rev. {BlockRevision}";
 
     #endregion

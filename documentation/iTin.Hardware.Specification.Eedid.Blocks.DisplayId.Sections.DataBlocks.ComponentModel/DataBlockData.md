@@ -15,11 +15,11 @@ public struct DataBlockData : IEquatable<DataBlockData>
 | [ImplementedProperties](DataBlockData/ImplementedProperties.md) { get; } | Gets a value containing the implemented properties for this data block. |
 | [RawData](DataBlockData/RawData.md) { get; } | Get the raw data from a data block. |
 | [StructureVersion](DataBlockData/StructureVersion.md) { get; } | Gets a value that represents the structure version. |
-| [Equals](DataBlockData/Equals.md)(…) | Indicates whether the current object is equal to another object of the same type. |
-| override [Equals](DataBlockData/Equals.md)(…) | Returns a value that indicates whether this object is equal to another. |
-| override [GetHashCode](DataBlockData/GetHashCode.md)() | Returns the hash code of the object. |
+| [Equals](DataBlockData/Equals.md)(…) |  |
+| override [Equals](DataBlockData/Equals.md)(…) |  |
+| override [GetHashCode](DataBlockData/GetHashCode.md)() |  |
 | [GetProperty](DataBlockData/GetProperty.md)(…) | Returns the value of specified property. Always returns the first appearance of the property. |
-| override [ToString](DataBlockData/ToString.md)() | Returns a String that represents the current class. |
+| override [ToString](DataBlockData/ToString.md)() |  |
 | [operator ==](DataBlockData/op_Equality.md) | Implements the equality operator (==). |
 | [operator !=](DataBlockData/op_Inequality.md) | Implement the inequality operator (!=). |
 

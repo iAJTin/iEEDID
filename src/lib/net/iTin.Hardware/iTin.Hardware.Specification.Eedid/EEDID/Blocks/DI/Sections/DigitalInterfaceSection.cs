@@ -10,7 +10,7 @@ namespace iTin.Hardware.Specification.Eedid.Blocks.DI.Sections;
 
 // DI Section: Digital Interface
 // •——————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————•
-// | Offset       Name                      Lenght      Description                                                                                   |
+// | Offset       Name                      Length      Description                                                                                   |
 // •——————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————•
 // | 00h          Digital Interface         BYTE            Value  Description                                                                        |
 // |              Standard/Specification                      00h  Display has an Analog Video Input (See NOTE 1)                                     |
@@ -180,24 +180,20 @@ internal sealed class DigitalInterfaceSection : BaseDataSection
 
     #region VESA Display Information Extension Block Standard
 
-    private static string GetDataEnableSignalHighOrLow(bool isHigh) =>
-        isHigh
-            ? "Data enabled when the DE signal is high"
-            : "Data enabled when the DE signal is low";
+    private static string GetDataEnableSignalHighOrLow(bool isHigh) => isHigh
+        ? "Data enabled when the DE signal is high"
+        : "Data enabled when the DE signal is low";
 
-    private static string GetDataFormats(byte value)
+    private static string GetDataFormats(byte value) => value switch
     {
-        return value switch
-        {
-            0x00 => "Display has an Analog Video Input",
-            0x15 => "8-Bit Over 8-Bit RGB",
-            0x19 => "12-Bit Over 12-Bit RGB",
-            0x24 => "24-Bit MSB-Aligned RGB (Single Link)",
-            0x48 => "48-Bit MSB-Aligned RGB (Dual Link, Hi-Resolution)",
-            0x49 => "48-Bit MSB-Aligned RGB (Dual Link, Hi-Color)",
-            _ => "Reserved"
-        };
-    }
+        0x00 => "Display has an Analog Video Input",
+        0x15 => "8-Bit Over 8-Bit RGB",
+        0x19 => "12-Bit Over 12-Bit RGB",
+        0x24 => "24-Bit MSB-Aligned RGB (Single Link)",
+        0x48 => "48-Bit MSB-Aligned RGB (Dual Link, Hi-Resolution)",
+        0x49 => "48-Bit MSB-Aligned RGB (Dual Link, Hi-Color)",
+        _ => "Reserved"
+    };
 
     private static string GetEdgeOfShiftClockUsage(byte code)
     {

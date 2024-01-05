@@ -14,7 +14,7 @@ public static bool operator ==(DataBlockDescriptorData headerDataBlockDescriptor
 
 ## Return Value
 
-Returns true if `headerDataBlockDescriptor1` is equal to `headerDataBlockDescriptor2`; false otherwise.
+Returns `true` if `headerDataBlockDescriptor1` is equal to `headerDataBlockDescriptor2`; otherwise `false`.
 
 ## See Also
 

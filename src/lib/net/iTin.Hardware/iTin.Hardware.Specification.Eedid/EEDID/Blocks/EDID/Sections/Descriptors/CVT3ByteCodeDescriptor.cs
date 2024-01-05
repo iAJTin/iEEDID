@@ -9,7 +9,7 @@ namespace iTin.Hardware.Specification.Eedid.Blocks.EDID.Sections.Descriptors;
 
 // Data Block Descriptor: CVT 3 Byte Code Descriptor Definition
 // •——————————————————————————————————————————————————————————————————————————————————————————————————•
-// | Offset       Name                      Lenght      Description                                   |
+// | Offset       Name                      Length      Description                                   |
 // •——————————————————————————————————————————————————————————————————————————————————————————————————•
 // | 00h          Version                   BYTE        01h. Other values reserved.                   |
 // |              Number                                                                              |
@@ -143,7 +143,7 @@ internal sealed class Cvt3ByteCodeDescriptor : BaseDataSection
     /// <summary>
     /// Returns the value that contains the specified key.
     /// </summary>
-    /// <param name="byteCode">Timing to be recovere.</param>
+    /// <param name="byteCode">Timing to recover.</param>
     /// <returns>
     /// Value of the specified timing
     /// </returns>

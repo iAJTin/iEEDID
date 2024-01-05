@@ -8,7 +8,7 @@
     <OutputType>Exe</OutputType>
     <RootNamespace>iEEDID.ConsoleApp</RootNamespace>
     <AssemblyName>iEEDID.ConsoleApp</AssemblyName>
-    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <Deterministic>true</Deterministic>
     <TargetFrameworkProfile />
@@ -59,8 +59,8 @@
     <None Include="app.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\..\..\..\iTin\iTin.Core\iTin.Core.Hardware.Common\src\iTin.Core.Hardware.Common.csproj">
-      <Project>{0D335C73-0FEF-4B7B-A46F-52D6361925B3}</Project>
+    <ProjectReference Include="..\..\..\..\..\iTin\iTin.Core\iTin.Core.Hardware\iTin.Core.Hardware.Common\src\iTin.Core.Hardware.Common.csproj">
+      <Project>{128BA6C6-2FB3-4D35-B06B-414394F38A33}</Project>
       <Name>iTin.Core.Hardware.Common</Name>
     </ProjectReference>
     <ProjectReference Include="..\..\..\..\..\iTin\iTin.Core\iTin.Core\src\iTin.Core.csproj">

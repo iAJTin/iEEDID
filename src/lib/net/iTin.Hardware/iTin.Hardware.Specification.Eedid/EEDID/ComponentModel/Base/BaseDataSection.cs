@@ -11,7 +11,7 @@ using iTin.Core.Helpers;
 namespace iTin.Hardware.Specification.Eedid;
 
 /// <summary>
-/// Base class that represents a <b>section</b> of a <b>block</b> of the <see cref="EEDID"/> specification.
+/// Base class that represents a <strong>section</strong> of a <strong>block</strong> of the <see cref="EEDID"/> specification.
 /// </summary>
 public abstract class BaseDataSection
 {
@@ -91,20 +91,19 @@ public abstract class BaseDataSection
     /// <param name="propertyKey">Key to the property to obtain</param>
     /// <returns>
     /// <para>
-    /// A <see cref="QueryPropertyResult"/> reference that contains the result of the operation, to check if the operation is correct, the <b>Success</b>
-    /// property will be <b>true</b> and the <b>Value</b> property will contain the value; Otherwise, the the <b>Success</b> property
-    /// will be false and the <b>Errors</b> property will contain the errors associated with the operation, if they have been filled in.
+    /// A <see cref="QueryPropertyResult"/> reference that contains the result of the operation, to check if the operation is correct, the <strong>Success</strong>
+    /// property will be <strong>true</strong> and the <strong>Value</strong> property will contain the value; Otherwise, the <strong>Success</strong> property
+    /// will be false and the <strong>Errors</strong> property will contain the errors associated with the operation, if they have been filled in.
     /// </para>
     /// <para>
-    /// The type of the <b>Value</b> property is <see cref="PropertyItem"/>. Contains the result of the operation.
+    /// The type of the <strong>Value</strong> property is <see cref="PropertyItem"/>. Contains the result of the operation.
     /// </para>
     /// <para>
     /// </para>
     /// </returns>
-    public QueryPropertyResult GetProperty(IPropertyKey propertyKey) 
-        => !Properties.ContainsKey(propertyKey) 
-            ? QueryPropertyResult.CreateErroResult("Can not found specified property key") 
-            : QueryPropertyResult.CreateSuccessResult(((IEnumerable<PropertyItem>)Properties[propertyKey]).FirstOrDefault());
+    public QueryPropertyResult GetProperty(IPropertyKey propertyKey) => !Properties.ContainsKey(propertyKey)
+        ? QueryPropertyResult.CreateErrorResult("Can not found specified property key")
+        : QueryPropertyResult.CreateSuccessResult(((IEnumerable<PropertyItem>)Properties[propertyKey]).FirstOrDefault());
 
     /// <summary>
     /// Returns the value of specified property. Always returns the first appearance of the property. If it does not exist, returns <c>null</c> (<c>Nothing</c> in visual basic).
@@ -116,11 +115,14 @@ public abstract class BaseDataSection
     public object GetPropertyValue(IPropertyKey propertyKey) => Properties.ContainsKey(propertyKey) ? Properties[propertyKey] : null;
 
     /// <summary>
-    /// Returns the the strongly typed value of specified property. Always returns the first appearance of the property. If it does not exist, returns <c>null</c> (<c>Nothing</c> in visual basic).
+    /// Returns the strongly typed value of specified property.<br/>
+    /// Always returns the first appearance of the property.<br/>
+    /// If it does not exist, returns <see langword="null"/>.
     /// </summary>
     /// <param name="propertyKey">Key to the property to obtain</param>
     /// <returns>
-    /// Reference to the object that represents the strongly typed value of the property. Always returns the first appearance of the property.
+    /// Reference to the object that represents the strongly typed value of the property.<br/>
+    /// Always returns the first appearance of the property.
     /// </returns>
     public T GetPropertyValue<T>(IPropertyKey propertyKey) => (T)GetPropertyValue(propertyKey);
 
@@ -138,23 +140,22 @@ public abstract class BaseDataSection
     protected byte GetByte(byte target) => RawData[target];
 
     /// <summary>
-    /// Returns the stored array from start with specified lenght.
+    /// Returns the stored array from start with specified length.
     /// </summary>
     /// <param name="start">start byte</param>
-    /// <param name="lenght">lenght</param>
+    /// <param name="length">length</param>
     /// <returns>
     /// The array value stored.
     /// </returns>
-    protected byte[] GetBytes(byte start, byte lenght)
+    protected byte[] GetBytes(byte start, byte length)
     {
         var bytes = new Collection<byte>();
-        for (byte i = start; i <= lenght; i++)
+        for (var i = start; i <= length; i++)
         {
             bytes.Add(RawData[i]);
         }
 
-        return bytes.ToArray();
-
+        return [.. bytes];
     }
 
     /// <summary>

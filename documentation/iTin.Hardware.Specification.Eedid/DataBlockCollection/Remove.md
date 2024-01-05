@@ -1,20 +1,8 @@
 # DataBlockCollection.Remove method
 
-Quita la primera aparición de un objeto [`DataBlock`](../DataBlock.md) específico de la colección.
-
 ```csharp
 public bool Remove(DataBlock item)
 ```
-
-| parameter | description |
-| --- | --- |
-| item | Objeto [`DataBlock`](../DataBlock.md) que se va a quitar de la colección. |
-
-## Return Value
-
-Tipo: Boolean
-
-true si `item` se ha quitado correctamente de la colección; en caso contrario, es false. Este método también devuelve false si no se encontró item en la colección.
 
 ## See Also
 

@@ -7,7 +7,7 @@ namespace iTin.Hardware.Specification.Eedid.Blocks.CEA.Sections;
 
 // CEA Section: CheckSum
 // •————————————————————————————————————————————————————————————————————————————————————————————————————————•
-// | Offset       Name                      Lenght      Description                                         |
+// | Offset       Name                      Length      Description                                         |
 // •————————————————————————————————————————————————————————————————————————————————————————————————————————•
 // | 00h          CheckSum                  BYTE        Note: Please see, Status                            |
 // •————————————————————————————————————————————————————————————————————————————————————————————————————————•

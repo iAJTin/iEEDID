@@ -10,7 +10,7 @@ namespace iTin.Hardware.Specification.Eedid.Blocks.EDID.Sections.Descriptors;
 
 // Data Block Descriptor -> Descriptor Item : CVT 3 Byte Code Descriptor Item Definition
 // •————————————————————————————————————————————————————————————————————————————————————————————————————————————————————•
-// | Offset       Name                      Lenght      Description                                                     |
+// | Offset       Name                      Length      Description                                                     |
 // •————————————————————————————————————————————————————————————————————————————————————————————————————————————————————•
 // | 00h          8 Lower                   BYTE        8 least significant bits of 12 bit Addresable Lines             |
 // |              Addressable                           Value 00h reserved.                                             |

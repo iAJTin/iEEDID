@@ -1,21 +1,8 @@
 # DataBlockCollection.CopyTo method
 
-Copia los elementos a un objeto Array, a partir de un índice determinado de la clase Array.
-
 ```csharp
 public void CopyTo(DataBlock[] array, int arrayIndex)
 ```
-
-| parameter | description |
-| --- | --- |
-| array | Array unidimensional que constituye el destino de los elementos copiados. Array debe tener una indización de base cero. |
-| arrayIndex | Índice de base cero de array donde se comienza a copiar. |
-
-## Exceptions
-
-| exception | condition |
-| --- | --- |
-| ArgumentNullException | El valor de `array` es null. |
 
 ## See Also
 

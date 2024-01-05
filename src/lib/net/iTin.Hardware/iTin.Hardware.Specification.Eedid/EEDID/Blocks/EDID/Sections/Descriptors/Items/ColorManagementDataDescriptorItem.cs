@@ -8,7 +8,7 @@ namespace iTin.Hardware.Specification.Eedid.Blocks.EDID.Sections.Descriptors;
 
 // Data Block Descriptor -> Descriptor Item : Color Management Data Descriptor Item Definition
 // •————————————————————————————————————————————————————————————————————————————————————————————•
-// | Offset       Name                      Lenght      Description                             |
+// | Offset       Name                      Length      Description                             |
 // •————————————————————————————————————————————————————————————————————————————————————————————•
 // | 00h          LSB Color a3              BYTE        Value 00h -> ffh                        |
 // •————————————————————————————————————————————————————————————————————————————————————————————•

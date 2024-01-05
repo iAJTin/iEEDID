@@ -40,13 +40,7 @@ public readonly struct MonitorDeviceInfo : IEquatable<MonitorDeviceInfo>
 
     #region interfaces
 
-    /// <summary>
-    /// Indicates whether the current structure is the same as another structure of the same type.
-    /// </summary>
-    /// <param name="other">Structure to be compared with this structure.</param>
-    /// <returns>
-    /// Returns <strong> true </strong> if the current structure is equal to the <c>other</c> parameter; otherwise, <strong>false</strong>.
-    /// </returns>
+    /// <inheritdoc/>
     public bool Equals(MonitorDeviceInfo other) => other.Equals((object)this);
 
     #endregion
@@ -59,7 +53,7 @@ public readonly struct MonitorDeviceInfo : IEquatable<MonitorDeviceInfo>
     /// <param name="left">Left</param>
     /// <param name="right">Right</param>
     /// <returns>
-    /// Returns <strong>true</strong> if <c>left</c> is equal to <c>right</c>; <strong>false</strong> otherwise.
+    /// Returns <see langword="true"/> if <c>left</c> is equal to <c>right</c>; otherwise <see langword="false"/>.
     /// </returns>
     public static bool operator ==(MonitorDeviceInfo left, MonitorDeviceInfo right) => left.Equals(right);
 
@@ -69,7 +63,7 @@ public readonly struct MonitorDeviceInfo : IEquatable<MonitorDeviceInfo>
     /// <param name="left">Left</param>
     /// <param name="right">Right</param>
     /// <returns>
-    /// Returns <strong>true</strong> if <c>left</c> is not equal to <c>right</c>; <strong>false</strong> otherwise.
+    /// Returns <see langword="true"/> if <c>left</c> is not equal to <c>right</c>; otherwise <see langword="false"/>.
     /// </returns>
     public static bool operator !=(MonitorDeviceInfo left, MonitorDeviceInfo right) => !left.Equals(right);
 
@@ -105,7 +99,7 @@ public readonly struct MonitorDeviceInfo : IEquatable<MonitorDeviceInfo>
     /// Gets a value that indicates whether the monitor is part of the desktop.
     /// </summary>
     /// <value>
-    /// Returns <strong>true</strong> if it is part of the desktop; <strong>false</strong> otherwise.
+    /// Returns <see langword="true"/> if it is part of the desktop; otherwise <see langword="false"/>.
     /// </value>
     public bool IsAttached => _deviceInfo.IsAttached;
 
@@ -113,7 +107,7 @@ public readonly struct MonitorDeviceInfo : IEquatable<MonitorDeviceInfo>
     /// Gets a value that indicates whether the monitor is the main monitor.
     /// </summary>
     /// <value>
-    /// Returns <strong>true</strong> if it is the main monitor; <strong>false</strong> otherwise.
+    /// Returns <see langword="true"/> if it is the main monitor; otherwise <see langword="false"/>.
     /// </value>
     public bool IsPrimaryMonitor => _deviceInfo.IsPrimaryMonitor;
 
@@ -159,21 +153,10 @@ public readonly struct MonitorDeviceInfo : IEquatable<MonitorDeviceInfo>
 
     #region public override methods
 
-    /// <summary>
-    /// Returns a value that represents the hash code of this structure.
-    /// </summary>
-    /// <returns>
-    /// Hash code of this structure.
-    /// </returns>
+    /// <inheritdoc/>
     public override int GetHashCode() => _deviceInfo.GetHashCode() ^ _edidDeviceInfo.GetHashCode() ^ Edid.GetHashCode();
 
-    /// <summary>
-    /// Returns a value that indicates whether this structure is the same as another.
-    /// </summary>
-    /// <param name="obj">Structure to compare.</param>
-    /// <returns>
-    /// Result of the equality comparison.
-    /// </returns>
+    /// <inheritdoc/>
     public override bool Equals(object obj)
     {
         if (obj is not MonitorDeviceInfo other)
@@ -189,12 +172,7 @@ public readonly struct MonitorDeviceInfo : IEquatable<MonitorDeviceInfo>
             other.Edid.SequenceEqual(Edid);
     }
 
-    /// <summary>
-    /// Returns a string that represents the current <see cref="MonitorDeviceInfo"/> structure.
-    /// </summary>
-    /// <returns>
-    /// String representing the current <see cref="MonitorDeviceInfo"/> structure.
-    /// </returns>
+    /// <inheritdoc/>
     public override string ToString() => $"{MonitorName}";
 
     #endregion

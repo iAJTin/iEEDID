@@ -6,7 +6,7 @@ namespace iTin.Hardware.Specification.Eedid.Blocks.DI.Sections;
 
 // DI Section: Display Transfer Characteristic
 // •——————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————•
-// | Offset       Name                      Lenght      Description                                                                                   |
+// | Offset       Name                      Length      Description                                                                                   |
 // •——————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————•
 // | 00h                                                                                                                                              |
 // •——————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————•
@@ -33,7 +33,7 @@ internal sealed class DisplayTransferCharacteristicSection : BaseDataSection
     #region private readonly properties
 
     /// <summary>
-    /// Gets a value representing the <b>Status And Entries</b> field.
+    /// Gets a value representing the <strong>Status And Entries</strong> field.
     /// </summary>
     /// <value>
     /// Property value.
@@ -42,7 +42,7 @@ internal sealed class DisplayTransferCharacteristicSection : BaseDataSection
     private byte StatusAndNumberLuminanceEntries => RawData[0x00];
 
     /// <summary>
-    /// Gets a value representing the <b>Combined (White) or Separate (RGB) Sub-Channels</b> field.
+    /// Gets a value representing the <strong>Combined (White) or Separate (RGB) Sub-Channels</strong> field.
     /// </summary>
     /// <value>
     /// Property value.
@@ -51,7 +51,7 @@ internal sealed class DisplayTransferCharacteristicSection : BaseDataSection
     private byte Status => (byte) (StatusAndNumberLuminanceEntries >> 0x06 & 0x03);
 
     /// <summary>
-    /// Gets a value representing the <b>Number of Luminance Entries</b> field.
+    /// Gets a value representing the <strong>Number of Luminance Entries</strong> field.
     /// </summary>
     /// <value>
     /// Property value.
@@ -78,20 +78,12 @@ internal sealed class DisplayTransferCharacteristicSection : BaseDataSection
 
     #region VESA Display Information Extension Block Standard
 
-    private static string GetStatus(byte code)
+    private static string GetStatus(byte code) => code switch
     {
-        if (code == 0x00)
-        {
-            return "No Display Transfer Characteristics";
-        }
-
-        if (code > 0x02)
-        {
-            return "Reserved";
-        }
-
-        return "Contains Display Transfer Characteristics";
-    }
+        0x00 => "No Display Transfer Characteristics",
+        > 0x02 => "Reserved",
+        _ => "Contains Display Transfer Characteristics"
+    };
 
     #endregion
 }

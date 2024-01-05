@@ -9,15 +9,15 @@ using iTin.Core.Interop.Shared.MacOS;
 namespace iTin.Core.Hardware.MacOS.Device.Desktop
 {
     /// <summary>
-    /// Specialization of the <see cref="IMonitorOperations"/> interface that contains the <b>Monitor</b> operations for <b>MacOS</b> system.
+    /// Specialization of the <see cref="IMonitorOperations"/> interface that contains the <strong>Monitor</strong> operations for <strong>MacOS</strong> system.
     /// </summary>
     public class MonitorOperations : IMonitorOperations
     {
         /// <summary>
-        /// Gets a value containing the raw <b>EDID</b> data.
+        /// Gets a value containing the raw <strong>EDID</strong> data.
         /// </summary>
         /// <returns>
-        /// The raw <b>EDID</b> data.
+        /// The raw <strong>EDID</strong> data.
         /// </returns>
         public IEnumerable<byte[]> GetEdidDataCollection()
         {

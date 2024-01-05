@@ -11,14 +11,14 @@ namespace iTin.Hardware.Specification.Eedid.Blocks.DisplayId.Sections.DataBlocks
 
 // Data Block: Detailed Timing Type I Definition
 // •—————————————————————————————————————————————————————————————————————————————————————————————————•
-// | Offset       Name                    Lenght      Description                                    |
+// | Offset       Name                    Length      Description                                    |
 // •—————————————————————————————————————————————————————————————————————————————————————————————————•
 // |                                                                                                 |
 // •—————————————————————————————————————————————————————————————————————————————————————————————————•
 
 /// <summary>
 /// Specialization of the <see cref="BaseDataSection"/> class.<br/>
-/// Represents a <b>Detailed Timing Type I</b> entry defined in <see cref="DataBlockTag.DetailedTimingTypeI"/> data block.
+/// Represents a <strong>Detailed Timing Type I</strong> entry defined in <see cref="DataBlockTag.DetailedTimingTypeI"/> data block.
 /// </summary> 
 public sealed class DetailedTimingTypeIData : BaseDataSection
 {

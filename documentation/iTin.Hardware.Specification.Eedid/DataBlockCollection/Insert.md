@@ -1,15 +1,8 @@
 # DataBlockCollection.Insert method
 
-Inserta un objeto [`DataBlock`](../DataBlock.md) en la colección.
-
 ```csharp
 public void Insert(int index, DataBlock item)
 ```
-
-| parameter | description |
-| --- | --- |
-| index | Indice dónde se va insertar. |
-| item | Item a insertar. |
 
 ## See Also
 

@@ -7,12 +7,12 @@ namespace iTin.Hardware.Specification.Eedid.Blocks.CEA.Sections;
 /* •————————————————•
    | CEA Data Block |
    |   · Tag code   |
-   |   · Lenght     |
+   |   · Length     |
    |   · RawData    |
    •————————————————• */
 
 /// <summary>
-/// A <see cref="CeaDataBlock"/> structure that contains the raw information of the blocks of type <b>AllcationDataBlock</b>.
+/// A <see cref="CeaDataBlock"/> structure that contains the raw information of the blocks of type <strong>AllocationDataBlock</strong>.
 /// </summary> 
 internal readonly struct CeaDataBlock
 {

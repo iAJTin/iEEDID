@@ -8,7 +8,7 @@ public BaseDataSectionCollection Sections { get; }
 
 ## Property Value
 
-Object [`BaseDataSectionCollection`](../BaseDataSectionCollection.md) that contains the object collection [`DataSection`](../DataSection.md) for this [`DataBlock`](../DataBlock.md). If there is no [`DataSection`](../DataSection.md) object, null is returned.
+Object [`BaseDataSectionCollection`](../BaseDataSectionCollection.md) that contains the object collection [`DataSection`](../DataSection.md) for this [`DataBlock`](../DataBlock.md). If there is no [`DataSection`](../DataSection.md) object, `null` is returned.
 
 ## See Also
 

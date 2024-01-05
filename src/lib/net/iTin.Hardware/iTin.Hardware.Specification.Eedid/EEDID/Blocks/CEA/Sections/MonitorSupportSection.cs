@@ -9,7 +9,7 @@ namespace iTin.Hardware.Specification.Eedid.Blocks.CEA.Sections;
 
 // CEA Section: Monitor Support Information
 // •————————————————————————————————————————————————————————————————————————————————————————————————————————•
-// | Offset       Name                      Lenght      Description                                         |
+// | Offset       Name                      Length      Description                                         |
 // •————————————————————————————————————————————————————————————————————————————————————————————————————————•
 // | 00h          Total number of native    BYTE        Número de versión implementada.                     |
 // |              Detailed Timing                       Note: Please see, Number                            |
@@ -42,7 +42,7 @@ internal sealed class MonitorSupportSection : BaseDataSection
     #region private readonly properties
 
     /// <summary>
-    /// Gets a value representing the <b>Monitor Support</b> field.
+    /// Gets a value representing the <strong>Monitor Support</strong> field.
     /// </summary>
     /// <value>
     /// Property value.
@@ -51,7 +51,7 @@ internal sealed class MonitorSupportSection : BaseDataSection
     private byte MonitorSupport => RawData[0x00];
 
     /// <summary>
-    /// Gets a value representing the <b>DVT Underscan</b> characteristic of <b>Monitor Support</b> field.
+    /// Gets a value representing the <strong>DVT Underscan</strong> characteristic of <strong>Monitor Support</strong> field.
     /// </summary>
     /// <value>
     /// Property value.
@@ -69,7 +69,7 @@ internal sealed class MonitorSupportSection : BaseDataSection
     }
 
     /// <summary>
-    /// Gets a value representing the <b>Basic Audio Supported</b> characteristic of <b>Monitor Support</b> field.
+    /// Gets a value representing the <strong>Basic Audio Supported</strong> characteristic of <strong>Monitor Support</strong> field.
     /// </summary>
     /// <value>
     /// Property value.
@@ -87,7 +87,7 @@ internal sealed class MonitorSupportSection : BaseDataSection
     }
 
     /// <summary>
-    /// Gets a value representing the <b>YCbCr 4:4:4</b> characteristic of <b>Monitor Support</b> field.
+    /// Gets a value representing the <strong>YCbCr 4:4:4</strong> characteristic of <strong>Monitor Support</strong> field.
     /// </summary>
     /// <value>
     /// Property value.
@@ -105,7 +105,7 @@ internal sealed class MonitorSupportSection : BaseDataSection
     }
 
     /// <summary>
-    /// Gets a value representing the <b>YCbCr 4:2:2</b> characteristic of <b>Monitor Support</b> field.
+    /// Gets a value representing the <strong>YCbCr 4:2:2</strong> characteristic of <strong>Monitor Support</strong> field.
     /// </summary>
     /// <value>
     /// Property value.

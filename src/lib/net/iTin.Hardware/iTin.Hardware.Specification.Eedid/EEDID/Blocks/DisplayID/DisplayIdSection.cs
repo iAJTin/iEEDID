@@ -11,21 +11,21 @@ namespace iTin.Hardware.Specification.Eedid.Blocks.DisplayId;
 public enum DisplayIdSection
 {
     /// <summary>
-    /// <b>General</b> section, for more information see <see cref="GeneralSection"/>.
+    /// <strong>General</strong> section, for more information see <see cref="GeneralSection"/>.
     /// </summary>
     [PropertyName("General")]
     [PropertyDescription("General")]
     General,
 
     /// <summary>
-    /// <b>DataBlocks</b> section, for more information see <see cref="DataBlocksSection"/>.
+    /// <strong>DataBlocks</strong> section, for more information see <see cref="DataBlocksSection"/>.
     /// </summary>
     [PropertyName("Data Blocks")]
     [PropertyDescription("Data Blocks")]
     DataBlocks,
 
     /// <summary>
-    /// <b>Miscellaneous</b> section, for more information see <see cref="MiscellaneousSection"/>.
+    /// <strong>Miscellaneous</strong> section, for more information see <see cref="MiscellaneousSection"/>.
     /// </summary>
     [PropertyName("Miscellaneous")]
     [PropertyDescription("Miscellaneous Data")]

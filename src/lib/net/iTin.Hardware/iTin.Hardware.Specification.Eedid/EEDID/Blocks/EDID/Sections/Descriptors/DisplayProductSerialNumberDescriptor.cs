@@ -7,7 +7,7 @@ namespace iTin.Hardware.Specification.Eedid.Blocks.EDID.Sections.Descriptors;
 
 // Data Block Descriptor: Display Product Serial Number Descriptor Definition
 // •—————————————————————————————————————————————————————————————————————————————————————————————————•
-// | Offset       Name                      Lenght      Description                                  |
+// | Offset       Name                      Length      Description                                  |
 // •—————————————————————————————————————————————————————————————————————————————————————————————————•
 // | 00h -> 0ch   ASCII                     13 BYTEs    Up to 13 alphanumeric characters of a serial |
 // |              Text                                  number may be stored.                        |

@@ -7,7 +7,7 @@
     <GenerateDocumentationFile>true</GenerateDocumentationFile>
     <AssemblyName>iTin.Hardware.Specification.IEEE</AssemblyName>
     <PackageId>iTin.Hardware.Specification.IEEE</PackageId>
-    <Version>1.0.0.0</Version>
+    <Version>1.0.0.1</Version>
     <Authors>iTin</Authors>
     <Company>iTin</Company>
     <Product>iTin.Hardware.Specification.Tpm</Product>

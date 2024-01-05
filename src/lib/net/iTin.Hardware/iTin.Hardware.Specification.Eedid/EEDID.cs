@@ -14,7 +14,7 @@ using iTin.Hardware.Specification.Eedid.Blocks.EDID;
 namespace iTin.Hardware.Specification;
 
 /// <summary>
-/// Implementation of the <b>E-EDID</b> (Extended Display Identification Data) specification.
+/// Implementation of the <strong>E-EDID</strong> (Extended Display Identification Data) specification.
 /// </summary> 
 public sealed class EEDID
 {
@@ -38,7 +38,7 @@ public sealed class EEDID
     /// </summary>
     /// <param name="rawData">Data</param>
     /// <remarks>
-    /// Returns the <b>E-EDID</b> information available.
+    /// Returns the <strong>E-EDID</strong> information available.
     /// </remarks>
     private EEDID(IEnumerable<byte> rawData)
     {
@@ -57,7 +57,7 @@ public sealed class EEDID
     /// Returns a new instance containing all available <see cref="EEDID"/> structures for this machine.
     /// </summary>
     /// <returns>
-    /// A <see cref="EEDID"/> array that contains <b>Extended Display Identification Data</b> information for this machine.
+    /// A <see cref="EEDID"/> array that contains <strong>Extended Display Identification Data</strong> information for this machine.
     /// </returns>
     public static EEDID[] Instance => (EEDID[])MonitorOperations.Instance
         .GetEdidDataCollection()
@@ -74,7 +74,7 @@ public sealed class EEDID
     /// </summary>
     /// <param name="data">Raw data to parse</param>
     /// <returns>
-    /// A <see cref="EEDID"/> reference that contains <b>Extended Display Identification Data</b> information.
+    /// A <see cref="EEDID"/> reference that contains <strong>Extended Display Identification Data</strong> information.
     /// </returns>
     public static EEDID Parse(byte[] data) => new(data);
 
@@ -86,8 +86,8 @@ public sealed class EEDID
     /// Gets the collection of blocks available for this <see cref="EEDID" />.
     /// </summary>
     /// <value>
-    /// Object <see cref="DataBlockCollection" /> that contains the object collection <see cref="DataBlock" /> for this <see cref="EEDID" />.
-    /// If there is no object <see cref="DataBlock" />, <b>null</b> is returned.
+    /// Object <see cref="DataBlockCollection"/> that contains the object collection <see cref="DataBlock"/> for this <see cref="EEDID"/>.
+    /// If there is no object <see cref="DataBlock"/>, <see langword="null"/> is returned.
     /// </value>
     public DataBlockCollection Blocks
     {
@@ -106,7 +106,7 @@ public sealed class EEDID
     /// Gets a value that indicates if there are available blocks.
     /// </summary>
     /// <value>
-    /// <b>true</b> if there are blocks; otherwise, it is <b>false</b>.
+    /// <see langword="true"/> if there are blocks;  otherwise <see langword="false"/>.
     /// </value>
     public bool HasBlocks
     {

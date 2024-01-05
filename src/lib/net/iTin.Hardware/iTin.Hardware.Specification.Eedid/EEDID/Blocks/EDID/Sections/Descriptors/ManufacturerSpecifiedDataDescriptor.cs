@@ -5,7 +5,7 @@ namespace iTin.Hardware.Specification.Eedid.Blocks.EDID.Sections.Descriptors;
 
 // Data Block Descriptor: Manufacturer Spedified Data Descriptor Definition
 // •—————————————————————————————————————————————————————————————————————————————————————————————————•
-// | Offset       Name                      Lenght      Description                                  |
+// | Offset       Name                      Length      Description                                  |
 // •—————————————————————————————————————————————————————————————————————————————————————————————————•
 // | 00h -> 0ch   Manufacturer              13 BYTEs    Manufacturer Specifies the data stored in    |
 // |              Data                                  bytes.                                       |

@@ -56,10 +56,10 @@ public class MonitorOperations
     #region public static readonly properties
 
     /// <summary>
-    /// Gets an unique instance of this class.
+    /// Gets a unique instance of this class.
     /// </summary>
     /// <value>
-    /// A <see cref="MonitorOperations"/> reference that contains <b>Monitor</b> operations.
+    /// A <see cref="MonitorOperations"/> reference that contains <strong>Monitor</strong> operations.
     /// </value>
     public static MonitorOperations Instance { get; } = new();
 
@@ -68,10 +68,10 @@ public class MonitorOperations
     #region public methods
 
     /// <summary>
-    /// Gets a value containing the raw <b>EDID</b> data.
+    /// Gets a value containing the raw <strong>EDID</strong> data.
     /// </summary>
     /// <returns>
-    /// The raw <b>EDID</b> data.
+    /// The raw <strong>EDID</strong> data.
     /// </returns>
     public IEnumerable<byte[]> GetEdidDataCollection() => _operations.GetEdidDataCollection();
 

@@ -14,7 +14,7 @@ public static bool operator !=(DataBlockDescriptorData headerDataBlockDescriptor
 
 ## Return Value
 
-Returns true if `deviceInfo1` is not equal to `deviceInfo2`; false otherwise.
+Returns `true` if `deviceInfo1` is not equal to `deviceInfo2`; otherwise `false`.
 
 ## See Also
 

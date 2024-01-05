@@ -1,14 +1,8 @@
 # DataBlockCollection.Add method
 
-Agregar un objeto [`DataBlock`](../DataBlock.md) a la colección.
-
 ```csharp
 public void Add(DataBlock item)
 ```
-
-| parameter | description |
-| --- | --- |
-| item | Objeto [`DataBlock`](../DataBlock.md) a agregar. |
 
 ## See Also
 

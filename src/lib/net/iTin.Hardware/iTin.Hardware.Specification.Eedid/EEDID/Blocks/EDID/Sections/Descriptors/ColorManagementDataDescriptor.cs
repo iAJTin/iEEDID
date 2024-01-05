@@ -9,7 +9,7 @@ namespace iTin.Hardware.Specification.Eedid.Blocks.EDID.Sections.Descriptors;
 
 // Data Block Descriptor: Color Management Data Descriptor Definition
 // •—————————————————————————————————————————————————————————————————————————————————•
-// | Offset       Name                      Lenght      Description                  |
+// | Offset       Name                      Length      Description                  |
 // •—————————————————————————————————————————————————————————————————————————————————•
 // | 00h          Version Number            BYTE        03h. Other values reserved.  |
 // •—————————————————————————————————————————————————————————————————————————————————•
@@ -94,7 +94,7 @@ internal sealed class ColorManagementDataDescriptor : BaseDataSection
                 return _colorTable;
             }
 
-            _colorTable = new Dictionary<KnownColor, ColorManagementDataDescriptorItem>();
+            _colorTable = new();
             PopulatesColorTable(_colorTable);
             return _colorTable;
         }
@@ -130,7 +130,7 @@ internal sealed class ColorManagementDataDescriptor : BaseDataSection
     /// <summary>
     /// Returns the value that contains the specified key.
     /// </summary>
-    /// <param name="color">Color to be recovere.</param>
+    /// <param name="color">Color to recover.</param>
     /// <returns>
     /// Value of the specified timing
     /// </returns>

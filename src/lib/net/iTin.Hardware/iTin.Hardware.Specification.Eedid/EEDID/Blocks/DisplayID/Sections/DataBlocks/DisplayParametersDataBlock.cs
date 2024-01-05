@@ -15,7 +15,7 @@ namespace iTin.Hardware.Specification.Eedid.Blocks.DisplayId.Sections.DataBlocks
 
 // Data Block: Display Parameters Data Block v1.3
 // •———————————————————————————————————————————————————————————————————————————————————————————————————————————————•
-// | Offset       Name                    Lenght      Description                                                  |
+// | Offset       Name                    Length      Description                                                  |
 // •———————————————————————————————————————————————————————————————————————————————————————————————————————————————•
 // | 00h          TAG                     BYTE        7Fh                                                          |
 // •———————————————————————————————————————————————————————————————————————————————————————————————————————————————•
@@ -123,7 +123,7 @@ internal sealed class DisplayParametersDataBlock : BaseDataSection
     #region common properties
 
     /// <summary>
-    /// Gets a value representing the <b>Horizontal Image Size</b> field.
+    /// Gets a value representing the <strong>Horizontal Image Size</strong> field.
     /// </summary>
     /// <value>
     /// Property value.
@@ -132,7 +132,7 @@ internal sealed class DisplayParametersDataBlock : BaseDataSection
     private int HorizontalImageSize => RawData.GetWord(0x03);
 
     /// <summary>
-    /// Gets a value representing the <b>Vertical Image Size</b> field.
+    /// Gets a value representing the <strong>Vertical Image Size</strong> field.
     /// </summary>
     /// <value>
     /// Property value.
@@ -141,7 +141,7 @@ internal sealed class DisplayParametersDataBlock : BaseDataSection
     private int VerticalImageSize => RawData.GetWord(0x05);
 
     /// <summary>
-    /// Gets a value representing the <b>Horizontal Pixel Count</b> field.
+    /// Gets a value representing the <strong>Horizontal Pixel Count</strong> field.
     /// </summary>
     /// <value>
     /// Property value.
@@ -150,7 +150,7 @@ internal sealed class DisplayParametersDataBlock : BaseDataSection
     private int HorizontalPixelCount => RawData.GetWord(0x07);
 
     /// <summary>
-    /// Gets a value representing the <b>Vertical Pixel Count</b> field.
+    /// Gets a value representing the <strong>Vertical Pixel Count</strong> field.
     /// </summary>
     /// <value>
     /// Property value.
@@ -163,7 +163,7 @@ internal sealed class DisplayParametersDataBlock : BaseDataSection
     #region feature flags
 
     /// <summary>
-    /// Gets a value representing the <b>Feature Support Flags</b> field.
+    /// Gets a value representing the <strong>Feature Support Flags</strong> field.
     /// </summary>
     /// <value>
     /// Property value.
@@ -174,7 +174,7 @@ internal sealed class DisplayParametersDataBlock : BaseDataSection
     #region v13
 
     /// <summary>
-    /// Gets a value representing the <b>Audio Support On Video Interfaces</b> field.
+    /// Gets a value representing the <strong>Audio Support On Video Interfaces</strong> field.
     /// </summary>
     /// <value>
     /// Property value.
@@ -183,7 +183,7 @@ internal sealed class DisplayParametersDataBlock : BaseDataSection
     private bool AudioSupportOnVideoInterface => FeatureSupportFlags.CheckBit(Bits.Bit07);
 
     /// <summary>
-    /// Gets a value representing the <b>Separate Audio Inputs</b> field.
+    /// Gets a value representing the <strong>Separate Audio Inputs</strong> field.
     /// </summary>
     /// <value>
     /// Property value.
@@ -192,7 +192,7 @@ internal sealed class DisplayParametersDataBlock : BaseDataSection
     private bool SeparateAudioInputs => FeatureSupportFlags.CheckBit(Bits.Bit06);
 
     /// <summary>
-    /// Gets a value representing the <b>Audio Input Override</b> field.
+    /// Gets a value representing the <strong>Audio Input Override</strong> field.
     /// </summary>
     /// <value>
     /// Property value.
@@ -201,7 +201,7 @@ internal sealed class DisplayParametersDataBlock : BaseDataSection
     private bool AudioInputOverride => FeatureSupportFlags.CheckBit(Bits.Bit05);
 
     /// <summary>
-    /// Gets a value representing the <b>VESA Power Management Supported</b> field.
+    /// Gets a value representing the <strong>VESA Power Management Supported</strong> field.
     /// </summary>
     /// <value>
     /// Property value.
@@ -210,7 +210,7 @@ internal sealed class DisplayParametersDataBlock : BaseDataSection
     private bool VesaPowerManagementSupported => FeatureSupportFlags.CheckBit(Bits.Bit04);
 
     /// <summary>
-    /// Gets a value representing the <b>Fixed Timing</b> field.
+    /// Gets a value representing the <strong>Fixed Timing</strong> field.
     /// </summary>
     /// <value>
     /// Property value.
@@ -219,7 +219,7 @@ internal sealed class DisplayParametersDataBlock : BaseDataSection
     private bool FixedTiming => FeatureSupportFlags.CheckBit(Bits.Bit03);
 
     /// <summary>
-    /// Gets a value representing the <b>Fixed Pixel Format</b> field.
+    /// Gets a value representing the <strong>Fixed Pixel Format</strong> field.
     /// </summary>
     /// <value>
     /// Property value.
@@ -228,7 +228,7 @@ internal sealed class DisplayParametersDataBlock : BaseDataSection
     private bool FixedPixelFormat => FeatureSupportFlags.CheckBit(Bits.Bit02);
 
     /// <summary>
-    /// Gets a value representing the <b>Support AI</b> field.
+    /// Gets a value representing the <strong>Support AI</strong> field.
     /// </summary>
     /// <value>
     /// Property value.
@@ -237,7 +237,7 @@ internal sealed class DisplayParametersDataBlock : BaseDataSection
     private bool SupportAI => FeatureSupportFlags.CheckBit(Bits.Bit01);
 
     /// <summary>
-    /// Gets a value representing the <b>De-Interlacing</b> field.
+    /// Gets a value representing the <strong>De-Interlacing</strong> field.
     /// </summary>
     /// <value>
     /// Property value.
@@ -250,7 +250,7 @@ internal sealed class DisplayParametersDataBlock : BaseDataSection
     #region v20
 
     /// <summary>
-    /// Gets a value representing the <b>Scan Orientation</b> field.
+    /// Gets a value representing the <strong>Scan Orientation</strong> field.
     /// </summary>
     /// <value>
     /// Property value.
@@ -259,7 +259,7 @@ internal sealed class DisplayParametersDataBlock : BaseDataSection
     private byte ScanOrientation => (byte) (FeatureSupportFlags & 0x07);
 
     /// <summary>
-    /// Gets a value representing the <b>Luminance Information</b> field.
+    /// Gets a value representing the <strong>Luminance Information</strong> field.
     /// </summary>
     /// <value>
     /// Property value.
@@ -268,7 +268,7 @@ internal sealed class DisplayParametersDataBlock : BaseDataSection
     private byte LuminanceInformation => (byte)((byte)(FeatureSupportFlags >> 0x03) & 0x03);
 
     /// <summary>
-    /// Gets a value representing the <b>Color Information Cie 1931</b> field.
+    /// Gets a value representing the <strong>Color Information Cie 1931</strong> field.
     /// </summary>
     /// <value>
     /// Property value.
@@ -277,7 +277,7 @@ internal sealed class DisplayParametersDataBlock : BaseDataSection
     private bool ColorInformationCie1931 => FeatureSupportFlags.CheckBit(Bits.Bit06);
 
     /// <summary>
-    /// Gets a value representing the <b>Audio Speakers Integrated</b> field.
+    /// Gets a value representing the <strong>Audio Speakers Integrated</strong> field.
     /// </summary>
     /// <value>
     /// Property value.
@@ -292,7 +292,7 @@ internal sealed class DisplayParametersDataBlock : BaseDataSection
     #region v13
 
     /// <summary>
-    /// Gets a value representing the <b>Transfer Characteristic Gamma</b> field.
+    /// Gets a value representing the <strong>Transfer Characteristic Gamma</strong> field.
     /// </summary>
     /// <value>
     /// Property value.
@@ -315,7 +315,7 @@ internal sealed class DisplayParametersDataBlock : BaseDataSection
     }
 
     /// <summary>
-    /// Gets a value representing the <b>Aspect Ratio</b> field.
+    /// Gets a value representing the <strong>Aspect Ratio</strong> field.
     /// </summary>
     /// <value>
     /// Property value.
@@ -326,7 +326,7 @@ internal sealed class DisplayParametersDataBlock : BaseDataSection
     #region color bit depth
 
     /// <summary>
-    /// Gets a value representing the <b>Color Bit Depth</b> field.
+    /// Gets a value representing the <strong>Color Bit Depth</strong> field.
     /// </summary>
     /// <value>
     /// Property value.
@@ -335,7 +335,7 @@ internal sealed class DisplayParametersDataBlock : BaseDataSection
     private byte ColorBitDepth => RawData[0x0e];
 
     /// <summary>
-    /// Gets a value representing the <b>Display Overall Color Bit Depth</b> field.
+    /// Gets a value representing the <strong>Display Overall Color Bit Depth</strong> field.
     /// </summary>
     /// <value>
     /// Property value.
@@ -344,7 +344,7 @@ internal sealed class DisplayParametersDataBlock : BaseDataSection
     private byte DisplayOverallColorBitDepth => (byte)(ColorBitDepth >> 0x04 & 0x0f);
 
     /// <summary>
-    /// Gets a value representing the <b>Display Device Color Bit Depth</b> field.
+    /// Gets a value representing the <strong>Display Device Color Bit Depth</strong> field.
     /// </summary>
     /// <value>
     /// Property value.
@@ -359,7 +359,7 @@ internal sealed class DisplayParametersDataBlock : BaseDataSection
     #region v20
 
     /// <summary>
-    /// Gets a value representing the <b>Native Gamma</b> field.
+    /// Gets a value representing the <strong>Native Gamma</strong> field.
     /// </summary>
     /// <value>
     /// Property value.
@@ -382,7 +382,7 @@ internal sealed class DisplayParametersDataBlock : BaseDataSection
     }
 
     /// <summary>
-    /// Gets a value representing the <b>Primary Color 1</b> field.
+    /// Gets a value representing the <strong>Primary Color 1</strong> field.
     /// </summary>
     /// <value>
     /// Property value.
@@ -391,7 +391,7 @@ internal sealed class DisplayParametersDataBlock : BaseDataSection
     private byte[] RawPrimaryColor1 => RawData.Extract((byte)0x0c, (byte)0x03).ToArray();
 
     /// <summary>
-    /// Gets a value representing the <b>Primary Color 2</b> field.
+    /// Gets a value representing the <strong>Primary Color 2</strong> field.
     /// </summary>
     /// <value>
     /// Property value.
@@ -400,7 +400,7 @@ internal sealed class DisplayParametersDataBlock : BaseDataSection
     private byte[] RawPrimaryColor2 => RawData.Extract((byte) 0x0f, (byte) 0x03).ToArray();
 
     /// <summary>
-    /// Gets a value representing the <b>Primary Color 3</b> field.
+    /// Gets a value representing the <strong>Primary Color 3</strong> field.
     /// </summary>
     /// <value>
     /// Property value.
@@ -409,7 +409,7 @@ internal sealed class DisplayParametersDataBlock : BaseDataSection
     private byte[] RawPrimaryColor3 => RawData.Extract((byte)0x12, (byte)0x03).ToArray();
 
     /// <summary>
-    /// Gets a value representing the <b>White Color</b> field.
+    /// Gets a value representing the <strong>White Color</strong> field.
     /// </summary>
     /// <value>
     /// Property value.
@@ -418,7 +418,7 @@ internal sealed class DisplayParametersDataBlock : BaseDataSection
     private byte[] RawWhiteColor => RawData.Extract((byte)0x15, (byte)0x03).ToArray();
 
     /// <summary>
-    /// Gets a value representing the <b>Native Maximum Luninance (Full Coverage)</b> field.
+    /// Gets a value representing the <strong>Native Maximum Luninance (Full Coverage)</strong> field.
     /// </summary>
     /// <value>
     /// Property value.
@@ -427,7 +427,7 @@ internal sealed class DisplayParametersDataBlock : BaseDataSection
     private int NativeMaximumLuninanceFullCoverage => RawData.GetWord(0x18);
 
     /// <summary>
-    /// Gets a value representing the <b>Native Maximum Luninance (Rectangular Coverage)</b> field.
+    /// Gets a value representing the <strong>Native Maximum Luninance (Rectangular Coverage)</strong> field.
     /// </summary>
     /// <value>
     /// Property value.
@@ -436,7 +436,7 @@ internal sealed class DisplayParametersDataBlock : BaseDataSection
     private int NativeMaximumLuninanceRectangularCoverage => RawData.GetWord(0x1a);
 
     /// <summary>
-    /// Gets a value representing the <b>Native Minimum Luninance</b> field.
+    /// Gets a value representing the <strong>Native Minimum Luninance</strong> field.
     /// </summary>
     /// <value>
     /// Property value.
@@ -449,7 +449,7 @@ internal sealed class DisplayParametersDataBlock : BaseDataSection
     #region native color depth and device technology
 
     /// <summary>
-    /// Gets a value representing the <b>Native Color Depth And Device Technology</b> field.
+    /// Gets a value representing the <strong>Native Color Depth And Device Technology</strong> field.
     /// </summary>
     /// <value>
     /// Property value.
@@ -458,7 +458,7 @@ internal sealed class DisplayParametersDataBlock : BaseDataSection
     private byte NativeColorDepthAndDeviceTechnology => RawData[0x1e];
 
     /// <summary>
-    /// Gets a value representing the <b>Native Color Depth</b> field.
+    /// Gets a value representing the <strong>Native Color Depth</strong> field.
     /// </summary>
     /// <value>
     /// Property value.
@@ -467,7 +467,7 @@ internal sealed class DisplayParametersDataBlock : BaseDataSection
     private byte NativeColorDepth => (byte) (NativeColorDepthAndDeviceTechnology & 0x07);
 
     /// <summary>
-    /// Gets a value representing the <b>Display Device Technology</b> field.
+    /// Gets a value representing the <strong>Display Device Technology</strong> field.
     /// </summary>
     /// <value>
     /// Property value.

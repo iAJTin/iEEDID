@@ -10,7 +10,7 @@ namespace iTin.Hardware.Specification.Eedid.Blocks.EDID.Sections;
 
 // EDID Section: Established Timings I & II Information.
 // •————————————————————————————————————————————————————————————————————————————————————————————————————————•
-// | Offset       Name                      Lenght      Description                                         |
+// | Offset       Name                      Length      Description                                         |
 // •————————————————————————————————————————————————————————————————————————————————————————————————————————•
 // | 00h          Established Timings I     BYTE        7 6 5 4 3 2 1 0                                     |
 // |                                                    1 _ _ _ _ _ _ _ 720 x 400 @ 70Hz - IBM, VGA         |

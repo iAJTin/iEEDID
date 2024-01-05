@@ -6,7 +6,7 @@ namespace iTin.Hardware.Specification.Eedid.Blocks.CEA.Sections;
 
 // CEA Section: Information
 // •————————————————————————————————————————————————————————————————————————————————————————————————————————•
-// | Offset       Name                      Lenght      Description                                         |
+// | Offset       Name                      Length      Description                                         |
 // •————————————————————————————————————————————————————————————————————————————————————————————————————————•
 // | 00h          Revision                  BYTE        Número de versión implementada.                     |
 // |                                                    Note: Please see, Revision                          |
@@ -51,14 +51,13 @@ internal sealed class InformationSection : BaseDataSection
     /// Property value.
     /// </value>
     [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-    private string Implemented =>
-        Revision switch
-        {
-            0x01 => "EIA/CEA-861",
-            0x02 => "EIA/CEA-861A",
-            0x03 => "EIA/CEA-861B",
-            _ => "Unknown"
-        };
+    private string Implemented => Revision switch
+    {
+        0x01 => "EIA/CEA-861",
+        0x02 => "EIA/CEA-861A",
+        0x03 => "EIA/CEA-861B",
+        _ => "Unknown"
+    };
 
     #endregion
 

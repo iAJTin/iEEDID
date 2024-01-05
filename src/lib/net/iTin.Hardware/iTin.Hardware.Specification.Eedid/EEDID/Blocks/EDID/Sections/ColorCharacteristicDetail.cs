@@ -12,7 +12,7 @@ namespace iTin.Hardware.Specification.Eedid.Blocks.EDID.Sections;
 
 // EDID Section Information: ColorCharacteristics -> ColorCharacteristicDetail
 // •————————————————————————————————————————————————————————————————————————————————————————————————————————•
-// | Offset       Name                        Lenght      Description                                       |
+// | Offset       Name                        Length      Description                                       |
 // •————————————————————————————————————————————————————————————————————————————————————————————————————————•
 // | 00h          Red/Green Low Order Bits    BYTE      Rx1 Rx0 Ry1 Ry0 Gx1 Gx0 Gy1 Gy0                     |
 // •————————————————————————————————————————————————————————————————————————————————————————————————————————•

@@ -13,7 +13,7 @@ namespace iTin.Hardware.Specification.Eedid.Blocks.DisplayId.Sections.DataBlocks
 
 // Data Block: Product Identification Data Block
 // •—————————————————————————————————————————————————————————————————————————————————————————————————•
-// | Offset       Name                    Lenght      Description                                    |
+// | Offset       Name                    Length      Description                                    |
 // •—————————————————————————————————————————————————————————————————————————————————————————————————•
 // | 00h          TAG                     1 BYTE      DisplayID    Value                             |
 // |                                                        1.3      00h                             |
@@ -66,7 +66,7 @@ internal sealed class ProductIdentificationDataBlock : BaseDataSection
     #region private readonly properties
 
     /// <summary>
-    /// Gets a value representing the <b>Id Product Code</b> field.
+    /// Gets a value representing the <strong>Id Product Code</strong> field.
     /// </summary>
     /// <value>
     /// Property value.
@@ -75,7 +75,7 @@ internal sealed class ProductIdentificationDataBlock : BaseDataSection
     private int ProductIdCode => RawData.GetWord(0x06);
 
     /// <summary>
-    /// Gets a value representing the <b>Serial Number</b> field.
+    /// Gets a value representing the <strong>Serial Number</strong> field.
     /// </summary>
     /// <value>
     /// Property value.
@@ -84,7 +84,7 @@ internal sealed class ProductIdentificationDataBlock : BaseDataSection
     private uint SerialNumber => (uint)RawData.GetDoubleWord(0x08);
 
     /// <summary>
-    /// Gets a value representing the <b>Week Of Manufacture</b> field.
+    /// Gets a value representing the <strong>Week Of Manufacture</strong> field.
     /// </summary>
     /// <value>
     /// Property value.
@@ -93,7 +93,7 @@ internal sealed class ProductIdentificationDataBlock : BaseDataSection
     private byte WeekOfManufactureOrModelTag => RawData[0x0c];
 
     /// <summary>
-    /// Gets a value representing the <b>Year Of Manufacture</b> field.
+    /// Gets a value representing the <strong>Year Of Manufacture</strong> field.
     /// </summary>
     /// <value>
     /// Property value.
@@ -102,7 +102,7 @@ internal sealed class ProductIdentificationDataBlock : BaseDataSection
     private byte YearOfManufactureOrModelYear => RawData[0x0d];
 
     /// <summary>
-    /// Gets a value representing the <b>Product Name Size</b> field.
+    /// Gets a value representing the <strong>Product Name Size</strong> field.
     /// </summary>
     /// <value>
     /// Property value.
@@ -111,7 +111,7 @@ internal sealed class ProductIdentificationDataBlock : BaseDataSection
     private byte ProductNameSize => RawData[0x0e];
 
     /// <summary>
-    /// Gets a value representing the <b>Product Name Data</b> field.
+    /// Gets a value representing the <strong>Product Name Data</strong> field.
     /// </summary>
     /// <value>
     /// Property value.
@@ -139,7 +139,7 @@ internal sealed class ProductIdentificationDataBlock : BaseDataSection
         properties.Add(EedidProperty.DisplayID.DataBlocks.Blocks.ProductIdentification.WeekOfManufactureOrModelTag, WeekOfManufactureOrModelTag);
         properties.Add(EedidProperty.DisplayID.DataBlocks.Blocks.ProductIdentification.YearOfManufactureOrModelYear, YearOfManufactureOrModelYear);
             
-        var modelYearStrategy = WeekOfManufactureOrModelTag == 0xff || WeekOfManufactureOrModelTag == 0x00 ? KnownModelYearStrategy.ModelYear : KnownModelYearStrategy.YearOfManufacture;
+        var modelYearStrategy = WeekOfManufactureOrModelTag is 0xff or 0x00 ? KnownModelYearStrategy.ModelYear : KnownModelYearStrategy.YearOfManufacture;
         properties.Add(EedidProperty.DisplayID.DataBlocks.Blocks.ProductIdentification.ModelYearStrategy, modelYearStrategy);
 
         if (modelYearStrategy == KnownModelYearStrategy.ModelYear)
@@ -156,7 +156,7 @@ internal sealed class ProductIdentificationDataBlock : BaseDataSection
             return;
         }
 
-        if (ProductNameSize > 0x01 && ProductNameSize <= 0xec)
+        if (ProductNameSize is > 0x01 and <= 0xec)
         {
             properties.Add(EedidProperty.DisplayID.DataBlocks.Blocks.ProductIdentification.ProductName, Encoding.Default.GetString(ProductNameData));
         }

@@ -1,14 +1,8 @@
 # DataBlockCollection.GetEnumerator method
 
-Devuelve un enumerador que recorre en iteración una colección.
-
 ```csharp
 public IEnumerator<DataBlock> GetEnumerator()
 ```
-
-## Return Value
-
-Objeto IEnumerator que se puede utilizar para recorrer en iteración la colección.
 
 ## See Also
 

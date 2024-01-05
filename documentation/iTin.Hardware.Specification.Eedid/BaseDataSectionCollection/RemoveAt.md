@@ -1,6 +1,6 @@
 # BaseDataSectionCollection.RemoveAt method
 
-Elimina el objeto [`DataSection`](../DataSection.md) especificado de la colección.
+Removes the specified [`DataSection`](../DataSection.md) object from the collection.
 
 ```csharp
 public void RemoveAt(int index)

@@ -17,7 +17,7 @@ internal sealed class DiDataSectionCollection : BaseDataSectionCollection
     /// <summary>
     /// Initializes a new instance of the <see cref="DiDataSectionCollection" /> class specifying the data of the untreated block.
     /// </summary>
-    /// <param name="datablock">Datos del bloque sin tratar.</param>
+    /// <param name="datablock">Raw block data.</param>
     internal DiDataSectionCollection(DataBlock datablock) : base(datablock, true)
     {                
     }
@@ -33,7 +33,7 @@ internal sealed class DiDataSectionCollection : BaseDataSectionCollection
     /// Object <see cref="DataSection" /> specified by its key.
     /// </value>
     /// <remarks>
-    /// If the element does not exist, <b>null</b> is returned.
+    /// If the element does not exist, <see langword="null"/> is returned.
     /// </remarks>
     /// <exception cref="InvalidEnumArgumentException"></exception>
     public DataSection this[DiSection valueKey]
@@ -65,7 +65,7 @@ internal sealed class DiDataSectionCollection : BaseDataSectionCollection
     /// </summary>
     /// <param name="valueKey">One of the values of <see cref="DiSection"/> that represents the key of the object <see cref="DataSection"/> to search</param>
     /// <returns>
-    /// <b>true</b> if the <see cref="DataSection"/> object with the <b>valueKey</b> is in the <see cref="DiDataSectionCollection"/> collection; otherwise, it is <b>false</b>.
+    /// <strong>true</strong> if the <see cref="DataSection"/> object with the <strong>valueKey</strong> is in the <see cref="DiDataSectionCollection"/> collection; otherwise, it is <strong>false</strong>.
     /// </returns>
     /// <exception cref="InvalidEnumArgumentException"></exception>
     public bool Contains(DiSection valueKey)
@@ -84,7 +84,7 @@ internal sealed class DiDataSectionCollection : BaseDataSectionCollection
     /// </summary>
     /// <param name="valueKey">One of the values of <see cref="DiSection"/> that represents the key of the object to be searched in <see cref="DiDataSectionCollection"/></param>
     /// <returns>
-    /// Zero-base index of the first occurrence of item in the whole of <see cref="DiDataSectionCollection"/>, if found; otherwise, <b>-1</b>.
+    /// Zero-base index of the first occurrence of item in the whole of <see cref="DiDataSectionCollection"/>, if found; otherwise, <strong>-1</strong>.
     /// </returns>
     /// <exception cref="InvalidEnumArgumentException"></exception>
     public int IndexOf(DiSection valueKey)
@@ -97,20 +97,6 @@ internal sealed class DiDataSectionCollection : BaseDataSectionCollection
 
         var section = Sections.FirstOrDefault(item => (DiSection) item.Key == valueKey);
         return IndexOf(section);
-
-        #region Versión sin utilizar LINQ.
-        //DataSection section = null;
-        //foreach (var item in Sections)
-        //{
-        //    if ((DiSection)item.Key == valueKey)
-        //    {
-        //        section = item;
-        //        break;
-        //    }
-        //}
-
-        //return IndexOf(section);
-        #endregion
     }
 
     #endregion
@@ -122,7 +108,7 @@ internal sealed class DiDataSectionCollection : BaseDataSectionCollection
     /// </summary>
     /// <param name="value">Key to check</param>
     /// <returns>
-    /// <b>true</b> if the value belongs to the enumeration <see cref="DiSection"/>; otherwise, it is <b>false</b>.
+    /// <strong>true</strong> if the value belongs to the enumeration <see cref="DiSection"/>; otherwise, it is <strong>false</strong>.
     /// </returns>
     private static bool IsValidSection(DiSection value) => SentinelHelper.IsEnumValid(value);
 

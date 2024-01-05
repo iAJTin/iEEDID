@@ -10,7 +10,7 @@ namespace iTin.Hardware.Specification.Eedid.Blocks.EDID.Sections.Descriptors;
 
 // Data Block Descriptor: Standard Timings Identifier Descriptor Definition
 // •———————————————————————————————————————————————————————————————————————————————————————————•
-// | Offset       Name                      Lenght      Description                            |
+// | Offset       Name                      Length      Description                            |
 // •———————————————————————————————————————————————————————————————————————————————————————————•
 // | 00h          Standard Timing 9         WORD        Note: See Timing(KnownStandardTiming)  |
 // •———————————————————————————————————————————————————————————————————————————————————————————•
@@ -111,7 +111,7 @@ internal class StandardTimingIdentifierDescriptor : BaseDataSection
                 return _timingTable;
             }
 
-            _timingTable = new Dictionary<KnownStandardTiming, StandardTimingIdentifierDescriptorItem>();
+            _timingTable = new();
             PopulatesTimingsTable(_timingTable);
 
             return _timingTable;

@@ -1,7 +1,7 @@
 ﻿# Changelog
 All notable changes to this project will be documented in this file.
 
-## [1.0.7] - 
+## [1.0.7] - 2024-01-05
 
 ### Fixed
 
@@ -56,18 +56,12 @@ All notable changes to this project will be documented in this file.
   
     | Library | Version | Description |
     |:------|:------|:----------|
-    | iTin.Core| **2.0.0.7** | Base library containing various extensions, helpers, common constants |
-    | **iTin.Core.Hardware.Abstractions** | **1.0.0.0** | **Generic Common Hardware Abstractions** |
-    | iTin.Core.Hardware.Common | **1.0.0.5** | Common Hardware Infrastructure |
-    | iTin.Core.Hardware.Linux.Device.Desktop | **1.0.0.1** | Linux Hardware Infrastructure |
-    | iTin.Core.Hardware.MacOS.Device.Desktop | **1.0.0.1** | MacOS Hardware Infrastructure |
-    | iTin.Core.Hardware.Windows.Device.Desktop | **1.0.0.1** | Windows Hardware Infrastructure |
-    | iTin.Core.Interop.Shared | **1.0.0.4** | Generic Shared Interop Definitions |
-    | iTin.Core.Hardware.Windows.Device.Desktop | **1.0.0.1** | Generic Win32 Interop Definitions, Data Structures, Constants... |
-    | iTin.Hardware.Abstractions.Devices | **1.0.0.1** | Generic Common Hardware Abstractions |
-    | iTin.Hardware.Specification.Eedid | **1.0.0.8** | Implementation of the E-EDID (Extended Display Identification Data) specification |
-    | iTin.Hardware.Specification.IEEE | **1.0.0.0** | IEEE Registration Authority |
-    | iTin.Logging| **1.0.0.3** | Logging library |
+    | iTin.Core.Hardware.Linux.Device.Desktop | **1.0.0.2** | Linux Hardware Infrastructure |
+    | iTin.Core.Hardware.MacOS.Device.Desktop | **1.0.0.2** | MacOS Hardware Infrastructure |
+    | iTin.Core.Hardware.Windows.Device.Desktop | **1.0.0.2** | Windows Hardware Infrastructure |
+    | iTin.Hardware.Abstractions.Devices | **1.0.0.2** | Generic Common Hardware Abstractions |
+    | iTin.Hardware.Specification.Eedid | **1.0.0.7** | Implementation of the E-EDID (Extended Display Identification Data) specification |
+    | iTin.Hardware.Specification.IEEE | **1.0.0.1** | IEEE Registration Authority |
 
 ## [1.0.6] - 2020-10-12
 
@@ -77,7 +71,7 @@ All notable changes to this project will be documented in this file.
   
     |Library|Version|Description|
     |:------|:------|:----------|
-    |iTin.Core| **2.0.0.1** | Base library containing various extensions, helpers, common constants |
+    |iTin.Core| **2.0.0.7** | Base library containing various extensions, helpers, common constants |
     |iTin.Core.Hardware.Common| **1.0.0.1** | Common Hardware Infrastructure |
     |iTin.Hardware.Specification.Eedid|**1.0.0.6**| Implementation of the E-EDID (Extended Display Identification Data) specification |
     |iTin.Logging| 1.0.0.0 | Logging library |

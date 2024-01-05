@@ -33,7 +33,7 @@ internal readonly struct AudioDataBlock
         }
         else
         {
-            BitDepth = new string[] { };
+            BitDepth = [];
             MaxBitrate = audioDataBlock[0x02] << 3;
         }
     }
@@ -67,7 +67,7 @@ internal readonly struct AudioDataBlock
     public string Format { get; }
 
     /// <summary>
-    /// Gets the audio MaxBitrate. If not exist then returns <b>-1</b>.
+    /// Gets the audio MaxBitrate. If not exist then returns <strong>-1</strong>.
     /// </summary>
     /// <value>
     /// A <see cref="int"/> containing the audio format.

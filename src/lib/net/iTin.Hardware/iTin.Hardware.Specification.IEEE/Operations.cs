@@ -11,7 +11,7 @@ namespace iTin.Hardware.Specification.IEEE;
 public static class Operations
 {
     [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-    private static readonly Dictionary<string, string> Oui = new Dictionary<string, string>
+    private static readonly Dictionary<string, string> Oui = new()
     {
         {"002272", "American Micro-Fuel Device Corp."},
         {"00D0EF", "IGT"},

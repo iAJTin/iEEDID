@@ -8,7 +8,7 @@ public bool HasSections { get; }
 
 ## Property Value
 
-true if there are sections; otherwise, it is false.
+true if there are sections; otherwise false.
 
 ## See Also
 

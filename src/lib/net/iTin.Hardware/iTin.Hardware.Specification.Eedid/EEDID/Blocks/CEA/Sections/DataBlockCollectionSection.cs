@@ -10,7 +10,7 @@ namespace iTin.Hardware.Specification.Eedid.Blocks.CEA.Sections;
 
 // CEA Section: Data Block Collection Information
 // •————————————————————————————————————————————————————————————————————————————————————————————————————————•
-// | Offset       Name                      Lenght      Description                                         |
+// | Offset       Name                      Length      Description                                         |
 // •————————————————————————————————————————————————————————————————————————————————————————————————————————•
 
 /// <summary>
@@ -58,7 +58,7 @@ internal sealed class DataBlockCollectionSection : BaseDataSection
                     var hasProperties = descriptor.Properties.Any();
                     if (hasProperties)
                     {
-                        propertiesToAdd.Add(EedidProperty.Cea.DataBlock.Tags.Audio, descriptor.Properties.FirstOrDefault().Value);
+                        propertiesToAdd.Add(EedidProperty.Cea.DataBlock.Tags.Audio, descriptor.Properties.FirstOrDefault()?.Value);
                     }
                     break;
 

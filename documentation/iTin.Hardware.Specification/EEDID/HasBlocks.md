@@ -8,7 +8,7 @@ public bool HasBlocks { get; }
 
 ## Property Value
 
-true if there are blocks; otherwise, it is false.
+`true` if there are blocks; otherwise `false`.
 
 ## See Also
 

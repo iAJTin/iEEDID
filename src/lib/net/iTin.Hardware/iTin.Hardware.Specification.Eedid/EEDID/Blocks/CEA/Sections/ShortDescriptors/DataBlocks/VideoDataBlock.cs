@@ -34,7 +34,7 @@ internal readonly struct VideoDataBlock
     #region public methods
 
     /// <summary>
-    /// Gets the list of supported resolutions/timings..
+    /// Gets the list of supported resolutions/timings.
     /// </summary>
     /// <returns>
     /// List of supported resolutions/timings.
@@ -48,7 +48,7 @@ internal readonly struct VideoDataBlock
             values.Add(string.Concat(TableModes(_videoDataBlock[i]), " ", _videoDataBlock[i].CheckBit(Bits.Bit07) ? "[Native]" : string.Empty));
         }
 
-        return values.ToArray();
+        return [.. values];
     }
 
     #endregion

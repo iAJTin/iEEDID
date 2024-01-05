@@ -6,7 +6,7 @@ using iTin.Hardware.Specification.Eedid.Blocks.CEA.Sections;
 namespace iTin.Hardware.Specification.Eedid.Blocks.CEA;
 
 /// <summary>
-/// Sections corresponding to a block of type <see cref="CeaBlock" />.
+/// Sections corresponding to a block of type <see cref="CeaBlock"/>.
 /// </summary>
 public enum CeaSection
 {

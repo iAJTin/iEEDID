@@ -7,7 +7,7 @@ namespace iTin.Hardware.Specification.Eedid.Blocks.EDID.Sections.Descriptors;
 
 // Data Block Descriptor: Alphanumeric Data String Descriptor Definition
 // •—————————————————————————————————————————————————————————————————————————————————————————————————•
-// | Offset       Name                      Lenght      Description                                  |
+// | Offset       Name                      Length      Description                                  |
 // •—————————————————————————————————————————————————————————————————————————————————————————————————•
 // | 00h -> 0ch   ASCII                     13 BYTEs    Up to 13 alphanumeric characters of a data   |
 // |              Text                                  string may be stored.                        |

@@ -65,29 +65,17 @@ Changes in this version (v1.0.7)
       •————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————•
       | Library                                      Version     Description                                                                       |
       •————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————•
-      | iTin.Core                                    2.0.0.7     Base library containing various extensions, helpers, common constants             |
+      | iTin.Core.Hardware.Linux.Device.Desktop      1.0.0.2     Linux Hardware Infrastructure                                                     |
       •————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————•
-      | iTin.Core.Hardware.Abstractions              1.0.0.0     Generic Common Hardware Abstractions                                              |
+      | iTin.Core.Hardware.MacOS.Device.Desktop      1.0.0.2     MacOS Hardware Infrastructure                                                     |
       •————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————•
-      | iTin.Core.Hardware.Common                    1.0.0.5     Common Hardware Infrastructure                                                    |
+      | iTin.Core.Hardware.Windows.Device.Desktop    1.0.0.2     Generic Common Hardware Abstractions                                              |
       •————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————•
-      | iTin.Core.Hardware.Linux.Device.Desktop      1.0.0.1     Linux Hardware Infrastructure                                                     |
+      | iTin.Hardware.Abstractions.Devices           1.0.0.2     Generic Common Hardware Abstractions                                              |
       •————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————•
-      | iTin.Core.Hardware.MacOS.Device.Desktop      1.0.0.1     MacOS Hardware Infrastructure                                                     |
+      | iTin.Hardware.Specification.Eedid            1.0.0.7     Implementation of the E-EDID (Extended Display Identification Data) specification |
       •————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————•
-      | iTin.Core.Hardware.Windows.Device.Desktop    1.0.0.1     Generic Common Hardware Abstractions                                              |
-      •————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————•
-      | iTin.Core.Interop.Shared                     1.0.0.4     Generic Shared Interop Definitions                                                |
-      •————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————•
-      | iTin.Core.Interop.Windows.Devices            1.0.0.1     Generic Win32 Interop Definitions, Data Structures, Constants...                  |
-      •————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————•
-      | iTin.Hardware.Abstractions.Devices           1.0.0.1     Generic Common Hardware Abstractions                                              |
-      •————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————•
-      | iTin.Hardware.Specification.Eedid            1.0.0.8     Implementation of the E-EDID (Extended Display Identification Data) specification |
-      •————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————•
-      | iTin.Hardware.Specification.IEEE             1.0.0.0     IEEE Registration Authority                                                       |
-      •————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————•
-      | iTin.Logging                                 1.0.0.3     Logging library                                                                   |
+      | iTin.Hardware.Specification.IEEE             1.0.0.1     IEEE Registration Authority                                                       |
       •————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————•
 
 v1.0.6

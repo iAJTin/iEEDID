@@ -7,7 +7,7 @@
     <GenerateDocumentationFile>true</GenerateDocumentationFile>
     <AssemblyName>iTin.Core.Hardware.Linux.Device.Desktop</AssemblyName>
     <PackageId>iTin.Core.Hardware.Linux.Device.Desktop</PackageId>
-    <Version>1.0.0.1</Version>
+    <Version>1.0.0.2</Version>
     <Authors>iTin</Authors>
     <Company>iTin</Company>
     <Product>iTin.Core.Hardware.Linux.Device.Desktop</Product>
@@ -18,7 +18,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\..\..\..\..\..\iTin\iTin.Core\iTin.Core.Hardware.Abstractions\src\iTin.Core.Hardware.Abstractions.csproj" />
+    <ProjectReference Include="..\..\..\..\..\..\..\iTin\iTin.Core\iTin.Core.Hardware\iTin.Core.Hardware.Abstractions\src\iTin.Core.Hardware.Abstractions.csproj" />
   </ItemGroup>
 
 </Project>

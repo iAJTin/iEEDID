@@ -6,7 +6,7 @@ namespace iTin.Hardware.Specification.Eedid.Blocks.DI.Sections;
 
 // DI Section: Information
 // •————————————————————————————————————————————————————————————————————————————————————————————————————————•
-// | Offset       Name                      Lenght      Description                                         |
+// | Offset       Name                      Length      Description                                         |
 // •————————————————————————————————————————————————————————————————————————————————————————————————————————•
 // | 00h          DI-EXT Block Header Tag   BYTE        Tag identifying DI-EXT Block. 40h                   |
 // •————————————————————————————————————————————————————————————————————————————————————————————————————————•

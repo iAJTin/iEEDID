@@ -15,7 +15,7 @@ public static class SafeVideoAdapterNativeMethods
     /// Array with the information of the system video adapters.
     /// </summary>
     /// <returns>
-    /// Returns a <see cref = "T: System.Array" /> of structures <see cref = "VideoAdapterDeviceInfo" /> that contains the system's video adapters.
+    /// Returns a <see cref="T:System.Array"/> of structures <see cref="VideoAdapterDeviceInfo"/> that contains the system's video adapters.
     /// </returns>
     public static VideoAdapterDeviceInfo[] EnumerateVideoAdapterDevices()
     {
@@ -24,7 +24,7 @@ public static class SafeVideoAdapterNativeMethods
         for (uint i = 0; ; i++)
         {
             var adapterDevice = DeviceContext.DISPLAY_DEVICE.Empty;
-            bool deviceIsAvailable = DeviceContext.NativeMethods.EnumDisplayDevices(null, i, ref adapterDevice, 0);
+            var deviceIsAvailable = DeviceContext.NativeMethods.EnumDisplayDevices(null, i, ref adapterDevice, 0);
 
             if (!deviceIsAvailable)
             {
@@ -43,7 +43,7 @@ public static class SafeVideoAdapterNativeMethods
     /// <summary>
     /// Get the video adapter information associated with the specified monitor.
     /// </summary>
-    /// <param name="monitorDeviceInfo"> Monitor information. </param>
+    /// <param name="monitorDeviceInfo"> Monitor information.</param>
     /// <returns>
     /// Returns a <see cref="VideoAdapterDeviceInfo"/> structure that contains the adapter information associated with the specified monitor.
     /// </returns>

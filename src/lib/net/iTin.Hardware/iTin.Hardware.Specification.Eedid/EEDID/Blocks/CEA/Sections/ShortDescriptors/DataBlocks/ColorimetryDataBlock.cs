@@ -48,7 +48,7 @@ internal readonly struct ColorimetryDataBlock
     /// Gets a value that indicates whether it conforms to the IEC 61966-2-5 standard.
     /// </summary>
     /// <value>
-    /// <b>true</b> if it conforms to the IEC 61966-2-5 standard; otherwise <b>false</b>.
+    /// <strong>true</strong> if it conforms to the IEC 61966-2-5 standard; otherwise <strong>false</strong>.
     /// </value>
     public bool AdobeRGB { get; }
 
@@ -56,7 +56,7 @@ internal readonly struct ColorimetryDataBlock
     /// Gets a value that indicates whether it complies with the IEC 61966-2-5 Annex A standard.
     /// </summary>
     /// <value>
-    /// <b>true</b> if it complies with the IEC 61966-2-5 Annex A standard; otherwise <b>false</b>.
+    /// <strong>true</strong> if it complies with the IEC 61966-2-5 Annex A standard; otherwise <strong>false</strong>.
     /// </value>
     public bool AdobeYCC601 { get; }
 
@@ -64,7 +64,7 @@ internal readonly struct ColorimetryDataBlock
     /// Gets a value that indicates whether it complies with the IEC 61966-2-1/Amendment 1 standard.
     /// </summary>
     /// <value>
-    /// <b>true</b> if it complies with the IEC 61966-2-1/Amendment 1 standard; otherwise <b>false</b>.
+    /// <strong>true</strong> if it complies with the IEC 61966-2-1/Amendment 1 standard; otherwise <strong>false</strong>.
     /// </value>
     public bool SYCC601 { get; }
 
@@ -72,7 +72,7 @@ internal readonly struct ColorimetryDataBlock
     /// Gets a value that indicates whether it conforms to the IEC 61966-2-4 (High Definition Colorimetry) standard.
     /// </summary>
     /// <value>
-    /// <b>true</b> if it complies with the IEC 61966-2-4 (High Definition Colorimetry) standard; otherwise <b>false</b>.
+    /// <strong>true</strong> if it complies with the IEC 61966-2-4 (High Definition Colorimetry) standard; otherwise <strong>false</strong>.
     /// </value>
     public bool XVYCC709 { get; }
 
@@ -80,7 +80,7 @@ internal readonly struct ColorimetryDataBlock
     /// Gets a value that indicates whether it conforms to the IEC 61966-2-4 (Standard Definition Colorimetry) standard.
     /// </summary>
     /// <value>
-    /// <b>true</b> if it complies with the IEC 61966-2-4 (Standard Definition Colorimetry) standard; otherwise <b>false</b>.
+    /// <strong>true</strong> if it complies with the IEC 61966-2-4 (Standard Definition Colorimetry) standard; otherwise <strong>false</strong>.
     /// </value>
     public bool XVYCC601 { get; }
 
@@ -88,7 +88,7 @@ internal readonly struct ColorimetryDataBlock
     /// Gets a value that indicates whether it conforms to future metadata.
     /// </summary>
     /// <value>
-    /// <b>true</b> if it conforms to future metadata; otherwise <b>false</b>.
+    /// <strong>true</strong> if it conforms to future metadata; otherwise <strong>false</strong>.
     /// </value>
     public bool MD0 => _md0;
 
@@ -96,7 +96,7 @@ internal readonly struct ColorimetryDataBlock
     /// Gets a value that indicates whether it conforms to future metadata.
     /// </summary>
     /// <value>
-    /// <b>true</b> if it conforms to future metadata; otherwise <b>false</b>.
+    /// <strong>true</strong> if it conforms to future metadata; otherwise <strong>false</strong>.
     /// </value>
     public bool MD1 => _md1;
 
@@ -104,7 +104,7 @@ internal readonly struct ColorimetryDataBlock
     /// Gets a value that indicates whether it conforms to future metadata.
     /// </summary>
     /// <value>
-    /// <b>true</b> if it conforms to future metadata; otherwise <b>false</b>.
+    /// <strong>true</strong> if it conforms to future metadata; otherwise <strong>false</strong>.
     /// </value>
     public bool MD2 => _md2;
 
@@ -112,7 +112,7 @@ internal readonly struct ColorimetryDataBlock
     /// Gets a value that indicates whether it conforms to future metadata.
     /// </summary>
     /// <value>
-    /// <b>true</b> if it conforms to future metadata; otherwise <b>false</b>.
+    /// <strong>true</strong> if it conforms to future metadata; otherwise <strong>false</strong>.
     /// </value>
     public bool MD3 => _md3;
 

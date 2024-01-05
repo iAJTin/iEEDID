@@ -9,7 +9,7 @@ namespace iTin.Hardware.Specification.Eedid.Blocks.EDID.Sections.Descriptors;
 
 // Data Block Descriptor: Display Range Limits & Additional Timming Descriptor Block Definition
 // •—————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————•
-// | Offset       Name                      Lenght      Description                                                                                      |
+// | Offset       Name                      Length      Description                                                                                      |
 // •—————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————•
 // | 00h          Display Range Limits      BYTE        Flags. Other reserved values do not use.                                                         |
 // |              Offsets                               7 6 5 4 | 3 2 1 0                                                                                |

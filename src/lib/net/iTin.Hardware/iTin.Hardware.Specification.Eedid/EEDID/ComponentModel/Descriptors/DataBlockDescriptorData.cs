@@ -52,7 +52,7 @@ public readonly struct DataBlockDescriptorData :  IEquatable<DataBlockDescriptor
     /// <param name="headerDataBlockDescriptor1">Operand 1</param>
     /// <param name="headerDataBlockDescriptor2">Operand 2</param>
     /// <returns>
-    /// Returns <b>true</b> if <c>headerDataBlockDescriptor1</c> is equal to <c>headerDataBlockDescriptor2</c>; <b>false</b> otherwise.
+    /// Returns <see langword="true"/> if <c>headerDataBlockDescriptor1</c> is equal to <c>headerDataBlockDescriptor2</c>; otherwise <see langword="false"/>.
     /// </returns>
     public static bool operator ==(DataBlockDescriptorData headerDataBlockDescriptor1, DataBlockDescriptorData headerDataBlockDescriptor2) => headerDataBlockDescriptor1.Equals(headerDataBlockDescriptor2);
 
@@ -62,7 +62,7 @@ public readonly struct DataBlockDescriptorData :  IEquatable<DataBlockDescriptor
     /// <param name="headerDataBlockDescriptor1">Operand 1</param>
     /// <param name="headerDataBlockDescriptor2">Operand 2</param>
     /// <returns>
-    /// Returns <b>true</b> if <c>deviceInfo1</c> is not equal to <c>deviceInfo2</c>; <b>false</b> otherwise.
+    /// Returns <see langword="true"/> if <c>deviceInfo1</c> is not equal to <c>deviceInfo2</c>; otherwise <see langword="false"/>.
     /// </returns>
     public static bool operator !=(DataBlockDescriptorData headerDataBlockDescriptor1, DataBlockDescriptorData headerDataBlockDescriptor2) => !headerDataBlockDescriptor1.Equals(headerDataBlockDescriptor2);
 
@@ -161,20 +161,19 @@ public readonly struct DataBlockDescriptorData :  IEquatable<DataBlockDescriptor
     /// <param name="propertyKey">Key to the property to obtain</param>
     /// <returns>
     /// <para>
-    /// A <see cref="QueryPropertyResult"/> reference that contains the result of the operation, to check if the operation is correct, the <b>Success</b>
-    /// property will be <b>true</b> and the <b>Value</b> property will contain the value; Otherwise, the the <b>Success</b> property
-    /// will be false and the <b>Errors</b> property will contain the errors associated with the operation, if they have been filled in.
+    /// A <see cref="QueryPropertyResult"/> reference that contains the result of the operation, to check if the operation is correct, the <strong>Success</strong>
+    /// property will be <strong>true</strong> and the <strong>Value</strong> property will contain the value; Otherwise, the <strong>Success</strong> property
+    /// will be false and the <strong>Errors</strong> property will contain the errors associated with the operation, if they have been filled in.
     /// </para>
     /// <para>
-    /// The type of the <b>Value</b> property is <see cref="PropertyItem"/>. Contains the result of the operation.
+    /// The type of the <strong>Value</strong> property is <see cref="PropertyItem"/>. Contains the result of the operation.
     /// </para>
     /// <para>
     /// </para>
     /// </returns>
-    public QueryPropertyResult GetProperty(IPropertyKey propertyKey)
-        => !Properties.ContainsKey(propertyKey)
-            ? QueryPropertyResult.CreateErroResult("Can not found specified property key")
-            : QueryPropertyResult.CreateSuccessResult(((IEnumerable<PropertyItem>)Properties[propertyKey]).FirstOrDefault());
+    public QueryPropertyResult GetProperty(IPropertyKey propertyKey) => !Properties.ContainsKey(propertyKey)
+        ? QueryPropertyResult.CreateErrorResult("Can not found specified property key")
+        : QueryPropertyResult.CreateSuccessResult(((IEnumerable<PropertyItem>)Properties[propertyKey]).FirstOrDefault());
 
     /// <summary>
     /// Returns a value that represents the unique key that identifies the specified descriptor.

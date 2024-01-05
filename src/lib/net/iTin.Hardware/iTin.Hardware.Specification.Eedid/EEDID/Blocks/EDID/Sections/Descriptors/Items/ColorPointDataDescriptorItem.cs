@@ -11,7 +11,7 @@ namespace iTin.Hardware.Specification.Eedid.Blocks.EDID.Sections.Descriptors;
 
 // Data Block Descriptor -> Descriptor Item : Color Point Data Desctiptor Item Definition.
 // •———————————————————————————————————————————————————————————————————————————————————————————————•
-// | Offset       Name                      Lenght      Description                                |
+// | Offset       Name                      Length      Description                                |
 // •———————————————————————————————————————————————————————————————————————————————————————————————•
 // | 00h          White Point               BYTE        Range:                                     |
 // |              Index                                        00h - Reserved Do not use.          |

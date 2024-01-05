@@ -10,7 +10,7 @@ namespace iTin.Hardware.Specification.Eedid.Blocks.EDID.Sections;
 
 // EDID Section: Basic Display Parameters & Features Information
 // •—————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————•
-// | Offset       Name                      Lenght      Description                                                              |
+// | Offset       Name                      Length      Description                                                              |
 // •—————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————•
 // | 00h          Video Input Definition    BYTE        Bit     07 - Video Signal Interface                                      |
 // |                                                                 0b - Analog                                                 |

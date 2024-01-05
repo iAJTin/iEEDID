@@ -41,7 +41,7 @@ internal readonly struct SpeakerDataBlock
     /// Obtiene un valor que indica si estan presentes los altavoces trasero izquierdo/central.
     /// </summary>
     /// <value>
-    /// Es <b>true</b> si estan presentes; en caso contrario, es <b>false</b>.
+    /// Es <strong>true</strong> si estan presentes; en caso contrario, es <strong>false</strong>.
     /// </value>
     public bool RearLeftRearCenter { get; }
 
@@ -50,7 +50,7 @@ internal readonly struct SpeakerDataBlock
     /// </summary>
     /// <value>
     ///   <para>Tipo: <see cref="T:System.Boolean"/></para>
-    ///   <para>Es <b>true</b> si estan presentes; en caso contrario, es <b>false</b>.</para>
+    ///   <para>Es <strong>true</strong> si estan presentes; en caso contrario, es <strong>false</strong>.</para>
     /// </value>
     public bool FrontLeftRightWide { get; }
 
@@ -59,7 +59,7 @@ internal readonly struct SpeakerDataBlock
     /// </summary>
     /// <value>
     ///   <para>Tipo: <see cref="T:System.Boolean"/></para>
-    ///   <para>Es <b>true</b> si estan presentes; en caso contrario, es <b>false</b>.</para>
+    ///   <para>Es <strong>true</strong> si estan presentes; en caso contrario, es <strong>false</strong>.</para>
     /// </value>
     public bool FrontLeftRightHigh { get; }
 
@@ -68,7 +68,7 @@ internal readonly struct SpeakerDataBlock
     /// </summary>
     /// <value>
     ///   <para>Tipo: <see cref="T:System.Boolean"/></para>
-    ///   <para>Es <b>true</b> si estan presentes; en caso contrario, es <b>false</b>.</para>
+    ///   <para>Es <strong>true</strong> si estan presentes; en caso contrario, es <strong>false</strong>.</para>
     /// </value>
     public bool FrontLeftRightCenter { get; }
 
@@ -77,7 +77,7 @@ internal readonly struct SpeakerDataBlock
     /// </summary>
     /// <value>
     ///   <para>Tipo: <see cref="T:System.Boolean"/></para>
-    ///   <para>Es <b>true</b> si esta presente; en caso contrario, es <b>false</b>.</para>
+    ///   <para>Es <strong>true</strong> si esta presente; en caso contrario, es <strong>false</strong>.</para>
     /// </value>
     public bool RearCenter { get; }
 
@@ -86,7 +86,7 @@ internal readonly struct SpeakerDataBlock
     /// </summary>
     /// <value>
     ///   <para>Tipo: <see cref="T:System.Boolean"/></para>
-    ///   <para>Es <b>true</b> si estan presentes; en caso contrario, es <b>false</b>.</para>
+    ///   <para>Es <strong>true</strong> si estan presentes; en caso contrario, es <strong>false</strong>.</para>
     /// </value>
     public bool RearLeftRight { get; }
 
@@ -95,7 +95,7 @@ internal readonly struct SpeakerDataBlock
     /// </summary>
     /// <value>
     ///   <para>Tipo: <see cref="T:System.Boolean"/></para>
-    ///   <para>Es <b>true</b> si esta presente; en caso contrario, es <b>false</b>.</para>
+    ///   <para>Es <strong>true</strong> si esta presente; en caso contrario, es <strong>false</strong>.</para>
     /// </value>
     public bool FrontCenter { get; }
 
@@ -104,7 +104,7 @@ internal readonly struct SpeakerDataBlock
     /// </summary>
     /// <value>
     ///   <para>Tipo: <see cref="T:System.Boolean"/></para>
-    ///   <para>Es <b>true</b> si esta presente; en caso contrario, es <b>false</b>.</para>
+    ///   <para>Es <strong>true</strong> si esta presente; en caso contrario, es <strong>false</strong>.</para>
     /// </value>
     /// <remarks>
     /// Para más información ver: http://en.wikipedia.org/wiki/Surround_sound.
@@ -116,7 +116,7 @@ internal readonly struct SpeakerDataBlock
     /// </summary>
     /// <value>
     ///   <para>Tipo: <see cref="T:System.Boolean"/></para>
-    ///   <para>Es <b>true</b> si estan presentes; en caso contrario, es <b>false</b>.</para>
+    ///   <para>Es <strong>true</strong> si estan presentes; en caso contrario, es <strong>false</strong>.</para>
     /// </value>
     public bool FrontLeftRight { get; }
 
@@ -125,7 +125,7 @@ internal readonly struct SpeakerDataBlock
     /// </summary>
     /// <value>
     ///   <para>Tipo: <see cref="T:System.Boolean"/></para>
-    ///   <para>Es <b>true</b> si esta presente; en caso contrario, es <b>false</b>.</para>
+    ///   <para>Es <strong>true</strong> si esta presente; en caso contrario, es <strong>false</strong>.</para>
     /// </value>
     public bool TopCenter { get; }
 
@@ -134,7 +134,7 @@ internal readonly struct SpeakerDataBlock
     /// </summary>
     /// <value>
     ///   <para>Tipo: <see cref="T:System.Boolean"/></para>
-    ///   <para>Es <b>true</b> si estan presentes; en caso contrario, es <b>false</b>.</para>
+    ///   <para>Es <strong>true</strong> si estan presentes; en caso contrario, es <strong>false</strong>.</para>
     /// </value>
     public bool FrontCenterHigh { get; }
 

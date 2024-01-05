@@ -9,7 +9,7 @@ namespace iTin.Hardware.Specification.Eedid.Blocks.EDID.Sections.Descriptors;
 
 // Data Block Descriptor: Color Point Descriptor Definition
 // •———————————————————————————————————————————————————————————————————————————————————————————————•
-// | Offset       Name                  Lenght              Description                            |
+// | Offset       Name                  Length              Description                            |
 // •———————————————————————————————————————————————————————————————————————————————————————————————•
 // | 00h          Additional Color      ColorPointInfo      Note:  See ColorPoint(KnownColorPoint) |
 // |              Point 1                                                                          |
@@ -81,7 +81,7 @@ internal sealed class ColorPointDataDescriptor : BaseDataSection
                 return _colorPointTable;
             }
 
-            _colorPointTable = new Dictionary<KnownColorPoint, ColorPointDataDescriptorItem>();
+            _colorPointTable = new();
             PopulatesAdditionalColorPointTable(_colorPointTable);
             return _colorPointTable;
         }
@@ -106,7 +106,7 @@ internal sealed class ColorPointDataDescriptor : BaseDataSection
     /// <summary>
     /// Returns the value that contains the specified key.
     /// </summary>
-    /// <param name="colorPoint">Color point to be recovere.</param>
+    /// <param name="colorPoint">Color point to recover.</param>
     /// <returns>
     /// Value of the specified timing
     /// </returns>

@@ -1,14 +1,8 @@
 # DataBlockData.ToString method
 
-Returns a String that represents the current class.
-
 ```csharp
 public override string ToString()
 ```
-
-## Return Value
-
-A String that represents the [`DataBlockData`](../DataBlockData.md) current class.
 
 ## See Also
 

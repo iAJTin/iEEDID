@@ -7,7 +7,7 @@ namespace iTin.Hardware.Specification.Eedid.Blocks.DI.Sections;
 
 // DI Section: Miscellaneous
 // •————————————————————————————————————————————————————————————————————————————————————————————————————————•
-// | Offset       Name                      Lenght      Description                                         |
+// | Offset       Name                      Length      Description                                         |
 // •————————————————————————————————————————————————————————————————————————————————————————————————————————•
 // | 00h          CheckSum                  BYTE        Note: Please see, Status                            |
 // •————————————————————————————————————————————————————————————————————————————————————————————————————————•
@@ -34,7 +34,7 @@ internal sealed class MiscellaneousSection : BaseDataSection
     #region private readonly properties
 
     /// <summary>
-    /// Gets a value that represents the <b>Status</b> field.
+    /// Gets a value that represents the <strong>Status</strong> field.
     /// </summary>
     /// <value>
     /// Property value.

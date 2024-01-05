@@ -1,7 +1,5 @@
 # DataBlockCollection.Clear method
 
-Quita todos los elementos de la colección.
-
 ```csharp
 public void Clear()
 ```

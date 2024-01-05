@@ -21,7 +21,7 @@ internal static class DisplayIdProperty
     public static class General
     {
         /// <summary>
-        /// Definition of properties for a <b>Data</b> section.
+        /// Definition of properties for a <strong>Data</strong> section.
         /// </summary>
         public enum Data
         {
@@ -37,7 +37,7 @@ internal static class DisplayIdProperty
         }
 
         /// <summary>
-        /// Definition of properties for a <b>Version</b> section.
+        /// Definition of properties for a <strong>Version</strong> section.
         /// </summary>
         public enum Version
         {
@@ -61,7 +61,7 @@ internal static class DisplayIdProperty
     public static class DataBlocks
     {
         /// <summary>
-        /// Definition of properties for a <b>Data Blocks</b> section.
+        /// Definition of properties for a <strong>Data Blocks</strong> section.
         /// </summary>
         public enum Implemented
         {
@@ -114,12 +114,12 @@ internal static class DisplayIdProperty
 
 
             /// <summary>
-            /// Definition of properties for a <b>Detailed Timing Type I</b> data block.
+            /// Definition of properties for a <strong>Detailed Timing Type I</strong> data block.
             /// </summary>
             public static class DetailedTimingTypeI
             {
                 /// <summary>
-                /// Definition of properties for a <b>General</b>.
+                /// Definition of properties for a <strong>General</strong>.
                 /// </summary>
                 public enum General
                 {
@@ -130,7 +130,7 @@ internal static class DisplayIdProperty
                 }
 
                 /// <summary>
-                /// Definition of properties for a <b>Detailed Timing Type I Item</b>.
+                /// Definition of properties for a <strong>Detailed Timing Type I Item</strong>.
                 /// </summary>
                 public enum Timing
                 {
@@ -212,7 +212,7 @@ internal static class DisplayIdProperty
             }
 
             /// <summary>
-            /// Definition of properties for a <b>Product Identification</b> data block.
+            /// Definition of properties for a <strong>Product Identification</strong> data block.
             /// </summary>
             public enum ProductIdentification
             {
@@ -258,12 +258,12 @@ internal static class DisplayIdProperty
             }
 
             /// <summary>
-            /// Definition of properties for a <b>Display Parameters</b> data block.
+            /// Definition of properties for a <strong>Display Parameters</strong> data block.
             /// </summary>
             public static class DisplayParameters
             {
                 /// <summary>
-                /// Definition of common properties for a <b>Display Parameters</b> data block.
+                /// Definition of common properties for a <strong>Display Parameters</strong> data block.
                 /// </summary>
                 public enum Common
                 {
@@ -354,7 +354,7 @@ internal static class DisplayIdProperty
                 }
 
                 /// <summary>
-                /// Definition of properties for a <b>Features</b> data block section.
+                /// Definition of properties for a <strong>Features</strong> data block section.
                 /// </summary>
                 public enum Features
                 {
@@ -422,7 +422,7 @@ internal static class DisplayIdProperty
             }
 
             /// <summary>
-            /// Definition of properties for a <b>Dynamic Video Timing Range Limits</b> data block.
+            /// Definition of properties for a <strong>Dynamic Video Timing Range Limits</strong> data block.
             /// </summary>
             public enum DynamicVideoTimingRangeLimits
             {
@@ -453,7 +453,7 @@ internal static class DisplayIdProperty
             }
 
             /// <summary>
-            /// Definition of properties for a <b>ContainerID</b> data block.
+            /// Definition of properties for a <strong>ContainerID</strong> data block.
             /// </summary>
             public enum ContainerID
             {
@@ -464,7 +464,7 @@ internal static class DisplayIdProperty
             }
 
             /// <summary>
-            /// Definition of properties for a <b>Vendor Specific</b> data block.
+            /// Definition of properties for a <strong>Vendor Specific</strong> data block.
             /// </summary>
             public enum VendorSpecific
             {
@@ -489,7 +489,7 @@ internal static class DisplayIdProperty
     public static class Miscellaneous
     {
         /// <summary>
-        /// Definition of properties for a <b>CheckSum</b> section.
+        /// Definition of properties for a <strong>CheckSum</strong> section.
         /// </summary>
         public enum CheckSum
         {

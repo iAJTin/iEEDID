@@ -1,16 +1,8 @@
 # DataBlockCollection.IsReadOnly property
 
-Obtiene un valor que indica si la colección es de sólo lectura.
-
 ```csharp
 public bool IsReadOnly { get; }
 ```
-
-## Property Value
-
-Tipo: Boolean
-
-true si la colección es de sólo lectura; en caso contrario, es false.
 
 ## See Also
 

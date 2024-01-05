@@ -6,7 +6,7 @@ namespace iTin.Hardware.Specification.Eedid.Blocks.EDID.Sections;
 
 // EDID Section: Version & Revision Information
 // •————————————————————————————————————————————————————————————————————————————————————————————————————————•
-// | Offset       Name                      Lenght      Description                                         |
+// | Offset       Name                      Length      Description                                         |
 // •————————————————————————————————————————————————————————————————————————————————————————————————————————•
 // | 00h          Version                   BYTE        Implemented version number.                         |
 // |                                                    Note: See Number                                    |
@@ -42,7 +42,7 @@ internal sealed class VersionSection : BaseDataSection
     /// Property value.
     /// </value>
     [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-    private byte Version => RawData[0x00];
+    private new byte Version => RawData[0x00];
 
     /// <summary>
     /// Gets a value representing the <c>Revision</c> field.

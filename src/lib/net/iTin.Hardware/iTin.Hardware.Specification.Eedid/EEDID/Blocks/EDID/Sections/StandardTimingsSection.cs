@@ -12,7 +12,7 @@ namespace iTin.Hardware.Specification.Eedid.Blocks.EDID.Sections;
 
 // EDID Section: Standard Timings 16 Bytes
 // •————————————————————————————————————————————————————————————————————————————————————————————•
-// | Offset       Name                      Lenght      Description                             |
+// | Offset       Name                      Length      Description                             |
 // •————————————————————————————————————————————————————————————————————————————————————————————•
 // | 00h          Standard Timing 1         WORD        Note:  See Timing(KnownStandardTiming)  |
 // •————————————————————————————————————————————————————————————————————————————————————————————•

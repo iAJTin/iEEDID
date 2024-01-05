@@ -1,15 +1,15 @@
 # BaseDataSection.GetBytes method
 
-Returns the stored array from start with specified lenght.
+Returns the stored array from start with specified length.
 
 ```csharp
-protected byte[] GetBytes(byte start, byte lenght)
+protected byte[] GetBytes(byte start, byte length)
 ```
 
 | parameter | description |
 | --- | --- |
 | start | start byte |
-| lenght | lenght |
+| length | length |
 
 ## Return Value
 

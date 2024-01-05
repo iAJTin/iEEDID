@@ -23,7 +23,7 @@ Reference to the object that represents the value of the property. Always return
 
 # BaseDataSection.GetPropertyValue&lt;T&gt; method (2 of 2)
 
-Returns the the strongly typed value of specified property. Always returns the first appearance of the property. If it does not exist, returns `null` (`Nothing` in visual basic).
+Returns the strongly typed value of specified property. Always returns the first appearance of the property. If it does not exist, returns `null`.
 
 ```csharp
 public T GetPropertyValue<T>(IPropertyKey propertyKey)

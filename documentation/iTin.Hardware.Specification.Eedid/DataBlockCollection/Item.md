@@ -1,24 +1,8 @@
 # DataBlockCollection indexer (1 of 2)
 
-Obtiene o establece el objeto [`DataBlock`](../DataBlock.md) especificado en el índice.
-
 ```csharp
 public DataBlock this[int index] { get; set; }
 ```
-
-## Return Value
-
-Objeto [`DataBlock`](../DataBlock.md) especificado en el índice.
-
-## Property Value
-
-Índice del objeto
-
-## Exceptions
-
-| exception | condition |
-| --- | --- |
-| NotSupportedException | invalido |
 
 ## See Also
 
@@ -48,7 +32,7 @@ A [`DataBlock`](../DataBlock.md) element.
 
 ## Remarks
 
-If the element does not exist, null is returned.
+If the element does not exist, `null` is returned.
 
 ## See Also
 

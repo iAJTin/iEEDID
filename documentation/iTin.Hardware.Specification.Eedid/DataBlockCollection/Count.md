@@ -1,14 +1,8 @@
 # DataBlockCollection.Count property
 
-Obtiene el número de elementos incluidos en la colección.
-
 ```csharp
 public int Count { get; }
 ```
-
-## Property Value
-
-El número de elementos incluidos en la colección.
 
 ## See Also
 

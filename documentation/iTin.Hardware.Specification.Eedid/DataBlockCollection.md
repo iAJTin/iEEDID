@@ -10,21 +10,21 @@ public sealed class DataBlockCollection : IList<DataBlock>
 
 | name | description |
 | --- | --- |
-| [Count](DataBlockCollection/Count.md) { get; } | Obtiene el número de elementos incluidos en la colección. |
+| [Count](DataBlockCollection/Count.md) { get; } |  |
 | [ImplementedBlocks](DataBlockCollection/ImplementedBlocks.md) { get; } | Gets a list of the implemented blocks. |
-| [IsReadOnly](DataBlockCollection/IsReadOnly.md) { get; } | Obtiene un valor que indica si la colección es de sólo lectura. |
-| [Item](DataBlockCollection/Item.md) { get; set; } | Obtiene o establece el objeto [`DataBlock`](./DataBlock.md) especificado en el índice. |
+| [IsReadOnly](DataBlockCollection/IsReadOnly.md) { get; } |  |
+| [Item](DataBlockCollection/Item.md) { get; set; } |  |
 | [Item](DataBlockCollection/Item.md) { get; } | Gets the element with the specified key. |
-| [Parent](DataBlockCollection/Parent.md) { get; } | Gets parent of this datablockcollection. |
-| [Add](DataBlockCollection/Add.md)(…) | Agregar un objeto [`DataBlock`](./DataBlock.md) a la colección. |
-| [Clear](DataBlockCollection/Clear.md)() | Quita todos los elementos de la colección. |
-| [Contains](DataBlockCollection/Contains.md)(…) | Determina si la colección contiene un objeto [`DataBlock`](./DataBlock.md) específico. (2 methods) |
-| [CopyTo](DataBlockCollection/CopyTo.md)(…) | Copia los elementos a un objeto Array, a partir de un índice determinado de la clase Array. |
-| [GetEnumerator](DataBlockCollection/GetEnumerator.md)() | Devuelve un enumerador que recorre en iteración una colección. |
-| [IndexOf](DataBlockCollection/IndexOf.md)(…) | Devuelve el índice del objeto [`DataBlock`](./DataBlock.md) dentro de la colección. (2 methods) |
-| [Insert](DataBlockCollection/Insert.md)(…) | Inserta un objeto [`DataBlock`](./DataBlock.md) en la colección. |
-| [Remove](DataBlockCollection/Remove.md)(…) | Quita la primera aparición de un objeto [`DataBlock`](./DataBlock.md) específico de la colección. |
-| [RemoveAt](DataBlockCollection/RemoveAt.md)(…) | Elimina el objeto [`DataBlock`](./DataBlock.md) especificado de la colección. |
+| [Parent](DataBlockCollection/Parent.md) { get; } | Gets parent of this data block collection. |
+| [Add](DataBlockCollection/Add.md)(…) |  |
+| [Clear](DataBlockCollection/Clear.md)() |  |
+| [Contains](DataBlockCollection/Contains.md)(…) |  (2 methods) |
+| [CopyTo](DataBlockCollection/CopyTo.md)(…) |  |
+| [GetEnumerator](DataBlockCollection/GetEnumerator.md)() |  |
+| [IndexOf](DataBlockCollection/IndexOf.md)(…) |  (2 methods) |
+| [Insert](DataBlockCollection/Insert.md)(…) |  |
+| [Remove](DataBlockCollection/Remove.md)(…) |  |
+| [RemoveAt](DataBlockCollection/RemoveAt.md)(…) |  |
 | override [ToString](DataBlockCollection/ToString.md)() | Devuelve una cadena que representa al objeto [`DataBlockCollection`](./DataBlockCollection.md) actual. |
 
 ## See Also

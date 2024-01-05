@@ -9,7 +9,7 @@ namespace iTin.Hardware.Specification.Eedid.Blocks.EDID.Sections.Descriptors;
 
 // Data Block Descriptor: Detailed Timing Mode Descriptor Definition
 // •————————————————————————————————————————————————————————————————————————————————————————————————————————————————————•
-// | Offset       Name                      Lenght      Description                                                     |
+// | Offset       Name                      Length      Description                                                     |
 // •————————————————————————————————————————————————————————————————————————————————————————————————————————————————————•
 // | 00h          Pixel Clock               WORD        Field value = Pixel Clock / 10000. Measured in Khz.             |
 // |                                                    LSB stored in byte 0, MSB stored in byte 1                      |

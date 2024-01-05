@@ -8,7 +8,7 @@ using iTin.Core.Interop.Shared.Windows.Development.DocumentAndPrinting.Printing.
 namespace iTin.Core.Hardware.Windows.Device.Desktop.Monitor.Video.VideoMode;
 
 /// <summary>
-/// La estructura de datos <strong>VideoModeInfo</strong> contiene información abaout a video mode.
+/// The videoModeInfo data structure contains information about a video mode.
 /// </summary>
 public struct VideoModeDeviceInfo : IEquatable<VideoModeDeviceInfo>
 {
@@ -47,7 +47,7 @@ public struct VideoModeDeviceInfo : IEquatable<VideoModeDeviceInfo>
     /// </summary>
     /// <param name="other">Structure to be compared with this structure.</param>
     /// <returns>
-    /// Returns <strong> true </strong> if the current structure is equal to the <c>other</c> parameter; otherwise, <strong>false</strong>.
+    /// Returns <see langword="true"/> if the current structure is equal to the <c>other</c> parameter; otherwise <see langword="false"/>.
     /// </returns>
     public bool Equals(VideoModeDeviceInfo other) => other.Equals((object)this);
 
@@ -61,7 +61,7 @@ public struct VideoModeDeviceInfo : IEquatable<VideoModeDeviceInfo>
     /// <param name="left">Left</param>
     /// <param name="right">Right</param>
     /// <returns>
-    /// Returns <strong>true</strong> if <c>left</c> is equal to <c>right</c>; <strong>false</strong> otherwise.
+    /// Returns<see langword="true"/> if <c>left</c> is equal to <c>right</c>; otherwise <see langword="false"/>.
     /// </returns>
     public static bool operator ==(VideoModeDeviceInfo left, VideoModeDeviceInfo right) => left.Equals(right);
 
@@ -71,7 +71,7 @@ public struct VideoModeDeviceInfo : IEquatable<VideoModeDeviceInfo>
     /// <param name="left">Left</param>
     /// <param name="right">Right</param>
     /// <returns>
-    /// Returns <strong>true</strong> if <c>left</c> is not equal to <c>right</c>; <strong>false</strong> otherwise.
+    /// Returns <see langword="true"/> if <c>left</c> is not equal to <c>right</c>; otherwise <see langword="false"/>.
     /// </returns>
     public static bool operator !=(VideoModeDeviceInfo left, VideoModeDeviceInfo right) => !left.Equals(right);
 
@@ -99,7 +99,7 @@ public struct VideoModeDeviceInfo : IEquatable<VideoModeDeviceInfo>
     /// Gets a value that indicates whether this video mode is the current one.
     /// </summary>
     /// <value>
-    /// <strong>true</strong> if it's the current video mode; <strong>false</strong> otherwise.
+    /// <see langword="true"/> if it's the current video mode; otherwise <see langword="false"/>.
     /// </value>
     public readonly bool IsCurrent => _current;
 
@@ -123,21 +123,10 @@ public struct VideoModeDeviceInfo : IEquatable<VideoModeDeviceInfo>
 
     #region public override methods
 
-    /// <summary>
-    /// Returns a value that represents the hash code of this structure.
-    /// </summary>
-    /// <returns>
-    /// Hash code of this structure.
-    /// </returns>
+    /// <inheritdoc/>
     public override int GetHashCode() => _modeInfo.GetHashCode();
 
-    /// <summary>
-    /// Returns a value that indicates whether this structure is the same as another.
-    /// </summary>
-    /// <param name="obj">Structure to compare.</param>
-    /// <returns>
-    /// Result of the equality comparison.
-    /// </returns>
+    /// <inheritdoc/>
     public override bool Equals(object obj)
     {
         if (obj is not VideoModeDeviceInfo other)
@@ -151,12 +140,7 @@ public struct VideoModeDeviceInfo : IEquatable<VideoModeDeviceInfo>
             other.Frequency == Frequency;
     }
 
-    /// <summary>
-    /// Returns a string that represents the current <see cref="VideoModeDeviceInfo"/> structure.
-    /// </summary>
-    /// <returns>
-    /// String representing the current <see cref="VideoModeDeviceInfo"/> structure.
-    /// </returns>
+    /// <inheritdoc/>
     public override string ToString() => _modeInfo.ToString();
 
     #endregion

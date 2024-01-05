@@ -9,7 +9,7 @@ namespace iTin.Hardware.Specification.Eedid.Blocks.DisplayId.Sections.DataBlocks
 public enum DataBlockTag
 {
     /// <summary>
-    /// <b>Product Identification</b> data block, for more information see <see cref="ProductIdentificationDataBlock"/>.
+    /// <strong>Product Identification</strong> data block, for more information see <see cref="ProductIdentificationDataBlock"/>.
     /// </summary>
     [PropertyType(typeof(ProductIdentificationDataBlock))]
     [PropertyName("Product Identification")]
@@ -17,7 +17,7 @@ public enum DataBlockTag
     ProductIdentification13 = 0x00,
 
     /// <summary>
-    /// <b>Display Parameters</b> data block, for more information see <see cref="DisplayParametersDataBlock"/>.
+    /// <strong>Display Parameters</strong> data block, for more information see <see cref="DisplayParametersDataBlock"/>.
     /// </summary>
     [PropertyType(typeof(DisplayParametersDataBlock))]
     [PropertyName("Display Parameters")]
@@ -25,7 +25,7 @@ public enum DataBlockTag
     DisplayParameters13 = 0x01,
 
     ///// <summary>
-    ///// <b>Display Parameters</b> data block, for more information see <see cref="DisplayParametersDataBlock"/>.
+    ///// <strong>Display Parameters</strong> data block, for more information see <see cref="DisplayParametersDataBlock"/>.
     ///// </summary>
     //[PropertyType(typeof(DisplayParametersDataBlock))]
     //[PropertyName("Display Parameters")]
@@ -33,7 +33,7 @@ public enum DataBlockTag
     //DisplayParameters = 0x01,
 
     ///// <summary>
-    ///// <b>Color Characteristics</b> data block, for more information see <see cref="ColorCharacteristicsDataBlock"/>.
+    ///// <strong>Color Characteristics</strong> data block, for more information see <see cref="ColorCharacteristicsDataBlock"/>.
     ///// </summary>
     //[PropertyType(typeof(ColorCharacteristicsDataBlock))]
     //[PropertyName("Color Characteristics")]
@@ -41,7 +41,7 @@ public enum DataBlockTag
     //ColorCharacteristics = 0x02,
 
     /// <summary>
-    /// <b>Detailed Timing Type I</b> data block, for more information see <see cref="DetailedTimingTypeIDataBlock"/>.
+    /// <strong>Detailed Timing Type I</strong> data block, for more information see <see cref="DetailedTimingTypeIDataBlock"/>.
     /// </summary>
     [PropertyType(typeof(DetailedTimingTypeIDataBlock))]
     [PropertyName("Detailed Timing Type I")]
@@ -49,7 +49,7 @@ public enum DataBlockTag
     DetailedTimingTypeI = 0x03,
 
     /// <summary>
-    /// <b>Product Identification</b> data block, for more information see <see cref="ProductIdentificationDataBlock"/>.
+    /// <strong>Product Identification</strong> data block, for more information see <see cref="ProductIdentificationDataBlock"/>.
     /// </summary>
     [PropertyType(typeof(ProductIdentificationDataBlock))]
     [PropertyName("Product Identification")]
@@ -57,7 +57,7 @@ public enum DataBlockTag
     ProductIdentification = 0x20,
 
     /// <summary>
-    /// <b>Display Parameters</b> data block, for more information see <see cref="DisplayParametersDataBlock"/>.
+    /// <strong>Display Parameters</strong> data block, for more information see <see cref="DisplayParametersDataBlock"/>.
     /// </summary>
     [PropertyType(typeof(DisplayParametersDataBlock))]
     [PropertyName("Display Parameters")]
@@ -65,7 +65,7 @@ public enum DataBlockTag
     DisplayParameters = 0x21,
 
     /// <summary>
-    /// <b>Dynamic Video Timing Range Limits</b> data block, for more information see <see cref="DynamicVideoTimingRangeLimitsDataBlock"/>.
+    /// <strong>Dynamic Video Timing Range Limits</strong> data block, for more information see <see cref="DynamicVideoTimingRangeLimitsDataBlock"/>.
     /// </summary>
     [PropertyType(typeof(DynamicVideoTimingRangeLimitsDataBlock))]
     [PropertyName("Dynamic Video Timing Range Limits")]
@@ -73,7 +73,7 @@ public enum DataBlockTag
     DynamicVideoTimingRangeLimits = 0x25,
 
     /// <summary>
-    /// <b>Container ID</b> data block, for more information see <see cref="ContainerIdDataBlock"/>.
+    /// <strong>Container ID</strong> data block, for more information see <see cref="ContainerIdDataBlock"/>.
     /// </summary>
     [PropertyType(typeof(ContainerIdDataBlock))]
     [PropertyName("Container ID")]
@@ -81,7 +81,7 @@ public enum DataBlockTag
     ContainerID = 0x29,
 
     /// <summary>
-    /// <b>Vendor-Specific</b> data block, for more information see <see cref="VendorSpecificDataBlock"/>.
+    /// <strong>Vendor-Specific</strong> data block, for more information see <see cref="VendorSpecificDataBlock"/>.
     /// </summary>
     [PropertyType(typeof(VendorSpecificDataBlock))]
     [PropertyName("Vendor-Specific")]
@@ -89,7 +89,7 @@ public enum DataBlockTag
     VendorSpecific = 0x7f,
 
     ///// <summary>
-    ///// <b>Product Identification</b> data block, for more information see <see cref="ProductIdentification20DataBlock"/>.
+    ///// <strong>Product Identification</strong> data block, for more information see <see cref="ProductIdentification20DataBlock"/>.
     ///// </summary>
     //[PropertyType(typeof(ProductIdentification20DataBlock))]
     //[PropertyName("Product Identification")]
@@ -97,7 +97,7 @@ public enum DataBlockTag
     //ProductIdentification20 = 0x20,
 
     ///// <summary>
-    ///// <b>Display Parameters</b> data block, for more information see <see cref="DisplayParameters20DataBlock"/>.
+    ///// <strong>Display Parameters</strong> data block, for more information see <see cref="DisplayParameters20DataBlock"/>.
     ///// </summary>
     //[PropertyType(typeof(DisplayParameters20DataBlock))]
     //[PropertyName("Display Parameters")]
@@ -105,7 +105,7 @@ public enum DataBlockTag
     //DisplayParameters20 = 0x21,
 
     ///// <summary>
-    ///// <b>Detailed Timing</b> data block, for more information see <see cref="DetailedTimingDataBlock"/>.
+    ///// <strong>Detailed Timing</strong> data block, for more information see <see cref="DetailedTimingDataBlock"/>.
     ///// </summary>
     //[PropertyType(typeof(DetailedTimingDataBlock))]
     //[PropertyName("Detailed Timing")]
@@ -113,7 +113,7 @@ public enum DataBlockTag
     //DetailedTiming = 0x22,
 
     ///// <summary>
-    ///// <b>Enumerated Timing Code</b> data block, for more information see <see cref="EnumeratedTimingCodeDataBlock"/>.
+    ///// <strong>Enumerated Timing Code</strong> data block, for more information see <see cref="EnumeratedTimingCodeDataBlock"/>.
     ///// </summary>
     //[PropertyType(typeof(EnumeratedTimingCodeDataBlock))]
     //[PropertyName("Enumerated Timing Code")]
@@ -121,7 +121,7 @@ public enum DataBlockTag
     //EnumeratedTimingCode = 0x23,
 
     ///// <summary>
-    ///// <b>Enumerated Timing Code</b> data block, for more information see <see cref="FormulaBasedTimingDataBlock"/>.
+    ///// <strong>Enumerated Timing Code</strong> data block, for more information see <see cref="FormulaBasedTimingDataBlock"/>.
     ///// </summary>
     //[PropertyType(typeof(FormulaBasedTimingDataBlock))]
     //[PropertyName("Formula-based Timing")]
@@ -129,7 +129,7 @@ public enum DataBlockTag
     //FormulaBasedTiming = 0x24,
 
     ///// <summary>
-    ///// <b>Dynamic Video Timing Range Limits</b> data block, for more information see <see cref="DynamicVideoTimingRangeLimitsDataBlock"/>.
+    ///// <strong>Dynamic Video Timing Range Limits</strong> data block, for more information see <see cref="DynamicVideoTimingRangeLimitsDataBlock"/>.
     ///// </summary>
     //[PropertyType(typeof(DynamicVideoTimingRangeLimitsDataBlock))]
     //[PropertyName("Dynamic Video Timing Range Limits")]
@@ -137,7 +137,7 @@ public enum DataBlockTag
     //DynamicVideoTimingRangeLimits = 0x25,
 
     ///// <summary>
-    ///// <b>Display Interface Features</b> data block, for more information see <see cref="DisplayInterfaceFeaturesDataBlock"/>.
+    ///// <strong>Display Interface Features</strong> data block, for more information see <see cref="DisplayInterfaceFeaturesDataBlock"/>.
     ///// </summary>
     //[PropertyType(typeof(DisplayInterfaceFeaturesDataBlock))]
     //[PropertyName("Display Interface Features")]
@@ -145,7 +145,7 @@ public enum DataBlockTag
     //DisplayInterfaceFeatures = 0x26,
 
     ///// <summary>
-    ///// <b>Stereo Display Interface</b> data block, for more information see <see cref="StereoDisplayInterfaceDataBlock"/>.
+    ///// <strong>Stereo Display Interface</strong> data block, for more information see <see cref="StereoDisplayInterfaceDataBlock"/>.
     ///// </summary>
     //[PropertyType(typeof(StereoDisplayInterfaceDataBlock))]
     //[PropertyName("Stereo Display Interface")]
@@ -153,7 +153,7 @@ public enum DataBlockTag
     //StereoDisplayInterface = 0x27,
 
     ///// <summary>
-    ///// <b>Tiled Display Topology</b> data block, for more information see <see cref="TiledDisplayTopologyDataBlock"/>.
+    ///// <strong>Tiled Display Topology</strong> data block, for more information see <see cref="TiledDisplayTopologyDataBlock"/>.
     ///// </summary>
     //[PropertyType(typeof(TiledDisplayTopologyDataBlock))]
     //[PropertyName("Tiled Display Topology")]
@@ -161,7 +161,7 @@ public enum DataBlockTag
     //TiledDisplayTopology = 0x28,
 
     ///// <summary>
-    ///// <b>ContainerID</b> data block, for more information see <see cref="ContainerIdDataBlock"/>.
+    ///// <strong>ContainerID</strong> data block, for more information see <see cref="ContainerIdDataBlock"/>.
     ///// </summary>
     //[PropertyType(typeof(ContainerIdDataBlock))]
     //[PropertyName("ContainerID")]
@@ -169,7 +169,7 @@ public enum DataBlockTag
     //ContainerID = 0x29,
 
     ///// <summary>
-    ///// <b>CTA DisplayID</b> data block, for more information see <see cref="CtaDisplayIdDataBlock"/>.
+    ///// <strong>CTA DisplayID</strong> data block, for more information see <see cref="CtaDisplayIdDataBlock"/>.
     ///// </summary>
     //[PropertyType(typeof(CtaDisplayIdDataBlock))]
     //[PropertyName("CTA DisplayID")]

@@ -8,7 +8,7 @@ public DataBlockCollection Blocks { get; }
 
 ## Property Value
 
-Object [`DataBlockCollection`](../../iTin.Hardware.Specification.Eedid/DataBlockCollection.md) that contains the object collection [`DataBlock`](../../iTin.Hardware.Specification.Eedid/DataBlock.md) for this [`EEDID`](../EEDID.md). If there is no object [`DataBlock`](../../iTin.Hardware.Specification.Eedid/DataBlock.md), null is returned.
+Object [`DataBlockCollection`](../../iTin.Hardware.Specification.Eedid/DataBlockCollection.md) that contains the object collection [`DataBlock`](../../iTin.Hardware.Specification.Eedid/DataBlock.md) for this [`EEDID`](../EEDID.md). If there is no object [`DataBlock`](../../iTin.Hardware.Specification.Eedid/DataBlock.md), `null` is returned.
 
 ## See Also
 

@@ -1,14 +1,8 @@
 # DataBlockData.GetHashCode method
 
-Returns the hash code of the object.
-
 ```csharp
 public override int GetHashCode()
 ```
-
-## Return Value
-
-Hash code.
 
 ## See Also
 

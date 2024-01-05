@@ -23,7 +23,7 @@ public abstract class BaseDataSectionCollection : IList<DataSection>
 | [IndexOf](BaseDataSectionCollection/IndexOf.md)(…) | Returns the index of the [`DataSection`](./DataSection.md) object within the collection. |
 | [Insert](BaseDataSectionCollection/Insert.md)(…) | Inserts a [`DataSection`](./DataSection.md) object into collection. |
 | [Remove](BaseDataSectionCollection/Remove.md)(…) | Removes the specified item. |
-| [RemoveAt](BaseDataSectionCollection/RemoveAt.md)(…) | Elimina el objeto [`DataSection`](./DataSection.md) especificado de la colección. |
+| [RemoveAt](BaseDataSectionCollection/RemoveAt.md)(…) | Removes the specified [`DataSection`](./DataSection.md) object from the collection. |
 
 ## Protected Members
 

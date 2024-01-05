@@ -7,7 +7,7 @@ namespace iTin.Hardware.Specification.Eedid.Blocks.EDID.Sections.Descriptors;
 
 // Data Block Descriptor: Dummy Data Descriptor Definition
 // •—————————————————————————————————————————————————————————————————————————————————————————————————•
-// | Offset       Name                      Lenght      Description                                  |
+// | Offset       Name                      Length      Description                                  |
 // •—————————————————————————————————————————————————————————————————————————————————————————————————•
 // | 00h -> 0ch   Dummy Data                13 BYTEs    All bytes filled with 00h                    |
 // •—————————————————————————————————————————————————————————————————————————————————————————————————•

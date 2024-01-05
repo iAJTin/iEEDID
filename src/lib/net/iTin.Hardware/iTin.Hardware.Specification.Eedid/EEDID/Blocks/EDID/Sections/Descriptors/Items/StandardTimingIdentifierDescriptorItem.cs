@@ -6,7 +6,7 @@ namespace iTin.Hardware.Specification.Eedid.Blocks.EDID.Sections.Descriptors;
 
 // Data Block Descriptor -> Descriptor Item : Standard Timing Identifier Descriptor Item Definition
 // •———————————————————————————————————————————————————————————————————————————————————————————————————————————————————•
-// | Offset       Name          Lenght      Descriptin                                                                 |
+// | Offset       Name          Length      Descriptin                                                                 |
 // •———————————————————————————————————————————————————————————————————————————————————————————————————————————————————•
 // | 00h          Byte 1        BYTE        Range                                                                      |
 // |                                        —————                                                                      |

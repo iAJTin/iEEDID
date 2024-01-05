@@ -1,18 +1,8 @@
 # DataBlockCollection.IndexOf method (1 of 2)
 
-Devuelve el índice del objeto [`DataBlock`](../DataBlock.md) dentro de la colección.
-
 ```csharp
 public int IndexOf(DataBlock item)
 ```
-
-| parameter | description |
-| --- | --- |
-| item | El item a buscar. |
-
-## Return Value
-
-Índice de base cero de la primera aparición de item en la totalidad de [`DataBlockCollection`](../DataBlockCollection.md), si se encuentra; en caso contrario, -1.
 
 ## See Also
 

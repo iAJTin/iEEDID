@@ -10,7 +10,7 @@ namespace iTin.Hardware.Specification.Eedid.Blocks.DI.Sections;
 
 // DI Section: Display Device
 // •——————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————•
-// | Offset       Name                      Lenght      Description                                                                                   |
+// | Offset       Name                      Length      Description                                                                                   |
 // •——————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————•
 // | 00h          Sub-Pixel Layout          BYTE                                                                                                      |
 // •——————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————•
@@ -48,7 +48,7 @@ internal sealed class DisplayDeviceSection : BaseDataSection
     #region private readonly properties
 
     /// <summary>
-    /// Gets a value representing the <b>Sub-Pixel Layout</b> field.
+    /// Gets a value representing the <strong>Sub-Pixel Layout</strong> field.
     /// </summary>
     /// <value>
     /// Property value.
@@ -57,7 +57,7 @@ internal sealed class DisplayDeviceSection : BaseDataSection
     private byte SubPixelLayout => RawData[0x00];
 
     /// <summary>
-    /// Gets a value representing the <b>Sub-Pixel Configuration</b> field.
+    /// Gets a value representing the <strong>Sub-Pixel Configuration</strong> field.
     /// </summary>
     /// <value>
     /// Property value.
@@ -66,7 +66,7 @@ internal sealed class DisplayDeviceSection : BaseDataSection
     private byte SubPixelConfiguration => RawData[0x01];
 
     /// <summary>
-    /// Gets a value representing the <b>Sub-Pixel Shape</b> field.
+    /// Gets a value representing the <strong>Sub-Pixel Shape</strong> field.
     /// </summary>
     /// <value>
     /// Property value.
@@ -75,7 +75,7 @@ internal sealed class DisplayDeviceSection : BaseDataSection
     private byte SubPixelShape => RawData[0x02];
 
     /// <summary>
-    /// Gets a value representing the <b>Horizontal Dot/Pixel Pitch</b> field.
+    /// Gets a value representing the <strong>Horizontal Dot/Pixel Pitch</strong> field.
     /// </summary>
     /// <value>
     /// Property value.
@@ -84,7 +84,7 @@ internal sealed class DisplayDeviceSection : BaseDataSection
     private float HorizontalDotPixelPitch => RawData[0x03] / 100.0f;
 
     /// <summary>
-    /// Gets a value representing the <b>Vertical Dot/Pixel Pitch</b> field.
+    /// Gets a value representing the <strong>Vertical Dot/Pixel Pitch</strong> field.
     /// </summary>
     /// <value>
     /// Property value.
@@ -93,7 +93,7 @@ internal sealed class DisplayDeviceSection : BaseDataSection
     private float VerticalDotPixelPitch => RawData[0x04] / 100.0f;
 
     /// <summary>
-    /// Gets a value representing the <b>Major Display Device Characteristics</b> field.
+    /// Gets a value representing the <strong>Major Display Device Characteristics</strong> field.
     /// </summary>
     /// <value>
     /// Property value.
@@ -102,7 +102,7 @@ internal sealed class DisplayDeviceSection : BaseDataSection
     private byte MajorDisplayDeviceCharacteristics => RawData[0x05];
 
     /// <summary>
-    /// Gets a value representing the <b>View Direction</b> field.
+    /// Gets a value representing the <strong>View Direction</strong> field.
     /// </summary>
     /// <value>
     /// Property value.
@@ -111,7 +111,7 @@ internal sealed class DisplayDeviceSection : BaseDataSection
     private byte ViewDirection => (byte)((MajorDisplayDeviceCharacteristics >> 5) & 0x03);
 
     /// <summary>
-    /// Gets a value representing the <b>Physical Implementation</b> field.
+    /// Gets a value representing the <strong>Physical Implementation</strong> field.
     /// </summary>
     /// <value>
     /// Property value.
