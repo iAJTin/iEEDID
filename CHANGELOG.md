@@ -29,6 +29,7 @@ All notable changes to this project will be documented in this file.
 
     | macOS | Version |
     |:------|:------|
+    | Sonoma | 14.2.1 |
     | Big Sur | 11.0.1 |
     | Catalina | 10.15.7 |
 
